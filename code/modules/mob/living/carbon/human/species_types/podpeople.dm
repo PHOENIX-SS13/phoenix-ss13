@@ -25,6 +25,10 @@
 	species_language_holder = /datum/language_holder/plant
 	always_customizable = TRUE
 
+	cultures = list(/datum/cultural_info/culture/lavaland)
+	locations = list(/datum/cultural_info/location/stateless)
+	factions = list(/datum/cultural_info/faction/none)
+
 /datum/species/pod/spec_life(mob/living/carbon/human/H, delta_time, times_fired)
 	if(H.stat == DEAD)
 		return
@@ -56,3 +60,7 @@
 	limbs_id = "pod"
 	species_traits = list(MUTCOLORS,EYECOLOR, HAS_FLESH, HAS_BONE, HAIR, FACEHAIR)
 	default_mutant_bodyparts = list()
+
+	cultures = list(CULTURES_EXOTIC, CULTURES_HUMAN)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN)
