@@ -46,6 +46,7 @@
 /obj/item/clothing/ears/headphones/update_icon_state()
 	icon_state = "[initial(icon_state)][headphones_on? "_on" : ""]"
 	inhand_icon_state = "[initial(inhand_icon_state)][headphones_on? "_on" : ""]"
+	return ..()
 
 /obj/item/clothing/ears/headphones/proc/toggle(owner)
 	headphones_on = !headphones_on
