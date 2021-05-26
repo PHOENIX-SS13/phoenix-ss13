@@ -2,7 +2,7 @@
 # MissFox 2021
 #
 # Creates a new card in the project in the correct column based on draft status
-name: Create Project card when new pr is created
+name: ProjectAuto ¦ Create Project card
 
 # Controls when the action will run. 
 on:
@@ -23,7 +23,7 @@ jobs:
         with:
           project: Horzon PRs
           column: Open
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.TOKEN_ORG_PROJECTBOARD }}
   create-card-draft:
     if: github.event.pull_request.draft == true
     runs-on: ubuntu-latest
@@ -33,5 +33,5 @@ jobs:
         with:
           project: Horzon PRs
           column: Draft
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.TOKEN_ORG_PROJECTBOARD }}
 
