@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Fixes digitigrade colored jumpsuits and sneakers not having any icons for automated GAGS generation"
+  - bugfix: "Fixed icon state of cargo tech jumpsuit for digitigrades"
