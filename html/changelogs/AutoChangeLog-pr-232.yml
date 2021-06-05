@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Arrivals shuttle human check now checks whether it has the proper destination"
