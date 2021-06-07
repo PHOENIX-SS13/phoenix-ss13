@@ -54,6 +54,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/commons/dorms)
+"ch" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/loading_area{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/cargo/warehouse)
 "cY" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -128,6 +135,11 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/iron/white,
 /area/science/research/abandoned)
+"fL" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/large,
+/turf/open/floor/iron,
+/area/cargo/warehouse)
 "gh" = (
 /obj/structure/rack,
 /obj/machinery/power/apc/auto_name/north,
@@ -205,10 +217,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/science/research/abandoned)
-"iJ" = (
-/obj/effect/landmark/carpspawn,
-/turf/open/openspace/airless/planetary,
-/area/space)
 "iN" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/east,
@@ -329,6 +337,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/cargo/warehouse)
+"mx" = (
+/obj/machinery/light_switch/directional/east,
+/obj/machinery/trade_pad,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/iron,
+/area/cargo/warehouse)
 "mO" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
@@ -361,6 +375,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
+"nk" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/iron,
+/area/cargo/warehouse)
 "nt" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/item/wallframe/apc,
@@ -505,10 +523,6 @@
 	},
 /turf/open/floor/iron,
 /area/hallway/primary/central)
-"rA" = (
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron,
-/area/cargo/warehouse)
 "sj" = (
 /obj/machinery/conveyor{
 	id = "cargo_smeltery"
@@ -542,12 +556,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/maintenance/aft/secondary)
-"sW" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/light_switch/directional/east,
-/obj/structure/closet/crate/large,
-/turf/open/floor/iron,
-/area/cargo/warehouse)
 "tk" = (
 /obj/structure/table,
 /obj/item/stack/sheet/iron/fifty,
@@ -744,12 +752,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/construction/storage_wing)
-"yV" = (
-/obj/effect/turf_decal/bot,
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/east,
-/turf/open/floor/iron,
-/area/cargo/warehouse)
 "zv" = (
 /obj/structure/rack,
 /obj/machinery/light_switch/directional/north,
@@ -952,6 +954,10 @@
 /obj/machinery/atmospherics/pipe/multiz/supply/hidden/layer4,
 /turf/closed/wall,
 /area/maintenance/aft/secondary)
+"GV" = (
+/obj/effect/landmark/carpspawn,
+/turf/open/openspace/airless/planetary,
+/area/space)
 "Hv" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -999,6 +1005,15 @@
 	icon_state = "wood-broken4"
 	},
 /area/commons/dorms/barracks)
+"Jb" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/computer/trade_console{
+	dir = 8
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/iron,
+/area/cargo/warehouse)
 "Jg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -30135,7 +30150,7 @@ Mg
 Mg
 Mg
 Mg
-iJ
+GV
 Mg
 Mg
 Mg
@@ -32984,7 +32999,7 @@ Mg
 Mg
 Mg
 Mg
-iJ
+GV
 Mg
 Mg
 Mg
@@ -33472,9 +33487,9 @@ pD
 iF
 Hv
 gW
-gW
+nk
 RR
-rA
+fL
 du
 nS
 hF
@@ -34232,7 +34247,7 @@ Mg
 Mg
 Mg
 Mg
-iJ
+GV
 Mg
 Mg
 Mg
@@ -34501,8 +34516,8 @@ Ag
 bF
 hX
 oT
-mR
-mR
+ch
+Tt
 du
 gW
 Yk
@@ -34758,8 +34773,8 @@ jU
 Km
 sk
 gW
-sW
-yV
+mx
+Jb
 AZ
 Yv
 eL
@@ -37065,7 +37080,7 @@ Mg
 Mg
 Mg
 Mg
-iJ
+GV
 Mg
 Mg
 Mg
@@ -38369,7 +38384,7 @@ Mg
 Mg
 Mg
 Mg
-iJ
+GV
 Mg
 Mg
 Mg
