@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Added the possibility of creating projectiles on the overmap, currently those are only used for attacking ore asteroids to \"mine\" them, they will drop ore chunks which can be transported on board"
+  - rscadd: "Added a mining laser to shoot overmap projectiles, currently not installed in any vessel"
