@@ -45,3 +45,6 @@
   - rscadd: Refactored the planetary atmospherics to instead respect a set gas value
       from the z level the turfs are on, instead from a semi-hardcoded value
   - rscadd: You can now load planetary templates without having a .dmm file for them
+2021-06-14:
+  MissFox0810:
+  - qol: Disabled mice munching wires
