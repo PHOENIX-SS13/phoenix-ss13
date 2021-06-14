@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "One random planet now spawns on the overmap"
+  - rscadd: "FTV Bearcat now spawns 2 planets on the overmap, but no lavaland"
