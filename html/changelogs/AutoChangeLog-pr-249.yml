@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - balance: "Propulsion engines now take 0.25 fuel instead of 0.7"
+  - balance: "Engines now grant 0.5 speed instead of 0.35"
