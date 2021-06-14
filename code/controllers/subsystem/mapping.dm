@@ -318,9 +318,6 @@ Used by the AI doomsday and the self-destruct nuke.
 			grass_color = picked_grass_color,
 			water_color = picked_water_color)
 
-	// Create a trade hub
-	new /datum/overmap_object/trade_hub(SSovermap.main_system, rand(5,20), rand(5,20))
-
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
