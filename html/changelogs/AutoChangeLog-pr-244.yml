@@ -1,6 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Added 8 planet types which can be generated. They currently got terrain and flora and weather"
-  - rscadd: "Weather can now play sounds and do thunderstorms"
-  - rscadd: "Added all sorts of snowy, rainy, sandstormy, electric stormy weathers"

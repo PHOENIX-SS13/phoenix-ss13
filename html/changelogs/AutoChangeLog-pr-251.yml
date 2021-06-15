@@ -1,6 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Trading houses now spawn per map_config basis, they will spawn a global network and 2 localized hubs by default."
-  - rscadd: "The hubs can have guaranteed traders and the FTV Bearcat has a guaranteed medical and mining trader in the global network."
-  - bugfix: "Shuttles can now properly access localized trading houses"

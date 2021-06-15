@@ -1,7 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Added a day/night cycles. Different planets can have different cycles"
-  - rscadd: "Weathers may affect the \"sky\" and block the day/night somewhat"
-  - bugfix: "Fixed and tweaked some stuff with weathers"
-  - bugfix: "Fixed a bug regarding z level atmospherics being randomized per z-level basis"
