@@ -224,3 +224,19 @@
 /obj/structure/flora/planetary_grass/fullgrass
 	icon_state = "fullgrass"
 	variants = 3
+
+/turf/open/floor/plating/planetary/concrete
+	gender = PLURAL
+	name = "concrete"
+	desc = "A flat expanse of artificial stone-like material."
+	icon_state = "concrete"
+	base_icon_state = "concrete"
+	footstep = FOOTSTEP_GENERIC_HEAVY
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_GENERIC_HEAVY
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/planetary/concrete/reinforced
+	name = "reinforced concrete"
+	icon_state = "hexacrete"
+	base_icon_state = "hexacrete"
