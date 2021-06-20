@@ -1,0 +1,8 @@
+author: "MissFox0810"
+delete-after: True
+changes: 
+  - rscadd: "Bearcat - Firelocks to all doors"
+  - rscadd: "Bearcat - Brig on deck 1"
+  - rscadd: "Bearcat - Departures shuttle dock on deck 1 south airlock (You can now round end ingame bearcat)"
+  - bugfix: "Bearcat - Tile leaking causing atmos to runtime sometimes or take a long time to load."
+  - refactor: "Bearcat - All external walls are now R_Walls."
