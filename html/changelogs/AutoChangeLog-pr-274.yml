@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Day/night cycles now have 1.5 hour shift forwards to make the cycles more earth-like"
+  - bugfix: "Fixed a bug relating to day/night calculations"
