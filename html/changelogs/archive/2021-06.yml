@@ -175,3 +175,16 @@
   - bugfix: Fixes bad makarov path in trading. Previously it could show up as an AEG
   - rscadd: Add framework for planetary ruins and some ruins for the planets to spawn
   - rscadd: Adds a rock baseturf for the planets
+2021-06-20:
+  MissFox0810:
+  - bugfix: Bearcat - SM Cooling loop (changed to using a thermomech)
+  - rscadd: Bearcat - added RPD to Enginnering
+  - bugfix: Bearcat - Redesigned the kitchen to add more space
+  - rscadd: Bearcat - Added chembag to chem
+  - rscadd: Bearcat -  Added some clothing and misc vendors to departments and abandoned
+      office
+  - bugfix: Bearcat -  Added buttons to the lift
+  - bugfix: Bearcat - Added airlock helpers to all external airlocks
+  Owai-Seek:
+  - rscadd: Added/Ported ~10 Goodie Packs and ~18 Cargo Crates
+  - rscadd: Adds Meat Product to Chef Order Console and Biogen.
