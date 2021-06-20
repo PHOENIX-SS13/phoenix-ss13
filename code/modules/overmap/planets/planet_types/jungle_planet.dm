@@ -114,7 +114,7 @@
 	)
 
 /datum/biome/wasteland
-	turf_type = /turf/open/floor/plating/dirt/jungle/wasteland
+	turf_type = /turf/open/floor/plating/planetary/wasteland
 
 /datum/atmosphere/jungle
 	base_gases = list(
