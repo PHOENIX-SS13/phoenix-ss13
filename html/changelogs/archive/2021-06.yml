@@ -188,3 +188,24 @@
   Owai-Seek:
   - rscadd: Added/Ported ~10 Goodie Packs and ~18 Cargo Crates
   - rscadd: Adds Meat Product to Chef Order Console and Biogen.
+2021-06-21:
+  Azarak:
+  - bugfix: Lumcount now respects area luminosity
+  - rscadd: Added new module - Excavation! Now you can conduct archeology, go find
+      an excavation locker on the ESS Crow shuttle of the Bearcat vessel and embark
+      on a planet to find sites.
+  - rscadd: Added all sorts of thematic fauna to the planets
+  - rscadd: Day/night cycles now have 1.5 hour shift forwards to make the cycles more
+      earth-like
+  - bugfix: Fixed a bug relating to day/night calculations
+  - bugfix: handle automated movement respects AIStatus now
+  - rscadd: Adds a treasure hunter fedora to the archeological site ruin
+  - bugfix: Fixes claw footstep for planetary turfs
+  MissFox0810:
+  - rscadd: Bearcat - Firelocks to all doors
+  - rscadd: Bearcat - Brig on deck 1
+  - rscadd: Bearcat - Departures shuttle dock on deck 1 south airlock (You can now
+      round end ingame bearcat)
+  - bugfix: Bearcat - Tile leaking causing atmos to runtime sometimes or take a long
+      time to load.
+  - refactor: Bearcat - All external walls are now R_Walls.
