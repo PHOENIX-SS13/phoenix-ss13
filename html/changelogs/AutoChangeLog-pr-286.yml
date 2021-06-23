@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Client-less mobs no longer send their emotes to ghosts through global ghost sight"
