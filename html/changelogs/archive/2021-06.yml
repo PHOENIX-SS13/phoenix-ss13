@@ -209,3 +209,19 @@
   - bugfix: Bearcat - Tile leaking causing atmos to runtime sometimes or take a long
       time to load.
   - refactor: Bearcat - All external walls are now R_Walls.
+2021-06-23:
+  Azarak:
+  - bugfix: Fixes zeqetta's splitting into zeq duchesses
+  - rscadd: Now switching the lights ON will be delayed and they will make a noise,
+      aswell as the lightswitch itself
+  - rscadd: All areas with a lightswitch start with it OFF by default
+  - rscadd: Fixes moth wings and splits moth fluff from wings
+  - bugfix: Day and night is now correctly shifted backwards. Oops
+  - rscadd: Added underground ore nodes and mining drills!
+  - rscadd: Bearcat now has the machinery for drill mining, haul it to the Crow if
+      you want it to be useful!
+  - rscadd: Added 2 new planetary ruins, themed for drill mining
+  - rscadd: ESS Crow now has a weapons recharger and a spare cell
+  - bugfix: Barren planets mistakenly no longer have sandstorms
+  MissFox0810:
+  - qol: 'Bearcat QoL Part 3: Disposals and Lights -- See PR for more details'

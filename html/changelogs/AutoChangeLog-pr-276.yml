@@ -1,7 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Added underground ore nodes and mining drills!"
-  - rscadd: "Bearcat now has the machinery for drill mining, haul it to the Crow if you want it to be useful!"
-  - rscadd: "Added 2 new planetary ruins, themed for drill mining"
-  - rscadd: "ESS Crow now has a weapons recharger and a spare cell"

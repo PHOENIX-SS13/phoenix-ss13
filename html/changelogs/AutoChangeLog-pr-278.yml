@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Now switching the lights ON will be delayed and they will make a noise, aswell as the lightswitch itself"
-  - rscadd: "All areas with a lightswitch start with it OFF by default"

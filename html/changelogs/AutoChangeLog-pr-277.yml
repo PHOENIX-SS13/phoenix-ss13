@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Barren planets mistakenly no longer have sandstorms"
