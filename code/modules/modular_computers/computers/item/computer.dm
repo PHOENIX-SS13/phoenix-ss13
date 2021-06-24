@@ -52,6 +52,11 @@
 	var/comp_light_luminosity = 3 //The brightness of that light
 	var/comp_light_color //The color of that light
 
+	/// Keeping track of the cooldown for the keyboard click sound
+	var/next_click = 0
+	/// Whether this modular computer makes click noises.
+	var/makes_click_noises = TRUE
+
 
 /obj/item/modular_computer/Initialize()
 	. = ..()
@@ -77,6 +82,11 @@
 			qdel(CH)
 	physical = null
 	return ..()
+
+/obj/item/modular_computer/proc/keyboard_noise(mob/user)
+	if(makes_click_noises && world.time > next_click && in_range(get_turf(src), user))
+		next_click = world.time + 0.75 SECONDS
+		playsound(src, get_sfx("terminal_type"), 35)
 
 /obj/item/modular_computer/pre_attack_secondary(atom/A, mob/living/user, params)
 	if(active_program?.tap(A, user, params))

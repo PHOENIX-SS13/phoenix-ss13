@@ -217,6 +217,9 @@
 	if(.)
 		return
 
+	var/mob/user = usr
+	computer.keyboard_noise(user)
+
 	if(computer)
 		switch(action)
 			if("PC_exit")
@@ -228,7 +231,6 @@
 				ui.close()
 				return TRUE
 			if("PC_minimize")
-				var/mob/user = usr
 				if(!computer.active_program || !computer.all_components[MC_CPU])
 					return
 
