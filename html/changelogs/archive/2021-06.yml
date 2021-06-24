@@ -225,3 +225,16 @@
   - bugfix: Barren planets mistakenly no longer have sandstorms
   MissFox0810:
   - qol: 'Bearcat QoL Part 3: Disposals and Lights -- See PR for more details'
+2021-06-24:
+  Avunia Takiya:
+  - rscdel: Stationary nuke disk no longer raises loneops weight
+  - qol: Nuke disk likes to be tucked into bed even more now.
+  Azarak:
+  - bugfix: Client-less mobs no longer send their emotes to ghosts through global
+      ghost sight
+  - rscadd: Keyboard noises for computers, modular consoles and laptops
+  Caw!:
+  - imageadd: Added trash bag sprites to 'icons/mob/clothing/belt.dmi'
+  - rscadd: You can now place trash bags on your belt slot!
+  Owai-Seek:
+  - rscadd: Species Descriptions

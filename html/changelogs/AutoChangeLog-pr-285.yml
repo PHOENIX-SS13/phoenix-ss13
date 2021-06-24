@@ -1,5 +1,0 @@
-author: "Avunia Takiya"
-delete-after: True
-changes: 
-  - rscdel: "Stationary nuke disk no longer raises loneops weight"
-  - qol: "Nuke disk likes to be tucked into bed even more now."

@@ -1,5 +1,0 @@
-author: "Caw!"
-delete-after: True
-changes: 
-  - imageadd: "Added trash bag sprites to 'icons/mob/clothing/belt.dmi'"
-  - rscadd: "You can now place trash bags on your belt slot!"
