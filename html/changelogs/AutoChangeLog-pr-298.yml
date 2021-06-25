@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Dynamic lights now use a different way to render itself, the light transitions should be smoother"
