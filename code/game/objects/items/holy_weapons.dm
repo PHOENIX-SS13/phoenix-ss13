@@ -108,6 +108,7 @@
 	inhand_icon_state = "cage"
 	dynamic_hair_suffix = ""
 	worn_y_offset = 7
+	mutant_variants = NONE
 
 /obj/item/storage/box/holy/sentinel
 	name = "Stone Sentinel Kit"
@@ -149,6 +150,7 @@
 	inhand_icon_state = "witchhunterhat"
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEEYES|HIDEHAIR
+	mutant_variants = NONE
 
 /obj/item/storage/box/holy/adept
 	name = "Divine Adept Kit"
@@ -164,6 +166,7 @@
 	inhand_icon_state = "crusader"
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	mutant_variants = NONE
 
 /obj/item/clothing/suit/armor/riot/chaplain/adept
 	name = "adept robes"
@@ -189,6 +192,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 	hoodtype = /obj/item/clothing/head/hooded/chaplain_hood
+	mutant_variants = NONE
 
 /obj/item/clothing/head/hooded/chaplain_hood
 	name = "follower hood"
@@ -196,6 +200,7 @@
 	icon_state = "chaplain_hood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	mutant_variants = NONE
 
 /obj/item/clothing/suit/hooded/chaplain_hoodie/leader
 	name = "leader hoodie"
