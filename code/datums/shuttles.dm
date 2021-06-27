@@ -708,3 +708,8 @@
 	suffix = "crow"
 	name = "ESS Crow"
 	who_can_purchase = null
+
+/datum/map_template/shuttle/barrow
+	port_id = "whiteship"
+	suffix = "the_barrows"
+	name = "The Barrows"
