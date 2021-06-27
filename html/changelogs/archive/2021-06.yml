@@ -248,3 +248,16 @@
 2021-06-26:
   Azarak:
   - bugfix: Fixes invisible non-colorable bodyparts, commonly found on IPC's
+2021-06-27:
+  Azarak:
+  - balance: Chest bursting no longer gibs, now instead it'll deal 60 damage to chest
+      and send the victim unconscious for 10 seconds
+  - rscadd: Turfs can now be ignited and will slowly burn, igniting anyone on them
+  - rscadd: Hotspots have 30% chance to ignite a turf, making fiery explosions leave
+      cool residual flame.
+  - balance: Flamethrowers have been reworked to use chemicals instead and now leave
+      fire and hotspots on the turfs. They require an open reagent container instead
+      of plasma tank now.
+  - balance: Firealarms now trigger from 80*C upwards (from 200*C) or -10*C downwards
+      (from -3*C). They also trigger immediately when they're on a turf fire
+  - rscadd: Wraps chat text of balloon alerts in notice span and adds a source prefix
