@@ -308,3 +308,11 @@
 	name = "The Chilldown"
 	requires_power = FALSE
 	area_limited_icon_smoothing = /area/shuttle/chilldown
+
+/area/shuttle/ironwrought
+	name = "The Ironwrought"
+	requires_power = TRUE
+	area_limited_icon_smoothing = /area/shuttle/ironwrought
+
+/area/shuttle/ironwrought/engine
+	name = "The Ironwrought Core"
