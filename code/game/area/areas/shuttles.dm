@@ -303,3 +303,8 @@
 
 /area/shuttle/barrow/bar
 	name = "The Barrows Bar"
+
+/area/shuttle/chilldown
+	name = "The Chilldown"
+	requires_power = FALSE
+	area_limited_icon_smoothing = /area/shuttle/chilldown

@@ -3465,6 +3465,7 @@
 #include "code\modules\shuttle\docking.dm"
 #include "code\modules\shuttle\elevator.dm"
 #include "code\modules\shuttle\emergency.dm"
+#include "code\modules\shuttle\luxury.dm"
 #include "code\modules\shuttle\exploration.dm"
 #include "code\modules\shuttle\ferry.dm"
 #include "code\modules\shuttle\manipulator.dm"
