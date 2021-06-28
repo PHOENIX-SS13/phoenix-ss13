@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Fixes mutant variants for head and mask, and HIDESNOUT flag"
