@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Added an archeology trader, you'll be able to see him always spawn in the FTU tradehouse"
