@@ -64,6 +64,11 @@
 	/// Our sound loop
 	var/datum/looping_sound/drill/soundloop
 
+/obj/machinery/power/mining_drill/can_terminal_dismantle()
+	if(panel_open)
+		return TRUE
+	. = FALSE
+
 /obj/machinery/power/mining_drill/Destroy()
 	QDEL_NULL(soundloop)
 	on_deconstruction()
@@ -81,6 +86,19 @@
 		cell = null
 	if(current_node)
 		UnregisterNode()
+
+/obj/machinery/power/mining_drill/proc/UpdateAnchored()
+	var/target_anchored
+	if(terminal || length(connected_braces) || initial(anchored))
+		target_anchored = TRUE
+	else
+		target_anchored = FALSE
+	if(target_anchored == anchored)
+		return
+	anchored = target_anchored
+	if(!anchored && current_node)
+		UnregisterNode()
+	update_icon()
 
 /obj/machinery/power/mining_drill/proc/RegisterNode(datum/ore_node/node)
 	current_node = node
@@ -157,12 +175,13 @@
 /obj/machinery/power/mining_drill/attackby(obj/item/W, mob/user, params)
 	if(panel_open && can_have_external_power && !terminal && istype(W, /obj/item/stack/cable_coil))
 		var/obj/item/stack/S = W
-		if(S.use(5))
+		if(S.use(10))
 			var/tdir = get_dir(user, src)
 			terminal = new /obj/machinery/power/terminal(get_turf(user))
 			terminal.setDir(tdir)
 			terminal.master = src
 			to_chat(user, "<span class='notice'>You connect a terminal to [src].</span>")
+			UpdateAnchored()
 		else
 			to_chat(user, "<span class='warning'>You need 5 cables to wire a terminal for [src].</span>")
 		return
@@ -245,18 +264,25 @@
 		dump_ticker++
 		if(dump_ticker > 5)
 			dump_ore()
+			//"Dig" into the ground too
+			var/turf/my_turf = get_turf(src)
+			my_turf.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /obj/machinery/power/mining_drill/disconnect_terminal()
 	if(terminal)
 		terminal.master = null
 		terminal = null
+		UpdateAnchored()
 
 /obj/machinery/power/mining_drill/wirecutter_act(mob/living/user, obj/item/W)
 	. = ..()
 	if(terminal && panel_open)
-		new /obj/item/stack/cable_coil(get_turf(src), 5)
 		terminal.dismantle(user, W)
 		return TRUE
+
+/obj/machinery/power/mining_drill/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
+	if(current_node)
+		UnregisterNode()
 
 /obj/machinery/power/mining_drill/proc/turn_on()
 	active = TRUE
@@ -408,10 +434,8 @@
 
 /obj/machinery/mining_brace/proc/disconnect()
 	connected_drill.connected_braces -= src
-	if(!length(connected_drill.connected_braces))
-		connected_drill.anchored = FALSE
-		connected_drill.update_icon()
-	else if (length(connected_drill.connected_braces) < connected_drill.required_braces)
+	connected_drill.UpdateAnchored()
+	if(length(connected_drill.connected_braces) < connected_drill.required_braces)
 		connected_drill.turn_off()
 	connected_drill = null
 	anchored = FALSE
@@ -419,9 +443,8 @@
 /obj/machinery/mining_brace/proc/connect(obj/machinery/power/mining_drill/passed_drill)
 	connected_drill = passed_drill
 	connected_drill.connected_braces += src
-	connected_drill.anchored = TRUE
 	anchored = TRUE
-	connected_drill.update_icon_state()
+	connected_drill.UpdateAnchored()
 
 /obj/machinery/mining_brace/ComponentInitialize()
 	. = ..()
