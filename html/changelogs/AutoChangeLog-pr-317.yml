@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscdel: "Removes designs of quantum pads and quantum spin inverters from research nodes"

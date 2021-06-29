@@ -317,3 +317,20 @@
   - rscadd: Adds The Ironwrought, Mining/Engineering environment shuttle.
   - rscadd: Adds a Whiteship, The Barrows (V1), a mobile ship ready to provide a roleplay
       medical mystery at the bar.
+2021-06-29:
+  Azarak:
+  - rscadd: Changes blend mode of sandstorms, they should look better now
+  - rscdel: Removes designs of quantum pads and quantum spin inverters from research
+      nodes
+  - bugfix: Fixes shuttle freeform port cleanup
+  - rscadd: Traders if have less than 50% their starting cash they'll receive paychecks
+      over time.
+  - rscadd: Traders now also have 7000 cash from 5000 and the Rock n Drill trader
+      now has 15000
+  - rscdel: Removes cash redemption from the mining vendor
+  - rscadd: Added an archeology trader, you'll be able to see him always spawn in
+      the FTU tradehouse
+  - rscadd: Console for Shuttle Purchasing have been added to all maps, you can purchase
+      shuttles there.. if you are rich enough
+  - rscadd: Added a new shuttle called Vulture, for the purpose of purchasing it
+  - qol: Ghosts now start with normal lighting alpha

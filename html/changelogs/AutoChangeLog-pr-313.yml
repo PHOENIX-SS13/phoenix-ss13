@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Traders if have less than 50% their starting cash they'll receive paychecks over time."
-  - rscadd: "Traders now also have 7000 cash from 5000 and the Rock n Drill trader now has 15000"

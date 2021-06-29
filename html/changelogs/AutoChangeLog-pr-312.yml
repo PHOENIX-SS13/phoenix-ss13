@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Console for Shuttle Purchasing have been added to all maps, you can purchase shuttles there.. if you are rich enough"
-  - rscadd: "Added a new shuttle called Vulture, for the purpose of purchasing it"
