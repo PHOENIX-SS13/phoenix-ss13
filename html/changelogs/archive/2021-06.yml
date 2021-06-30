@@ -334,3 +334,11 @@
       shuttles there.. if you are rich enough
   - rscadd: Added a new shuttle called Vulture, for the purpose of purchasing it
   - qol: Ghosts now start with normal lighting alpha
+2021-06-30:
+  Azarak:
+  - bugfix: Turfs now properly restore areas after shuttle movements
+  - bugfix: Fixes jungle turfs having wrong gas mixes set
+  - bugfix: Broken states for planetary turfs
+  - bugfix: Fixes mining drill terminal bugs
+  MissFox0810:
+  - qol: Hazzar.. The telecoms machines are no longer deafening.
