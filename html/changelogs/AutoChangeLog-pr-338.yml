@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Refactored planetary turfs, fixing a good variety of bugs relating to them"
