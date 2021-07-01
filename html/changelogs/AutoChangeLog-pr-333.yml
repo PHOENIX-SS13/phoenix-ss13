@@ -1,0 +1,6 @@
+author: "rhodochrositech"
+delete-after: True
+changes: 
+  - rscadd: "Hyper Reality Visor FoxCat Armor"
+  - imageadd: "added all iconography and images for the armor"
+  - code_imp: "changes chronosuit's teleportation to have a checker if it's something other than the chronosuit, to avoid dropping items."
