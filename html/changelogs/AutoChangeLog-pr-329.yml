@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Moved safe's item insertion to LateInitialize to support spawners"

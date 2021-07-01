@@ -1,6 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - qol: "small lights no longer will be delayed or play a sound"
-  - bugfix: "fixed lighting desynchronisation that could be achieved by switching fire alarm and light switch fast"
-  - bugfix: "coloring a light no longer will cause the update to be delayed"
