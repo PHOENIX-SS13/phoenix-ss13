@@ -187,3 +187,75 @@
 	icon_state = "radshelter"
 	is_editable = TRUE
 
+/obj/structure/sign/warning/turrets
+	name = "\improper TURRETS sign"
+	sign_change_name = "Warning - Turrets"
+	desc = "A warning sign which reads 'TURRETS'."
+	icon_state = "turrets"
+	is_editable = TRUE
+
+/obj/structure/sign/warning/falling
+	name = "\improper FALLING HAZARD sign"
+	sign_change_name = "Warning - Falling Hazard"
+	desc = "A warning sign which reads 'FALLING HAZARD'."
+	icon_state = "falling"
+	is_editable = TRUE
+
+/obj/structure/sign/warning/movingparts
+	name = "\improper MOVING PARTS sign"
+	sign_change_name = "Warning - Moving Parts"
+	desc = "A warning sign which reads 'MOVING PARTS'."
+	icon_state = "movingparts"
+	is_editable = TRUE
+
+/obj/structure/sign/warning/armory
+	name = "\improper ARMORY sign"
+	sign_change_name = "Warning - Armory"
+	desc = "A warning sign which reads 'ARMORY'."
+	icon_state = "armory"
+	is_editable = TRUE
+
+/obj/structure/sign/warning/server
+	name = "\improper SERVER sign"
+	sign_change_name = "Warning - Server"
+	desc = "A warning sign which reads 'SERVER'."
+	icon_state = "server"
+	is_editable = TRUE
+
+//////////SMALL SIGNS
+
+/obj/structure/sign/warning/vacuum/small
+	sign_change_name = "Warning - Hard Vacuum (small)"
+	icon_state = "space-small"
+
+/obj/structure/sign/warning/movingparts/small
+	sign_change_name = "Warning - Moving Parts (small)"
+	icon_state = "movingparts-small"
+
+/obj/structure/sign/warning/armory/small
+	sign_change_name = "Warning - Armory (small)"
+	icon_state = "armory-small"
+
+/obj/structure/sign/warning/server/small
+	sign_change_name = "Warning - Server (small)"
+	icon_state = "server-small"
+
+/obj/structure/sign/warning/fire/small
+	sign_change_name = "Warning - Fire Hazard (small)"
+	icon_state = "fire-small"
+
+/obj/structure/sign/warning/nosmoking/small
+	sign_change_name = "Warning - No Smoking (small)"
+	icon_state = "nosmoking-small"
+
+/obj/structure/sign/warning/securearea/small
+	sign_change_name = "Warning - Secure Area (small)"
+	icon_state = "securearea-small"
+
+/obj/structure/sign/warning/electricshock/small
+	sign_change_name = "Warning - High Voltage (small)"
+	icon_state = "shock-small"
+
+/obj/structure/sign/warning/radiation/small
+	sign_change_name = "Warning - Radiation (small)"
+	icon_state = "radiation-small"
