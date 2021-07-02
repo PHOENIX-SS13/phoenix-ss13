@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - balance: "Weather now occurs ~33% less frequently"
