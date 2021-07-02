@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Possibly fixes issues with day/night and thunder overlays sticking, making the outdoors areas fullbright"
+  - code_imp: "made day/night subsystem run less often and early return if there wasn't anything to update"
