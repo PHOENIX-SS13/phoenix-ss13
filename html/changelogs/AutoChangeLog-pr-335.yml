@@ -1,5 +1,0 @@
-author: "Azarak, baystation"
-delete-after: True
-changes: 
-  - rscadd: "Adds more wall signs (Deck signs, new signs, lots of small variants too)"
-  - imageadd: "More wall sign sprites."

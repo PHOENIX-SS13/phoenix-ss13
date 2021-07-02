@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Adds Shuttle Platforms for purchasing at the Shuttle Purchase computer. They're empty shuttles used for \"Build your own shuttle\" purposes. There's several variants of them and they come with supplies"
-  - bugfix: "MS Vulture now has the proper dock direction"

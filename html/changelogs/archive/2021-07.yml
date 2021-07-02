@@ -142,3 +142,21 @@
   - bugfix: Fixes weather effect sprite loops
   CypressBz:
   - rscadd: Added a new Ruin!
+2021-07-02:
+  Azarak:
+  - bugfix: Refactored planetary turfs, fixing a good variety of bugs relating to
+      them
+  - rscadd: Adds Shuttle Platforms for purchasing at the Shuttle Purchase computer.
+      They're empty shuttles used for "Build your own shuttle" purposes. There's several
+      variants of them and they come with supplies
+  - bugfix: MS Vulture now has the proper dock direction
+  Azarak, baystation:
+  - rscadd: Adds more wall signs (Deck signs, new signs, lots of small variants too)
+  - imageadd: More wall sign sprites.
+  CypressBz:
+  - rscadd: Adds some new concrete walls!
+  rhodochrositech:
+  - rscadd: Hyper Reality Visor FoxCat Armor
+  - imageadd: added all iconography and images for the armor
+  - code_imp: changes chronosuit's teleportation to have a checker if it's something
+      other than the chronosuit, to avoid dropping items.
