@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - qol: "Day/night blend now has a smoother (bigger) transition. It's edges are now circular instead of box shaped too"
+  - bugfix: "Fixes shuttles forcing outdoor areas to build a day/night blend"
