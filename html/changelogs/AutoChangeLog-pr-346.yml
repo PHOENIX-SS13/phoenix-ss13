@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Fixes bandaged limbs being able to be bandaged again, and small examine fix regarding fully ruined bandages"
