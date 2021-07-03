@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Fixes mining drills being left behind by shuttles"

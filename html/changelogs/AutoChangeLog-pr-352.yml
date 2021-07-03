@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Fixes shuttles no longer being able to dock on planetary turfs"
