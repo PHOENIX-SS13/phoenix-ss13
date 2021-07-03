@@ -1,0 +1,5 @@
+author: "rhodochrositech"
+delete-after: True
+changes: 
+  - rscadd: "Added the Supercruiser Aggregeddon, the larger, more equipped lander/cruiser dedicated weapons platform ship."
+  - rscadd: "Added the Supercruiser Mezzeriah, a lighter and more agile ship with dual silos. Not designed for landing, and is in designed to be a moderate strike craft."
