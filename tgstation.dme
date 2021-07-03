@@ -3489,6 +3489,7 @@
 #include "code\modules\shuttle\sold_shuttles.dm"
 #include "code\modules\shuttle\spaceship_navigation_beacon.dm"
 #include "code\modules\shuttle\special.dm"
+#include "code\modules\shuttle\supercruiser.dm"
 #include "code\modules\shuttle\supply.dm"
 #include "code\modules\shuttle\syndicate.dm"
 #include "code\modules\shuttle\white_ship.dm"

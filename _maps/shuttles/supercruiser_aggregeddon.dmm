@@ -1,0 +1,2818 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ai" = (
+/obj/machinery/light/floor,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "mechdoors"
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"an" = (
+/obj/machinery/teleport/hub,
+/obj/structure/cable,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"au" = (
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"aX" = (
+/obj/structure/closet/secure_closet/ert_engi,
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"bl" = (
+/obj/docking_port/mobile{
+	dir = 4;
+	dwidth = 13;
+	height = 3;
+	id = "aggregeddon";
+	launch_status = 0;
+	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	name = "Supercruiser Aggregeddon";
+	preferred_direction = 8;
+	width = 26
+	},
+/obj/machinery/door/airlock/external/glass{
+	id_tag = "piratestarboardexternal"
+	},
+/obj/structure/fans/tiny,
+/obj/structure/fans/tiny,
+/obj/structure/fans/tiny,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"bB" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/executive,
+/area/shuttle/aggregeddon)
+"bE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"bN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"cG" = (
+/obj/machinery/light/floor,
+/obj/item/beacon,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"cJ" = (
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"cL" = (
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/obj/structure/closet/crate/rcd,
+/obj/structure/cable,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"cR" = (
+/obj/structure/closet/radiation,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"cW" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/laser,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"dk" = (
+/obj/machinery/light/floor,
+/obj/machinery/door/poddoor/shutters{
+	id = "mechdoors"
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"dm" = (
+/obj/machinery/computer/teleporter,
+/obj/structure/cable,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"ds" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"dy" = (
+/turf/open/space/basic,
+/area/template_noop)
+"dA" = (
+/turf/open/floor/plating,
+/area/shuttle/aggregeddon)
+"dC" = (
+/obj/machinery/stasis{
+	dir = 8
+	},
+/obj/structure/curtain/bounty,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"dI" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/aggregeddon)
+"eq" = (
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"eu" = (
+/obj/machinery/light/floor,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"fc" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse/pistol/m1911,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"fe" = (
+/obj/machinery/light/floor,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/grimy,
+/area/shuttle/aggregeddon)
+"fh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"fB" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"fP" = (
+/obj/item/hfr_box/corner,
+/turf/open/floor/plating,
+/area/shuttle/aggregeddon)
+"gh" = (
+/obj/machinery/computer/shuttle/supercruiser_aggregeddon{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit,
+/area/shuttle/aggregeddon)
+"gn" = (
+/obj/machinery/computer/crew{
+	dir = 1
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"gu" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"gy" = (
+/obj/machinery/mining_brace,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"gO" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/aggregeddon)
+"hj" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/temperature,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"hl" = (
+/obj/machinery/shieldgen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"hn" = (
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"hD" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/ionrifle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"hG" = (
+/obj/machinery/computer/teleporter{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"hU" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"ik" = (
+/obj/structure/closet/secure_closet/ert_med,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"iC" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"iJ" = (
+/obj/machinery/chem_master,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"iL" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/closet/secure_closet/ert_com,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"iS" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse/pistol/m1911,
+/obj/item/storage/belt/grenade/full,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"iT" = (
+/obj/machinery/modular_computer/console/preset/id/centcom{
+	dir = 8
+	},
+/obj/structure/railing,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit,
+/area/shuttle/aggregeddon)
+"iV" = (
+/obj/effect/spawner/lootdrop/melee_weapon,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"jH" = (
+/obj/machinery/computer/operating{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"jS" = (
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/grimy,
+/area/shuttle/aggregeddon)
+"kd" = (
+/obj/machinery/smartfridge/organ,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"kt" = (
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"kx" = (
+/obj/structure/cable,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"kB" = (
+/obj/structure/closet/secure_closet/ert_sec,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"kH" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"kM" = (
+/obj/machinery/nuclearbomb,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"kZ" = (
+/obj/machinery/button/door{
+	id = "gundoors";
+	name = "Gun Bay Doors";
+	pixel_y = 8
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/aggregeddon)
+"lp" = (
+/obj/structure/table/optable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"lv" = (
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"lx" = (
+/obj/machinery/shield_generator,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"lA" = (
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"lG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"lV" = (
+/obj/vehicle/sealed/mecha/working/ripley/deathripley/real,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"mc" = (
+/obj/structure/chair/office,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"mi" = (
+/obj/structure/cable,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"mA" = (
+/obj/structure/cable,
+/obj/machinery/light/floor,
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"mD" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"mT" = (
+/obj/machinery/shieldgen,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"mX" = (
+/obj/machinery/light/floor,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"mZ" = (
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"no" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"nK" = (
+/obj/machinery/power/grounding_rod,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"nS" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/executive,
+/area/shuttle/aggregeddon)
+"oa" = (
+/obj/machinery/power/grounding_rod,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"oC" = (
+/obj/structure/cable,
+/obj/machinery/light/floor,
+/obj/machinery/door/poddoor/shutters{
+	id = "gundoors"
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"oJ" = (
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"oK" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse/pistol/m1911,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"pg" = (
+/obj/structure/cable,
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"pq" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/radiation{
+	id = "smengineshutter"
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"pw" = (
+/turf/open/floor/circuit,
+/area/shuttle/aggregeddon)
+"pF" = (
+/obj/structure/closet/secure_closet/ert_sec,
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"pG" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/door/airlock/security/glass,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"qx" = (
+/obj/item/beacon,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"qG" = (
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/obj/machinery/chem_dispenser/drinks,
+/obj/structure/table/reinforced,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"qN" = (
+/obj/structure/cable,
+/obj/machinery/bsa/front,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"qO" = (
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"rz" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"rB" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"rG" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/mineral/plasma/thirty,
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"rJ" = (
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"rR" = (
+/obj/machinery/shieldgen,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"sp" = (
+/obj/structure/closet/crate/maint,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"sB" = (
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"sI" = (
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit,
+/area/shuttle/aggregeddon)
+"sM" = (
+/obj/machinery/suit_storage_unit/ert/command,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"sU" = (
+/obj/machinery/chem_heater,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"sZ" = (
+/obj/machinery/button/door{
+	id = "mechdoors";
+	name = "Mech Bay Doors";
+	pixel_y = -4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/aggregeddon)
+"th" = (
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"tr" = (
+/obj/machinery/light/floor,
+/obj/structure/closet/ammunitionlocker,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"tV" = (
+/obj/machinery/airalarm/directional/west,
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"ue" = (
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"uM" = (
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"uR" = (
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"uT" = (
+/obj/machinery/modular_computer/console/preset/engineering{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit,
+/area/shuttle/aggregeddon)
+"vc" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"vl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/grimy,
+/area/shuttle/aggregeddon)
+"vo" = (
+/obj/structure/closet/crate/medical,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"vy" = (
+/obj/structure/shuttle/engine/large{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/aggregeddon)
+"vP" = (
+/obj/structure/cable,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/aggregeddon)
+"vW" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/computer/bsa_control,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/cable,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"wt" = (
+/obj/machinery/modular_computer/console/preset/civilian,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit,
+/area/shuttle/aggregeddon)
+"wv" = (
+/obj/effect/spawner/lootdrop/handgun,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"wD" = (
+/obj/structure/closet/crate/science,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"wI" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"wU" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"xd" = (
+/obj/machinery/rnd/production/techfab/department/engineering,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"xg" = (
+/obj/structure/cable,
+/obj/structure/fans/tiny,
+/turf/open/indestructible/hierophant,
+/area/shuttle/aggregeddon)
+"xE" = (
+/obj/structure/sign/directions/medical,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/aggregeddon)
+"xH" = (
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"xI" = (
+/obj/machinery/rnd/production/circuit_imprinter,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"xM" = (
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/obj/item/hfr_box/corner,
+/obj/item/hfr_box/corner,
+/obj/item/hfr_box/corner,
+/obj/item/hfr_box/corner,
+/obj/item/hfr_box/corner,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"xO" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/aggregeddon)
+"xQ" = (
+/obj/structure/cable,
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"xR" = (
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"yq" = (
+/obj/machinery/button/door{
+	id = "mechdoors";
+	name = "Mech Bay Doors";
+	pixel_y = -4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/aggregeddon)
+"zq" = (
+/obj/machinery/teleport/station,
+/obj/structure/cable,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"zV" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"zY" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Ad" = (
+/obj/machinery/door/airlock/security/glass,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Ah" = (
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/fans/tiny,
+/turf/open/indestructible/hierophant,
+/area/shuttle/aggregeddon)
+"Ao" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Av" = (
+/obj/machinery/light/floor,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"AJ" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/ionrifle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"AL" = (
+/obj/structure/cable,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/aggregeddon)
+"AO" = (
+/turf/open/indestructible/hierophant,
+/area/shuttle/aggregeddon)
+"AV" = (
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Bf" = (
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"Bh" = (
+/obj/structure/closet/radiation,
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"BO" = (
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"Ce" = (
+/obj/effect/spawner/lootdrop/medkit,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"Co" = (
+/obj/machinery/light/floor,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"Cx" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"CE" = (
+/obj/vehicle/sealed/mecha/combat/phazon,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"CO" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Db" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/laser,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"Dl" = (
+/obj/machinery/computer/bsa_control,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"DV" = (
+/obj/structure/fans/tiny,
+/turf/open/indestructible/hierophant,
+/area/shuttle/aggregeddon)
+"DY" = (
+/obj/machinery/light/floor,
+/obj/machinery/mining_brace,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Ee" = (
+/obj/structure/shuttle/engine/huge{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/aggregeddon)
+"En" = (
+/obj/structure/fans/tiny,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/hierophant,
+/area/shuttle/aggregeddon)
+"Ez" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/executive,
+/area/shuttle/aggregeddon)
+"EU" = (
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"Fl" = (
+/obj/structure/closet/crate/secure/gear,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"FD" = (
+/obj/structure/cable,
+/obj/machinery/bsa/middle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"Gy" = (
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/obj/structure/cable,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"GO" = (
+/obj/machinery/airalarm/directional/west,
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	id = "mechdoors";
+	name = "Mech Bay Doors";
+	pixel_y = -4
+	},
+/obj/machinery/button/door{
+	id = "gundoors";
+	name = "Gun Bay Doors";
+	pixel_y = 8
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"GY" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/zipties,
+/obj/item/clothing/suit/straight_jacket,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Hi" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse,
+/obj/item/storage/belt/grenade/full,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Hw" = (
+/obj/item/stack/sheet/mineral/plasma/thirty,
+/obj/structure/table/reinforced,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"HF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/hierophant,
+/area/shuttle/aggregeddon)
+"HQ" = (
+/obj/structure/window/plasma/reinforced/fulltile,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"HV" = (
+/obj/machinery/vending/medical,
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Ip" = (
+/obj/structure/cable,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"Iw" = (
+/obj/machinery/ore_silo,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Iz" = (
+/obj/structure/tank_dispenser,
+/turf/open/floor/plating,
+/area/shuttle/aggregeddon)
+"ID" = (
+/obj/machinery/keycard_auth,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/aggregeddon)
+"IM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"IQ" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"Jg" = (
+/obj/structure/cable,
+/obj/machinery/shieldgen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"Jq" = (
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"Jz" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/laser/hellgun,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"JP" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/radiation{
+	id = "gunports"
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"JX" = (
+/obj/machinery/door/airlock/command,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"JY" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/helmet/space/chronos/hrvfoxcat,
+/obj/item/clothing/suit/space/chronos/hrvfoxcat,
+/obj/item/gun/energy/minigun,
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"JZ" = (
+/obj/machinery/light/floor,
+/obj/structure/closet/secure_closet/ert_engi,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/grimy,
+/area/shuttle/aggregeddon)
+"KL" = (
+/obj/machinery/modular_computer/console/preset/engineering{
+	dir = 1
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"Lu" = (
+/obj/structure/table/optable,
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Ly" = (
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/door/airlock/security/glass,
+/obj/machinery/light/floor,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"LA" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"LF" = (
+/obj/vehicle/sealed/mecha/combat/marauder/seraph,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"LQ" = (
+/obj/structure/closet/secure_closet/ert_engi,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"Mi" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/syringes,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"MA" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/temperature,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"MK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"Ns" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"NC" = (
+/obj/machinery/door/airlock/medical/glass,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"NK" = (
+/obj/machinery/telecomms/relay/preset/auto,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"NL" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse/pistol/m1911,
+/obj/item/gun/grenadelauncher,
+/obj/item/storage/belt/grenade/full,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"NQ" = (
+/obj/structure/cable,
+/obj/machinery/mining_brace,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Op" = (
+/obj/structure/cable,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"OE" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/grimy,
+/area/shuttle/aggregeddon)
+"OU" = (
+/obj/machinery/light/floor,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"Pa" = (
+/obj/structure/cable,
+/obj/machinery/power/smes/magical,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"Po" = (
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Pu" = (
+/obj/structure/closet/secure_closet/atmospherics,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"PN" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse/pistol/m1911,
+/obj/item/gun/grenadelauncher,
+/obj/item/storage/belt/grenade/full,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Qi" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"QA" = (
+/obj/machinery/modular_computer/console/preset/civilian{
+	dir = 1
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"QL" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Ri" = (
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/suit_storage_unit/ert/engineer,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Rj" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Rw" = (
+/obj/machinery/light/floor,
+/obj/structure/window/plasma/reinforced/fulltile,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"RK" = (
+/obj/machinery/power/mining_drill/cell,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"RM" = (
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/light/cold/no_nightlight/directional/east,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"RO" = (
+/obj/structure/table/reinforced,
+/obj/item/toy/plush/borbplushie,
+/obj/structure/cable,
+/obj/item/card/id/advanced/gold/captains_spare,
+/obj/machinery/keycard_auth,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"RS" = (
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/obj/structure/closet/crate/maint,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"Sp" = (
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"Sr" = (
+/obj/machinery/teleport/hub,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"SF" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/executive,
+/area/shuttle/aggregeddon)
+"SK" = (
+/obj/machinery/shieldgen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"SS" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"SX" = (
+/obj/machinery/light/floor,
+/obj/machinery/door/poddoor/shutters{
+	id = "gundoors"
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Tl" = (
+/obj/machinery/door/airlock/engineering/glass,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Tt" = (
+/obj/structure/closet/ammunitionlocker,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"TQ" = (
+/obj/structure/railing,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/executive,
+/area/shuttle/aggregeddon)
+"Ud" = (
+/obj/machinery/door/airlock/engineering/glass,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"Us" = (
+/obj/vehicle/sealed/mecha/medical/odysseus,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Uv" = (
+/obj/machinery/stasis{
+	dir = 8
+	},
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/obj/structure/curtain/bounty,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"UM" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/aggregeddon)
+"UO" = (
+/obj/structure/sign/warning/explosives,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/aggregeddon)
+"UW" = (
+/obj/machinery/airalarm/directional/west,
+/obj/structure/closet/secure_closet/engineering_chief,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/grimy,
+/area/shuttle/aggregeddon)
+"Vp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"VW" = (
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Wf" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/obj/item/hand_tele,
+/obj/item/hand_tele,
+/obj/item/hand_tele,
+/obj/structure/table/reinforced,
+/obj/structure/cable,
+/obj/machinery/button/door{
+	id = "gundoors";
+	name = "Gun Bay Doors";
+	pixel_y = 8
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"Wh" = (
+/obj/structure/bodycontainer/morgue{
+	dir = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Wj" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"Wo" = (
+/obj/machinery/chem_dispenser/fullupgrade,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"Wr" = (
+/obj/effect/spawner/lootdrop/hardsuit,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"WW" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"Xc" = (
+/obj/machinery/light/floor,
+/obj/structure/closet/ammunitionlocker,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"Xi" = (
+/obj/structure/cable,
+/obj/machinery/bsa/back,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/freezer,
+/area/shuttle/aggregeddon)
+"Xn" = (
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"Xx" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/mining_brace,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"XM" = (
+/obj/machinery/light/floor,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/aggregeddon)
+"XQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"XT" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/beakers/variety,
+/turf/open/floor/carpet/blue,
+/area/shuttle/aggregeddon)
+"XY" = (
+/obj/structure/closet/crate/secure/gear,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"Ye" = (
+/obj/machinery/light/floor,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "gundoors"
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Yo" = (
+/obj/machinery/light/cold/no_nightlight/directional/west,
+/obj/machinery/teleport/station,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/aggregeddon)
+"Yt" = (
+/obj/vehicle/sealed/mecha/combat/phazon,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"Yw" = (
+/obj/machinery/light/floor,
+/obj/machinery/door/poddoor/shutters{
+	id = "gundoors"
+	},
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Yx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"Yz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/aggregeddon)
+"YH" = (
+/obj/structure/closet/crate/medical,
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"YN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"YZ" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse,
+/obj/item/storage/belt/grenade/full,
+/turf/open/floor/engine,
+/area/shuttle/aggregeddon)
+"Zj" = (
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Zk" = (
+/obj/machinery/shieldgen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/aggregeddon)
+"Zm" = (
+/turf/open/floor/iron/textured,
+/area/shuttle/aggregeddon)
+"ZB" = (
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/smooth,
+/area/shuttle/aggregeddon)
+"ZM" = (
+/obj/structure/cable,
+/obj/structure/fans/tiny,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/hierophant,
+/area/shuttle/aggregeddon)
+
+(1,1,1) = {"
+dy
+dy
+dy
+dA
+dA
+Ee
+dA
+dA
+Ee
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dA
+vy
+dA
+vy
+dy
+"}
+(2,1,1) = {"
+dy
+xO
+xO
+dA
+dA
+dA
+dA
+dA
+dA
+xO
+xO
+xO
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+xO
+xO
+dA
+dA
+dA
+dA
+xO
+"}
+(3,1,1) = {"
+xO
+rR
+xO
+fP
+dA
+dA
+dA
+dA
+dA
+xO
+NK
+SK
+xO
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+xO
+Zk
+xO
+dI
+dI
+dI
+dI
+xO
+"}
+(4,1,1) = {"
+xO
+kM
+xO
+dI
+dI
+dI
+dI
+dI
+dI
+xO
+lA
+wv
+wU
+QL
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+QL
+wU
+vo
+iC
+wU
+wU
+wU
+wU
+xO
+"}
+(5,1,1) = {"
+QL
+hn
+hn
+wU
+wU
+wU
+wU
+wU
+wU
+wv
+Yz
+XQ
+Wr
+wU
+QL
+dy
+dy
+dy
+dy
+dy
+QL
+wU
+Wh
+vo
+Cx
+ik
+ik
+ik
+Zk
+QL
+"}
+(6,1,1) = {"
+QL
+eq
+Av
+xO
+xO
+xO
+xO
+xO
+Iz
+Yz
+Yz
+Jq
+iV
+Yz
+wU
+QL
+dy
+dy
+dy
+QL
+wU
+Wh
+YN
+xR
+YN
+Sp
+Sp
+Sp
+Lu
+QL
+"}
+(7,1,1) = {"
+QL
+xO
+hn
+hn
+Hw
+rG
+ue
+xO
+Iz
+Yz
+Yz
+Ce
+Yz
+Yz
+SK
+wU
+QL
+dy
+QL
+wU
+Wh
+YN
+YN
+Po
+YN
+Sp
+eu
+Sp
+jH
+QL
+"}
+(8,1,1) = {"
+xO
+xO
+no
+hn
+Av
+hn
+VW
+tV
+xO
+uM
+mZ
+xO
+xO
+xO
+xO
+xO
+wU
+QL
+wU
+xO
+xO
+xO
+xO
+xO
+wI
+Sp
+kd
+Sp
+Rj
+xO
+"}
+(9,1,1) = {"
+xO
+VW
+VW
+VW
+VW
+VW
+VW
+Ao
+pq
+fh
+fh
+dk
+LF
+lV
+Yx
+JY
+Yx
+Yx
+Yx
+JY
+Yt
+CE
+hU
+ai
+zY
+sU
+Mi
+Sp
+lp
+xO
+"}
+(10,1,1) = {"
+xO
+VW
+xd
+Vp
+hn
+Vp
+Vp
+uR
+pq
+fh
+fh
+dk
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+hU
+hU
+ai
+zY
+Wo
+XT
+Sp
+jH
+xO
+"}
+(11,1,1) = {"
+QL
+VW
+xI
+Vp
+Vp
+RK
+Vp
+Vp
+pq
+fh
+fh
+dk
+Yx
+Jz
+fc
+PN
+Yx
+Yx
+Yx
+Jz
+MA
+Db
+Yx
+dk
+YN
+iJ
+XT
+Sp
+dC
+QL
+"}
+(12,1,1) = {"
+QL
+mA
+AV
+Vp
+Vp
+RK
+Vp
+sB
+Tl
+fh
+Xn
+dk
+Yx
+Xc
+Jz
+Tt
+Yx
+ZB
+Yx
+Tt
+oK
+tr
+Yx
+dk
+YN
+Sp
+Sp
+Sp
+Uv
+QL
+"}
+(13,1,1) = {"
+QL
+VW
+Iw
+hn
+Vp
+RK
+Vp
+Vp
+pq
+fh
+fh
+dk
+Yx
+hD
+hj
+cW
+Yx
+Yx
+Yx
+Jz
+AJ
+NL
+Yx
+dk
+YN
+Sp
+Sp
+Sp
+dC
+QL
+"}
+(14,1,1) = {"
+xO
+NQ
+hn
+hn
+Vp
+Vp
+Vp
+uR
+pq
+fh
+fh
+dk
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+Yx
+hU
+Yx
+dk
+YN
+Sp
+eu
+Sp
+GY
+xO
+"}
+(15,1,1) = {"
+xO
+NQ
+hn
+hn
+hn
+hn
+hn
+hn
+JP
+fh
+fh
+dk
+Yx
+Yx
+Yx
+Yx
+th
+Yx
+LA
+Yx
+Yx
+hU
+Yx
+dk
+YN
+Sp
+Sp
+Sp
+GY
+xO
+"}
+(16,1,1) = {"
+xO
+vP
+Xx
+gy
+DY
+gy
+xM
+Ri
+xO
+pG
+sZ
+UO
+QL
+QL
+QL
+QL
+gO
+Tl
+gO
+QL
+QL
+SS
+QL
+yq
+Us
+YN
+MK
+YN
+HV
+xO
+"}
+(17,1,1) = {"
+QL
+vP
+xO
+xO
+xO
+xO
+xO
+xO
+Wj
+OU
+au
+Yw
+YH
+RS
+sp
+sp
+EU
+qO
+EU
+XY
+wD
+cL
+sp
+Yw
+xO
+xO
+NC
+xE
+xO
+QL
+"}
+(18,1,1) = {"
+QL
+xQ
+Sr
+Yo
+hG
+Sr
+Yo
+hG
+Wj
+Wj
+Wj
+Yw
+Zm
+oa
+oa
+oa
+Zm
+pw
+Zm
+oa
+oa
+nK
+Ip
+SX
+Gy
+rB
+oJ
+oJ
+Bf
+QL
+"}
+(19,1,1) = {"
+QL
+kx
+kx
+kx
+kx
+kx
+kx
+kx
+kx
+kx
+kx
+oC
+Ip
+lv
+gu
+gu
+Ip
+mi
+Ip
+gu
+gu
+gu
+Ip
+SX
+Op
+Op
+oJ
+oJ
+oJ
+QL
+"}
+(20,1,1) = {"
+xO
+kB
+lG
+ds
+Fl
+UM
+ds
+lG
+UM
+Wj
+Wj
+Yw
+Zm
+gu
+gu
+gu
+Zm
+Co
+Zm
+gu
+gu
+gu
+Zm
+Yw
+oJ
+oJ
+oJ
+mc
+KL
+xO
+"}
+(21,1,1) = {"
+xO
+kB
+lG
+ds
+lG
+UM
+ds
+lG
+UM
+Wj
+Wj
+Yw
+Zm
+Ao
+Ao
+Ao
+Zm
+qO
+Zm
+Ao
+Ao
+Ao
+Zm
+Yw
+oJ
+oJ
+XM
+mc
+QA
+xO
+"}
+(22,1,1) = {"
+xO
+kB
+lG
+rz
+lG
+UM
+rz
+Fl
+IQ
+Wj
+Wj
+Yw
+Zm
+Ao
+Pa
+Ao
+Zm
+qO
+Zm
+Ao
+Pa
+Ao
+Zm
+Yw
+oJ
+oJ
+oJ
+mc
+KL
+xO
+"}
+(23,1,1) = {"
+QL
+hl
+lG
+ds
+lG
+UM
+ds
+lG
+UM
+Wj
+Wj
+Yw
+Zm
+Ao
+BO
+Ao
+Zm
+qO
+Zm
+Ao
+BO
+Ao
+Zm
+Yw
+oJ
+oJ
+oJ
+Zj
+oJ
+QL
+"}
+(24,1,1) = {"
+QL
+kt
+lG
+lG
+lG
+Wj
+Wj
+Wj
+Wj
+Wj
+Wj
+Yw
+Zm
+Ao
+pg
+Ao
+Zm
+Co
+Zm
+Ao
+pg
+Ao
+Zm
+Yw
+oJ
+oJ
+oJ
+Zj
+qG
+QL
+"}
+(25,1,1) = {"
+QL
+lG
+lG
+Wj
+kB
+pF
+kB
+kB
+Wj
+RM
+Wj
+Yw
+Ip
+gu
+gu
+gu
+Zm
+qO
+Zm
+gu
+gu
+gu
+Zm
+Yw
+oJ
+oJ
+oJ
+Zj
+oJ
+QL
+"}
+(26,1,1) = {"
+gO
+xO
+xO
+Ud
+xO
+xO
+xO
+xO
+Ad
+xO
+kZ
+xO
+kH
+gu
+Xi
+gu
+Zm
+qO
+Zm
+gu
+Xi
+gu
+Zm
+Yw
+oJ
+oJ
+XM
+Zj
+mT
+xO
+"}
+(27,1,1) = {"
+gO
+Pu
+cJ
+cJ
+Bh
+xO
+iS
+xH
+Vp
+Vp
+Vp
+Yw
+Ip
+gu
+FD
+gu
+Zm
+qO
+Zm
+gu
+FD
+gu
+Zm
+Yw
+oJ
+oJ
+oJ
+mc
+KL
+xO
+"}
+(28,1,1) = {"
+gO
+Pu
+cJ
+cJ
+cR
+xO
+iS
+Vp
+Vp
+Vp
+Vp
+Yw
+Zm
+gu
+qN
+gu
+Zm
+Co
+Zm
+gu
+qN
+gu
+Zm
+Yw
+oJ
+oJ
+oJ
+mc
+gn
+xO
+"}
+(29,1,1) = {"
+QL
+LQ
+cJ
+cJ
+cR
+xO
+Hi
+IM
+Av
+hn
+hn
+Yw
+Zm
+gu
+xg
+gu
+Zm
+xO
+Zm
+gu
+ZM
+gu
+Ip
+Ye
+Op
+oJ
+oJ
+oJ
+oJ
+QL
+"}
+(30,1,1) = {"
+QL
+aX
+cJ
+mX
+Yz
+xO
+YZ
+Vp
+Vp
+hn
+hn
+Yw
+Zm
+bN
+En
+bN
+xO
+xO
+xO
+bN
+En
+bN
+Zm
+Yw
+Op
+oJ
+oJ
+oJ
+Bf
+QL
+"}
+(31,1,1) = {"
+QL
+fB
+Yz
+cJ
+Yz
+xO
+hn
+hn
+Vp
+Qi
+Qi
+Yw
+Zm
+hn
+DV
+Av
+xO
+dy
+xO
+Av
+DV
+hn
+Zm
+Yw
+zV
+WW
+XM
+oJ
+oJ
+QL
+"}
+(32,1,1) = {"
+gO
+fB
+Yz
+Yz
+Yz
+Ly
+hn
+hn
+Vp
+CO
+Dl
+xO
+HQ
+hn
+DV
+hn
+xO
+dy
+xO
+hn
+DV
+hn
+HQ
+xO
+vW
+Ns
+oJ
+oJ
+oJ
+gO
+"}
+(33,1,1) = {"
+dy
+gO
+cJ
+cJ
+cJ
+xO
+hn
+hn
+Vp
+Vp
+gO
+dy
+mD
+HQ
+DV
+hn
+xO
+dy
+xO
+hn
+DV
+HQ
+mD
+xO
+Wf
+oJ
+qx
+oJ
+oJ
+bl
+"}
+(34,1,1) = {"
+dy
+dy
+QL
+QL
+QL
+xO
+QL
+QL
+QL
+QL
+dy
+dy
+dy
+mD
+Ah
+Rw
+xO
+dy
+xO
+Rw
+Ah
+mD
+dy
+QL
+dm
+vc
+oJ
+oJ
+oJ
+gO
+"}
+(35,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+HF
+mD
+xO
+dy
+xO
+mD
+HF
+dy
+dy
+QL
+zq
+oJ
+oJ
+oJ
+oJ
+gO
+"}
+(36,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+xO
+dy
+xO
+dy
+dy
+dy
+dy
+QL
+an
+rJ
+oJ
+rJ
+oJ
+gO
+"}
+(37,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+xO
+dy
+xO
+dy
+dy
+dy
+dy
+gO
+AL
+QL
+JX
+QL
+gO
+gO
+"}
+(38,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+AO
+dy
+AO
+dy
+dy
+dy
+dy
+ID
+OE
+vl
+vl
+vl
+UW
+gO
+"}
+(39,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+AO
+dy
+AO
+dy
+dy
+dy
+dy
+ID
+fe
+jS
+vl
+jS
+JZ
+gO
+"}
+(40,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+AO
+dy
+AO
+dy
+dy
+dy
+dy
+gO
+AL
+QL
+JX
+QL
+gO
+gO
+"}
+(41,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+QL
+iL
+bE
+bE
+bE
+GO
+QL
+"}
+(42,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+QL
+wt
+SF
+cG
+bB
+sI
+QL
+"}
+(43,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+QL
+RO
+nS
+Ez
+TQ
+sM
+QL
+"}
+(44,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+gO
+Jg
+uT
+gh
+iT
+lx
+gO
+"}
+(45,1,1) = {"
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+dy
+QL
+QL
+QL
+QL
+QL
+dy
+"}

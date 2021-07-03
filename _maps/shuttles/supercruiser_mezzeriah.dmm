@@ -1,0 +1,2039 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"at" = (
+/obj/machinery/computer/crew{
+	dir = 8
+	},
+/obj/structure/railing,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"aB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/west,
+/obj/machinery/power/smes,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"bk" = (
+/obj/structure/closet/secure_closet/captains,
+/turf/open/floor/carpet/executive,
+/area/shuttle/mezzeriah)
+"bn" = (
+/obj/structure/closet/secure_closet/security,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"bC" = (
+/obj/structure/closet/syndicate,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"ca" = (
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"cO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/atmospherics,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"dH" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility/chief/full,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"dJ" = (
+/obj/structure/railing,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"ei" = (
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"eF" = (
+/turf/open/space/basic,
+/turf/open/space/basic,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"gT" = (
+/obj/structure/closet/secure_closet/chief_medical,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/carpet/executive,
+/area/shuttle/mezzeriah)
+"hM" = (
+/obj/machinery/teleport/station,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"hP" = (
+/obj/structure/sign/warning/chemdiamond,
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"kf" = (
+/obj/structure/table/reinforced,
+/obj/machinery/keycard_auth{
+	pixel_y = 8
+	},
+/obj/machinery/keycard_auth{
+	pixel_y = -4
+	},
+/obj/item/card/id/advanced/gold/captains_spare,
+/obj/structure/railing,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"kA" = (
+/obj/structure/railing,
+/obj/machinery/computer/shuttle/supercruiser_mezzeriah{
+	dir = 8
+	},
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"kH" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/pulse/carbine,
+/obj/item/storage/belt/security/webbing,
+/obj/item/grenade/c4,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"kY" = (
+/obj/machinery/computer/camera_advanced{
+	dir = 8
+	},
+/obj/structure/railing,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"ll" = (
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"lv" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"lJ" = (
+/obj/machinery/suit_storage_unit/ert/command,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"mj" = (
+/obj/structure/shuttle/engine/huge{
+	dir = 8
+	},
+/turf/open/space/basic,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"mD" = (
+/obj/machinery/computer/operating,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"nK" = (
+/obj/structure/table/reinforced,
+/obj/machinery/keycard_auth{
+	pixel_y = 8
+	},
+/obj/machinery/keycard_auth{
+	pixel_y = -4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"oa" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/command/glass,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"oZ" = (
+/obj/structure/sign/warning/armory,
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"po" = (
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"pu" = (
+/obj/machinery/light/warm/directional/west,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"pw" = (
+/obj/machinery/mining_laser{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/mezzeriah)
+"pU" = (
+/turf/open/floor/iron/freezer,
+/area/shuttle/mezzeriah)
+"pV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/security,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"ra" = (
+/obj/machinery/mining_laser{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/circuit/red/anim{
+	dir = 8
+	},
+/area/shuttle/mezzeriah)
+"rd" = (
+/obj/machinery/door/airlock/security/glass,
+/obj/structure/fans/tiny,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"rl" = (
+/obj/structure/sign/warning/vacuum,
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"rs" = (
+/obj/machinery/light/warm/no_nightlight/directional/east,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"rx" = (
+/obj/machinery/chem_dispenser/fullupgrade,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"sc" = (
+/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"sJ" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility/chief/full,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"tj" = (
+/obj/machinery/suit_storage_unit/ert/medical,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"tw" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"tC" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/security/full,
+/obj/item/gun/energy/pulse/pistol/m1911,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"up" = (
+/obj/structure/railing,
+/turf/open/floor/carpet/executive,
+/area/shuttle/mezzeriah)
+"uv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/corp{
+	dir = 1
+	},
+/turf/open/floor/iron/grimy,
+/area/shuttle/mezzeriah)
+"vn" = (
+/obj/machinery/computer/teleporter,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"vB" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"wu" = (
+/obj/machinery/shieldgen,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"wA" = (
+/obj/machinery/bsa/middle,
+/turf/open/floor/iron/freezer,
+/area/shuttle/mezzeriah)
+"wJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/engineering_personal,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"wU" = (
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"wY" = (
+/obj/machinery/mining_laser{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/circuit/red/anim,
+/area/shuttle/mezzeriah)
+"xi" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/railing,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/circuit/red/off,
+/area/shuttle/mezzeriah)
+"yW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/no_nightlight/directional/east,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"zg" = (
+/obj/machinery/computer/bsa_control,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"zp" = (
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/fans/tiny,
+/turf/open/indestructible/hierophant,
+/area/shuttle/mezzeriah)
+"zM" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/security/glass,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"zP" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"Av" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/west,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"Bj" = (
+/obj/machinery/computer/communications,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"Bz" = (
+/obj/machinery/teleport/hub,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"Ch" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"Ck" = (
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"Dv" = (
+/obj/structure/closet/syndicate,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"Dw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"DV" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/grimy,
+/area/shuttle/mezzeriah)
+"Ek" = (
+/obj/machinery/door/airlock/command/glass,
+/obj/structure/fans/tiny,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"Et" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/radiation,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"Ew" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/railing,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/circuit/red/off,
+/area/shuttle/mezzeriah)
+"ES" = (
+/turf/open/floor/carpet/executive,
+/area/shuttle/mezzeriah)
+"Gs" = (
+/obj/structure/railing,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"GR" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/command/glass,
+/obj/effect/decal/cleanable/dirt,
+/obj/docking_port/mobile{
+	dir = 4;
+	dwidth = 13;
+	height = 3;
+	id = "mezzeriah";
+	launch_status = 0;
+	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	name = "Supercruiser Mezzeriah";
+	preferred_direction = 8;
+	width = 26
+	},
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"Hp" = (
+/obj/machinery/chem_heater,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"HF" = (
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"HL" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility/chief/full,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"HQ" = (
+/obj/structure/table/optable,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"IQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"IS" = (
+/obj/machinery/suit_storage_unit/ert/security,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"JC" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility/chief/full,
+/obj/item/gun/energy/pulse/carbine,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"KC" = (
+/obj/machinery/light/warm/directional/west,
+/obj/machinery/power/smes,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"KI" = (
+/obj/structure/sign/warning/radiation,
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"KX" = (
+/obj/machinery/chem_master,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"LE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/west,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"Nn" = (
+/obj/machinery/stasis,
+/obj/structure/curtain/bounty,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"NC" = (
+/obj/structure/fans/tiny,
+/turf/open/indestructible/hierophant,
+/area/shuttle/mezzeriah)
+"Ox" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/ert_sec,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"Oy" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/gun/energy/pulse/carbine,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mezzeriah)
+"Pc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/west,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"Qi" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/mezzeriah)
+"Qo" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/gun/energy/pulse/carbine,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"Qy" = (
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"QO" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"QX" = (
+/obj/structure/railing,
+/obj/structure/railing,
+/turf/open/floor/carpet/executive,
+/area/shuttle/mezzeriah)
+"RC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/tank_dispenser,
+/turf/open/floor/iron/grimy,
+/area/shuttle/mezzeriah)
+"RM" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"RP" = (
+/obj/structure/table/reinforced,
+/obj/item/hand_tele,
+/obj/item/hand_tele,
+/obj/item/hand_tele,
+/obj/machinery/light/warm/directional/north,
+/obj/item/clothing/head/helmet/space/chronos/hrvfoxcat,
+/obj/item/clothing/head/helmet/space/chronos/hrvfoxcat,
+/obj/item/clothing/suit/space/chronos/hrvfoxcat,
+/obj/item/clothing/suit/space/chronos/hrvfoxcat,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/turf/open/floor/carpet/stellar,
+/area/shuttle/mezzeriah)
+"Sp" = (
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/mezzeriah)
+"Sr" = (
+/obj/structure/window/plasma/reinforced/fulltile,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"SI" = (
+/obj/machinery/light/warm/directional/west,
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"SX" = (
+/turf/open/space/basic,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"To" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"Tv" = (
+/obj/structure/sign/warning/turrets,
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"Ut" = (
+/obj/machinery/bsa/front,
+/turf/open/floor/iron/freezer,
+/area/shuttle/mezzeriah)
+"UN" = (
+/obj/machinery/bsa/back,
+/turf/open/floor/iron/freezer,
+/area/shuttle/mezzeriah)
+"UX" = (
+/obj/machinery/shieldgen,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/south,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"Vb" = (
+/obj/structure/closet/secure_closet/ert_sec,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"Vu" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/stasis,
+/obj/structure/curtain/bounty,
+/turf/open/floor/circuit,
+/area/shuttle/mezzeriah)
+"Wv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/no_nightlight/directional/east,
+/turf/open/floor/iron/grimy,
+/area/shuttle/mezzeriah)
+"WB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/shuttle/mezzeriah)
+"Xp" = (
+/turf/open/floor/engine,
+/area/shuttle/mezzeriah)
+"Yz" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mezzeriah)
+"Zd" = (
+/obj/structure/sign/warning/explosives/alt,
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"Zj" = (
+/turf/open/space/basic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mezzeriah)
+"Zk" = (
+/turf/open/space/basic,
+/turf/open/space/basic,
+/area/template_noop)
+"Zv" = (
+/turf/open/space/basic,
+/area/template_noop)
+"Zz" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/mezzeriah)
+
+(1,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(2,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(3,1,1) = {"
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+"}
+(4,1,1) = {"
+Zj
+Zj
+Zj
+Zk
+Zk
+Zk
+SX
+SX
+mj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+eF
+SX
+mj
+Zk
+Zk
+Zk
+Zj
+Zj
+Zj
+"}
+(5,1,1) = {"
+RM
+KC
+To
+To
+To
+Zv
+Qy
+Qy
+SX
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+SX
+Qy
+Qy
+Zv
+To
+QO
+To
+aB
+RM
+"}
+(6,1,1) = {"
+RM
+Sp
+Sp
+Sp
+To
+To
+To
+To
+sc
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+To
+To
+To
+To
+Sp
+Sp
+Sp
+RM
+"}
+(7,1,1) = {"
+Zj
+po
+Xp
+Xp
+SI
+Xp
+Sp
+Ck
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+ll
+Sp
+Xp
+SI
+Xp
+Xp
+ei
+Zj
+"}
+(8,1,1) = {"
+Zj
+Xp
+pU
+pU
+pU
+Xp
+Sp
+Yz
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+Yz
+Sp
+Xp
+pU
+pU
+pU
+Xp
+Zj
+"}
+(9,1,1) = {"
+Zj
+Xp
+pU
+pU
+pU
+Xp
+Sp
+Yz
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+Yz
+Sp
+Xp
+pU
+pU
+pU
+Xp
+Zj
+"}
+(10,1,1) = {"
+Zj
+po
+pU
+pU
+pU
+Xp
+Sp
+Ck
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+ll
+Sp
+Xp
+pU
+pU
+pU
+ei
+Zj
+"}
+(11,1,1) = {"
+RM
+Xp
+pU
+UN
+pU
+Xp
+Sp
+Yz
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+Yz
+Sp
+Xp
+pU
+UN
+pU
+Xp
+RM
+"}
+(12,1,1) = {"
+RM
+Xp
+pU
+wA
+pU
+Xp
+Sp
+HL
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+HL
+Sp
+Xp
+pU
+wA
+pU
+Xp
+RM
+"}
+(13,1,1) = {"
+Zj
+po
+pU
+Ut
+pU
+Xp
+Sp
+dH
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+sJ
+Sp
+Xp
+pU
+Ut
+pU
+ei
+Zj
+"}
+(14,1,1) = {"
+Zj
+Xp
+pU
+NC
+pU
+Xp
+Sp
+nK
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+nK
+Sp
+Xp
+pU
+NC
+pU
+Xp
+Zj
+"}
+(15,1,1) = {"
+Zj
+Xp
+pU
+NC
+pU
+Xp
+Zz
+zg
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+zg
+Qi
+Xp
+pU
+NC
+pU
+Xp
+Zj
+"}
+(16,1,1) = {"
+Zj
+po
+Xp
+NC
+Xp
+Xp
+Sp
+Zj
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+Zj
+Sp
+Xp
+Xp
+NC
+Xp
+ei
+Zj
+"}
+(17,1,1) = {"
+Zv
+Sr
+Sp
+NC
+Sp
+Sp
+Sp
+RM
+IQ
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+wU
+RM
+Sp
+Sp
+Sp
+NC
+Sp
+Sr
+Zv
+"}
+(18,1,1) = {"
+Zv
+Zv
+Sr
+NC
+Yz
+Yz
+Yz
+RM
+IQ
+Pc
+Zj
+Zv
+pw
+vB
+oa
+GR
+vB
+pw
+Zv
+Zj
+Pc
+IQ
+RM
+Yz
+Yz
+Yz
+NC
+Sr
+Zv
+Zv
+"}
+(19,1,1) = {"
+Zv
+Zv
+Zv
+zp
+Yz
+Yz
+Yz
+rd
+IQ
+IQ
+Et
+RM
+RM
+Av
+lv
+lv
+Av
+RM
+RM
+Et
+IQ
+IQ
+zM
+Yz
+Yz
+Yz
+zp
+Zv
+Zv
+Zv
+"}
+(20,1,1) = {"
+Zv
+Zv
+Zv
+NC
+Sr
+Yz
+Yz
+RM
+IQ
+IQ
+Et
+RM
+RM
+lv
+lv
+lv
+lv
+RM
+RM
+Et
+IQ
+IQ
+RM
+Yz
+Yz
+Sr
+NC
+Zv
+Zv
+Zv
+"}
+(21,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+KI
+rs
+RM
+IQ
+IQ
+IQ
+RM
+Dv
+rl
+oa
+oa
+rl
+Dv
+RM
+IQ
+IQ
+IQ
+RM
+rs
+KI
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(22,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+Tv
+wJ
+IQ
+Ch
+RM
+Dw
+pu
+zP
+zP
+LE
+Ck
+RM
+WB
+IQ
+wJ
+Tv
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(23,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+cO
+IQ
+IQ
+zM
+zP
+zP
+zP
+zP
+Yz
+Yz
+zM
+IQ
+IQ
+cO
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(24,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+IQ
+Ch
+RM
+pV
+Yz
+Yz
+zP
+Yz
+bn
+RM
+WB
+IQ
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(25,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+IQ
+RM
+Ox
+Yz
+Yz
+Yz
+Yz
+Vb
+RM
+IQ
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(26,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+Zd
+kH
+Yz
+Yz
+Yz
+zP
+IS
+oZ
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(27,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+ra
+Zd
+kH
+rs
+Yz
+Yz
+yW
+IS
+Zj
+wY
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(28,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+RM
+Ek
+oa
+RM
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(29,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+RC
+DV
+DV
+DV
+DV
+uv
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(30,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+RC
+Wv
+DV
+DV
+Wv
+uv
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(31,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+Zj
+RM
+Ek
+Ek
+RM
+Zj
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(32,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+HQ
+Gs
+HF
+dJ
+ca
+rx
+hP
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(33,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+mD
+Gs
+HF
+dJ
+ca
+KX
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(34,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+Oy
+Gs
+HF
+dJ
+ca
+Hp
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(35,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+vn
+HF
+HF
+HF
+HF
+Qo
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(36,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+hM
+HF
+HF
+HF
+HF
+JC
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(37,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+Bz
+HF
+HF
+HF
+HF
+tC
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(38,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+RP
+HF
+HF
+HF
+HF
+bC
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(39,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+Nn
+HF
+HF
+HF
+HF
+Nn
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(40,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+Vu
+tw
+HF
+HF
+tw
+Vu
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(41,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+gT
+QX
+ES
+up
+ES
+tj
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(42,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+bk
+ES
+ES
+ES
+ES
+lJ
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(43,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+Bj
+xi
+Ew
+Ew
+Ew
+lJ
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(44,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zj
+wu
+kf
+kA
+kY
+at
+UX
+Zj
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}
+(45,1,1) = {"
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+RM
+RM
+RM
+RM
+RM
+RM
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+Zv
+"}

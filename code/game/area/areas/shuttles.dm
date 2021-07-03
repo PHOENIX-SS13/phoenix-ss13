@@ -334,3 +334,13 @@
 
 /area/shuttle/ironwrought/engine
 	name = "The Ironwrought Core"
+
+/area/shuttle/aggregeddon
+	name = "Supercruiser Aggregeddon"
+	requires_power = FALSE
+	area_limited_icon_smoothing = /area/shuttle/aggregeddon
+
+/area/shuttle/mezzeriah
+	name = "Supercruiser Mezzeriah"
+	requires_power = FALSE
+	area_limited_icon_smoothing = /area/shuttle/mezzeriah
