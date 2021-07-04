@@ -1,7 +1,0 @@
-author: "CypressBz"
-delete-after: True
-changes: 
-  - rscdel: "removes clownplanet.dmnm and all references to it in the code"
-  - rscdel: "removes originalcontent.dmm and all references to it in the code"
-  - rscdel: "removes shuttlerelic.dmm and all references to it in the code"
-  - rscdel: "removes lavaland_biodome_clown_planet.dmm and all references to it in the code"
