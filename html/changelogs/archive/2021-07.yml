@@ -225,3 +225,22 @@
       loot spawners
   FedTheCat:
   - code_imp: Changed req access to null.
+2021-07-06:
+  /tg/station:
+  - rscadd: Neon carpets exists. Bug your local chemist or quartermaster for a supply.
+  - code_imp: Decals support user-defined planes and some forms of smoothing.
+  Azarak:
+  - rscadd: Changes some leftover names of traders
+  - bugfix: Fixes space turfs in abandoned factory ruin
+  - bugfix: Digsite fix and clarification
+  - bugfix: Fixes light overlays on multi z openspace
+  - bugfix: Planetary turfs inherit a proper baseturf now
+  rhodochrositech:
+  - rscadd: Adds new trader, the Farming Apprentice, who sells foods (Wheat, Corn)
+      and livestock (Chickies, Cows, Goats)
+  - rscadd: Adds a new trader, the Atmospheric trader, who sells internal items (Plasmaman,
+      Vox, and tiny blue atmos can internals)
+  - rscadd: Adds a mining conscription kit to the mineral buyer to have access to
+      equipment
+  - rscadd: Adds a budget insul for over half the price of a vendor insul, and grey
+      bull (Shock Protection) to the Pharmacy
