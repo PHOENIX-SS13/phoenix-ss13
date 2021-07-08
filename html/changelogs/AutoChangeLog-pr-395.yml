@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "RnD design for Trade Pad, Trade Console, Transporter, Mining Laser, Shield Generator & Excavation gear. See https://github.com/hrzntal/horizon/pull/395 for details."
+  - rscadd: "Mining Laser can now be rotated"
