@@ -1,0 +1,4 @@
+author: "Owai-Seek"
+delete-after: True
+changes: 
+  - code_imp: "Organized the buy/sell goods list used with traders."
