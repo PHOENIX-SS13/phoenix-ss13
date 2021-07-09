@@ -1,0 +1,7 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Added plated catwalks. You can craft them with iron rods"
+  - rscadd: "Added footstep override element. Lattices, catwalks and industrial lifts use this to override the footstep into a metallic one"
+  - rscadd: "Moved undertile pipes, cables and disposal pipes to floor plane, disabling their ambient occlusion"
+  - bugfix: "Crawling sound now can actually be heard"
