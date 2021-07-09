@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - balance: "Lowers margin from traders from 30% to 15%, and price variance to 20% from 25%"
