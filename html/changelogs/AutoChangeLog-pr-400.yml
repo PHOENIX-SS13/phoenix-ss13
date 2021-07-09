@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Climbable element now has the functionality of climbing over things"
+  - bugfix: "Fixed climbing over railings"
