@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "turf transparency properly not updating when a transparent turf was built over"
