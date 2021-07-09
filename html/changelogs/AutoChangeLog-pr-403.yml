@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - qol: "Lowers ship ambience volume"
