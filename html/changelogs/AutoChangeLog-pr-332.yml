@@ -1,4 +1,0 @@
-author: "/tg/station"
-delete-after: True
-changes: 
-  - rscadd: "Ported patches from /tg/station, from 2021-06-11 until 2021-06-15. See https://github.com/hrzntal/horizon/pull/332 for more details."
