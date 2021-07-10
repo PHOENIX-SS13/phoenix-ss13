@@ -1,0 +1,4 @@
+author: "Avunia Takiya, Eris"
+delete-after: True
+changes: 
+  - imageadd: "Replaced lighttubes with new sprites"
