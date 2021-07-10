@@ -1,0 +1,4 @@
+author: "Onyxarias"
+delete-after: True
+changes: 
+  - rscadd: "Added two new planetary ruins, abandoned_containment and weather_station, as well as the code to spawn them."
