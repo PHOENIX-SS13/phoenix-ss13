@@ -1,6 +1,0 @@
-author: "Owai-Seek"
-delete-after: True
-changes: 
-  - rscadd: "Food traders will buy select goods."
-  - rscadd: "Atmos traders now carry a space suit."
-  - balance: "Adjusted multiple trader prices."

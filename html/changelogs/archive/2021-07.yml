@@ -284,3 +284,26 @@
       underwear, markings and mutant parts
   Owai-Seek:
   - code_imp: Organized the buy/sell goods list used with traders.
+2021-07-10:
+  Azarak:
+  - bugfix: Fixes caltrops not telling you what you stepped on
+  - rscadd: Climbable element now has the functionality of climbing over things
+  - bugfix: Fixed climbing over railings
+  - rscadd: Added plated catwalks. You can craft them with iron rods
+  - rscadd: Added footstep override element. Lattices, catwalks and industrial lifts
+      use this to override the footstep into a metallic one
+  - rscadd: Moved undertile pipes, cables and disposal pipes to floor plane, disabling
+      their ambient occlusion
+  - bugfix: Crawling sound now can actually be heard
+  - qol: Lowers ship ambience volume
+  - bugfix: Fixes runechat calculating an improper amount of lines and not displaying
+      the top line
+  - bugfix: turf transparency properly not updating when a transparent turf was built
+      over
+  - balance: Lowers margin from traders from 30% to 15%, and price variance to 20%
+      from 25%
+  - bugfix: Overmap hard del and logic fixes
+  Owai-Seek:
+  - rscadd: Food traders will buy select goods.
+  - rscadd: Atmos traders now carry a space suit.
+  - balance: Adjusted multiple trader prices.
