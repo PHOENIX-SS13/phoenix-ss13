@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "The mining laser design now prints the circuitboard, not the machine"
