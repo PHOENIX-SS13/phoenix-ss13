@@ -1,0 +1,4 @@
+author: "Avunia Takiya, Toriate"
+delete-after: True
+changes: 
+  - imageadd: "Replaced crate sprites with new ones."
