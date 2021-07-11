@@ -1,0 +1,4 @@
+author: "Avunia Takiya"
+delete-after: True
+changes: 
+  - bugfix: "Removed coughing from nicotine withdrawal stages."
