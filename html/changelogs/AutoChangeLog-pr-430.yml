@@ -1,0 +1,5 @@
+author: "Owai-Seek"
+delete-after: True
+changes: 
+  - rscadd: "Mechfab can print IPC/Synth/Vox Parts"
+  - bugfix: "IPC lungs are now visible."
