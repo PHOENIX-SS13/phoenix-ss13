@@ -307,3 +307,29 @@
   - rscadd: Food traders will buy select goods.
   - rscadd: Atmos traders now carry a space suit.
   - balance: Adjusted multiple trader prices.
+2021-07-11:
+  Avunia Takiya, Eris:
+  - imageadd: Replaced lighttubes with new sprites
+  Avunia Takiya, Polaris:
+  - imageadd: Replaced plating sprites with new ones.
+  Avunia Takiya, Toriate:
+  - imageadd: Replaced crate sprites with new ones.
+  Avunia Takiya, VOREstation/Virgo:
+  - imageadd: Replaced medkit sprites with new ones.
+  Azarak:
+  - rscadd: Catwalks can now smooth with fulltile windows
+  - bugfix: Fixes ghost hair overlays
+  - bugfix: Fixes hairstyles in facial hair choice with mismatched parts
+  - bugfix: Fixes dynamic lighting overlays
+  - bugfix: Fixes smooth plated catwalk icon and plated catwalk description
+  - balance: Buffs the mech plasma cutter blasts to 25 dmg from 10 dmg
+  - bugfix: The mining laser design now prints the circuitboard, not the machine
+  - bugfix: Typing indicator now disappears after sending an emote
+  - qol: Removes topic check from trader console UI interact
+  Onyxarias:
+  - rscadd: Added two new planetary ruins, abandoned_containment and weather_station,
+      as well as the code to spawn them.
+  Owai-Seek:
+  - balance: Crates drop 2 plasteel instead of 2 iron now.
+  - rscadd: Crates, satchels, and gear harnesses can now be in-hand crafted with plasteel,
+      cloth, and leather.
