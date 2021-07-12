@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "You can now use your pref characters as ghost roles"
