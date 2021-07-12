@@ -333,3 +333,11 @@
   - balance: Crates drop 2 plasteel instead of 2 iron now.
   - rscadd: Crates, satchels, and gear harnesses can now be in-hand crafted with plasteel,
       cloth, and leather.
+2021-07-12:
+  Avunia Takiya:
+  - bugfix: Removed coughing from nicotine withdrawal stages.
+  Azarak:
+  - bugfix: Fixes hair overlays on decapitated heads
+  Owai-Seek:
+  - rscadd: Mechfab can print IPC/Synth/Vox Parts
+  - bugfix: IPC lungs are now visible.
