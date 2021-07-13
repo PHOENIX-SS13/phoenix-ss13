@@ -341,3 +341,8 @@
   Owai-Seek:
   - rscadd: Mechfab can print IPC/Synth/Vox Parts
   - bugfix: IPC lungs are now visible.
+2021-07-13:
+  Azarak:
+  - rscadd: You can now use your pref characters as ghost roles
+  - bugfix: Fixes kilo station common dock wrong direction
+  - qol: Adds a disclaimer about dock connection in Shuttle Purchase Console
