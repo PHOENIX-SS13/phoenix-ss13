@@ -1,0 +1,8 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Now you can step out into the transit area when the shuttle has taken off. BEWARE though, you will face dire consequences if the shuttle is currently travelling. The faster, the more rough"
+  - rscadd: "Crates, closets etc. will be manifested as stranded cargo on the overmap for pickup"
+  - rscadd: "Humans falling out of the transit level will be manifested as stranded bodies on the overmap, up for pickup too"
+  - rscadd: "Mobs getting slammed by the shuttles in transit will be gibbed"
+  - code_imp: "Refactored a bit of overmap code"
