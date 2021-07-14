@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Dynamic lighting no longer strikes through z levels, behaves like static lighting now"
-  - bugfix: "Fixed dynamic lighting not working for real"

@@ -346,3 +346,18 @@
   - rscadd: You can now use your pref characters as ghost roles
   - bugfix: Fixes kilo station common dock wrong direction
   - qol: Adds a disclaimer about dock connection in Shuttle Purchase Console
+2021-07-14:
+  Azarak:
+  - balance: Nerfed the price and demand on excavation exports
+  - bugfix: Dynamic lighting no longer strikes through z levels, behaves like static
+      lighting now
+  - bugfix: Fixed dynamic lighting not working for real
+  - rscadd: Traders now can have bounties, asking you for certain things for a handsome
+      reward(cash or even items), you can print a bounty paper too
+  - rscadd: Trading console will now make manifests after finishing transactions with
+      a trader. You can disable this in the console
+  - rscadd: Trading console now can log all the actions. The logs can be viewed. You
+      can disable this in the console
+  - rscadd: For now, only the gun traders have some bounties
+  - code_imp: Refactored amount getters in bought items for traders
+  - bugfix: Fixes some improper areas in space ruins

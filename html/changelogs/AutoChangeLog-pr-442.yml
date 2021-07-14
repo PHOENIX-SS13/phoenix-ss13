@@ -1,8 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Traders now can have bounties, asking you for certain things for a handsome reward(cash or even items), you can print a bounty paper too"
-  - rscadd: "Trading console will now make manifests after finishing transactions with a trader. You can disable this in the console"
-  - rscadd: "Trading console now can log all the actions. The logs can be viewed. You can disable this in the console"
-  - rscadd: "For now, only the gun traders have some bounties"
-  - code_imp: "Refactored amount getters in bought items for traders"
