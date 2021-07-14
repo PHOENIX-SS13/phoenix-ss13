@@ -1,0 +1,5 @@
+author: "ZephyrTFA"
+delete-after: True
+changes: 
+  - qol: "Light switchs can now be both crafted and deconstructed"
+  - qol: "You can rename lightswitches by opening them with a screwdriver and using a pen"
