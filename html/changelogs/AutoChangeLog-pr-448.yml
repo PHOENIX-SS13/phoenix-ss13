@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - qol: "Transit velocity doesn't throw things if they're against something"
