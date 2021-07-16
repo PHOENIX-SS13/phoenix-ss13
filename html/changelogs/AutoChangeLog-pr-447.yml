@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Fixes day night cycle layers, making day/night work properly again"

@@ -376,3 +376,8 @@
   - qol: Light switchs can now be both crafted and deconstructed
   - qol: You can rename lightswitches by opening them with a screwdriver and using
       a pen
+2021-07-16:
+  Azarak:
+  - rscadd: Station and Space levels are now selflooping
+  - qol: Transit velocity doesn't throw things if they're against something
+  - bugfix: Fixes day night cycle layers, making day/night work properly again
