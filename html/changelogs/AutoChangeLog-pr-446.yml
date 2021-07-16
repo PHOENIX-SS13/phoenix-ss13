@@ -1,0 +1,4 @@
+author: "ZephyrTFA"
+delete-after: True
+changes: 
+  - rscadd: "Dominant Handed-ness is now a thing! Change your dominant hand in your character's general information!"
