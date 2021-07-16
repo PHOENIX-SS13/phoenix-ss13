@@ -407,6 +407,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["uplink_loc"], uplink_spawn_loc)
 	READ_FILE(S["playtime_reward_cloak"], playtime_reward_cloak)
 	READ_FILE(S["phobia"], phobia)
+	READ_FILE(S["dominant_hand"], dominant_hand)
+
+	switch(dominant_hand)
+		if(DOMINANT_HAND_LEFT, DOMINANT_HAND_RIGHT, DOMINANT_HAND_AMBI) // do nothing
+		else
+			dominant_hand = DOMINANT_HAND_AMBI
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -622,6 +628,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["species"] , pref_species.id)
 	WRITE_FILE(S["phobia"], phobia)
 	WRITE_FILE(S["persistent_scars"], persistent_scars)
+	WRITE_FILE(S["dominant_hand"], dominant_hand)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)

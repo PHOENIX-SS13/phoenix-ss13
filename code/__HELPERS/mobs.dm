@@ -141,6 +141,9 @@ GLOBAL_LIST_EMPTY(species_list)
 	if(!user.Process_Spacemove(0) && user.inertia_dir)
 		drifting = TRUE
 
+	if(!(timed_action_flags & IGNORE_DOMINANT_HAND))
+		time *= user.get_delay_modifier_dominant()
+
 	var/target_loc = target.loc
 
 	if(!interaction_key && target)
@@ -215,6 +218,10 @@ GLOBAL_LIST_EMPTY(species_list)
 /proc/do_after(mob/user, delay, atom/target, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks, interaction_key, max_interact_count = 1)
 	if(!user)
 		return FALSE
+
+	if(!(timed_action_flags & IGNORE_DOMINANT_HAND))
+		delay *= user.get_delay_modifier_dominant()
+
 	var/atom/target_loc = null
 	if(target && !isturf(target))
 		target_loc = target.loc
@@ -289,6 +296,10 @@ GLOBAL_LIST_EMPTY(species_list)
 		targets = list(targets)
 	if(!length(targets))
 		return FALSE
+
+	if(!(timed_action_flags & IGNORE_DOMINANT_HAND))
+		time *= user.get_delay_modifier_dominant()
+
 	var/user_loc = user.loc
 
 	time *= user.cached_multiplicative_actions_slowdown

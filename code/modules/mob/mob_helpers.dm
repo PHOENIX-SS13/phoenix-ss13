@@ -512,3 +512,21 @@
 ///Can this mob hold items
 /mob/proc/can_hold_items(obj/item/I)
 	return length(held_items)
+
+/mob/proc/get_delay_modifier_dominant()
+	switch(dominant_hand)
+		if(DOMINANT_HAND_LEFT)
+			if(active_hand_index == 1)
+				return 1 - DOMINANT_HAND_FACTOR
+			return 1 + DOMINANT_HAND_FACTOR
+
+		if(DOMINANT_HAND_RIGHT)
+			if(active_hand_index == 2)
+				return 1 - DOMINANT_HAND_FACTOR
+			return 1 + DOMINANT_HAND_FACTOR
+
+		if(DOMINANT_HAND_AMBI)
+			return 1
+
+	stack_trace("Invalid value for dominant_hand! [src] = [dominant_hand]")
+	return 1
