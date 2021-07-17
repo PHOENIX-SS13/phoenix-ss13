@@ -14,6 +14,8 @@
 	buckle_requires_restraints = TRUE
 	buckle_lying = NO_BUCKLE_LYING
 
+	vis_flags = VIS_INHERIT_PLANE
+
 /obj/machinery/atmospherics/pipe/New()
 	add_atom_colour(pipe_color, FIXED_COLOUR_PRIORITY)
 	volume = 35 * device_type
@@ -90,10 +92,41 @@
 			qdel(meter)
 	. = ..()
 
+/obj/machinery/atmospherics/pipe/proc/update_pipe_icon()
+	icon = 'icons/obj/atmospherics/pipes/pipes_bitmask.dmi'
+	var/bitfield = NONE
+	for(var/i in 1 to device_type)
+		if(!nodes[i])
+			continue
+		var/obj/machinery/atmospherics/node = nodes[i]
+		var/connected_dir = get_dir(src, node)
+		switch(connected_dir)
+			if(NORTH)
+				bitfield |= NORTH_FULLPIPE
+			if(SOUTH)
+				bitfield |= SOUTH_FULLPIPE
+			if(EAST)
+				bitfield |= EAST_FULLPIPE
+			if(WEST)
+				bitfield |= WEST_FULLPIPE
+	for(var/cardinal in GLOB.cardinals)
+		if(initialize_directions & cardinal && !(bitfield & cardinal))
+			switch(cardinal)
+				if(NORTH)
+					bitfield |= NORTH_SHORTPIPE
+				if(SOUTH)
+					bitfield |= SOUTH_SHORTPIPE
+				if(EAST)
+					bitfield |= EAST_SHORTPIPE
+				if(WEST)
+					bitfield |= WEST_SHORTPIPE
+	icon_state = "[bitfield]_[piping_layer]"
+
 /obj/machinery/atmospherics/pipe/update_icon()
 	. = ..()
+	update_pipe_icon()
 	update_layer()
-
+	
 /obj/machinery/atmospherics/proc/update_node_icon()
 	for(var/i in 1 to device_type)
 		if(nodes[i])
