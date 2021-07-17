@@ -381,3 +381,7 @@
   - rscadd: Station and Space levels are now selflooping
   - qol: Transit velocity doesn't throw things if they're against something
   - bugfix: Fixes day night cycle layers, making day/night work properly again
+2021-07-17:
+  ZephyrTFA:
+  - rscadd: Dominant Handed-ness is now a thing! Change your dominant hand in your
+      character's general information!
