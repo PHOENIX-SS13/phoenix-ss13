@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Some seemingly incorrect pipe overlays will now be correct"
+  - refactor: "Pipe overlays overhaul and bitmasking"
