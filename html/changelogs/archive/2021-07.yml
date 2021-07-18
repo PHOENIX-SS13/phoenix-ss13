@@ -385,3 +385,13 @@
   ZephyrTFA:
   - rscadd: Dominant Handed-ness is now a thing! Change your dominant hand in your
       character's general information!
+2021-07-18:
+  Azarak:
+  - bugfix: Some seemingly incorrect pipe overlays will now be correct
+  - refactor: Pipe overlays overhaul and bitmasking
+  - rscadd: Borb plushie is in loadout now
+  - bugfix: Drills and braces are now lavaproof
+  - rscadd: The lifts have much more features than before now
+  - refactor: Lifts completely rewritten to be realistic and modular see https://github.com/hrzntal/horizon/pull/434
+      for more info
+  - qol: Getting floored will set your resting status

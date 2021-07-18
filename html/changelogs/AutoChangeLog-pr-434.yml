@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "The lifts have much more features than before now"
-  - refactor: "Lifts completely rewritten to be realistic and modular see https://github.com/hrzntal/horizon/pull/434 for more info"
