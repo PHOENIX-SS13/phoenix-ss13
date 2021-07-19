@@ -375,10 +375,6 @@
 	stock_high = 4
 	stock_low = 2
 
-/datum/sold_goods/liquid_pump
-	cost = 700
-	path = /obj/machinery/plumbing/liquid_pump
-
 /datum/sold_goods/stack/iron_ten
 	stock_high = 3
 	stock_low = 10
