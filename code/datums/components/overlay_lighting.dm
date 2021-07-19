@@ -9,6 +9,8 @@
 
 #define SHORT_CAST 2
 
+#define LIGHT_LAYER_MARGIN 0.01
+
 /**
  * Movable atom overlay-based lighting component.
  *
@@ -53,7 +55,7 @@
 		)
 
 	///Overlay effect to cut into the darkness and provide light.
-	var/obj/effect/overlay/light_visible/visible_mask
+	var/image/visible_mask
 	///Lazy list to track the turfs being affected by our light, to determine their visibility.
 	var/list/turf/affected_turfs
 	///Movable atom currently holding the light. Parent might be a flashlight, for example, but that might be held by a mob or something else.
@@ -61,11 +63,11 @@
 	///Movable atom the parent is attached to. For example, a flashlight into a helmet or gun. We'll need to track the thing the parent is attached to as if it were the parent itself.
 	var/atom/movable/parent_attached_to
 	///Whether we're a directional light
-	var/directional
+	var/directional = FALSE
 	///Abstractional atom for directional light, we move this around to make the directional effect
 	var/obj/effect/abstract/directional_lighting/directional_atom
 	///A cone overlay for directional light, it's alpha and color are dependant on the light
-	var/obj/effect/overlay/light_cone/cone
+	var/image/cone
 	///Current tracked direction for the directional cast behaviour
 	var/current_direction
 	///Cast range for the directional cast (how far away the atom is moved)
@@ -82,11 +84,19 @@
 
 	. = ..()
 
-	visible_mask = new()
+	visible_mask = image('icons/effects/light_overlays/light_32.dmi', icon_state = "light")
+	visible_mask.plane = LIGHTING_PLANE
+	visible_mask.layer = movable_parent.z + LIGHT_LAYER_MARGIN
+	visible_mask.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+	visible_mask.alpha = 0
 	if(is_directional)
 		directional = TRUE
 		directional_atom = new()
-		cone = new()
+		cone = image('icons/effects/light_overlays/light_cone.dmi', icon_state = "light")
+		cone.plane = LIGHTING_PLANE
+		cone.layer = movable_parent.z + LIGHT_LAYER_MARGIN
+		cone.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+		cone.alpha = 110
 		cone.transform = cone.transform.Translate(-32, -32)
 		set_direction(movable_parent.dir)
 	if(!isnull(_range))
@@ -149,17 +159,17 @@
 	set_parent_attached_to(null)
 	set_holder(null)
 	clean_old_turfs()
-	QDEL_NULL(visible_mask)
 	if(directional)
 		QDEL_NULL(directional_atom)
-		QDEL_NULL(cone)
+	visible_mask = null
+	cone = null
+	parent_attached_to = null
 	return ..()
 
 
 ///Clears the affected_turfs lazylist, removing from its contents the effects of being near the light.
 /datum/component/overlay_lighting/proc/clean_old_turfs()
-	for(var/t in affected_turfs)
-		var/turf/lit_turf = t
+	for(var/turf/lit_turf as anything in affected_turfs)
 		lit_turf.dynamic_lumcount -= lum_power
 	affected_turfs = null
 
@@ -169,9 +179,12 @@
 	if(!current_holder)
 		return
 	var/atom/movable/light_source = GET_LIGHT_SOURCE
+	. = list()
 	for(var/turf/lit_turf in view(lumcount_range, get_turf(light_source)))
 		lit_turf.dynamic_lumcount += lum_power
-		LAZYADD(affected_turfs, lit_turf)
+		. += lit_turf
+	if(length(.))
+		affected_turfs = .
 
 
 ///Clears the old affected turfs and populates the new ones.
@@ -181,28 +194,37 @@
 		return
 	if(directional)
 		cast_directional_light()
-		cone.layer = current_holder.z
-	visible_mask.layer = current_holder.z
 	get_new_turfs()
+	var/new_layer = current_holder.z + LIGHT_LAYER_MARGIN
+	if(new_layer == visible_mask.layer)
+		return
+	var/atom/movable/light_source = GET_LIGHT_SOURCE
+	light_source.underlays -= visible_mask
+	visible_mask.layer = new_layer
+	light_source.underlays += visible_mask
+	if(directional)
+		current_holder.underlays -= cone
+		cone.layer = new_layer
+		current_holder.underlays += cone
 
 
 ///Adds the luminosity and source for the afected movable atoms to keep track of their visibility.
 /datum/component/overlay_lighting/proc/add_dynamic_lumi()
 	var/atom/movable/light_source = GET_LIGHT_SOURCE
 	LAZYSET(light_source.affected_dynamic_lights, src, lumcount_range + 1)
-	light_source.vis_contents += visible_mask
+	light_source.underlays += visible_mask
 	light_source.update_dynamic_luminosity()
 	if(directional)
-		current_holder.vis_contents += cone
+		current_holder.underlays += cone
 
 ///Removes the luminosity and source for the afected movable atoms to keep track of their visibility.
 /datum/component/overlay_lighting/proc/remove_dynamic_lumi()
 	var/atom/movable/light_source = GET_LIGHT_SOURCE
 	LAZYREMOVE(light_source.affected_dynamic_lights, src)
-	light_source.vis_contents -= visible_mask
+	light_source.underlays -= visible_mask
 	light_source.update_dynamic_luminosity()
 	if(directional)
-		current_holder.vis_contents -= cone
+		current_holder.underlays -= cone
 		directional_atom.moveToNullspace()
 
 ///Called to change the value of parent_attached_to.
@@ -232,6 +254,7 @@
 /datum/component/overlay_lighting/proc/set_holder(atom/movable/new_holder)
 	if(new_holder == current_holder)
 		return
+	var/old_dir
 	if(current_holder)
 		if(current_holder != parent && current_holder != parent_attached_to)
 			UnregisterSignal(current_holder, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED, COMSIG_LIGHT_EATER_QUEUE))
@@ -239,6 +262,7 @@
 				UnregisterSignal(current_holder, COMSIG_ATOM_DIR_CHANGE)
 		if(overlay_lighting_flags & LIGHTING_ON)
 			remove_dynamic_lumi()
+		old_dir = current_holder.dir
 	current_holder = new_holder
 	if(new_holder == null)
 		clean_old_turfs()
@@ -252,6 +276,10 @@
 	if(overlay_lighting_flags & LIGHTING_ON)
 		make_luminosity_update()
 		add_dynamic_lumi()
+	if(directional)
+		if(old_dir && isitem(new_holder)) //Small adjustment to make dropping flashlights and the kinds much better
+			new_holder.setDir(old_dir)
+		set_direction(new_holder.dir)
 
 
 ///Used to determine the new valid current_holder from the parent's loc.
@@ -327,9 +355,12 @@
 		return
 	if(range == 0)
 		turn_off()
+	var/atom/movable/light_source = GET_LIGHT_SOURCE
 	range = clamp(CEILING(new_range, 0.5), 1, 6)
 	var/pixel_bounds = ((range - 1) * 64) + 32
 	lumcount_range = CEILING(range, 1)
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays -= visible_mask
 	visible_mask.icon = light_overlays["[pixel_bounds]"]
 	if(pixel_bounds == 32)
 		visible_mask.transform = null
@@ -338,6 +369,8 @@
 	var/matrix/transform = new
 	transform.Translate(-offset, -offset)
 	visible_mask.transform = transform
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays += visible_mask
 	if(directional)
 		cast_range = clamp(round(new_range * 0.5), 1, 3)
 	if(overlay_lighting_flags & LIGHTING_ON)
@@ -350,18 +383,38 @@
 	var/new_power = source.light_power
 	set_lum_power(new_power >= 0 ? 0.5 : -0.5)
 	set_alpha = min(230, (abs(new_power) * 120) + 30)
+	var/atom/movable/light_source = GET_LIGHT_SOURCE
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays -= visible_mask
 	visible_mask.alpha = set_alpha
-	if(directional)
-		cone.alpha = min(200, (abs(new_power) * 90)+20)
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays += visible_mask
+	if(!directional)
+		return
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays -= cone
+	cone.alpha = min(200, (abs(new_power) * 90)+20)
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays += cone
 
 
 ///Changes the light's color, pretty straightforward.
 /datum/component/overlay_lighting/proc/set_color(atom/source, old_color)
 	SIGNAL_HANDLER
+	var/atom/movable/light_source = GET_LIGHT_SOURCE
 	var/new_color = source.light_color
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays -= visible_mask
 	visible_mask.color = new_color
-	if(directional)
-		cone.color = new_color
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays += visible_mask
+	if(!directional)
+		return
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays -= cone
+	cone.color = new_color
+	if(overlay_lighting_flags & LIGHTING_ON)
+		light_source.underlays += cone
 
 
 ///Toggles the light on and off.
@@ -420,8 +473,7 @@
 	. = lum_power
 	lum_power = new_lum_power
 	var/difference = . - lum_power
-	for(var/t in affected_turfs)
-		var/turf/lit_turf = t
+	for(var/turf/lit_turf as anything in affected_turfs)
 		lit_turf.dynamic_lumcount -= difference
 
 ///Here we append the behavior associated to changing lum_power.
@@ -436,6 +488,7 @@
 		if(isnull(next_turf) || IS_OPAQUE_TURF(next_turf))
 			break
 		scanning = next_turf
+	directional_atom.glide_size = current_holder.glide_size
 	directional_atom.forceMove(scanning)
 
 ///Called when current_holder changes loc.
@@ -480,3 +533,4 @@
 #undef GET_PARENT
 #undef GET_LIGHT_SOURCE
 #undef SHORT_CAST
+#undef LIGHT_LAYER_MARGIN
