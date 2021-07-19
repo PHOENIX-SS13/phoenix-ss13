@@ -30,7 +30,7 @@
 
 	learnable_languages = list(/datum/language/common, /datum/language/vox)
 
-/datum/species/vox/before_equip_job(datum/job/J, mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/species/vox/pre_equip_species_outfit(datum/job/J, mob/living/carbon/human/H, visualsOnly = FALSE)
 	var/datum/outfit/vox/O = new /datum/outfit/vox
 	H.equipOutfit(O, visualsOnly)
 	H.internal = H.get_item_for_held_index(2)

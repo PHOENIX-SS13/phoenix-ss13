@@ -791,7 +791,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		name = client.prefs.real_name
 
 /mob/dead/observer/proc/set_ghost_appearance()
-	if((!client) || (!client.prefs))
+	if(!client?.prefs)
 		return
 
 	if(HAIR in client.prefs.pref_species.species_traits)

@@ -38,20 +38,21 @@
 	var/random_species_type = GLOB.species_list[pick(GLOB.roundstart_races)]
 	set_new_species(random_species_type)
 
-///Setup a hardcore random character and calculate their hardcore random score
-/datum/preferences/proc/hardcore_random_setup(mob/living/carbon/human/character, antagonist, is_latejoiner)
-	var/rand_gender = pick(list(MALE, FEMALE, PLURAL))
-	random_character(rand_gender, antagonist)
-	select_hardcore_quirks()
-	hardcore_survival_score = hardcore_survival_score ** 1.2 //30 points would be about 60 score
-	if(is_latejoiner)//prevent them from cheatintg
-		hardcore_survival_score = 0
 
-///Go through all quirks that can be used in hardcore mode and select some based on a random budget.
+///Setup the random hardcore quirks and give the character the new score prize.
+/datum/preferences/proc/hardcore_random_setup(mob/living/carbon/human/character)
+	var/next_hardcore_score = select_hardcore_quirks()
+	character.hardcore_survival_score = next_hardcore_score ** 1.2  //30 points would be about 60 score
+
+
+/**
+ * Goes through all quirks that can be used in hardcore mode and select some based on a random budget.
+ * Returns the new value to be gained with this setup, plus the previously earned score.
+ **/
 /datum/preferences/proc/select_hardcore_quirks()
+	. = 0
 
 	var/quirk_budget = rand(8, 35)
-
 
 	all_quirks = list() //empty it out
 
@@ -90,8 +91,9 @@
 
 		all_quirks += initial(picked_quirk.name)
 		quirk_budget -= available_hardcore_quirks[picked_quirk]
-		hardcore_survival_score += available_hardcore_quirks[picked_quirk]
+		. += available_hardcore_quirks[picked_quirk]
 		available_hardcore_quirks -= picked_quirk
+
 
 /datum/preferences/proc/update_preview_icon()
 	// Determine what job is marked as 'High' priority, and dress them up as such.
@@ -113,13 +115,13 @@
 
 	// Set up the dummy for its photoshoot
 	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
-	copy_to(mannequin, 1, TRUE, TRUE)
+	apply_prefs_to(mannequin, TRUE, TRUE)
 
 	switch(preview_pref)
 		if(PREVIEW_PREF_JOB)
 			if(previewJob)
 				mannequin.job = previewJob.title
-				previewJob.equip(mannequin, TRUE, preference_source = parent)
+				mannequin.dress_up_as_job(previewJob, TRUE)
 			mannequin.underwear_visibility = NONE
 		if(PREVIEW_PREF_LOADOUT)
 			mannequin.underwear_visibility = NONE

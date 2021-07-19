@@ -1254,7 +1254,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/width = widthPerColumn
 
 	var/HTML = "<center>"
-	if(SSjob.occupations.len <= 0)
+	if(length(SSjob.joinable_occupations) <= 0)
 		HTML += "The job SSticker is not yet finished creating jobs, please try again later"
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Done</a></center><br>" // Easier to press up here.
 
@@ -1269,8 +1269,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 		//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 		var/datum/job/lastJob
+		var/datum/job/overflow_role = SSjob.GetJobType(SSjob.overflow_role)
 
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job as anything in sortList(SSjob.joinable_occupations, /proc/cmp_job_display_asc))
 
 			index += 1
 			if(index >= limit)
@@ -1305,7 +1306,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!job.has_required_languages(src))
 				HTML += "<font color=red>[rank]</font></td><td><font color=red> \[BAD LANGS\]</font></td></tr>"
 				continue
-			if((job_preferences[SSjob.overflow_role] == JP_LOW) && (rank != SSjob.overflow_role) && !is_banned_from(user.ckey, SSjob.overflow_role))
+			if((job_preferences[overflow_role.title] == JP_LOW) && (rank != overflow_role.title) && !is_banned_from(user.ckey, overflow_role.title))
 				HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 				continue
 			if((rank in GLOB.command_positions) || (rank == "AI"))//Bold head jobs
@@ -1344,8 +1345,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			HTML += "<a class='white' href='?_src_=prefs;preference=job;task=setJobLevel;level=[prefUpperLevel];text=[rank]' oncontextmenu='javascript:return setJobPrefRedirect([prefLowerLevel], \"[rank]\");'>"
 
-			if(rank == SSjob.overflow_role)//Overflow is special
-				if(job_preferences[SSjob.overflow_role] == JP_LOW)
+			if(rank == overflow_role.title)//Overflow is special
+				if(job_preferences[overflow_role.title] == JP_LOW)
 					HTML += "<font color=green>Yes</font>"
 				else
 					HTML += "<font color=red>No</font>"
@@ -1361,7 +1362,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		HTML += "</td'></tr></table>"
 		HTML += "</center></table>"
 
-		var/message = "Be an [SSjob.overflow_role] if preferences unavailable"
+		var/message = "Be an [overflow_role.title] if preferences unavailable"
 		if(joblessrole == BERANDOMJOB)
 			message = "Get random job if preferences unavailable"
 		else if(joblessrole == RETURNTOLOBBY)
@@ -1389,11 +1390,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	return TRUE
 
 /datum/preferences/proc/UpdateJobPreference(mob/user, role, desiredLvl)
-	if(!SSjob || SSjob.occupations.len <= 0)
+	if(!SSjob || length(SSjob.joinable_occupations) <= 0)
 		return
 	var/datum/job/job = SSjob.GetJob(role)
 
-	if(!job)
+	if(!job || !(job.job_flags & JOB_NEW_PLAYER_JOINABLE))
 		user << browse(null, "window=mob_occupation")
 		ShowChoices(user)
 		return
@@ -1401,7 +1402,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if (!isnum(desiredLvl))
 		to_chat(user, SPAN_DANGER("UpdateJobPreference - desired level was not a number. Please notify coders!"))
 		ShowChoices(user)
-		return
+		CRASH("UpdateJobPreference called with desiredLvl value of [isnull(desiredLvl) ? "null" : desiredLvl]")
 
 	var/jpval = null
 	switch(desiredLvl)
@@ -1412,7 +1413,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(1)
 			jpval = JP_HIGH
 
-	if(role == SSjob.overflow_role)
+	if(job.type == SSjob.overflow_role)
 		if(job_preferences[job.title] == JP_LOW)
 			jpval = null
 		else
@@ -1541,7 +1542,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if("random")
 				switch(joblessrole)
 					if(RETURNTOLOBBY)
-						if(is_banned_from(user.ckey, SSjob.overflow_role))
+						var/datum/job/overflow_role = SSjob.GetJobType(SSjob.overflow_role)
+						if(is_banned_from(user.ckey, overflow_role.title))
 							joblessrole = BERANDOMJOB
 						else
 							joblessrole = BEOVERFLOW
@@ -2787,19 +2789,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	ShowChoices(user)
 	return TRUE
 
-/datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, character_setup = FALSE, antagonist = FALSE, is_latejoiner = TRUE)
+/// Sanitization checks to be performed before using these preferences.
+/datum/preferences/proc/sanitize_chosen_prefs()
+	if(!GLOB.roundstart_races[pref_species.id] && !(pref_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
+		pref_species = new /datum/species/human
+		save_character()
 
-	hardcore_survival_score = 0 //Set to 0 to prevent you getting points from last another time.
+	if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == "human"))
+		var/firstspace = findtext(real_name, " ")
+		var/name_length = length(real_name)
+		if(!firstspace) //we need a surname
+			real_name += " [pick(GLOB.last_names)]"
+		else if(firstspace == name_length)
+			real_name += "[pick(GLOB.last_names)]"
 
-	if(roundstart_checks)
-		if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == "human"))
-			var/firstspace = findtext(real_name, " ")
-			var/name_length = length(real_name)
-			if(!firstspace) //we need a surname
-				real_name += " [pick(GLOB.last_names)]"
-			else if(firstspace == name_length)
-				real_name += "[pick(GLOB.last_names)]"
+/// Sanitizes the preferences, applies the randomization prefs, and then applies the preference to the human mob.
+/datum/preferences/proc/safe_transfer_prefs_to(mob/living/carbon/human/character, icon_updates = TRUE, is_antag = FALSE)
+	sanitize_chosen_prefs()
+	apply_prefs_to(character, icon_updates)
 
+/datum/preferences/proc/apply_prefs_to(mob/living/carbon/human/character, icon_updates = TRUE, character_setup = FALSE)
 	character.real_name = real_name
 	character.name = character.real_name
 
@@ -2834,14 +2843,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.dominant_hand = dominant_hand
 
-	var/datum/species/chosen_species
-	chosen_species = pref_species.type
-	if(roundstart_checks && !(pref_species.id in GLOB.customizable_races))
-		chosen_species = /datum/species/human
-		set_new_species(/datum/species/human)
-		save_character()
-
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = src)
+	character.set_species(pref_species.type, icon_update = FALSE, pref_load = src)
 	if(!character_setup || (character_setup && show_body_size))
 		character.dna.update_body_size()
 	else //We need to update it to 100% in case they switch back
@@ -2865,14 +2867,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_hair()
 		character.update_body_parts()
 
-/datum/preferences/proc/can_be_random_hardcore()
-	if(parent.mob.mind.assigned_role in GLOB.command_positions) //No command staff
-		return FALSE
-	for(var/A in parent.mob.mind.antag_datums)
-		var/datum/antagonist/antag
-		if(antag.get_team()) //No team antags
-			return FALSE
-	return TRUE
+/datum/preferences/proc/should_be_random_hardcore(datum/job/job, datum/mind/mind)
+	return FALSE
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

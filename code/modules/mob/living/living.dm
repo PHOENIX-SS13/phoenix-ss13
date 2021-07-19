@@ -1972,8 +1972,8 @@
 	if(mind && mind.special_role && !(mind.datum_flags & DF_VAR_EDITED))
 		exp_list[mind.special_role] = minutes
 
-	if(mind.assigned_role in GLOB.exp_specialmap[EXP_TYPE_SPECIAL])
-		exp_list[mind.assigned_role] = minutes
+	if(mind.assigned_role.title in GLOB.exp_specialmap[EXP_TYPE_SPECIAL])
+		exp_list[mind.assigned_role.title] = minutes
 
 	return exp_list
 

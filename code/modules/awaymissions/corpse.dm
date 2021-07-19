@@ -31,7 +31,8 @@
 	var/burn_damage = 0
 	var/datum/disease/disease = null //Do they start with a pre-spawned disease?
 	var/mob_color //Change the mob's color
-	var/assignedrole
+	/// Typepath indicating the kind of job datum this ert member will have.
+	var/spawner_job_path = /datum/job/ghost_role
 	var/show_flavour = TRUE
 	var/banType = ROLE_LAVALAND
 	var/ghost_usable = TRUE
@@ -40,6 +41,7 @@
 	var/any_station_species = FALSE
 	var/can_use_loadout = TRUE
 	var/mob_species = /datum/species/human //Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
+
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user)
@@ -153,8 +155,7 @@
 				var/datum/objective/O = new/datum/objective(objective)
 				O.owner = MM
 				A.objectives += O
-		if(assignedrole)
-			M.mind.assigned_role = assignedrole
+		M.mind.set_assigned_role(SSjob.GetJobType(spawner_job_path))
 		special(M, pref_load)
 		MM.name = M.real_name
 	if(uses > 0)
@@ -170,7 +171,7 @@
 	var/datum/outfit/outfit = /datum/outfit //If this is a path, it will be instanced in Initialize()
 	var/disable_pda = TRUE
 	var/disable_sensors = TRUE
-	assignedrole = "Ghost Role"
+	spawner_job_path = /datum/job/ghost_role
 
 	var/husk = null
 	//these vars are for lazy mappers to override parts of the outfit
@@ -209,13 +210,13 @@
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H, mob/user, pref_load, alias)
 	if(pref_load && user?.client)
-		user.client.prefs.copy_to(H)
+		user.client.prefs.apply_prefs_to(H)
 		H.dna.update_dna_identity()
 		if(alias)
 			H.name = alias
 			H.real_name = alias
 		//Pre-job equips so Voxes dont die
-		H.dna.species.before_equip_job(null, H)
+		H.dna.species.pre_equip_species_outfit(null, H)
 		H.regenerate_icons()
 	else
 		if(mob_species)
@@ -479,7 +480,7 @@
 	name = "rotting corpse"
 	mob_name = "zombie"
 	mob_species = /datum/species/zombie
-	assignedrole = "Zombie"
+	spawner_job_path = /datum/job/zombie
 
 /obj/effect/mob_spawn/human/abductor
 	name = "abductor"
