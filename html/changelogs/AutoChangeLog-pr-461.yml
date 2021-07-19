@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - refactor: "refactored job code to not use string id's"
+  - bugfix: "equipping corpses with jobs that are not playable currently will not runtime"
