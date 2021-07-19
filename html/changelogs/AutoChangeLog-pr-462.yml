@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "fixed a bug regarding dynamic luminosity not being retained on ChangeTurf()"
+  - refactor: "Refactor dynamic lighting to minimise the use of extra atoms and vis contents"
