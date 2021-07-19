@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Overmap Hazards affect Transit Zones (you can go fishing now in carp schools ,or crash against asteroids) Keep in mind that if you do crash your shuttle on asteroids there is NO WAY for you to be recovered. Another PR will handle that"
-  - bugfix: "small fixes and tweaks to transit zones"

@@ -395,3 +395,10 @@
   - refactor: Lifts completely rewritten to be realistic and modular see https://github.com/hrzntal/horizon/pull/434
       for more info
   - qol: Getting floored will set your resting status
+2021-07-19:
+  Azarak:
+  - rscadd: Overmap Hazards affect Transit Zones (you can go fishing now in carp schools
+      ,or crash against asteroids) Keep in mind that if you do crash your shuttle
+      on asteroids there is NO WAY for you to be recovered. Another PR will handle
+      that
+  - bugfix: small fixes and tweaks to transit zones
