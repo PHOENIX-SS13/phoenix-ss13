@@ -5,6 +5,7 @@
 	icon_state = "railing"
 	density = TRUE
 	anchored = TRUE
+	flags_1 = ON_BORDER_1
 
 	var/climbable = TRUE
 	///Initial direction of the railing.
