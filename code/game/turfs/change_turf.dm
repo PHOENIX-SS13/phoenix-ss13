@@ -166,8 +166,9 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(stashed_air)
 			return
 		var/turf/open/newTurf = .
-		newTurf.pollution = stashed_pollution
-		stashed_pollution.HandleOverlay()
+		if(stashed_pollution)
+			newTurf.pollution = stashed_pollution
+			stashed_pollution.HandleOverlay()
 		newTurf.turf_fire = turf_fire_ref
 		newTurf.air.copy_from(stashed_air)
 		QDEL_NULL(stashed_air)
