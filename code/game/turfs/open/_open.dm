@@ -320,12 +320,16 @@
 		return
 	new /obj/effect/abstract/turf_fire(src, power)
 
-/turf/open/PolluteTurf(pollution_type, amount)
+/turf/open/PolluteTurf(pollution_type, amount, cap)
 	if(!pollution)
 		pollution = new(src)
+	if(cap && pollution.total_amount >= cap)
+		return
 	pollution.AddPollutant(pollution_type, amount)
 
-/turf/open/PolluteListTurf(list/pollutions)
+/turf/open/PolluteListTurf(list/pollutions, cap)
 	if(!pollution)
 		pollution = new(src)
+	if(cap && pollution.total_amount >= cap)
+		return
 	pollution.AddPollutantList(pollutions)
