@@ -359,7 +359,7 @@
 	range = clamp(CEILING(new_range, 0.5), 1, 6)
 	var/pixel_bounds = ((range - 1) * 64) + 32
 	lumcount_range = CEILING(range, 1)
-	if(overlay_lighting_flags & LIGHTING_ON)
+	if(light_source && overlay_lighting_flags & LIGHTING_ON)
 		light_source.underlays -= visible_mask
 	visible_mask.icon = light_overlays["[pixel_bounds]"]
 	if(pixel_bounds == 32)
@@ -369,7 +369,7 @@
 	var/matrix/transform = new
 	transform.Translate(-offset, -offset)
 	visible_mask.transform = transform
-	if(overlay_lighting_flags & LIGHTING_ON)
+	if(light_source && overlay_lighting_flags & LIGHTING_ON)
 		light_source.underlays += visible_mask
 	if(directional)
 		cast_range = clamp(round(new_range * 0.5), 1, 3)
@@ -384,18 +384,18 @@
 	set_lum_power(new_power >= 0 ? 0.5 : -0.5)
 	set_alpha = min(230, (abs(new_power) * 120) + 30)
 	var/atom/movable/light_source = GET_LIGHT_SOURCE
-	if(overlay_lighting_flags & LIGHTING_ON)
+	if(light_source && overlay_lighting_flags & LIGHTING_ON)
 		light_source.underlays -= visible_mask
 	visible_mask.alpha = set_alpha
-	if(overlay_lighting_flags & LIGHTING_ON)
+	if(light_source && overlay_lighting_flags & LIGHTING_ON)
 		light_source.underlays += visible_mask
 	if(!directional)
 		return
-	if(overlay_lighting_flags & LIGHTING_ON)
-		light_source.underlays -= cone
+	if(current_holder && overlay_lighting_flags & LIGHTING_ON)
+		current_holder.underlays -= cone
 	cone.alpha = min(200, (abs(new_power) * 90)+20)
-	if(overlay_lighting_flags & LIGHTING_ON)
-		light_source.underlays += cone
+	if(current_holder && overlay_lighting_flags & LIGHTING_ON)
+		current_holder.underlays += cone
 
 
 ///Changes the light's color, pretty straightforward.
@@ -403,18 +403,18 @@
 	SIGNAL_HANDLER
 	var/atom/movable/light_source = GET_LIGHT_SOURCE
 	var/new_color = source.light_color
-	if(overlay_lighting_flags & LIGHTING_ON)
+	if(light_source && overlay_lighting_flags & LIGHTING_ON)
 		light_source.underlays -= visible_mask
 	visible_mask.color = new_color
-	if(overlay_lighting_flags & LIGHTING_ON)
+	if(light_source && overlay_lighting_flags & LIGHTING_ON)
 		light_source.underlays += visible_mask
 	if(!directional)
 		return
-	if(overlay_lighting_flags & LIGHTING_ON)
-		light_source.underlays -= cone
+	if(current_holder && overlay_lighting_flags & LIGHTING_ON)
+		current_holder.underlays -= cone
 	cone.color = new_color
-	if(overlay_lighting_flags & LIGHTING_ON)
-		light_source.underlays += cone
+	if(current_holder && overlay_lighting_flags & LIGHTING_ON)
+		current_holder.underlays += cone
 
 
 ///Toggles the light on and off.
