@@ -402,3 +402,18 @@
       on asteroids there is NO WAY for you to be recovered. Another PR will handle
       that
   - bugfix: small fixes and tweaks to transit zones
+2021-07-20:
+  Avunia Takiya:
+  - qol: Your internals box now contains a pocket crowbar for emergencies. Please
+      handle with care.
+  Azarak:
+  - bugfix: fixed a bug regarding dynamic luminosity not being retained on ChangeTurf()
+  - refactor: Refactor dynamic lighting to minimise the use of extra atoms and vis
+      contents
+  - rscdel: Removes the liquid pump from the mining trader
+  - refactor: refactored job code to not use string id's
+  - bugfix: equipping corpses with jobs that are not playable currently will not runtime
+  - rscadd: The sense of smell
+  - rscadd: Added a pollution system, which is used for air pollutants, such as cigarette
+      smoke, deadly carbon pollution, perfumes, food scents etc. See https://github.com/hrzntal/horizon/pull/454
+      for all changes

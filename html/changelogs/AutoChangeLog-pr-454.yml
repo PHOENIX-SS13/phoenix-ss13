@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "The sense of smell"
-  - rscadd: "Added a pollution system, which is used for air pollutants, such as cigarette smoke, deadly carbon pollution, perfumes, food scents etc. See https://github.com/hrzntal/horizon/pull/454 for all changes"
