@@ -183,7 +183,7 @@
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "aG" = (
 /obj/machinery/turretid{
-	control_area = "/area/ruin/space/has_grav/syndicate_forgotten_ship";
+	control_area = null;
 	enabled = 0;
 	icon_state = "control_kill";
 	lethal = 1;
