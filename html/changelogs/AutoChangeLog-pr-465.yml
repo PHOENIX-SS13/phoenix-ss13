@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Fixes a mapping runtime with forgottenship"
