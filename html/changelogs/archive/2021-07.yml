@@ -417,3 +417,12 @@
   - rscadd: Added a pollution system, which is used for air pollutants, such as cigarette
       smoke, deadly carbon pollution, perfumes, food scents etc. See https://github.com/hrzntal/horizon/pull/454
       for all changes
+2021-07-21:
+  Azarak:
+  - bugfix: Fixes a mapping runtime with forgottenship
+  - bugfix: Added emission caps for pollution
+  - bugfix: Fixes pollution change turf runtime
+  - bugfix: Added a missing border flag for railings
+  - bugfix: Fixes an underlay movable lighting runtime
+  - bugfix: Fixed bad logic in updating movable lighting appearance
+  - bugfix: Fixes a runtime that would leave everyone naked

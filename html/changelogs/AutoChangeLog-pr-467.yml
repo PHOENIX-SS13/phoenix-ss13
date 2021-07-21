@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Fixes an underlay movable lighting runtime"
-  - bugfix: "Fixed bad logic in updating movable lighting appearance"
