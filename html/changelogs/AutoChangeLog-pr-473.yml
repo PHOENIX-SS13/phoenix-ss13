@@ -1,0 +1,5 @@
+author: "Avunia Takiya"
+delete-after: True
+changes: 
+  - bugfix: "The camo deagle now comes with counter-strike: source - no more missing textures."
+  - imageadd: "Splitted the camo deagle sprite up in its proper parts."
