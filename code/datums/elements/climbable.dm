@@ -89,14 +89,14 @@
 
 
 /datum/element/climbable/proc/do_climb(atom/climbed_thing, mob/living/user)
-	climbed_thing.density = FALSE
+	climbed_thing.set_density(FALSE)
 	var/dir
 	if(climb_over && climbed_thing.loc == user.loc)
 		dir = climbed_thing.dir
 	else
 		dir = get_dir(user,climbed_thing.loc)
 	. = step(user, dir)
-	climbed_thing.density = TRUE
+	climbed_thing.set_density(TRUE)
 
 ///Handles climbing onto the atom when you click-drag
 /datum/element/climbable/proc/mousedrop_receive(atom/climbed_thing, atom/movable/dropped_atom, mob/user)

@@ -85,9 +85,9 @@
 		. += mutable_appearance(icon, "fire_[SEC_LEVEL_GREEN]")
 		. += emissive_appearance(icon, "fire_[SEC_LEVEL_GREEN]")
 
-	var/area/A = get_area(src)
+	var/area/area = get_area(src)
 
-	if(!detecting || !A.fire)
+	if(!detecting || !area.fire)
 		. += "fire_off"
 		. += mutable_appearance(icon, "fire_off")
 		. += emissive_appearance(icon, "fire_off")
@@ -167,8 +167,8 @@
 	if(!is_operational || !COOLDOWN_FINISHED(src, last_alarm))
 		return
 	COOLDOWN_START(src, last_alarm, FIREALARM_COOLDOWN)
-	var/area/A = get_area(src)
-	A.firealert(src)
+	var/area/area = get_area(src)
+	area.firealert(src)
 	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
 	if(user)
 		log_game("[user] triggered a fire alarm at [COORD(src)]")
@@ -176,8 +176,8 @@
 /obj/machinery/firealarm/proc/reset(mob/user)
 	if(!is_operational)
 		return
-	var/area/A = get_area(src)
-	A.firereset()
+	var/area/area = get_area(src)
+	area.firereset()
 	if(user)
 		log_game("[user] reset a fire alarm at [COORD(src)]")
 
@@ -185,8 +185,8 @@
 	if(buildstage != 2)
 		return ..()
 	add_fingerprint(user)
-	var/area/A = get_area(src)
-	if(A.fire)
+	var/area/area = get_area(src)
+	if(area.fire)
 		reset(user)
 	else
 		alarm(user)
@@ -197,11 +197,11 @@
 /obj/machinery/firealarm/attack_robot(mob/user)
 	return attack_hand(user)
 
-/obj/machinery/firealarm/attackby(obj/item/W, mob/living/user, params)
+/obj/machinery/firealarm/attackby(obj/item/tool, mob/living/user, params)
 	add_fingerprint(user)
 
-	if(W.tool_behaviour == TOOL_SCREWDRIVER && buildstage == 2)
-		W.play_tool_sound(src)
+	if(tool.tool_behaviour == TOOL_SCREWDRIVER && buildstage == 2)
+		tool.play_tool_sound(src)
 		panel_open = !panel_open
 		to_chat(user, SPAN_NOTICE("The wires have been [panel_open ? "exposed" : "unexposed"]."))
 		update_appearance()
@@ -209,13 +209,13 @@
 
 	if(panel_open)
 
-		if(W.tool_behaviour == TOOL_WELDER && !user.combat_mode)
+		if(tool.tool_behaviour == TOOL_WELDER && !user.combat_mode)
 			if(obj_integrity < max_integrity)
-				if(!W.tool_start_check(user, amount=0))
+				if(!tool.tool_start_check(user, amount=0))
 					return
 
 				to_chat(user, SPAN_NOTICE("You begin repairing [src]..."))
-				if(W.use_tool(src, user, 40, volume=50))
+				if(tool.use_tool(src, user, 40, volume=50))
 					obj_integrity = max_integrity
 					to_chat(user, SPAN_NOTICE("You repair [src]."))
 			else
@@ -224,7 +224,7 @@
 
 		switch(buildstage)
 			if(2)
-				if(W.tool_behaviour == TOOL_MULTITOOL)
+				if(tool.tool_behaviour == TOOL_MULTITOOL)
 					detecting = !detecting
 					if (src.detecting)
 						user.visible_message(SPAN_NOTICE("[user] reconnects [src]'s detecting unit!"), SPAN_NOTICE("You reconnect [src]'s detecting unit."))
@@ -232,24 +232,24 @@
 						user.visible_message(SPAN_NOTICE("[user] disconnects [src]'s detecting unit!"), SPAN_NOTICE("You disconnect [src]'s detecting unit."))
 					return
 
-				else if(W.tool_behaviour == TOOL_WIRECUTTER)
+				else if(tool.tool_behaviour == TOOL_WIRECUTTER)
 					buildstage = 1
-					W.play_tool_sound(src)
+					tool.play_tool_sound(src)
 					new /obj/item/stack/cable_coil(user.loc, 5)
 					to_chat(user, SPAN_NOTICE("You cut the wires from \the [src]."))
 					update_appearance()
 					return
 
-				else if(W.force) //hit and turn it on
+				else if(tool.force) //hit and turn it on
 					..()
-					var/area/A = get_area(src)
-					if(!A.fire)
+					var/area/area = get_area(src)
+					if(!area.fire)
 						alarm()
 					return
 
 			if(1)
-				if(istype(W, /obj/item/stack/cable_coil))
-					var/obj/item/stack/cable_coil/coil = W
+				if(istype(tool, /obj/item/stack/cable_coil))
+					var/obj/item/stack/cable_coil/coil = tool
 					if(coil.get_amount() < 5)
 						to_chat(user, SPAN_WARNING("You need more cable for this!"))
 					else
@@ -259,10 +259,12 @@
 						update_appearance()
 					return
 
-				else if(W.tool_behaviour == TOOL_CROWBAR)
-					user.visible_message(SPAN_NOTICE("[user.name] removes the electronics from [src.name]."), \
-										SPAN_NOTICE("You start prying out the circuit..."))
-					if(W.use_tool(src, user, 20, volume=50))
+				else if(tool.tool_behaviour == TOOL_CROWBAR)
+					user.visible_message(
+						SPAN_NOTICE("[user.name] removes the electronics from [src.name]."),
+						SPAN_NOTICE("You start prying out the circuit...")
+					)
+					if(tool.use_tool(src, user, 20, volume=50))
 						if(buildstage == 1)
 							if(machine_stat & BROKEN)
 								to_chat(user, SPAN_NOTICE("You remove the destroyed circuit."))
@@ -274,16 +276,16 @@
 							update_appearance()
 					return
 			if(0)
-				if(istype(W, /obj/item/electronics/firealarm))
+				if(istype(tool, /obj/item/electronics/firealarm))
 					to_chat(user, SPAN_NOTICE("You insert the circuit."))
-					qdel(W)
+					qdel(tool)
 					buildstage = 1
 					update_appearance()
 					return
 
-				else if(istype(W, /obj/item/electroadaptive_pseudocircuit))
-					var/obj/item/electroadaptive_pseudocircuit/P = W
-					if(!P.adapt_circuit(user, 15))
+				else if(istype(tool, /obj/item/electroadaptive_pseudocircuit))
+					var/obj/item/electroadaptive_pseudocircuit/pseudoc = tool
+					if(!pseudoc.adapt_circuit(user, 15))
 						return
 					user.visible_message(SPAN_NOTICE("[user] fabricates a circuit and places it into [src]."), \
 					SPAN_NOTICE("You adapt a fire alarm circuit and slot it into the assembly."))
@@ -291,12 +293,14 @@
 					update_appearance()
 					return
 
-				else if(W.tool_behaviour == TOOL_WRENCH)
-					user.visible_message(SPAN_NOTICE("[user] removes the fire alarm assembly from the wall."), \
-						SPAN_NOTICE("You remove the fire alarm assembly from the wall."))
+				else if(tool.tool_behaviour == TOOL_WRENCH)
+					user.visible_message(
+						SPAN_NOTICE("[user] removes the fire alarm assembly from the wall."),
+						SPAN_NOTICE("You remove the fire alarm assembly from the wall.")
+					)
 					var/obj/item/wallframe/firealarm/frame = new /obj/item/wallframe/firealarm()
 					frame.forceMove(user.drop_location())
-					W.play_tool_sound(src)
+					tool.play_tool_sound(src)
 					qdel(src)
 					return
 
@@ -340,9 +344,9 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		new /obj/item/stack/sheet/iron(loc, 1)
 		if(!(machine_stat & BROKEN))
-			var/obj/item/I = new /obj/item/electronics/firealarm(loc)
+			var/obj/item/item = new /obj/item/electronics/firealarm(loc)
 			if(!disassembled)
-				I.update_integrity(I.max_integrity * 0.5)
+				item.update_integrity(item.max_integrity * 0.5)
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
 
@@ -353,6 +357,25 @@
 		set_light(l_power = 0.8)
 	else
 		set_light(l_power = 0)
+
+// Allows users to examine the state of the thermal sensor
+/obj/machinery/firealarm/examine(mob/user)
+	. = ..()
+	. += "A light on the side indicates the thermal sensor is [detecting ? "enabled" : "disabled"]."
+
+// Allows Silicons to disable thermal sensor
+/obj/machinery/firealarm/BorgCtrlClick(mob/living/silicon/robot/user)
+	if(get_dist(src,user) <= user.interaction_range)
+		AICtrlClick(user)
+		return
+	return ..()
+
+/obj/machinery/firealarm/AICtrlClick(mob/living/silicon/robot/user)
+	if(obj_flags & EMAGGED)
+		to_chat(user, SPAN_WARNING("The control circuitry of [src] appears to be malfunctioning."))
+		return
+	detecting = !detecting
+	to_chat(user, SPAN_NOTICE("You [ detecting ? "enable" : "disable" ] [src]'s detecting unit!"))
 
 /obj/machinery/firealarm/directional/north
 	pixel_y = 26
@@ -384,19 +407,19 @@
 /obj/machinery/firealarm/partyalarm/reset()
 	if (machine_stat & (NOPOWER|BROKEN))
 		return
-	var/area/A = get_area(src)
-	if (!A || !A.party)
+	var/area/area = get_area(src)
+	if (!area || !area.party)
 		return
-	A.party = FALSE
-	A.cut_overlay(party_overlay)
+	area.party = FALSE
+	area.cut_overlay(party_overlay)
 
 /obj/machinery/firealarm/partyalarm/alarm()
 	if (machine_stat & (NOPOWER|BROKEN))
 		return
-	var/area/A = get_area(src)
-	if (!A || A.party || A.name == "Space")
+	var/area/area = get_area(src)
+	if (!area || area.party || area.name == "Space")
 		return
-	A.party = TRUE
+	area.party = TRUE
 	if (!party_overlay)
 		party_overlay = iconstate2appearance('icons/turf/areas.dmi', "party")
-	A.add_overlay(party_overlay)
+	area.add_overlay(party_overlay)

@@ -15,7 +15,7 @@
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/toy/prize/ripley,
+/obj/item/toy/mecha/ripley,
 /obj/item/clothing/gloves/cargo_gauntlet,
 /obj/machinery/space_heater{
 	on = 1;

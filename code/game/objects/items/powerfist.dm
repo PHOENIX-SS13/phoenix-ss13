@@ -89,7 +89,7 @@
 		target.visible_message(SPAN_DANGER("[user]'s powerfist lets out a dull thunk as [user.p_they()] punch[user.p_es()] [target.name]!"), \
 			SPAN_USERDANGER("[user]'s punches you!"))
 		return
-	if(gasused.total_moles() < gasperfist * fisto_setting)
+	if(!molar_cmp_equals(gasused.total_moles(), gasperfist * fisto_setting))
 		to_chat(user, SPAN_WARNING("\The [src]'s piston-ram lets out a weak hiss, it needs more gas!"))
 		playsound(loc, 'sound/weapons/punch4.ogg', 50, TRUE)
 		target.apply_damage((force / 2), BRUTE)

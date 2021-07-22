@@ -133,6 +133,9 @@
 	togglename = "straps"
 	species_exception = list(/datum/species/golem)
 	mutant_variants = NONE
+	greyscale_config = /datum/greyscale_config/suspenders
+	greyscale_config_worn = /datum/greyscale_config/suspenders/worn
+	greyscale_colors = "#ff0000"
 
 //Security
 /obj/item/clothing/suit/security/officer

@@ -18,21 +18,21 @@
 	SIGNAL_HANDLER
 	EnterTransitTurf(AM)
 
-/turf/open/space/transit/Entered(atom/movable/entered)
+/turf/open/space/transit/Entered(atom/movable/arrived, direction)
 	. = ..()
-	EnterTransitTurf(entered)
+	EnterTransitTurf(arrived)
 
-/turf/open/space/transit/proc/EnterTransitTurf(atom/movable/entered)
-	if(istype(entered, /obj/effect/abstract) || entered.invisibility == INVISIBILITY_ABSTRACT)
+/turf/open/space/transit/proc/EnterTransitTurf(atom/movable/arrived)
+	if(istype(arrived, /obj/effect/abstract) || arrived.invisibility == INVISIBILITY_ABSTRACT)
 		return
-	if(entered.GetComponent(/datum/component/transit_handler))
+	if(arrived.GetComponent(/datum/component/transit_handler))
 		return
-	if(entered.loc != src || src.loc.type != /area/shuttle/transit)
+	if(arrived.loc != src || src.loc.type != /area/shuttle/transit)
 		return
 	var/datum/transit_instance/this_transit = SSshuttle.get_transit_instance(src)
 	if(!this_transit)
 		return
-	entered.AddComponent(/datum/component/transit_handler, this_transit)
+	arrived.AddComponent(/datum/component/transit_handler, this_transit)
 
 /turf/open/space/transit/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	. = ..()
