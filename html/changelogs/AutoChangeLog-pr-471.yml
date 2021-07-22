@@ -1,0 +1,4 @@
+author: "ZephyrTFA"
+delete-after: True
+changes: 
+  - bugfix: "Meat is once again edible when you cut it"
