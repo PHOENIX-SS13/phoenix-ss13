@@ -426,3 +426,12 @@
   - bugfix: Fixes an underlay movable lighting runtime
   - bugfix: Fixed bad logic in updating movable lighting appearance
   - bugfix: Fixes a runtime that would leave everyone naked
+2021-07-23:
+  /tg/station, Avunia Takiya:
+  - code_imp: Applied upstream patches from /tg/station. Updated to 22th June 2021.
+  Avunia Takiya:
+  - bugfix: 'The camo deagle now comes with counter-strike: source - no more missing
+      textures.'
+  - imageadd: Splitted the camo deagle sprite up in its proper parts.
+  ZephyrTFA:
+  - bugfix: Meat is once again edible when you cut it
