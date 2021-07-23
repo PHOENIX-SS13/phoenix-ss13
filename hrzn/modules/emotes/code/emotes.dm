@@ -303,8 +303,8 @@
 				'hrzn/modules/emotes/sound/emotes/clap4.ogg')
 
 /datum/emote/living/clap/can_run_emote(mob/living/carbon/user, status_check = TRUE , intentional)
-	if(user.usable_hands < 2)
-		return FALSE
+	if(!iscarbon(user)) return FALSE
+	if(user.usable_hands < 2) return FALSE
 	return ..()
 
 /datum/emote/living/clap1
@@ -322,8 +322,8 @@
 				'hrzn/modules/emotes/sound/emotes/claponce2.ogg')
 
 /datum/emote/living/clap1/can_run_emote(mob/living/carbon/user, status_check = TRUE , intentional)
-	if(user.usable_hands < 2)
-		return FALSE
+	if(!iscarbon(user)) return FALSE
+	if(user.usable_hands < 2) return FALSE
 	return ..()
 
 /datum/emote/living/laugh
