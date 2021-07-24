@@ -435,3 +435,7 @@
   - imageadd: Splitted the camo deagle sprite up in its proper parts.
   ZephyrTFA:
   - bugfix: Meat is once again edible when you cut it
+2021-07-24:
+  Avunia Takiya:
+  - qol: Mini-Egun now shows what mode it is in, on the sprite.
+  - imageadd: Added icon states for mini-egun modes

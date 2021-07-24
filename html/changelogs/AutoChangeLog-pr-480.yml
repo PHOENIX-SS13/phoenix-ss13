@@ -1,5 +1,0 @@
-author: "Avunia Takiya"
-delete-after: True
-changes: 
-  - qol: "Mini-Egun now shows what mode it is in, on the sprite."
-  - imageadd: "Added icon states for mini-egun modes"
