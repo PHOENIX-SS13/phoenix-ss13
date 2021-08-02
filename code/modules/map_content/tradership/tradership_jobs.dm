@@ -1,5 +1,5 @@
 /datum/job/tradership_captain
-	title = "Captain"
+	title = "Ship Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	department_head = list("Free Trade Union")
 	faction = FACTION_TRADERSHIP
@@ -55,7 +55,7 @@
 	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK
 
 /datum/job/tradership_engineer
-	title = "Engineer"
+	title = "Ship Engineer"
 	department_head = list("Captain")
 	faction = FACTION_TRADERSHIP
 	total_positions = 3
@@ -79,7 +79,7 @@
 	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK
 
 /datum/job/tradership_doctor
-	title = "Doctor"
+	title = "Ship Doctor"
 	department_head = list("Captain")
 	faction = FACTION_TRADERSHIP
 	total_positions = 2
@@ -142,7 +142,7 @@
 	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK
 
 /datum/job/tradership_cook
-	title = "Cook"
+	title = "Ship Cook"
 	department_head = list("Captain")
 	faction = FACTION_TRADERSHIP
 	total_positions = 1
@@ -164,7 +164,7 @@
 	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK
 
 /datum/job/tradership_botanist
-	title = "Botanist"
+	title = "Ship Botanist"
 	department_head = list("Captain")
 	faction = FACTION_TRADERSHIP
 	total_positions = 2
@@ -201,6 +201,6 @@
 	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK
 
 /datum/job/cyborg/tradership
-	title = "Cyborg"
+	title = "Ship Cyborg"
 	faction = FACTION_TRADERSHIP
 	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK
