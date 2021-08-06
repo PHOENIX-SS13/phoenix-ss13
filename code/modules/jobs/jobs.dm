@@ -32,14 +32,14 @@ GLOBAL_LIST_INIT(security_sub_positions, list(
 	"Security Officer (Science)" = TRUE,
 ))
 
-GLOBAL_LIST_INIT(nonhuman_positions, list(ROLE_PAI = TRUE))
+GLOBAL_LIST_EMPTY(nonhuman_positions)
 
 // job categories for rendering the late join menu
 GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_COMMAND = list("jobs" = command_positions, "color" = "#ccccff"),
 	EXP_TYPE_ENGINEERING = list("jobs" = engineering_positions, "color" = "#ffeeaa"),
 	EXP_TYPE_SUPPLY = list("jobs" = supply_positions, "color" = "#ddddff"),
-	EXP_TYPE_SILICON = list("jobs" = nonhuman_positions - "pAI", "color" = "#ccffcc"),
+	EXP_TYPE_SILICON = list("jobs" = nonhuman_positions, "color" = "#ccffcc"),
 	EXP_TYPE_MISC = list("jobs" = misc_positions, "color" = "#eeeeee"),
 	EXP_TYPE_MEDICAL = list("jobs" = medical_positions, "color" = "#ffddf0"),
 	EXP_TYPE_SCIENCE = list("jobs" = science_positions, "color" = "#ffddff"),
@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SECURITY = list("titles" = security_positions),
 	EXP_TYPE_CIVILLIAN = list("titles" = civillian_positions),
 	EXP_TYPE_MISC = list("titles" = misc_positions),
-	EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
+	EXP_TYPE_SILICON = list("titles" = nonhuman_positions),
 	EXP_TYPE_SERVICE = list("titles" = service_positions)
 ))
 
