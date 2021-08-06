@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Fixes global list references for silicon positions"
