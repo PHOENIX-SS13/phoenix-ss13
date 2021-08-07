@@ -5,3 +5,6 @@
   Azarak:
   - bugfix: Reinforced mining hardsuit icon for digitigrades now exists
   - bugfix: Fixes job flags for the bearcat jobs
+2021-08-07:
+  Azarak:
+  - bugfix: Fixes global list references for silicon positions
