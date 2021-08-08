@@ -8,3 +8,7 @@
 2021-08-07:
   Azarak:
   - bugfix: Fixes global list references for silicon positions
+2021-08-08:
+  Azarak:
+  - bugfix: Turf Fires have a pollution cap now
+  - bugfix: Volcanic planet turfs will now scrape to rock floor instead of lava
