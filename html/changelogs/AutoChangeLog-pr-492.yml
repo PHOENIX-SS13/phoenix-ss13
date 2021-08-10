@@ -1,0 +1,4 @@
+author: "MissFox0810"
+delete-after: True
+changes: 
+  - qol: "added a hook to allow silicons to interact with the tank dispenser"
