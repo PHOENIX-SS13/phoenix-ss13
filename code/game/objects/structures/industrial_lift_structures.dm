@@ -119,6 +119,9 @@
 		name = "[linked_controller.name] control panel"
 		desc = "A panel which interfaces with \the [linked_controller.name] controls."
 
+/obj/structure/lift_control_panel/attack_ai(mob/user)
+	return _try_interact(user)
+
 /obj/structure/lift_control_panel/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
 	if(!linked_controller)
@@ -136,10 +139,11 @@
 	var/datum/browser/popup = new(user, "lift_control_panel", "control panel", 180, 200)
 	popup.set_content(dat.Join())
 	popup.open()
+	. = TRUE
 
 /obj/structure/lift_control_panel/Topic(href, href_list)
 	var/mob/user = usr
-	if(!linked_controller || !isliving(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+	if(!linked_controller || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if(!href_list["task"])
 		return
