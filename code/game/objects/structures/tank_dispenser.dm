@@ -83,6 +83,9 @@
 
 	return data
 
+/obj/structure/tank_dispenser/attack_ai(mob/user)
+	return _try_interact(user)
+
 /obj/structure/tank_dispenser/ui_act(action, params)
 	. = ..()
 	if(.)
