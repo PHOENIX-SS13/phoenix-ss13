@@ -7,6 +7,8 @@
 #define PI 3.1416
 #define INFINITY 1e31 //closer then enough
 
+#define SQRT_2 1.4142136
+
 #define SHORT_REAL_LIMIT 16777216
 
 //"fancy" math for calculating time in ms from tick_usage percentage and the length of ticks
