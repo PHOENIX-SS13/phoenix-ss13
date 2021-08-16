@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Added a lot of missing equipment to the FTV Bearcat"
+  - bugfix: "Fixed SM shutters opening from the medbay privacy button"
