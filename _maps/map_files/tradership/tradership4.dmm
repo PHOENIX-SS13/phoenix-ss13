@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aw" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "bU" = (
 /obj/item/stack/cable_coil,
 /turf/open/floor/plating/airless,
@@ -199,6 +203,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"vy" = (
+/obj/machinery/button/elevator{
+	id = "CARGOLIFT";
+	pixel_x = 27
+	},
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "vS" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -246,7 +257,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/railing,
 /obj/machinery/door/firedoor/border_only,
-/turf/closed/wall,
+/turf/open/openspace,
 /area/maintenance/solars/port/aft)
 "zC" = (
 /turf/open/floor/plating/airless,
@@ -339,6 +350,10 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Lg" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "MK" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
@@ -374,10 +389,6 @@
 "QM" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/lattice/catwalk,
-/obj/machinery/button/elevator{
-	id = "CARGOLIFT";
-	pixel_x = 27
-	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/openspace,
 /area/maintenance/solars/port/aft)
@@ -33547,7 +33558,7 @@ oE
 nZ
 oE
 oE
-rQ
+vy
 yH
 IE
 IE
@@ -34064,8 +34075,8 @@ Ou
 oE
 oE
 HJ
-rQ
-rQ
+aw
+Lg
 oE
 oE
 oE

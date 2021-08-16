@@ -180,10 +180,17 @@
 	},
 /turf/open/floor/iron,
 /area/hallway/primary/central)
+"fW" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/plating,
+/area/hallway/primary/central)
 "gh" = (
-/obj/structure/rack,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable,
+/obj/machinery/space_heater,
 /turf/open/floor/iron,
 /area/construction/storage_wing)
 "gq" = (
@@ -243,6 +250,7 @@
 "hF" = (
 /obj/effect/turf_decal/stripes/corner,
 /obj/structure/railing/corner,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron,
 /area/cargo/warehouse)
 "hV" = (
@@ -291,6 +299,10 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/engine,
 /area/science/research/abandoned)
+"jE" = (
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/commons/vacant_room)
 "jM" = (
 /obj/effect/landmark/latejoin,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -628,6 +640,10 @@
 /obj/item/metal_density_scanner,
 /turf/open/floor/iron,
 /area/cargo/warehouse)
+"rd" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/iron,
+/area/construction/storage_wing)
 "rn" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -702,6 +718,7 @@
 /area/science)
 "tl" = (
 /obj/machinery/airalarm/directional/south,
+/obj/structure/closet/emcloset,
 /turf/open/floor/plating,
 /area/commons/vacant_room)
 "tX" = (
@@ -789,6 +806,7 @@
 /area/commons/dorms)
 "vS" = (
 /obj/item/radio/intercom/directional/south,
+/obj/structure/closet/toolcloset,
 /turf/open/floor/iron,
 /area/construction/storage_wing)
 "vV" = (
@@ -911,8 +929,8 @@
 /turf/open/floor/iron,
 /area/cargo/warehouse)
 "zv" = (
-/obj/structure/rack,
 /obj/machinery/light_switch/directional/north,
+/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/iron/dark,
 /area/engineering/storage)
 "zF" = (
@@ -1064,6 +1082,7 @@
 /area/cargo/warehouse)
 "DO" = (
 /obj/machinery/airalarm/directional/south,
+/obj/structure/closet/emcloset,
 /turf/open/floor/iron,
 /area/construction/storage_wing)
 "Eh" = (
@@ -1272,6 +1291,7 @@
 /obj/machinery/light/directional/east,
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/iron,
 /area/construction/storage_wing)
 "Kt" = (
@@ -1799,8 +1819,8 @@
 	},
 /area/commons/dorms/barracks)
 "YM" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/science,
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/rnd/production/circuit_imprinter,
 /turf/open/floor/iron/white,
 /area/science)
 "YR" = (
@@ -1856,6 +1876,7 @@
 /area/commons/cryopods)
 "ZY" = (
 /obj/machinery/airalarm/directional/south,
+/obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/iron/dark,
 /area/engineering/storage)
 
@@ -33596,10 +33617,10 @@ sk
 My
 KW
 sk
-OX
+sk
 NA
 sk
-sk
+OX
 sk
 sk
 pR
@@ -33867,7 +33888,7 @@ Zj
 Gd
 Kp
 BI
-xD
+rd
 Me
 Mg
 Mg
@@ -35655,7 +35676,7 @@ Uc
 Ph
 nb
 Js
-Zz
+fW
 Zz
 AN
 nb
@@ -36172,7 +36193,7 @@ WG
 zG
 WG
 WG
-Rr
+jE
 Qc
 Rr
 Ny

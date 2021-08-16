@@ -139,6 +139,7 @@
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "eP" = (
@@ -203,6 +204,7 @@
 /obj/effect/turf_decal/bot,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/east,
+/obj/structure/closet/crate,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "gU" = (
@@ -219,6 +221,7 @@
 "gX" = (
 /obj/machinery/light/dim/directional/east,
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "hq" = (
@@ -861,11 +864,17 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
+/obj/structure/closet/emcloset,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "Cz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/cargo/storage)
+"CB" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "CD" = (
@@ -1015,6 +1024,7 @@
 "Jx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/closet/firecloset,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "JO" = (
@@ -1405,6 +1415,7 @@
 /obj/structure/cable,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "TU" = (
@@ -1486,6 +1497,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/maintenance/disposal)
+"Vt" = (
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "VW" = (
 /obj/structure/cable,
 /obj/effect/spawner/randomcolavend,
@@ -32872,7 +32887,7 @@ vF
 kc
 su
 YP
-kg
+Vt
 gX
 kg
 Kv
@@ -33383,7 +33398,7 @@ Kr
 rt
 Kr
 Kr
-Iy
+CB
 wF
 pB
 QR
