@@ -1,0 +1,5 @@
+author: "Avunia Takiya; Putnam3145@Citadel-Station-13"
+delete-after: True
+changes: 
+  - balance: "Moving diagonally now takes the same time (distance wise) as non-diagonal movement."
+  - code_imp: "Added a `SQRT_2` define capturing the square root of 2, currently used for mob movement."
