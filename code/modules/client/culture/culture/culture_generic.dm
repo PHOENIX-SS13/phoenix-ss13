@@ -1,12 +1,12 @@
 /datum/cultural_info/culture/generic
 	name = "Other Culture"
-	description = "You are from one of the many small, relatively unknown cultures scattered across the galaxy."
-	additional_langs = list(/datum/language/spacer)
+	description = "<b>This option allows a variety of exotic languages, make sure to only pick those who fit your backstory.</b><BR>You are from one of the many small, relatively unknown cultures scattered across the galaxy."
+	additional_langs = list(LANGUAGES_FOR_EXOTIC_CULTURES)
 
 /datum/cultural_info/culture/vatgrown
 	name = "Vat Grown"
-	description = "You were not born like most of the people, instead grown and raised in laboratory conditions, either as clone, gene-adapt or some experiment. Your outlook diverges from baseline humanity accordingly."
-	additional_langs = list(/datum/language/spacer)
+	description = "<b>This option allows a variety of exotic languages, make sure to only pick those who fit your backstory.</b><BR>You were not born like most of the people, instead grown and raised in laboratory conditions, either as clone, gene-adapt or some experiment. Your outlook diverges from baseline humanity accordingly."
+	additional_langs = list(LANGUAGES_FOR_EXOTIC_CULTURES)
 
 /datum/cultural_info/culture/spacer_core
 	name = "Spacer, Core Systems"

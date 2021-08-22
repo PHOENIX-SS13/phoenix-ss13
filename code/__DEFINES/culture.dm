@@ -8,6 +8,8 @@
 #define LANGUAGE_UNDERSTOOD	1
 #define LANGUAGE_SPOKEN	2
 
+#define LANGUAGES_FOR_EXOTIC_CULTURES /datum/language/draconic, /datum/language/spacer, /datum/language/slime, /datum/language/sylvan
+
 //GROUPED CULTURAL DEFINES FOR SPECIES
 #define CULTURES_EXOTIC	/datum/cultural_info/culture/generic, \
 						/datum/cultural_info/culture/vatgrown, \
