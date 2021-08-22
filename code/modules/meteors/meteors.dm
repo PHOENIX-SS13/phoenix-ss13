@@ -315,7 +315,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 
 /obj/effect/meteor/meaty/ram_turf(turf/T)
-	if(!isspaceturf(T))
+	if(!isspaceturf(T) && !isopenspaceturf(T))
 		new /obj/effect/decal/cleanable/blood(T)
 
 /obj/effect/meteor/meaty/Bump(atom/A)
@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	return ..()
 
 /obj/effect/meteor/meaty/xeno/ram_turf(turf/T)
-	if(!isspaceturf(T))
+	if(!isspaceturf(T) && !isopenspaceturf(T))
 		new /obj/effect/decal/cleanable/xenoblood(T)
 
 //Station buster Tunguska
