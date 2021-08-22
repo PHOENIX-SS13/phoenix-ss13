@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - bugfix: "Fixes meaty ores halting the MC with connect_loc overhead"
