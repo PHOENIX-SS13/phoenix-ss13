@@ -1,5 +1,0 @@
-author: "Avunia Takiya"
-delete-after: True
-changes: 
-  - bugfix: "Fixed most if not all hairstyles"
-  - refactor: "Moved datums for hair and facial hair around, split them too."

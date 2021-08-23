@@ -26,3 +26,10 @@
   Azarak:
   - rscadd: Added a lot of missing equipment to the FTV Bearcat
   - bugfix: Fixed SM shutters opening from the medbay privacy button
+2021-08-23:
+  Avunia Takiya:
+  - bugfix: Fixed most if not all hairstyles
+  - refactor: Moved datums for hair and facial hair around, split them too.
+  Azarak:
+  - rscadd: Exotic cultures (other/vatgrown) can now pick a wider variety of languages
+  - bugfix: Fixes meaty ores halting the MC with connect_loc overhead
