@@ -100,3 +100,7 @@
 /obj/item/perfume/amber
 	name = "amber perfume bottle"
 	fragrance_type = /datum/pollutant/fragrance/amber
+
+/obj/item/perfume/nectarine
+	name = "nectarine perfume bottle"
+	fragrance_type = /datum/pollutant/fragrance/nectarine

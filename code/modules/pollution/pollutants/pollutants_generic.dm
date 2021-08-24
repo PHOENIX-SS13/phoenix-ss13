@@ -173,3 +173,7 @@
 /datum/pollutant/fragrance/amber
 	name = "Amber Perfume"
 	scent = "a sweet and powdery scent"
+
+/datum/pollutant/fragrance/nectarine
+	name = "Nectarine Perfume"
+	scent = "nectarines"

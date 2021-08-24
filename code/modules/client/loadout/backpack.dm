@@ -45,6 +45,10 @@
 	name = "Amber Perfume"
 	path = /obj/item/perfume/amber
 
+/datum/loadout_item/backpack/fragrance/nectarine
+	name = "Nectarine Perfume"
+	path = /obj/item/perfume/nectarine
+
 //MISC
 /datum/loadout_item/backpack/matches
 	name = "Matchbox"
