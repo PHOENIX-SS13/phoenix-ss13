@@ -40,7 +40,7 @@
 	return ..()
 
 /datum/bought_goods/proc/Validate(atom/movable/movable_atom_to_validate)
-	if((!check_types || compiled_typecache[movable_atom_to_validate.type]) && IsValid(movable_atom_to_validate))
+	if((!check_types || compiled_typecache[movable_atom_to_validate.type]) && IsValid(movable_atom_to_validate) && !length(movable_atom_to_validate.client_mobs_in_contents))
 		return TRUE
 	return FALSE
 

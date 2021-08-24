@@ -40,7 +40,7 @@
 		reward_item_name = initial(cast.name)
 
 /datum/trader_bounty/proc/Validate(atom/movable/movable_to_valid)
-	if((!check_type || movable_to_valid.type == path) && IsValid(movable_to_valid))
+	if((!check_type || movable_to_valid.type == path) && IsValid(movable_to_valid) && !length(movable_to_valid.client_mobs_in_contents))
 		return GetAmount(movable_to_valid)
 
 /datum/trader_bounty/proc/IsValid(atom/movable/movable_to_valid)
