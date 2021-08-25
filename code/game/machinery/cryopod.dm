@@ -135,6 +135,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, SPAN_NOTICE("<b>You feel cool air surround you. You go numb as your senses turn inward.</b>"))
+			mob_occupant.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
+			ADD_TRAIT(mob_occupant, TRAIT_TUMOR_SUPPRESSED, TRAIT_GENERIC)
 		if(mob_occupant.client || !mob_occupant.key)
 			COOLDOWN_START(src, despawn_world_time, fast_despawn_time) // We put ourselves into cryo / are SSD (no key assigned)
 		else
@@ -142,6 +144,10 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	icon_state = "cryopod"
 
 /obj/machinery/cryopod/open_machine()
+	if(occupant && isliving(occupant))
+		var/mob/living/mob_occupant = occupant
+		mob_occupant.remove_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
+		REMOVE_TRAIT(mob_occupant, TRAIT_TUMOR_SUPPRESSED, TRAIT_GENERIC)
 	..()
 	icon_state = "cryopod-open"
 	set_density(TRUE)
