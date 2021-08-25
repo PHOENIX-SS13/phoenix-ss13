@@ -33,3 +33,7 @@
   Azarak:
   - rscadd: Exotic cultures (other/vatgrown) can now pick a wider variety of languages
   - bugfix: Fixes meaty ores halting the MC with connect_loc overhead
+2021-08-25:
+  Azarak:
+  - bugfix: Cant sell or bounty off things with client mobs inside of them
+  - rscadd: Adds nectarine perfume bottle
