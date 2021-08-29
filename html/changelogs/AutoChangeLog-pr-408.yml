@@ -1,0 +1,4 @@
+author: "Avunia Takiya"
+delete-after: True
+changes: 
+  - imageadd: "Replaced floor/tile sprites with new ones."
