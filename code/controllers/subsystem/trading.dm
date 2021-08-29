@@ -16,6 +16,8 @@ SUBSYSTEM_DEF(trading)
 
 	var/next_trader_id = 0
 
+	var/list/delivery_runs = list()
+
 /datum/controller/subsystem/trading/proc/get_trade_hub_by_id(id)
 	return trade_hubs["[id]"]
 
@@ -35,16 +37,7 @@ SUBSYSTEM_DEF(trading)
 	var/list/passed_trade_hubs = list()
 	if(global_trade_hub)
 		passed_trade_hubs += global_trade_hub
-	var/datum/overmap_object/overmap_object
-	if(position)
-		if(SSshuttle.is_in_shuttle_bounds(position))
-			var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(position)
-			if(M && M.my_overmap_object)
-				overmap_object = M.my_overmap_object
-		if(!overmap_object)
-			var/datum/space_level/level = SSmapping.z_list[position.z]
-			if(level && level.related_overmap_object)
-				overmap_object = level.related_overmap_object
+	var/datum/overmap_object/overmap_object = GetHousingOvermapObject(position)
 	if(overmap_object)
 		var/list/overmap_objects = overmap_object.current_system.GetObjectsInRadius(overmap_object.x,overmap_object.y,0)
 		for(var/i in overmap_objects)

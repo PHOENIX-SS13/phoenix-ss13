@@ -162,14 +162,51 @@
 		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_show_purchasables'>Any goods you're interested in?</a>"
 		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_appraise'>Appraise item(s) on the pad</a>"
 		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_sell_item'>Sell all items on the pad</a>"
+		if(connected_trader.bounties || connected_trader.deliveries)
+			dat += "<BR>"
 		if(connected_trader.bounties)
-			dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_show_bounties'>Bounties</a>"
+			dat += "<a href='?src=[REF(src)];task=trader_task;pref=button_show_bounties'>Bounties</a>"
+		if(connected_trader.deliveries)
+			dat += "<a href='?src=[REF(src)];task=trader_task;pref=button_show_deliveries'>Delivery Runs</a>"
 		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_compliment'>Compliment</a>"
 		dat += " <a href='?src=[REF(src)];task=trader_task;pref=button_insult'>Insult</a></center>"
 		//Item menus, if applicable
 		if(trader_screen_state)
 			dat += "<HR>"
 			switch(trader_screen_state)
+				if(TRADER_SCREEN_DELIVERIES)
+					dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
+					dat += "<tr style='vertical-align:top'>"
+					dat += "<td width=10%>Name:</td>"
+					dat += "<td width=30%>Desc.:</td>"
+					dat += "<td width=15%>Cargo:</td>"
+					dat += "<td width=10%>Loc.:</td>"
+					dat += "<td width=15%>Rewards:</td>"
+					dat += "<td width=10%>Actions:</td>"
+					dat += "</tr>"
+					var/even = TRUE
+					var/delivery_index = 0
+					for(var/i in connected_trader.deliveries)
+						even = !even
+						delivery_index++
+						var/datum/delivery_run/delivery = i
+						var/delivery_reward_string
+						if(delivery.reward_cash)
+							delivery_reward_string = "[delivery.reward_cash] cr."
+						if(delivery.reward_item_path)
+							if(delivery_reward_string)
+								delivery_reward_string += "<BR>&<BR>[delivery.reward_item_name]"
+							else
+								delivery_reward_string = delivery.reward_item_name
+						dat += "<tr style='background-color: [even ? "#17191C" : "#23273C"];'>"
+						dat += "<td>[delivery.name]</td>"
+						dat += "<td>[delivery.desc]</td>"
+						dat += "<td>[delivery.cargo_name] for [delivery.recipient_name]</td>"
+						dat += "<td>Star System: [delivery.system_to_deliver.name]<BR>X:[delivery.overmap_x], Y:[delivery.overmap_y]</td>"
+						dat += "<td>[delivery_reward_string]</td>"
+						dat += "<td><a href='?src=[REF(src)];task=trader_task;pref=interact_with_delivery;delivery_type=take;index=[delivery_index]'>Take</a>"
+						dat += "</tr>"
+					dat += "</table>"
 				if(TRADER_SCREEN_BOUNTIES)
 					dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
 					dat += "<tr style='vertical-align:top'>"
@@ -253,7 +290,7 @@
 		//List all merchants in the hub
 		for(var/i in connected_hub.traders)
 			var/datum/trader/trader = i
-			dat += "<b>[trader.name]</b> - <a href='?src=[REF(src)];task=hub_task;pref=hail_merchant;id=[trader.id]'>Hail</a>[trader.bounties? " <b>(B)</b>" : ""]<BR>Origin: [trader.origin]<HR>"
+			dat += "<b>[trader.name]</b> - <a href='?src=[REF(src)];task=hub_task;pref=hail_merchant;id=[trader.id]'>Hail</a>[trader.bounties? " <b>(B)</b>" : ""][trader.deliveries? " <b>(D)</b>" : ""]<BR>Origin: [trader.origin]<HR>"
 	else
 		//Main menu
 		//List available trade hubs
@@ -286,6 +323,16 @@
 			switch(href_list["pref"])
 				if("early_manifest_print")
 					print_manifest()
+				if("interact_with_delivery")
+					if(!connected_trader.deliveries)
+						return
+					var/index = text2num(href_list["index"])
+					if(connected_trader.deliveries.len < index)
+						return
+					var/datum/delivery_run/delivery = connected_trader.deliveries[index]
+					switch(href_list["delivery_type"])
+						if("take")
+							last_transmission = connected_trader.requested_delivery_take(living_user, src, delivery)
 				if("interact_with_bounty")
 					if(!connected_trader.bounties)
 						return
@@ -361,6 +408,9 @@
 
 				if("button_show_bounties")
 					trader_screen_state = TRADER_SCREEN_BOUNTIES
+
+				if("button_show_deliveries")
+					trader_screen_state = TRADER_SCREEN_DELIVERIES
 
 				if("button_compliment")
 					if(prob(50))
