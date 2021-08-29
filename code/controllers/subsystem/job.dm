@@ -4,11 +4,22 @@ SUBSYSTEM_DEF(job)
 	flags = SS_NO_FIRE
 
 	/// List of all jobs.
-	var/list/all_occupations = list() 
+	var/list/datum/job/all_occupations = list() 
 	/// List of jobs that can be joined through the starting menu.
-	var/list/joinable_occupations = list()
-	var/list/datum/job/name_occupations = list() //Dict of all jobs, keys are titles
-	var/list/type_occupations = list() //Dict of all jobs, keys are types
+	var/list/datum/job/joinable_occupations = list()
+	/// Dictionary of all jobs, keys are titles.
+	var/list/name_occupations = list()
+	/// Dictionary of all jobs, keys are types.
+	var/list/datum/job/type_occupations = list()
+
+	/// Dictionary of jobs indexed by the experience type they grant.
+	var/list/experience_jobs_map = list()
+
+	/// List of all departments with joinable jobs.
+	var/list/datum/job_department/joinable_departments = list()
+	/// List of all joinable departments indexed by their typepath, sorted by their own display order.
+	var/list/datum/job_department/joinable_departments_by_type = list()
+
 	var/list/unassigned = list() //Players who need jobs
 	var/initial_players_to_assign = 0 //used for checking against population caps
 
@@ -56,6 +67,7 @@ SUBSYSTEM_DEF(job)
 	/// The loc to which the emergency safe code has been requested for delivery.
 	var/turf/safe_code_request_loc
 
+
 /datum/controller/subsystem/job/Initialize(timeofday)
 	setup_job_lists()
 	if(!length(all_occupations))
@@ -63,12 +75,11 @@ SUBSYSTEM_DEF(job)
 	if(CONFIG_GET(flag/load_jobs_from_txt))
 		LoadJobs()
 	generate_selectable_species()
-	set_overflow_role()
+	set_overflow_role(SSmapping.config.overflow_job)
 	return ..()
 
+
 /datum/controller/subsystem/job/proc/set_overflow_role(new_overflow_role)
-	if(!new_overflow_role)
-		new_overflow_role = SSmapping.config.overflow_job
 	var/datum/job/new_overflow = ispath(new_overflow_role) ? GetJobType(new_overflow_role) : GetJob(new_overflow_role)
 	if(!new_overflow)
 		JobDebug("Failed to set new overflow role: [new_overflow_role]")
@@ -88,52 +99,73 @@ SUBSYSTEM_DEF(job)
 	overflow_role = new_overflow.type
 	JobDebug("Overflow role set to : [new_overflow.type]")
 
+
 /datum/controller/subsystem/job/proc/SetupOccupations(faction)
-	all_occupations = list()
-	joinable_occupations = list()
+	name_occupations = list()
+	type_occupations = list()
 	if(!faction)
 		faction = SSmapping.config.job_faction
 	var/list/all_jobs = subtypesof(/datum/job)
 	if(!length(all_jobs))
+		all_occupations = list()
+		joinable_occupations = list()
+		joinable_departments = list()
+		joinable_departments_by_type = list()
+		experience_jobs_map = list()
 		to_chat(world, SPAN_BOLDANNOUNCE("Error setting up jobs, no job datums found"))
 		return FALSE
 
+	var/list/new_all_occupations = list()
+	var/list/new_joinable_occupations = list()
+	var/list/new_joinable_departments = list()
+	var/list/new_joinable_departments_by_type = list()
+	var/list/new_experience_jobs_map = list()
+
 	for(var/job_type in all_jobs)
 		var/datum/job/job = new job_type()
-		if(!job)
-			continue
 		if(!job.config_check())
 			continue
 		if(!job.map_check()) //Even though we initialize before mapping, this is fine because the config is loaded at new
 			testing("Removed [job.type] due to map config")
 			continue
-		//Register the job in the global lists
-		if(job.job_flags & JOB_NEW_PLAYER_JOINABLE && job.faction == faction)
-			joinable_occupations += job
-			if(job.departments & DEPARTMENT_COMMAND)
-				GLOB.command_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_SECURITY)
-				GLOB.security_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_SERVICE)
-				GLOB.service_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_CARGO)
-				GLOB.supply_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_ENGINEERING)
-				GLOB.engineering_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_SCIENCE)
-				GLOB.science_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_MEDICAL)
-				GLOB.medical_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_SILICON)
-				GLOB.nonhuman_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_CIVILLIAN)
-				GLOB.civillian_positions[job.title] = TRUE
-			if(job.departments & DEPARTMENT_MISC)
-				GLOB.misc_positions[job.title] = TRUE
-
-		all_occupations += job
+		new_all_occupations += job
 		name_occupations[job.title] = job
 		type_occupations[job_type] = job
+		if(job.job_flags & JOB_NEW_PLAYER_JOINABLE && job.faction == faction)
+			new_joinable_occupations += job
+			if(!LAZYLEN(job.departments_list))
+				var/datum/job_department/department = new_joinable_departments_by_type[/datum/job_department/undefined]
+				if(!department)
+					department = new /datum/job_department/undefined()
+					new_joinable_departments_by_type[/datum/job_department/undefined] = department
+				department.add_job(job)
+				continue
+			for(var/department_type in job.departments_list)
+				var/datum/job_department/department = new_joinable_departments_by_type[department_type]
+				if(!department)
+					department = new department_type()
+					new_joinable_departments_by_type[department_type] = department
+				department.add_job(job)
+
+	sortTim(new_all_occupations, /proc/cmp_job_display_asc)
+	for(var/datum/job/job as anything in new_all_occupations)
+		if(!job.exp_granted_type)
+			continue
+		new_experience_jobs_map[job.exp_granted_type] += list(job)
+
+	sortTim(new_joinable_departments_by_type, /proc/cmp_department_display_asc, associative = TRUE)
+	for(var/department_type in new_joinable_departments_by_type)
+		var/datum/job_department/department = new_joinable_departments_by_type[department_type]
+		sortTim(department.department_jobs, /proc/cmp_job_display_asc)
+		new_joinable_departments += department
+		if(department.department_experience_type)
+			new_experience_jobs_map[department.department_experience_type] = department.department_jobs.Copy()
+
+	all_occupations = new_all_occupations
+	joinable_occupations = sortTim(new_joinable_occupations, /proc/cmp_job_display_asc)
+	joinable_departments = new_joinable_departments
+	joinable_departments_by_type = new_joinable_departments_by_type
+	experience_jobs_map = new_experience_jobs_map
 
 	return TRUE
 
@@ -147,6 +179,12 @@ SUBSYSTEM_DEF(job)
 	if(!length(all_occupations))
 		SetupOccupations()
 	return type_occupations[jobtype]
+
+/datum/controller/subsystem/job/proc/get_department_type(department_type)
+	if(!length(all_occupations))
+		SetupOccupations()
+	return joinable_departments_by_type[department_type]
+
 
 /datum/controller/subsystem/job/proc/AssignRole(mob/dead/new_player/player, datum/job/job, latejoin = FALSE)
 	JobDebug("Running AR, Player: [player], Rank: [isnull(job) ? "null" : job.type], LJ: [latejoin]")
@@ -167,6 +205,7 @@ SUBSYSTEM_DEF(job)
 	unassigned -= player
 	job.current_positions++
 	return TRUE
+
 
 /datum/controller/subsystem/job/proc/FreeRole(rank)
 	if(!rank)
@@ -190,15 +229,6 @@ SUBSYSTEM_DEF(job)
 		if(job.required_playtime_remaining(player.client))
 			JobDebug("FOC player not enough xp, Player: [player]")
 			continue
-		if(job.has_banned_quirk(player.client.prefs))
-			JobDebug("FOC job not compatible with quirks, Player: [player]")
-			continue
-		if(job.has_banned_species(player.client.prefs))
-			JobDebug("FOC job not compatible with species, Player: [player]")
-			continue
-		if(!job.has_required_languages(player.client.prefs))
-			JobDebug("FOC job not compatible with languages, Player: [player]")
-			continue
 		if(flag && (!(flag in player.client.prefs.be_special)))
 			JobDebug("FOC flag failed, Player: [player], Flag: [flag], ")
 			continue
@@ -211,17 +241,16 @@ SUBSYSTEM_DEF(job)
 			candidates += player
 	return candidates
 
+
 /datum/controller/subsystem/job/proc/GiveRandomJob(mob/dead/new_player/player)
 	JobDebug("GRJ Giving random job, Player: [player]")
 	. = FALSE
 	for(var/datum/job/job as anything in shuffle(joinable_occupations))
-		if(!job)
-			continue
 
 		if(istype(job, GetJobType(overflow_role))) // We don't want to give him assistant, that's boring!
 			continue
 
-		if(job.title in GLOB.command_positions) //If you want a command position, select it!
+		if(job.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND) //If you want a command position, select it!
 			continue
 
 		if(is_banned_from(player.ckey, job.title) || QDELETED(player))
@@ -233,17 +262,6 @@ SUBSYSTEM_DEF(job)
 
 		if(!job.player_old_enough(player.client))
 			JobDebug("GRJ player not old enough, Player: [player]")
-			continue
-
-		if(job.has_banned_quirk(player.client.prefs))
-			JobDebug("GRJ player has incompatible quirk, Player: [player]")
-			continue
-		if(job.has_banned_species(player.client.prefs))
-			JobDebug("GRJ player has incompatible species, Player: [player]")
-			continue
-
-		if(!job.has_required_languages(player.client.prefs))
-			JobDebug("GRJ player has incompatible languages, Player: [player]")
 			continue
 
 		if(job.required_playtime_remaining(player.client))
@@ -258,6 +276,7 @@ SUBSYSTEM_DEF(job)
 			JobDebug("GRJ Random job given, Player: [player], Job: [job]")
 			if(AssignRole(player, job))
 				return TRUE
+
 
 /datum/controller/subsystem/job/proc/ResetOccupations()
 	JobDebug("Occupations reset.")
@@ -275,11 +294,11 @@ SUBSYSTEM_DEF(job)
 //it locates a head or runs out of levels to check
 //This is basically to ensure that there's atleast a few heads in the round
 /datum/controller/subsystem/job/proc/FillHeadPosition()
+	var/datum/job_department/command_department = get_department_type(/datum/job_department/command)
+	if(!command_department)
+		return FALSE
 	for(var/level in level_order)
-		for(var/command_position in GLOB.command_positions)
-			var/datum/job/job = GetJob(command_position)
-			if(!job)
-				continue
+		for(var/datum/job/job as anything in command_department.department_jobs)
 			if((job.current_positions >= job.total_positions) && job.total_positions != -1)
 				continue
 			var/list/candidates = FindOccupationCandidates(job, level)
@@ -294,10 +313,10 @@ SUBSYSTEM_DEF(job)
 //This proc is called at the start of the level loop of DivideOccupations() and will cause head jobs to be checked before any other jobs of the same level
 //This is also to ensure we get as many heads as possible
 /datum/controller/subsystem/job/proc/CheckHeadPositions(level)
-	for(var/command_position in GLOB.command_positions)
-		var/datum/job/job = GetJob(command_position)
-		if(!job)
-			continue
+	var/datum/job_department/command_department = get_department_type(/datum/job_department/command)
+	if(!command_department)
+		return
+	for(var/datum/job/job as anything in command_department.department_jobs)
 		if((job.current_positions >= job.total_positions) && job.total_positions != -1)
 			continue
 		var/list/candidates = FindOccupationCandidates(job, level)
@@ -306,23 +325,20 @@ SUBSYSTEM_DEF(job)
 		var/mob/dead/new_player/candidate = pick(candidates)
 		AssignRole(candidate, job)
 
-/datum/controller/subsystem/job/proc/FillAIPosition()
-	var/ai_selected = FALSE
-	var/datum/job/job = GetJob("AI")
-	if(!job)
-		return FALSE
-	for(var/i = job.total_positions, i > 0, i--)
+/// Attempts to fill out all available AI positions.
+/datum/controller/subsystem/job/proc/fill_ai_positions()
+	var/datum/job/ai_job = GetJob("AI")
+	if(!ai_job)
+		return
+	// In byond for(in to) loops, the iteration is inclusive so we need to stop at ai_job.total_positions - 1
+	for(var/i in ai_job.current_positions to ai_job.total_positions - 1)
 		for(var/level in level_order)
 			var/list/candidates = list()
-			candidates = FindOccupationCandidates(job, level)
+			candidates = FindOccupationCandidates(ai_job, level)
 			if(candidates.len)
 				var/mob/dead/new_player/candidate = pick(candidates)
 				if(AssignRole(candidate, GetJobType(/datum/job/ai)))
-					ai_selected++
 					break
-	if(ai_selected)
-		return TRUE
-	return FALSE
 
 
 /** Proc DivideOccupations
@@ -381,9 +397,9 @@ SUBSYSTEM_DEF(job)
 	FillHeadPosition()
 	JobDebug("DO, Head Check end")
 
-	//Check for an AI
+	// Fill out any remaining AI positions.
 	JobDebug("DO, Running AI Check")
-	FillAIPosition()
+	fill_ai_positions()
 	JobDebug("DO, AI Check end")
 
 	//Other jobs are now checked
@@ -420,17 +436,6 @@ SUBSYSTEM_DEF(job)
 
 				if(!job.player_old_enough(player.client))
 					JobDebug("DO player not old enough, Player: [player], Job:[job.title]")
-					continue
-
-				if(job.has_banned_quirk(player.client.prefs))
-					JobDebug("DO player has incompatible quirk, Player: [player], Job:[job.title]")
-					continue
-				if(job.has_banned_species(player.client.prefs))
-					JobDebug("DO player has incompatible species, Player: [player], Job:[job.title]")
-					continue
-
-				if(!job.has_required_languages(player.client.prefs))
-					JobDebug("DO player has incompatible species, Player: [player], Job:[job.title]")
 					continue
 
 				if(job.required_playtime_remaining(player.client))
@@ -490,6 +495,7 @@ SUBSYSTEM_DEF(job)
 		message_admins(message)
 		RejectPlayer(player)
 
+
 //Gives the player the stuff he should have with his rank
 /datum/controller/subsystem/job/proc/EquipRank(mob/living/equipping, datum/job/job, client/player_client)
 	equipping.job = job.title
@@ -531,6 +537,7 @@ SUBSYSTEM_DEF(job)
 		wageslave.add_memory("Your account ID is [wageslave.account_id].")
 
 	job.after_spawn(equipping, player_client)
+
 
 /datum/controller/subsystem/job/proc/handle_auto_deadmin_roles(client/C, rank)
 	if(!C?.holder)
@@ -683,6 +690,7 @@ SUBSYSTEM_DEF(job)
 	destination = get_last_resort_spawn_points()
 	destination.JoinPlayerHere(M, buckle)
 
+
 /datum/controller/subsystem/job/proc/get_last_resort_spawn_points()
 	//bad mojo
 	var/area/shuttle/arrival/arrivals_area = GLOB.areas_by_type[/area/shuttle/arrival]
@@ -712,6 +720,7 @@ SUBSYSTEM_DEF(job)
 	stack_trace("Unable to find last resort spawn point.")
 	return GET_ERROR_ROOM
 
+
 ///Lands specified mob at a random spot in the hallways
 /datum/controller/subsystem/job/proc/DropLandAtRandomHallwayPoint(mob/living/living_mob)
 	var/turf/spawn_turf = get_safe_random_station_turf(typesof(/area/hallway))
@@ -729,7 +738,7 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/get_living_heads()
 	. = list()
 	for(var/mob/living/carbon/human/player as anything in GLOB.human_list)
-		if(player.stat != DEAD && (player.mind?.assigned_role.departments & DEPARTMENT_COMMAND))
+		if(player.stat != DEAD && (player.mind?.assigned_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND))
 			. += player.mind
 
 
@@ -739,7 +748,7 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/get_all_heads()
 	. = list()
 	for(var/mob/living/carbon/human/player as anything in GLOB.human_list)
-		if(player.mind?.assigned_role.departments & DEPARTMENT_COMMAND)
+		if(player.mind?.assigned_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
 			. += player.mind
 
 //////////////////////////////////////////////
@@ -748,7 +757,7 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/get_living_sec()
 	. = list()
 	for(var/mob/living/carbon/human/player as anything in GLOB.human_list)
-		if(player.stat != DEAD && (player.mind?.assigned_role.departments & DEPARTMENT_SECURITY))
+		if(player.stat != DEAD && (player.mind?.assigned_role.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY))
 			. += player.mind
 
 ////////////////////////////////////////
@@ -757,7 +766,7 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/get_all_sec()
 	. = list()
 	for(var/mob/living/carbon/human/player as anything in GLOB.human_list)
-		if(player.mind?.assigned_role.departments & DEPARTMENT_SECURITY)
+		if(player.mind?.assigned_role.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
 			. += player.mind
 
 /datum/controller/subsystem/job/proc/JobDebug(message)

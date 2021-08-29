@@ -10,8 +10,7 @@
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 180
-	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_COMMAND
+	exp_granted_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/captain
 	plasmaman_outfit = /datum/outfit/plasmaman/captain
@@ -22,7 +21,9 @@
 	liver_traits = list(TRAIT_ROYAL_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
-	departments = DEPARTMENT_COMMAND
+	departments_list = list(
+		/datum/job_department/command,
+		)
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
 /datum/job/tradership_first_mate
@@ -38,12 +39,13 @@
 	req_admin_notify = 1
 	minimal_player_age = 10
 	exp_requirements = 180
-	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_SERVICE
+	exp_granted_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/hop
 	plasmaman_outfit = /datum/outfit/plasmaman/head_of_personnel
-	departments = DEPARTMENT_COMMAND
+	departments_list = list(
+		/datum/job_department/command,
+		)
 
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_SRV
@@ -63,7 +65,7 @@
 	supervisors = "the First Mate and the Captain"
 	selection_color = "#fff5cc"
 	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
+	exp_granted_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/engineer
 	plasmaman_outfit = /datum/outfit/plasmaman/engineering
@@ -75,7 +77,9 @@
 
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
 	bounty_types = CIV_JOB_ENG
-	departments = DEPARTMENT_ENGINEERING
+	departments_list = list(
+		/datum/job_department/engineering,
+		)
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
 /datum/job/tradership_doctor
@@ -97,7 +101,9 @@
 
 	display_order = JOB_DISPLAY_ORDER_MEDICAL_DOCTOR
 	bounty_types = CIV_JOB_MED
-	departments = DEPARTMENT_MEDICAL
+	departments_list = list(
+		/datum/job_department/medical,
+		)
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
 /datum/job/tradership_researcher
@@ -109,7 +115,7 @@
 	supervisors = "the First Mate and the Captain"
 	selection_color = "#ffeeff"
 	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
+	exp_granted_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/scientist
 	plasmaman_outfit = /datum/outfit/plasmaman/science
@@ -119,7 +125,9 @@
 
 	display_order = JOB_DISPLAY_ORDER_SCIENTIST
 	bounty_types = CIV_JOB_SCI
-	departments = DEPARTMENT_SCIENCE
+	departments_list = list(
+		/datum/job_department/science,
+		)
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
 /datum/job/tradership_deckhand
@@ -138,7 +146,9 @@
 	paycheck_department = ACCOUNT_CAR
 	display_order = JOB_DISPLAY_ORDER_CARGO_TECHNICIAN
 	bounty_types = CIV_JOB_RANDOM
-	departments = DEPARTMENT_CARGO
+	departments_list = list(
+		/datum/job_department/cargo,
+		)
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
 /datum/job/tradership_cook
@@ -160,7 +170,9 @@
 
 	display_order = JOB_DISPLAY_ORDER_COOK
 	bounty_types = CIV_JOB_CHEF
-	departments = DEPARTMENT_CIVILLIAN
+	departments_list = list(
+		/datum/job_department/service,
+		)
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
 /datum/job/tradership_botanist
@@ -179,7 +191,9 @@
 	paycheck_department = ACCOUNT_SRV
 	display_order = JOB_DISPLAY_ORDER_BOTANIST
 	bounty_types = CIV_JOB_GROW
-	departments = DEPARTMENT_CIVILLIAN
+	departments_list = list(
+		/datum/job_department/service,
+		)
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
 /datum/job/tradership_stowaway
@@ -192,7 +206,6 @@
 	outfit = /datum/outfit/job/assistant
 	plasmaman_outfit = /datum/outfit/plasmaman
 	paycheck = PAYCHECK_ASSISTANT
-	departments = DEPARTMENT_MISC
 
 	liver_traits = list(TRAIT_GREYTIDE_METABOLISM)
 

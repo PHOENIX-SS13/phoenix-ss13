@@ -222,7 +222,7 @@
 		if(human.stat == DEAD || !human.mind)
 			continue
 		// Skip wizards, nuke ops, cyborgs; Centcom does not send them mail
-		if(!SSjob.GetJob(human.mind.assigned_role) || (human.mind.assigned_role in GLOB.nonhuman_positions))
+		if(!(human.mind.assigned_role.job_flags & JOB_CREW_MEMBER))
 			continue
 
 		mail_recipients += human.mind
