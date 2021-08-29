@@ -167,6 +167,10 @@
 								/datum/sold_goods/incomplete_bot = 100,
 								/datum/sold_goods/posibrain = 100)
 	target_sold_goods_amount = 5
+	possible_bounties = list(
+		/datum/trader_bounty/stack/golden_circuits = 100,
+		/datum/trader_bounty/stack/seeing_diamonds = 100
+		)
 
 /datum/trader/xeno_shop
 	name = "Xenolife Collector"
@@ -234,6 +238,11 @@
 								/datum/bought_goods/reagent/meth = 100)
 	target_sold_goods_amount = 15
 	target_bought_goods_amount = 4
+	possible_bounties = list(
+		/datum/trader_bounty/reagent/medicine_easy = 100,
+		/datum/trader_bounty/reagent/medicine_hard = 100,
+		/datum/trader_bounty/stack/biological_compounds = 100
+		)
 
 /datum/trader/mining
 	name = "Rock'n'Drill Mining Inc"
@@ -271,6 +280,10 @@
 								/datum/sold_goods/mining_kit = 100)
 	target_sold_goods_amount = 6
 	target_bought_goods_amount = 5
+	possible_bounties = list(
+		/datum/trader_bounty/gas/hard_to_breathe = 100,
+		/datum/trader_bounty/heavy_lifting = 100
+		)
 
 /datum/trader/petshop
 	name = "Pet Shop Employee"
