@@ -1,5 +1,0 @@
-author: "Avunia Takiya, Polaris"
-delete-after: True
-changes: 
-  - imageadd: "Replaced window sprites with new versions"
-  - imagedel: "Deleted tons of unused or old sprites in structures.dmi"

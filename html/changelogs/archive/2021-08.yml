@@ -40,3 +40,18 @@
 2021-08-26:
   Avunia Takiya:
   - qol: Cryopods now put you in stasis - use resist to get back out of it!
+2021-08-30:
+  Avunia Takiya:
+  - imageadd: Replaced floor/tile sprites with new ones.
+  Avunia Takiya, Eris:
+  - imageadd: Replaced sprites for power network things with new ones.
+  Avunia Takiya, Polaris:
+  - imageadd: Replaced window sprites with new versions
+  - imagedel: Deleted tons of unused or old sprites in structures.dmi
+  Azarak:
+  - rscadd: More bounties and gas bounties for traders, eleven of them in total!
+  - rscadd: Delivery Run missions from Traders
+  - code_imp: improved paper code to faciliate future cases
+  - bugfix: AI mobs will stand up after getting floored
+  Rohesie:
+  - refactor: refactored job code

@@ -1,5 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Delivery Run missions from Traders"
-  - code_imp: "improved paper code to faciliate future cases"
