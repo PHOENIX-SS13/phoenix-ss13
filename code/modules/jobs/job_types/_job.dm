@@ -184,30 +184,31 @@
 /mob/living/proc/on_job_equipping(datum/job/equipping, apply_loadout = FALSE)
 	return
 
-/mob/living/carbon/human/on_job_equipping(datum/job/equipping, apply_loadout = FALSE)
+/mob/living/carbon/human/on_job_equipping(datum/job/equipping, apply_loadout = FALSE, player_client)
 	var/datum/bank_account/bank_account = new(real_name, equipping, dna.species.payday_modifier)
 	bank_account.payday(STARTING_PAYCHECKS, TRUE)
 	account_id = bank_account.account_id
 
-	dress_up_as_job(equipping, apply_loadout = apply_loadout)
+	dress_up_as_job(equipping, apply_loadout = apply_loadout, player_client = player_client)
 
 
 /mob/living/proc/dress_up_as_job(datum/job/equipping, visual_only = FALSE, apply_loadout = FALSE)
 	return
 
-/mob/living/carbon/human/dress_up_as_job(datum/job/equipping, visual_only = FALSE, apply_loadout = FALSE)
+/mob/living/carbon/human/dress_up_as_job(datum/job/equipping, visual_only = FALSE, apply_loadout = FALSE, player_client)
 	var/list/packed_items
 	var/loadout_asserted = FALSE
-	if(apply_loadout && equipping.loadout && client)
+	var/client/used_client = player_client || client
+	if(apply_loadout && equipping.loadout && used_client)
 		loadout_asserted = TRUE
 		if(equipping.no_dresscode)
-			packed_items = client.prefs.equip_preference_loadout(src, FALSE, equipping, blacklist = equipping.blacklist_dresscode_slots, initial = TRUE)
+			packed_items = used_client.prefs.equip_preference_loadout(src, FALSE, equipping, blacklist = equipping.blacklist_dresscode_slots, initial = TRUE)
 	dna.species.pre_equip_species_outfit(equipping, src, visual_only)
 	equipOutfit(equipping.outfit, visual_only)
 	if(loadout_asserted && !equipping.no_dresscode)
-		packed_items = client.prefs.equip_preference_loadout(src, FALSE, equipping, blacklist = equipping.blacklist_dresscode_slots, initial = TRUE)
+		packed_items = used_client.prefs.equip_preference_loadout(src, FALSE, equipping, blacklist = equipping.blacklist_dresscode_slots, initial = TRUE)
 	if(packed_items)
-		client.prefs.add_packed_items(src, packed_items)
+		used_client.prefs.add_packed_items(src, packed_items)
 
 
 /datum/job/proc/announce_head(mob/living/carbon/human/H, channels) //tells the given channel that the given mob is the new department head. See communications.dm for valid channels.
