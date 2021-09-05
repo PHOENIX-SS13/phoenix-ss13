@@ -5,7 +5,7 @@
 "au" = (
 /obj/machinery/door/airlock/silver/glass,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/iron/dark,
@@ -41,14 +41,14 @@
 "cH" = (
 /obj/machinery/door/airlock/silver,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/chilldown)
 "de" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "pirateportexternal"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/fans/tiny,
@@ -97,7 +97,7 @@
 /turf/open/floor/circuit/off,
 /area/shuttle/chilldown)
 "fT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -122,11 +122,11 @@
 /area/shuttle/chilldown)
 "ht" = (
 /obj/machinery/door/airlock/silver,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/chilldown)
 "hW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -178,7 +178,7 @@
 /area/shuttle/chilldown)
 "jo" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/chilldown)
 "jG" = (
@@ -199,7 +199,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "jQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
@@ -241,7 +241,7 @@
 /area/shuttle/chilldown)
 "lu" = (
 /obj/machinery/suit_storage_unit/pirate,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "lL" = (
@@ -258,7 +258,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "mI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 5
 	},
 /obj/structure/chair/comfy/shuttle{
@@ -298,7 +298,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "pJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
@@ -306,7 +306,7 @@
 "pU" = (
 /obj/machinery/door/airlock/silver,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,
@@ -344,7 +344,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "ue" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -357,7 +357,7 @@
 /turf/open/floor/circuit,
 /area/shuttle/chilldown)
 "vz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/computer/camera_advanced/syndie{
@@ -382,7 +382,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "wa" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
@@ -427,7 +427,7 @@
 /turf/open/floor/engine,
 /area/shuttle/chilldown)
 "zN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
@@ -438,7 +438,7 @@
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "piratestarboardexternal"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -456,7 +456,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "AE" = (
@@ -479,7 +479,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "BK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -492,7 +492,7 @@
 /turf/open/floor/circuit,
 /area/shuttle/chilldown)
 "Ch" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "CH" = (
@@ -524,7 +524,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "GG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/shuttle/chilldown)
@@ -559,7 +559,7 @@
 /area/shuttle/chilldown)
 "Ig" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/item/radio/intercom{
 	pixel_y = 5
 	},
@@ -573,7 +573,7 @@
 /turf/open/floor/circuit,
 /area/shuttle/chilldown)
 "Jq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 6
 	},
 /turf/open/floor/circuit/off,
@@ -583,7 +583,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/shuttle/chilldown)
 "JV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/circuit/off,
 /area/shuttle/chilldown)
 "Kq" = (
@@ -596,7 +596,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -640,7 +640,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/chilldown)
 "Pg" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -658,7 +658,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/chilldown)
 "QO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -696,13 +696,13 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/chilldown)
 "RE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 9
 	},
 /turf/open/floor/circuit/off,
 /area/shuttle/chilldown)
 "RH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/circuit/off,
@@ -722,7 +722,7 @@
 /turf/open/floor/circuit,
 /area/shuttle/chilldown)
 "Si" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -736,7 +736,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/chilldown)
 "Sv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,

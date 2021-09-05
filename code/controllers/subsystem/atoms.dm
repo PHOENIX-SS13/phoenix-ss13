@@ -46,7 +46,6 @@ SUBSYSTEM_DEF(atoms)
 		for(var/I in 1 to count)
 			var/atom/A = atoms[I]
 			if(!(A.flags_1 & INITIALIZED_1))
-				CHECK_TICK
 				InitAtom(A, TRUE, mapload_arg)
 	else
 		count = 0

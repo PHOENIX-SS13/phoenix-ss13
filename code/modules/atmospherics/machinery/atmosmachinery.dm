@@ -73,7 +73,7 @@
 		if(HAS_TRAIT(L, TRAIT_VENTCRAWLER_NUDE) || HAS_TRAIT(L, TRAIT_VENTCRAWLER_ALWAYS))
 			. += SPAN_NOTICE("Alt-click to crawl through it.")
 
-/obj/machinery/atmospherics/New(loc, process = TRUE, setdir, init_dir = ALL_CARDINALS)
+/obj/machinery/atmospherics/New(loc, process = TRUE, setdir)
 	if(!isnull(setdir))
 		setDir(setdir)
 	if(pipe_flags & PIPING_CARDINAL_AUTONORMALIZE)
@@ -84,7 +84,7 @@
 	..()
 	if(process)
 		SSair.start_processing_machine(src)
-	SetInitDirections(init_dir)
+	SetInitDirections()
 
 /obj/machinery/atmospherics/Destroy()
 	for(var/i in 1 to device_type)
@@ -244,7 +244,7 @@
 /obj/machinery/atmospherics/proc/isConnectable(obj/machinery/atmospherics/target, given_layer)
 	if(isnull(given_layer))
 		given_layer = piping_layer
-	if(check_connectable_layer(target, given_layer) && target.loc != loc && check_connectable_color(target))
+	if(check_connectable_layer(target, given_layer) && target.loc != loc)
 		return TRUE
 	return FALSE
 
@@ -262,17 +262,6 @@
 	return FALSE
 
 /**
- * check if the color are the same on both sides or if one of the pipes are grey or have the PIPING_ALL_COLORS flag
- * returns TRUE if one of the parameters is TRUE
- * Arguments:
- * * obj/machinery/atmospherics/target - the machinery we want to connect to
- */
-/obj/machinery/atmospherics/proc/check_connectable_color(obj/machinery/atmospherics/target)
-	if(lowertext(target.pipe_color) == lowertext(pipe_color) || ((target.pipe_flags | pipe_flags) & PIPING_ALL_COLORS) || lowertext(target.pipe_color) == lowertext(COLOR_VERY_LIGHT_GRAY) || lowertext(pipe_color) == lowertext(COLOR_VERY_LIGHT_GRAY))
-		return TRUE
-	return FALSE
-
-/**
  * Called on construction and when expanding the datum_pipeline, returns the nodes of the device
  */
 /obj/machinery/atmospherics/proc/pipeline_expansion()
@@ -281,7 +270,7 @@
 /**
  * Set the initial directions of the device (NORTH || SOUTH || EAST || WEST), called on New()
  */
-/obj/machinery/atmospherics/proc/SetInitDirections(init_dir)
+/obj/machinery/atmospherics/proc/SetInitDirections()
 	return
 
 /**

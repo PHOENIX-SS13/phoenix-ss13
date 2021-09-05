@@ -66,7 +66,7 @@
 /area/shuttle/ironwrought)
 "an" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Cabin 2"
 	},
@@ -84,7 +84,7 @@
 /area/shuttle/ironwrought)
 "ao" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Cabin 1"
 	},
@@ -124,7 +124,7 @@
 	heating_temp_setpoint = 400;
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 6
 	},
 /obj/structure/cable,
@@ -132,7 +132,7 @@
 /area/shuttle/ironwrought)
 "av" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/old,
@@ -142,7 +142,7 @@
 "aw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -151,7 +151,7 @@
 /area/shuttle/ironwrought)
 "ax" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -167,7 +167,7 @@
 "ay" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
@@ -184,7 +184,7 @@
 /area/shuttle/ironwrought)
 "az" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -201,7 +201,7 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral{
@@ -223,7 +223,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral{
@@ -242,7 +242,7 @@
 	},
 /obj/machinery/light/small/built/directional/north,
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -254,7 +254,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 10
 	},
 /obj/structure/cable,
@@ -309,7 +309,7 @@
 /area/shuttle/ironwrought)
 "aH" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood/old,
@@ -318,7 +318,7 @@
 /area/shuttle/ironwrought)
 "aI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 9
 	},
 /obj/structure/cable,
@@ -469,7 +469,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 6
 	},
 /turf/open/floor/engine,
@@ -483,7 +483,7 @@
 /obj/item/storage/bag/trash{
 	pixel_x = 6
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 1
 	},
 /turf/open/floor/engine,
@@ -501,11 +501,11 @@
 "aW" = (
 /obj/machinery/meter,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/engine,
 /area/shuttle/ironwrought)
 "aX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -558,7 +558,7 @@
 /area/shuttle/ironwrought)
 "bc" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -619,7 +619,7 @@
 /area/shuttle/ironwrought)
 "bl" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/space_heater{
@@ -631,14 +631,14 @@
 "bm" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/engine,
 /area/shuttle/ironwrought)
 "bn" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 9
 	},
 /turf/open/floor/engine,
@@ -697,7 +697,7 @@
 "bw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering/glass,
 /turf/open/floor/mineral/plastitanium/red,
@@ -731,7 +731,7 @@
 /area/shuttle/ironwrought)
 "bz" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/ironwrought)
@@ -749,7 +749,7 @@
 /turf/open/floor/engine,
 /area/shuttle/ironwrought/engine)
 "bC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 5
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -759,7 +759,7 @@
 /area/shuttle/ironwrought/engine)
 "bD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/line,
@@ -767,7 +767,7 @@
 /turf/open/floor/engine,
 /area/shuttle/ironwrought/engine)
 "bE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -800,7 +800,7 @@
 "bH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/blue,
@@ -847,13 +847,13 @@
 "bM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/ironwrought)
 "bN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -862,7 +862,7 @@
 /area/shuttle/ironwrought)
 "bO" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -870,7 +870,7 @@
 "bP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering/glass,
@@ -882,7 +882,7 @@
 /area/shuttle/ironwrought/engine)
 "bQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -897,7 +897,7 @@
 /area/shuttle/ironwrought/engine)
 "bS" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood/old,
@@ -914,7 +914,7 @@
 /area/shuttle/ironwrought/engine)
 "bU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 10
 	},
 /obj/structure/cable,
@@ -938,7 +938,7 @@
 /area/shuttle/ironwrought)
 "bX" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/blue,
@@ -954,7 +954,7 @@
 	name = "Bridge"
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -994,7 +994,7 @@
 /area/shuttle/ironwrought)
 "cd" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/old,
@@ -1077,7 +1077,7 @@
 "cl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/built/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
@@ -1143,7 +1143,7 @@
 /area/shuttle/ironwrought)
 "cr" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 10
 	},
 /obj/structure/cable,
@@ -1171,16 +1171,16 @@
 "cv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /obj/machinery/door/airlock/engineering/glass,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/ironwrought)
 "cw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering/glass,
@@ -1214,7 +1214,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/bot,
 /obj/item/wrench,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 5
 	},
 /obj/structure/cable,
@@ -1225,12 +1225,12 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot,
 /obj/item/weldingtool/largetank,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/engine,
 /area/shuttle/ironwrought)
 "cB" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -1241,7 +1241,7 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -1249,7 +1249,7 @@
 /area/shuttle/ironwrought)
 "cD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -1288,7 +1288,7 @@
 /area/shuttle/ironwrought)
 "cN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 5
 	},
 /obj/structure/cable,
@@ -1297,7 +1297,7 @@
 /area/shuttle/ironwrought)
 "cO" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 10
 	},
 /obj/structure/cable,
@@ -1321,7 +1321,7 @@
 /area/shuttle/ironwrought)
 "cV" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/old,
@@ -1353,7 +1353,7 @@
 /area/shuttle/ironwrought)
 "cZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 5
 	},
 /obj/structure/cable,
@@ -1361,13 +1361,13 @@
 /area/shuttle/ironwrought)
 "da" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/mineral/titanium/tiled/yellow,
 /area/shuttle/ironwrought)
 "db" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -1376,7 +1376,7 @@
 /area/shuttle/ironwrought)
 "dc" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1385,7 +1385,7 @@
 /area/shuttle/ironwrought)
 "de" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -1395,7 +1395,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/stripes/corner,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -1405,7 +1405,7 @@
 "dg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1417,7 +1417,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/light/small/directional/south,
 /obj/machinery/firealarm/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -1427,7 +1427,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1553,7 +1553,7 @@
 /turf/open/floor/circuit/red/anim,
 /area/shuttle/ironwrought)
 "hW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /obj/machinery/airalarm/engine{
 	heating_temp_setpoint = 400
 	},
@@ -1599,7 +1599,7 @@
 	},
 /area/shuttle/ironwrought/engine)
 "rE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/closed/indestructible/riveted/boss{
 	name = "Riveted Molten Iron"
 	},
@@ -1707,7 +1707,7 @@
 	},
 /area/shuttle/ironwrought)
 "Pp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/closed/indestructible/riveted/boss{
 	name = "Riveted Molten Iron"
 	},
@@ -1725,7 +1725,7 @@
 "Uc" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -1750,7 +1750,7 @@
 /area/shuttle/ironwrought/engine)
 "YI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/engine,

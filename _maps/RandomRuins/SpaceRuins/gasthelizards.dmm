@@ -82,7 +82,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)
 "gp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 4
 	},
 /turf/open/floor/iron,
@@ -109,7 +109,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)
 "kp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -131,7 +131,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)
 "mH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -204,7 +204,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)
 "tJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/north,
@@ -212,7 +212,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)
 "wz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -368,7 +368,7 @@
 /turf/open/floor/iron/dark/airless,
 /area/ruin/space/has_grav/gasthelizard)
 "QU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
 	dir = 9
 	},
 /obj/machinery/light/directional/east,
@@ -412,7 +412,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)
 "UC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)
 "UR" = (
@@ -435,7 +435,7 @@
 /turf/open/floor/iron/dark/airless,
 /area/ruin/space/has_grav/gasthelizard)
 "Zs" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/gasthelizard)

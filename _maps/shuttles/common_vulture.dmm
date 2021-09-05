@@ -37,7 +37,7 @@
 /turf/open/floor/carpet,
 /area/shuttle/vulture/dorm)
 "cQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "de" = (
@@ -46,7 +46,7 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "do" = (
@@ -66,14 +66,14 @@
 	amount = 30
 	},
 /obj/item/flashlight,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
 /area/shuttle/vulture)
 "ee" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "el" = (
@@ -90,7 +90,7 @@
 "eN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/pod,
 /area/shuttle/vulture/helm)
 "ff" = (
@@ -103,19 +103,19 @@
 /obj/structure/cable,
 /obj/effect/spawner/lootdrop/away_loot,
 /obj/machinery/light/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "fG" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "fK" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "fT" = (
@@ -131,14 +131,14 @@
 /obj/structure/cable,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/vulture)
 "hl" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "hr" = (
@@ -211,11 +211,11 @@
 /obj/structure/table,
 /obj/item/storage/cans/sixsoda,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "nz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/vulture)
 "nC" = (
@@ -223,7 +223,7 @@
 /area/shuttle/vulture/helm)
 "nF" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/carpet,
 /area/shuttle/vulture/dorm)
 "nJ" = (
@@ -238,7 +238,7 @@
 "oz" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "pE" = (
@@ -249,12 +249,12 @@
 	dir = 4;
 	pixel_x = -12
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/shuttle/vulture)
 "pG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "rk" = (
@@ -274,28 +274,28 @@
 "rI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "so" = (
 /obj/machinery/door/airlock,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/shuttle/vulture)
 "sr" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/east,
 /obj/machinery/light_switch/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/carpet,
 /area/shuttle/vulture/dorm)
 "tS" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "vF" = (
@@ -320,7 +320,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
 /turf/open/floor/plating,
 /area/shuttle/vulture)
 "ze" = (
@@ -384,19 +384,19 @@
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "Jw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/shuttle/vulture)
 "JK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/light/small/directional/west,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron/freezer,
 /area/shuttle/vulture)
 "KO" = (
@@ -422,15 +422,15 @@
 /turf/open/floor/plating,
 /area/shuttle/vulture)
 "LP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/vulture/dorm)
 "Mv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/vulture/helm)
 "MG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "MT" = (
@@ -453,8 +453,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/light_switch/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/pod,
 /area/shuttle/vulture/helm)
 "Pa" = (
@@ -462,13 +462,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/west,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
 /area/shuttle/vulture)
 "PI" = (
 /obj/structure/closet/firecloset/full,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "Qq" = (
@@ -479,7 +479,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "QF" = (
@@ -498,14 +498,14 @@
 /area/shuttle/vulture)
 "Ve" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "Vg" = (
 /obj/machinery/door/airlock,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/pod,
 /area/shuttle/vulture/helm)
 "Vu" = (
@@ -530,7 +530,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/pod,
 /area/shuttle/vulture/dorm)
 "WF" = (
@@ -542,7 +542,7 @@
 /area/shuttle/vulture/helm)
 "XG" = (
 /obj/effect/spawner/lootdrop/maintenance,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/vulture)
 "XY" = (

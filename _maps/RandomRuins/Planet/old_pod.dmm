@@ -49,7 +49,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "j" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered)
@@ -164,7 +164,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "D" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered)
