@@ -8,7 +8,7 @@
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, SPAN_NOTICE("You discreetly slip [I] into [parent]. Alt-click [parent] to remove it."))
+			to_chat(user, SPAN_NOTICE("You discreetly slip [I] into [parent]. Alt-click or Right-click [parent] to remove it."))
 		else
 			to_chat(user, SPAN_NOTICE("You discreetly slip [I] into [parent]."))
 
