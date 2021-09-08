@@ -280,3 +280,16 @@
 	suffix = "hellfactory.dmm"
 	name = "Heck Brewery"
 	description = "An abandoned warehouse and brewing facility, which has been recently rediscovered. Reports claim that the security system entered an ultra-hard lockdown, but these reports are inconclusive."
+
+/datum/map_template/ruin/space/syndicatewreck01
+	id = "syndicatewreck01"
+	suffix = "syndicatewreck01.dmm"
+	name = "Syndicate Wreckage"
+	description = "A hulking plastitanium wreck of a once larger structure - Probably best this way."
+
+/datum/map_template/ruin/space/tinybox
+	id = "tinybox"
+	suffix = "tinybox.dmm"
+	name = "Nanotrasen Wreckage"
+	description = "Some scattered metal and wood debris of some station gone horribly awry."
+

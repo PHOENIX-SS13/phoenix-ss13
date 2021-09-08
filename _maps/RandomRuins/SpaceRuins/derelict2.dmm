@@ -6,7 +6,7 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating/rust,
-/area/template_noop)
+/area/ruin/space/has_grav/powered/dinner_for_two)
 "c" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -18,9 +18,9 @@
 /area/ruin/space/has_grav/powered/dinner_for_two)
 "e" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/alarmlock,
+/obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plating/rust,
-/area/template_noop)
+/area/ruin/space/has_grav/powered/dinner_for_two)
 "f" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/powered/dinner_for_two)
@@ -73,9 +73,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/dinner_for_two)
 "x" = (
-/obj/machinery/door/airlock/alarmlock,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/dinner_for_two)
 "y" = (
@@ -92,7 +92,7 @@
 "A" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/rust,
-/area/template_noop)
+/area/ruin/space/has_grav/powered/dinner_for_two)
 "B" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
@@ -105,7 +105,7 @@
 "E" = (
 /obj/structure/lattice,
 /turf/template_noop,
-/area/template_noop)
+/area/ruin/space/has_grav/powered/dinner_for_two)
 "I" = (
 /obj/structure/table,
 /obj/item/candle{
@@ -134,9 +134,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/textured,
 /area/ruin/space/has_grav/powered/dinner_for_two)
-"Z" = (
-/turf/closed/wall/rust,
-/area/template_noop)
 
 (1,1,1) = {"
 a
@@ -215,7 +212,7 @@ a
 a
 E
 e
-Z
+q
 a
 a
 "}

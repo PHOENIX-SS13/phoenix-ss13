@@ -9,7 +9,7 @@
 /obj/item/cautery,
 /obj/item/circular_saw,
 /obj/machinery/light/directional/south,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "bf" = (
 /obj/machinery/portable_atmospherics/scrubber,
@@ -43,7 +43,7 @@
 /obj/machinery/light/directional/north,
 /obj/item/food/meat/slab/human/mutant/lizard,
 /obj/item/food/meat/slab/human/mutant/lizard,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "el" = (
 /turf/template_noop,
@@ -58,7 +58,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "fS" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
@@ -90,7 +90,7 @@
 "gu" = (
 /obj/structure/table/optable,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "hO" = (
 /obj/structure/table,
@@ -101,7 +101,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "jF" = (
 /obj/structure/closet/emcloset,
@@ -146,7 +146,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "ny" = (
 /obj/structure/window/reinforced{
@@ -167,7 +167,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "pl" = (
 /obj/structure/window/reinforced{
@@ -178,7 +178,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "pL" = (
 /obj/machinery/light/directional/south,
@@ -187,7 +187,7 @@
 /area/ruin/space/has_grav/gasthelizard)
 "sg" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "sX" = (
 /obj/machinery/door/airlock/external,
@@ -225,7 +225,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "zh" = (
 /obj/structure/table,
@@ -249,7 +249,7 @@
 /obj/item/food/meat/slab/human/mutant/lizard,
 /obj/item/food/meat/slab/human/mutant/lizard,
 /obj/item/food/meat/slab/human/mutant/lizard,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "EG" = (
 /turf/closed/wall,
@@ -259,7 +259,7 @@
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/reagent_containers/syringe/lethal,
 /obj/item/reagent_containers/syringe/lethal/choral,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Fu" = (
 /obj/structure/window/reinforced{
@@ -282,7 +282,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "FY" = (
 /obj/structure/closet/crate/freezer,
@@ -293,7 +293,7 @@
 /obj/item/food/meat/slab/human/mutant/lizard,
 /obj/item/food/meat/slab/human/mutant/lizard,
 /obj/item/food/meat/slab/human/mutant/lizard,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Jl" = (
 /obj/structure/table,
@@ -312,7 +312,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Lj" = (
 /obj/structure/rack,
@@ -328,7 +328,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "NS" = (
 /obj/item/reagent_containers/glass/bottle/morphine{
@@ -350,14 +350,14 @@
 	pixel_y = 6
 	},
 /obj/structure/table/reinforced,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Pd" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Qo" = (
 /obj/machinery/door/airlock/external,
@@ -365,7 +365,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/gasthelizard)
 "QD" = (
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "QU" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible{
@@ -379,7 +379,7 @@
 /obj/item/kitchen/knife/butcher,
 /obj/item/restraints/handcuffs,
 /obj/item/reagent_containers/spray/pepper,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Rx" = (
 /obj/machinery/suit_storage_unit/security,
@@ -393,7 +393,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "SE" = (
 /turf/open/floor/iron,
@@ -417,7 +417,7 @@
 /area/ruin/space/has_grav/gasthelizard)
 "UR" = (
 /obj/structure/kitchenspike,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Wa" = (
 /obj/effect/turf_decal/tile/blue{
@@ -432,7 +432,7 @@
 /area/ruin/space/has_grav/gasthelizard)
 "Zr" = (
 /obj/machinery/door/airlock/security,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "Zs" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible,
@@ -446,11 +446,11 @@
 /obj/item/reagent_containers/glass/bottle/mutagen,
 /obj/item/reagent_containers/glass/bottle/mutagen,
 /obj/item/razor,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 "ZS" = (
 /obj/machinery/gibber,
-/turf/open/floor/iron/dark/airless,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/gasthelizard)
 
 (1,1,1) = {"

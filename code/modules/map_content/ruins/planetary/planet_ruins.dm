@@ -150,3 +150,11 @@
 	cost = 5
 	suffix = "weather_station.dmm"
 	planet_requirements = PLANET_HABITABLE
+
+/datum/map_template/ruin/planetary/heyheypeople
+	name = "Surgical Theatre Pod"
+	id = "heyheypeople"
+	description = "A pod, meant for surgery.. what's with the pizza?"
+	cost = 5
+	suffix = "heyheypeople.dmm"
+	planet_requirements = PLANET_WRECKAGES

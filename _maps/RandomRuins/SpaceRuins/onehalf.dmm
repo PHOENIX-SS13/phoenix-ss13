@@ -71,7 +71,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "at" = (
 /obj/machinery/door/poddoor{
@@ -81,7 +81,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "au" = (
 /obj/machinery/door/poddoor/preopen{
@@ -101,7 +101,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "aw" = (
 /obj/structure/lattice,
@@ -157,7 +157,7 @@
 /obj/item/stack/ore/diamond{
 	amount = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "aG" = (
 /obj/effect/turf_decal/stripes/line{
@@ -789,8 +789,11 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cy" = (
-/obj/machinery/power/solar_control,
+/obj/machinery/power/solar_control{
+	dir = 8
+	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cA" = (
@@ -971,7 +974,7 @@
 /obj/item/stack/ore/iron{
 	amount = 23
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "gO" = (
 /obj/structure/cable,
@@ -997,6 +1000,13 @@
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/onehalf/bridge)
+"vi" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/onehalf/bridge)
 "wB" = (
 /obj/structure/disposalpipe/junction{
@@ -1034,6 +1044,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/onehalf/bridge)
+"MQ" = (
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/onehalf/bridge)
 "NY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1060,6 +1077,10 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/onehalf/bridge)
+"WE" = (
+/obj/structure/disposalpipe/trunk,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/onehalf/drone_bay)
 "Yd" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/onehalf/bridge)
@@ -1553,7 +1574,7 @@ aa
 aa
 aa
 av
-aE
+WE
 aQ
 bd
 bq
@@ -1562,8 +1583,8 @@ Yd
 cg
 cp
 cy
-KC
-GJ
+MQ
+vi
 cU
 db
 Yd

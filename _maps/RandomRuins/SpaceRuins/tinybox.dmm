@@ -1,0 +1,616 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ba" = (
+/obj/machinery/door/airlock/command{
+	name = "Captain's Office";
+	req_access_txt = "20"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"br" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"em" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4;
+	pixel_y = 10
+	},
+/obj/item/spear,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"fw" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"fA" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/iron/airless,
+/area/ruin/unpowered/no_grav)
+"gD" = (
+/obj/structure/window/reinforced/spawner/north,
+/turf/template_noop,
+/area/template_noop)
+"ja" = (
+/obj/structure/frame/computer,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"mo" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/iron/airless,
+/area/ruin/unpowered/no_grav)
+"mZ" = (
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/unpowered/no_grav)
+"nC" = (
+/obj/structure/girder,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"nD" = (
+/turf/closed/wall,
+/area/ruin/unpowered/no_grav)
+"of" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"pI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/glass/bucket,
+/obj/effect/decal/remains/human,
+/obj/item/food/grown/nettle/death,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"tj" = (
+/obj/effect/spawner/structure/window,
+/obj/machinery/door/poddoor/preopen{
+	id = "barShutters";
+	name = "privacy shutters"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"tQ" = (
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered/no_grav)
+"vQ" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/turf/template_noop,
+/area/template_noop)
+"wB" = (
+/obj/structure/filingcabinet/filingcabinet,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"wW" = (
+/obj/structure/frame/computer,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"xF" = (
+/obj/machinery/door/airlock/maintenance{
+	req_access_txt = "12"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"xK" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"xL" = (
+/obj/structure/barricade/wooden/crude,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"zy" = (
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"zH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Bo" = (
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"BB" = (
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/five,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"Cf" = (
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Cs" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Dormitory"
+	},
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"DN" = (
+/turf/template_noop,
+/area/template_noop)
+"EP" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge";
+	req_access_txt = "19"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"GT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Hc" = (
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"HK" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Central Access"
+	},
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"IY" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Central Access"
+	},
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"KF" = (
+/turf/open/floor/iron/airless,
+/area/ruin/unpowered/no_grav)
+"KH" = (
+/obj/machinery/light/built/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"LH" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "AI Upload Access";
+	req_access_txt = "16"
+	},
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"LR" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/frame/computer{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"Mr" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "EVA Storage";
+	req_access_txt = "18"
+	},
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"MX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Nh" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/turf/template_noop,
+/area/template_noop)
+"PY" = (
+/obj/machinery/door/airlock/command{
+	name = "Conference Room";
+	req_access_txt = "19"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"QN" = (
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered/no_grav)
+"Rb" = (
+/obj/structure/closet/emcloset,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Rc" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Rv" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge";
+	req_access_txt = "19"
+	},
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Tj" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/pen,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"TV" = (
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered/no_grav)
+"TW" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"US" = (
+/obj/machinery/door/firedoor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"Wo" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"WW" = (
+/obj/machinery/light/broken/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4;
+	pixel_y = 10
+	},
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"YE" = (
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"YK" = (
+/obj/structure/frame/computer,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"ZB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/food/badrecipe/moldy,
+/turf/open/floor/iron,
+/area/ruin/unpowered/no_grav)
+"ZL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/circuit,
+/area/ruin/unpowered/no_grav)
+
+(1,1,1) = {"
+DN
+DN
+DN
+DN
+DN
+Wo
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+"}
+(2,1,1) = {"
+DN
+DN
+DN
+DN
+tQ
+Wo
+DN
+DN
+tQ
+Wo
+DN
+DN
+DN
+DN
+DN
+"}
+(3,1,1) = {"
+DN
+DN
+DN
+nD
+HK
+nD
+of
+nD
+xK
+nD
+nC
+tQ
+DN
+DN
+DN
+"}
+(4,1,1) = {"
+DN
+DN
+tQ
+xF
+KF
+KF
+KF
+fA
+KF
+KF
+Bo
+DN
+DN
+DN
+DN
+"}
+(5,1,1) = {"
+DN
+DN
+Bo
+nD
+KF
+Nh
+TV
+TV
+Rv
+TV
+TV
+mZ
+DN
+DN
+DN
+"}
+(6,1,1) = {"
+DN
+tQ
+QN
+Mr
+KF
+gD
+TV
+ja
+MX
+Rb
+nD
+zy
+tQ
+mZ
+DN
+"}
+(7,1,1) = {"
+DN
+Bo
+mo
+of
+KF
+gD
+TV
+ja
+MX
+Cf
+PY
+Hc
+Hc
+Bo
+QN
+"}
+(8,1,1) = {"
+tQ
+TW
+TV
+TV
+YE
+TV
+TV
+ja
+MX
+Tj
+TV
+TV
+QN
+tQ
+DN
+"}
+(9,1,1) = {"
+DN
+tQ
+Wo
+IY
+Cf
+of
+YK
+ZB
+KH
+TV
+LR
+TV
+Bo
+Wo
+DN
+"}
+(10,1,1) = {"
+Wo
+KF
+KF
+IY
+GT
+of
+ja
+MX
+em
+LH
+ZL
+TV
+Wo
+Wo
+DN
+"}
+(11,1,1) = {"
+QN
+QN
+tQ
+IY
+MX
+of
+YK
+MX
+WW
+TV
+fw
+TV
+DN
+Wo
+DN
+"}
+(12,1,1) = {"
+DN
+nD
+nD
+nD
+US
+TV
+TV
+ja
+MX
+wB
+TV
+TV
+QN
+Wo
+DN
+"}
+(13,1,1) = {"
+DN
+QN
+BB
+nD
+Cf
+gD
+TV
+ja
+GT
+MX
+ba
+Hc
+Hc
+mZ
+DN
+"}
+(14,1,1) = {"
+QN
+tQ
+KF
+Cs
+zH
+gD
+TV
+wW
+Cf
+Rc
+TV
+QN
+Bo
+DN
+DN
+"}
+(15,1,1) = {"
+DN
+DN
+tQ
+nD
+Cf
+vQ
+TV
+TV
+EP
+TV
+TV
+tQ
+DN
+DN
+DN
+"}
+(16,1,1) = {"
+DN
+DN
+DN
+nD
+pI
+xL
+Cf
+br
+br
+YE
+Bo
+Wo
+Wo
+DN
+DN
+"}
+(17,1,1) = {"
+DN
+DN
+DN
+nD
+nD
+nD
+tj
+nD
+tj
+nD
+Wo
+DN
+DN
+DN
+DN
+"}
+(18,1,1) = {"
+DN
+DN
+DN
+Wo
+Wo
+Wo
+DN
+DN
+Wo
+DN
+Wo
+DN
+DN
+DN
+DN
+"}
+(19,1,1) = {"
+DN
+DN
+DN
+Wo
+DN
+DN
+DN
+DN
+Wo
+DN
+DN
+DN
+DN
+DN
+DN
+"}
