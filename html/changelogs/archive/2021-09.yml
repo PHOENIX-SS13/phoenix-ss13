@@ -16,3 +16,12 @@
       you can make straight pipe, bent pipe, manifold, 4 way manifold, connector and
       layer manifold.
   - bugfix: Fixed some bugs related to pipes
+2021-09-09:
+  unit0016:
+  - rscadd: Bearcat now has research servers, a """EVA""" wing, and more rad collectors
+      roundstart - and an exorbitant amount of other changes.
+  - bugfix: Bearcat's comms now work cross-level, The First Mate has their PDA painter,
+      numerous duplicate APCs, The SM no longer starts ready to explode to incompetance
+      (mostly) - and cargo is now actually hooked to the power grid.
+  - code_imp: You can now right-click on storage objects to open them.
+  - rscadd: Added three new ruins to the roster.

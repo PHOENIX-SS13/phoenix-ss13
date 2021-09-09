@@ -1,5 +1,0 @@
-author: "unit0016"
-delete-after: True
-changes: 
-  - rscadd: "Bearcat now has research servers, a \"\"\"EVA\"\"\" wing, and more rad collectors roundstart - and an exorbitant amount of other changes."
-  - bugfix: "Bearcat's comms now work cross-level, The First Mate has their PDA painter, numerous duplicate APCs, The SM no longer starts ready to explode to incompetance (mostly) - and cargo is now actually hooked to the power grid."
