@@ -1,4 +1,0 @@
-author: "unit0016"
-delete-after: True
-changes: 
-  - rscadd: "tgstation/tgstation#60675 has been ported, allowing for nonstandard airlock cycles."

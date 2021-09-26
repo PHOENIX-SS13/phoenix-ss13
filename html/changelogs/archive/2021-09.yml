@@ -25,3 +25,7 @@
       (mostly) - and cargo is now actually hooked to the power grid.
   - code_imp: You can now right-click on storage objects to open them.
   - rscadd: Added three new ruins to the roster.
+2021-09-26:
+  unit0016:
+  - rscadd: tgstation/tgstation#60675 has been ported, allowing for nonstandard airlock
+      cycles.
