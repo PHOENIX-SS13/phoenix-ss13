@@ -502,21 +502,46 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Chief Engineer's Office"
 	icon_state = "ce_office"
 
+/area/command/heads_quarters/ce/dorm
+	name = "Chief Engineer's Dorm"
+	icon_state = "ce_office"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
 /area/command/heads_quarters/cmo
 	name = "Chief Medical Officer's Office"
 	icon_state = "cmo_office"
+
+/area/command/heads_quarters/cmo/dorm
+	name = "Chief Medical Officer's Dorm"
+	icon_state = "cmo_office"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
 /area/command/heads_quarters/hop
 	name = "Head of Personnel's Office"
 	icon_state = "hop_office"
 
+/area/command/heads_quarters/hop/dorm
+	name = "Head of Personnel's Dorm"
+	icon_state = "hop_office"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
 /area/command/heads_quarters/hos
 	name = "Head of Security's Office"
 	icon_state = "hos_office"
 
+/area/command/heads_quarters/hos/dorm
+	name = "Head of Security's Dorm"
+	icon_state = "hos_office"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
 /area/command/heads_quarters/rd
 	name = "Research Director's Office"
 	icon_state = "rd_office"
+
+/area/command/heads_quarters/rd/dorm
+	name = "Research Director's Dorm"
+	icon_state = "rd_office"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
 //Command - Teleporters
 
@@ -1311,6 +1336,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Quartermaster's Office"
 	icon_state = "quart_office"
 
+/area/cargo/qm/dorm
+	name = "Quartermaster's Dorm"
+	icon_state = "quart_office"
+	sound_environment =SOUND_AREA_SMALL_ENCLOSED
+
 /area/cargo/miningdock
 	name = "Mining Dock"
 	icon_state = "mining"
@@ -1341,7 +1371,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/science/cytology
 	name = "Cytology Lab"
 	icon_state = "cytology"
-
+/area/science/circuits
+	name = "Circuits Lab"
+	icon_state = "cir_lab"
 /area/science/storage
 	name = "Toxins Storage"
 	icon_state = "tox_storage"
