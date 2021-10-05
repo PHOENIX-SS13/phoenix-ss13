@@ -1,4 +1,0 @@
-author: "MrStonedOne"
-delete-after: True
-changes: 
-  - code_imp: "optimized memory usage for managed_overlays"
