@@ -2363,7 +2363,7 @@
 /area/commons/lounge)
 "FA" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/closet/crate,
+/obj/effect/spawner/supplies_box/common,
 /turf/open/floor/iron,
 /area/cargo/warehouse/upper)
 "FB" = (
@@ -3137,6 +3137,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/lattice/catwalk,
 /obj/structure/railing,
+/obj/structure/supplies_box/engineering,
 /turf/open/openspace,
 /area/cargo/warehouse/upper)
 "Pw" = (

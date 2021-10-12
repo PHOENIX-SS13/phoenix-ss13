@@ -1966,6 +1966,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/railing,
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/spawner/supplies_box/common,
 /turf/open/floor/iron,
 /area/cargo/warehouse)
 "Yv" = (

@@ -158,7 +158,7 @@
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/reagent_dispensers/watertank,
+/obj/effect/spawner/supplies_box/common,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "eP" = (
@@ -232,7 +232,7 @@
 /obj/effect/turf_decal/bot,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/east,
-/obj/structure/closet/crate,
+/obj/structure/supplies_box/materials,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "gU" = (
@@ -299,6 +299,7 @@
 "iS" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/cable,
+/obj/structure/supplies_box/food,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "iW" = (
@@ -579,6 +580,7 @@
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/supplies_box/medical,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "su" = (
@@ -1663,6 +1665,7 @@
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/supplies_box/common,
 /turf/open/floor/iron,
 /area/cargo/storage)
 "Yp" = (
