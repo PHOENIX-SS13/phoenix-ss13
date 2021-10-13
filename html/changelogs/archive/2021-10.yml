@@ -4,3 +4,7 @@
   - qol: Pubby station map changes in design
   MrStonedOne:
   - code_imp: optimized memory usage for managed_overlays
+2021-10-13:
+  Azarak:
+  - rscadd: Added new supplies boxes, which various traders gladly sell and buy
+  - rscadd: Bearcat starts with a variety of supplies boxes
