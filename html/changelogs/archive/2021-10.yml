@@ -8,3 +8,7 @@
   Azarak:
   - rscadd: Added new supplies boxes, which various traders gladly sell and buy
   - rscadd: Bearcat starts with a variety of supplies boxes
+2021-10-14:
+  Azarak:
+  - rscadd: Traders have been revamped to be more reliable. See https://github.com/hrzntal/horizon/pull/522
+      for more info

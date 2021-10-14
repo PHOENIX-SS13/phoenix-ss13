@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Traders have been revamped to be more reliable. See https://github.com/hrzntal/horizon/pull/522 for more info"
