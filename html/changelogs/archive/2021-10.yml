@@ -12,3 +12,8 @@
   Azarak:
   - rscadd: Traders have been revamped to be more reliable. See https://github.com/hrzntal/horizon/pull/522
       for more info
+2021-10-19:
+  Azarak:
+  - bugfix: Fixed daynight overlays and turf luminosity
+  TiviPlus:
+  - bugfix: fixed weird turf overlays during shuttle docking
