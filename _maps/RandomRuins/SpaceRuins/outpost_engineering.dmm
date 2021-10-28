@@ -1,0 +1,3505 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/effect/turf_decal/trimline/brown/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/white/corner{
+	alpha = 170;
+	color = "#A46106";
+	dir = 8;
+	name = "cargo corner"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/side{
+	dir = 5
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"aG" = (
+/obj/effect/turf_decal/stripes/white/corner{
+	alpha = 170;
+	color = "#A46106";
+	dir = 4;
+	name = "cargo corner"
+	},
+/obj/effect/turf_decal/trimline/brown/corner{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/side{
+	dir = 10
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"aX" = (
+/obj/structure/flora/grass/brown,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"aZ" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"bi" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"bj" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"bB" = (
+/obj/structure/sign/warning/docking{
+	pixel_y = -32
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"bN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"bQ" = (
+/obj/structure/chair/comfy{
+	color = "#596479";
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"bX" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"cb" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"cg" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"cm" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"cn" = (
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"cA" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"cP" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"cT" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/curtain/cloth/fancy/mechanical{
+	icon_state = "bounty-open";
+	icon_type = "bounty";
+	id = "engineeringrustruinbedroom1";
+	name = "curtain"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"cW" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"db" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"dC" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"dK" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"dX" = (
+/obj/effect/turf_decal/trimline/yellow/warning,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"ec" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"ef" = (
+/obj/structure/table/wood,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"ep" = (
+/obj/effect/turf_decal/bot,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/pipedispenser/disposal,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"ev" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ey" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"eD" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"fs" = (
+/turf/closed/wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"ft" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"fA" = (
+/obj/machinery/telecomms/relay/preset/telecomms,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/east,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"fC" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"fX" = (
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"ga" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"gb" = (
+/obj/machinery/light/directional/north,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"go" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"gp" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/duct,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"gA" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/machinery/biogenerator,
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"gH" = (
+/obj/structure/curtain,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/duct,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"hH" = (
+/obj/machinery/button/door/directional/north{
+	id = "engineeringrustruinbedroomdoor2";
+	name = "Door Lock"
+	},
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_x = 32
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"hN" = (
+/obj/structure/beebox/premade,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"hV" = (
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"hX" = (
+/turf/template_noop,
+/area/template_noop)
+"hY" = (
+/obj/structure/chair/comfy{
+	color = "#596479";
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ii" = (
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"im" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"io" = (
+/obj/structure/flora/grass/green,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"is" = (
+/obj/structure/bed,
+/obj/item/bedsheet/orange,
+/obj/machinery/button/curtain{
+	id = "engineeringrustruinbedroom2";
+	pixel_x = 24
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"iB" = (
+/obj/structure/cable,
+/obj/machinery/power/smes,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"iR" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock{
+	name = "Garden & Aviary"
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"jb" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_corner,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"kl" = (
+/obj/effect/turf_decal/trimline/yellow/warning{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 5
+	},
+/turf/open/floor/iron/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"kz" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/lights/mixed{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/item/storage/box/lights/mixed{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/analyzer,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"kA" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"lh" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"ln" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"lx" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	dir = 1;
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/iron/dark/side,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"lL" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	dir = 1;
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/side,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"lZ" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"mj" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"mr" = (
+/obj/machinery/door/poddoor{
+	id_tag = "engineeringruindockingbay";
+	name = "Docking Bay Blast Doors"
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"ms" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/light/directional/north,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"mt" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"mC" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"mG" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/machinery/seed_extractor,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"mN" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/duct,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"mQ" = (
+/obj/structure/sign/warning/vacuum{
+	pixel_y = -32
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"nn" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/closet/crate/solarpanel_small,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/rods/fifty,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"nr" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"ny" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"nE" = (
+/obj/structure/closet/cabinet,
+/obj/machinery/light/directional/north,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
+/obj/item/flashlight/flare,
+/obj/item/tank/jetpack/suit,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"nH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/south,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"nI" = (
+/obj/machinery/hydroponics/soil{
+	icon = 'icons/turf/floors.dmi';
+	icon_state = "dirt";
+	layer = 2.039;
+	self_sustaining = 1
+	},
+/obj/item/seeds/grass/fairy,
+/turf/open/floor/grass{
+	icon_state = "dirt";
+	name = "dirt"
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"oi" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/fullgrass{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/machinery/light/directional/east,
+/obj/item/seeds/berry/poison,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"or" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/food/dough,
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ov" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"oG" = (
+/obj/structure/table/glass,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/queen_bee,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"oL" = (
+/obj/structure/table/wood,
+/obj/structure/sign/poster/contraband/red_rum{
+	pixel_x = -32
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"oR" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"px" = (
+/turf/closed/wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"pH" = (
+/obj/machinery/blackbox_recorder,
+/obj/machinery/light/small/directional/north,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"pP" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/fernybush,
+/obj/machinery/light/directional/west,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"pU" = (
+/obj/machinery/vending/hydroseeds{
+	default_price = 0;
+	extra_price = 0
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"pV" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"pY" = (
+/obj/machinery/door/airlock/virology{
+	id_tag = "engineeringrustruinbedroomdoor2";
+	name = "Bedroom B"
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"qm" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"qs" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock{
+	name = "Parlor"
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"qG" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"qM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"qP" = (
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
+"rk" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ru" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"rF" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/grass/brown,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"sF" = (
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"sO" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	dir = 4;
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"sW" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/processor,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"th" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"tn" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"tw" = (
+/obj/effect/turf_decal/sand/plating,
+/obj/structure/girder,
+/obj/item/stack/sheet/iron,
+/obj/item/stack/rods{
+	amount = 3
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"ty" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/virology{
+	id_tag = "engineeringrustruinbedroomdoor1";
+	name = "Bedroom A"
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"tG" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"tP" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"tV" = (
+/turf/closed/wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"tY" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/item/soap,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"uc" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/icecream_vat,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"uI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"uL" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"vi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/pipedispenser/disposal/transit_tube,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"vE" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	dir = 1;
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/iron/dark/side,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"vJ" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"vL" = (
+/obj/structure/closet/cabinet,
+/obj/machinery/light/directional/north,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
+/obj/item/seeds/grass/carpet,
+/obj/item/seeds/sunflower/novaflower,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"vR" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/iron/dark,
+/area/space)
+"vT" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"wb" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"wk" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/structure/reagent_dispensers/plumbed{
+	desc = "A large water tank that generates water.";
+	name = "water synthesizer";
+	refilling = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"wm" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Docking Bay"
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"wx" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/chem_master/condimaster{
+	name = "CondiMaster Neo"
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"wR" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/curtain/cloth/fancy/mechanical{
+	icon_state = "bounty-open";
+	icon_type = "bounty";
+	id = "engineeringrustruinbedroom2";
+	name = "curtain"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"wU" = (
+/obj/machinery/button/door/directional/north{
+	id = "engineeringruindockingbay";
+	name = "Blast Doors"
+	},
+/obj/machinery/door/poddoor{
+	id_tag = "engineeringruindockingbay";
+	name = "Docking Bay Blast Doors"
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"xy" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"xQ" = (
+/obj/machinery/button/door/directional/south{
+	id = "engineeringruindockingbay";
+	name = "Blast Doors"
+	},
+/obj/machinery/door/poddoor{
+	id_tag = "engineeringruindockingbay";
+	name = "Docking Bay Blast Doors"
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"yP" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"zl" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"zn" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"zB" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Aj" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"AJ" = (
+/obj/machinery/button/door/directional/north{
+	id = "engineeringrustruinbedroomdoor1";
+	name = "Door Lock"
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"AL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/pipedispenser,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"AM" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"AX" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"AZ" = (
+/obj/effect/turf_decal/trimline/yellow/warning{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"Bf" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Bj" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/griddle,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Bk" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"BA" = (
+/obj/machinery/vending/hydronutrients{
+	default_price = 0;
+	extra_price = 0
+	},
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"BG" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Ce" = (
+/obj/machinery/door_buttons/airlock_controller{
+	idExterior = "engineeringruinexternalairlock";
+	idInterior = "engineeringruininternalairlock";
+	idSelf = "engineeringruinairlockcontrol";
+	name = "Airlock Control";
+	pixel_y = -24
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Cf" = (
+/turf/closed/wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"CA" = (
+/obj/machinery/door/airlock{
+	id_tag = "engineeringruinstall1";
+	name = "Toilet Stall A"
+	},
+/obj/machinery/duct,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"CD" = (
+/obj/structure/sign/warning/docking{
+	pixel_y = -32
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Dd" = (
+/turf/closed/wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"De" = (
+/obj/structure/flora/rock/pile/largejungle{
+	icon_state = "rocks3";
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"Df" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Dr" = (
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/window{
+	dir = 8
+	},
+/obj/structure/window{
+	dir = 1
+	},
+/turf/open/floor/grass{
+	icon_state = "dirt";
+	name = "dirt"
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"DO" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"DS" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/light/directional/north,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"DV" = (
+/obj/structure/chair/comfy{
+	color = "#596479";
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"DY" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"EP" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"EQ" = (
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"ER" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/machinery/duct,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Fd" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"Fn" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/machinery/autolathe,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"Fx" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"FC" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"FM" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/reagent_dispensers/foamtank,
+/turf/open/floor/iron/dark,
+/area/space)
+"Gh" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Gm" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Gr" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"GE" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"Hc" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/window{
+	dir = 4
+	},
+/obj/structure/window{
+	dir = 1
+	},
+/turf/open/floor/grass{
+	icon_state = "dirt";
+	name = "dirt"
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Hj" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"HD" = (
+/obj/effect/turf_decal/trimline/yellow/warning{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/turf/open/floor/iron/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"HE" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/plasteel/twenty,
+/obj/item/stack/rods/fifty,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"HH" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Is" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock{
+	name = "Kitchen"
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Iu" = (
+/obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Iz" = (
+/obj/effect/turf_decal/trimline/yellow/warning{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 9
+	},
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/iron/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"IG" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"IH" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12;
+	pixel_y = -6;
+	reclaim_rate = 5
+	},
+/obj/structure/closet/secure_closet/freezer/fridge{
+	pixel_x = 5;
+	req_access = null
+	},
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/storage/box/donkpockets/donkpocketberry,
+/obj/item/storage/box/ingredients/vegetarian,
+/obj/item/soap,
+/obj/item/reagent_containers/food/condiment/flour{
+	list_reagents = list(/datum/reagent/consumable/flour = 150);
+	name = "Premium All-Purpose Flour (4KG)";
+	volume = 150
+	},
+/obj/item/reagent_containers/food/condiment/rice{
+	list_reagents = list(/datum/reagent/consumable/rice = 200);
+	name = "Basmati Rice Sack";
+	volume = 200
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"II" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"IO" = (
+/obj/structure/chair/comfy{
+	color = "#596479";
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Jj" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Jk" = (
+/obj/structure/rack,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/multitool,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Jx" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/mechanical,
+/obj/item/flashlight,
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"JE" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"JF" = (
+/obj/structure/rack,
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = -8
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = -4
+	},
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 4
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 8
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 12
+	},
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"JM" = (
+/turf/closed/wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Kc" = (
+/obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Kk" = (
+/obj/machinery/light/directional/north,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Kl" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/table/glass,
+/obj/item/clothing/suit/beekeeper_suit,
+/obj/item/melee/flyswatter,
+/obj/item/clothing/head/beekeeper_head,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Km" = (
+/obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"KH" = (
+/obj/structure/closet/emcloset,
+/obj/effect/spawner/lootdrop/space/languagebook,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"KN" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"KU" = (
+/obj/effect/turf_decal/trimline/brown/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/white/corner{
+	alpha = 170;
+	color = "#A46106";
+	dir = 1;
+	name = "cargo corner"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/side{
+	dir = 6
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Ln" = (
+/obj/effect/turf_decal/trimline/yellow/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"Lo" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/machinery/microwave{
+	pixel_y = 8
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Lz" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"LD" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"LZ" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Ma" = (
+/obj/structure/bed,
+/obj/item/bedsheet/orange,
+/obj/machinery/button/curtain{
+	id = "engineeringrustruinbedroom1";
+	pixel_x = 24
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"MI" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/weldingtool/largetank{
+	desc = "A branded welding tool that uses chemical fuel mixtures. It's capable of getting very hot, improving welding speed.";
+	name = "Makita X-Ultra Chem Welder";
+	toolspeed = 0.6
+	},
+/obj/item/clothing/glasses/welding,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"Ne" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Ni" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"Nl" = (
+/obj/effect/turf_decal/stripes/white/corner{
+	alpha = 170;
+	color = "#A46106";
+	name = "cargo corner"
+	},
+/obj/effect/turf_decal/trimline/brown/corner,
+/obj/machinery/duct,
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/side{
+	dir = 9
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Nm" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"NQ" = (
+/obj/machinery/atmospherics/components/binary/pump/on/layer4{
+	dir = 4;
+	name = "Airmix Reserve to Distribution"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"NS" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"NX" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomone)
+"Og" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/closet/crate/hydroponics,
+/obj/item/shovel/spade,
+/obj/item/shovel/spade,
+/obj/item/cultivator,
+/obj/item/cultivator,
+/obj/item/secateurs,
+/obj/item/secateurs,
+/obj/item/hatchet,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Oq" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"OM" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Pb" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav)
+"Pp" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"PK" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"PM" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Docking Bay"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"Qo" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	dir = 4;
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Qs" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/item/storage/belt/utility,
+/obj/item/clothing/mask/gas/atmos,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Qt" = (
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"QL" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/vending/tool{
+	default_price = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"QN" = (
+/obj/structure/table/wood,
+/obj/item/kirbyplants{
+	icon_state = "plant-17";
+	pixel_y = 26
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 3
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"QP" = (
+/obj/machinery/door/airlock/external/glass{
+	id_tag = "engineeringruininternalairlock";
+	name = "internal airlock"
+	},
+/obj/machinery/door_buttons/access_button{
+	idDoor = "engineeringruininternalairlock";
+	idSelf = "engineeringruinairlockcontrol";
+	name = "Internal Airlock Access";
+	pixel_y = -24
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"QU" = (
+/obj/machinery/hydroponics/soil{
+	icon = 'icons/turf/floors.dmi';
+	icon_state = "dirt";
+	layer = 2.039;
+	self_sustaining = 1
+	},
+/turf/open/floor/grass{
+	icon_state = "dirt";
+	name = "dirt"
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"QZ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Rb" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/leafybush,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Ri" = (
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Rv" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/space/rareseed,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Rx" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"RQ" = (
+/mob/living/simple_animal/butterfly,
+/turf/open/floor/grass{
+	icon_state = "dirt";
+	name = "dirt"
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Sb" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Sd" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"Sg" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Sn" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/firedoor,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Sx" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/deepfryer,
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Sy" = (
+/obj/machinery/hydroponics/soil{
+	icon = 'icons/turf/floors.dmi';
+	icon_state = "dirt";
+	layer = 2.039;
+	self_sustaining = 1
+	},
+/mob/living/simple_animal/butterfly,
+/turf/open/floor/grass{
+	icon_state = "dirt";
+	name = "dirt"
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"SZ" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Tr" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Tv" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/machinery/modular_computer/console/preset/civilian,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"TE" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"TK" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"TL" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Ud" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Up" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	dir = 4;
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"Uw" = (
+/obj/structure/flora/grass/brown,
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"UC" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/skillchip/job/engineer,
+/obj/item/skillchip/job/engineer,
+/obj/item/construction/plumbing,
+/obj/item/construction/rcd/loaded/upgraded,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"UG" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"UN" = (
+/obj/effect/turf_decal/stripes/white/line{
+	alpha = 170;
+	color = "#A46106";
+	dir = 8;
+	name = "cargo line"
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/hanger)
+"UO" = (
+/obj/structure/water_source/puddle,
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_y = 5
+	},
+/turf/open/floor/grass{
+	icon_state = "dirt";
+	name = "dirt"
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Vf" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high/plus,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"VG" = (
+/obj/effect/turf_decal/bot,
+/obj/machinery/vending/coffee{
+	default_price = 0;
+	extra_price = 0
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Wx" = (
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/outpost_engineering/roomtwo)
+"WD" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/lavendergrass{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"WJ" = (
+/obj/machinery/door/airlock/external/glass{
+	id_tag = "engineeringruinexternalairlock"
+	},
+/obj/machinery/door_buttons/access_button{
+	idDoor = "engineeringruinexternalairlock";
+	idSelf = "engineeringruinairlockcontrol";
+	name = "External Airlock Access";
+	pixel_y = -24
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"WO" = (
+/obj/structure/sign/poster/contraband/starkist{
+	pixel_y = 32
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Xf" = (
+/turf/closed/mineral/random/low_chance,
+/area/ruin/space/has_grav)
+"Xh" = (
+/obj/effect/turf_decal/sand/plating,
+/obj/structure/girder,
+/obj/item/stack/sheet/iron,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Xm" = (
+/obj/machinery/light/small/directional/south,
+/obj/machinery/duct,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Xv" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"XX" = (
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Yl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"Ym" = (
+/obj/structure/mirror{
+	pixel_y = 32
+	},
+/obj/structure/toilet{
+	pixel_y = 16
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 12;
+	pixel_y = -6
+	},
+/obj/machinery/light/small/directional/south,
+/obj/machinery/button/door{
+	id = "engineeringruinstall1";
+	name = "Lock Control";
+	normaldoorcontrol = 1;
+	pixel_x = 24;
+	specialfunctions = 4
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+"YX" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/beebox,
+/turf/open/floor/grass,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"Zt" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/techstorage/service,
+/obj/effect/spawner/lootdrop/techstorage/medical,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/storage)
+"Zv" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"ZB" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_edge,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ZD" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron/textured,
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ZH" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ZL" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/outpost_engineering/habitation)
+"ZN" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"ZQ" = (
+/obj/structure/sign/warning/vacuum{
+	pixel_y = 32
+	},
+/obj/machinery/light/small/directional/north,
+/obj/machinery/suit_storage_unit/mining/eva,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/outpost_engineering/maint)
+
+(1,1,1) = {"
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+Xf
+Xf
+Xf
+lZ
+lZ
+WJ
+lZ
+Xf
+hX
+hX
+hX
+hX
+hV
+Nm
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(2,1,1) = {"
+hX
+hX
+hX
+hX
+Xf
+Xf
+Nm
+hV
+Xf
+Xf
+Xf
+Xf
+fs
+Qt
+lh
+fs
+Xf
+Xf
+Xf
+EP
+Ni
+Xf
+Xf
+yP
+Ni
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(3,1,1) = {"
+hX
+hX
+hX
+Xf
+Xf
+Xf
+Xf
+fs
+fs
+fs
+tw
+fs
+fs
+ZQ
+ov
+fs
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Ni
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(4,1,1) = {"
+hX
+hX
+hX
+Xf
+Xf
+fs
+fs
+fs
+iB
+Qs
+Iu
+Kc
+fs
+fs
+QP
+fs
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+qm
+cW
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(5,1,1) = {"
+hX
+hX
+hX
+cW
+Xf
+fs
+QZ
+cb
+fX
+Qt
+zB
+mt
+vT
+mt
+Ce
+fs
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Nm
+cW
+cW
+cW
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(6,1,1) = {"
+hX
+hX
+hX
+qP
+rF
+Jj
+LZ
+fs
+pH
+fA
+XX
+UC
+fs
+KH
+nH
+fs
+fs
+fs
+lZ
+hV
+Xf
+Xf
+Xf
+EP
+cW
+cW
+cW
+Nm
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(7,1,1) = {"
+hX
+hX
+hX
+cW
+EP
+Jj
+Tr
+fs
+fs
+fs
+fs
+fs
+fs
+QL
+uI
+fs
+ms
+JF
+lZ
+Ni
+EP
+Ni
+Nm
+hX
+hX
+cW
+Xf
+Xf
+qm
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(8,1,1) = {"
+hX
+hX
+hX
+cW
+Xf
+fs
+Ri
+gp
+ER
+gH
+mN
+mN
+fs
+vi
+Yl
+fs
+NQ
+tn
+lZ
+Nm
+hX
+hX
+hX
+hX
+hX
+Ni
+Xf
+Xf
+Xf
+qm
+hX
+hX
+hX
+hX
+hX
+hX
+"}
+(9,1,1) = {"
+hX
+hX
+hX
+Xf
+Xf
+Xh
+Xm
+fs
+CA
+fs
+nr
+tY
+fs
+ep
+qM
+NS
+th
+Ud
+lZ
+hX
+hX
+hX
+hX
+hX
+hX
+hV
+yP
+Xf
+Xf
+Xf
+Uw
+Ni
+hX
+hX
+hX
+hX
+"}
+(10,1,1) = {"
+hX
+hX
+hX
+Xf
+Xf
+fs
+Ri
+fs
+Ym
+fs
+fs
+fs
+fs
+AL
+bN
+fs
+wk
+Jk
+lZ
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+Ni
+GE
+GE
+GE
+GE
+Sd
+aX
+hX
+hX
+hX
+"}
+(11,1,1) = {"
+qP
+cW
+cW
+fs
+fs
+fs
+Hj
+fs
+fs
+fs
+vR
+FM
+fs
+fs
+Gm
+JM
+Rx
+Rx
+im
+Aj
+Aj
+im
+Aj
+Aj
+im
+Aj
+Aj
+tV
+nE
+oL
+cT
+bj
+qm
+De
+hX
+hX
+"}
+(12,1,1) = {"
+hX
+hX
+hX
+qP
+Pb
+Cf
+EQ
+Nl
+Up
+Qo
+sO
+sO
+sO
+aG
+sF
+JM
+jb
+JE
+Sn
+Lz
+JE
+dC
+JE
+rk
+Sn
+ru
+go
+ty
+NX
+DV
+cT
+Ni
+qm
+qm
+hX
+hX
+"}
+(13,1,1) = {"
+hX
+hX
+hX
+cW
+Pb
+Cf
+wb
+Fx
+cn
+cn
+cn
+cn
+cn
+vE
+ec
+Rx
+mC
+ft
+Sb
+IG
+AX
+TE
+AX
+mj
+Sb
+II
+xy
+tV
+AJ
+Ma
+cT
+ga
+yP
+Nm
+hX
+hX
+"}
+(14,1,1) = {"
+hX
+tP
+tP
+tP
+px
+px
+cg
+Oq
+cn
+cn
+cn
+cn
+cn
+lL
+cg
+Rx
+mC
+Gh
+JM
+Rx
+Rx
+JM
+Rx
+Rx
+JM
+OM
+ey
+JM
+JM
+JM
+im
+im
+Aj
+Aj
+Aj
+hX
+"}
+(15,1,1) = {"
+hX
+tP
+kz
+HE
+nn
+px
+gb
+dK
+cn
+cn
+cn
+cn
+cn
+lx
+bB
+JM
+DS
+DO
+Rx
+pU
+Rb
+pP
+Rv
+hN
+Rx
+SZ
+TK
+JM
+IH
+ZD
+Sx
+JM
+VG
+Hc
+Aj
+Aj
+"}
+(16,1,1) = {"
+hX
+tP
+Tv
+Iz
+AZ
+px
+cg
+Oq
+cn
+cn
+cn
+cn
+cn
+lL
+cg
+JM
+Bk
+Gh
+Rx
+mG
+nI
+QU
+RQ
+AM
+Rx
+OM
+xy
+JM
+wx
+FC
+uc
+JM
+WO
+IO
+IO
+Aj
+"}
+(17,1,1) = {"
+hX
+LD
+Fn
+Ln
+dX
+PM
+kA
+Fx
+cn
+cn
+cn
+cn
+cn
+vE
+Bf
+wm
+ZH
+ZB
+iR
+fC
+QU
+UO
+QU
+YX
+JM
+zn
+PK
+Is
+qG
+db
+qG
+qs
+tG
+ny
+QN
+im
+"}
+(18,1,1) = {"
+hX
+tP
+Zt
+kl
+HD
+px
+HH
+Oq
+cn
+cn
+cn
+cn
+cn
+lL
+HH
+JM
+Ne
+Gh
+Rx
+gA
+Sy
+QU
+QU
+Og
+Rx
+OM
+xy
+JM
+Bj
+aZ
+ZD
+JM
+bX
+hY
+hY
+Aj
+"}
+(19,1,1) = {"
+hX
+tP
+Vf
+MI
+Jx
+px
+Kk
+Oq
+cn
+cn
+cn
+cn
+cn
+lx
+CD
+JM
+UG
+Sg
+Rx
+BA
+WD
+oi
+Kl
+oG
+Rx
+Pp
+DY
+JM
+Lo
+or
+sW
+JM
+KN
+Dr
+Aj
+Aj
+"}
+(20,1,1) = {"
+hX
+tP
+tP
+tP
+px
+px
+BG
+dK
+cn
+cn
+cn
+cn
+cn
+lL
+eD
+Rx
+Ne
+Gh
+JM
+Rx
+Rx
+JM
+Rx
+Rx
+JM
+OM
+ey
+JM
+JM
+JM
+im
+im
+Aj
+Aj
+Aj
+hX
+"}
+(21,1,1) = {"
+hX
+hX
+hX
+hX
+cW
+Cf
+Km
+Fx
+cn
+cn
+cn
+cn
+cn
+vE
+cP
+Rx
+Ne
+ln
+Sb
+uL
+Gr
+TL
+Gr
+cA
+Sb
+pV
+xy
+Dd
+vL
+ef
+wR
+hV
+Nm
+ZN
+hX
+hX
+"}
+(22,1,1) = {"
+hX
+hX
+hX
+hX
+cW
+Cf
+ii
+ad
+UN
+UN
+UN
+UN
+UN
+KU
+mQ
+JM
+bi
+cm
+oR
+vJ
+zl
+ev
+zl
+Xv
+oR
+Df
+ZL
+pY
+Wx
+bQ
+wR
+Ni
+Zv
+hX
+hX
+hX
+"}
+(23,1,1) = {"
+hX
+hX
+hX
+hX
+Pb
+Cf
+Cf
+Cf
+wU
+mr
+mr
+mr
+xQ
+Cf
+Cf
+JM
+Aj
+Aj
+im
+Aj
+Aj
+im
+Aj
+Aj
+im
+Aj
+Aj
+Dd
+hH
+is
+wR
+Nm
+Ni
+hX
+hX
+hX
+"}
+(24,1,1) = {"
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+Ni
+Dd
+Dd
+Dd
+Fd
+yP
+hX
+hX
+hX
+hX
+"}
+(25,1,1) = {"
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+Xf
+Xf
+Xf
+Xf
+hX
+hX
+hX
+hX
+hX
+"}
+(26,1,1) = {"
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+hX
+io
+Xf
+Xf
+hX
+hX
+hX
+hX
+hX
+hX
+"}

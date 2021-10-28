@@ -414,3 +414,36 @@
 	name = "Hell Factory Office"
 	icon_state = "red"
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA | NOTELEPORT
+
+// HORIZON RUINS !!!
+
+//Engineering Ruin - _maps/RandomRuins/SpaceRuins/outpost_engineering.dmm
+// Small outpost with a telecomms relay and some engineering equipment with a habitation area.
+
+/area/ruin/space/has_grav/outpost_engineering
+	name = "Service Outpost"
+	icon_state = "storage"
+
+/area/ruin/space/has_grav/outpost_engineering/habitation
+	name = "Service Outpost Habitation"
+	icon_state = "garden"
+
+/area/ruin/space/has_grav/outpost_engineering/roomone
+	name = "Service Outpost Bedroom"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/outpost_engineering/roomtwo
+	name = "Service Outpost Bedroom"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/outpost_engineering/maint
+	name = "Service Outpost Maintenance"
+	icon_state = "maintcentral"
+
+/area/ruin/space/has_grav/outpost_engineering/hanger
+	name = "Service Outpost Hanger"
+	icon_state = "entry"
+
+/area/ruin/space/has_grav/outpost_engineering/storage
+	name = "Service Outpost Control Room"
+	icon_state = "storage"
