@@ -402,6 +402,7 @@
 /area/shuttle/crow/cargo)
 "DO" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/long_range,
 /turf/open/floor/pod,
 /area/shuttle/crow)
 "DX" = (

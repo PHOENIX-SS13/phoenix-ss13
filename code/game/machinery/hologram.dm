@@ -79,6 +79,8 @@ Possible to do for anyone motivated enough:
 	var/secure = FALSE
 	/// If we are currently calling another holopad
 	var/calling = FALSE
+	/// Whether the holopad is listed in the normal holopads to dial
+	var/listed = TRUE
 
 /obj/machinery/holopad/secure
 	name = "secure holopad"
@@ -125,7 +127,7 @@ Possible to do for anyone motivated enough:
 
 /obj/machinery/holopad/Initialize()
 	. = ..()
-	if(on_network)
+	if(listed)
 		holopads += src
 
 /obj/machinery/holopad/Destroy()
@@ -218,7 +220,8 @@ Possible to do for anyone motivated enough:
 	data["calling"] = calling
 	data["on_network"] = on_network
 	data["on_cooldown"] = last_request + 200 < world.time ? FALSE : TRUE
-	data["allowed"] = allowed(user)
+	var/head_access = req_access ? allowed(user) : FALSE
+	data["allowed"] = head_access
 	data["disk"] = disk ? TRUE : FALSE
 	data["disk_record"] = disk?.record ? TRUE : FALSE
 	data["replay_mode"] = replay_mode
@@ -258,12 +261,7 @@ Possible to do for anyone motivated enough:
 			if(outgoing_call)
 				return
 			if(usr.loc == loc)
-				var/list/callnames = list()
-				for(var/I in holopads)
-					var/area/A = get_area(I)
-					if(A)
-						LAZYADD(callnames[A], I)
-				callnames -= get_area(src)
+				var/list/callnames = get_possible_receivers()
 				var/result = tgui_input_list(usr, "Choose an area to call", "Holocall", sortNames(callnames))
 				if(QDELETED(usr) || !result || outgoing_call)
 					return
@@ -325,6 +323,17 @@ Possible to do for anyone motivated enough:
 			if(outgoing_call)
 				outgoing_call.Disconnect(src)
 				return TRUE
+
+/// Gets the holopads that can be dialed to
+/obj/machinery/holopad/proc/get_possible_receivers()
+	var/list/callnames = list()
+	for(var/obj/machinery/holopad/iter_holopad in holopads)
+		if(iter_holopad == src)
+			continue
+		var/area/area_of_holopad = get_area(iter_holopad)
+		if(area_of_holopad)
+			LAZYADD(callnames[area_of_holopad], iter_holopad)
+	return callnames
 
 /**
  * hangup_all_calls: Disconnects all current holocalls from the holopad
@@ -518,7 +527,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/transfered = FALSE
 		if(!validate_location(new_turf))
 			if(!transfer_to_nearby_pad(new_turf,user))
-				clear_holo(user)
+				holo.HC.eye.setLoc(get_turf(holo)) //Set back the eye to where the hologram is
 				return FALSE
 			else
 				transfered = TRUE
@@ -662,6 +671,35 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 /obj/machinery/holopad/proc/record_clear()
 	if(disk?.record)
 		QDEL_NULL(disk.record)
+
+/obj/machinery/holopad/long_range
+	name = "long-range holopad"
+	desc = "It's a floor-mounted device for projecting holographic images across vast distances."
+	icon_state = "holopad-longrange0"
+	base_icon_state = "holopad-longrange"
+	circuit = /obj/item/circuitboard/machine/holopad_long_range
+	secure = TRUE
+	listed = FALSE
+	req_access = null
+	var/static/list/long_range_holopads = list()
+
+/obj/machinery/holopad/long_range/Initialize()
+	. = ..()
+	long_range_holopads += src
+
+/obj/machinery/holopad/long_range/Destroy()
+	long_range_holopads -= src
+	return ..()
+
+/obj/machinery/holopad/long_range/get_possible_receivers()
+	var/list/callnames = list()
+	for(var/obj/machinery/holopad/iter_holopad in long_range_holopads)
+		if(iter_holopad == src)
+			continue
+		var/area/area_of_holopad = get_area(iter_holopad)
+		if(area_of_holopad)
+			LAZYADD(callnames[area_of_holopad], iter_holopad)
+	return callnames
 
 /obj/effect/overlay/holo_pad_hologram
 	initial_language_holder = /datum/language_holder/universal

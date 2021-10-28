@@ -402,6 +402,14 @@
 	if(secure)
 		. += "There is a red light flashing next to the word \"secure\""
 
+/// No inheritance because it doesn't have the secure/not secure behaviours
+/obj/item/circuitboard/machine/holopad_long_range
+	name = "Long Range Holopad (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_GENERIC
+	build_path = /obj/machinery/holopad/long_range
+	req_components = list(/obj/item/stock_parts/capacitor = 1)
+	needs_anchored = FALSE
+
 /obj/item/circuitboard/machine/launchpad
 	name = "Bluespace Launchpad (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_GENERIC
