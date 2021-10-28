@@ -106,7 +106,7 @@
 		alter_engine_power(-engine_power)
 		RemoveExtension()
 	if(extension)
-		qdel(extension)
+		QDEL_NULL(extension)
 	. = ..()
 
 //Propagates the change to the shuttle.

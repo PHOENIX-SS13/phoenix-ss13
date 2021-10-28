@@ -205,7 +205,7 @@
 /obj/effect/mob_spawn/human/corpse/cat_butcher
 	name = "The Cat Surgeon"
 	hairstyle = "Cut Hair"
-	facial_hairstyle = "Watson Mustache"
+	facial_hairstyle = "Moustache (Watson)"
 	skin_tone = "caucasian1"
 	outfit = /datum/outfit/cat_butcher
 

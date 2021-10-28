@@ -47,7 +47,7 @@
 	return null
 
 /datum/sprite_accessory/tails/lizard
-	recommended_species = list("lizard", "ashlizard", "mammal", "unathi")
+	recommended_species = list("lizard", "silverlizard", "ashlizard", "mammal", "unathi")
 	organ_type = /obj/item/organ/tail/lizard
 	general_type = "lizard"
 

@@ -198,10 +198,14 @@
 	GLOB.ai_list -= src
 	GLOB.shuttle_caller_list -= src
 	SSshuttle.autoEvac()
-	QDEL_NULL(eyeobj) // No AI, no Eye
-	QDEL_NULL(spark_system)
-	QDEL_NULL(malf_picker)
-	QDEL_NULL(doomsday_device)
+	if(eyeobj)
+		QDEL_NULL(eyeobj) // No AI, no Eye
+	if(spark_system)
+		QDEL_NULL(spark_system)
+	if(malf_picker)
+		QDEL_NULL(malf_picker)
+	if(doomsday_device)
+		QDEL_NULL(doomsday_device)
 	QDEL_NULL(robot_control)
 	QDEL_NULL(aiMulti)
 	malfhack = null
@@ -1017,9 +1021,9 @@
 	return
 
 /mob/living/silicon/ai/spawned/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
-	. = ..()
 	if(!target_ai)
 		target_ai = src //cheat! just give... ourselves as the spawned AI, because that's technically correct
+	. = ..()
 
 /mob/living/silicon/ai/proc/camera_visibility(mob/camera/ai_eye/moved_eye)
 	GLOB.cameranet.visibility(moved_eye, client, all_eyes, TRUE)

@@ -188,16 +188,17 @@
 	SeedVariables()
 	SeedDeviation()
 	if(!length(possible_ore_weight))
-		qdel(src)
-		return
+		return INITIALIZE_HINT_QDEL
 	var/compiled_list = list()
 	for(var/i in 1 to ore_variety)
+		if(!possible_ore_weight.len)
+			break
 		var/ore_type = pick(possible_ore_weight)
 		var/ore_amount = possible_ore_weight[ore_type]
 		possible_ore_weight -= ore_type
 		compiled_list[ore_type] = round(ore_amount * ore_density)
 	new /datum/ore_node(x, y, z, compiled_list, rand(5,8))
-	qdel(src)
+	return INITIALIZE_HINT_QDEL
 
 /datum/ore_node_seeder
 	var/list/spawners_weight = list(/obj/effect/ore_node_spawner = 100)
