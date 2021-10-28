@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Long-range holopads & hologram vision improvements"
+  - qol: "No longer interrupt holocalls on moving the hologram out of range"
