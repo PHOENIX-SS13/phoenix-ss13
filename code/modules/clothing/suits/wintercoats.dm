@@ -125,7 +125,7 @@
 		/obj/item/key/janitor,
 		/obj/item/lightreplacer,
 		/obj/item/melee/flyswatter,
-		/obj/item/paint/paint_remover,
+		/obj/item/paint_remover,
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/reagent_containers/glass/bucket,

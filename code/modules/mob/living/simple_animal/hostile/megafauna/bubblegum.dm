@@ -93,7 +93,7 @@ Difficulty: Hard
 
 /datum/action/innate/megafauna_attack/hallucination_surround
 	name = "Surround Target"
-	icon_icon = 'icons/turf/walls/wall.dmi'
+	icon_icon = 'icons/turf/walls/legacy/wall.dmi'
 	button_icon_state = "wall-0"
 	chosen_message = SPAN_COLOSSUS("You are now surrounding the target you click on with hallucinations.")
 	chosen_attack_num = 3

@@ -1542,7 +1542,6 @@
 #include "code\game\turfs\closed\_closed.dm"
 #include "code\game\turfs\closed\minerals.dm"
 #include "code\game\turfs\closed\walls.dm"
-#include "code\game\turfs\closed\wall\material_walls.dm"
 #include "code\game\turfs\closed\wall\mineral_walls.dm"
 #include "code\game\turfs\closed\wall\misc_walls.dm"
 #include "code\game\turfs\closed\wall\reinf_walls.dm"

@@ -46,6 +46,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isplatingturf(A) (istype(A, /turf/open/floor/plating))
 
+#define iswall(A) (istype(A, /turf/closed/wall))
+
 //Mobs
 #define isliving(A) (istype(A, /mob/living))
 
@@ -208,6 +210,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isgun(A) (istype(A, /obj/item/gun))
 
 #define is_reagent_container(O) (istype(O, /obj/item/reagent_containers))
+
+#define isfalsewall(A) (istype(A, /obj/structure/falsewall))
 
 //Assemblies
 #define isassembly(O) (istype(O, /obj/item/assembly))
