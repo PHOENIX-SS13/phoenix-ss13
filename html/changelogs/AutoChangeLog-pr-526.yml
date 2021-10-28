@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Added wideband relays which allow global communication. You can find them on FTV Bearcat bridge and ESS Crow helm"
