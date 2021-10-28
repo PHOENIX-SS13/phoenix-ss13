@@ -2934,6 +2934,7 @@
 /obj/item/folder/blue{
 	pixel_y = 2
 	},
+/obj/item/radio/intercom/wideband/directional/east,
 /turf/open/floor/iron/dark,
 /area/command/bridge)
 "Md" = (

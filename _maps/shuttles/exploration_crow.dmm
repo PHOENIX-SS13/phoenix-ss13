@@ -47,6 +47,7 @@
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/item/radio/intercom/wideband/directional/west,
 /turf/open/floor/pod,
 /area/shuttle/crow/helm)
 "eT" = (

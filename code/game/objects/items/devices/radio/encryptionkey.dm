@@ -135,3 +135,8 @@
 
 /obj/item/encryptionkey/secbot
 	channels = list(RADIO_CHANNEL_AI_PRIVATE = 1, RADIO_CHANNEL_SECURITY = 1)
+
+/obj/item/encryptionkey/wideband
+	name = "wideband encryption key"
+	icon_state = "wideband_cypherkey"
+	channels = list(RADIO_CHANNEL_WIDEBAND = 1)
