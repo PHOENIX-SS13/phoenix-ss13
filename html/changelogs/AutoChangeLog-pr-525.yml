@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Walls have been reworked and resprited, check https://github.com/hrzntal/horizon/pull/525 for more info"

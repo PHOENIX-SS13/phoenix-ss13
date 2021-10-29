@@ -17,3 +17,13 @@
   - bugfix: Fixed daynight overlays and turf luminosity
   TiviPlus:
   - bugfix: fixed weird turf overlays during shuttle docking
+2021-10-29:
+  Azarak:
+  - rscadd: Long-range holopads & hologram vision improvements
+  - qol: No longer interrupt holocalls on moving the hologram out of range
+  - rscadd: Walls have been reworked and resprited, check https://github.com/hrzntal/horizon/pull/525
+      for more info
+  - rscadd: Added wideband relays which allow global communication. You can find them
+      on FTV Bearcat bridge and ESS Crow helm
+  KathrinBailey:
+  - rscadd: Adds a new space ruin, the Service Outpost.
