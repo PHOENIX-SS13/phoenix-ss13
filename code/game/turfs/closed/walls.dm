@@ -69,11 +69,12 @@
 		GLOB.station_turfs -= src
 	return ..()
 
-/turf/closed/wall/copyTurf(turf/closed/wall/pasted_turf)
-	if(istype(pasted_turf, /turf/closed/wall))
-		pasted_turf.set_wall_information(plating_material, reinf_material, wall_paint, stripe_paint)
+/turf/closed/wall/copyTurf(turf/T)
+	. = ..()
+	if(istype(., /turf/closed/wall))
+		var/turf/closed/wall/pasted_turf = .
 		pasted_turf.d_state = d_state
-	return ..()
+		pasted_turf.set_wall_information(plating_material, reinf_material, wall_paint, stripe_paint)
 
 /// Most of this code is pasted within /obj/structure/falsewall. Be mindful of this
 /turf/closed/wall/update_overlays()
