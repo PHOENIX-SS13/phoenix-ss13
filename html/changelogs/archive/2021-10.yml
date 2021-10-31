@@ -27,3 +27,6 @@
       on FTV Bearcat bridge and ESS Crow helm
   KathrinBailey:
   - rscadd: Adds a new space ruin, the Service Outpost.
+2021-10-31:
+  Azarak:
+  - bugfix: Fixes walls copyTurf not working
