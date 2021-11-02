@@ -115,9 +115,12 @@ There are several things that need to be remembered:
 			return
 
 		var/applied_style = NONE
+		var/taur_alpha_mask = NONE
 		var/icon_file = w_uniform.worn_icon
 		if(dna.species.mutant_bodyparts["taur"])
 			var/datum/sprite_accessory/taur/S = GLOB.sprite_accessories["taur"][dna.species.mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
+			if(U.body_parts_covered & LEGS) //If we cover legs, apply the taur alpha mask
+				taur_alpha_mask = S.alpha_mask_type
 			if(w_uniform.mutant_variants & S.taur_mode)
 				applied_style = S.taur_mode
 			else if(w_uniform.mutant_variants & S.alt_taur_mode)
@@ -132,13 +135,17 @@ There are several things that need to be remembered:
 				icon_file = w_uniform.worn_icon_digi || 'icons/horizon/mob/clothing/mutant/under/uniform_digi.dmi'
 			if(STYLE_TAUR_SNAKE)
 				icon_file = w_uniform.worn_icon_taur_snake || 'icons/horizon/mob/clothing/mutant/under/uniform_taur_snake.dmi'
+				taur_alpha_mask = NONE //If the uniform has special worn for taur, dont apply the mask
 			if(STYLE_TAUR_HOOF)
 				icon_file = w_uniform.worn_icon_taur_hoof || 'icons/horizon/mob/clothing/mutant/under/uniform_taur_hoof.dmi'
+				taur_alpha_mask = NONE //If the uniform has special worn for taur, dont apply the mask
 			if(STYLE_TAUR_PAW)
 				icon_file = w_uniform.worn_icon_taur_paw || 'icons/horizon/mob/clothing/mutant/under/uniform_taur_paw.dmi'
+				taur_alpha_mask = NONE //If the uniform has special worn for taur, dont apply the mask
 
 		if(applied_style & STYLE_TAUR_ALL)
 			x_override = 64
+
 
 		var/target_overlay = U.icon_state
 		if(U.adjusted == ALT_STYLE)
@@ -147,12 +154,12 @@ There are several things that need to be remembered:
 
 		var/mutable_appearance/uniform_overlay
 
-		if(dna?.species.sexes && !applied_style)
-			if(body_type == FEMALE && U.fitted != NO_FEMALE_UNIFORM)
-				uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/clothing/under/default.dmi', isinhands = FALSE, femaleuniform = U.fitted, override_state = target_overlay, override_icon = icon_file, override_x_center = x_override)
+		var/female_alpha_mask = NO_FEMALE_UNIFORM
 
-		if(!uniform_overlay)
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/clothing/under/default.dmi', isinhands = FALSE, override_state = target_overlay, override_icon = icon_file, override_x_center = x_override)
+		if(body_type == FEMALE)
+			female_alpha_mask = U.fitted
+
+		uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/clothing/under/default.dmi', isinhands = FALSE, femaleuniform = female_alpha_mask, override_state = target_overlay, override_icon = icon_file, override_x_center = x_override, taur_alpha_mask = taur_alpha_mask)
 
 		if(OFFSET_UNIFORM in dna.species.offset_features)
 			uniform_overlay.pixel_x += dna.species.offset_features[OFFSET_UNIFORM][1]
@@ -491,12 +498,19 @@ There are several things that need to be remembered:
 		apply_overlay(LEGCUFF_LAYER)
 		throw_alert("legcuffed", /atom/movable/screen/alert/restrained/legcuffed, new_master = src.legcuffed)
 
-/proc/wear_female_version(t_color, icon, layer, type)
-	var/index = t_color
-	var/icon/female_clothing_icon = GLOB.female_clothing_icons[index]
-	if(!female_clothing_icon) //Create standing/laying icons if they don't exist
-		generate_female_clothing(index,t_color,icon,type)
-	return mutable_appearance(GLOB.female_clothing_icons[t_color], layer = -layer)
+/obj/item/proc/wear_alpha_masked_version(passed_state, passed_icon, layer, female_type, taur_type, greyscale_colors)
+	var/static/list/alpha_masked_icons = list()
+	var/index = "[passed_state]-[passed_icon]-[female_type]-[taur_type]-[greyscale_colors]"
+	var/icon/alpha_icon = alpha_masked_icons[index]
+	if(!alpha_icon) //Create standing/laying icons if they don't exist
+		var/icon/blending_icon = icon(passed_icon, passed_state)
+		if(female_type)
+			var/female_masked_state = (female_type == FEMALE_UNIFORM_FULL) ? "female_full" : "female_top"
+			blending_icon.Blend(icon('icons/mob/clothing/under/masking_helpers.dmi', female_masked_state), ICON_MULTIPLY, -15, -15)
+		if(taur_type)
+			blending_icon.Blend(icon('icons/mob/clothing/under/masking_helpers.dmi', taur_type), ICON_MULTIPLY, -15, -15)
+		alpha_masked_icons[index] = fcopy_rsc(blending_icon)
+	return mutable_appearance(alpha_masked_icons[index], layer = -layer)
 
 /mob/living/carbon/human/proc/get_overlays_copy(list/unwantedLayers)
 	var/list/out = new
@@ -566,7 +580,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 
 */
-/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_icon = null, override_x_center = null, override_y_center = null, mutant_styles = NONE)
+/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_icon = null, override_x_center = null, override_y_center = null, mutant_styles = NONE, taur_alpha_mask = NONE)
 
 	//Find a valid icon_state from variables+arguments
 	var/t_state
@@ -586,8 +600,8 @@ generate/load female uniform sprites matching all previously decided variables
 	var/layer2use = alternate_worn_layer ? alternate_worn_layer : default_layer
 
 	var/mutable_appearance/standing
-	if(femaleuniform)
-		standing = wear_female_version(t_state, file2use, layer2use, femaleuniform) //should layer2use be in sync with the adjusted value below? needs testing - shiz
+	if(femaleuniform || taur_alpha_mask)
+		standing = wear_alpha_masked_version(t_state, file2use, layer2use, femaleuniform, taur_alpha_mask, greyscale_colors) //should layer2use be in sync with the adjusted value below? needs testing - shiz
 	if(!standing)
 		standing = mutable_appearance(file2use, t_state, -layer2use)
 

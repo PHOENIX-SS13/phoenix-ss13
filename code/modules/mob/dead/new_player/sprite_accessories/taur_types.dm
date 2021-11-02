@@ -10,6 +10,8 @@
 	var/alt_taur_mode = NONE //Same as above.
 	var/hide_legs = TRUE
 	var/hide_markings = FALSE //Any taur part that has "legs" should not hide markings
+	/// Alpha mask used for cutting out a part of jumpsuit
+	var/alpha_mask_type = "taur_mask_def"
 
 /datum/sprite_accessory/taur/is_hidden(mob/living/carbon/human/H, obj/item/bodypart/HD)
 	if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
@@ -85,6 +87,7 @@
 	icon_state = "naga"
 	taur_mode = STYLE_TAUR_SNAKE
 	hide_legs = TRUE
+	alpha_mask_type = "taur_mask_naga"
 
 /datum/sprite_accessory/taur/otie
 	name = "Otie"
