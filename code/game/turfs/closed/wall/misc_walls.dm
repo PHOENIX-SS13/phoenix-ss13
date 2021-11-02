@@ -2,8 +2,6 @@
 	name = "runed metal wall"
 	desc = "A cold metal wall engraved with indecipherable symbols. Studying them causes your head to pound."
 	icon = 'icons/turf/walls/cult_wall.dmi'
-	smoothing_flags = SMOOTH_BITMASK
-	canSmoothWith = null
 	plating_material = /datum/material/runedmetal
 	color = "#3C3434" //To display in mapping softwares
 
@@ -55,8 +53,6 @@
 
 /turf/closed/wall/ice
 	desc = "A wall covered in a thick sheet of ice."
-	smoothing_flags = SMOOTH_BITMASK
-	canSmoothWith = null
 	rcd_memory = null
 	hardness = 35
 	slicing_duration = 150 //welding through the ice+metal
@@ -77,7 +73,6 @@
 /turf/closed/wall/mineral/bronze
 	name = "clockwork wall"
 	desc = "A huge chunk of bronze, decorated like gears and cogs."
-	smoothing_flags = SMOOTH_BITMASK
 	plating_material = /datum/material/bronze
 	color = "#92661A" //To display in mapping softwares
 
