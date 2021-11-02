@@ -13,7 +13,8 @@
 				/obj/item/dice/d00,
 				/obj/item/dice/eightbd20,
 				/obj/item/dice/fourdd6,
-				/obj/item/dice/d100
+				/obj/item/dice/d100,
+				/obj/item/deathroll_dice
 				)
 
 /obj/item/storage/pill_bottle/dice/PopulateContents()
@@ -226,3 +227,99 @@
 		rigged = DICE_BASICALLY_RIGGED
 		rigged_value = result
 	..(M)
+
+/// A special kind of dice, new type because it is completely different.
+/obj/item/deathroll_dice
+	name = "deathroll die"
+	desc = "An electronic die used for 'deathrolling'. The first to roll a one looses. \nThe die has a screen on each side, with an electrical display inside that seems to always face the screen up."
+	icon = 'icons/obj/items/deathroll_dice.dmi'
+	icon_state = "dice"
+	w_class = WEIGHT_CLASS_SMALL
+	custom_price = PAYCHECK_HARD //Electronic, so it costs a bit
+	/// Current result of the dice, initial is the maximum result. 99 because that fits good on the screen
+	var/result = 99
+	/// Whether we are emagged and about to blow, prevent further rolling as if the dice was stuck
+	var/about_to_blow = FALSE
+
+/obj/item/deathroll_dice/examine(mob/user)
+	. = ..()
+	. += SPAN_NOTICE("Alt-click to reset the counter. It will reset automatically when throwing a 'one' result.")
+
+/obj/item/deathroll_dice/Initialize()
+	. = ..()
+	update_appearance()
+
+/obj/item/deathroll_dice/AltClick(mob/living/user)
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
+		return
+	result = initial(result)
+	to_chat(user, SPAN_NOTICE("You reset \the [src]."))
+	update_appearance()
+
+/obj/item/deathroll_dice/emag_act(mob/user)
+	if(obj_flags & EMAGGED)
+		return
+	to_chat(user, SPAN_WARNING("You overload \the [src]'s random seed computing core."))
+	obj_flags |= EMAGGED
+
+/obj/item/deathroll_dice/update_overlays()
+	. = ..()
+	var/display_color
+	switch(result)
+		if(1)
+			display_color = "#ff8000" //Almost red color
+		if(2,3)
+			display_color = "#ffd500" //Yellowish color
+		else
+			display_color = "#34ebeb" //Neon color
+	var/result_string = "[result]"
+	var/characters = length(result_string)
+	var/offset = (characters == 1) ? 6 : (characters * 4)
+	for(var/i in 1 to characters)
+		var/letter = result_string[i]
+		var/x_shift = i * 4 - offset
+		var/mutable_appearance/letter_overlay = mutable_appearance(icon, letter, appearance_flags = RESET_COLOR|KEEP_TOGETHER)
+		letter_overlay.color = display_color
+		letter_overlay.pixel_x = x_shift
+		. += letter_overlay
+
+/obj/item/deathroll_dice/attack_self(mob/user)
+	diceroll(user)
+
+/obj/item/deathroll_dice/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	var/mob/thrown_by = thrownby?.resolve()
+	if(thrown_by)
+		diceroll(thrown_by)
+	return ..()
+
+/obj/item/deathroll_dice/proc/diceroll(mob/user)
+	if(result == 1) //If we throw a failed roll, reset the dice first
+		result = initial(result)
+
+	var/comment = ""
+	var/fake_result = roll(result)//Daredevil isn't as good as he used to be
+
+	if(!about_to_blow)
+		result = roll(result)
+		update_appearance()
+	
+		if(result == 1)
+			comment = "You lose!"
+			playsound(get_turf(src), 'sound/machines/buzz-sigh.ogg', 25, TRUE)
+			if(obj_flags & EMAGGED)
+				about_to_blow = TRUE
+				addtimer(CALLBACK(src, .proc/emag_boom), 1 SECONDS)
+
+	if(user != null) //Dice was rolled in someone's hand
+		user.visible_message(SPAN_NOTICE("[user] throws [src]. The screen shows [result]. [comment]"), \
+			SPAN_NOTICE("You throw [src]. The screen shows [result]. [comment]"), \
+			SPAN_HEAR("You hear [src] rolling, it feels like a [fake_result]."))
+	else if(!src.throwing) //Dice was thrown and is coming to rest
+		visible_message(SPAN_NOTICE("[src] rolls to a stop, landing on [result]. [comment]"))
+
+/obj/item/deathroll_dice/proc/emag_boom()
+	if(QDELETED(src))
+		return
+	message_admins(SPAN_NOTICE("Deathroll dice detonated due to being emagged at [ADMIN_VERBOSEJMP(src)]!"))
+	explosion(get_turf(src), 0, 1, 2, 3)
+	qdel(src)

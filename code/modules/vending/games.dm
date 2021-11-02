@@ -5,6 +5,7 @@
 	icon_state = "games"
 	products = list(/obj/item/toy/cards/deck = 5,
 		            /obj/item/storage/pill_bottle/dice = 10,
+		            /obj/item/deathroll_dice = 2,
 		            /obj/item/toy/cards/deck/cas = 3,
 		            /obj/item/toy/cards/deck/cas/black = 3,
 					/obj/item/toy/cards/deck/kotahi = 3,

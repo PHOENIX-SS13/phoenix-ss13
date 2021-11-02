@@ -150,6 +150,10 @@
 	name = "Dice bag"
 	path = /obj/item/storage/pill_bottle/dice
 
+/datum/loadout_item/backpack/toy/deathroll_dice
+	name = "Deathroll die"
+	path = /obj/item/deathroll_dice
+
 /datum/loadout_item/backpack/toy/eightball
 	name = "Magic eightball"
 	path = /obj/item/toy/eightball
