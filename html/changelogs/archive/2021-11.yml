@@ -1,0 +1,6 @@
+2021-11-03:
+  Azarak:
+  - bugfix: Fixes some wall smoothing and translations
+  - rscadd: Added a deathroll dice. Available by chance in dice bags, in loadout,
+      aswell as the games vending machine.
+  - rscadd: Taurs now clip the bottom part of their uniform out
