@@ -26,8 +26,8 @@
 
 /datum/sold_shuttle/vulture
 	name = "MS Vulture"
-	desc = "A medium sized mining shuttle, equipped with living quarters."
-	detailed_desc = "It's medium sized and is equipped with three propulsion engines, canisters of co2 and oxygen, a portable generator, two mining lasers, a transporter and some emergency supplies. It has quarters and a restroom"
+	desc = "A medium sized mining shuttle, equipped with a living quarter."
+	detailed_desc = "It's medium sized and is equipped with three propulsion engines, canisters of co2 and oxygen, a portable generator, two mining lasers, a transporter and some emergency supplies. It has a singular living quarter and a restroom"
 	shuttle_id = "common_vulture"
 	cost = 7500
 	allowed_docks = list(DOCKS_MEDIUM_UPWARDS)
