@@ -4271,8 +4271,8 @@
 /turf/open/floor/iron,
 /area/security)
 "akT" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "akU" = (
@@ -4308,12 +4308,12 @@
 /turf/open/floor/iron/dark,
 /area/command/heads_quarters/hos)
 "akZ" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "hos_spess_shutters";
 	name = "Space shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "ala" = (
@@ -5340,8 +5340,8 @@
 /turf/open/floor/iron,
 /area/security/brig)
 "anB" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/warden)
 "anC" = (
@@ -6410,12 +6410,12 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "aqI" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "bridgespace";
 	name = "bridge external shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/bridge)
 "aqJ" = (
@@ -7660,8 +7660,8 @@
 /turf/open/floor/iron,
 /area/security/brig)
 "atF" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/brig)
 "atG" = (
@@ -9139,8 +9139,8 @@
 	id = "Secure Gate";
 	name = "brig shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/brig)
 "awL" = (
@@ -12624,8 +12624,8 @@
 	id = "hop";
 	name = "Privacy Shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hop)
 "aFB" = (
@@ -14351,8 +14351,8 @@
 /turf/open/floor/iron,
 /area/ai_monitored/command/storage/eva)
 "aLc" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/teleporter)
 "aLd" = (
@@ -26658,12 +26658,12 @@
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/cmo)
 "buc" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/preopen{
 	id = "cmoprivacy";
 	name = "CMO Office"
 	},
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/cmo)
 "bug" = (
@@ -28785,12 +28785,12 @@
 /turf/open/floor/carpet/royalblack,
 /area/command/heads_quarters/hop/dorm)
 "bAo" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "rdprivacy";
 	name = "Privacy shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/rd)
 "bAp" = (
@@ -36991,12 +36991,12 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "bXY" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "ce_privacy";
 	name = "Privacy shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/ce)
 "bYa" = (
@@ -44370,6 +44370,12 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/science/lab)
+"cUy" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
+/turf/open/floor/plating,
+/area/security/warden)
 "cYk" = (
 /obj/effect/landmark/start/chief_medical_officer,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -45131,6 +45137,11 @@
 /obj/structure/cable,
 /turf/open/floor/engine,
 /area/science/xenobiology)
+"ecP" = (
+/obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
+/turf/open/floor/plating,
+/area/security/prison)
 "edl" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -51676,11 +51687,11 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "msX" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "executionfireblast"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/execution/transfer)
 "mtu" = (
@@ -55364,12 +55375,12 @@
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
 "qMi" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "executionfireblast"
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/simple/general/visible,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/execution/transfer)
 "qOx" = (
@@ -58192,8 +58203,8 @@
 /turf/open/floor/grass,
 /area/medical/psychology)
 "uqJ" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/execution/transfer)
 "urk" = (
@@ -58812,6 +58823,11 @@
 	},
 /turf/open/floor/iron/dark,
 /area/science/mixing)
+"vfm" = (
+/obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
+/turf/open/floor/plating,
+/area/hallway/primary/central)
 "vfw" = (
 /obj/machinery/power/apc{
 	areastring = "/area/medical/storage";
@@ -59888,7 +59904,7 @@
 /turf/open/floor/iron/dark,
 /area/service/library/artgallery)
 "wCj" = (
-/obj/item/paint/paint_remover{
+/obj/item/paint_remover{
 	pixel_y = 8
 	},
 /obj/structure/table/wood,
@@ -81383,7 +81399,7 @@ aaa
 aaa
 adR
 aaa
-aen
+ecP
 aep
 aeD
 aeU
@@ -81897,7 +81913,7 @@ aaa
 aaa
 adR
 aaa
-aen
+ecP
 aer
 aeF
 aeV
@@ -82411,7 +82427,7 @@ aaa
 aaa
 adR
 aaa
-aen
+ecP
 aet
 aet
 aet
@@ -84491,7 +84507,7 @@ anI
 anI
 aor
 aoX
-anB
+cUy
 aqz
 arp
 asC
@@ -94788,7 +94804,7 @@ aDU
 aEN
 aAH
 aGw
-aKV
+vfm
 aHV
 aDZ
 aJW
@@ -95045,7 +95061,7 @@ bCN
 aEO
 aAH
 aGw
-aKV
+vfm
 aHV
 aDZ
 aJR
@@ -95302,7 +95318,7 @@ aDV
 aEP
 aFA
 aGv
-aKV
+vfm
 aHV
 aDZ
 aJO

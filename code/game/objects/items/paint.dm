@@ -127,6 +127,16 @@
 	if(paintleft <= 0)
 		icon_state = "paint_empty"
 		return
+	if(istype(target, /obj/structure/low_wall))
+		var/obj/structure/low_wall/target_low_wall = target
+		if(LAZYACCESS(modifiers, RIGHT_CLICK))
+			target_low_wall.set_stripe_paint(paint_color)
+		else
+			target_low_wall.set_wall_paint(paint_color)
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.visible_message(SPAN_NOTICE("[user] paints \the [target_low_wall]."), \
+			SPAN_NOTICE("You paint \the [target_low_wall]."))
+		return TRUE
 	if(iswall(target))
 		var/turf/closed/wall/target_wall = target
 		if(LAZYACCESS(modifiers, RIGHT_CLICK))
@@ -146,7 +156,7 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.visible_message(SPAN_NOTICE("[user] paints \the [target_falsewall]."), \
 			SPAN_NOTICE("You paint \the [target_falsewall]."))
-		return
+		return TRUE
 	if(!isturf(target) || isspaceturf(target))
 		return TRUE
 	target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)
@@ -173,6 +183,22 @@
 	if(!proximity)
 		return
 	var/list/modifiers = params2list(params)
+	if(istype(target, /obj/structure/low_wall))
+		var/obj/structure/low_wall/target_low_wall = target
+		if(LAZYACCESS(modifiers, RIGHT_CLICK))
+			if(!target_low_wall.stripe_paint)
+				to_chat(user, SPAN_WARNING("There is no paint to strip!"))
+				return TRUE
+			target_low_wall.set_stripe_paint(null)
+		else
+			if(!target_low_wall.wall_paint)
+				to_chat(user, SPAN_WARNING("There is no paint to strip!"))
+				return TRUE
+			target_low_wall.set_wall_paint(null)
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.visible_message(SPAN_NOTICE("[user] strips the paint from \the [target_low_wall]."), \
+			SPAN_NOTICE("You strip the paint from \the [target_low_wall]."))
+		return TRUE
 	if(iswall(target))
 		var/turf/closed/wall/target_wall = target
 		if(LAZYACCESS(modifiers, RIGHT_CLICK))

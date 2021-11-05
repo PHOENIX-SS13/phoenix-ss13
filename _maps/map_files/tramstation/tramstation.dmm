@@ -1972,8 +1972,8 @@
 /turf/open/floor/iron/dark,
 /area/engineering/gravity_generator)
 "ahg" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/engineering/gravity_generator)
 "ahh" = (
@@ -2605,9 +2605,9 @@
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "ajp" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/preopen,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "ajs" = (
@@ -3255,12 +3255,12 @@
 /turf/open/floor/iron,
 /area/hallway/primary/port)
 "alq" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "briglockdown";
 	name = "brig shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/warden)
 "alr" = (
@@ -3519,12 +3519,12 @@
 /turf/open/floor/wood,
 /area/service/bar)
 "amn" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "briglockdown";
 	name = "brig shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/brig)
 "amo" = (
@@ -4076,8 +4076,8 @@
 /turf/open/floor/iron/dark,
 /area/command/heads_quarters/ce)
 "aof" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/brig)
 "aog" = (
@@ -5026,8 +5026,8 @@
 /turf/open/floor/iron/dark,
 /area/command/bridge)
 "aqN" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/ai_monitored/command/storage/eva)
 "aqO" = (
@@ -8008,12 +8008,12 @@
 /turf/open/floor/vault,
 /area/hallway/primary/tram/left)
 "azO" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "hop";
 	name = "privacy shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hop)
 "azP" = (
@@ -8494,8 +8494,8 @@
 /turf/open/floor/iron,
 /area/cargo/storage)
 "aBD" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/checkpoint)
 "aBE" = (
@@ -13710,9 +13710,9 @@
 /turf/open/floor/plating,
 /area/medical/medbay/central)
 "bhs" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/engineering/break_room)
 "bht" = (
@@ -18315,8 +18315,8 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "cVT" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/checkpoint/science)
 "cWa" = (
@@ -23358,8 +23358,8 @@
 /turf/open/floor/iron/dark,
 /area/ai_monitored/turret_protected/aisat_interior)
 "eTY" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/prison)
 "eUf" = (
@@ -25908,7 +25908,7 @@
 /area/command/heads_quarters/ce)
 "fRU" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/checkpoint/engineering)
 "fSd" = (
@@ -26448,8 +26448,8 @@
 /turf/closed/wall/r_wall,
 /area/engineering/atmos)
 "geu" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/engineering/break_room)
 "geF" = (
@@ -28482,12 +28482,12 @@
 /turf/open/floor/plating,
 /area/engineering/supermatter/room)
 "gUa" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "Secure Gate";
 	name = "brig shutters"
 	},
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/brig)
 "gUe" = (
@@ -28501,11 +28501,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
 /area/security/checkpoint/science)
-"gUn" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/security/checkpoint/engineering)
 "gUw" = (
 /turf/open/floor/iron/dark/telecomms,
 /area/tcommsat/server)
@@ -40582,8 +40577,8 @@
 /turf/closed/wall,
 /area/mine/explored)
 "lvJ" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/processing)
 "lvS" = (
@@ -41495,7 +41490,7 @@
 "lOJ" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/checkpoint/engineering)
 "lOL" = (
@@ -51417,12 +51412,12 @@
 /turf/open/floor/iron,
 /area/security/prison)
 "pNu" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/preopen{
 	id = "Secure Gate";
 	name = "brig shutters"
 	},
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/security/brig)
 "pNw" = (
@@ -65766,6 +65761,11 @@
 	},
 /turf/open/floor/iron,
 /area/science/research)
+"vsq" = (
+/obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/grille,
+/turf/open/floor/plating,
+/area/security/checkpoint/medical)
 "vsD" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible{
 	dir = 4
@@ -69849,12 +69849,12 @@
 /turf/open/floor/plating,
 /area/maintenance/central)
 "wPP" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/preopen{
 	id = "ceprivacy";
 	name = "privacy shutter"
 	},
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/command/heads_quarters/ce)
 "wQd" = (
@@ -105173,7 +105173,7 @@ cGs
 vFU
 uHD
 uYT
-gUn
+fRU
 vzm
 uYT
 uYT
@@ -105429,7 +105429,7 @@ qMq
 dlU
 cGs
 iqY
-gUn
+fRU
 bcg
 nfP
 sSU
@@ -105943,7 +105943,7 @@ mkc
 rFc
 cGs
 iqY
-gUn
+fRU
 tbl
 bGg
 kxN
@@ -172000,7 +172000,7 @@ uht
 tlz
 dJz
 vYV
-ifn
+vsq
 deS
 vlw
 auA
@@ -172257,7 +172257,7 @@ uht
 oaf
 dJz
 vYV
-ifn
+vsq
 cpK
 hmE
 bet
@@ -172514,7 +172514,7 @@ sDC
 twk
 dJz
 vYV
-ifn
+vsq
 daq
 alE
 fMi

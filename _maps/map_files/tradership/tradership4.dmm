@@ -23,6 +23,7 @@
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "dO" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/solars/port/aft)
 "fB" = (
@@ -115,6 +116,7 @@
 /area/tcommsat/server)
 "nZ" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "oa" = (
@@ -130,6 +132,7 @@
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "oE" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/maintenance/solars/port/aft)
 "oH" = (
@@ -147,6 +150,7 @@
 /area/tcommsat/server)
 "pE" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/tcommsat/server)
 "pW" = (
@@ -302,6 +306,7 @@
 "FM" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "Hc" = (
@@ -319,6 +324,7 @@
 /area/tcommsat/server)
 "HJ" = (
 /obj/structure/sign/departments/deck4,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/maintenance/solars/port/aft)
 "HN" = (
@@ -471,6 +477,7 @@
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "Vd" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/tcommsat/server)
 "Vn" = (

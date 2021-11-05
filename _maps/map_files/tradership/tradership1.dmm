@@ -1,5 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/science/xenobiology)
 "aj" = (
@@ -124,6 +125,7 @@
 /area/cargo/storage)
 "dK" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/security/brig)
 "ec" = (
@@ -163,6 +165,7 @@
 /area/cargo/storage)
 "eP" = (
 /obj/structure/sign/departments/deck1,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/security/brig)
 "ff" = (
@@ -407,6 +410,7 @@
 /turf/open/floor/iron,
 /area/cargo/storage)
 "nb" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/security/brig)
 "nd" = (
@@ -465,6 +469,7 @@
 /area/science/xenobiology)
 "op" = (
 /obj/structure/sign/departments/deck1,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/port/aft)
 "os" = (
@@ -844,6 +849,10 @@
 /obj/structure/disposalpipe/junction,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"zT" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
+/turf/closed/wall/r_wall,
+/area/service/bar)
 "zY" = (
 /obj/structure/table/wood,
 /obj/machinery/reagentgrinder,
@@ -1009,6 +1018,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/science/xenobiology)
 "EQ" = (
@@ -1049,6 +1059,7 @@
 "GZ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/service/bar)
 "HA" = (
@@ -1082,6 +1093,7 @@
 /turf/open/floor/wood,
 /area/service/bar)
 "HY" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/cargo/storage)
 "Id" = (
@@ -1091,12 +1103,14 @@
 /obj/item/stack/ore/iron{
 	amount = 5
 	},
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/cargo/storage)
 "Iy" = (
 /turf/open/floor/iron,
 /area/cargo/storage)
 "IT" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/science/xenobiology)
 "IU" = (
@@ -1142,6 +1156,7 @@
 /turf/open/floor/plating,
 /area/cargo/storage)
 "Kr" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/service/bar)
 "Kv" = (
@@ -1176,9 +1191,11 @@
 "Lv" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "LT" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/maintenance/port/aft)
 "LU" = (
@@ -1193,6 +1210,7 @@
 /area/science/xenobiology)
 "My" = (
 /obj/machinery/vending/boozeomat,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/service/bar)
 "MI" = (
@@ -1219,6 +1237,7 @@
 "ND" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/departments/deck1,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/port/aft)
 "NG" = (
@@ -1277,6 +1296,7 @@
 /turf/open/floor/iron,
 /area/cargo/storage)
 "OR" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/disposal)
 "Pk" = (
@@ -1376,6 +1396,7 @@
 "Rd" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/security/brig)
 "Rk" = (
@@ -1385,6 +1406,7 @@
 	name = "Xenobio Pen 1 Blast Door"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "Ry" = (
@@ -1407,10 +1429,12 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/curtain/bounty,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/service/bar)
 "RL" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "RM" = (
@@ -1426,6 +1450,7 @@
 /turf/open/floor/plating,
 /area/maintenance/disposal)
 "RX" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/maintenance/disposal)
 "Sc" = (
@@ -1435,6 +1460,7 @@
 	},
 /area/service/bar)
 "Sn" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
 /area/cargo/storage)
 "Sr" = (
@@ -1520,6 +1546,7 @@
 "Ub" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/port/aft)
 "Ui" = (
@@ -1531,6 +1558,7 @@
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "Ul" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/security/brig)
 "Up" = (
@@ -1690,6 +1718,7 @@
 /turf/open/floor/iron/smooth_large,
 /area/maintenance/port/aft)
 "YP" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/port/aft)
 "YQ" = (
@@ -32462,10 +32491,10 @@ Kg
 Kg
 Kg
 Kg
+zT
 QL
 QL
-QL
-QL
+zT
 gw
 gq
 MP
@@ -32719,7 +32748,7 @@ Kg
 Kg
 Kg
 Kg
-QL
+zT
 qI
 av
 Kr
@@ -32976,7 +33005,7 @@ Kg
 Kg
 Kg
 Kg
-QL
+zT
 zY
 Bm
 Kr
@@ -33490,7 +33519,7 @@ Kg
 Kg
 Kg
 Kg
-QL
+zT
 My
 TU
 Kr
@@ -35289,7 +35318,7 @@ Kg
 Kg
 Kg
 Kg
-QL
+zT
 Kr
 Us
 Kr
@@ -35803,7 +35832,7 @@ Kg
 Kg
 Kg
 Kg
-QL
+zT
 dq
 Pl
 Kr
@@ -36060,7 +36089,7 @@ Kg
 Kg
 Kg
 Kg
-QL
+zT
 JW
 kX
 Kr
@@ -36317,10 +36346,10 @@ Kg
 Kg
 Kg
 ff
-QL
-QL
-QL
-QL
+zT
+zT
+zT
+zT
 uG
 Ry
 OR

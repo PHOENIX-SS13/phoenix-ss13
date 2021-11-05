@@ -2913,7 +2913,7 @@
 /area/mine/production)
 "sM" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/mine/laborcamp/security)
 "sT" = (
@@ -4215,11 +4215,6 @@
 /obj/structure/table,
 /turf/open/floor/iron,
 /area/cargo/warehouse)
-"FF" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/mine/laborcamp/security)
 "FG" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
@@ -5809,7 +5804,7 @@
 /area/maintenance/aft)
 "TC" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/reinforced/grille,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "TE" = (
@@ -15076,9 +15071,9 @@ yr
 Hd
 Hd
 Hd
-FF
+sM
 Hd
-nI
+TC
 TC
 TC
 mO
@@ -17128,7 +17123,7 @@ JB
 ap
 Kj
 mO
-FF
+sM
 jk
 cC
 Pa
@@ -17385,11 +17380,11 @@ je
 ap
 mO
 mO
-FF
-FF
-FF
-FF
-FF
+sM
+sM
+sM
+sM
+sM
 cQ
 Wc
 dx

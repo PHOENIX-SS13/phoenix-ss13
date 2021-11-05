@@ -88,7 +88,7 @@
 /turf/open/floor/planetary/dirt/dark,
 /area/template_noop)
 "oN" = (
-/obj/effect/spawner/structure/window,
+/obj/effect/spawner/structure/window/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "qD" = (
