@@ -7,3 +7,9 @@
 2021-11-04:
   PunishedHap9787:
   - spellcheck: Fixed an inaccuracy in Vulture shuttle description.
+2021-11-06:
+  Azarak:
+  - rscadd: Upgrades the sprites of fire alarms, light switches, buttons, smartfridge,
+      boozeomat, security TV and air alarms
+  - rscadd: Introduced low walls.
+  - rscadd: Windows have gotten a resprite and are now mounted on low walls
