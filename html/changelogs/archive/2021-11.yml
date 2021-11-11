@@ -13,3 +13,6 @@
       boozeomat, security TV and air alarms
   - rscadd: Introduced low walls.
   - rscadd: Windows have gotten a resprite and are now mounted on low walls
+2021-11-11:
+  MissFox0810:
+  - server: rust update to 0.5.0
