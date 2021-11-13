@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Worn icons have been reworked to accomodate slots and bodytypes better"
+  - bugfix: "Fixed a ton of broken worn states"
