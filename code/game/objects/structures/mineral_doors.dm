@@ -7,11 +7,12 @@
 	anchored = TRUE
 	opacity = TRUE
 	layer = CLOSED_DOOR_LAYER
+	color = "#BBBBBB"
 
 	icon = 'icons/obj/doors/mineral_doors.dmi'
 	icon_state = "metal"
 	max_integrity = 200
-	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 100, BOMB = 10, BIO = 100, RAD = 100, FIRE = 50, ACID = 50)
+	armor = list(MELEE = 15, BULLET = 0, LASER = 0, ENERGY = 100, BOMB = 10, BIO = 100, RAD = 100, FIRE = 50, ACID = 50)
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
 	rad_insulation = RAD_MEDIUM_INSULATION
@@ -26,8 +27,23 @@
 	var/sheetType = /obj/item/stack/sheet/iron //what we're made of
 	var/sheetAmount = 7 //how much we drop when deconstructed
 
+	/// With a lock installed, this is the ID of the lock
+	var/key_id
+	/// If has a lock, this keeps track whether it has been locked or not
+	var/locked = FALSE
+
 /obj/structure/mineral_door/Initialize()
 	. = ..()
+	var/turf/my_turf = get_turf(src)
+	var/turf/east_turf = get_step(my_turf, EAST)
+	var/turf/west_turf = get_step(my_turf, WEST)
+	//If east and west isn't blocked, face that direction
+	if(!east_turf.is_blocked_turf() && !west_turf.is_blocked_turf())
+		setDir(WEST)
+	/// If we initialize with a key id (lock, most likely mapped by mappers), and are not opened, lock us.
+	if(key_id && !door_opened)
+		locked = TRUE
+	update_appearance()
 	air_update_turf(TRUE, TRUE)
 
 /obj/structure/mineral_door/Destroy()
@@ -43,7 +59,7 @@
 
 /obj/structure/mineral_door/Bumped(atom/movable/AM)
 	..()
-	if(!door_opened)
+	if(!door_opened && !locked)
 		return TryToSwitchState(AM)
 
 /obj/structure/mineral_door/attack_ai(mob/user) //those aren't machinery, they're just big fucking slabs of a mineral
@@ -70,10 +86,12 @@
 /obj/structure/mineral_door/proc/TryToSwitchState(atom/user)
 	if(isSwitchingStates || !anchored)
 		return
+	if(locked)
+		playsound(src, 'sound/misc/knuckles.ogg', 50, TRUE)
+		to_chat(user, SPAN_WARNING("\The [src] is locked!"))
+		return
 	if(isliving(user))
 		var/mob/living/M = user
-		if(world.time - M.last_bumped <= 60)
-			return //NOTE do we really need that?
 		if(M.client)
 			if(iscarbon(M))
 				var/mob/living/carbon/C = M
@@ -94,14 +112,14 @@
 	isSwitchingStates = TRUE
 	playsound(src, openSound, 100, TRUE)
 	set_opacity(FALSE)
-	flick("[initial(icon_state)]opening",src)
+	update_appearance()
 	sleep(10)
 	set_density(FALSE)
 	door_opened = TRUE
 	layer = OPEN_DOOR_LAYER
 	air_update_turf(TRUE, FALSE)
-	update_appearance()
 	isSwitchingStates = FALSE
+	update_appearance()
 
 	if(close_delay != -1)
 		addtimer(CALLBACK(src, .proc/Close), close_delay)
@@ -114,21 +132,101 @@
 		return
 	isSwitchingStates = TRUE
 	playsound(src, closeSound, 100, TRUE)
-	flick("[initial(icon_state)]closing",src)
+	update_appearance()
 	sleep(10)
 	set_density(TRUE)
 	set_opacity(TRUE)
 	door_opened = FALSE
 	layer = initial(layer)
 	air_update_turf(TRUE, TRUE)
-	update_appearance()
 	isSwitchingStates = FALSE
+	update_appearance()
 
 /obj/structure/mineral_door/update_icon_state()
-	icon_state = "[initial(icon_state)][door_opened ? "open":""]"
+	if(isSwitchingStates)
+		if(door_opened)
+			icon_state = "[initial(icon_state)]closing"
+		else
+			icon_state = "[initial(icon_state)]opening"
+	else
+		if(door_opened)
+			icon_state = "[initial(icon_state)]open"
+		else
+			icon_state = "[initial(icon_state)]"
 	return ..()
 
+/obj/structure/mineral_door/update_overlays()
+	. = ..()
+	if(key_id)
+		var/lock_state
+		if(isSwitchingStates)
+			if(door_opened)
+				lock_state = "lockclosing"
+			else
+				lock_state = "lockopening"
+		else
+			if(door_opened)
+				lock_state = "lockopen"
+			else
+				lock_state = "lock"
+		. += mutable_appearance(icon, lock_state, appearance_flags = RESET_COLOR)
+
 /obj/structure/mineral_door/attackby(obj/item/I, mob/living/user)
+	if(istype(I, /obj/item/lockpick))
+		var/obj/item/lockpick/lockpick_item = I
+		if(!key_id)
+			to_chat(user, SPAN_WARNING("\The [src] does not have a lock!"))
+			return
+		if(!locked)
+			to_chat(user, SPAN_WARNING("\The [src] is unlocked!"))
+			return
+		user.visible_message(SPAN_NOTICE("[user] begins lockpicking \the [src]."), SPAN_NOTICE("You begin lockpicking \the [src]."))
+		user.changeNext_move(CLICK_CD_MELEE)
+		playsound(src, 'sound/misc/knuckles.ogg', 50, TRUE)
+		if(do_after(user, LOCKPICK_TIME, target = src))
+			if(!locked)
+				return
+			if(prob(LOCKPICK_BREAK_CHANCE))
+				to_chat(user, SPAN_WARNING("\The [lockpick_item] breaks!"))
+				qdel(lockpick_item)
+				return
+			if(prob(LOCKPICK_SUCCESS_CHANCE))
+				to_chat(user, SPAN_NOTICE("You unlock \the [src]!"))
+				locked = FALSE
+			else
+				to_chat(user, SPAN_WARNING("You fail to unlock \the [src]!"))
+			playsound(src, 'sound/misc/knuckles.ogg', 50, TRUE)
+		return
+	if(istype(I, /obj/item/lock))
+		var/obj/item/lock/lock_item = I
+		if(key_id)
+			to_chat(user, SPAN_WARNING("\The [src] already has a lock!"))
+			return
+		to_chat(user, SPAN_NOTICE("You install \the [lock_item] on \the [src]."))
+		key_id = lock_item.key_id
+		update_appearance()
+		qdel(lock_item)
+		return
+	if(istype(I, /obj/item/key))
+		var/obj/item/key/key_item = I
+		if(isSwitchingStates)
+			return
+		if(!key_id)
+			to_chat(user, SPAN_WARNING("\The [src] does not have a lock!"))
+			return
+		if(door_opened)
+			to_chat(user, SPAN_WARNING("Close \the [src] first!"))
+			return
+		if(key_item.key_id != key_id)
+			to_chat(user, SPAN_WARNING("\The [key_item] does not fit \the [src]!"))
+			return
+		if(locked)
+			to_chat(user, SPAN_NOTICE("You unlock \the [src]."))
+		else
+			to_chat(user, SPAN_NOTICE("You lock \the [src]."))
+		locked = !locked
+		playsound(src, 'sound/misc/knuckles.ogg', 50, TRUE)
+		return
 	if(pickaxe_door(user, I))
 		return
 	else if(!user.combat_mode)
@@ -142,6 +240,9 @@
 	air_update_turf(TRUE, anchorvalue)
 
 /obj/structure/mineral_door/wrench_act(mob/living/user, obj/item/I)
+	if(locked)
+		to_chat(user, SPAN_WARNING("Can't unwrench \the [src] while it's locked."))
+		return
 	..()
 	default_unfasten_wrench(user, I, 40)
 	return TRUE
@@ -162,6 +263,9 @@
 		deconstruct(TRUE)
 
 /obj/structure/mineral_door/welder_act(mob/living/user, obj/item/I) //override if the door is supposed to be flammable.
+	if(locked)
+		to_chat(user, SPAN_WARNING("Can't weld \the [src] while it's locked."))
+		return
 	..()
 	. = TRUE
 	if(anchored)
@@ -209,30 +313,27 @@
 
 /obj/structure/mineral_door/silver
 	name = "silver door"
-	icon_state = "silver"
+	color = "#E4E4E4"
 	sheetType = /obj/item/stack/sheet/mineral/silver
 	max_integrity = 300
 	rad_insulation = RAD_HEAVY_INSULATION
 
 /obj/structure/mineral_door/gold
 	name = "gold door"
-	icon_state = "gold"
+	color = "#F3B831"
 	sheetType = /obj/item/stack/sheet/mineral/gold
 	rad_insulation = RAD_HEAVY_INSULATION
 
 /obj/structure/mineral_door/uranium
 	name = "uranium door"
-	icon_state = "uranium"
+	color = "#84B54B"
 	sheetType = /obj/item/stack/sheet/mineral/uranium
 	max_integrity = 300
-	light_range = 2
-
-/obj/structure/mineral_door/uranium/ComponentInitialize()
-	return
 
 /obj/structure/mineral_door/sandstone
 	name = "sandstone door"
-	icon_state = "sandstone"
+	icon_state = "stone"
+	color = "#CDBB91"
 	sheetType = /obj/item/stack/sheet/mineral/sandstone
 	max_integrity = 100
 
@@ -246,7 +347,7 @@
 
 /obj/structure/mineral_door/transparent/plasma
 	name = "plasma door"
-	icon_state = "plasma"
+	color = "#AF4492"
 	sheetType = /obj/item/stack/sheet/mineral/plasma
 
 /obj/structure/mineral_door/transparent/plasma/Initialize(mapload)
@@ -277,14 +378,15 @@
 
 /obj/structure/mineral_door/transparent/diamond
 	name = "diamond door"
-	icon_state = "diamond"
 	sheetType = /obj/item/stack/sheet/mineral/diamond
+	color = "#96D4D4"
 	max_integrity = 1000
 	rad_insulation = RAD_EXTREME_INSULATION
 
 /obj/structure/mineral_door/wood
 	name = "wood door"
 	icon_state = "wood"
+	color = "#A36D39"
 	openSound = 'sound/effects/doorcreaky.ogg'
 	closeSound = 'sound/effects/doorcreaky.ogg'
 	sheetType = /obj/item/stack/sheet/mineral/wood
@@ -310,18 +412,14 @@
 
 /obj/structure/mineral_door/paperframe
 	name = "paper frame door"
-	icon_state = "paperframe"
+	icon_state = "wood"
+	color = "#9E704B"
 	openSound = 'sound/effects/doorcreaky.ogg'
 	closeSound = 'sound/effects/doorcreaky.ogg'
 	sheetType = /obj/item/stack/sheet/paperframes
 	sheetAmount = 3
 	resistance_flags = FLAMMABLE
 	max_integrity = 20
-
-/obj/structure/mineral_door/paperframe/Initialize()
-	. = ..()
-	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH_NEIGHBORS(src)
 
 /obj/structure/mineral_door/paperframe/examine(mob/user)
 	. = ..()
@@ -350,12 +448,4 @@
 			user.visible_message(SPAN_NOTICE("[user] patches some of the holes in [src]."), SPAN_NOTICE("You patch some of the holes in [src]!"))
 			return TRUE
 
-	return ..()
-
-/obj/structure/mineral_door/paperframe/ComponentInitialize()
-	return
-
-/obj/structure/mineral_door/paperframe/Destroy()
-	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH_NEIGHBORS(src)
 	return ..()

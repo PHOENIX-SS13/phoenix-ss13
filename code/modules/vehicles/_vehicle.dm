@@ -22,6 +22,8 @@
 	  * Eventually the remaining checks should be moved to the component and this var removed.
 	  */
 	var/key_type
+	/// What ID of the key does the vehicle require. DONT SET THIS IF `key_type` IS NOT A KEY! (looking at you, boat)
+	var/key_id
 	///The inserted key, needed on some vehicles to start the engine
 	var/obj/item/key/inserted_key
 	/// Whether the vehicle os currently able to move

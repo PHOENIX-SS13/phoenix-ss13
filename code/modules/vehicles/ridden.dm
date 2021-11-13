@@ -31,6 +31,11 @@
 /obj/vehicle/ridden/attackby(obj/item/I, mob/user, params)
 	if(!key_type || is_key(inserted_key) || !is_key(I))
 		return ..()
+	if(key_id)
+		var/obj/item/key/key_item = I
+		if(key_item.key_id != key_id)
+			to_chat(user, SPAN_WARNING("This key does not fit!"))
+			return
 	if(!user.transferItemToLoc(I, src))
 		to_chat(user, SPAN_WARNING("[I] seems to be stuck to your hand!"))
 		return

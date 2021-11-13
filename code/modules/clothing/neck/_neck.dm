@@ -336,14 +336,19 @@
 	var/lock = FALSE
 
 /obj/item/clothing/neck/human_petcollar/locked/attackby(obj/item/K, mob/user, params)
-	if(istype(K, /obj/item/key/collar))
-		if(lock != FALSE)
-			to_chat(user, SPAN_WARNING("With a click the collar unlocks!"))
-			lock = FALSE
+	if(istype(K, /obj/item/key))
+		var/obj/item/key/key_item = K
+		if(key_item.key_id == KEY_ID_COLLAR)
+			if(lock != FALSE)
+				to_chat(user, SPAN_NOTICE("With a click the collar unlocks!"))
+				lock = FALSE
+			else
+				to_chat(user, SPAN_NOTICE("With a click the collar locks!"))
+				lock = TRUE
 		else
-			to_chat(user, SPAN_WARNING("With a click the collar locks!"))
-			lock = TRUE
-	return
+			to_chat(user, SPAN_WARNING("This key does not fit!"))
+		return TRUE
+	return ..()
 
 /obj/item/clothing/neck/human_petcollar/locked/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(ITEM_SLOT_NECK) && lock != FALSE)
@@ -362,7 +367,3 @@
 	icon_state = "choker"
 	is_polychromic = FALSE
 	color = "#222222"
-
-/obj/item/key/collar
-	name = "Collar Key"
-	desc = "A key for a tiny lock on a collar or bag."

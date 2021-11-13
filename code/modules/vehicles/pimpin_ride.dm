@@ -3,7 +3,8 @@
 	name = "janicart (pimpin' ride)"
 	desc = "A brave janitor cyborg gave its life to produce such an amazing combination of speed and utility."
 	icon_state = "pussywagon"
-	key_type = /obj/item/key/janitor
+	key_type = /obj/item/key
+	key_id = KEY_ID_JANICART
 	var/obj/item/storage/bag/trash/mybag = null
 	var/floorbuffer = FALSE
 	movedelay = 1

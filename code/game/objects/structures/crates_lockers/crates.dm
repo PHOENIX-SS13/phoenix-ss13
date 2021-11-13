@@ -47,6 +47,8 @@
 	. = new_overlays
 	if(manifest)
 		. += "manifest"
+	if(key_id) //We have a lock
+		. += "lock"
 
 /obj/structure/closet/crate/attack_hand(mob/user, list/modifiers)
 	. = ..()
