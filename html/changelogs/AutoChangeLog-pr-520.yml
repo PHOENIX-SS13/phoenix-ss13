@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - refactor: "Refactored how level-based properties are managed, allowing for much more flexible level reservations"
