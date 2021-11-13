@@ -40,6 +40,8 @@
 	. = ..()
 	if(broken)
 		icon_state = "brokengrille"
+	else
+		QUEUE_SMOOTH(src)
 
 /obj/structure/grille/set_smoothed_icon_state(new_junction)
 	if(broken)
