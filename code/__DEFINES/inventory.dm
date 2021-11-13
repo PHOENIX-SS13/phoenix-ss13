@@ -67,6 +67,22 @@
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
 
+#define SLOT_TRANSLATION_LIST list(\
+		"[ITEM_SLOT_OCLOTHING]" = "suit",\
+		"[ITEM_SLOT_ICLOTHING]" = "uniform",\
+		"[ITEM_SLOT_GLOVES]" = "hands",\
+		"[ITEM_SLOT_EYES]" = "eyes",\
+		"[ITEM_SLOT_EARS]" = "ears",\
+		"[ITEM_SLOT_MASK]" = "mask",\
+		"[ITEM_SLOT_HEAD]" = "head",\
+		"[ITEM_SLOT_FEET]" = "feet",\
+		"[ITEM_SLOT_ID]" = "id",\
+		"[ITEM_SLOT_BELT]" = "belt",\
+		"[ITEM_SLOT_BACK]" = "back",\
+		"[ITEM_SLOT_NECK]" = "neck",\
+		"[ITEM_SLOT_SUITSTORE]" = "suitstore"\
+		)
+
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 //Make sure to update check_obscured_slots() if you add more.
 #define HIDEGLOVES (1<<0)
@@ -116,11 +132,6 @@
 //flags for alternate styles: These are hard sprited so don't set this if you didn't put the effort in
 #define NORMAL_STYLE 0
 #define ALT_STYLE 1
-#define DIGITIGRADE_STYLE 2
-
-//flags for outfits that have mutantrace variants (try not to use this): Currently only needed if you're trying to add tight fitting bootyshorts
-#define NO_MUTANTRACE_VARIATION 0
-#define MUTANTRACE_VARIATION 1
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1

@@ -110,6 +110,7 @@
 	armor = list(MELEE = 10, BULLET = 5, LASER = 10, ENERGY = 20, BOMB = 10, BIO = 100, RAD = 75, FIRE = 50, ACID = 75, WOUND = 10)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	siemens_coefficient = 0
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
 	var/obj/item/clothing/head/helmet/space/hardsuit/helmet
 	actions_types = list(/datum/action/item_action/toggle_spacesuit, /datum/action/item_action/toggle_helmet)
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
@@ -225,6 +226,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine
 	resistance_flags = FIRE_PROOF
 	hardsuit_tail_colors = list("974", "A62", "C95")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
 
 	//Atmospherics
 /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
@@ -319,6 +321,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	hardsuit_tail_colors = list("877", "BA9", "655")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
 
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize()
 	. = ..()
@@ -433,6 +436,7 @@
 	jetpack = /obj/item/tank/jetpack/suit
 	cell = /obj/item/stock_parts/cell/hyper
 	hardsuit_tail_colors = list("A11", "322", "c45")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -469,6 +473,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	cell = /obj/item/stock_parts/cell/bluespace
 	hardsuit_tail_colors = list("222", "454", "443")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/debug
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
@@ -494,6 +499,7 @@
 	visor_flags_inv = 0
 	visor_flags = 0
 	on = FALSE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/suit/space/hardsuit/syndi/owl
 	name = "owl hardsuit"
@@ -503,6 +509,7 @@
 	inhand_icon_state = "s_suit"
 	hardsuit_type = "owl"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 
 	//Wizard hardsuit
@@ -531,6 +538,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
 	cell = /obj/item/stock_parts/cell/hyper
 	slowdown = 0 //you're spending 2 wizard points on this thing, the least it could do is not make you a sitting duck
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/hardsuit/wizard/Initialize()
 	. = ..()
@@ -558,6 +566,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/medical
 	slowdown = 0.5
 	hardsuit_tail_colors = list("DDD", "A75", "FFF")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
 
 	//Research Director hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/rd
@@ -610,6 +619,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 	cell = /obj/item/stock_parts/cell/super
 	hardsuit_tail_colors = list("CB7", "839", "995")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 	//Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
@@ -629,6 +639,7 @@
 	armor = list(MELEE = 35, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	hardsuit_tail_colors = list("222", "C23", "335")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
 
 /obj/item/clothing/suit/space/hardsuit/security/Initialize()
 	. = ..()
@@ -652,6 +663,7 @@
 	jetpack = /obj/item/tank/jetpack/suit
 	cell = /obj/item/stock_parts/cell/super
 	hardsuit_tail_colors = list("212", "C32", "234")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 	//SWAT MKII
 /obj/item/clothing/head/helmet/space/hardsuit/swat
@@ -665,6 +677,7 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/helmet/space/hardsuit/swat/attack_self()
 
@@ -679,6 +692,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT //this needed to be added a long fucking time ago
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/swat
 	hardsuit_tail_colors = list("333", "345", "335")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 // SWAT and Captain get EMP Protection
 /obj/item/clothing/suit/space/hardsuit/swat/Initialize()
@@ -691,6 +705,7 @@
 	icon_state = "capspace"
 	inhand_icon_state = "capspacehelmet"
 	desc = "A tactical MK.II SWAT helmet boasting better protection and a reasonable fashion sense."
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX
 
 /obj/item/clothing/suit/space/hardsuit/swat/captain
 	name = "captain's SWAT suit"
@@ -700,6 +715,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/swat/captain
 	cell = /obj/item/stock_parts/cell/super
 	hardsuit_tail_colors = list("368", "CA0", "030")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 	//Clown
 /obj/item/clothing/head/helmet/space/hardsuit/clown
@@ -709,6 +725,7 @@
 	inhand_icon_state = "hardsuit0-clown"
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 20, BOMB = 10, BIO = 100, RAD = 75, FIRE = 60, ACID = 30)
 	hardsuit_type = "clown"
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/suit/space/hardsuit/clown
 	name = "cosmohonk hardsuit"
@@ -717,6 +734,7 @@
 	inhand_icon_state = "clown_hardsuit"
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 20, BOMB = 10, BIO = 100, RAD = 75, FIRE = 60, ACID = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/hardsuit/clown/mob_can_equip(mob/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	if(!..() || !ishuman(M))
@@ -745,6 +763,7 @@
 	slowdown = 3
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ancient
 	resistance_flags = FIRE_PROOF
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 	var/footstep = 1
 	var/mob/listeningTo
 
@@ -791,6 +810,7 @@
 	allowed = null
 	armor = list(MELEE = 30, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 10, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 15)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 	/// How many charges total the shielding has
 	var/max_charges = 3
 	/// How long after we've been shot before we can start recharging.
@@ -845,6 +865,7 @@
 	hardsuit_type = "ert_green"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/ctf/green
 	shield_icon = "shield-green"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/hardsuit/shielded/ctf/yellow
 	name = "yellow shielded hardsuit"
@@ -880,6 +901,7 @@
 	icon_state = "hardsuit0-ert_green"
 	inhand_icon_state = "hardsuit0-ert_green"
 	hardsuit_type = "ert_green"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/ctf/yellow
 	icon_state = "hardsuit0-ert_engineer"
@@ -903,6 +925,7 @@
 	shield_icon = "shield-red"
 	hardsuit_tail_colors = list("A11", "322", "c45")
 	jetpack = /obj/item/tank/jetpack/suit
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi
 	name = "blood-red hardsuit helmet"
@@ -927,6 +950,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/swat
 	dog_fashion = /datum/dog_fashion/back/deathsquad
 	hardsuit_tail_colors = list("222", "454", "443")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/swat
 	name = "death commando helmet"

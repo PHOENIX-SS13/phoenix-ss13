@@ -48,13 +48,11 @@
 /obj/item/clothing/mask/facehugger/dead
 	icon_state = "facehugger_dead"
 	inhand_icon_state = "facehugger_inactive"
-	worn_icon_state = "facehugger_dead"
 	stat = DEAD
 
 /obj/item/clothing/mask/facehugger/impregnated
 	icon_state = "facehugger_impregnated"
 	inhand_icon_state = "facehugger_impregnated"
-	worn_icon_state = "facehugger_impregnated"
 	stat = DEAD
 
 /obj/item/clothing/mask/facehugger/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
@@ -218,7 +216,6 @@
 
 		Die()
 		icon_state = "[base_icon_state]_impregnated"
-		worn_icon_state = "[base_icon_state]_impregnated"
 
 		var/obj/item/bodypart/chest/LC = target.get_bodypart(BODY_ZONE_CHEST)
 		if((!LC || LC.status != BODYPART_ROBOTIC) && !target.getorgan(/obj/item/organ/body_egg/alien_embryo))
@@ -236,7 +233,6 @@
 
 	stat = CONSCIOUS
 	icon_state = "[base_icon_state]"
-	worn_icon_state = "[base_icon_state]"
 
 /obj/item/clothing/mask/facehugger/proc/GoIdle()
 	if(stat == DEAD || stat == UNCONSCIOUS)
@@ -244,7 +240,6 @@
 
 	stat = UNCONSCIOUS
 	icon_state = "[base_icon_state]_inactive"
-	worn_icon_state = "[base_icon_state]_inactive"
 
 	addtimer(CALLBACK(src, .proc/GoActive), rand(MIN_ACTIVE_TIME, MAX_ACTIVE_TIME))
 
@@ -253,7 +248,6 @@
 		return
 
 	icon_state = "[base_icon_state]_dead"
-	worn_icon_state = "[base_icon_state]_dead"
 	inhand_icon_state = "facehugger_inactive"
 	stat = DEAD
 

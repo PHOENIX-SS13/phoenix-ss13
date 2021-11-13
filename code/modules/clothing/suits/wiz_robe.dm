@@ -10,7 +10,7 @@
 	clothing_flags = SNUG_FIT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	dog_fashion = /datum/dog_fashion/head/blue_wizard
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/wizard/red
 	name = "red wizard hat"
@@ -52,6 +52,7 @@
 	icon_state = "magus"
 	inhand_icon_state = "magus"
 	dog_fashion = null
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX
 
 /obj/item/clothing/head/wizard/santa
 	name = "Santa's hat"
@@ -74,7 +75,6 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	mutant_variants = NONE
 
 /obj/item/clothing/suit/wizrobe/red
 	name = "red wizard robe"
@@ -99,6 +99,7 @@
 	desc = "Magic is all about the spell power, ZE!"
 	icon_state = "marisa"
 	inhand_icon_state = "marisarobe"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/wizrobe/magusblue
 	name = "\improper Magus robe"
@@ -198,6 +199,7 @@
 	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 30, BOMB = 20, BIO = 20, RAD = 20, FIRE = 100, ACID = 100)
 	slowdown = 0
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard
 	name = "battlemage helmet"

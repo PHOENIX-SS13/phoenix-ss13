@@ -45,6 +45,7 @@ Contains:
 	dog_fashion = /datum/dog_fashion/back/deathsquad
 	cell = /obj/item/stock_parts/cell/bluespace
 	hardsuit_tail_colors = list("222", "510", "443")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 	//NEW SWAT suit
 /obj/item/clothing/suit/space/swat
@@ -56,6 +57,7 @@ Contains:
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30,ENERGY = 40, BOMB = 50, BIO = 90, RAD = 20, FIRE = 100, ACID = 100, WOUND = 15)
 	strip_delay = 120
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/head/helmet/space/beret
 	name = "officer's beret"
@@ -68,7 +70,7 @@ Contains:
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/suit/space/officer
 	name = "officer's jacket"
@@ -84,7 +86,7 @@ Contains:
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 	//NASA Voidsuit
 /obj/item/clothing/head/helmet/space/nasavoid
@@ -99,6 +101,7 @@ Contains:
 	inhand_icon_state = "void"
 	desc = "An old, NASA CentCom branch designed, dark red space suit."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/multitool)
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/head/helmet/space/nasavoid/old
 	name = "Engineering Void Helmet"
@@ -120,7 +123,7 @@ Contains:
 	desc = "Ho ho ho. Merrry X-mas!"
 	icon_state = "santahat"
 	flags_cover = HEADCOVERSEYES
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 	dog_fashion = /datum/dog_fashion/head/santa
 
@@ -131,6 +134,7 @@ Contains:
 	inhand_icon_state = "santa"
 	slowdown = 0
 	allowed = list(/obj/item) //for stuffing exta special presents
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 
 	//Space pirate outfit
@@ -142,7 +146,7 @@ Contains:
 	armor = list(MELEE = 30, BULLET = 50, LASER = 30,ENERGY = 40, BOMB = 30, BIO = 30, RAD = 30, FIRE = 60, ACID = 75)
 	strip_delay = 40
 	equip_delay_other = 20
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/helmet/space/pirate/bandana
 	icon_state = "spacebandana"
@@ -158,6 +162,7 @@ Contains:
 	armor = list(MELEE = 30, BULLET = 50, LASER = 30,ENERGY = 40, BOMB = 30, BIO = 30, RAD = 30, FIRE = 60, ACID = 75)
 	strip_delay = 40
 	equip_delay_other = 20
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 	//Emergency Response Team suits
 /obj/item/clothing/head/helmet/space/hardsuit/ert
@@ -190,6 +195,7 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	cell = /obj/item/stock_parts/cell/bluespace
 	hardsuit_tail_colors = list("112", "553", "28F")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 // ERT suit's gets EMP Protection
 /obj/item/clothing/suit/space/hardsuit/ert/Initialize()
@@ -251,6 +257,7 @@ Contains:
 	icon_state = "hardsuit0-ert_janitor"
 	inhand_icon_state = "hardsuit0-ert_janitor"
 	hardsuit_type = "ert_janitor"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/space/hardsuit/ert/jani
 	name = "emergency response team janitorial hardsuit"
@@ -260,6 +267,7 @@ Contains:
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/jani
 	allowed = list(/obj/item/tank/internals, /obj/item/storage/bag/trash, /obj/item/melee/flyswatter, /obj/item/mop, /obj/item/holosign_creator, /obj/item/reagent_containers/glass/bucket, /obj/item/reagent_containers/spray/chemsprayer/janitor)
 	hardsuit_tail_colors = list("112", "93E", "93E")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 	//ERT Clown
 /obj/item/clothing/head/helmet/space/hardsuit/ert/clown
@@ -268,6 +276,7 @@ Contains:
 	icon_state = "hardsuit0-ert_clown"
 	inhand_icon_state = "hardsuit0-ert_clown"
 	hardsuit_type = "ert_clown"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/space/hardsuit/ert/clown
 	name = "emergency response team clown hardsuit"
@@ -276,6 +285,7 @@ Contains:
 	inhand_icon_state = "ert_clown"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/clown
 	allowed = list(/obj/item/tank/internals, /obj/item/bikehorn, /obj/item/instrument, /obj/item/food/grown/banana, /obj/item/grown/bananapeel)
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/eva
 	name = "EVA suit"
@@ -301,7 +311,7 @@ Contains:
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = ACID_PROOF | FIRE_PROOF
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/suit/space/freedom
 	name = "eagle suit"
@@ -314,6 +324,7 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 	slowdown = 0
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 //Carpsuit, bestsuit, lovesuit
 /obj/item/clothing/head/helmet/space/hardsuit/carp
@@ -326,6 +337,7 @@ Contains:
 	light_range = 0 //luminosity when on
 	actions_types = list()
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR //facial hair will clip with the helm, this'll need a dynamic_fhair_suffix at some point.
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/helmet/space/hardsuit/carp/Initialize()
 	. = ..()
@@ -340,6 +352,7 @@ Contains:
 	armor = list(MELEE = -20, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 75, FIRE = 60, ACID = 75) //As whimpy whimpy whoo
 	allowed = list(/obj/item/tank/internals, /obj/item/gun/ballistic/rifle/boltaction/harpoon) //I'm giving you a hint here
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/carp
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/head/helmet/space/hardsuit/carp/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -404,7 +417,7 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/transforming/cleaving_saw)
-
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_PAW
 
 /obj/item/clothing/suit/space/hardsuit/berserker/Initialize()
 	. = ..()
@@ -539,7 +552,7 @@ Contains:
 	strip_delay = 130
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	cell = /obj/item/stock_parts/cell/hyper
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 //We can either be alive monsters or dead monsters, you choose.
 /obj/item/clothing/head/helmet/space/hardsuit/combatmedic
@@ -549,6 +562,7 @@ Contains:
 	inhand_icon_state = "hardsuit0-combatmedic"
 	armor = list(MELEE = 35, BULLET = 10, LASER = 20, ENERGY = 30, BOMB = 5, BIO = 100, RAD = 50, FIRE = 65, ACID = 75)
 	hardsuit_type = "combatmedic"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/space/hardsuit/combatmedic
 	name = "endemic combat medic hardsuit"
@@ -559,3 +573,4 @@ Contains:
 	armor = list(MELEE = 35, BULLET = 10, LASER = 20, ENERGY = 30, BOMB = 5, BIO = 100, RAD = 50, FIRE = 65, ACID = 75)
 	allowed = list(/obj/item/gun, /obj/item/melee/baton, /obj/item/circular_saw, /obj/item/tank/internals, /obj/item/storage/box/pillbottles,\
 	/obj/item/storage/firstaid, /obj/item/stack/medical/gauze, /obj/item/stack/medical/suture, /obj/item/stack/medical/mesh, /obj/item/storage/bag/chemistry)
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE

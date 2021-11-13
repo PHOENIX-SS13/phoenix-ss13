@@ -674,7 +674,7 @@
 	greyscale_config = /datum/greyscale_config/cleric_mace
 	greyscale_config_inhand_left = /datum/greyscale_config/cleric_mace_lefthand
 	greyscale_config_inhand_right = /datum/greyscale_config/cleric_mace_righthand
-	greyscale_config_worn = /datum/greyscale_config/cleric_mace
+	greyscale_config_worn = /datum/greyscale_config/cleric_mace_worn
 	greyscale_colors = "#FFFFFF"
 
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_GREYSCALE | MATERIAL_AFFECT_STATISTICS //Material type changes the prefix as well as the color.

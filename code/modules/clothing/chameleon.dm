@@ -221,6 +221,7 @@
 	if(isitem(target))
 		var/obj/item/clothing/I = target
 		I.worn_icon = initial(picked_item.worn_icon)
+		I.large_worn_icon = initial(picked_item.large_worn_icon)
 		I.lefthand_file = initial(picked_item.lefthand_file)
 		I.righthand_file = initial(picked_item.righthand_file)
 		if(initial(picked_item.greyscale_colors))
@@ -236,6 +237,13 @@
 			var/obj/item/clothing/CL = I
 			var/obj/item/clothing/PCL = picked_item
 			CL.flags_cover = initial(PCL.flags_cover)
+		I.fitted_bodytypes = initial(picked_item.fitted_bodytypes)
+		I.worn_template_bodytypes = initial(picked_item.worn_template_bodytypes)
+		I.worn_template_icon = initial(picked_item.worn_template_icon)
+		I.large_worn_template_icon = initial(picked_item.large_worn_template_icon)
+		I.worn_template_color = initial(picked_item.worn_template_color)
+		I.flags_inv = initial(picked_item.flags_inv)
+		I.body_parts_covered = initial(picked_item.body_parts_covered)
 	if(initial(picked_item.greyscale_config) && initial(picked_item.greyscale_colors))
 		target.icon = SSgreyscale.GetColoredIconByType(initial(picked_item.greyscale_config), initial(picked_item.greyscale_colors))
 	else
@@ -408,6 +416,7 @@
 	inhand_icon_state = "armor"
 	blood_overlay_type = "armor"
 	resistance_flags = NONE
+	fitted_bodytypes = NONE
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 
 	var/datum/action/item_action/chameleon/change/chameleon_action
@@ -491,6 +500,7 @@
 	name = "grey cap"
 	desc = "It's a baseball hat in a tasteful grey colour."
 	icon_state = "greysoft"
+	fitted_bodytypes = NONE
 
 	resistance_flags = NONE
 	armor = list(MELEE = 5, BULLET = 5, LASER = 5, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)

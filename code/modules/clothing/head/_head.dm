@@ -1,11 +1,12 @@
 /obj/item/clothing/head
 	name = BODY_ZONE_HEAD
 	icon = 'icons/obj/clothing/hats.dmi'
+	worn_icon = 'icons/mob/clothing/head.dmi'
 	icon_state = "tophat"
 	inhand_icon_state = "that"
 	body_parts_covered = HEAD
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX
 	slot_flags = ITEM_SLOT_HEAD
-	mutant_variants = STYLE_MUZZLE | STYLE_VOX
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
 	dynamic_hair_suffix = "+generic"

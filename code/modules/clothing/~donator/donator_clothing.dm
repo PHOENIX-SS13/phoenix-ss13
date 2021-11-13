@@ -21,6 +21,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/hats.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/head.dmi'
 	icon_state = "winterhood_poly"
+	fitted_bodytypes = NONE
 
 //SCARVES
 /obj/item/clothing/neck/cloak/polychromic
@@ -85,7 +86,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
 	icon_state = "polyskirt"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	var/list/poly_colors = list("FFF", "F88", "888")
 
 /obj/item/clothing/under/dress/skirt/polychromic/ComponentInitialize()
@@ -105,7 +106,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
 	icon_state = "polysuit"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/misc/poly_shirt/ComponentInitialize()
 	. = ..()
@@ -119,7 +120,7 @@
 	icon_state = "polyshorts"
 	can_adjust = FALSE
 	body_parts_covered = CHEST|GROIN|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/misc/polyshorts/ComponentInitialize()
 	. = ..()
@@ -132,7 +133,7 @@
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
 	icon_state = "polyjump"
 	can_adjust = FALSE
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/misc/polyjumpsuit/ComponentInitialize()
 	. = ..()
@@ -146,7 +147,7 @@
 	icon_state = "polybottomless"
 	body_parts_covered = CHEST|ARMS	//Because there's no bottom included
 	can_adjust = FALSE
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/misc/poly_bottomless/ComponentInitialize()
 	. = ..()
@@ -160,7 +161,7 @@
 	icon_state = "polyshimatank"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	var/list/poly_colors = list("888", "FFF", "8CF")
 
 /obj/item/clothing/under/misc/poly_tanktop/ComponentInitialize()
@@ -179,7 +180,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
 	icon_state = "polyshortpants"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	var/list/poly_colors = list("FFF", "F88", "FFF")
 
 /obj/item/clothing/under/shorts/polychromic/ComponentInitialize()
@@ -191,7 +192,7 @@
 	desc = "Topless striped panties. Now with 120% more polychrome!"
 	icon_state = "polypantsu"
 	body_parts_covered = GROIN
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	poly_colors = list("FFF", "8CF", "FFF")
 
 /**************CKEY EXCLUSIVES*************/
@@ -204,7 +205,7 @@
 	worn_icon = 'icons/horizon/~donator/mob/clothing/suit.dmi'
 	icon_state = "darkcoat"
 	inhand_icon_state = "darkcoat"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 // Donation reward for Grunnyyy
 /obj/item/clothing/neck/cloak/grunnyyy
@@ -215,7 +216,7 @@
 	worn_icon = 'icons/horizon/~donator/mob/clothing/custom_w.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Thedragmeme
 // might make it have some flavour functionality in future, a'la rewritable piece of paper
@@ -241,7 +242,7 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	cold_protection = CHEST|GROIN|LEGS|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Thedragmeme
 /obj/item/clothing/under/syndicate/tacticool/black
@@ -250,7 +251,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	icon_state = "black_turtleneck"
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Thedragmeme
 /obj/item/clothing/shoes/jackboots/heel
@@ -259,7 +260,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/shoes.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/feet.dmi'
 	icon_state = "heel-jackboots"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Bloodrite
 /obj/item/clothing/shoes/clown_shoes/britches
@@ -268,7 +269,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/shoes.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/feet.dmi'
 	icon_state = "clown_shoes_cute"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Bloodrite
 /obj/item/clothing/under/rank/civilian/clown/britches
@@ -277,7 +278,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
 	icon_state = "clowndress"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Bloodrite
 /obj/item/clothing/mask/gas/britches
@@ -288,7 +289,7 @@
 	icon_state = "cute_mask"
 	inhand_icon_state = "clown_hat"
 	dye_color = "clown"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	clothing_flags = MASKINTERNALS
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = MASKCOVERSEYES
@@ -303,7 +304,7 @@
 	worn_icon = 'icons/horizon/~donator/mob/clothing/large-worn-icons/32x64/head.dmi'
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Random516
 /obj/item/clothing/gloves/fingerless/blutigen_wraps
@@ -321,7 +322,7 @@
 	icon_state = "blutigen_kimono"
 	worn_icon = 'icons/horizon/~donator/mob/clothing/suit.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Random516
 /obj/item/clothing/under/custom/blutigen_undergarment
@@ -330,7 +331,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	icon_state = "blutigen_undergarment"
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	fitted = FEMALE_UNIFORM_TOP
 
 //Donation reward for NetraKyram
@@ -340,7 +341,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	icon_state = "kilanosuit"
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	fitted = FEMALE_UNIFORM_TOP
 
 //Donation reward for NetraKyram
@@ -358,7 +359,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/shoes.dmi'
 	icon_state = "kilanoboots"
 	worn_icon = 'icons/horizon/~donator/mob/clothing/feet.dmi'
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 
 /****************LEGACY REWARDS***************/
@@ -430,7 +431,7 @@
 	icon_state = "darkcarapace"
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //Donation reward for inferno707
@@ -443,7 +444,7 @@
 	var/c_color_index = 1
 	var/list/possible_colors = list("off", "blue", "red")
 	actions_types = list(/datum/action/item_action/hheart)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/mask/hheart/Initialize()
 	. = ..()
@@ -485,7 +486,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/zuliecloak
 	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/hooded/cloakhood/zuliecloak
 	name = "NT Special Issue"
@@ -494,7 +495,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/cloaks.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/neck.dmi'
 	flags_inv = HIDEEARS|HIDEHAIR
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Donation reward for Kathrin Bailey / Floof Ball
 /obj/item/clothing/under/custom/lanese
@@ -503,7 +504,7 @@
 	icon = 'icons/horizon/~donator/obj/clothing/uniform.dmi'
 	icon_state = "lanese"
 	worn_icon = 'icons/horizon/~donator/mob/clothing/uniform.dmi'
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	inhand_icon_state = "lanese"
 	can_adjust = TRUE
 	fitted = FEMALE_UNIFORM_TOP

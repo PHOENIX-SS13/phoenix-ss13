@@ -1,5 +1,5 @@
 {
-	"default": [
+	"belt_human_default_worn": [
 		{
 			"type": "reference",
 			"reference_type": "/datum/greyscale_config/cleric_mace_worn",

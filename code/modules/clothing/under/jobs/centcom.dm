@@ -1,7 +1,6 @@
 /obj/item/clothing/under/rank/centcom
 	icon = 'icons/obj/clothing/under/centcom.dmi'
 	worn_icon = 'icons/mob/clothing/under/centcom.dmi'
-	mutant_variants = NONE
 
 /obj/item/clothing/under/rank/centcom/commander
 	name = "\improper CentCom officer's jumpsuit"
@@ -34,6 +33,7 @@
 	inhand_icon_state = "dg_suit"
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/centcom/officer_skirt/replica
 	name = "\improper CentCom turtleneck skirt replica"
@@ -45,3 +45,4 @@
 	icon_state = "centcom_skirt"
 	inhand_icon_state = "dg_suit"
 	fitted = FEMALE_UNIFORM_TOP
+	fitted_bodytypes = NONE

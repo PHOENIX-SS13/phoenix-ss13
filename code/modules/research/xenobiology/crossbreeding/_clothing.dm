@@ -108,7 +108,7 @@ Slimecrossing Armor
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/peaceflower/proc/at_peace_check(mob/user)
 	if(iscarbon(user))

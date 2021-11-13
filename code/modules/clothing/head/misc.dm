@@ -8,21 +8,21 @@
 	flags_inv = 0
 	armor = list(MELEE = 30, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	strip_delay = 80
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/spacepolice
 	name = "space police cap"
 	desc = "A blue cap for patrolling the daily beat."
 	icon_state = "policecap_families"
 	inhand_icon_state = "policecap_families"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/powdered_wig
 	name = "powdered wig"
 	desc = "A powdered wig."
 	icon_state = "pwig"
 	inhand_icon_state = "pwig"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 #define RABBIT_CD_TIME 30 SECONDS
 
@@ -33,7 +33,7 @@
 	inhand_icon_state = "that"
 	dog_fashion = /datum/dog_fashion/head
 	throwforce = 1
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 	/// Cooldown for how often we can pull rabbits out of here
 	COOLDOWN_DECLARE(rabbit_cooldown)
 
@@ -71,26 +71,26 @@
 	desc = "It smells like fresh donut holes. / <i>Il sent comme des trous de beignets frais.</i>"
 	icon_state = "canada"
 	inhand_icon_state = "canada"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/redcoat
 	name = "redcoat's hat"
 	icon_state = "redcoat"
 	desc = "<i>'I guess it's a redhead.'</i>"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/mailman
 	name = "mailman's hat"
 	icon_state = "mailman"
 	desc = "<i>'Right-on-time'</i> mail service head wear."
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
 	desc = "These were once used by plague doctors. They're pretty much useless."
 	icon_state = "plaguedoctor"
 	permeability_coefficient = 0.01
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/hasturhood
 	name = "hastur's hood"
@@ -98,7 +98,7 @@
 	icon_state = "hasturhood"
 	flags_inv = HIDEHAIR
 	flags_cover = HEADCOVERSEYES
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/nursehat
 	name = "nurse's hat"
@@ -107,7 +107,7 @@
 	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/nurse
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/syndicatefake
 	name = "black space-helmet replica"
@@ -125,7 +125,7 @@
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES|HEADCOVERSMOUTH
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/snowman
 	name = "snowman head"
@@ -135,7 +135,7 @@
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/justice
 	name = "justice hat"
@@ -145,7 +145,7 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
 	flags_cover = HEADCOVERSEYES
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/justice/blue
 	icon_state = "justiceblue"
@@ -170,7 +170,7 @@
 	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/rabbit
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/pirate
 	name = "pirate hat"
@@ -178,7 +178,7 @@
 	icon_state = "pirate"
 	inhand_icon_state = "pirate"
 	dog_fashion = /datum/dog_fashion/head/pirate
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/pirate
 	var/datum/language/piratespeak/L = new
@@ -216,7 +216,7 @@
 	icon_state = "bandana"
 	inhand_icon_state = "bandana"
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/bandana/armored
 	armor = list(MELEE = 30, BULLET = 50, LASER = 30,ENERGY = 40, BOMB = 30, BIO = 30, RAD = 30, FIRE = 60, ACID = 75)
@@ -229,7 +229,7 @@
 	icon_state = "bowler"
 	inhand_icon_state = "bowler"
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/witchwig
 	name = "witch costume wig"
@@ -237,7 +237,7 @@
 	icon_state = "witch"
 	inhand_icon_state = "witch"
 	flags_inv = HIDEHAIR
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/chicken
 	name = "chicken suit head"
@@ -246,7 +246,7 @@
 	inhand_icon_state = "chickensuit"
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/griffin
 	name = "griffon head"
@@ -255,14 +255,14 @@
 	inhand_icon_state = "griffinhat"
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
 	desc = "Fuzzy."
 	icon_state = "bearpelt"
 	inhand_icon_state = "bearpelt"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/xenos
 	name = "xenos helmet"
@@ -272,7 +272,7 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/fedora
 	name = "fedora"
@@ -280,17 +280,19 @@
 	inhand_icon_state = "fedora"
 	desc = "A really cool hat if you're a mobster. A really lame hat if you're not."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/fedora
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/fedora/white
 	name = "white fedora"
 	icon_state = "fedora_white"
 	inhand_icon_state = "fedora_white"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/fedora/beige
 	name = "beige fedora"
 	icon_state = "fedora_beige"
 	inhand_icon_state = "fedora_beige"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/fedora/suicide_act(mob/user)
 	if(user.gender == FEMALE)
@@ -310,7 +312,7 @@
 	flags_inv = HIDEHAIR
 
 	dog_fashion = /datum/dog_fashion/head/sombrero
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 	greyscale_config = /datum/greyscale_config/sombrero
 	greyscale_config_worn = /datum/greyscale_config/sombrero/worn
@@ -341,7 +343,7 @@
 	desc = "A working man's cap."
 	icon_state = "flat_cap"
 	inhand_icon_state = "detective"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/hunter
 	name = "bounty hunting hat"
@@ -351,7 +353,7 @@
 	inhand_icon_state = "hunter"
 	armor = list(MELEE = 5, BULLET = 5, LASER = 5, ENERGY = 15, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/cone
 	desc = "This cone is trying to warn you of something!"
@@ -368,7 +370,7 @@
 	attack_verb_simple = list("warn", "caution", "smash")
 	resistance_flags = NONE
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/santa
 	name = "santa hat"
@@ -378,14 +380,14 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	dog_fashion = /datum/dog_fashion/head/santa
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/jester
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
 	icon_state = "jester_hat"
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/jester/alt
 	icon_state = "jester2"
@@ -394,20 +396,20 @@
 	name = "rice hat"
 	desc = "Welcome to the rice fields, motherfucker."
 	icon_state = "rice_hat"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/lizard
 	name = "lizardskin cloche hat"
 	desc = "How many lizards died to make this hat? Not enough."
 	icon_state = "lizard"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/papersack
 	name = "paper sack hat"
 	desc = "A paper sack with crude holes cut out for eyes. Useful for hiding one's identity or ugliness."
 	icon_state = "papersack"
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/papersack/smiley
 	name = "paper sack hat"
@@ -421,7 +423,7 @@
 	armor = list(MELEE = 15, BULLET = 0, LASER = 0,ENERGY = 10, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 50, WOUND = 5)
 	resistance_flags = FIRE_PROOF
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/crown/fancy
 	name = "magnificent crown"
@@ -432,7 +434,7 @@
 	name = "scarecrow hat"
 	desc = "A simple straw hat."
 	icon_state = "scarecrow_hat"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/lobsterhat
 	name = "foam lobster head"
@@ -440,39 +442,40 @@
 	icon_state = "lobster_hat"
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/drfreezehat
 	name = "doctor freeze's wig"
 	desc = "A cool wig for cool people."
 	icon_state = "drfreeze_hat"
 	flags_inv = HIDEHAIR
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/pharaoh
 	name = "pharaoh hat"
 	desc = "Walk like an Egyptian."
 	icon_state = "pharoah_hat"
 	inhand_icon_state = "pharoah_hat"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/nemes
 	name = "headdress of Nemes"
 	desc = "Lavish space tomb not included."
 	icon_state = "nemes_headdress"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/delinquent
 	name = "delinquent hat"
 	desc = "Good grief."
 	icon_state = "delinquent"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/frenchberet
 	name = "french beret"
 	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage in military conflict, for some reason."
 	icon_state = "beret"
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
@@ -509,33 +512,33 @@
 	name = "Hat of the Honkmother"
 	desc = "It's hard for parishoners to see a banana peel on the floor when they're looking up at your glorious chapeau."
 	icon_state = "clownmitre"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/kippah
 	name = "kippah"
 	desc = "Signals that you follow the Jewish Halakha. Keeps the head covered and the soul extra-Orthodox."
 	icon_state = "kippah"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/medievaljewhat
 	name = "medieval Jewish hat"
 	desc = "A silly looking hat, intended to be placed on the heads of the station's oppressed religious minorities."
 	icon_state = "medievaljewhat"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/taqiyahwhite
 	name = "white taqiyah"
 	desc = "An extra-mustahabb way of showing your devotion to Allah."
 	icon_state = "taqiyahwhite"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/taqiyahred
 	name = "red taqiyah"
 	desc = "An extra-mustahabb way of showing your devotion to Allah."
 	icon_state = "taqiyahred"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/shrine_wig
 	name = "shrine maiden's wig"
@@ -545,14 +548,14 @@
 	inhand_icon_state = "shrine_wig"
 	dynamic_hair_suffix = ""
 	worn_y_offset = 1
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/intern
 	name = "\improper CentCom Head Intern beancap"
 	desc = "A horrifying mix of beanie and softcap in CentCom green. You'd have to be pretty desperate for power over your peers to agree to wear this."
 	icon_state = "intern_hat"
 	inhand_icon_state = "intern_hat"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/coordinator
 	name = "coordinator cap"
@@ -561,21 +564,21 @@
 	inhand_icon_state = "that"
 	armor = list(MELEE = 25, BULLET = 15, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/jackbros
 	name = "frosty hat"
 	desc = "Hee-ho!"
 	icon_state = "JackFrostHat"
 	inhand_icon_state = "JackFrostHat"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/weddingveil
 	name = "wedding veil"
 	desc = "A gauzy white veil."
 	icon_state = "weddingveil"
 	inhand_icon_state = "weddingveil"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/centcom_cap
 	name = "\improper CentCom commander cap"
@@ -585,30 +588,30 @@
 	flags_inv = 0
 	armor = list(MELEE = 30, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	strip_delay = (8 SECONDS)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/flakhelm	//Actually the M1 Helmet
 	icon = 'icons/horizon/obj/clothing/hats.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/head.dmi'
 	name = "flak helmet"
 	icon_state = "m1helm"
 	inhand_icon_state = "helmet"
+	worn_icon = 'icons/mob/clothing/head/m1helm.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0.1, "bio" = 0, "rad" = 0, "fire" = -10, "acid" = -15, "wound" = 1)
 	desc = "A dilapidated helmet used in ancient wars. This one is brittle and essentially useless. An ace of spades is tucked into the band around the outer shell."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/spacenam	//So you can stuff other things in the elastic band instead of it simply being a fluff thing.
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /datum/component/storage/concrete/pockets/tiny/spacenam
 	attack_hand_interact = TRUE		//So you can actually see what you stuff in there
 
 /obj/item/clothing/head/cowboyhat
 	icon = 'icons/horizon/obj/clothing/hats.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/head.dmi'
+	worn_icon = 'icons/mob/clothing/head/cowboyhats.dmi'
 	name = "cowboy hat"
 	desc = "A standard brown cowboy hat, yeehaw."
 	icon_state = "cowboyhat"
 	inhand_icon_state = "cowboyhat"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/cowboyhat/black
 	name = "black cowboy hat"
@@ -636,11 +639,11 @@
 
 /obj/item/clothing/head/kepi
 	icon = 'icons/horizon/obj/clothing/hats.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/head.dmi'
+	worn_icon = 'icons/mob/clothing/head/kepi.dmi'
 	name = "kepi"
 	desc = "A white cap with visor. Oui oui, mon capitane!"
 	icon_state = "kepi"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/kepi/old
 	icon_state = "kepi_old"
@@ -648,15 +651,16 @@
 
 /obj/item/clothing/head/maid
 	icon = 'icons/horizon/obj/clothing/hats.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/head.dmi'
+	worn_icon = 'icons/mob/clothing/head/maidband.dmi'
 	name = "maid headband"
 	desc = "Maid in China."
 	icon_state = "maid"
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/beret/white
 	icon = 'icons/horizon/obj/clothing/hats.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/head.dmi'
+	worn_icon = 'icons/mob/clothing/head/beretwhite.dmi'
 	name = "beret"
 	icon_state = "beret_white"
+	fitted_bodytypes = NONE

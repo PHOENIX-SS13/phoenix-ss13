@@ -61,25 +61,10 @@
 	path = /obj/item/clothing/shoes/high_heels
 	extra_info = LOADOUT_INFO_ONE_COLOR
 
-/*/datum/loadout_item/shoes/christmasbootsr - it aint christmas!
-	name = "Red Christmas Boots"
-	category = SLOT_SHOES
-	path= /obj/item/clothing/shoes/winterboots/christmasbootsr
-
-/datum/loadout_item/shoes/christmasbootsg
-	name = "Green Christmas Boots"
-	category = SLOT_SHOES
-	path= /obj/item/clothing/shoes/winterboots/christmasbootsg
-
-/datum/loadout_item/shoes/santaboots
-	name = "Santa Boots"
-	category = SLOT_SHOES
-	path= /obj/item/clothing/shoes/winterboots/santaboots*/
-
 /datum/loadout_item/shoes/cowboyboots
 	name = "Cowboy Boots, Brown"
-	path = /obj/item/clothing/shoes/cowboyboots
+	path = /obj/item/clothing/shoes/cowboy
 
 /datum/loadout_item/shoes/cowboyboots/black
 	name = "Cowboy Boots, Black"
-	path = /obj/item/clothing/shoes/cowboyboots/black
+	path = /obj/item/clothing/shoes/cowboy/black

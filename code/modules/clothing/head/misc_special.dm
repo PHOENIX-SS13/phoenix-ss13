@@ -55,7 +55,7 @@
 	light_range = 2 //luminosity when on
 	light_system = MOVABLE_LIGHT
 	flags_cover = HEADCOVERSEYES
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 	heat = 999
 
 	dog_fashion = /datum/dog_fashion/head
@@ -102,6 +102,7 @@
 	force_on = 18 //same as epen (but much more obvious)
 	light_range = 3 //ditto
 	heat = 0
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/hardhat/cakehat/energycake/turn_on(mob/living/user)
 	playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
@@ -125,7 +126,7 @@
 	var/earflaps = TRUE
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 	dog_fashion = /datum/dog_fashion/head/ushanka
 
 /obj/item/clothing/head/ushanka/attack_self(mob/user)
@@ -163,7 +164,7 @@
 	icon_state = "kitty"
 	color = "#999999"
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 	dog_fashion = /datum/dog_fashion/head/kitty
 
@@ -202,7 +203,7 @@
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 	dog_fashion = /datum/dog_fashion/head/cardborg
 
@@ -227,7 +228,7 @@
 	worn_icon_state = "wig"
 	flags_inv = HIDEHAIR
 	color = "#000"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	var/hairstyle = "Very Long Hair"
 	var/adjustablecolor = TRUE //can color be changed manually?
 
@@ -334,7 +335,7 @@
 	icon_state = "clockwork_helmet_old"
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEEARS|HIDEHAIR
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 	armor = list(MELEE = 5, BULLET = 0, LASER = -5, ENERGY = -15, BOMB = 10, BIO = 0, RAD = 0, FIRE = 20, ACID = 20)
 
 /obj/item/clothing/head/foilhat
@@ -345,7 +346,7 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = -5,ENERGY = -15, BOMB = 0, BIO = 0, RAD = -5, FIRE = 0, ACID = 0)
 	equip_delay_other = 140
 	clothing_flags = ANTI_TINFOIL_MANEUVER
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 	var/datum/brain_trauma/mild/phobia/conspiracies/paranoia
 	var/warped = FALSE
 

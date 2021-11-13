@@ -6,7 +6,7 @@
 	var/soft_type = "cargo"
 
 	dog_fashion = /datum/dog_fashion/head/cargo_tech
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 	var/flipped = FALSE
 
@@ -137,3 +137,4 @@
 	icon_state = "paramedicsoft"
 	soft_type = "paramedic"
 	dog_fashion = null
+	fitted_bodytypes = NONE

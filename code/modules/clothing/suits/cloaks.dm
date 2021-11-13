@@ -130,6 +130,7 @@
 	flash_protect = FLASH_PROTECTION_WELDER
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	resistance_flags = FIRE_PROOF | ACID_PROOF | FREEZE_PROOF
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/hooded/cloak/godslayer/examine(mob/user)
 	. = ..()

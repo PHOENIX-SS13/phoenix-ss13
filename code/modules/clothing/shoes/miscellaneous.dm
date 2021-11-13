@@ -627,7 +627,7 @@
 
 /obj/item/clothing/shoes/wraps
 	icon = 'icons/horizon/obj/clothing/shoes.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/feet.dmi'
+	worn_icon = 'icons/mob/clothing/feet/wraps.dmi'
 	name = "gilded leg wraps"
 	desc = "Ankle coverings. These ones have a golden design."
 	icon_state = "gildedcuffs"
@@ -648,21 +648,9 @@
 	desc = "Ankle coverings. Hang ten, brother."
 	icon_state = "bluecuffs"
 
-/obj/item/clothing/shoes/cowboyboots
-	icon = 'icons/horizon/obj/clothing/shoes.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/feet.dmi'
-	name = "cowboy boots"
-	desc = "A standard pair of brown cowboy boots."
-	icon_state = "cowboyboots"
-
-/obj/item/clothing/shoes/cowboyboots/black
-	name = "black cowboy boots"
-	desc = "A pair of black cowboy boots, pretty easy to scuff up."
-	icon_state = "cowboyboots_black"
-
 /obj/item/clothing/shoes/high_heels
 	icon = 'icons/horizon/obj/clothing/shoes.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/feet.dmi'
+	worn_icon = 'icons/mob/clothing/feet/heels.dmi'
 	name = "high heels"
 	desc = "A fancy pair of high heels. Won't compensate for your below average height that much."
 	icon_state = "heels"

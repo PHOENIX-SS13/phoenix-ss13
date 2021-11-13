@@ -21,7 +21,7 @@
 	gas_transfer_coefficient = 0.001 //cargo cult time, this var does nothing but just in case someone actually makes it do something
 	permeability_coefficient = 0.001
 	resistance_flags = FIRE_PROOF
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/mask/gas/atmos/captain
 	name = "captain's gas mask"
@@ -29,7 +29,6 @@
 	icon_state = "gas_cap"
 	inhand_icon_state = "gas_cap"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	mutant_variants = NONE
 
 // **** Welding gas mask ****
 
@@ -187,7 +186,7 @@
 	inhand_icon_state = "monkeymask"
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/mask/gas/sexymime
 	name = "sexy mime mask"
@@ -217,7 +216,7 @@
 	name = "carp mask"
 	desc = "Gnash gnash."
 	icon_state = "carp_mask"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/mask/gas/tiki_mask
 	name = "tiki mask"
@@ -231,7 +230,6 @@
 	dog_fashion = null
 	species_exception = list(/datum/species/golem/wood)
 	var/list/tikimask_designs = list()
-	mutant_variants = NONE
 
 /obj/item/clothing/mask/gas/tiki_mask/Initialize(mapload)
 	.=..()
@@ -265,6 +263,7 @@
 
 /obj/item/clothing/mask/gas/tiki_mask/yalp_elor
 	icon_state = "tiki_yalp"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 	actions_types = list()
 
 /obj/item/clothing/mask/gas/hunter
@@ -273,8 +272,8 @@
 	icon_state = "hunter"
 	inhand_icon_state = "hunter"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR|HIDESNOUT
-	mutant_variants = NONE
 
 /obj/item/clothing/mask/breath/vox
 	desc = "A close-fitting mask that can be connected to an air supply. This one's got an easily accessible feeding port to be more suitable for the Vox crewmembers."
@@ -284,8 +283,9 @@
 
 /obj/item/clothing/mask/gas/glass
 	icon = 'icons/horizon/obj/clothing/masks.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/mask.dmi'
+	worn_icon = 'icons/mob/clothing/mask/glass_gas.dmi'
 	name = "glass gas mask"
 	desc = "A face-covering mask that can be connected to an air supply. This one doesn't obscure your face however."
 	icon_state = "gas_clear"
 	flags_inv = HIDEEYES
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE

@@ -1,5 +1,5 @@
 {
-	"suspenders": [
+	"suit_human_suspenders": [
 		{
 			"type": "icon_state",
 			"icon_state": "suspenders",
@@ -7,7 +7,7 @@
 			"color_ids": [ 1 ]
 		}
 	],
-	"suspenders_t": [
+	"suit_human_suspenders_t": [
 		{
 			"type": "icon_state",
 			"icon_state": "suspenders_t",

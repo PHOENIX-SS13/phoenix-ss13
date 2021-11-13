@@ -1,5 +1,5 @@
 {
-	"coatwinter": [
+	"suit_human_coatwinter": [
 		{
 			"type": "icon_state",
 			"icon_state": "neck_worn",
@@ -38,7 +38,7 @@
 		}
 	],
 
-	"coatwinter_t": [
+	"suit_human_coatwinter_t": [
 		{
 			"type": "icon_state",
 			"icon_state": "neck_worn",

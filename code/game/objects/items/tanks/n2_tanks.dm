@@ -6,6 +6,8 @@
 	name = "nitrogen tank"
 	desc = "A tank of nitrogen. Designed specifically for Vox"
 	icon_state = "oxygen_fr"
+	worn_icon_state = "oxygen_fr"
+	worn_icon = null
 	force = 10
 	distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
 

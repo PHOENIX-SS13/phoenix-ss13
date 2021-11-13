@@ -239,13 +239,5 @@
 		new_bodypart.attach_limb(src) //no sanity for if this fails here because we just dropped out a limb of the same zone, SHOULD be okay
 	if(body_plan_changed && ishuman(src))
 		var/mob/living/carbon/human/leg_owner = src
-		if(leg_owner.w_uniform)
-			var/obj/item/clothing/under/uniform = leg_owner.w_uniform
-			if(uniform.mutantrace_variation)
-				if(swap_back)
-					uniform.adjusted = NORMAL_STYLE
-				else
-					uniform.adjusted = DIGITIGRADE_STYLE
-				leg_owner.update_inv_w_uniform()
 		if(leg_owner.shoes && !swap_back)
 			leg_owner.dropItemToGround(leg_owner.shoes)

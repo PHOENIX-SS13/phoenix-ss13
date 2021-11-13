@@ -6,13 +6,7 @@
 	slowdown = 1
 	armor = list(MELEE = 60, BULLET = 60, LASER = 60, ENERGY = 60, BOMB = 30, BIO = 90, RAD = 90, FIRE = 100, ACID = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/list/chronosafe_items = list(
-		/obj/item/chrono_eraser,
-		/obj/item/gun/energy/chrono_gun,
-		/obj/item/gun/energy/pulse/pistol/m1911,
-		/obj/item/storage/backpack/holding,
-	)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/space/chronos/hrvfoxcat
 	name = "HRV FoxCat Armor"

@@ -325,7 +325,7 @@
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/suit/hooded/cultrobes
 	name = "ancient cultist robes"
@@ -392,6 +392,7 @@
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0
 	actions_types = list()
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/hardsuit/cult
 	name = "\improper Nar'Sien hardened armor"
@@ -402,6 +403,7 @@
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
 	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/hardsuit/cult/real
 	slowdown = 0

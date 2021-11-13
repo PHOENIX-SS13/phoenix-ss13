@@ -76,7 +76,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	desc = "A close-fitting tactical mask created in cooperation with a certain megacorporation, comes with an especially aggressive Compli-o-nator 3000."
 	icon_state = "spacepol"
 	inhand_icon_state = "spacepol"
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/mask/gas/sechailer/cyborg
 	name = "security hailer"
@@ -186,7 +186,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_NECK
 	custom_price = PAYCHECK_HARD * 1.5
 	actions_types = list(/datum/action/item_action/halt)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/mask/whistle/ui_action_click(mob/user, action)
 	if(cooldown < world.time - 100)

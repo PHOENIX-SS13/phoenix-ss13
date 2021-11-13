@@ -93,6 +93,7 @@
 	inhand_icon_state = "glasses"
 	flash_protect = FLASH_PROTECTION_FLASH
 	tint = 1
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/glasses/hud/security
 	name = "security HUD"

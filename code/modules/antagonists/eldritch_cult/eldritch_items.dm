@@ -147,6 +147,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	flash_protect = FLASH_PROTECTION_WELDER
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/hooded/cultrobes/eldritch
 	name = "ominous armor"
@@ -157,6 +158,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	allowed = list(/obj/item/melee/sickly_blade, /obj/item/forbidden_book, /obj/item/living_heart)
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/eldritch
+	fitted_bodytypes = NONE
 	// slightly better than normal cult robes
 	armor = list(MELEE = 50, BULLET = 50, LASER = 50,ENERGY = 50, BOMB = 35, BIO = 20, RAD = 0, FIRE = 20, ACID = 20)
 
@@ -175,12 +177,14 @@
 	desc = "Black like tar, doesn't reflect any light. Runic symbols line the outside, with each flash you loose comprehension of what you are seeing."
 	item_flags = EXAMINE_SKIP
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30,ENERGY = 30, BOMB = 15, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/hooded/cultrobes/void
 	name = "void cloak"
 	desc = "Black like tar, doesn't reflect any light. Runic symbols line the outside, with each flash you loose comprehension of what you are seeing."
 	icon_state = "void_cloak"
 	inhand_icon_state = "void_cloak"
+	fitted_bodytypes = NONE
 	allowed = list(/obj/item/melee/sickly_blade, /obj/item/forbidden_book, /obj/item/living_heart)
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/void
 	flags_inv = NONE
@@ -217,7 +221,7 @@
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	///Who is wearing this
 	var/mob/living/carbon/human/local_user
 

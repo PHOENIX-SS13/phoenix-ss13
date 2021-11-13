@@ -15,6 +15,7 @@
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30,ENERGY = 40, BOMB = 30, BIO = 30, RAD = 30, FIRE = 80, ACID = 85)
 	cell = /obj/item/stock_parts/cell/hyper
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 //Green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/green
@@ -33,6 +34,7 @@
 	name = "dark green space helmet"
 	icon_state = "syndicate-helm-green-dark"
 	inhand_icon_state = "syndicate-helm-green-dark"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/syndicate/green/dark
 	name = "dark green space suit"
@@ -50,6 +52,7 @@
 	name = "orange space suit"
 	icon_state = "syndicate-orange"
 	inhand_icon_state = "syndicate-orange"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 //Blue syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/blue
@@ -133,6 +136,7 @@
 	name = "black and red space suit"
 	icon_state = "syndicate-black-red"
 	inhand_icon_state = "syndicate-black-red"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 //Black-red syndicate contract varient
 /obj/item/clothing/head/helmet/space/syndicate/contract
@@ -149,6 +153,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "syndicate-contract"
 	inhand_icon_state = "syndicate-contract"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 //Black with yellow/red engineering syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/engie

@@ -8,7 +8,7 @@
 	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
 	icon_state = "beanie" //Default white
 	custom_price = PAYCHECK_ASSISTANT * 1.2
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/beanie/black
 	name = "black beanie"
@@ -82,10 +82,12 @@
 	name = "red striped bobble hat"
 	desc = "If you're going on a worldwide hike, you'll need some cold protection."
 	icon_state = "waldo_hat"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/beanie/rasta
 	name = "rastacap"
 	desc = "Perfect for tucking in those dreadlocks."
 	icon_state = "beanierasta"
+	fitted_bodytypes = NONE
 
 //No dog fashion sprites yet :(  poor Ian can't be dope like the rest of us yet

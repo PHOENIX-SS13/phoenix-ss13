@@ -268,6 +268,9 @@
 	icon_state = "bannerpack-blue"
 
 //this is all part of one item set
+/obj/item/clothing/suit/armor/plate
+	fitted_bodytypes = NONE
+
 /obj/item/clothing/suit/armor/plate/crusader
 	name = "Crusader's Armour"
 	desc = "Armour that's comprised of metal and cloth."
@@ -275,6 +278,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slowdown = 2.0 //gotta pretend we're balanced.
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 	armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 0, RAD = 0, FIRE = 60, ACID = 60)
 
 /obj/item/clothing/suit/armor/plate/crusader/red
@@ -286,11 +290,10 @@
 /obj/item/clothing/head/helmet/plate/crusader
 	name = "Crusader's Hood"
 	desc = "A brownish hood."
-	icon_state = "crusader"
+	icon_state = "crusader-blue"
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE
 	armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 0, RAD = 0, FIRE = 60, ACID = 60)
-	mutant_variants = NONE
 
 /obj/item/clothing/head/helmet/plate/crusader/blue
 	icon_state = "crusader-blue"
@@ -309,9 +312,11 @@
 
 /obj/item/clothing/head/helmet/plate/crusader/prophet/red
 	icon_state = "prophet-red"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/helmet/plate/crusader/prophet/blue
 	icon_state = "prophet-blue"
+	fitted_bodytypes = NONE
 
 //Structure conversion staff
 /obj/item/godstaff

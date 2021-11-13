@@ -104,7 +104,7 @@
 /datum/sprite_accessory/taur/synthliz
 	name = "Cybernetic Lizard"
 	icon_state = "synthlizard"
-	taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_PAW
 	recommended_species = list("synthliz")
 
 /datum/sprite_accessory/taur/synthliz/inv
@@ -122,8 +122,8 @@
 /datum/sprite_accessory/taur/synthliz/horse
 	name = "Cybernetic Horse"
 	icon_state = "synthhorse"
-	taur_mode = STYLE_TAUR_HOOF
-	alt_taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_HOOF
+	alt_taur_mode = BODYTYPE_TAUR_PAW
 
 /datum/sprite_accessory/taur/synthliz/horse/inv
 	name = "Cybernetic Horse (Inverted)"
@@ -140,4 +140,4 @@
 /datum/sprite_accessory/taur/synthliz/synthnaga
 	name = "Cybernetic Naga"
 	icon_state = "synthnaga"
-	taur_mode = STYLE_TAUR_SNAKE
+	taur_mode = BODYTYPE_TAUR_SNAKE

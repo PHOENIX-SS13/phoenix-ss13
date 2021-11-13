@@ -18,7 +18,7 @@
 	can_adjust = FALSE
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/civilian/curator/treasure_hunter
 	name = "treasure hunter uniform"

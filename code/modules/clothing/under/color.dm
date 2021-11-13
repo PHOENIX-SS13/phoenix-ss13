@@ -6,7 +6,6 @@
 	greyscale_config_inhand_left = /datum/greyscale_config/jumpsuit_inhand_left
 	greyscale_config_inhand_right = /datum/greyscale_config/jumpsuit_inhand_right
 	greyscale_config_worn = /datum/greyscale_config/jumpsuit_worn
-	greyscale_config_worn_digi = /datum/greyscale_config/jumpsuit_worn/digi
 	icon = 'icons/obj/clothing/under/color.dmi'
 	icon_state = "jumpsuit"
 	inhand_icon_state = "jumpsuit"
@@ -18,8 +17,8 @@
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
 	icon_state = "jumpskirt"
-	mutant_variants = NONE
-	greyscale_config_worn_digi = null
+	worn_icon_state = "jumpskirt"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/color/random
 	icon_state = "random_jumpsuit"
@@ -75,6 +74,7 @@
 	name = "ancient jumpsuit"
 	desc = "A terribly ragged and frayed grey jumpsuit. It looks like it hasn't been washed in over a decade."
 	icon_state = "grey_ancient"
+	worn_icon_state = "grey_ancient"
 	inhand_icon_state = "gy_suit"
 	greyscale_config = null
 	greyscale_config_inhand_left = null
@@ -200,6 +200,7 @@
 	name = "rainbow jumpsuit"
 	desc = "A multi-colored jumpsuit!"
 	icon_state = "rainbow"
+	worn_icon_state = "rainbow"
 	inhand_icon_state = "rainbow"
 	greyscale_config = null
 	greyscale_config_inhand_left = null
@@ -211,6 +212,7 @@
 	name = "rainbow jumpskirt"
 	desc = "A multi-colored jumpskirt!"
 	icon_state = "rainbow_skirt"
+	worn_icon_state = "rainbow_skirt"
 	inhand_icon_state = "rainbow"
 	greyscale_config = null
 	greyscale_config_inhand_left = null

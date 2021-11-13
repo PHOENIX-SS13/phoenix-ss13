@@ -34,6 +34,7 @@
 /obj/item/clothing/suit/fire/firefighter
 	icon_state = "firesuit"
 	inhand_icon_state = "firefighter"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 /obj/item/clothing/suit/fire/heavy
 	name = "heavy firesuit"
@@ -48,6 +49,7 @@
 	icon_state = "atmos_firesuit"
 	inhand_icon_state = "firesuit_atmos"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 /*
  * Bomb protection
@@ -91,6 +93,7 @@
 	strip_delay = 70
 	equip_delay_other = 70
 	resistance_flags = NONE
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 
 /obj/item/clothing/head/bomb_hood/security
@@ -146,3 +149,4 @@
 	flags_inv = HIDEJUMPSUIT
 	resistance_flags = NONE
 	flags_1 = RAD_PROTECT_CONTENTS_1
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL

@@ -9,6 +9,7 @@
 	resistance_flags = FIRE_PROOF
 	icon_state = "plasmaman_suit"
 	inhand_icon_state = "plasmaman_suit"
+	allowed_bodytypes = BODYTYPE_HUMANOID
 	var/next_extinguish = 0
 	var/extinguish_cooldown = 100
 	var/extinguishes_left = 10
@@ -50,6 +51,7 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	light_range = 4
 	light_on = FALSE
+	allowed_bodytypes = BODYTYPE_HUMANOID
 	var/helmet_on = FALSE
 	var/smile = FALSE
 	var/smile_color = "#FF0000"

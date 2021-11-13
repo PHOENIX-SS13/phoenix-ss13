@@ -29,8 +29,8 @@
 /datum/sprite_accessory/taur/cow
 	name = "Cow"
 	icon_state = "cow"
-	taur_mode = STYLE_TAUR_HOOF
-	alt_taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_HOOF
+	alt_taur_mode = BODYTYPE_TAUR_PAW
 	color_src = USE_ONE_COLOR
 
 /datum/sprite_accessory/taur/cow/spotted
@@ -41,8 +41,8 @@
 /datum/sprite_accessory/taur/deer
 	name = "Deer"
 	icon_state = "deer"
-	taur_mode = STYLE_TAUR_HOOF
-	alt_taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_HOOF
+	alt_taur_mode = BODYTYPE_TAUR_PAW
 	color_src = USE_ONE_COLOR
 	extra = TRUE
 	extra_color_src = MUTCOLORS2
@@ -50,7 +50,7 @@
 /datum/sprite_accessory/taur/drake
 	name = "Drake"
 	icon_state = "drake"
-	taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_PAW
 	color_src = USE_ONE_COLOR
 	extra = TRUE
 	extra_color_src = MUTCOLORS2
@@ -71,7 +71,7 @@
 /datum/sprite_accessory/taur/eevee
 	name = "Eevee"
 	icon_state = "eevee"
-	taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_PAW
 	color_src = USE_ONE_COLOR
 	extra = TRUE
 	extra_color_src = MUTCOLORS2
@@ -79,25 +79,25 @@
 /datum/sprite_accessory/taur/horse
 	name = "Horse"
 	icon_state = "horse"
-	taur_mode = STYLE_TAUR_HOOF
-	alt_taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_HOOF
+	alt_taur_mode = BODYTYPE_TAUR_PAW
 
 /datum/sprite_accessory/taur/naga
 	name = "Naga"
 	icon_state = "naga"
-	taur_mode = STYLE_TAUR_SNAKE
+	taur_mode = BODYTYPE_TAUR_SNAKE
 	hide_legs = TRUE
 	alpha_mask_type = "taur_mask_naga"
 
 /datum/sprite_accessory/taur/otie
 	name = "Otie"
 	icon_state = "otie"
-	taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_PAW
 
 /datum/sprite_accessory/taur/pede
 	name = "Scolipede"
 	icon_state = "pede"
-	taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_PAW
 	color_src = USE_ONE_COLOR
 	extra = TRUE
 	extra2 = TRUE
@@ -107,14 +107,14 @@
 /datum/sprite_accessory/taur/tentacle
 	name = "Tentacle"
 	icon_state = "tentacle"
-	taur_mode = STYLE_TAUR_SNAKE
+	taur_mode = BODYTYPE_TAUR_SNAKE
 	color_src = USE_ONE_COLOR
 	hide_legs = TRUE
 
 /datum/sprite_accessory/taur/canine
 	name = "Canine"
 	icon_state = "canine"
-	taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_PAW
 	color_src = USE_ONE_COLOR
 	extra = TRUE
 	extra_color_src = MUTCOLORS2
@@ -122,7 +122,7 @@
 /datum/sprite_accessory/taur/feline
 	name = "Feline"
 	icon_state = "feline"
-	taur_mode = STYLE_TAUR_PAW
+	taur_mode = BODYTYPE_TAUR_PAW
 	color_src = USE_ONE_COLOR
 	extra = TRUE
 	extra_color_src = MUTCOLORS2

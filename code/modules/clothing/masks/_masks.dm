@@ -1,11 +1,12 @@
 /obj/item/clothing/mask
 	name = "mask"
 	icon = 'icons/obj/clothing/masks.dmi'
+	worn_icon = 'icons/mob/clothing/mask.dmi'
 	body_parts_covered = HEAD
 	slot_flags = ITEM_SLOT_MASK
 	strip_delay = 40
 	equip_delay_other = 40
-	mutant_variants = STYLE_MUZZLE | STYLE_VOX
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX
 	var/modifies_speech = FALSE
 	var/mask_adjusted = FALSE
 	var/adjusted_flags = null

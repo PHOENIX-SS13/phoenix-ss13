@@ -136,6 +136,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	armor = list(MELEE = 30, BULLET = 40, LASER = 55, ENERGY = 55, BOMB = 30, BIO = 100, RAD = 60, FIRE = 60, ACID = 60)
 	strip_delay = 600
 	actions_types = list()
+	fitted_bodytypes = NONE
 
 
 /obj/item/clothing/suit/space/hardsuit/cybersun
@@ -150,6 +151,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_spacesuit)
 	jetpack = /obj/item/tank/jetpack/suit
 	hardsuit_tail_colors = list("333", "345", "335")
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 //Special NT NPCs
 

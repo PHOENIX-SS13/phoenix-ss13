@@ -15,7 +15,7 @@
 	dynamic_hair_suffix = ""
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/chefhat
 	dog_fashion = /datum/dog_fashion/head/chef
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 	///the chance that the movements of a mouse inside of this hat get relayed to the human wearing the hat
 	var/mouse_control_probability = 20
 
@@ -50,7 +50,7 @@
 	armor = list(MELEE = 25, BULLET = 15, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
 	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/captain
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 //Captain: This is no longer space-worthy
 /obj/item/clothing/head/caphat/parade
@@ -68,7 +68,7 @@
 	desc = "The symbol of true bureaucratic micromanagement."
 	armor = list(MELEE = 25, BULLET = 15, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	dog_fashion = /datum/dog_fashion/head/hop
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 //Chaplain
 /obj/item/clothing/head/nun_hood
@@ -77,13 +77,13 @@
 	icon_state = "nun_hood"
 	flags_inv = HIDEHAIR
 	flags_cover = HEADCOVERSEYES
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/bishopmitre
 	name = "bishop mitre"
 	desc = "An opulent hat that functions as a radio to God. Or as a lightning rod, depending on who you ask."
 	icon_state = "bishopmitre"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Detective
 /obj/item/clothing/head/fedora/det_hat
@@ -123,19 +123,21 @@
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/beret/vintage
 	name = "vintage beret"
 	desc = "A well-worn beret."
 	icon_state = "vintageberet"
 	dog_fashion = null
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/beret/archaic
 	name = "archaic beret"
 	desc = "An absolutely ancient beret, allegedly worn by the first mime to ever step foot on a Nanotrasen station."
 	icon_state = "archaicberet"
 	dog_fashion = null
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/beret/black
 	name = "black beret"
@@ -165,7 +167,7 @@
 	armor = list(MELEE = 40, BULLET = 30, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 10, RAD = 0, FIRE = 50, ACID = 60, WOUND = 10)
 	strip_delay = 80
 	dynamic_hair_suffix = ""
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/hos/syndicate
 	name = "syndicate cap"
@@ -187,7 +189,7 @@
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 30, ACID = 60, WOUND = 6)
 	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/warden
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"
@@ -265,7 +267,6 @@
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 20, ACID = 50, WOUND = 4)
 	strip_delay = 60
 	dog_fashion = null
-	mutant_variants = NONE
 
 /obj/item/clothing/head/beret/sec/navyhos
 	name = "head of security's beret"
@@ -289,7 +290,7 @@
 	name = "science beret"
 	desc = "A science-themed beret for our hardworking scientists."
 	icon_state = "sciberet"
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Curator
 /obj/item/clothing/head/fedora/curator

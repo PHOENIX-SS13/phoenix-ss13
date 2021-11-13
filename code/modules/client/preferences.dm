@@ -569,7 +569,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						if(mutant_bodyparts["taur"])
 							var/datum/sprite_accessory/taur/TSP = GLOB.sprite_accessories["taur"][mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
-							if(TSP.factual && !(TSP.taur_mode & STYLE_TAUR_SNAKE))
+							if(TSP.factual && !(TSP.taur_mode & BODYTYPE_TAUR_SNAKE))
 								var/text_string = (features["penis_taur_mode"]) ? "Yes" : "No"
 								dat += "<br><b>Taur Mode: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_taur_mode;task=change_genitals'>[text_string]</a>"
 						dat += "</td>"

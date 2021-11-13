@@ -1,5 +1,6 @@
 /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/suits.dmi'
+	worn_icon = 'icons/mob/clothing/suit.dmi'
 	name = "suit"
 	var/fire_resist = T0C+100
 	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
@@ -7,23 +8,24 @@
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	mutant_variants = STYLE_DIGITIGRADE|STYLE_TAUR_ALL
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 	var/blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
 	limb_integrity = 0 // disabled for most exo-suits
+	large_worn_icon = 'icons/mob/clothing/wide_suits.dmi'
 
 
-/obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE, file2use, mutant_styles = NONE)
+/obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE, file2use, bodytype = BODYTYPE_HUMANOID)
 	. = ..()
 	if(isinhands)
 		return
 
 	if(damaged_clothes)
-		var/damagefile2use = (mutant_styles & STYLE_TAUR_ALL) ? 'icons/horizon/mob/64x32_item_damage.dmi' : 'icons/effects/item_damage.dmi'
+		var/damagefile2use = (bodytype & BODYTYPE_TAUR_ALL) ? 'icons/horizon/mob/64x32_item_damage.dmi' : 'icons/effects/item_damage.dmi'
 		. += mutable_appearance(damagefile2use, "damaged[blood_overlay_type]")
 	if(HAS_BLOOD_DNA(src))
-		var/bloodfile2use = (mutant_styles & STYLE_TAUR_ALL) ? 'icons/horizon/mob/64x32_blood.dmi' : 'icons/effects/blood.dmi'
+		var/bloodfile2use = (bodytype & BODYTYPE_TAUR_ALL) ? 'icons/horizon/mob/64x32_blood.dmi' : 'icons/effects/blood.dmi'
 		. += mutable_appearance(bloodfile2use, "[blood_overlay_type]blood")
 
 	var/mob/living/carbon/human/M = loc

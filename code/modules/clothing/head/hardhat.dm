@@ -14,7 +14,7 @@
 	light_power = 0.8
 	light_on = FALSE
 	dog_fashion = /datum/dog_fashion/head
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_VOX
 
 	///Determines used sprites: `hardhat[on]_[hat_type]` and `hardhat[on]_[hat_type]2` (lying down sprite)
 	var/hat_type = "yellow"
@@ -106,6 +106,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX
 
 /obj/item/clothing/head/hardhat/weldhat
 	name = "welding hard hat"

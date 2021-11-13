@@ -2,6 +2,7 @@
 /obj/item/clothing/glasses
 	name = "glasses"
 	icon = 'icons/obj/clothing/glasses.dmi'
+	worn_icon = 'icons/mob/clothing/eyes.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = GLASSESCOVERSEYES
 	slot_flags = ITEM_SLOT_EYES
@@ -9,7 +10,7 @@
 	equip_delay_other = 25
 	resistance_flags = NONE
 	custom_materials = list(/datum/material/glass = 250)
-	mutant_variants = STYLE_VOX
+	fitted_bodytypes = BODYTYPE_VOX
 	var/vision_flags = 0
 	var/darkness_view = 2//Base human is 2
 	var/invis_view = SEE_INVISIBLE_LIVING //admin only for now
@@ -260,6 +261,7 @@
 	desc = "Why would you wear something so controversial yet so brave?"
 	icon_state = "circle_glasses"
 	inhand_icon_state = "circle_glasses"
+	fitted_bodytypes = NONE
 
 //Here lies green glasses, so ugly they died. RIP
 
@@ -280,12 +282,14 @@
 	desc = "A pair of sunglasses outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion."
 	clothing_flags = SCAN_REAGENTS
 	clothing_traits = list(TRAIT_BOOZE_SLIDER)
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/glasses/sunglasses/chemical
 	name = "science glasses"
 	icon_state = "sunhudsci"
 	desc = "A pair of tacky purple sunglasses that allow the wearer to recognize various chemical compounds with only a glance."
 	clothing_flags = SCAN_REAGENTS
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/glasses/sunglasses/garb
 	name = "black gar glasses"
@@ -372,6 +376,7 @@
 	desc = "A see-through blindfold perfect for cheating at games like pin the stun baton on the clown."
 	icon_state = "trickblindfold"
 	inhand_icon_state = "blindfold"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/glasses/blindfold/white
 	name = "blind personnel blindfold"
@@ -500,12 +505,14 @@
 	icon_state = "geist_gazers"
 	worn_icon_state = "geist_gazers"
 	glass_colour_type = /datum/client_colour/glass_colour/green
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/glasses/psych
 	name = "psych glasses"
 	icon_state = "psych_glasses"
 	worn_icon_state = "psych_glasses"
 	glass_colour_type = /datum/client_colour/glass_colour/red
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/glasses/godeye
 	name = "eye of god"

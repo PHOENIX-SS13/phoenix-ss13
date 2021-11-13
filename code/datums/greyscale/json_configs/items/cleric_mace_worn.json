@@ -1,5 +1,5 @@
 {
-	"default": [
+	"belt_human_default_worn": [
 		{
 			"type": "icon_state",
 			"icon_state": "worn_shaft",

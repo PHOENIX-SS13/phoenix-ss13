@@ -1,5 +1,5 @@
 {
-    "sombrero": [
+    "head_human_sombrero": [
         {
             "type": "reference",
             "reference_type": "/datum/greyscale_config/sombrero/base_worn",
@@ -7,7 +7,7 @@
             "color_ids": [ 1, 2 ]
         }
     ],
-    "shamebrero": [
+    "head_human_shamebrero": [
         {
             "type": "reference",
             "reference_type": "/datum/greyscale_config/sombrero/base_worn",

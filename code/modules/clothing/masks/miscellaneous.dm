@@ -26,8 +26,8 @@
 	clothing_flags = MASKINTERNALS | BLOCKS_SPEECH
 	gas_transfer_coefficient = 0.1
 	permeability_coefficient = 0.01
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 	equip_delay_other = 25 // my sprite has 4 straps, a-la a head harness. takes a while to equip, longer than a muzzle
-	mutant_variants = NONE
 
 /obj/item/clothing/mask/breathmuzzle/attack_paw(mob/user, list/modifiers)
 	// The breathmuzzle is similar enough to a regular muzzle that similar rules would apply to both.
@@ -93,6 +93,7 @@
 	desc = "Express your happiness or hide your sorrows with this laughing face with crying tears of joy cutout."
 	icon_state = "joy"
 	flags_inv = HIDESNOUT
+	fitted_bodytypes = BODYTYPE_VOX
 
 
 /obj/item/clothing/mask/bandana
@@ -107,6 +108,7 @@
 	adjusted_flags = ITEM_SLOT_HEAD
 	icon_state = "bandbotany"
 	species_exception = list(/datum/species/golem)
+	worn_icon = 'icons/mob/clothing/mask/bandana.dmi'
 
 /obj/item/clothing/mask/bandana/attack_self(mob/user)
 	adjustmask(user)
@@ -114,9 +116,9 @@
 /obj/item/clothing/mask/bandana/adjustmask(mob/living/user)
 	..()
 	if(mask_adjusted)
-		mutant_variants = NONE
+		fitted_bodytypes = BODYTYPE_VOX
 	else
-		mutant_variants = STYLE_MUZZLE | STYLE_VOX
+		fitted_bodytypes = ALL_BODYTYPES
 
 /obj/item/clothing/mask/bandana/AltClick(mob/user)
 	. = ..()
@@ -185,6 +187,7 @@
 	icon_state = "mummy_mask"
 	inhand_icon_state = "mummy_mask"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/mask/scarecrow
 	name = "sack mask"
@@ -192,6 +195,7 @@
 	icon_state = "scarecrow_sack"
 	inhand_icon_state = "scarecrow_sack"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/mask/gondola
 	name = "gondola mask"
@@ -201,6 +205,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	w_class = WEIGHT_CLASS_SMALL
 	modifies_speech = TRUE
+	fitted_bodytypes = BODYTYPE_VOX
 
 /obj/item/clothing/mask/gondola/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]

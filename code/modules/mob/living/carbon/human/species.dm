@@ -23,8 +23,27 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
 	var/sexes = TRUE
 
-	///Clothing offsets. If a species has a different body than other species, you can offset clothing so they look less weird.
-	var/list/offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0))
+	///Clothing offsets. If species is wearing things not fitted to its bodytype, this will apply pixel offsets
+	var/list/offset_features
+	//Example list of offset_features:
+	/*
+	list(
+		OFFSET_UNIFORM = list(0,0), 
+		OFFSET_ID = list(0,0), 
+		OFFSET_GLOVES = list(0,0), 
+		OFFSET_GLASSES = list(0,0), 
+		OFFSET_EARS = list(0,0), 
+		OFFSET_SHOES = list(0,0), 
+		OFFSET_S_STORE = list(0,0), 
+		OFFSET_FACEMASK = list(0,0), 
+		OFFSET_HEAD = list(0,0), 
+		OFFSET_FACE = list(0,0), 
+		OFFSET_BELT = list(0,0), 
+		OFFSET_BACK = list(0,0), 
+		OFFSET_SUIT = list(0,0), 
+		OFFSET_NECK = list(0,0)
+		)
+	*/
 
 	///This allows races to have specific hair colors. If null, it uses the H's hair/facial hair colors. If "mutcolor", it uses the H's mutant_color. If "fixedmutcolor", it uses fixedmutcolor
 	var/hair_color
@@ -710,7 +729,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 					hair_overlay.color = forced_colour
 
 				hair_overlay.alpha = hair_alpha
-				if(OFFSET_FACE in H.dna.species.offset_features)
+				if(offset_features && (OFFSET_FACE in H.dna.species.offset_features))
 					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
 					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 		if(hair_overlay.icon)
@@ -746,7 +765,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		if(species_human.lip_style && (LIPS in species_traits))
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/sprite_accessory/human_face.dmi', "lips_[species_human.lip_style]", -BODY_LAYER)
 			lip_overlay.color = species_human.lip_color
-			if(OFFSET_FACE in species_human.dna.species.offset_features)
+			if(offset_features && (OFFSET_FACE in species_human.dna.species.offset_features))
 				lip_overlay.pixel_x += species_human.dna.species.offset_features[OFFSET_FACE][1]
 				lip_overlay.pixel_y += species_human.dna.species.offset_features[OFFSET_FACE][2]
 			standing += lip_overlay
@@ -763,7 +782,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 			//cut any possible vis overlays
 			if(body_vis_overlays.len)
 				SSvis_overlays.remove_vis_overlay(species_human, body_vis_overlays)
-			if(OFFSET_FACE in species_human.dna.species.offset_features)
+			if(species_human.dna.species.offset_features && (OFFSET_FACE in species_human.dna.species.offset_features))
 				add_pixel_x = species_human.dna.species.offset_features[OFFSET_FACE][1]
 				add_pixel_y = species_human.dna.species.offset_features[OFFSET_FACE][2]
 			if(!eye_organ)
@@ -847,7 +866,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		if(!(DIGITIGRADE in species_traits)) //Someone cut off a digitigrade leg and tacked it on
 			species_traits += DIGITIGRADE
 		var/should_be_squished = FALSE
-		if((source.wear_suit && source.wear_suit.flags_inv & HIDEJUMPSUIT && !(source.wear_suit.mutant_variants & STYLE_DIGITIGRADE) && (source.wear_suit.body_parts_covered & LEGS)) || (source.w_uniform && (source.w_uniform.body_parts_covered & LEGS) && !(source.w_uniform.mutant_variants & STYLE_DIGITIGRADE)))
+		if((source.wear_suit && source.wear_suit.flags_inv & HIDEJUMPSUIT && !(source.wear_suit.fitted_bodytypes & BODYTYPE_DIGITIGRADE) && (source.wear_suit.body_parts_covered & LEGS)) || (source.w_uniform && (source.w_uniform.body_parts_covered & LEGS) && !(source.w_uniform.fitted_bodytypes & BODYTYPE_DIGITIGRADE)))
 			should_be_squished = TRUE
 		if(bodypart.use_digitigrade == FULL_DIGITIGRADE && should_be_squished)
 			bodypart.use_digitigrade = SQUISHED_DIGITIGRADE
@@ -1122,8 +1141,10 @@ GLOBAL_LIST_EMPTY(customizable_races)
 			excused = TRUE
 		if(!excused)
 			return FALSE
+		
+	var/perceived_bodytype = get_bodytype(slot, I)
 
-	if(!excused && !(I.allowed_bodytypes & bodytype))
+	if(!excused && !(I.allowed_bodytypes & perceived_bodytype))
 		if(!disable_warning)
 			to_chat(H, SPAN_WARNING("[I] doesn't fit on you!"))
 		return FALSE
@@ -2421,3 +2442,23 @@ GLOBAL_LIST_EMPTY(customizable_races)
 
 /datum/species/proc/spec_revival(mob/living/carbon/human/H)
 	return
+
+//Gets the bodytype of the species. This can be mutable to digitigrade or taur if fitting slot and conditions are met.
+/datum/species/proc/get_bodytype(item_slot = NONE, obj/item/checked_item_for)
+	if(!item_slot)
+		return bodytype
+	var/perceived_bodytype = bodytype
+	if((item_slot == ITEM_SLOT_FEET || item_slot == ITEM_SLOT_OCLOTHING || item_slot == ITEM_SLOT_ICLOTHING) && (DIGITIGRADE in species_traits))
+		perceived_bodytype = BODYTYPE_DIGITIGRADE
+	if((item_slot == ITEM_SLOT_HEAD || item_slot == ITEM_SLOT_MASK) && mutant_bodyparts["snout"])
+		var/datum/sprite_accessory/snouts/snout_accessory = GLOB.sprite_accessories["snout"][mutant_bodyparts["snout"][MUTANT_INDEX_NAME]]
+		if(snout_accessory.use_muzzled_sprites)
+			perceived_bodytype = BODYTYPE_DIGITIGRADE
+	if((item_slot == ITEM_SLOT_OCLOTHING || item_slot == ITEM_SLOT_ICLOTHING) && mutant_bodyparts["taur"])
+		var/datum/sprite_accessory/taur/taur_accessory = GLOB.sprite_accessories["taur"][mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
+		///Special check of applying a style 2 taur bodytype because taurs are spagheti
+		if(checked_item_for && !(checked_item_for.allowed_bodytypes & taur_accessory.taur_mode) && (checked_item_for.allowed_bodytypes & taur_accessory.alt_taur_mode))
+			perceived_bodytype = taur_accessory.alt_taur_mode
+		else
+			perceived_bodytype = taur_accessory.taur_mode
+	return perceived_bodytype

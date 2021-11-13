@@ -1,10 +1,12 @@
 /obj/item/clothing/neck
 	name = "necklace"
 	icon = 'icons/obj/clothing/neck.dmi'
+	worn_icon = 'icons/mob/clothing/neck.dmi'
 	body_parts_covered = NECK
 	slot_flags = ITEM_SLOT_NECK
 	strip_delay = 40
 	equip_delay_other = 40
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/neck/worn_overlays(mutable_appearance/standing, isinhands = FALSE)
 	. = ..()
@@ -292,7 +294,7 @@
 
 /obj/item/clothing/neck/human_petcollar
 	icon = 'icons/horizon/obj/clothing/neck.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/neck.dmi'
+	worn_icon = 'icons/mob/clothing/neck/collars.dmi'
 	name = "pet collar"
 	desc = "It's for pets. Though you probably could wear it yourself, you'd doubtless be the subject of ridicule. It seems to be made out of a polychromic material."
 	icon_state = "petcollar_poly"

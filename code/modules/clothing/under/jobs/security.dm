@@ -38,7 +38,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/security/officer/blueshirt
 	name = "blue shirt and tie"
@@ -81,7 +81,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/security/warden/formal
 	desc = "The insignia on this uniform tells you that this uniform belongs to the Warden."
@@ -106,7 +106,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/security/detective/grey
 	name = "noir suit"
@@ -122,7 +122,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /*
  * Head of Security
@@ -143,7 +143,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/security/head_of_security/grey
 	name = "head of security's grey jumpsuit"
@@ -165,7 +165,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/security/head_of_security/parade
 	name = "head of security's parade uniform"
@@ -209,7 +209,6 @@
 	greyscale_config_inhand_left = /datum/greyscale_config/jumpsuit_prison_inhand_left
 	greyscale_config_inhand_right = /datum/greyscale_config/jumpsuit_prison_inhand_right
 	greyscale_config_worn = /datum/greyscale_config/jumpsuit_prison_worn
-	greyscale_config_worn_digi = /datum/greyscale_config/jumpsuit_prison_worn/digi
 	has_sensor = LOCKED_SENSORS
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
@@ -226,8 +225,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
-	greyscale_config_worn_digi = null
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/security/officer/beatcop
 	name = "space police uniform"

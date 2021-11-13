@@ -194,10 +194,10 @@
 
 /obj/item/clothing/gloves/evening
 	icon = 'icons/horizon/obj/clothing/gloves.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/hands.dmi'
 	name = "evening gloves"
 	desc = "Thin, pretty gloves intended for use in regal feminine attire, but knowing Space China these are just for some maid fetish."
 	icon_state = "evening"
+	worn_icon = 'icons/mob/clothing/hands/evening.dmi'
 	strip_delay = 40
 	equip_delay_other = 20
 	cold_protection = HANDS
@@ -205,7 +205,6 @@
 
 /obj/item/clothing/gloves/ring
 	icon = 'icons/horizon/obj/ring.dmi'
-	worn_icon = 'icons/horizon/mob/clothing/hands.dmi'
 	name = "gold ring"
 	desc = "A tiny gold ring, sized to wrap around a finger."
 	gender = NEUTER
@@ -213,6 +212,7 @@
 	icon = 'icons/horizon/obj/ring.dmi'
 	icon_state = "ringgold"
 	inhand_icon_state = "gring"
+	worn_icon = 'icons/mob/clothing/hands/rings.dmi'
 	worn_icon_state = "gring"
 	body_parts_covered = 0
 	transfer_prints = TRUE

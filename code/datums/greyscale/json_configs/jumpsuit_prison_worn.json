@@ -1,5 +1,5 @@
 {
-	"jumpsuit": [
+	"uniform_human_jumpsuit": [
 		{
 			"type": "icon_state",
 			"icon_state": "jumpsuit",
@@ -12,7 +12,7 @@
 			"blend_mode": "overlay"
 		}
 	],
-	"jumpsuit_d" : [
+	"uniform_human_jumpsuit_d" : [
 		{
 			"type": "icon_state",
 			"icon_state": "jumpsuit_d",
@@ -25,7 +25,33 @@
 			"blend_mode": "overlay"
 		}
 	],
-	"jumpskirt": [
+	"uniform_digi_jumpsuit": [
+		{
+			"type": "icon_state",
+			"icon_state": "digi_jumpsuit",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "digi_jumpsuit_prison",
+			"blend_mode": "overlay"
+		}
+	],
+	"uniform_digi_jumpsuit_d" : [
+		{
+			"type": "icon_state",
+			"icon_state": "digi_jumpsuit_d",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "digi_jumpsuit_d_prison",
+			"blend_mode": "overlay"
+		}
+	],
+	"uniform_human_jumpskirt": [
 		{
 			"type": "icon_state",
 			"icon_state": "jumpskirt",
@@ -38,7 +64,7 @@
 			"blend_mode": "overlay"
 		}
 	],
-	"jumpskirt_d" : [
+	"uniform_human_jumpskirt_d" : [
 		{
 			"type": "icon_state",
 			"icon_state": "jumpskirt_d",

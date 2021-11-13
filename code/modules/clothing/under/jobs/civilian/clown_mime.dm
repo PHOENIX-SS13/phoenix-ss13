@@ -13,7 +13,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/civilian/mime/sexy
 	name = "sexy mime outfit"
@@ -32,6 +32,7 @@
 	species_exception = list(/datum/species/golem/bananium)
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/civilian/clown/Initialize()
 	. = ..()
@@ -78,6 +79,7 @@
 	name = "jester suit"
 	desc = "A jolly dress, well suited to entertain your master, nuncle."
 	icon_state = "jester"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 /obj/item/clothing/under/rank/civilian/clown/jester/alt
 	icon_state = "jester2"
@@ -87,3 +89,4 @@
 	desc = "It makes you look HONKable!"
 	icon_state = "sexyclown"
 	inhand_icon_state = "sexyclown"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE

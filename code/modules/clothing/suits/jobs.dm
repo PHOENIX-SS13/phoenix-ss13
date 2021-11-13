@@ -43,7 +43,7 @@
 	allowed = list(/obj/item/kitchen)
 	togglename = "sleeves"
 	species_exception = list(/datum/species/golem)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Cook
 /obj/item/clothing/suit/apron/chef
@@ -54,7 +54,7 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = CHEST|GROIN
 	allowed = list(/obj/item/kitchen)
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 //Detective
 /obj/item/clothing/suit/det_suit
@@ -67,7 +67,7 @@
 	armor = list(MELEE = 25, BULLET = 10, LASER = 25, ENERGY = 35, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 45)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/det_suit/Initialize()
 	. = ..()
@@ -95,7 +95,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
 	species_exception = list(/datum/species/golem)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
@@ -107,7 +107,7 @@
 	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
 	species_exception = list(/datum/species/golem)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/toggle/lawyer/purple
 	name = "purple suit jacket"
@@ -132,7 +132,7 @@
 	blood_overlay_type = "armor" //it's the less thing that I can put here
 	togglename = "straps"
 	species_exception = list(/datum/species/golem)
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 	greyscale_config = /datum/greyscale_config/suspenders
 	greyscale_config_worn = /datum/greyscale_config/suspenders/worn
 	greyscale_colors = "#ff0000"
@@ -144,7 +144,7 @@
 	icon_state = "officerbluejacket"
 	inhand_icon_state = "officerbluejacket"
 	body_parts_covered = CHEST|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/security/warden
 	name = "warden's jacket"
@@ -152,7 +152,7 @@
 	icon_state = "wardenbluejacket"
 	inhand_icon_state = "wardenbluejacket"
 	body_parts_covered = CHEST|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/security/hos
 	name = "head of security's jacket"
@@ -160,7 +160,7 @@
 	icon_state = "hosbluejacket"
 	inhand_icon_state = "hosbluejacket"
 	body_parts_covered = CHEST|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 //Surgeon
 /obj/item/clothing/suit/apron/surgical
@@ -168,7 +168,7 @@
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
-	mutant_variants = NONE
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
 //Curator
 /obj/item/clothing/suit/curator
@@ -182,7 +182,7 @@
 	armor = list(MELEE = 25, BULLET = 10, LASER = 25, ENERGY = 35, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 45)
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 
 //Robotocist
@@ -194,7 +194,7 @@
 	inhand_icon_state = "techpriest"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/techpriest
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/head/hooded/techpriest
 	name = "techpriest's hood"
@@ -203,3 +203,4 @@
 	inhand_icon_state = "techpriesthood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX

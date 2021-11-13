@@ -10,6 +10,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	can_adjust = FALSE
 	strip_delay = 80
+	allowed_bodytypes = BODYTYPE_HUMANOID //The suits dont fit on digitigrades or taurs
 	var/next_extinguish = 0
 	var/extinguish_cooldown = 100
 	var/extinguishes_left = 5

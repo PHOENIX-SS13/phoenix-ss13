@@ -18,7 +18,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/medical/virologist
 	desc = "It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it."
@@ -34,7 +34,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/medical/doctor/nurse
 	desc = "It's a jumpsuit commonly worn by nursing staff in the medical department."
@@ -44,6 +44,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/medical/doctor
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel."
@@ -77,7 +78,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/medical/chemist
 	desc = "It's made of a special fiber that gives special protection against biohazards. It has a chemist rank stripe on it."
@@ -94,7 +95,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/under/rank/medical/paramedic
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a dark blue cross on the chest denoting that the wearer is a trained paramedic."
@@ -111,4 +112,4 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
-	mutant_variants = NONE
+	fitted_bodytypes = NONE

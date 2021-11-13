@@ -2,11 +2,11 @@
 	name = "tennis ball"
 	desc = "A classical tennis ball. It appears to have faint bite marks scattered all over its surface."
 	icon = 'icons/horizon/obj/balls.dmi'
+	worn_icon = 'icons/mob/clothing/misc/mouthball.dmi'
 	icon_state = "tennis_classic"
 	lefthand_file = 'icons/horizon/mob/inhands/balls_left.dmi'
 	righthand_file = 'icons/horizon/mob/inhands/balls_right.dmi'
 	inhand_icon_state = "tennis_classic"
-	worn_icon = 'icons/horizon/mob/mouthball.dmi'
 	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_NECK | ITEM_SLOT_EARS	//Fluff item, put it wherever you want!
 	throw_range = 14
 	w_class = WEIGHT_CLASS_SMALL

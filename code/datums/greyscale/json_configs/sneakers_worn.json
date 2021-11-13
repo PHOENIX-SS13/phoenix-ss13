@@ -1,5 +1,5 @@
 {
-	"sneakers": [
+	"feet_human_sneakers": [
 		{
 			"type": "icon_state",
 			"icon_state": "sneakers_back",
@@ -9,6 +9,20 @@
 		{
 			"type": "icon_state",
 			"icon_state": "sneakers_front",
+			"blend_mode": "overlay",
+			"color_ids": [ 2 ]
+		}
+	],
+	"feet_digi_sneakers": [
+		{
+			"type": "icon_state",
+			"icon_state": "digi_sneakers_back",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "digi_sneakers_front",
 			"blend_mode": "overlay",
 			"color_ids": [ 2 ]
 		}

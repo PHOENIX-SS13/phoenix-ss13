@@ -16,7 +16,7 @@
 
 /datum/loadout_item/uniform/croptop
 	name = "Croptop"
-	path = /obj/item/clothing/under/croptop
+	path = /obj/item/clothing/under/misc/croptop
 
 /datum/loadout_item/uniform/kilt
 	name = "Kilt"
@@ -98,7 +98,7 @@
 
 /datum/loadout_item/uniform/trishirt
 	name = "Tri Shirt Combo"
-	path = /obj/item/clothing/under/trishirt
+	path = /obj/item/clothing/under/misc/trishirt
 	cost = 3
 
 //SUITS

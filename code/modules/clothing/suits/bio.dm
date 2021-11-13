@@ -34,6 +34,7 @@
 
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "bio_general"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 
 //Virology biosuit, green stripe
@@ -42,6 +43,7 @@
 
 /obj/item/clothing/suit/bio_suit/virology
 	icon_state = "bio_virology"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 
 //Security biosuit, grey with red stripe across the chest
@@ -52,6 +54,7 @@
 /obj/item/clothing/suit/bio_suit/security
 	armor = list(MELEE = 25, BULLET = 15, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 100, RAD = 80, FIRE = 30, ACID = 100)
 	icon_state = "bio_security"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 /obj/item/clothing/suit/bio_suit/security/Initialize()
 	. = ..()
@@ -63,6 +66,7 @@
 
 /obj/item/clothing/suit/bio_suit/janitor
 	icon_state = "bio_janitor"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 /obj/item/clothing/suit/bio_suit/janitor/Initialize()
 	. = ..()
@@ -74,6 +78,7 @@
 
 /obj/item/clothing/suit/bio_suit/scientist
 	icon_state = "bio_scientist"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 //CMO's biosuit, blue stripe
 /obj/item/clothing/head/bio_hood/cmo
@@ -81,6 +86,7 @@
 
 /obj/item/clothing/suit/bio_suit/cmo
 	icon_state = "bio_cmo"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
 
 /obj/item/clothing/suit/bio_suit/cmo/Initialize()
 	. = ..()
