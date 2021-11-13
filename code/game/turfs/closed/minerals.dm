@@ -38,8 +38,8 @@
 		transform = M
 	icon = smooth_icon
 	if(!color && turn_to_level_color)
-		var/datum/space_level/level = SSmapping.z_list[z]
-		color = level.rock_color
+		var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+		color = mapzone.rock_color
 	if(prob(3))
 		AddComponent(/datum/component/digsite)
 
@@ -556,7 +556,7 @@
 		stage = GIBTONITE_ACTIVE
 		visible_message(SPAN_DANGER("There's gibtonite inside! It's going to explode!"))
 
-		var/notify_admins = !is_mining_level(z)
+		var/notify_admins = !is_mining_level(src)
 
 		if(!triggered_by_explosion)
 			log_bomber(user, "has trigged a gibtonite deposit reaction via", src, null, notify_admins)

@@ -130,7 +130,7 @@
  * * user - The mob trying to initiate the launch
  */
 /obj/machinery/computer/auxiliary_base/proc/launch_check(mob/user)
-	if(!is_station_level(z) && shuttleId == "colony_drop")
+	if(!is_station_level(src) && shuttleId == "colony_drop")
 		to_chat(user, SPAN_WARNING("You can't move the base again!"))
 		return FALSE
 	return TRUE
@@ -164,8 +164,8 @@
 				return
 			usr.changeNext_move(CLICK_CD_RAPID) //Anti-spam
 			var/list/all_mining_turfs = list()
-			for(var/z_level in SSmapping.levels_by_trait(ZTRAIT_MINING))
-				all_mining_turfs += Z_TURFS(z_level)
+			for(var/datum/sub_map_zone/subzone in SSmapping.sub_zones_by_trait(ZTRAIT_MINING))
+				all_mining_turfs += subzone.get_block()
 			var/turf/LZ = pick(all_mining_turfs) //Pick a random mining Z-level turf
 			if(!ismineralturf(LZ) && !istype(LZ, /turf/open/floor/plating/asteroid))
 			//Find a suitable mining turf. Reduces chance of landing in a bad area
@@ -194,7 +194,7 @@
 			return TRUE
 
 /obj/machinery/computer/auxiliary_base/proc/set_mining_mode()
-	if(is_mining_level(z)) //The console switches to controlling the mining shuttle once landed.
+	if(is_mining_level(src)) //The console switches to controlling the mining shuttle once landed.
 		req_one_access = list()
 		shuttleId = "mining" //The base can only be dropped once, so this gives the console a new purpose.
 		possible_destinations = "mining_home;mining_away;landing_zone_dock;mining_public"
@@ -213,7 +213,7 @@
 			/turf/closed/mineral,
 			))
 
-		if(!is_mining_level(T.z))
+		if(!is_mining_level(T))
 			return BAD_ZLEVEL
 
 
@@ -277,7 +277,7 @@
 	var/obj/machinery/computer/auxiliary_base/AB
 
 	for (var/obj/machinery/computer/auxiliary_base/A in GLOB.machines)
-		if(is_station_level(A.z))
+		if(is_station_level(A))
 			AB = A
 			break
 	if(!AB)
@@ -357,7 +357,7 @@
 
 	var/turf/landing_spot = get_turf(src)
 
-	if(!is_mining_level(landing_spot.z))
+	if(!is_mining_level(landing_spot))
 		to_chat(user, SPAN_WARNING("This device is only to be used in a mining zone."))
 		return
 	var/obj/machinery/computer/auxiliary_base/aux_base_console

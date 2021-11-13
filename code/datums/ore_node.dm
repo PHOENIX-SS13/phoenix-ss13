@@ -15,13 +15,13 @@
 	range = _range
 	scanner_range = range * 3
 	//Add to the level list
-	var/datum/space_level/level = SSmapping.z_list[z_coord]
-	level.ore_nodes += src
+	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(locate(x,y,z))
+	subzone.ore_nodes += src
 
 /datum/ore_node/Destroy()
 	//Remove from the level list
-	var/datum/space_level/level = SSmapping.z_list[z_coord]
-	level.ore_nodes -= src
+	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(locate(x_coord,y_coord,z_coord))
+	subzone.ore_nodes -= src
 	return ..()
 
 /datum/ore_node/proc/GetRemainingOreAmount()
@@ -132,20 +132,20 @@
 	return ore_to_return
 
 /proc/GetNearbyOreNode(turf/T)
-	var/datum/space_level/level = SSmapping.z_list[T.z]
-	if(!length(level.ore_nodes))
+	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(T)
+	if(!length(subzone.ore_nodes))
 		return
-	var/list/iterated = level.ore_nodes
+	var/list/iterated = subzone.ore_nodes
 	for(var/i in iterated)
 		var/datum/ore_node/ON = i
 		if(T.x < (ON.x_coord + ON.range) && T.x > (ON.x_coord - ON.range) && T.y < (ON.y_coord + ON.range) && T.y > (ON.y_coord - ON.range))
 			return ON
 
 /proc/GetOreNodeInScanRange(turf/T)
-	var/datum/space_level/level = SSmapping.z_list[T.z]
-	if(!length(level.ore_nodes))
+	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(T)
+	if(!length(subzone.ore_nodes))
 		return
-	var/list/iterated = level.ore_nodes
+	var/list/iterated = subzone.ore_nodes
 	for(var/i in iterated)
 		var/datum/ore_node/ON = i
 		if(T.x < (ON.x_coord + ON.scanner_range) && T.x > (ON.x_coord - ON.scanner_range) && T.y < (ON.y_coord + ON.scanner_range) && T.y > (ON.y_coord - ON.scanner_range))

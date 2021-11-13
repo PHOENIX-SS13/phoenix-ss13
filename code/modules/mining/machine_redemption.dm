@@ -103,7 +103,7 @@
 
 /obj/machinery/mineral/ore_redemption/proc/send_console_message()
 	var/datum/component/material_container/mat_container = materials.mat_container
-	if(!mat_container || !is_station_level(z))
+	if(!mat_container || !is_station_level(src))
 		return
 
 	console_notify_timer = null

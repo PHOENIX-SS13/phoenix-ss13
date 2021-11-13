@@ -65,8 +65,6 @@
 	var/list/outside_areas = list()
 	/// Areas that are protected and excluded from the affected areas.
 	var/list/protected_areas = list()
-	/// The list of z-levels that this weather is actively affecting
-	var/impacted_z_levels
 
 	/// Since it's above everything else, this is the layer used by default. TURF_LAYER is below mobs and walls if you need to use that.
 	var/overlay_layer = AREA_LAYER
@@ -113,11 +111,6 @@
 	..()
 	my_controller = passed_controller
 	my_controller.current_weathers[type] = src
-	var/list/z_levels = list()
-	for(var/i in my_controller.z_levels)
-		var/datum/space_level/level = i
-		z_levels += level.z_value
-	impacted_z_levels = z_levels
 	if(sound_active_outside)
 		sound_active_outside = new sound_active_outside(list(), FALSE, TRUE)
 	if(sound_active_inside)
@@ -173,7 +166,7 @@
 		affectareas -= get_areas(V)
 	for(var/V in affectareas)
 		var/area/A = V
-		if(!(A.z in impacted_z_levels))
+		if(!(my_controller.mapzone.is_in_bounds(A)))
 			continue
 		if(protect_indoors && !A.outdoors)
 			outside_areas |= A
@@ -189,7 +182,7 @@
 	update_areas()
 	for(var/M in GLOB.player_list)
 		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
+		if(mob_turf && my_controller.mapzone.is_in_bounds(mob_turf))
 			if(telegraph_message)
 				to_chat(M, telegraph_message)
 			if(telegraph_sound)
@@ -224,7 +217,7 @@
 	update_areas()
 	for(var/M in GLOB.player_list)
 		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
+		if(mob_turf && my_controller.mapzone.is_in_bounds(mob_turf))
 			if(weather_message)
 				to_chat(M, weather_message)
 			if(weather_sound)
@@ -258,7 +251,7 @@
 	update_areas()
 	for(var/M in GLOB.player_list)
 		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
+		if(mob_turf && my_controller.mapzone.is_in_bounds(mob_turf))
 			if(end_message)
 				to_chat(M, end_message)
 			if(end_sound)
@@ -312,7 +305,7 @@
  */
 /datum/weather/proc/can_weather_act(mob/living/L)
 	var/turf/mob_turf = get_turf(L)
-	if(mob_turf && !(mob_turf.z in impacted_z_levels))
+	if(mob_turf && !(my_controller.mapzone.is_in_bounds(mob_turf)))
 		return
 	if(immunity_type in L.weather_immunities)
 		return

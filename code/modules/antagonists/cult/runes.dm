@@ -372,7 +372,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	var/list/teleportnames = list()
 	for(var/R in GLOB.teleport_runes)
 		var/obj/effect/rune/teleport/T = R
-		if(T != src && !is_away_level(T.z))
+		if(T != src && !is_away_level(T))
 			potential_runes[avoid_assoc_duplicate_keys(T.listkey, teleportnames)] = T
 
 	if(!potential_runes.len)
@@ -382,7 +382,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		return
 
 	var/turf/T = get_turf(src)
-	if(is_away_level(T.z))
+	if(is_away_level(T))
 		to_chat(user, "<span class='cult italic'>You are not in the right dimension!</span>")
 		log_game("Teleport rune failed - user in away mission")
 		fail_invoke()
@@ -429,7 +429,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 			to_chat(user, SPAN_CULT("You[moveuserlater ? "r vision blurs, and you suddenly appear somewhere else":" send everything above the rune away"]."))
 		else
 			to_chat(user, SPAN_CULT("You[moveuserlater ? "r vision blurs briefly, but nothing happens":" try send everything above the rune away, but the teleportation fails"]."))
-		if(is_mining_level(z) && !is_mining_level(target.z)) //No effect if you stay on lavaland
+		if(is_mining_level(src) && !is_mining_level(target)) //No effect if you stay on lavaland
 			actual_selected_rune.handle_portal("lava")
 		else
 			var/area/A = get_area(T)
@@ -491,7 +491,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/narsie/invoke(list/invokers)
 	if(used)
 		return
-	if(!is_station_level(z))
+	if(!is_station_level(src))
 		return
 	var/mob/living/user = invokers[1]
 	var/datum/antagonist/cult/user_antag = user.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
@@ -675,7 +675,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		fail_invoke()
 		log_game("Summon Cultist rune failed - target was deconverted")
 		return
-	if(is_away_level(cultist_to_summon.z))
+	if(is_away_level(cultist_to_summon))
 		to_chat(user, "<span class='cult italic'>[cultist_to_summon] is not in our dimension!</span>")
 		fail_invoke()
 		log_game("Summon Cultist rune failed - target in away mission")
@@ -783,7 +783,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	var/turf/T = get_turf(src)
 	var/choice = tgui_alert(user,"You tear open a connection to the spirit realm...",,list("Summon a Cult Ghost","Ascend as a Dark Spirit","Cancel"))
 	if(choice == "Summon a Cult Ghost")
-		if(!is_station_level(T.z))
+		if(!is_station_level(T))
 			to_chat(user, SPAN_CULTITALIC("<b>The veil is not weak enough here to manifest spirits, you must be on station!</b>"))
 			return
 		if(ghosts >= ghost_limit)

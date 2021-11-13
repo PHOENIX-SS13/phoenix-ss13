@@ -13,10 +13,14 @@
 
 	for (var/I in 1 to default_map_traits.len)
 		var/list/features = default_map_traits[I]
-		var/datum/space_level/S = new(I, features[DL_NAME], features[DL_TRAITS])
+		var/name = features[DL_NAME]
+		var/list/traits = features[DL_TRAITS]
+		var/datum/space_level/S = new(I, name)
 		z_list += S
+		var/datum/map_zone/mapzone = new(name)
+		new /datum/sub_map_zone(name, traits, mapzone, 1, 1, world.maxx, world.maxy, I)
 
-/datum/controller/subsystem/mapping/proc/add_new_zlevel(name, traits = list(), z_type = /datum/space_level, datum/overmap_object/overmap_obj = null)
+/datum/controller/subsystem/mapping/proc/add_new_zlevel(name, traits = list(), z_type = /datum/space_level)
 	UNTIL(!adding_new_zlevel)
 	adding_new_zlevel = TRUE
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_Z, args)
@@ -26,11 +30,6 @@
 		CHECK_TICK
 	// TODO: sleep here if the Z level needs to be cleared
 	var/datum/space_level/S = new z_type(new_z, name, traits)
-	if(overmap_obj)
-		overmap_obj.related_levels += S
-		S.related_overmap_object = overmap_obj
-		if(istype(overmap_obj, /datum/overmap_object/shuttle)) //TODO: better method
-			S.is_overmap_controllable = TRUE
 	z_list += S
 	adding_new_zlevel = FALSE
 	return S

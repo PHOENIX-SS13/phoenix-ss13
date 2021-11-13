@@ -202,7 +202,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		onstation = TRUE
 		return
 	if(mapload) //check if it was initially created off station during mapload.
-		if(!is_station_level(z))
+		if(!is_station_level(src))
 			onstation = FALSE
 			if(circuit)
 				circuit.onstation = onstation //sync up the circuit so the pricing schema is carried over if it's reconstructed.

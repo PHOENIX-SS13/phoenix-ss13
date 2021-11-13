@@ -32,12 +32,8 @@
 	/// Lookup table for the light values
 	var/list/light_lookup_table = list()
 
-	/// The z levels we are controlling
-	var/list/z_levels
-	/// Quick lookup for the area checking
-	var/list/z_level_lookup = list()
-	/// The linked overmap object of our controller
-	var/datum/overmap_object/linked_overmap_object
+	/// The linked map zone of our controller
+	var/datum/map_zone/mapzone
 	/// All the areas that are affected by day/night
 	var/list/affected_areas = list()
 	/// Whether we have applied luminosity to the areas
@@ -80,8 +76,8 @@
 	var/target_color = color_lookup_table["[time]"]
 	var/target_light = light_lookup_table["[time]"]
 
-	if(linked_overmap_object && linked_overmap_object.weather_controller)
-		target_light *= (1-linked_overmap_object.weather_controller.skyblock)
+	if(mapzone && mapzone.weather_controller)
+		target_light *= (1-mapzone.weather_controller.skyblock)
 		if(target_light < 0)
 			target_light = 0
 
@@ -126,7 +122,7 @@
 	var/list/possible_blending_areas = list()
 	for(var/i in get_areas(/area))
 		var/area/my_area = i
-		if(!z_level_lookup["[my_area.z]"])
+		if(!mapzone.is_in_bounds(my_area))
 			continue
 		if(!my_area.outdoors)
 			possible_blending_areas += my_area
@@ -138,13 +134,10 @@
 		var/area/my_area = i
 		my_area.UpdateDayNightTurfs(TRUE, src)
 
-/datum/day_night_controller/New(list/space_level)
+/datum/day_night_controller/New(datum/map_zone/passed_mapzone)
 	. = ..()
-	z_levels = space_level
-	for(var/i in z_levels)
-		var/datum/space_level/level = i
-		z_level_lookup["[level.z_value]"] = TRUE
-		level.day_night_controller = src
+	mapzone = passed_mapzone
+	mapzone.day_night_controller = src
 	SSday_night.day_night_controllers += src
 
 	//Compile the lookup tables
@@ -168,22 +161,9 @@
 		color_lookup_table["[my_index]"] = next_color
 		light_lookup_table["[my_index]"] = next_light
 
-/datum/day_night_controller/proc/UnlinkOvermapObject()
-	linked_overmap_object.day_night_controller = null
-	linked_overmap_object = null
-
-/datum/day_night_controller/proc/LinkOvermapObject(datum/overmap_object/passed)
-	if(linked_overmap_object)
-		UnlinkOvermapObject()
-	linked_overmap_object = passed
-	linked_overmap_object.day_night_controller = src
-
 /// In theory this should never be destroyed, unless you plan to dynamically change existing z levels
 /datum/day_night_controller/Destroy()
-	if(linked_overmap_object)
-		UnlinkOvermapObject()
-	for(var/i in z_levels)
-		var/datum/space_level/level = i
-		level.day_night_controller = null
+	mapzone.day_night_controller = null
+	mapzone = null
 	SSday_night.day_night_controllers -= src
 	return ..()

@@ -48,7 +48,7 @@
 	return power_station
 
 /obj/machinery/teleport/hub/Bumped(atom/movable/AM)
-	if(is_centcom_level(z))
+	if(is_centcom_level(src))
 		to_chat(AM, SPAN_WARNING("You can't use this here!"))
 		return
 	if(is_ready())

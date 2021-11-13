@@ -81,7 +81,7 @@ This file contains the cult dagger and rune list code
 	A = get_area(src)
 	if(!src || QDELETED(src) || !Adjacent(user) || user.incapacitated() || !check_rune_turf(Turf, user))
 		return
-	if(ispath(rune_to_scribe, /obj/effect/rune/summon) && (!is_station_level(Turf.z) || initial(A.name) == "Space"))
+	if(ispath(rune_to_scribe, /obj/effect/rune/summon) && (!is_station_level(Turf) || initial(A.name) == "Space"))
 		to_chat(user, SPAN_CULTITALIC("<b>The veil is not weak enough here to summon a cultist, you must be on station!</b>"))
 		return
 	if(ispath(rune_to_scribe, /obj/effect/rune/apocalypse))
@@ -158,7 +158,7 @@ This file contains the cult dagger and rune list code
 		to_chat(user, SPAN_CULT("There is already a rune here."))
 		return FALSE
 	var/area/A = get_area(T)
-	if((!is_station_level(T.z) && !is_mining_level(T.z)) || (A && !(A.area_flags & CULT_PERMITTED)))
+	if((!is_station_level(T) && !is_mining_level(T)) || (A && !(A.area_flags & CULT_PERMITTED)))
 		to_chat(user, SPAN_WARNING("The veil is not weak enough here."))
 		return FALSE
 	return TRUE

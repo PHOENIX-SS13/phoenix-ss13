@@ -689,7 +689,7 @@
 			text += " [SPAN_GREENTEXT("survived")]"
 		if(fleecheck)
 			var/turf/T = get_turf(ply.current)
-			if(!T || !is_station_level(T.z))
+			if(!T || !is_station_level(T))
 				text += " while [SPAN_REDTEXT("fleeing the station")]"
 		if(ply.current.real_name != ply.name)
 			text += " as <b>[ply.current.real_name]</b>"

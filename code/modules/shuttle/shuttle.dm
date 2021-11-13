@@ -579,7 +579,7 @@
 	mode = SHUTTLE_RECALL
 
 /obj/docking_port/mobile/proc/enterTransit()
-	if((SSshuttle.lockdown && is_station_level(z)) || !canMove()) //emp went off, no escape
+	if((SSshuttle.lockdown && is_station_level(src)) || !canMove()) //emp went off, no escape
 		mode = SHUTTLE_IDLE
 		return
 	previous = null
@@ -589,8 +589,8 @@
 	if(destination == "overmap")
 		destination = null
 		timer = INFINITY
-		var/datum/space_level/S = SSmapping.get_level(z)
-		var/datum/overmap_object/current_overmap_object = S.related_overmap_object
+		var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+		var/datum/overmap_object/current_overmap_object = mapzone.related_overmap_object
 		var/spawn_x_coord
 		var/spawn_y_coord
 		var/datum/overmap_sun_system/system_to_spawn_in

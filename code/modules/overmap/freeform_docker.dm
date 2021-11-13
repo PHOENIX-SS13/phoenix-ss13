@@ -17,7 +17,6 @@
 	var/shuttleId = ""
 	var/shuttlePortId = ""
 	var/shuttlePortName = "custom location"
-	var/z_level
 
 	var/mob/current_user
 
@@ -42,7 +41,7 @@
 	qdel(eyeobj)
 	return ..()
 
-/datum/shuttle_freeform_docker/New(datum/overmap_shuttle_controller/passed_controller, mob/user, z)
+/datum/shuttle_freeform_docker/New(datum/overmap_shuttle_controller/passed_controller, mob/user, datum/sub_map_zone/subzone)
 	abort_action = new
 	abort_action.target = src
 	jump_action = new
@@ -52,10 +51,9 @@
 	place_action = new
 	place_action.target = src
 	my_controller = passed_controller
-	z_level = z
 	current_user = user
 	whitelist_turfs = typecacheof(whitelist_turfs)
-	StartCameraView()
+	StartCameraView(subzone)
 
 /datum/shuttle_freeform_docker/proc/CreateEye()
 	eyeobj = new()
@@ -82,10 +80,6 @@
 	var/turf/eyeturf = get_turf(eyeobj)
 	if(!eyeturf)
 		return SHUTTLE_DOCKER_BLOCKED
-	/*
-	if(!eyeturf.z || SSmapping.level_has_any_trait(eyeturf.z, locked_traits))
-		return SHUTTLE_DOCKER_BLOCKED
-	*/
 
 	. = SHUTTLE_DOCKER_LANDING_CLEAR
 	var/list/bounds = my_controller.overmap_obj.my_shuttle.return_coords(eyeobj.x - x_offset, eyeobj.y - y_offset, eyeobj.dir)
@@ -109,7 +103,8 @@
 
 /datum/shuttle_freeform_docker/proc/checkLandingTurf(turf/T, list/overlappers)
 	// Too close to the map edge is never allowed
-	if(!T || T.x <= 10 || T.y <= 10 || T.x >= world.maxx - 10 || T.y >= world.maxy - 10)
+	var/datum/sub_map_zone/eyesubzone = SSmapping.get_sub_zone(eyeobj)
+	if(!T || !eyesubzone.is_in_mapping_bounds(T))
 		return SHUTTLE_DOCKER_BLOCKED
 	// If it's one of our shuttle areas assume it's ok to be there
 	if(my_controller.overmap_obj.my_shuttle.shuttle_areas[T.loc])
@@ -167,16 +162,16 @@
 		pic.loc = locate(eyeobj.x + coords[1], eyeobj.y + coords[2], eyeobj.z)
 	checkLandingSpot()
 
-/datum/shuttle_freeform_docker/proc/StartCameraView()
+/datum/shuttle_freeform_docker/proc/StartCameraView(datum/sub_map_zone/subzone)
 	if(!eyeobj)
 		CreateEye()
 	if(!eyeobj.eye_initialized)
 		var/camera_location
-		var/turf/myturf = locate(round(world.maxx/2), round(world.maxy/2), z_level)
+		var/turf/myturf = subzone.get_center()
 		camera_location = myturf
 		eyeobj.eye_initialized = TRUE
 		give_eye_control(current_user)
-		eyeobj.setLoc(camera_location)
+		eyeobj.setLoc(camera_location, TRUE)
 
 /datum/shuttle_freeform_docker/proc/give_eye_control()
 	GrantActions()
@@ -189,7 +184,6 @@
 		if(should_supress_view_changes)
 			current_user.client.view_size.supress()
 		current_user.client.images += placement_images
-	//current_user.client.view_size.setTo(view_range)
 
 /datum/shuttle_freeform_docker/proc/remove_eye_control()
 	RemoveActions()
@@ -201,7 +195,6 @@
 
 	if(current_user.client)
 		current_user.client.images -= placement_images
-	//current_user.client.view_size.resetToDefault()
 
 	eyeobj.eye_user = null
 	current_user.remote_control = null
@@ -277,19 +270,11 @@
 	if(current_user.client)
 		to_chat(current_user, SPAN_NOTICE("Transit location designated."))
 
-	//my_shuttle.request(my_shuttle.freeform_port)
-
 	switch(SSshuttle.moveShuttle(my_shuttle.id, my_shuttle.freeform_port.id, TRUE))
 		if(0)
 			my_controller.busy = TRUE
 			my_controller.RemoveCurrentControl()
 			return TRUE
-		/*
-		if(1)
-			message_admins("we didnt do it")
-		else
-			message_admins("error")
-		*/
 
 	return TRUE
 

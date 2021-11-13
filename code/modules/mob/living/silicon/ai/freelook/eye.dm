@@ -82,6 +82,10 @@
 		if(!force_update && (destination == get_turf(src)) )
 			return //we are already here!
 		if (destination)
+			if(!force_update)
+				var/datum/map_zone/mapzone = SSmapping.get_map_zone(loc)
+				if(!mapzone.is_in_bounds(destination))
+					return
 			abstract_move(destination)
 		else
 			moveToNullspace()
@@ -197,7 +201,7 @@
 	eyeobj = new /mob/camera/ai_eye()
 	all_eyes += eyeobj
 	eyeobj.ai = src
-	eyeobj.setLoc(loc)
+	eyeobj.setLoc(loc, TRUE)
 	eyeobj.name = "[name] (AI Eye)"
 	eyeobj.real_name = eyeobj.name
 	set_eyeobj_visible(TRUE)

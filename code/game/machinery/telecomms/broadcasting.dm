@@ -44,8 +44,8 @@
 		If 0, the signal is audible
 		If nonzero, the signal may be partially inaudible or just complete gibberish.
 
-	@param level:
-		The list of Z levels that the sending radio is broadcasting to. Having 0 in the list broadcasts on all levels
+	@param map_zones:
+		The list of map zones that the sending radio is broadcasting to.
 
 	@param freq
 		The frequency of the signal
@@ -57,7 +57,10 @@
 	transmission_method = TRANSMISSION_SUBSPACE
 	var/server_type = /obj/machinery/telecomms/server
 	var/datum/signal/subspace/original
-	var/list/levels
+	/// Map zones that this signal is reaching
+	var/list/map_zones
+	/// Whether it reaches all sub zones
+	var/wideband = FALSE
 
 /datum/signal/subspace/New(data)
 	src.data = data || list()
@@ -66,11 +69,12 @@
 	var/datum/signal/subspace/copy = new
 	copy.original = src
 	copy.source = source
-	copy.levels = levels
+	copy.map_zones = map_zones
 	copy.frequency = frequency
 	copy.server_type = server_type
 	copy.transmission_method = transmission_method
 	copy.data = data.Copy()
+	copy.wideband = wideband
 	return copy
 
 /datum/signal/subspace/proc/mark_done()
@@ -119,13 +123,15 @@
 		"mods" = message_mods
 	)
 	var/turf/T = get_turf(source)
-	levels = list(T.z)
+	var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+	map_zones = list(mapzone)
 
 /datum/signal/subspace/vocal/copy()
 	var/datum/signal/subspace/vocal/copy = new(source, frequency, virt, language)
 	copy.original = src
 	copy.data = data.Copy()
-	copy.levels = levels
+	copy.map_zones = map_zones
+	copy.wideband = wideband
 	return copy
 
 // This is the meat function for making radios hear vocal transmissions.
@@ -144,9 +150,9 @@
 	var/list/radios = list()
 	switch (transmission_method)
 		if (TRANSMISSION_SUBSPACE)
-			// Reaches any radios on the levels
+			// Reaches any radios on the sub zones
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(R.can_receive(frequency, levels))
+				if(R.can_receive(frequency, map_zones))
 					radios += R
 
 			// Syndicate radios can hear all well-known radio channels
@@ -158,13 +164,13 @@
 		if (TRANSMISSION_RADIO)
 			// Only radios not currently in subspace mode
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(!R.subspace_transmission && R.can_receive(frequency, levels))
+				if(!R.subspace_transmission && R.can_receive(frequency, map_zones))
 					radios += R
 
 		if (TRANSMISSION_SUPERSPACE)
 			// Only radios which are independent
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(R.independent && R.can_receive(frequency, levels))
+				if(R.independent && R.can_receive(frequency, map_zones))
 					radios += R
 
 	// From the list of radios, find all mobs who can hear those.

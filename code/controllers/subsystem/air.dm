@@ -31,7 +31,6 @@ SUBSYSTEM_DEF(air)
 
 	//atmos singletons
 	var/list/gas_reactions = list()
-	var/list/z_level_to_gas_string = list()
 	var/list/planetary = list() //Lets cache static planetary mixes
 
 	//Special functions lists
@@ -592,9 +591,7 @@ GLOBAL_LIST_EMPTY(colored_images)
 	return pipe_init_dirs_cache[type]["[dir]"]
 
 /datum/controller/subsystem/air/proc/preprocess_gas_string(gas_string)
-	if(!z_level_to_gas_string[gas_string])
-		return gas_string
-	return z_level_to_gas_string[gas_string]
+	return gas_string
 
 /**
  * Adds a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.
@@ -720,8 +717,7 @@ GLOBAL_LIST_EMPTY(colored_images)
 				plane.alpha = 0
 			return TRUE
 
-/datum/controller/subsystem/air/proc/register_planetary_atmos(datum/atmosphere/atmos_datum, level)
+/datum/controller/subsystem/air/proc/register_planetary_atmos(datum/atmosphere/atmos_datum)
 	var/datum/gas_mixture/immutable/planetary/our_gasmix = new
 	our_gasmix.parse_string_immutable(atmos_datum.gas_string)
-	planetary["[level]"] = our_gasmix
-	z_level_to_gas_string["[level]"] = atmos_datum.gas_string
+	planetary["[atmos_datum.gas_string]"] = our_gasmix

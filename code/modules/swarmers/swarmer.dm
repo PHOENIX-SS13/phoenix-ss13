@@ -216,7 +216,7 @@
 	if(target == src)
 		return
 
-	if(!is_station_level(z) && !is_mining_level(z))
+	if(!is_station_level(src) && !is_mining_level(src))
 		to_chat(src, SPAN_WARNING("Our bluespace transceiver cannot locate a viable bluespace link, our teleportation abilities are useless in this area."))
 		return
 

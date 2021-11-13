@@ -46,7 +46,7 @@
 		burnt = TRUE
 	if(mapload && prob(33))
 		MakeDirty()
-	if(is_station_level(z))
+	if(is_station_level(src))
 		GLOB.station_turfs += src
 
 /turf/open/floor/proc/setup_broken_states()
@@ -56,7 +56,7 @@
 	return
 
 /turf/open/floor/Destroy()
-	if(is_station_level(z))
+	if(is_station_level(src))
 		GLOB.station_turfs -= src
 	return ..()
 

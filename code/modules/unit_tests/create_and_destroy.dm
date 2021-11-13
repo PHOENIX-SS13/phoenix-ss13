@@ -120,6 +120,9 @@
 	ignore += typesof(/obj/item/melee/blood_magic)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
+
+	//Change the turf for consistency
+	spawn_at.ChangeTurf(/turf/open/floor/wood, /turf/baseturf_skipover)
 	var/baseturf_count = length(spawn_at.baseturfs)
 
 	for(var/type_path in typesof(/atom/movable, /turf) - ignore) //No areas please

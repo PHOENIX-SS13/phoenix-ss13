@@ -480,7 +480,7 @@ GLOBAL_VAR(station_nuke_source)
 	var/turf/bomb_location = get_turf(src)
 	var/area/A = get_area(bomb_location)
 
-	if(bomb_location && is_station_level(bomb_location.z))
+	if(bomb_location && is_station_level(bomb_location))
 		if(istype(A, /area/space))
 			off_station = NUKE_NEAR_MISS
 		if((bomb_location.x < (128-NUKERANGE)) || (bomb_location.x > (128+NUKERANGE)) || (bomb_location.y < (128-NUKERANGE)) || (bomb_location.y > (128+NUKERANGE)))
@@ -544,7 +544,7 @@ GLOBAL_VAR(station_nuke_source)
 	if(!bomb_location)
 		disarm()
 		return
-	if(is_station_level(bomb_location.z))
+	if(is_station_level(bomb_location))
 		addtimer(CALLBACK(src, .proc/really_actually_explode), 110)
 	else
 		visible_message(SPAN_NOTICE("[src] fizzes ominously."))
@@ -576,7 +576,7 @@ GLOBAL_VAR(station_nuke_source)
 
 	for (var/obj/machinery/atmospherics/components/unary/vent_scrubber/vent in GLOB.machines)
 		var/turf/vent_turf = get_turf(vent)
-		if (!vent_turf || !is_station_level(vent_turf.z) || vent.welded)
+		if (!vent_turf || !is_station_level(vent_turf) || vent.welded)
 			continue
 
 		var/datum/reagents/beer = new /datum/reagents(1000)

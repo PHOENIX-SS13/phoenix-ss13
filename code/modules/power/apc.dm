@@ -1129,7 +1129,7 @@
 	if(!malf.can_shunt)
 		to_chat(malf, SPAN_WARNING("You cannot shunt!"))
 		return
-	if(!is_station_level(z))
+	if(!is_station_level(src))
 		return
 	malf.ShutOffDoomsdayDevice()
 	occupier = new /mob/living/silicon/ai(src, malf.laws, malf) //DEAR GOD WHY? //IKR????

@@ -175,10 +175,6 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 						var/max = world.maxx-TRANSITIONEDGE
 						var/min = 1+TRANSITIONEDGE
 						var/list/possible_transtitons = list()
-						for(var/AZ in SSmapping.z_list)
-							var/datum/space_level/D = AZ
-							if (D.linkage == CROSSLINKED)
-								possible_transtitons += D.z_value
 						var/_z = pick(possible_transtitons)
 						var/_x = rand(min,max)
 						var/_y = rand(min,max)
@@ -193,10 +189,6 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 				var/max = world.maxx-TRANSITIONEDGE
 				var/min = 1+TRANSITIONEDGE
 				var/list/possible_transtitons = list()
-				for(var/AZ in SSmapping.z_list)
-					var/datum/space_level/D = AZ
-					if (D.linkage == CROSSLINKED)
-						possible_transtitons += D.z_value
 				var/_z = pick(possible_transtitons)
 				var/_x = rand(min,max)
 				var/_y = rand(min,max)

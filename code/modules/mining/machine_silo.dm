@@ -29,7 +29,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/plastic,
 		)
 	AddComponent(/datum/component/material_container, materials_list, INFINITY, MATCONTAINER_NO_INSERT, allowed_items=/obj/item/stack)
-	if (!GLOB.ore_silo_default && mapload && is_station_level(z))
+	if (!GLOB.ore_silo_default && mapload && is_station_level(src))
 		GLOB.ore_silo_default = src
 
 /obj/machinery/ore_silo/Destroy()

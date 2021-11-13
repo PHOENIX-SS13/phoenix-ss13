@@ -275,7 +275,7 @@
 				return FALSE
 		else //Otherwise disk is safe when on station
 			var/turf/T = get_turf(D)
-			if(!T || !is_station_level(T.z))
+			if(!T || !is_station_level(T))
 				return FALSE
 	return TRUE
 
@@ -402,4 +402,4 @@
 /proc/syndies_escaped()
 	var/obj/docking_port/mobile/S = SSshuttle.getShuttle("syndicate")
 	var/obj/docking_port/stationary/transit/T = locate() in S.loc
-	return S && (is_centcom_level(S.z) || T)
+	return S && (is_centcom_level(S) || T)

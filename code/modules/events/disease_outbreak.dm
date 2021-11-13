@@ -33,7 +33,7 @@
 		var/turf/T = get_turf(H)
 		if(!T)
 			continue
-		if(!is_station_level(T.z))
+		if(!is_station_level(T))
 			continue
 		if(!H.client)
 			continue

@@ -99,9 +99,9 @@
 		return
 	if(find_controller)
 		if(SSmapping && SSmapping.z_list) //Goddamn areas that initialize out of order?!
-			var/datum/space_level/level = SSmapping.z_list[z]
-			if(level && level.day_night_controller)
-				newsub = level.day_night_controller
+			var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+			if(mapzone && mapzone.day_night_controller)
+				newsub = mapzone.day_night_controller
 				rebuild = TRUE
 		if(!newsub && subbed_day_night_controller)
 			full_unsub = TRUE

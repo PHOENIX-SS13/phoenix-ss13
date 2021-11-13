@@ -133,7 +133,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 			continue
 
 		// Machinery and the target should be on the same level or different levels of the same station
-		if(pos.z != z && (!is_station_level(pos.z) || !is_station_level(z)))
+		if(pos.z != z && (!is_station_level(pos) || !is_station_level(src)))
 			continue
 
 		var/sensor_mode

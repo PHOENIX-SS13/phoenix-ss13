@@ -387,7 +387,7 @@ SUBSYSTEM_DEF(shuttle)
 				continue
 
 		var/turf/T = get_turf(thing)
-		if(T && is_station_level(T.z))
+		if(T && is_station_level(T))
 			callShuttle = FALSE
 			break
 

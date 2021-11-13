@@ -483,7 +483,7 @@
 			for(var/human in shuffle(GLOB.human_list))
 				H = human
 				var/found = FALSE
-				if(!is_station_level(H.z))
+				if(!is_station_level(H))
 					continue
 				if(!H.HasDisease(D))
 					found = H.ForceContractDisease(D)

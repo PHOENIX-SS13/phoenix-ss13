@@ -552,7 +552,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			continue
 		. += borg
 
-//Returns a list of AI's
+//Returns a list of AI's //This needs to be refactored
 /proc/active_ais(check_mind=FALSE, z = null)
 	. = list()
 	for(var/mob/living/silicon/ai/ai as anything in GLOB.ai_list)
@@ -563,7 +563,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(check_mind)
 			if(!ai.mind)
 				continue
-		if(z && !(z == ai.z) && (!is_station_level(z) || !is_station_level(ai.z))) //if a Z level was specified, AND the AI is not on the same level, AND either is off the station...
+		if(z && !(z == ai.z) && (!is_station_level(ai) || !is_station_level(ai))) //if a Z level was specified, AND the AI is not on the same level, AND either is off the station...
 			continue
 		. += ai
 

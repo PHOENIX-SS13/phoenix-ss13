@@ -80,6 +80,6 @@
 	AddComponent(/datum/component/stationloving, FALSE, TRUE)
 
 /obj/structure/blob/special/core/onTransitZ(old_z, new_z)
-	if(overmind && is_station_level(new_z))
+	if(overmind && is_station_level(src))
 		overmind.forceMove(get_turf(src))
 	return ..()

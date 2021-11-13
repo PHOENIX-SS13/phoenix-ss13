@@ -283,12 +283,12 @@
 	if(!user_area || !user_turf || (user_area.type in excluded_areas))
 		to_chat(user, SPAN_WARNING("Something is preventing you from using the staff here."))
 		return
-	var/datum/weather_controller/weather_controller = SSmapping.GetLevelWeatherController(user_turf.z)
+	var/datum/weather_controller/weather_controller = SSmapping.GetMapZoneWeatherController(user_turf)
 	var/datum/weather/A
 	if(weather_controller.current_weathers)
 		for(var/V in weather_controller.current_weathers)
 			var/datum/weather/W = V
-			if((user_turf.z in W.impacted_z_levels) && W.area_type == user_area.type)
+			if(W.my_controller.mapzone.is_in_bounds(user_turf) && W.area_type == user_area.type)
 				A = W
 				break
 

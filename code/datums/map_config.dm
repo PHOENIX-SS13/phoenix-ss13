@@ -63,6 +63,11 @@
 
 	var/ore_node_seeder_type
 
+	/// Whether the levels of the station levels self loop
+	var/self_looping = TRUE
+	/// Amount of margin padding added to each side of the map. This is required to be atleast 2 for selflooping
+	var/map_margin = 5
+
 /datum/map_config/New()
 	//Make sure that all levels in station have the default station traits, unless they're overriden
 	. = ..()

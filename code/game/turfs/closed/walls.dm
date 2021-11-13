@@ -61,11 +61,11 @@
 	paint_wall(wall_paint) //To ensure varedit wall paint works properly
 	if(mapload)
 		set_materials(plating_material, reinf_material)
-	if(is_station_level(z))
+	if(is_station_level(src))
 		GLOB.station_turfs += src
 
 /turf/closed/wall/Destroy()
-	if(is_station_level(z))
+	if(is_station_level(src))
 		GLOB.station_turfs -= src
 	return ..()
 

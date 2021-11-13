@@ -459,7 +459,7 @@
 
 /obj/item/toy/crayon/proc/can_claim_for_gang(mob/user, atom/target, datum/antagonist/gang/user_gang)
 	var/area/A = get_area(target)
-	if(!A || (!is_station_level(A.z)))
+	if(!A || (!is_station_level(A)))
 		to_chat(user, SPAN_WARNING("[A] is unsuitable for tagging."))
 		return FALSE
 

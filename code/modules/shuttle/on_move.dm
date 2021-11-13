@@ -227,7 +227,7 @@ All ShuttleMove procs go here
 
 /obj/machinery/computer/auxiliary_base/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
-	if(is_mining_level(z)) //Avoids double logging and landing on other Z-levels due to badminnery
+	if(is_mining_level(src)) //Avoids double logging and landing on other Z-levels due to badminnery
 		SSblackbox.record_feedback("associative", "colonies_dropped", 1, list("x" = x, "y" = y, "z" = z))
 
 /obj/machinery/gravity_generator/main/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
@@ -293,7 +293,7 @@ All ShuttleMove procs go here
 	// If the pod was launched, the storage will always open. The reserved_level check
 	// ignores the movement of the shuttle from the transit level to
 	// the station as it is loaded in.
-	if (oldT && !is_reserved_level(oldT.z))
+	if (oldT && !is_reserved_level(oldT))
 		unlocked = TRUE
 
 /************************************Mob move procs************************************/

@@ -137,7 +137,7 @@
 	visible_message(
 		SPAN_DANGER("[src] devours [L]!"),
 		SPAN_USERDANGER("You feast on [L], restoring your health!"))
-	if(!is_station_level(z) || client) //NPC monsters won't heal while on station
+	if(!is_station_level(src) || client) //NPC monsters won't heal while on station
 		adjustBruteLoss(-L.maxHealth/2)
 	L.gib()
 	return TRUE

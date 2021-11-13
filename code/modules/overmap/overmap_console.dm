@@ -7,8 +7,8 @@
 	req_access = list( )
 
 /obj/machinery/computer/overmap_console/ui_interact(mob/user, datum/tgui/ui)
-	var/datum/space_level/SL = SSmapping.z_list[z]
-	if(!SL.related_overmap_object || !SL.is_overmap_controllable)
+	var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+	if(!mapzone.related_overmap_object || !mapzone.related_overmap_object.is_overmap_controllable)
 		return
 	var/list/dat = list()
 	dat += "<center><a href='?src=[REF(src)];task=overmap_view'>Overmap View</a>"
@@ -21,10 +21,10 @@
 	var/mob/user = usr
 	if(!isliving(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	var/datum/space_level/SL = SSmapping.z_list[z]
-	if(!SL.related_overmap_object || !SL.is_overmap_controllable)
+	var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+	if(!mapzone.related_overmap_object || !mapzone.related_overmap_object.is_overmap_controllable)
 		return
-	var/datum/overmap_object/shuttle/ov_obj = SL.related_overmap_object
+	var/datum/overmap_object/shuttle/ov_obj = mapzone.related_overmap_object
 	switch(href_list["task"])
 		if("overmap_view")
 			ov_obj.GrantOvermapView(usr, get_turf(src))

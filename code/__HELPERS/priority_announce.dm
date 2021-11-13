@@ -66,7 +66,7 @@
 		mob_to_teleport.overlay_fullscreen("emergency_meeting", /atom/movable/screen/fullscreen/emergency_meeting, 1)
 		addtimer(CALLBACK(mob_to_teleport, /mob/.proc/clear_fullscreen, "emergency_meeting"), 3 SECONDS)
 
-		if (is_station_level(mob_to_teleport.z)) //teleport the mob to the crew meeting
+		if (is_station_level(mob_to_teleport)) //teleport the mob to the crew meeting
 			var/turf/target
 			var/list/turf_list = get_area_turfs(button_zone)
 			while (!target && turf_list.len)

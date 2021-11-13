@@ -195,7 +195,7 @@ GLOBAL_LIST_INIT(summoned_magic_objectives, list(
 
 	for(var/mob/living/carbon/human/unarmed_human in GLOB.player_list)
 		var/turf/turf_check = get_turf(unarmed_human)
-		if(turf_check && is_away_level(turf_check.z))
+		if(turf_check && is_away_level(turf_check))
 			continue
 		give_magic(unarmed_human)
 
@@ -223,7 +223,7 @@ GLOBAL_LIST_INIT(summoned_magic_objectives, list(
 
 	for(var/mob/living/carbon/human/unarmed_human in GLOB.player_list)
 		var/turf/turf_check = get_turf(unarmed_human)
-		if(turf_check && is_away_level(turf_check.z))
+		if(turf_check && is_away_level(turf_check))
 			continue
 		give_guns(unarmed_human)
 

@@ -30,7 +30,7 @@ handles linking back and forth.
 	RegisterSignal(parent, COMSIG_ATOM_TOOL_ACT(TOOL_MULTITOOL), .proc/OnMultitool)
 
 	var/turf/T = get_turf(parent)
-	if (force_connect || (mapload && is_station_level(T.z)))
+	if (force_connect || (mapload && is_station_level(T)))
 		addtimer(CALLBACK(src, .proc/LateInitialize))
 	else if (allow_standalone)
 		_MakeLocal()

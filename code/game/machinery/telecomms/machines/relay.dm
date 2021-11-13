@@ -2,8 +2,8 @@
 	The relay idles until it receives information. It then passes on that information
 	depending on where it came from.
 
-	The relay is needed in order to send information pass Z levels. It must be linked
-	with a HUB, the only other machine that can send/receive pass Z levels.
+	The relay is needed in order to send information pass map zones. It must be linked
+	with a HUB, the only other machine that can send/receive pass map zones.
 */
 
 /obj/machinery/telecomms/relay
@@ -20,10 +20,11 @@
 	var/receiving = 1
 
 /obj/machinery/telecomms/relay/receive_information(datum/signal/subspace/signal, obj/machinery/telecomms/machine_from)
-	// Add our level and send it back
+	// Add our map zones and send it back
 	var/turf/T = get_turf(src)
-	if(can_send(signal) && T)
-		signal.levels |= T.z
+	var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+	if(can_send(signal) && mapzone)
+		signal.map_zones |= mapzone
 
 // Checks to see if it can send/receive.
 

@@ -179,7 +179,7 @@
 /datum/computer_file/program/secureye/proc/get_available_cameras()
 	var/list/L = list()
 	for (var/obj/machinery/camera/cam in GLOB.cameranet.cameras)
-		if(!is_station_level(cam.z))//Only show station cameras.
+		if(!is_station_level(cam))//Only show station cameras.
 			continue
 		L.Add(cam)
 	var/list/camlist = list()

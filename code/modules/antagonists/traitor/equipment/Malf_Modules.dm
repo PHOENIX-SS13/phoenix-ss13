@@ -189,7 +189,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/nuke_station/Activate()
 	var/turf/T = get_turf(owner)
-	if(!istype(T) || !is_station_level(T.z))
+	if(!istype(T) || !is_station_level(T))
 		to_chat(owner, SPAN_WARNING("You cannot activate the doomsday device while off-station!"))
 		return
 	if(tgui_alert(owner, "Send arming signal? (true = arm, false = cancel)", "purge_all_life()", list("confirm = TRUE;", "confirm = FALSE;")) != "confirm = TRUE;")
@@ -348,7 +348,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /obj/machinery/doomsday_device/process()
 	var/turf/T = get_turf(src)
-	if(!T || !is_station_level(T.z))
+	if(!T || !is_station_level(T))
 		minor_announce("DOOMSDAY DEVICE OUT OF STATION RANGE, ABORTING", "ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
 		owner.ShutOffDoomsdayDevice()
 		return
@@ -369,7 +369,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
 		var/turf/T = get_turf(L)
-		if(!T || !is_station_level(T.z))
+		if(!T || !is_station_level(T))
 			continue
 		if(issilicon(L))
 			continue
@@ -397,7 +397,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/lockdown/Activate()
 	for(var/obj/machinery/door/D in GLOB.airlocks)
-		if(!is_station_level(D.z))
+		if(!is_station_level(D))
 			continue
 		INVOKE_ASYNC(D, /obj/machinery/door.proc/hostile_lockdown, owner)
 		addtimer(CALLBACK(D, /obj/machinery/door.proc/disable_lockdown), 900)
@@ -675,7 +675,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/break_air_alarms/Activate()
 	for(var/obj/machinery/airalarm/AA in GLOB.machines)
-		if(!is_station_level(AA.z))
+		if(!is_station_level(AA))
 			continue
 		AA.obj_flags |= EMAGGED
 	to_chat(owner, SPAN_NOTICE("All air alarm safeties on the station have been overridden. Air alarms may now use the Flood environmental mode."))
@@ -699,7 +699,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/break_fire_alarms/Activate()
 	for(var/obj/machinery/firealarm/F in GLOB.machines)
-		if(!is_station_level(F.z))
+		if(!is_station_level(F))
 			continue
 		F.obj_flags |= EMAGGED
 		F.update_appearance()
@@ -724,7 +724,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/emergency_lights/Activate()
 	for(var/obj/machinery/light/L in GLOB.machines)
-		if(is_station_level(L.z))
+		if(is_station_level(L))
 			L.no_emergency = TRUE
 			INVOKE_ASYNC(L, /obj/machinery/light/.proc/update, FALSE)
 		CHECK_TICK

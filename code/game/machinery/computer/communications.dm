@@ -515,8 +515,7 @@
 /// Returns whether or not the communications console can communicate with the station
 /obj/machinery/computer/communications/proc/has_communication()
 	var/turf/current_turf = get_turf(src)
-	var/z_level = current_turf.z
-	return is_station_level(z_level) || is_centcom_level(z_level)
+	return is_station_level(current_turf) || is_centcom_level(current_turf)
 
 /obj/machinery/computer/communications/proc/set_state(mob/user, new_state)
 	if (issilicon(user))

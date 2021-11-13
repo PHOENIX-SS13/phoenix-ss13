@@ -1,5 +1,4 @@
 #define SHUTTLE_VELOCITY_METEORS_DIRECTIONAL_THRESHOLD 0.5
-#define ASTEROID_AND_DUST_PADDING 60
 
 /datum/overmap_object/hazard
 	name = "badly coded hazard"
@@ -104,9 +103,9 @@
 				var/turf/pickedstart = shuttle.transit_instance.GetActionSideTurf(dir)
 				var/turf/pickedgoal = shuttle.transit_instance.GetActionSideTurf(REVERSE_DIR(dir))
 				new picked_meteor_type(pickedstart, pickedgoal)
-			else if(length(shuttle.related_levels))
-				var/datum/space_level/hit_level = pick(shuttle.related_levels)
-				spawn_meteor(picked_meteor_type, dir, hit_level.z_value, ASTEROID_AND_DUST_PADDING)
+			else if(shuttle.related_map_zone)
+				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
+				spawn_meteor(picked_meteor_type, dir, picked_sub)
 
 /datum/overmap_object/hazard/asteroid/get_random_icon_state()
 	return pick(list("meteor1", "meteor2", "meteor3", "meteor4"))
@@ -152,9 +151,9 @@
 				var/turf/pickedstart = shuttle.transit_instance.GetActionSideTurf(dir)
 				var/turf/pickedgoal = shuttle.transit_instance.GetActionSideTurf(REVERSE_DIR(dir))
 				new picked_meteor_type(pickedstart, pickedgoal)
-			else if(length(shuttle.related_levels))
-				var/datum/space_level/hit_level = pick(shuttle.related_levels)
-				spawn_meteor(picked_meteor_type, dir, hit_level.z_value, ASTEROID_AND_DUST_PADDING)
+			else if(shuttle.related_map_zone)
+				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
+				spawn_meteor(picked_meteor_type, dir, picked_sub)
 
 /datum/overmap_object/hazard/dust/get_random_icon_state()
 	return pick(list("dust1", "dust2", "dust3", "dust4"))
@@ -189,9 +188,9 @@
 				else
 					//EMP
 					empulse(pickedturf, 2, 6)
-			else if(length(shuttle.related_levels))
-				var/datum/space_level/picked_level = pick(shuttle.related_levels)
-				var/turf/epicentre_turf = GetRandomTurfInZLevelWithMargin(ELECTRICAL_STORM_SEARCH_MARGIN, picked_level)
+			else if(shuttle.related_map_zone)
+				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
+				var/turf/epicentre_turf = picked_sub.get_random_position()
 				if(prob(50))
 					//Light discharge
 					for(var/a in GLOB.apcs_list) //Yes very inefficient
@@ -248,8 +247,9 @@
 				if(shuttle_velocity > 0.5)
 					set_dir = shuttle.current_parallax_dir
 				new carp_type(shuttle.transit_instance.GetActionSideTurf(set_dir))
-			else if(length(shuttle.related_levels))
-				var/datum/space_level/spawn_level = pick(shuttle.related_levels)
+			else if(shuttle.related_map_zone)
+				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
+				var/datum/space_level/spawn_level = SSmapping.z_list[picked_sub.z_value]
 				var/carp_spawn_list = GetLandmarksInZLevel(/obj/effect/landmark/carpspawn, spawn_level)
 				if(!length(carp_spawn_list))
 					continue
@@ -261,4 +261,3 @@
 	return pick(list("carp1", "carp2", "carp3", "carp4"))
 
 #undef SHUTTLE_VELOCITY_METEORS_DIRECTIONAL_THRESHOLD
-#undef ASTEROID_AND_DUST_PADDING

@@ -261,7 +261,7 @@
 /obj/item/hand_tele/proc/can_teleport_notifies(mob/user)
 	var/turf/current_location = get_turf(user)
 	var/area/current_area = current_location.loc
-	if (!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location.z) || !isturf(user.loc))
+	if (!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))
 		to_chat(user, SPAN_NOTICE("[src] is malfunctioning."))
 		return FALSE
 
@@ -296,8 +296,9 @@
 		var/obj/item/bodypart/head/head = itemUser.get_bodypart(BODY_ZONE_HEAD)
 		if(head)
 			head.drop_limb()
-			var/list/safeLevels = SSmapping.levels_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
-			head.forceMove(locate(rand(1, world.maxx), rand(1, world.maxy), pick(safeLevels)))
+			var/list/safeZones = SSmapping.sub_zones_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
+			var/datum/sub_map_zone/submap = pick(safeZones)
+			head.forceMove(submap.get_random_position())
 			itemUser.visible_message(SPAN_SUICIDE("The portal snaps closed taking [user]'s head with it!"))
 		else
 			itemUser.visible_message(SPAN_SUICIDE("[user] looks even further depressed as they realize they do not have a head...and suddenly dies of shame!"))

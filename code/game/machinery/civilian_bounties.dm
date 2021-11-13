@@ -293,7 +293,7 @@
 
 /obj/item/bounty_cube/process(delta_time)
 	//if our nag cooldown has finished and we aren't on Centcom or in transit, then nag
-	if(COOLDOWN_FINISHED(src, next_nag_time) && !is_centcom_level(z) && !is_reserved_level(z))
+	if(COOLDOWN_FINISHED(src, next_nag_time) && !is_centcom_level(src) && !is_reserved_level(src))
 		//set up our nag message
 		var/nag_message = "[src] is unsent in [get_area(src)]."
 

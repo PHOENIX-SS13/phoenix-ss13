@@ -3,7 +3,7 @@
 	var/applied = FALSE
 	var/datum/overmap_object/shuttle/overmap_object
 	var/obj/docking_port/mobile/shuttle
-	var/datum/space_level/z_level
+	var/datum/map_zone/mapzone
 
 /datum/shuttle_extension/proc/ApplyToPosition(turf/position)
 	if(IsApplied())
@@ -13,27 +13,27 @@
 		if(M)
 			AddToShuttle(M)
 	else
-		var/datum/space_level/level = SSmapping.z_list[position.z]
-		if(level && level.related_overmap_object && level.is_overmap_controllable)
-			AddToZLevel(level)
+		var/datum/map_zone/foundzone = SSmapping.get_map_zone(position)
+		if(foundzone && foundzone.related_overmap_object && foundzone.related_overmap_object.is_overmap_controllable)
+			AddToZLevel(foundzone)
 
 /datum/shuttle_extension/proc/IsApplied()
-	return (overmap_object || shuttle || z_level)
+	return (overmap_object || shuttle || mapzone)
 
-/datum/shuttle_extension/proc/AddToZLevel(datum/space_level/z_level_to_add)
-	if(z_level)
+/datum/shuttle_extension/proc/AddToZLevel(datum/map_zone/mapzone_to_add)
+	if(mapzone)
 		WARNING("Shuttle extension registered to a z level, while already registered to one")
 		return
-	z_level = z_level_to_add
-	z_level.all_extensions += src
-	if(z_level.related_overmap_object && z_level.is_overmap_controllable)
-		AddToOvermapObject(z_level.related_overmap_object)
+	mapzone = mapzone_to_add
+	mapzone.all_extensions += src
+	if(mapzone.related_overmap_object)
+		AddToOvermapObject(mapzone.related_overmap_object)
 
 /datum/shuttle_extension/proc/RemoveFromZLevel()
-	if(z_level.related_overmap_object)
+	if(mapzone.related_overmap_object)
 		RemoveFromOvermapObject()
-	z_level.all_extensions -= src
-	z_level = null
+	mapzone.all_extensions -= src
+	mapzone = null
 
 /datum/shuttle_extension/proc/AddToShuttle(obj/docking_port/mobile/shuttle_to_add)
 	if(shuttle)
@@ -62,7 +62,7 @@
 	overmap_object = null
 
 /datum/shuttle_extension/proc/RemoveExtension()
-	if(z_level)
+	if(mapzone)
 		RemoveFromZLevel()
 	else if(shuttle)
 		RemoveFromShuttle()

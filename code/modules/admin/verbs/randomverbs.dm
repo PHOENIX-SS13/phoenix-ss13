@@ -775,7 +775,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 /client/proc/run_weather()
 	set category = "Admin.Events"
 	set name = "Run Weather"
-	set desc = "Triggers a weather on the z-level you choose."
+	set desc = "Triggers a weather on the map-zone you choose."
 
 	if(!holder)
 		return
@@ -784,18 +784,17 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(!weather_type)
 		return
 
-	var/turf/T = get_turf(mob)
-	var/z_level = input("Z-Level to target?", "Z-Level", T?.z) as num|null
-	if(!isnum(z_level))
+	var/datum/map_zone/mapzone = input("Map Zone to target?", "Map Zone") as null|anything in SSmapping.map_zones
+	if(!mapzone)
 		return
 
-	var/datum/weather_controller/weather_controller = SSmapping.GetLevelWeatherController(z_level)
+	var/datum/weather_controller/weather_controller = mapzone.weather_controller
 	if(!weather_controller)
 		return
 	weather_controller.RunWeather(weather_type)
 
-	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level].")
-	log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level].")
+	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
+	log_admin("[key_name(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
 
 /client/proc/mass_zombie_infection()

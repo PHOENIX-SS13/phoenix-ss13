@@ -28,7 +28,7 @@
 	if(locate(/obj/effect/rune) in T)
 		to_chat(owner, SPAN_CULT("There is already a rune here."))
 		return FALSE
-	if(!is_station_level(T.z) && !is_mining_level(T.z))
+	if(!is_station_level(T) && !is_mining_level(T))
 		to_chat(owner, SPAN_WARNING("The veil is not weak enough here."))
 		return FALSE
 	return TRUE

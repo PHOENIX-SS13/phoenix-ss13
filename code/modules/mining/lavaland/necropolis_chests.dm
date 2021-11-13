@@ -25,7 +25,7 @@
 
 	if(!istype(item, /obj/item/skeleton_key) || spawned_loot)
 		return FALSE
-	var/loot = rand(1,20)
+	var/loot = rand(1,19)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -59,23 +59,21 @@
 		if(11)
 			new /obj/item/clothing/suit/space/hardsuit/berserker(src)
 		if(12)
-			new /obj/item/jacobs_ladder(src)
-		if(13)
 			new /obj/item/guardiancreator/miner(src)
-		if(14)
+		if(13)
 			new /obj/item/warp_cube/red(src)
-		if(15)
+		if(14)
 			new /obj/item/wisp_lantern(src)
-		if(16)
+		if(15)
 			new /obj/item/immortality_talisman(src)
-		if(17)
+		if(16)
 			new /obj/item/book/granter/spell/summonitem(src)
-		if(18)
+		if(17)
 			new /obj/item/book_of_babel(src)
-		if(19)
+		if(18)
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
-		if(20)
+		if(19)
 			new /obj/item/clothing/neck/necklace/memento_mori(src)
 	spawned_loot = TRUE
 	qdel(item)
@@ -650,31 +648,6 @@
 		playsound(exposed_carbon.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		exposed_carbon.adjustBruteLoss(20)
 		exposed_carbon.emote("scream")
-
-
-/obj/item/jacobs_ladder
-	name = "jacob's ladder"
-	desc = "A celestial ladder that violates the laws of physics."
-	icon = 'icons/obj/structures.dmi'
-	icon_state = "ladder00"
-
-/obj/item/jacobs_ladder/attack_self(mob/user)
-	var/turf/T = get_turf(src)
-	var/ladder_x = T.x
-	var/ladder_y = T.y
-	to_chat(user, SPAN_NOTICE("You unfold the ladder. It extends much farther than you were expecting."))
-	var/last_ladder = null
-	for(var/i in 1 to world.maxz)
-		if(is_centcom_level(i) || is_reserved_level(i) || is_away_level(i))
-			continue
-		var/turf/T2 = locate(ladder_x, ladder_y, i)
-		last_ladder = new /obj/structure/ladder/unbreakable/jacob(T2, null, last_ladder)
-	qdel(src)
-
-// Inherit from unbreakable but don't set ID, to suppress the default Z linkage
-/obj/structure/ladder/unbreakable/jacob
-	name = "jacob's ladder"
-	desc = "An indestructible celestial ladder that violates the laws of physics."
 
 //Concussive Gauntlets
 /obj/item/clothing/gloves/gauntlets

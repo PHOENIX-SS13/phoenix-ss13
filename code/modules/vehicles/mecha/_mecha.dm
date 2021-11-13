@@ -649,7 +649,7 @@
 			to_chat(occupants, "[icon2html(src, occupants)][SPAN_WARNING("Insufficient power to move!")]")
 			TIMER_COOLDOWN_START(src, COOLDOWN_MECHA_MESSAGE, 2 SECONDS)
 		return FALSE
-	if(lavaland_only && is_mining_level(z))
+	if(lavaland_only && is_mining_level(src))
 		if(!TIMER_COOLDOWN_CHECK(src, COOLDOWN_MECHA_MESSAGE))
 			to_chat(occupants, "[icon2html(src, occupants)][SPAN_WARNING("Invalid Environment.")]")
 			TIMER_COOLDOWN_START(src, COOLDOWN_MECHA_MESSAGE, 2 SECONDS)

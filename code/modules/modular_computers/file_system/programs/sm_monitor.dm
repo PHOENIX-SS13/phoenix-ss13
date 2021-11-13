@@ -52,7 +52,7 @@
 		return
 	for(var/obj/machinery/power/supermatter_crystal/S in GLOB.machines)
 		// Delaminating, not within coverage, not on a tile.
-		if (!isturf(S.loc) || !(is_station_level(S.z) || is_mining_level(S.z) || S.z == T.z))
+		if (!isturf(S.loc) || !(is_station_level(S) || is_mining_level(S) || S.z == T.z))
 			continue
 		supermatters.Add(S)
 		RegisterSignal(S, COMSIG_PARENT_QDELETING, .proc/react_to_del)

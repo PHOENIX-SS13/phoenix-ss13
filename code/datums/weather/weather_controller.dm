@@ -11,21 +11,17 @@
 	var/next_weather = 0
 	/// Current weathers this controller is handling. Associative of type to reference
 	var/list/current_weathers
-	/// The z levels we are controlling
-	var/list/z_levels
-	/// The linked overmap object of our controller
-	var/datum/overmap_object/linked_overmap_object
+	/// The linked map zone of our controller
+	var/datum/map_zone/mapzone
 	/// Percentage of how much we're blocking the sky, for the day/night controller to read from
 	var/skyblock = 0
 	/// A simple cache to make sure we dont call updates with no changes
 	var/last_checked_skyblock = 0
 
-/datum/weather_controller/New(list/space_level)
+/datum/weather_controller/New(datum/map_zone/passed_mapzone)
 	. = ..()
-	z_levels = space_level
-	for(var/i in z_levels)
-		var/datum/space_level/level = i
-		level.weather_controller = src
+	mapzone = passed_mapzone
+	mapzone.weather_controller = src
 	SSweather.weather_controllers += src
 	RollNextWeather()
 
@@ -33,30 +29,17 @@
 	if(skyblock == last_checked_skyblock)
 		return
 	last_checked_skyblock = skyblock
-	if(linked_overmap_object && linked_overmap_object.day_night_controller)
-		linked_overmap_object.day_night_controller.update_areas()
-
-/datum/weather_controller/proc/UnlinkOvermapObject()
-	linked_overmap_object.weather_controller = null
-	linked_overmap_object = null
-
-/datum/weather_controller/proc/LinkOvermapObject(datum/overmap_object/passed)
-	if(linked_overmap_object)
-		UnlinkOvermapObject()
-	linked_overmap_object = passed
-	linked_overmap_object.weather_controller = src
+	if(mapzone && mapzone.day_night_controller)
+		mapzone.day_night_controller.update_areas()
 
 /// In theory this should never be destroyed, unless you plan to dynamically change existing z levels
 /datum/weather_controller/Destroy()
-	if(linked_overmap_object)
-		UnlinkOvermapObject()
+	mapzone.weather_controller = null
+	mapzone = null
 	if(current_weathers)
 		for(var/i in current_weathers)
 			var/datum/weather/W = i
 			W.end()
-	for(var/i in z_levels)
-		var/datum/space_level/level = i
-		level.weather_controller = null
 	SSweather.weather_controllers -= src
 	return ..()
 
@@ -78,8 +61,6 @@
 /datum/weather_controller/proc/RunWeather(datum/weather/weather_datum_type, telegraph = TRUE)
 	if(!ispath(weather_datum_type, /datum/weather))
 		CRASH("RunWeather called with invalid weather_datum_type: [weather_datum_type || "null"]")
-	if(!length(z_levels))
-		CRASH("RunWeather called with no z levels to affect")
 	LAZYINITLIST(current_weathers)
 	if(current_weathers[weather_datum_type])
 		CRASH("RunWeather tried to create a weather that was already simulated")

@@ -347,7 +347,7 @@ GLOBAL_LIST_INIT(scan_conditions,init_scan_conditions())
 
 /datum/scan_condition/asteroid_belt/check_dish(obj/machinery/exoscanner/dish)
 	var/turf/dish_turf = get_turf(dish)
-	return is_station_level(dish_turf.z) ? 0 : 1
+	return is_station_level(dish_turf) ? 0 : 1
 
 /datum/scan_condition/black_hole
 	name = "Black Hole"

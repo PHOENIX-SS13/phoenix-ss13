@@ -83,7 +83,7 @@
 			L.narsie_act()
 
 	for (var/mob/living/carbon/player in GLOB.player_list)
-		if (player.stat != DEAD && is_station_level(player.loc?.z) && !IS_CULTIST(player))
+		if (player.stat != DEAD && is_station_level(player.loc) && !IS_CULTIST(player))
 			souls_needed[player] = TRUE
 
 	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)

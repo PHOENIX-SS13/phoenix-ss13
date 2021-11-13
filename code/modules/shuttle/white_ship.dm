@@ -32,7 +32,6 @@
 	name = "White Ship Navigation Computer"
 	desc = "Used to designate a precise transit location for the White Ship."
 	shuttleId = "whiteship"
-	lock_override = NONE
 	shuttlePortId = "whiteship_custom"
 	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1, "whiteship_z4" = 1)
 	view_range = 10

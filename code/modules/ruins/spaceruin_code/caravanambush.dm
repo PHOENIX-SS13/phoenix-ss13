@@ -66,7 +66,6 @@
 	name = "Small Freighter Navigation Computer"
 	desc = "Used to designate a precise transit location for the Small Freighter."
 	shuttleId = "caravantrade1"
-	lock_override = NONE
 	shuttlePortId = "caravantrade1_custom"
 	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1, "whiteship_z4" = 1, "caravantrade1_ambush" = 1)
 	view_range = 6.5
@@ -90,7 +89,6 @@
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"
 	shuttleId = "caravanpirate"
-	lock_override = NONE
 	shuttlePortId = "caravanpirate_custom"
 	jumpto_ports = list("caravanpirate_ambush" = 1)
 	view_range = 6.5
@@ -114,7 +112,6 @@
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"
 	shuttleId = "caravansyndicate1"
-	lock_override = NONE
 	shuttlePortId = "caravansyndicate1_custom"
 	jumpto_ports = list("caravansyndicate1_ambush" = 1, "caravansyndicate1_listeningpost" = 1)
 	view_range = 0
@@ -138,7 +135,6 @@
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"
 	shuttleId = "caravansyndicate2"
-	lock_override = NONE
 	shuttlePortId = "caravansyndicate2_custom"
 	jumpto_ports = list("caravansyndicate2_ambush" = 1, "caravansyndicate1_listeningpost" = 1)
 	view_range = 0
@@ -162,7 +158,6 @@
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"
 	shuttleId = "caravansyndicate3"
-	lock_override = NONE
 	shuttlePortId = "caravansyndicate3_custom"
 	jumpto_ports = list("caravansyndicate3_ambush" = 1, "caravansyndicate3_listeningpost" = 1)
 	view_range = 2.5

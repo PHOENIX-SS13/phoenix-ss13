@@ -45,7 +45,7 @@
 	if(holder)
 
 		var/turf/T = get_turf(holder)
-		if((T && istype(T)) && (is_station_level(T.z) || is_mining_level(T.z)))
+		if((T && istype(T)) && (is_station_level(T) || is_mining_level(T)))
 			// Computer is on station. Low/High signal depending on what type of network card you have
 			if(long_range)
 				return 2

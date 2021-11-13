@@ -28,7 +28,7 @@ again.
 /obj/effect/spawner/structure/window/Initialize()
 	. = ..()
 
-	if (is_station_level(z))
+	if (is_station_level(src))
 		var/turf/current_turf = get_turf(src)
 		current_turf.rcd_memory = RCD_MEMORY_WINDOWGRILLE
 

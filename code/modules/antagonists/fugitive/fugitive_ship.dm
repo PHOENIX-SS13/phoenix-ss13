@@ -41,7 +41,7 @@
 	name = "shuttle navigation computer"
 	desc = "Used to designate a precise transit location to travel to."
 	shuttleId = "huntership"
-	lock_override = CAMERA_LOCK_STATION
+	trait_lock = ZTRAIT_STATION
 	shuttlePortId = "huntership_custom"
 	see_hidden = FALSE
 	jumpto_ports = list("huntership_home" = 1, "whiteship_home" = 1, "syndicate_nw" = 1)

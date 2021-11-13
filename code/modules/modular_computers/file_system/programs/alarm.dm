@@ -38,10 +38,10 @@
 	return data
 
 /datum/computer_file/program/alarm_monitor/proc/triggerAlarm(class, area/home, cameras, obj/source)
-	if(is_station_level(source.z))
+	if(is_station_level(source))
 		if(!(home.type in GLOB.the_station_areas))
 			return
-	else if(!is_mining_level(source.z) || istype(home, /area/ruin))
+	else if(!is_mining_level(source) || istype(home, /area/ruin))
 		return
 
 	var/list/our_sort = alarms[class]

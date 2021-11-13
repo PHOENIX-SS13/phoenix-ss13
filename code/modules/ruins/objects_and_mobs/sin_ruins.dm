@@ -123,10 +123,10 @@
 	SPAN_NOTICE("Perfect. Much better! Now <i>nobody</i> will be able to resist yo-"))
 
 	var/turf/T = get_turf(user)
-	var/list/levels = SSmapping.levels_by_trait(ZTRAIT_SPACE_RUINS)
+	var/datum/sub_map_zone/subzone = pick(SSmapping.sub_zones_by_trait(ZTRAIT_SPACE_RUINS))
 	var/turf/dest
-	if (levels.len)
-		dest = locate(T.x, T.y, pick(levels))
+	if (subzone)
+		dest = subzone.get_random_position()
 
 	T.ChangeTurf(/turf/open/chasm, flags = CHANGETURF_INHERIT_AIR)
 	var/turf/open/chasm/C = T

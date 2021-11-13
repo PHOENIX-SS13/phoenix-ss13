@@ -78,14 +78,15 @@
 /obj/item/radio/intercom/ui_state(mob/user)
 	return GLOB.default_state
 
-/obj/item/radio/intercom/can_receive(freq, level)
+/obj/item/radio/intercom/can_receive(freq, map_zones)
 	if(!on)
 		return FALSE
 	if(wires.is_cut(WIRE_RX))
 		return FALSE
-	if(!(0 in level))
+	if(!(0 in map_zones))
 		var/turf/position = get_turf(src)
-		if(isnull(position) || !(position.z in level))
+		var/datum/map_zone/mapzone = SSmapping.get_map_zone(position)
+		if(!position || !(mapzone in map_zones))
 			return FALSE
 	if(!listening)
 		return FALSE

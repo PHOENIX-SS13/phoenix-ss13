@@ -83,7 +83,7 @@
 	var/datum/objective/plant_explosive/bombobjective = new /datum/objective/plant_explosive()
 	for(var/sanity in 1 to 100) // 100 checks at most.
 		var/area/selected_area = pick(GLOB.sortedAreas)
-		if(!is_station_level(selected_area.z) || !(selected_area.area_flags & VALID_TERRITORY))
+		if(!is_station_level(selected_area) || !(selected_area.area_flags & VALID_TERRITORY))
 			continue
 		bombobjective.detonation_location = selected_area
 		break

@@ -4,8 +4,8 @@
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	light_color = COLOR_SOFT_RED
-	var/list/z_lock = list() // Lock use to these z levels
-	var/lock_override = NONE
+	/// If defined, the console will only be able to access the sub zones with the defined trait
+	var/trait_lock
 	var/mob/camera/ai_eye/remote/eyeobj
 	var/mob/living/current_user = null
 	var/list/networks = list("ss13")
@@ -26,13 +26,6 @@
 	for(var/i in networks)
 		networks -= i
 		networks += lowertext(i)
-	if(lock_override)
-		if(lock_override & CAMERA_LOCK_STATION)
-			z_lock |= SSmapping.levels_by_trait(ZTRAIT_STATION)
-		if(lock_override & CAMERA_LOCK_MINING)
-			z_lock |= SSmapping.levels_by_trait(ZTRAIT_MINING)
-		if(lock_override & CAMERA_LOCK_CENTCOM)
-			z_lock |= SSmapping.levels_by_trait(ZTRAIT_CENTCOM)
 
 /obj/machinery/computer/camera_advanced/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	for(var/i in networks)
@@ -136,31 +129,37 @@
 	if(!eyeobj.eye_initialized)
 		var/camera_location
 		var/turf/myturf = get_turf(src)
+		var/datum/sub_map_zone/my_subzone = SSmapping.get_sub_zone(myturf)
 		if(eyeobj.use_static != FALSE)
-			if((!z_lock.len || (myturf.z in z_lock)) && GLOB.cameranet.checkTurfVis(myturf))
+			if((!trait_lock || (trait_lock in my_subzone.traits)) && GLOB.cameranet.checkTurfVis(myturf))
 				camera_location = myturf
 			else
 				for(var/obj/machinery/camera/C in GLOB.cameranet.cameras)
-					if(!C.can_use() || z_lock.len && !(C.z in z_lock))
+					if(!C.can_use())
 						continue
+					if(trait_lock)
+						var/datum/sub_map_zone/cam_subzone = SSmapping.get_sub_zone(C)
+						if(!(trait_lock in cam_subzone.traits))
+							continue
 					var/list/network_overlap = networks & C.network
 					if(network_overlap.len)
 						camera_location = get_turf(C)
 						break
 		else
 			camera_location = myturf
-			if(z_lock.len && !(myturf.z in z_lock))
-				camera_location = locate(round(world.maxx/2), round(world.maxy/2), z_lock[1])
+			if(trait_lock && !(trait_lock in my_subzone.traits))
+				var/datum/sub_map_zone/defaulted_subzone = SSmapping.sub_zones_by_trait(trait_lock)[1]
+				camera_location = defaulted_subzone.get_center()
 
 		if(camera_location)
 			eyeobj.eye_initialized = TRUE
 			give_eye_control(L)
-			eyeobj.setLoc(camera_location)
+			eyeobj.setLoc(camera_location, TRUE)
 		else
 			user.unset_machine()
 	else
 		give_eye_control(L)
-		eyeobj.setLoc(eyeobj.loc)
+		eyeobj.setLoc(eyeobj.loc, TRUE)
 
 /obj/machinery/computer/camera_advanced/attack_robot(mob/user)
 	return attack_hand(user)
@@ -175,7 +174,7 @@
 	eyeobj.name = "Camera Eye ([user.name])"
 	user.remote_control = eyeobj
 	user.reset_perspective(eyeobj)
-	eyeobj.setLoc(eyeobj.loc)
+	eyeobj.setLoc(eyeobj.loc, TRUE)
 	if(should_supress_view_changes )
 		user.client.view_size.supress()
 
@@ -215,10 +214,14 @@
 		return TRUE
 	return FALSE
 
-/mob/camera/ai_eye/remote/setLoc(destination)
+/mob/camera/ai_eye/remote/setLoc(destination, force_update)
 	if(eye_user)
 		destination = get_turf(destination)
 		if (destination)
+			if(!force_update)
+				var/datum/map_zone/mapzone = SSmapping.get_map_zone(loc)
+				if(!mapzone.is_in_bounds(destination))
+					return
 			abstract_move(destination)
 		else
 			moveToNullspace()
@@ -280,8 +283,10 @@
 	var/list/L = list()
 
 	for (var/obj/machinery/camera/cam in GLOB.cameranet.cameras)
-		if(origin.z_lock.len && !(cam.z in origin.z_lock))
-			continue
+		if(origin.trait_lock)
+			var/datum/sub_map_zone/cam_subzone = SSmapping.get_sub_zone(cam)
+			if(!(origin.trait_lock in cam_subzone.traits))
+				continue
 		L.Add(cam)
 
 	camera_sort(L)
@@ -299,7 +304,7 @@
 	playsound(src, "terminal_type", 25, FALSE)
 	if(final)
 		playsound(origin, 'sound/machines/terminal_prompt_confirm.ogg', 25, FALSE)
-		remote_eye.setLoc(get_turf(final))
+		remote_eye.setLoc(get_turf(final), TRUE)
 		C.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash/static)
 		C.clear_fullscreen("flash", 3) //Shorter flash than normal since it's an ~~advanced~~ console!
 	else
