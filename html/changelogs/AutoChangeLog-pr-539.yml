@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Expansion for keys and locks. See https://github.com/hrzntal/horizon/pull/539"
+  - rscadd: "Prettier sprites for mineral doors"
