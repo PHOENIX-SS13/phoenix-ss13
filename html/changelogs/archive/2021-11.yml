@@ -16,3 +16,13 @@
 2021-11-11:
   MissFox0810:
   - server: rust update to 0.5.0
+2021-11-14:
+  Azarak:
+  - refactor: Refactored how level-based properties are managed, allowing for much
+      more flexible level reservations
+  - rscadd: Expansion for keys and locks. See https://github.com/hrzntal/horizon/pull/539
+  - rscadd: Prettier sprites for mineral doors
+  - rscadd: Worn icons have been reworked to accomodate slots and bodytypes better
+  - bugfix: Fixed a ton of broken worn states
+  - bugfix: Fixes grilles not smoothing after being repaired
+  - bugfix: Fix chat verb uses legacy alert
