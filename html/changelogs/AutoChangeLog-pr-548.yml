@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - code_imp: "cleaned up some variables in code"
