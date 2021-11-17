@@ -149,6 +149,13 @@
 			if(S.use(1))
 				new /obj/structure/reflector/box(drop_location())
 				qdel(src)
+		if(istype(S, /obj/item/stack/sheet/mineral/plasma))
+			if(S.use(4))
+				new /obj/structure/reflector/diffuser(drop_location())
+				qdel(src)
+			else
+				to_chat(user, SPAN_WARNING("You need four sheets of plasma to create a diffuser box!"))
+				return
 	else
 		return ..()
 
@@ -243,6 +250,57 @@
 /obj/structure/reflector/box/auto_reflect(obj/projectile/P)
 	P.set_angle_centered(rotation_angle)
 	return ..()
+
+//Diffuser
+//Splits the emitter beam into 2 weaker ones with 90*deg between themselves
+/obj/structure/reflector/diffuser
+	name = "diffuser box"
+	deflector_icon_state = "diffuser_box"
+	desc = "A box with a set of plasma-based prisms, designed to diffuse and split laser beams."
+	density = TRUE
+	finished = TRUE
+	buildstacktype = /obj/item/stack/sheet/mineral/plasma
+	buildstackamount = 4
+
+/obj/structure/reflector/diffuser/anchored
+	anchored = TRUE
+
+/obj/structure/reflector/diffuser/auto_reflect(obj/projectile/beam/beam_projectile)
+	/// List of angle translations which randomly has either -45,+45/+45,-45 on 1 and 2 indexes
+	var/list/angle_translation_list = list()
+	switch(rand(1,2))
+		if(1)
+			angle_translation_list += SIMPLIFY_DEGREES(rotation_angle - 45)
+			angle_translation_list += SIMPLIFY_DEGREES(rotation_angle + 45)
+		if(2)
+			angle_translation_list += SIMPLIFY_DEGREES(rotation_angle + 45)
+			angle_translation_list += SIMPLIFY_DEGREES(rotation_angle - 45)
+
+	beam_projectile.set_angle_centered(angle_translation_list[1])
+	if(beam_projectile.split)
+		return ..()
+	beam_projectile.decayedRange--
+	///Create and shoot a split projectile
+	var/turf/my_turf = get_turf(src)
+	var/obj/projectile/beam/new_beam = new beam_projectile.type(my_turf)
+	new_beam.fire(angle_translation_list[2])
+
+	///Iterate over the old and new beam and modify them
+	for(var/i in 1 to 2)
+		var/obj/projectile/beam/iterated_beam
+		switch(i)
+			if(1)
+				iterated_beam = beam_projectile
+			if(2)
+				iterated_beam = new_beam
+
+		iterated_beam.ignore_source_check = TRUE
+		iterated_beam.range = beam_projectile.decayedRange
+		iterated_beam.decayedRange = max(beam_projectile.decayedRange, 0)
+		iterated_beam.split = TRUE
+		iterated_beam.damage /= 2 //Half the damage
+
+	return BULLET_ACT_FORCE_PIERCE
 
 /obj/structure/reflector/ex_act()
 	if(admin)

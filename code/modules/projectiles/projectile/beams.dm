@@ -18,6 +18,8 @@
 	reflectable = REFLECT_NORMAL
 	wound_bonus = -20
 	bare_wound_bonus = 10
+	/// Has this projectile been split by a diffusor box
+	var/split = FALSE
 
 
 /obj/projectile/beam/laser

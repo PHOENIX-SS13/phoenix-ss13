@@ -498,3 +498,31 @@
 	. = ..()
 	icon_state = "[initial(icon_state)][rand(1,3)]"
 
+///Cosmetic crystals, looking just like the vein ones, for decorative purposes, mappers feel free to varedit `greyscale_colors` or create variants with light.
+/obj/structure/flora/crystal
+	name = "crystal"
+	desc = "A beatiful crystal."
+	icon = 'icons/obj/structures/crystal_gags.dmi'
+	icon_state = "crystal"
+	max_integrity = 100
+	resistance_flags = FIRE_PROOF
+	density = TRUE
+	greyscale_config = /datum/greyscale_config/ore_vein_crystal
+	greyscale_colors = "#03fcf8"
+
+/obj/structure/flora/crystal/Initialize()
+	. = ..()
+	icon_state = "[initial(icon_state)][rand(1,3)]"
+
+/obj/structure/flora/crystal/large
+	name = "large crystal"
+	greyscale_config = /datum/greyscale_config/ore_vein_crystal_large
+	max_integrity = 200
+	pixel_x = -16
+	layer = FLY_LAYER
+
+/obj/structure/flora/crystal/small
+	name = "small crystal"
+	greyscale_config = /datum/greyscale_config/ore_vein_crystal_tiny
+	max_integrity = 50
+	density = FALSE

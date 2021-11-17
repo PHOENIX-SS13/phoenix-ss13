@@ -332,3 +332,28 @@
 	name = "Wrapping Paper"
 	icon_file = 'icons/obj/stack_objects.dmi'
 	json_config = 'code/datums/greyscale/json_configs/wrap_paper.json'
+
+/datum/greyscale_config/ore_vein_large
+	name = "Ore Vein Large"
+	icon_file = 'icons/obj/structures/ore_vein_gags.dmi'
+	json_config = 'code/datums/greyscale/json_configs/ore_vein_large.json'
+
+/datum/greyscale_config/ore_vein
+	name = "Ore Vein Small"
+	icon_file = 'icons/obj/structures/ore_vein_small_gags.dmi'
+	json_config = 'code/datums/greyscale/json_configs/ore_vein_large.json'
+
+/datum/greyscale_config/ore_vein_crystal_large
+	name = "Ore Crystal Large"
+	icon_file = 'icons/obj/structures/crystal_gags.dmi'
+	json_config = 'code/datums/greyscale/json_configs/ore_vein_crystal_large.json'
+
+/datum/greyscale_config/ore_vein_crystal
+	name = "Ore Crystal Medium"
+	icon_file = 'icons/obj/structures/crystal_small_gags.dmi'
+	json_config = 'code/datums/greyscale/json_configs/ore_vein_crystal_large.json'
+
+/datum/greyscale_config/ore_vein_crystal_tiny
+	name = "Ore Crystal Tiny"
+	icon_file = 'icons/obj/structures/crystal_tiny_gags.dmi'
+	json_config = 'code/datums/greyscale/json_configs/ore_vein_crystal_tiny.json'
