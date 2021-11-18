@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - code_imp: "Removes unused list in molotov cocktails"
