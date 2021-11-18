@@ -26,3 +26,9 @@
   - bugfix: Fixed a ton of broken worn states
   - bugfix: Fixes grilles not smoothing after being repaired
   - bugfix: Fix chat verb uses legacy alert
+2021-11-18:
+  Azarak:
+  - code_imp: cleaned up some variables in code
+  - rscadd: Catwalks can now only smooth with themselves again
+  - bugfix: Fixes throw mode putting you on click cooldown despite not throwing
+  - rscadd: Ore veins and crystals, diffuser box. Industrial mining preparations
