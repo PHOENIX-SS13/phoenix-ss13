@@ -32,3 +32,6 @@
   - rscadd: Catwalks can now only smooth with themselves again
   - bugfix: Fixes throw mode putting you on click cooldown despite not throwing
   - rscadd: Ore veins and crystals, diffuser box. Industrial mining preparations
+2021-11-19:
+  Azarak:
+  - code_imp: Removes unused list in molotov cocktails
