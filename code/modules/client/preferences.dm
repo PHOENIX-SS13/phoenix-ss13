@@ -82,7 +82,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/facial_hair_color = "000" //Facial hair color
 	var/skin_tone = "caucasian1" //Skin color
 	var/eye_color = "000" //Eye color
-	var/datum/species/pref_species = new /datum/species/human() //Mutant race
+	var/datum/species/pref_species
 	//Has to include all information that extra organs from mutant bodyparts would need.
 	var/list/features = MANDATORY_FEATURE_LIST
 	var/phobia = "spiders"
@@ -227,6 +227,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(load_character())
 			return
 	//we couldn't load character data so just randomize the character appearance + name
+	set_new_species(/datum/species/human)
 	random_character() //let's create a random character then - rather than a fat, bald and naked man.
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
 	C?.set_macros()
