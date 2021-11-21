@@ -678,15 +678,13 @@
 				icon_state = "alarm_b1"
 		return ..()
 
-	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
-		icon_state = "alarmp"
-		return ..()
-
 	icon_state = "alarm"
 	return ..()
 
 /obj/machinery/airalarm/update_overlays()
 	. = ..()
+	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
+		return
 	var/area/A = get_area(src)
 	var/perc_danger_level = max(danger_level, A.atmosalm)
 	if(!panel_open)
