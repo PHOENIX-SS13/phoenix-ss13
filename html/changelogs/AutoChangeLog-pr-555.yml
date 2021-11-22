@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - bugfix: "Properly sets species information when creating a new preference file. This will fix the missing common language bug for new players."

@@ -35,3 +35,13 @@
 2021-11-19:
   Azarak:
   - code_imp: Removes unused list in molotov cocktails
+2021-11-22:
+  Azarak:
+  - bugfix: Properly sets species information when creating a new preference file.
+      This will fix the missing common language bug for new players.
+  - bugfix: Fixes cardboard box overlays
+  - rscadd: Mold has been rewritten and received some tweaks.
+  - bugfix: Fixes suit storage worn states
+  - bugfix: Fixes missing reinforced plasma window spawner
+  - bugfix: Fixes consistency in low wall and window smoothing
+  - bugfix: Fixes icon states and overlays for broken air alarm
