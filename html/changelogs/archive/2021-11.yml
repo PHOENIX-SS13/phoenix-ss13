@@ -45,3 +45,6 @@
   - bugfix: Fixes missing reinforced plasma window spawner
   - bugfix: Fixes consistency in low wall and window smoothing
   - bugfix: Fixes icon states and overlays for broken air alarm
+2021-11-28:
+  Azarak:
+  - bugfix: Fixes mapped in falsewalls
