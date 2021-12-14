@@ -58,3 +58,8 @@
 	if(stat > SOFT_CRIT)
 		return
 	return ..()
+
+/mob/living/Process_Spacemove(movement_dir = 0)
+	. = ..()
+	if(!hold_onto_things && stat == CONSCIOUS) //Check stat to not change behaviours how dead people work in 0g
+		return FALSE

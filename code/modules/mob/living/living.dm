@@ -2007,3 +2007,15 @@
 		else
 			temporary_flavor_text = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 	return
+
+/mob/living/verb/toggle_hold_onto_things()
+	set category = "IC"
+	set name = "Toggle Holding in No Grav"
+	set desc = "Allows you to stop holding onto things in no gravity."
+
+	if(stat != CONSCIOUS)
+		to_chat(usr, SPAN_WARNING("You can't do that now..."))
+		return
+
+	hold_onto_things = !hold_onto_things
+	to_chat(usr, SPAN_NOTICE("You will [hold_onto_things ? "now" : "no longer"] hold onto things in no gravity."))
