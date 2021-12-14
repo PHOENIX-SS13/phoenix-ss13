@@ -5,6 +5,9 @@
 	desc = "Comfortable-looking shoes."
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	worn_template_bodytypes = BODYTYPE_TESHARI
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_shoes
+	worn_template_greyscale_color = "#AAAAAA"
 	var/chained = FALSE
 
 	body_parts_covered = FEET

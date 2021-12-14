@@ -68,6 +68,7 @@
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	fitted_bodytypes = NONE
+	worn_template_greyscale_color = "#7D5E3A"
 
 /obj/item/clothing/suit/det_suit/Initialize()
 	. = ..()
@@ -78,12 +79,14 @@
 	desc = "A hard-boiled private investigator's grey trenchcoat."
 	icon_state = "greydet"
 	inhand_icon_state = "greydet"
+	worn_template_greyscale_color = "#5A5760"
 
 /obj/item/clothing/suit/det_suit/noir
 	name = "noir suit coat"
 	desc = "A dapper private investigator's grey suit coat."
 	icon_state = "detsuit"
 	inhand_icon_state = "detsuit"
+	worn_template_greyscale_color = "#5A5760"
 
 //Engineering
 /obj/item/clothing/suit/hazardvest
@@ -145,6 +148,7 @@
 	inhand_icon_state = "officerbluejacket"
 	body_parts_covered = CHEST|ARMS
 	fitted_bodytypes = NONE
+	worn_template_greyscale_color = "#2B2B2B"
 
 /obj/item/clothing/suit/security/warden
 	name = "warden's jacket"
@@ -153,6 +157,7 @@
 	inhand_icon_state = "wardenbluejacket"
 	body_parts_covered = CHEST|ARMS
 	fitted_bodytypes = NONE
+	worn_template_greyscale_color = "#2B2B2B"
 
 /obj/item/clothing/suit/security/hos
 	name = "head of security's jacket"
@@ -161,6 +166,7 @@
 	inhand_icon_state = "hosbluejacket"
 	body_parts_covered = CHEST|ARMS
 	fitted_bodytypes = NONE
+	worn_template_greyscale_color = "#2B2B2B"
 
 //Surgeon
 /obj/item/clothing/suit/apron/surgical

@@ -41,7 +41,8 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		OFFSET_BELT = list(0,0), 
 		OFFSET_BACK = list(0,0), 
 		OFFSET_SUIT = list(0,0), 
-		OFFSET_NECK = list(0,0)
+		OFFSET_NECK = list(0,0),
+		OFFSET_INHANDS = list(0,0)
 		)
 	*/
 
@@ -253,6 +254,8 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	var/list/factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN)
 	/// List of all the languages our species can learn NO MATTER their background
 	var/list/learnable_languages = list(/datum/language/common)
+	/// Whether this species is forbidden from customizing its body size in prefs
+	var/body_size_restricted
 
 ///////////
 // PROCS //
@@ -782,9 +785,6 @@ GLOBAL_LIST_EMPTY(customizable_races)
 			//cut any possible vis overlays
 			if(body_vis_overlays.len)
 				SSvis_overlays.remove_vis_overlay(species_human, body_vis_overlays)
-			if(species_human.dna.species.offset_features && (OFFSET_FACE in species_human.dna.species.offset_features))
-				add_pixel_x = species_human.dna.species.offset_features[OFFSET_FACE][1]
-				add_pixel_y = species_human.dna.species.offset_features[OFFSET_FACE][2]
 			if(!eye_organ)
 				no_eyeslay = mutable_appearance(eye_icon, "eyes_missing", -BODY_LAYER)
 				no_eyeslay.pixel_x += add_pixel_x

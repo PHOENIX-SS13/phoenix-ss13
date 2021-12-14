@@ -13,6 +13,7 @@
 	custom_premium_price = PAYCHECK_COMMAND * 6
 	cut_type = /obj/item/clothing/gloves/cut
 	clothing_traits = list(TRAIT_CHUNKYFINGERS)
+	worn_template_greyscale_color = "#FFF200"
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
@@ -70,6 +71,7 @@
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
 	cut_type = /obj/item/clothing/gloves/cut
+	worn_template_greyscale_color = "#FFF200"
 
 /obj/item/clothing/gloves/color/fyellow/Initialize()
 	. = ..()
@@ -89,6 +91,7 @@
 	icon_state = "yellowcut"
 	inhand_icon_state = "ygloves"
 	transfer_prints = TRUE
+	worn_template_greyscale_color = "#FFF200"
 
 /obj/item/clothing/gloves/cut/heirloom
 	desc = "The old gloves your great grandfather stole from Engineering, many moons ago. They've seen some tough times recently."
@@ -104,18 +107,21 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
 	cut_type = /obj/item/clothing/gloves/fingerless
+	worn_template_greyscale_color = "#494747"
 
 /obj/item/clothing/gloves/color/orange
 	name = "orange gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "orange"
 	inhand_icon_state = "orangegloves"
+	worn_template_greyscale_color = "#FF9300"
 
 /obj/item/clothing/gloves/color/red
 	name = "red gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "red"
 	inhand_icon_state = "redgloves"
+	worn_template_greyscale_color = "#DA0000"
 
 
 /obj/item/clothing/gloves/color/red/insulated
@@ -136,36 +142,42 @@
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "blue"
 	inhand_icon_state = "bluegloves"
+	worn_template_greyscale_color = "#00B7EF"
 
 /obj/item/clothing/gloves/color/purple
 	name = "purple gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "purple"
 	inhand_icon_state = "purplegloves"
+	worn_template_greyscale_color = "#CC33FF"
 
 /obj/item/clothing/gloves/color/green
 	name = "green gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "green"
 	inhand_icon_state = "greengloves"
+	worn_template_greyscale_color = "#A8E61D"
 
 /obj/item/clothing/gloves/color/grey
 	name = "grey gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "gray"
 	inhand_icon_state = "graygloves"
+	worn_template_greyscale_color = "#6D6D6D"
 
 /obj/item/clothing/gloves/color/light_brown
 	name = "light brown gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "lightbrown"
 	inhand_icon_state = "lightbrowngloves"
+	worn_template_greyscale_color = "#B0824E"
 
 /obj/item/clothing/gloves/color/brown
 	name = "brown gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "brown"
 	inhand_icon_state = "browngloves"
+	worn_template_greyscale_color = "#7C4D25"
 
 /obj/item/clothing/gloves/color/captain
 	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
@@ -181,6 +193,7 @@
 	strip_delay = 60
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 70, ACID = 50)
 	resistance_flags = NONE
+	worn_template_greyscale_color = "#004B8F"
 
 /obj/item/clothing/gloves/color/chief_engineer
 	desc = "These gloves provide excellent heat and electric insulation. They are so thin you can barely feel them."
@@ -193,6 +206,7 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
+	worn_template_greyscale_color = "#FFF200"
 
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"
@@ -204,6 +218,7 @@
 	clothing_traits = list(TRAIT_QUICK_CARRY)
 	transfer_prints = TRUE
 	resistance_flags = NONE
+	worn_template_greyscale_color = "#FFFFFF"
 
 /obj/item/clothing/gloves/color/latex/nitrile
 	name = "nitrile gloves"
@@ -212,6 +227,7 @@
 	inhand_icon_state = "nitrilegloves"
 	clothing_traits = list(TRAIT_QUICKER_CARRY, TRAIT_FASTMED)
 	transfer_prints = FALSE
+	worn_template_greyscale_color = "#66C7E3"
 
 /obj/item/clothing/gloves/color/infiltrator
 	name = "infiltrator gloves"
@@ -223,6 +239,7 @@
 	clothing_traits = list(TRAIT_QUICKER_CARRY)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	transfer_prints = FALSE
+	worn_template_greyscale_color = "#494747"
 
 /obj/item/clothing/gloves/color/latex/engineering
 	name = "tinker's gloves"
@@ -241,6 +258,7 @@
 	icon_state = "white"
 	inhand_icon_state = "wgloves"
 	custom_price = PAYCHECK_MINIMAL
+	worn_template_greyscale_color = "#FFFFFF"
 
 /obj/effect/spawner/lootdrop/gloves
 	name = "random gloves"

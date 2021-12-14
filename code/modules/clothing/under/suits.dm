@@ -90,6 +90,7 @@
 	desc = "A red suit and blue tie. Somewhat formal."
 	icon_state = "red_suit"
 	inhand_icon_state = "r_suit"
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TESHARI
 
 /obj/item/clothing/under/suit/charcoal
 	name = "charcoal suit"

@@ -1,0 +1,10 @@
+{
+	"neck_teshari": [
+		{
+			"type": "icon_state",
+			"icon_state": "neck_teshari",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	]
+}

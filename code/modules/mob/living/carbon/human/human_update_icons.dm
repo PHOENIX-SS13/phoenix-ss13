@@ -114,7 +114,7 @@ There are several things that need to be remembered:
 		if(wear_suit && (wear_suit.flags_inv & HIDEJUMPSUIT))
 			return
 
-		var/target_overlay = U.worn_icon_state
+		var/target_overlay = U.worn_icon_state || U.icon_state
 		if(U.adjusted == ALT_STYLE)
 			target_overlay = "[target_overlay]_d"
 
@@ -462,13 +462,15 @@ generate/load female uniform sprites matching all previously decided variables
 	var/static/list/slot_translation = SLOT_TRANSLATION_LIST
 	var/static/list/bodytype_translation = BODYTYPE_TRANSLATION_LIST
 
+	var/real_bodytype = wearer ? wearer.dna.species.bodytype : BODYTYPE_HUMANOID
 	var/bodytype = wearer ? wearer.dna.species.get_bodytype(slot, src) : BODYTYPE_HUMANOID
 	var/perc_bodytype = bodytype
 	var/wear_template = FALSE
-	if(worn_template_bodytypes & bodytype)
-		wear_template = TRUE
-	else if(!(fitted_bodytypes & bodytype))
-		perc_bodytype = BODYTYPE_HUMANOID
+	if(!(fitted_bodytypes & bodytype))
+		if(worn_template_bodytypes & bodytype)
+			wear_template = TRUE
+		else
+			perc_bodytype = BODYTYPE_HUMANOID
 
 	//Find a valid icon_state from variables+arguments
 	var/t_state
@@ -486,12 +488,19 @@ generate/load female uniform sprites matching all previously decided variables
 
 	var/chosen_worn_icon
 	if(wear_template)
-		chosen_worn_icon = (perc_bodytype & BODYTYPE_TAUR_ALL) ? large_worn_template_icon : worn_template_icon
+		if(perc_bodytype & BODYTYPE_TAUR_ALL)
+			if(!large_worn_template_icon)
+				large_worn_template_icon = SSgreyscale.GetColoredIconByType(greyscale_config_large_worn_template, worn_template_greyscale_color)
+			chosen_worn_icon = large_worn_template_icon
+		else
+			if(!worn_template_icon)
+				worn_template_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn_template, worn_template_greyscale_color)
+			chosen_worn_icon = worn_template_icon
 	else
 		chosen_worn_icon = (perc_bodytype & BODYTYPE_TAUR_ALL) ? large_worn_icon : worn_icon
 
 	//Find a valid icon file from variables+arguments
-	var/file2use = !isinhands ? (worn_icon ? chosen_worn_icon : default_icon_file) : default_icon_file
+	var/file2use = !isinhands ? (chosen_worn_icon ? chosen_worn_icon : default_icon_file) : default_icon_file
 
 	//Find a valid layer from variables+arguments
 	var/layer2use = alternate_worn_layer ? alternate_worn_layer : default_layer
@@ -527,16 +536,18 @@ generate/load female uniform sprites matching all previously decided variables
 	standing.pixel_y += offsets[2]
 
 	standing.alpha = alpha
-	if(wear_template && !color)
-		standing.color = worn_template_color
-	else
-		standing.color = color
+	standing.color = color
 
 	///Species offsets, only applied when the bodytype is not fitted. (using human variants instead)
-	if(bodytype != perc_bodytype && wearer && wearer.dna.species.offset_features)
-		var/list/offset_list = wearer.dna.species.offset_features[translated_slot]
-		standing.pixel_x += offset_list[1]
-		standing.pixel_y += offset_list[2]
+	if(!wear_template && wearer && wearer.dna.species.offset_features)
+		if(isinhands && wearer.dna.species.offset_features[OFFSET_INHANDS])
+			var/list/offset_list = wearer.dna.species.offset_features[OFFSET_INHANDS]
+			standing.pixel_x += offset_list[1]
+			standing.pixel_y += offset_list[2]
+		else if(real_bodytype != perc_bodytype && wearer.dna.species.offset_features[translated_slot])
+			var/list/offset_list = wearer.dna.species.offset_features[translated_slot]
+			standing.pixel_x += offset_list[1]
+			standing.pixel_y += offset_list[2]
 
 	//Large worn offsets
 	if(perc_bodytype & BODYTYPE_TAUR_ALL)

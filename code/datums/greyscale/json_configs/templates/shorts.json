@@ -1,0 +1,10 @@
+{
+	"uniform_teshari": [
+		{
+			"type": "icon_state",
+			"icon_state": "uniform_teshari",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	]
+}

@@ -77,7 +77,7 @@
 								states_to_check += "[worn_string]_d"
 
 						for(var/state_to_check in states_to_check)
-							if(clothing_fitted_bodytypes & bodytype  && !(clothing_template_bodytypes & bodytype))
+							if(clothing_fitted_bodytypes & bodytype)
 								if(!used_lookup_list)
 									Fail("[clothing_type_path] has taur fitted worn icons, but no large_worn_icon")
 								///If we are missing the state in our icons, print a fail

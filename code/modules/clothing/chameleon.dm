@@ -241,7 +241,6 @@
 		I.worn_template_bodytypes = initial(picked_item.worn_template_bodytypes)
 		I.worn_template_icon = initial(picked_item.worn_template_icon)
 		I.large_worn_template_icon = initial(picked_item.large_worn_template_icon)
-		I.worn_template_color = initial(picked_item.worn_template_color)
 		I.flags_inv = initial(picked_item.flags_inv)
 		I.body_parts_covered = initial(picked_item.body_parts_covered)
 	if(initial(picked_item.greyscale_config) && initial(picked_item.greyscale_colors))

@@ -442,6 +442,7 @@
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
 	species_exception = list(/datum/species/golem/bone) //bad to the bone
+	worn_template_greyscale_color = "#2B2B2B"
 	
 /obj/item/clothing/suit/jacket/leather/overcoat
 	name = "leather overcoat"
@@ -450,6 +451,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	worn_template_greyscale_color = "#2B2B2B"
 
 /obj/item/clothing/suit/jacket/puffer
 	name = "puffer jacket"

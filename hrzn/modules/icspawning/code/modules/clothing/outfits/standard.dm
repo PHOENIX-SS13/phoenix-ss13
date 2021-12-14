@@ -22,6 +22,7 @@
 	armor = list("melee" = 98, "bullet" = 98, "laser" = 98, "energy" = 98, "bomb" = 98, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	w_class = WEIGHT_CLASS_TINY
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	worn_template_greyscale_color = "#0056E5"
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/debug
 	name = "Bluespace Tech helmet"

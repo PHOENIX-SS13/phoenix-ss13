@@ -10,6 +10,9 @@
 	attack_verb_continuous = list("challenges")
 	attack_verb_simple = list("challenge")
 	fitted_bodytypes = NONE
+	worn_template_bodytypes = BODYTYPE_TESHARI
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_gloves
+	worn_template_greyscale_color = "#AAAAAA"
 	var/transfer_prints = FALSE
 	strip_delay = 20
 	equip_delay_other = 40

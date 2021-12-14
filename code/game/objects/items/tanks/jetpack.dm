@@ -8,6 +8,9 @@
 	w_class = WEIGHT_CLASS_BULKY
 	distribute_pressure = ONE_ATMOSPHERE * O2STANDARD
 	actions_types = list(/datum/action/item_action/set_internals, /datum/action/item_action/toggle_jetpack, /datum/action/item_action/jetpack_stabilization)
+	worn_template_bodytypes = BODYTYPE_TESHARI
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_jetpack
+	worn_template_greyscale_color = "#0066FF#FFFFFF"
 	var/gas_type = /datum/gas/oxygen
 	var/on = FALSE
 	var/stabilizers = FALSE
@@ -133,6 +136,7 @@
 	volume = 20 //normal jetpacks have 70 volume
 	gas_type = null //it starts empty
 	full_speed = FALSE //moves at hardsuit jetpack speeds
+	worn_template_greyscale_color = "#F65044#FFFFFF"
 
 /obj/item/tank/jetpack/improvised/allow_thrust(num, mob/living/user)
 	if(rand(0,250) == 0)
@@ -146,6 +150,7 @@
 	desc = "It works well in a void."
 	icon_state = "jetpack-void"
 	inhand_icon_state =  "jetpack-void"
+	worn_template_greyscale_color = "#BCA633#FFFFFF"
 
 /obj/item/tank/jetpack/oxygen
 	name = "jetpack (oxygen)"
@@ -170,12 +175,14 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 90
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF //steal objective items are hard to destroy.
+	worn_template_greyscale_color = "#CCA402#36769B"
 
 /obj/item/tank/jetpack/oxygen/security
 	name = "security jetpack (oxygen)"
 	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas by security forces."
 	icon_state = "jetpack-sec"
 	inhand_icon_state = "jetpack-sec"
+	worn_template_greyscale_color = "#C12D30#263244"
 
 
 
@@ -186,6 +193,7 @@
 	inhand_icon_state =  "jetpack-black"
 	distribute_pressure = 0
 	gas_type = /datum/gas/carbon_dioxide
+	worn_template_greyscale_color = "#404040#FFFFFF"
 
 
 /obj/item/tank/jetpack/suit

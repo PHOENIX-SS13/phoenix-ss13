@@ -293,3 +293,8 @@
 /datum/body_marking_set/moth/lovers
 	name = "Lovers"
 	body_marking_list = list("Lovers")
+
+/datum/body_marking_set/teshari
+	recommended_species = list("teshari")
+	bodytypes = BODYTYPE_TESHARI
+	body_marking_list = list("Teshari")

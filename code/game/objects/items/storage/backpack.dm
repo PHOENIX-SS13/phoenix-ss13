@@ -20,6 +20,9 @@
 	slot_flags = ITEM_SLOT_BACK //ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
+	worn_template_bodytypes = BODYTYPE_TESHARI
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_backpack
+	worn_template_greyscale_color = "#919191"
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -128,6 +131,7 @@
 	desc = "A robust backpack for stashing your loot."
 	icon_state = "explorerpack"
 	inhand_icon_state = "explorerpack"
+	worn_template_greyscale_color = "#664B32"
 
 /obj/item/storage/backpack/mime
 	name = "Parcel Parceaux"
@@ -140,18 +144,22 @@
 	desc = "It's a backpack especially designed for use in a sterile environment."
 	icon_state = "medicalpack"
 	inhand_icon_state = "medicalpack"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_backpack_twotone
+	worn_template_greyscale_color = "#FFFFFF#FFFFFF"
 
 /obj/item/storage/backpack/security
 	name = "security backpack"
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
 	inhand_icon_state = "securitypack"
+	worn_template_greyscale_color = "#555555"
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
 	desc = "It's a special backpack made exclusively for Nanotrasen officers."
 	icon_state = "captainpack"
 	inhand_icon_state = "captainpack"
+	worn_template_greyscale_color = "#3A6781"
 
 /obj/item/storage/backpack/industrial
 	name = "industrial backpack"
@@ -159,36 +167,47 @@
 	icon_state = "engiepack"
 	inhand_icon_state = "engiepack"
 	resistance_flags = FIRE_PROOF
+	worn_template_greyscale_color = "#FFC20E"
 
 /obj/item/storage/backpack/botany
 	name = "botany backpack"
 	desc = "It's a backpack made of all-natural fibers."
 	icon_state = "botpack"
 	inhand_icon_state = "botpack"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_backpack_twotone
+	worn_template_greyscale_color = "#6BCE4F#E1F651"
 
 /obj/item/storage/backpack/chemistry
 	name = "chemistry backpack"
 	desc = "A backpack specially designed to repel stains and hazardous liquids."
 	icon_state = "chempack"
 	inhand_icon_state = "chempack"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_backpack_twotone
+	worn_template_greyscale_color = "#C3C3C3#FF8400"
 
 /obj/item/storage/backpack/genetics
 	name = "genetics backpack"
 	desc = "A bag designed to be super tough, just in case someone hulks out on you."
 	icon_state = "genepack"
 	inhand_icon_state = "genepack"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_backpack_twotone
+	worn_template_greyscale_color = "#C3C3C3#0097CA"
 
 /obj/item/storage/backpack/science
 	name = "science backpack"
 	desc = "A specially designed backpack. It's fire resistant and smells vaguely of plasma."
 	icon_state = "toxpack"
 	inhand_icon_state = "toxpack"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_backpack_twotone
+	worn_template_greyscale_color = "#C3C3C3#990099"
 
 /obj/item/storage/backpack/virology
 	name = "virology backpack"
 	desc = "A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey."
 	icon_state = "viropack"
 	inhand_icon_state = "viropack"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_backpack_twotone
+	worn_template_greyscale_color = "#C3C3C3#339900"
 
 /obj/item/storage/backpack/ert
 	name = "emergency response team commander backpack"
@@ -230,12 +249,14 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	inhand_icon_state = "satchel-norm"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_satchel
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
 	icon_state = "satchel"
 	inhand_icon_state = "satchel"
+	worn_template_greyscale_color = "#5B340F"
 
 /obj/item/storage/backpack/satchel/leather/withwallet/PopulateContents()
 	new /obj/item/storage/wallet/random(src)
@@ -249,60 +270,76 @@
 	icon_state = "satchel-eng"
 	inhand_icon_state = "satchel-eng"
 	resistance_flags = FIRE_PROOF
+	worn_template_greyscale_color = "#FFC20E"
 
 /obj/item/storage/backpack/satchel/med
 	name = "medical satchel"
 	desc = "A sterile satchel used in medical departments."
 	icon_state = "satchel-med"
 	inhand_icon_state = "satchel-med"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_satchel_twotone
+	worn_template_greyscale_color = "#FFFFFF#FFFFFF"
 
 /obj/item/storage/backpack/satchel/vir
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
 	inhand_icon_state = "satchel-vir"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_satchel_twotone
+	worn_template_greyscale_color = "#C3C3C3#339900"
 
 /obj/item/storage/backpack/satchel/chem
 	name = "chemist satchel"
 	desc = "A sterile satchel with chemist colours."
 	icon_state = "satchel-chem"
 	inhand_icon_state = "satchel-chem"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_satchel_twotone
+	worn_template_greyscale_color = "#C3C3C3#FF8400"
 
 /obj/item/storage/backpack/satchel/gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
 	inhand_icon_state = "satchel-gen"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_satchel_twotone
+	worn_template_greyscale_color = "#C3C3C3#0097CA"
 
 /obj/item/storage/backpack/satchel/tox
 	name = "scientist satchel"
 	desc = "Useful for holding research materials."
 	icon_state = "satchel-tox"
 	inhand_icon_state = "satchel-tox"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_satchel_twotone
+	worn_template_greyscale_color = "#C3C3C3#990099"
 
 /obj/item/storage/backpack/satchel/hyd
 	name = "botanist satchel"
 	desc = "A satchel made of all natural fibers."
 	icon_state = "satchel-hyd"
 	inhand_icon_state = "satchel-hyd"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_satchel_twotone
+	worn_template_greyscale_color = "#6BCE4F#E1F651"
 
 /obj/item/storage/backpack/satchel/sec
 	name = "security satchel"
 	desc = "A robust satchel for security related needs."
 	icon_state = "satchel-sec"
 	inhand_icon_state = "satchel-sec"
+	worn_template_greyscale_color = "#555555"
 
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"
 	desc = "A robust satchel for stashing your loot."
 	icon_state = "satchel-explorer"
 	inhand_icon_state = "satchel-explorer"
+	worn_template_greyscale_color = "#664B32"
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
 	desc = "An exclusive satchel for Nanotrasen officers."
 	icon_state = "satchel-cap"
 	inhand_icon_state = "satchel-cap"
+	worn_template_greyscale_color = "#3A6781"
 
 /obj/item/storage/backpack/satchel/flat
 	name = "smuggler's satchel"
@@ -344,6 +381,7 @@
 	icon_state = "duffel"
 	inhand_icon_state = "duffel"
 	slowdown = 1
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
@@ -371,12 +409,15 @@
 	desc = "A large duffel bag for holding extra captainly goods."
 	icon_state = "duffel-captain"
 	inhand_icon_state = "duffel-captain"
+	worn_template_greyscale_color = "#3A6781"
 
 /obj/item/storage/backpack/duffelbag/med
 	name = "medical duffel bag"
 	desc = "A large duffel bag for holding extra medical supplies."
 	icon_state = "duffel-med"
 	inhand_icon_state = "duffel-med"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel_twotone
+	worn_template_greyscale_color = "#FFFFFF#FFFFFF"
 
 /obj/item/storage/backpack/duffelbag/med/surgery
 	name = "surgical duffel bag"
@@ -387,36 +428,47 @@
 	desc = "A large duffel bag for holding extra exotic treasures."
 	icon_state = "duffel-explorer"
 	inhand_icon_state = "duffel-explorer"
+	worn_template_greyscale_color = "#664B32"
 
 /obj/item/storage/backpack/duffelbag/hydroponics
 	name = "hydroponic's duffel bag"
 	desc = "A large duffel bag for holding extra gardening tools."
 	icon_state = "duffel-hydroponics"
 	inhand_icon_state = "duffel-hydroponics"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel_twotone
+	worn_template_greyscale_color = "#6BCE4F#E1F651"
 
 /obj/item/storage/backpack/duffelbag/chemistry
 	name = "chemistry duffel bag"
 	desc = "A large duffel bag for holding extra chemical substances."
 	icon_state = "duffel-chemistry"
 	inhand_icon_state = "duffel-chemistry"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel_twotone
+	worn_template_greyscale_color = "#C3C3C3#FF8400"
 
 /obj/item/storage/backpack/duffelbag/genetics
 	name = "geneticist's duffel bag"
 	desc = "A large duffel bag for holding extra genetic mutations."
 	icon_state = "duffel-genetics"
 	inhand_icon_state = "duffel-genetics"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel_twotone
+	worn_template_greyscale_color = "#C3C3C3#0097CA"
 
 /obj/item/storage/backpack/duffelbag/toxins
 	name = "scientist's duffel bag"
 	desc = "A large duffel bag for holding extra scientific components."
 	icon_state = "duffel-toxins"
 	inhand_icon_state = "duffel-toxins"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel_twotone
+	worn_template_greyscale_color = "#C3C3C3#990099"
 
 /obj/item/storage/backpack/duffelbag/virology
 	name = "virologist's duffel bag"
 	desc = "A large duffel bag for holding extra viral bottles."
 	icon_state = "duffel-virology"
 	inhand_icon_state = "duffel-virology"
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel_twotone
+	worn_template_greyscale_color = "#C3C3C3#339900"
 
 
 
@@ -438,6 +490,7 @@
 	desc = "A large duffel bag for holding extra security supplies and ammunition."
 	icon_state = "duffel-sec"
 	inhand_icon_state = "duffel-sec"
+	worn_template_greyscale_color = "#555555"
 
 /obj/item/storage/backpack/duffelbag/sec/surgery
 	name = "surgical duffel bag"
@@ -461,6 +514,7 @@
 	icon_state = "duffel-eng"
 	inhand_icon_state = "duffel-eng"
 	resistance_flags = FIRE_PROOF
+	worn_template_greyscale_color = "#FFC20E"
 
 /obj/item/storage/backpack/duffelbag/drone
 	name = "drone duffel bag"
@@ -498,6 +552,8 @@
 	inhand_icon_state = "duffel-syndieammo"
 	slowdown = 0
 	resistance_flags = FIRE_PROOF
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_duffel_twotone
+	worn_template_greyscale_color = "#2A2A2A#9E0101"
 
 /obj/item/storage/backpack/duffelbag/syndie/ComponentInitialize()
 	. = ..()

@@ -30,6 +30,7 @@
 	icon_state = "polycloak"
 	icon = 'icons/horizon/~donator/obj/clothing/cloaks.dmi'
 	worn_icon = 'icons/horizon/~donator/mob/clothing/neck.dmi'
+	fitted_bodytypes = BODYTYPE_TESHARI
 	var/list/poly_colors = list("FFF", "FFF", "888")
 
 /obj/item/clothing/neck/cloak/polychromic/ComponentInitialize()
@@ -73,11 +74,13 @@
 	name = "polychromic cape"
 	desc = "A cape with a polychromic finish. It can be recoloured to the user's personal preference."
 	icon_state = "polycape"
+	fitted_bodytypes = NONE
 
 /obj/item/clothing/neck/cloak/polychromic/rscloak_cross
 	name = "polychromic cape"
 	desc = "A cape with a polychromic finish. It can be recoloured to the user's personal preference. This one has across pattern."
 	icon_state = "polycape_cross"
+	fitted_bodytypes = NONE
 
 //UNIFORMS
 /obj/item/clothing/under/dress/skirt/polychromic

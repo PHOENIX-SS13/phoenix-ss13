@@ -221,8 +221,12 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/worn_template_icon
 	/// Large worn template icon, for bodytypes requiring larger icons. (taurs)
 	var/large_worn_template_icon
-	/// Color of the worn icon template. (Gags support coming soon)
-	var/worn_template_color
+	/// Greyscale config of the worn template
+	var/greyscale_config_worn_template
+	/// Greyscale config of the large worn template
+	var/greyscale_config_large_worn_template
+	/// Greyscale color fed to the GAGS configs of the worn templates
+	var/worn_template_greyscale_color
 
 /obj/item/Initialize()
 

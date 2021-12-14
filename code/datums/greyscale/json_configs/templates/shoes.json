@@ -1,0 +1,10 @@
+{
+	"feet_teshari": [
+		{
+			"type": "icon_state",
+			"icon_state": "feet_teshari",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	]
+}

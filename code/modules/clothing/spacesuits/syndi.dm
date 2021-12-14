@@ -16,6 +16,7 @@
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30,ENERGY = 40, BOMB = 30, BIO = 30, RAD = 30, FIRE = 80, ACID = 85)
 	cell = /obj/item/stock_parts/cell/hyper
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	worn_template_greyscale_color = "#303030"
 
 //Green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/green

@@ -1,0 +1,10 @@
+{
+	"hands_teshari": [
+		{
+			"type": "icon_state",
+			"icon_state": "hands_teshari",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	]
+}

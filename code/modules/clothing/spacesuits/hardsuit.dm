@@ -111,6 +111,9 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	siemens_coefficient = 0
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
+	worn_template_bodytypes = BODYTYPE_TESHARI
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_hardsuit
+	worn_template_greyscale_color = "#AAAAAA"
 	var/obj/item/clothing/head/helmet/space/hardsuit/helmet
 	actions_types = list(/datum/action/item_action/toggle_spacesuit, /datum/action/item_action/toggle_helmet)
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
@@ -227,6 +230,7 @@
 	resistance_flags = FIRE_PROOF
 	hardsuit_tail_colors = list("974", "A62", "C95")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
+	worn_template_greyscale_color = "#C5994C"
 
 	//Atmospherics
 /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
@@ -249,6 +253,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
 	hardsuit_tail_colors = list("974", "487", "498")
+	worn_template_greyscale_color = "#C5994C"
 
 
 	//Chief Engineer's hardsuit
@@ -274,6 +279,7 @@
 	jetpack = /obj/item/tank/jetpack/suit
 	cell = /obj/item/stock_parts/cell/super
 	hardsuit_tail_colors = list("321", "CCB", "EEE")
+	worn_template_greyscale_color = "#EFEFE8"
 
 	//Mining hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/mining
@@ -322,6 +328,7 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	hardsuit_tail_colors = list("877", "BA9", "655")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
+	worn_template_greyscale_color = "#B4A393"
 
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize()
 	. = ..()
@@ -437,6 +444,7 @@
 	cell = /obj/item/stock_parts/cell/hyper
 	hardsuit_tail_colors = list("A11", "322", "c45")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
+	worn_template_greyscale_color = "#D73827"
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -474,6 +482,7 @@
 	cell = /obj/item/stock_parts/cell/bluespace
 	hardsuit_tail_colors = list("222", "454", "443")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
+	worn_template_greyscale_color = "#333333"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/debug
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
@@ -539,6 +548,7 @@
 	cell = /obj/item/stock_parts/cell/hyper
 	slowdown = 0 //you're spending 2 wizard points on this thing, the least it could do is not make you a sitting duck
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	worn_template_greyscale_color = "#B027D7"
 
 /obj/item/clothing/suit/space/hardsuit/wizard/Initialize()
 	. = ..()
@@ -567,6 +577,7 @@
 	slowdown = 0.5
 	hardsuit_tail_colors = list("DDD", "A75", "FFF")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
+	worn_template_greyscale_color = "#FFFFFF"
 
 	//Research Director hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/rd
@@ -620,6 +631,7 @@
 	cell = /obj/item/stock_parts/cell/super
 	hardsuit_tail_colors = list("CB7", "839", "995")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
+	worn_template_greyscale_color = "#D8D39C"
 
 	//Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
@@ -640,6 +652,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	hardsuit_tail_colors = list("222", "C23", "335")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
+	worn_template_greyscale_color = "#545350"
 
 /obj/item/clothing/suit/space/hardsuit/security/Initialize()
 	. = ..()
@@ -716,6 +729,7 @@
 	cell = /obj/item/stock_parts/cell/super
 	hardsuit_tail_colors = list("368", "CA0", "030")
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_COMMON
+	worn_template_greyscale_color = "#3A6781"
 
 	//Clown
 /obj/item/clothing/head/helmet/space/hardsuit/clown

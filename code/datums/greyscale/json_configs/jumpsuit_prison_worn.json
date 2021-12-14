@@ -76,5 +76,57 @@
 			"icon_state": "jumpskirt_d_prison",
 			"blend_mode": "overlay"
 		}
+	],
+	"uniform_teshari_jumpsuit": [
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpsuit",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpsuit_prison",
+			"blend_mode": "overlay"
+		}
+	],
+	"uniform_teshari_jumpsuit_d" : [
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpsuit_d",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpsuit_d_prison",
+			"blend_mode": "overlay"
+		}
+	],
+	"uniform_teshari_jumpskirt": [
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpskirt",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpskirt_prison",
+			"blend_mode": "overlay"
+		}
+	],
+	"uniform_teshari_jumpskirt_d" : [
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpskirt_d",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "teshari_jumpskirt_d_prison",
+			"blend_mode": "overlay"
+		}
 	]
 }

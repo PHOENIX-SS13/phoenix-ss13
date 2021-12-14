@@ -19,6 +19,7 @@
 	distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
 	force = 10
 	dog_fashion = /datum/dog_fashion/back
+	worn_template_greyscale_color = "#009FFF#FFFFFF"
 
 
 /obj/item/tank/internals/oxygen/populate_gas()
@@ -31,12 +32,14 @@
 	icon_state = "oxygen_f"
 	tank_holder_icon_state = "holder_oxygen_f"
 	dog_fashion = null
+	worn_template_greyscale_color = "#F4D34F#FFFFFF"
 
 /obj/item/tank/internals/oxygen/red
 	desc = "A tank of oxygen, this one is red."
 	icon_state = "oxygen_fr"
 	tank_holder_icon_state = "holder_oxygen_fr"
 	dog_fashion = null
+	worn_template_greyscale_color = "#F65044#FFFFFF"
 
 /obj/item/tank/internals/oxygen/empty/populate_gas()
 	return
@@ -51,6 +54,7 @@
 	inhand_icon_state = "an_tank"
 	tank_holder_icon_state = "holder_anesthetic"
 	force = 10
+	worn_template_greyscale_color = "#FFFFFF#F65044"
 
 /obj/item/tank/internals/anesthetic/populate_gas()
 	air_contents.assert_gases(/datum/gas/oxygen, /datum/gas/nitrous_oxide)
@@ -114,6 +118,8 @@
 	force = 5
 	volume = 24 //enough so they need to refill but not that often to be a chore
 	w_class = WEIGHT_CLASS_SMALL //thanks i forgot this
+	worn_template_bodytypes = NONE
+	greyscale_config_worn_template = null
 
 /obj/item/tank/internals/plasmaman/belt/full/populate_gas()
 	air_contents.assert_gas(/datum/gas/plasma)
@@ -140,7 +146,8 @@
 	force = 4
 	distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
 	volume = 3 //Tiny. Real life equivalents only have 21 breaths of oxygen in them. They're EMERGENCY tanks anyway -errorage (dangercon 2011)
-
+	worn_template_bodytypes = NONE
+	greyscale_config_worn_template = null
 
 /obj/item/tank/internals/emergency_oxygen/populate_gas()
 	air_contents.assert_gas(/datum/gas/oxygen)

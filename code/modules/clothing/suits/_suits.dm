@@ -9,6 +9,9 @@
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	worn_template_bodytypes = BODYTYPE_TESHARI
+	greyscale_config_worn_template = /datum/greyscale_config/worn_template_coat
+	worn_template_greyscale_color = "#AAAAAA"
 	var/blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
