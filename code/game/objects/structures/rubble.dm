@@ -76,6 +76,9 @@
 	desc = "A large pile of rubble, rendering the terrain unpassable. You probably could weld this down."
 	icon_state = "rubble_big"
 
+/obj/structure/rubble/large/metal
+	icon_state = "rubble_big_metal"
+
 /obj/structure/rubble/medium
 	desc = "A pile of rubble, you could probably climb over it. You probably could weld this down."
 	icon_state = "rubble_medium"
@@ -84,3 +87,6 @@
 /obj/structure/rubble/medium/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/climbable)
+
+/obj/structure/rubble/medium/metal
+	icon_state = "rubble_medium_metal"
