@@ -258,7 +258,7 @@
 		//Mine ore
 		var/turf/my_turf = get_turf(src)
 		if(current_node)
-			my_turf.PolluteTurf(/datum/pollutant/dust, 50)
+			my_turf.pollute_turf(/datum/pollutant/dust, 50)
 			var/obj/item/mined = current_node.TakeRandomOre()
 			if(mined)
 				stored_ores += mined

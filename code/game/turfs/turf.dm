@@ -650,10 +650,10 @@ GLOBAL_LIST_EMPTY(station_turfs)
 /turf/proc/IgniteTurf(power)
 	return
 
-/turf/proc/PolluteTurf(pollution_type, amount, cap)
+/turf/proc/pollute_turf(pollution_type, amount, cap)
 	return
 
-/turf/proc/PolluteListTurf(list/pollutions, cap)
+/turf/proc/pollute_list_turf(list/pollutions, cap)
 	return
 
 /turf/proc/IsTransparent()

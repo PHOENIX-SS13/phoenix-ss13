@@ -6,7 +6,7 @@
 	if(isopenturf(loc))
 		var/turf/open/my_open_turf = loc
 		if(my_open_turf.pollution)
-			my_open_turf.pollution.TouchAct(src)
+			my_open_turf.pollution.touch_act(src)
 
 	if(damageoverlaytemp)
 		damageoverlaytemp = 0
@@ -121,8 +121,8 @@
 				if(istype(open_turf) && open_turf.pollution)
 					if(next_smell <= world.time)
 						next_smell = world.time + SMELL_COOLDOWN
-						open_turf.pollution.SmellAct(src)
-					open_turf.pollution.BreatheAct(src)
+						open_turf.pollution.smell_act(src)
+					open_turf.pollution.breathe_act(src)
 
 				var/breath_moles = 0
 				if(environment)

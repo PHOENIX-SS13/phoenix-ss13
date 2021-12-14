@@ -345,7 +345,7 @@
 				if(carbon_user.internal) //Breathing from internals means we cant smell
 					return
 				carbon_user.next_smell = world.time + SMELL_COOLDOWN
-			current_turf.pollution.SmellAct(user)
+			current_turf.pollution.smell_act(user)
 
 /datum/emote/living/snore
 	key = "snore"

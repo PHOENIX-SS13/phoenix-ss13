@@ -41,7 +41,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/match/proc/matchignite()
 	if(!lit && !burnt)
 		var/turf/my_turf = get_turf(src)
-		my_turf.PolluteTurf(/datum/pollutant/sulphur, 5)
+		my_turf.pollute_turf(/datum/pollutant/sulphur, 5)
 		playsound(src, 'sound/items/match_strike.ogg', 15, TRUE)
 		lit = TRUE
 		icon_state = "match_lit"
@@ -284,7 +284,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(!air || !air.has_gas(/datum/gas/oxygen, 1)) //or oxygen on a tile to burn
 			extinguish()
 			return
-	location.PolluteTurf(pollution_type, 10)
+	location.pollute_turf(pollution_type, 5, POLLUTION_PASSIVE_EMITTER_CAP)
 	smoketime -= delta_time
 	if(smoketime <= 0)
 		new type_butt(location)
@@ -1004,7 +1004,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	//open flame removed because vapes are a closed system, they won't light anything on fire
 	var/turf/my_turf = get_turf(src)
-	my_turf.PolluteTurf(/datum/pollutant/smoke/vape, 10)
+	my_turf.pollute_turf(/datum/pollutant/smoke/vape, 5, POLLUTION_PASSIVE_EMITTER_CAP)
 
 	if(super && vapetime >= vapedelay)//Time to start puffing those fat vapes, yo.
 		var/datum/effect_system/smoke_spread/chem/smoke_machine/s = new

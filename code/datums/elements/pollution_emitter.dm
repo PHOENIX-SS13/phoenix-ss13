@@ -26,4 +26,4 @@
 /datum/element/pollution_emitter/process(delta_time)
 	for(var/atom/affected_atom as anything in affected)
 		var/turf/my_turf = get_turf(affected_atom)
-		my_turf.PolluteTurf(pollutant_type, pollutant_amount)
+		my_turf.pollute_turf(pollutant_type, pollutant_amount)

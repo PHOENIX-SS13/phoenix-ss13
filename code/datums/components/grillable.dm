@@ -54,7 +54,7 @@
 
 	if(pollutant_type)
 		var/turf/parent_turf = get_turf(parent)
-		parent_turf.PolluteTurf(pollutant_type, 10)
+		parent_turf.pollute_turf(pollutant_type, 7, POLLUTION_PASSIVE_EMITTER_CAP)
 	current_cook_time += delta_time * 10 //turn it into ds
 	if(current_cook_time >= required_cook_time)
 		FinishGrilling(used_grill)

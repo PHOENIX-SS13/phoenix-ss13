@@ -72,7 +72,7 @@
 		qdel(src)
 	if(scented_type)
 		var/turf/my_turf = get_turf(src)
-		my_turf.PolluteTurf(scented_type, 5)
+		my_turf.pollute_turf(scented_type, 5)
 	update_appearance()
 	open_flame()
 

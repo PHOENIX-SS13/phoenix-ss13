@@ -27,7 +27,7 @@
 		return TRUE
 	uses_remaining--
 	var/turf/aimed_turf = get_turf(attacked)
-	aimed_turf.PolluteTurf(/datum/pollutant/fragrance/air_refresher, 200)
+	aimed_turf.pollute_turf(/datum/pollutant/fragrance/air_refresher, 200)
 	user.visible_message(SPAN_NOTICE("[user] sprays the air around with \the [src]."), SPAN_NOTICE("You spray the air around with \the [src]."))
 	user.changeNext_move(CLICK_CD_RANGE*2)
 	playsound(aimed_turf, 'sound/effects/spray2.ogg', 50, TRUE, -6)
