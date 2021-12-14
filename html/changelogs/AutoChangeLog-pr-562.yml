@@ -1,0 +1,4 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Adds Metal Rubble, exploded walls will now look cooler now"
