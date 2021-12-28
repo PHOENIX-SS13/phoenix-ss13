@@ -1910,8 +1910,6 @@
 /// Proc to append behavior to the condition of being floored. Called when the condition starts.
 /mob/living/proc/on_floored_start()
 	if(body_position == STANDING_UP) //force them on the ground
-		if(client) //If we have a client, set us to resting, so the client has to manually stand us back, but AI mobs will try to automatically stand up without that being faciliated into their AI
-			set_resting(TRUE, silent = TRUE)
 		set_lying_angle(pick(90, 270))
 		set_body_position(LYING_DOWN)
 		on_fall()
