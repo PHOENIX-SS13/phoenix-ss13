@@ -105,6 +105,11 @@
 					/datum/planet_template/chlorine_planet = 50, \
 					/datum/planet_template/barren_planet = 50)
 
+/// One planet from this list is guaranteed
+#define HABITABLE_PLANETS list(/datum/planet_template/snow_planet = 100, \
+					/datum/planet_template/lush_planet = 100, \
+					/datum/planet_template/jungle_planet = 100)
+
 //Planetary proprties for ruins to check
 #define PLANET_HABITABLE (1<<0)
 #define PLANET_WATER (1<<1)

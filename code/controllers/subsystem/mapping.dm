@@ -376,11 +376,17 @@ Used by the AI doomsday and the self-destruct nuke.
 		INIT_ANNOUNCE("WARNING: An unknown minetype '[config.minetype]' was set! This is being ignored! Update the maploader code!")
 
 	var/list/planet_list = SPAWN_PLANET_WEIGHT_LIST
+	var/spawned_habitable //One habitable planet is guaranteed to be spawned
 	if(config.amount_of_planets_spawned)
 		for(var/i in 1 to config.amount_of_planets_spawned)
 			if(!length(planet_list))
 				break
-			var/picked_planet_type = pickweight(planet_list)
+			var/picked_planet_type
+			if(!spawned_habitable)
+				picked_planet_type = pickweight(HABITABLE_PLANETS)
+				spawned_habitable = TRUE
+			else
+				picked_planet_type = pickweight(planet_list)
 			planet_list -= picked_planet_type
 			var/datum/planet_template/picked_template = planet_templates[picked_planet_type]
 			picked_template.LoadTemplate(SSovermap.main_system, rand(5,25), rand(5,25))
