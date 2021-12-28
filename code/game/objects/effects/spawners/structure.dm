@@ -320,7 +320,7 @@ again.
 
 //plasma reinforced
 
-/obj/effect/spawner/structure/window/reinforced/plasma
+/obj/effect/spawner/structure/window/plasma/reinforced
 	name = "reinforced plasma window spawner"
 	icon_state = "prwindow_spawner"
 	spawn_list = list(/obj/structure/low_wall, /obj/structure/window/plasma/reinforced/fulltile)
