@@ -219,11 +219,11 @@
 				if("Make Your Own")
 					AdminCreateVirus(holder)
 				if("Random")
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
+					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSgamemode.control
 					E = DC.runEvent()
 				if("Choose")
 					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sortList(typesof(/datum/disease), /proc/cmp_typepaths_asc)
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
+					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSgamemode.control
 					var/datum/round_event/disease_outbreak/DO = DC.runEvent()
 					DO.virus_type = virus
 					E = DO
@@ -306,7 +306,7 @@
 		if("events")
 			if(!is_funmin)
 				return
-			if(!SSevents.wizardmode)
+			if(!SSgamemode.wizardmode)
 				if(tgui_alert(usr,"Do you want to toggle summon events on?",,list("Yes","No")) == "Yes")
 					summonevents()
 					SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Activate"))
@@ -317,8 +317,8 @@
 						summonevents()
 						SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Intensify"))
 					if("Turn Off Summon Events")
-						SSevents.toggleWizardmode()
-						SSevents.resetFrequency()
+						SSgamemode.toggleWizardmode()
+						SSgamemode.resetFrequency()
 						SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Disable"))
 		if("eagles")
 			if(!is_funmin)

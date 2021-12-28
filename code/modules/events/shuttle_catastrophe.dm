@@ -4,6 +4,9 @@
 	weight = 10
 	max_occurrences = 1
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_COMMUNAL)
+
 /datum/round_event_control/shuttle_catastrophe/canSpawnEvent(players)
 	if(SSshuttle.shuttle_purchased == SHUTTLEPURCHASE_FORCED)
 		return FALSE //don't do it if its already been done

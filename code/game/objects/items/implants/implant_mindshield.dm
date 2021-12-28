@@ -46,7 +46,7 @@
 		ADD_TRAIT(target, TRAIT_MINDSHIELD, IMPLANT_TRAIT)
 		target.sec_hud_set_implants()
 		if(deconverted)
-			if(prob(1) || SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
+			if(prob(1) || SSgamemode.holidays && SSgamemode.holidays[APRIL_FOOLS])
 				target.say("I'm out! I quit! Whose kidneys are these?", forced = "They're out! They quit! Whose kidneys do they have?")
 		return TRUE
 	return FALSE

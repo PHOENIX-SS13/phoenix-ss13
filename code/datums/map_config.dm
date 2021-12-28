@@ -68,6 +68,8 @@
 	/// Amount of margin padding added to each side of the map. This is required to be atleast 2 for selflooping
 	var/map_margin = 5
 
+	var/banned_event_tags = list(TAG_PLANETARY)
+
 /datum/map_config/New()
 	//Make sure that all levels in station have the default station traits, unless they're overriden
 	. = ..()

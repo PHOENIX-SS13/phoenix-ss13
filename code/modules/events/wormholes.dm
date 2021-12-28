@@ -7,6 +7,9 @@ GLOBAL_LIST_EMPTY(all_wormholes) // So we can pick wormholes to teleport to
 	weight = 2
 	min_players = 2
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMMUNAL)
+
 
 /datum/round_event/wormholes
 	announceWhen = 10

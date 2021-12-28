@@ -6,6 +6,9 @@
 	min_players = 15
 	max_occurrences = 1
 
+	track = EVENT_TRACK_MAJOR
+	tags = list(TAG_DESTRUCTIVE, TAG_COMMUNAL)
+
 /datum/round_event/brand_intelligence
 	announceWhen = 21
 	endWhen = 1000 //Ends when all vending machines are subverted anyway.

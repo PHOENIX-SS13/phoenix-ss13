@@ -4,6 +4,9 @@
 	max_occurrences = 2
 	min_players = 5
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY)
+
 /datum/round_event/grey_tide
 	announceWhen = 50
 	endWhen = 20

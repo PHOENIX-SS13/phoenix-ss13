@@ -5,6 +5,9 @@
 	weight = 1
 	earliest_start = 5 MINUTES
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_COMMUNAL, TAG_POSITIVE, TAG_SPACE)
+
 /datum/round_event_control/aurora_caelus/canSpawnEvent(players)
 	if(!CONFIG_GET(flag/starlight))
 		return FALSE

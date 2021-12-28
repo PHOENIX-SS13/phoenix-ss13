@@ -3,6 +3,10 @@
 	typepath = /datum/round_event/falsealarm
 	weight = 20
 	max_occurrences = 5
+
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_SPOOKY)
+
 	var/forced_type //Admin abuse
 
 
@@ -12,7 +16,7 @@
 
 	var/list/possible_types = list()
 
-	for(var/datum/round_event_control/E in SSevents.control)
+	for(var/datum/round_event_control/E in SSgamemode.control)
 		var/datum/round_event/event = E.typepath
 		if(!initial(event.fakeable))
 			continue
@@ -49,7 +53,7 @@
 
 /proc/gather_false_events(players_amt)
 	. = list()
-	for(var/datum/round_event_control/E in SSevents.control)
+	for(var/datum/round_event_control/E in SSgamemode.control)
 		if(istype(E, /datum/round_event_control/falsealarm))
 			continue
 		if(!E.canSpawnEvent(players_amt))

@@ -240,7 +240,7 @@
 
 /mob/living/simple_animal/hostile/imp/slaughter/laughter/Initialize()
 	. = ..()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
+	if(SSgamemode.holidays && SSgamemode.holidays[APRIL_FOOLS])
 		icon_state = "honkmon"
 
 /mob/living/simple_animal/hostile/imp/slaughter/laughter/Destroy()

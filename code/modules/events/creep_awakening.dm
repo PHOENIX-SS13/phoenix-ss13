@@ -4,6 +4,9 @@
 	max_occurrences = 1
 	min_players = 20
 
+	track = EVENT_TRACK_ROLESET
+	tags = list(TAG_SPOOKY, TAG_TARGETED)
+
 /datum/round_event/obsessed
 	fakeable = FALSE
 

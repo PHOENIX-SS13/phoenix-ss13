@@ -5,6 +5,9 @@
 	max_occurrences = 3
 	min_players = 10
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT)
+
 /datum/round_event/spacevine
 	fakeable = FALSE
 

@@ -6,6 +6,9 @@
 	earliest_start = 10 MINUTES
 	max_occurrences = 6
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT, TAG_SPACE)
+
 /datum/round_event_control/carp_migration/New()
 	. = ..()
 	if(!HAS_TRAIT(SSstation, STATION_TRAIT_CARP_INFESTATION))

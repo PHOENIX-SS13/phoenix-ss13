@@ -3,6 +3,9 @@
 	typepath = /datum/round_event/radiation_storm
 	max_occurrences = 1
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMMUNAL)
+
 /datum/round_event/radiation_storm
 
 

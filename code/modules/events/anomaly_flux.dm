@@ -6,6 +6,9 @@
 	max_occurrences = 5
 	weight = 20
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_DESTRUCTIVE)
+
 /datum/round_event/anomaly/anomaly_flux
 	startWhen = 10
 	announceWhen = 3

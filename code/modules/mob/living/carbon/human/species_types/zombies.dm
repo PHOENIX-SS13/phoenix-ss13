@@ -36,7 +36,7 @@
 	bodytemp_cold_damage_limit = MINIMUM_TEMPERATURE_TO_MOVE // take damage below minimum movement temp
 
 /datum/species/zombie/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
+	if(SSgamemode.holidays && SSgamemode.holidays[HALLOWEEN])
 		return TRUE
 	return ..()
 

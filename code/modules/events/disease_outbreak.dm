@@ -5,6 +5,10 @@
 	min_players = 10
 	weight = 5
 
+	track = EVENT_TRACK_MAJOR
+	tags = list(TAG_COMMUNAL, TAG_TARGETED)
+	min_med_crew = 1
+
 /datum/round_event/disease_outbreak
 	announceWhen = 15
 

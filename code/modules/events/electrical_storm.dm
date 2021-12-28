@@ -6,6 +6,9 @@
 	weight = 20
 	alert_observers = FALSE
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_SPOOKY) //Ever so slightly destructive? Not enough to warrant a tag?
+
 /datum/round_event/electrical_storm
 	var/lightsoutAmount = 1
 	var/lightsoutRange = 25

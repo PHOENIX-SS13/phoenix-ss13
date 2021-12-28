@@ -21,6 +21,9 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 	typepath = /datum/round_event/ghost_role/sentience
 	weight = 10
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_POSITIVE)
+
 
 /datum/round_event/ghost_role/sentience
 	minimum_required = 1

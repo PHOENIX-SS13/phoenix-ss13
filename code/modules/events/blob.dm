@@ -6,7 +6,9 @@
 
 	min_players = 20
 
-	dynamic_should_hijack = TRUE
+	track = EVENT_TRACK_MAJOR
+	tags = list(TAG_DESTRUCTIVE, TAG_COMBAT)
+	min_sec_crew = 1
 
 /datum/round_event_control/blob/canSpawnEvent(players)
 	if(EMERGENCY_PAST_POINT_OF_NO_RETURN) // no blobs if the shuttle is past the point of no return

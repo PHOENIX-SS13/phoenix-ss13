@@ -12,6 +12,8 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	typepath = /datum/round_event/immovable_rod
 	min_players = 15
 	max_occurrences = 5
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_DESTRUCTIVE)
 	var/atom/special_target
 	var/force_looping = FALSE
 

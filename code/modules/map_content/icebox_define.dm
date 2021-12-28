@@ -45,3 +45,5 @@
 	atmosphere_type = /datum/atmosphere/icemoon
 	day_night_controller_type = /datum/day_night_controller
 	ore_node_seeder_type = /datum/ore_node_seeder
+
+	banned_event_tags = list(TAG_SPACE)

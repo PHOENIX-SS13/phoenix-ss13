@@ -5,6 +5,9 @@
 	max_occurrences = 5
 	weight = 20
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_DESTRUCTIVE)
+
 /datum/round_event/anomaly/anomaly_pyro
 	startWhen = 3
 	announceWhen = 10

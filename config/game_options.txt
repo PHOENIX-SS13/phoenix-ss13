@@ -84,66 +84,9 @@ ALERT_DELTA Destruction of the station is imminent. All crew are instructed to o
 ## Uncomment to not send a roundstart intercept report. Gamemodes may override this.
 #NO_INTERCEPT_REPORT
 
-## Probablities for game modes chosen in 'secret' and 'random' modes.
-## Default probablity is 1, increase to make that mode more likely to be picked.
-## Set to 0 to disable that mode.
-
-PROBABILITY TRAITOR 5
-PROBABILITY TRAITORBRO 2
-PROBABILITY TRAITORCHAN 4
-PROBABILITY INTERNAL_AFFAIRS 3
-PROBABILITY NUCLEAR 2
-PROBABILITY REVOLUTION 2
-PROBABILITY CULT 2
-PROBABILITY CHANGELING 2
-PROBABILITY WIZARD 4
-PROBABILITY MONKEY 0
-PROBABILITY METEOR 0
-PROBABILITY EXTENDED 0
-PROBABILITY SECRET_EXTENDED 0
-PROBABILITY CLOWNOPS 0
-
-## You probably want to keep sandbox off by default for secret and random.
-PROBABILITY SANDBOX 0
-
 ## Percent weight reductions for three of the most recent modes
 
 REPEATED_MODE_ADJUST 45 30 10
-
-## Toggles for continuous modes.
-## Modes that aren't continuous will end the instant all antagonists are dead.
-
-CONTINUOUS TRAITOR
-CONTINUOUS TRAITORBRO
-CONTINUOUS TRAITORCHAN
-CONTINUOUS INTERNAL_AFFAIRS
-#CONTINUOUS NUCLEAR
-#CONTINUOUS REVOLUTION
-CONTINUOUS CULT
-CONTINUOUS CHANGELING
-CONTINUOUS WIZARD
-#CONTINUOUS MONKEY
-
-##Note: do not toggle continuous off for these modes, as they have no antagonists and would thus end immediately!
-
-CONTINUOUS METEOR
-CONTINUOUS EXTENDED
-CONTINUOUS SECRET_EXTENDED
-
-
-## Toggles for allowing midround antagonists (aka mulligan antagonists).
-## In modes that are continuous, if all antagonists should die then a new set of antagonists will be created.
-
-MIDROUND_ANTAG TRAITOR
-#MIDROUND_ANTAG TRAITORBRO
-MIDROUND_ANTAG TRAITORCHAN
-MIDROUND_ANTAG INTERNAL_AFFAIRS
-#MIDROUND_ANTAG  NUCLEAR
-#MIDROUND_ANTAG  REVOLUTION
-MIDROUND_ANTAG CULT
-MIDROUND_ANTAG CHANGELING
-MIDROUND_ANTAG WIZARD
-#MIDROUND_ANTAG  MONKEY
 
 ## Uncomment these for overrides of the minimum / maximum number of players in a round type.
 ## If you set any of these occasionally check to see if you still need them as the modes
@@ -222,9 +165,6 @@ PROTECT_ROLES_FROM_ANTAGONIST
 
 ## If late-joining players have a chance to become a traitor/changeling
 ALLOW_LATEJOIN_ANTAGONISTS
-
-## The maximum amount of extra tickets a user may use from their ticket bank in addition to the default tickets
-MAX_TICKETS_PER_ROLL 100
 
 ## Uncomment to allow players to see the set odds of different rounds in secret/random in the get server revision screen. This will NOT tell the current roundtype.
 #SHOW_GAME_TYPE_ODDS
@@ -479,14 +419,6 @@ OVERFLOW_CAP -1
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 #GREY_ASSISTANTS
 
-## Midround Antag (aka Mulligan antag) config options ###
-
-## A time, in minutes, after which the midround antag system stops attempting to run and continuous rounds end immediately upon completion.
-MIDROUND_ANTAG_TIME_CHECK 60
-
-## A ratio of living to total crew members, the lower this is, the more people will have to die in order for midround antag to be skipped
-MIDROUND_ANTAG_LIFE_CHECK 0.7
-
 ##Limit Spell Choices##
 ## Uncomment to disallow wizards from using certain spells that may be too chaotic/fun for your playerbase
 
@@ -535,10 +467,6 @@ ARRIVALS_SHUTTLE_DOCK_WINDOW 55
 ## Uncomment to prevent late join players from spawning if the arrivals shuttle is depressurized
 #ARRIVALS_SHUTTLE_REQUIRE_SAFE_LATEJOIN
 
-## How many wirechewing rodents you want to spawn on exposed maintenane wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
-
-MICE_ROUNDSTART 10
-
 ## If the percentage of players alive (doesn't count conversions) drops below this threshold the emergency shuttle will be forcefully called (provided it can be)
 #EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
 
@@ -579,5 +507,35 @@ MAXFINE 2000
 ## Giving players access to it has major security concerns, be careful and deliberate when using this feature.
 #SDQL_SPELLS
 
-## How long until someone can be put in cryo if they are SSD
+## How long until someone can be put in cryo if they are SSD, in minutes
 CRYO_MIN_SSD_TIME 15
+
+## Gamemode configurations
+
+## Multipliers for points gained over time for event tracks.
+MUNDANE_POINT_GAIN_MULTIPLIER 1
+MODERATE_POINT_GAIN_MULTIPLIER 1
+MAJOR_POINT_GAIN_MULTIPLIER 1
+ROLESET_POINT_GAIN_MULTIPLIER 1
+OBJECTIVES_POINT_GAIN_MULTIPLIER 1
+
+## Multipliers for points to spend on roundstart events.
+MUNDANE_ROUNDSTART_POINT_MULTIPLIER 1
+MODERATE_ROUNDSTART_POINT_MULTIPLIER 1
+MAJOR_ROUNDSTART_POINT_MULTIPLIER 1
+ROLESET_ROUNDSTART_POINT_MULTIPLIER 1
+OBJECTIVES_ROUNDSTART_POINT_MULTIPLIER 1
+
+## Minimum population caps for event tracks to run their events.
+MUNDANE_MIN_POP 4
+MODERATE_MIN_POP 6
+MAJOR_MIN_POP 10
+ROLESET_MIN_POP 10
+OBJECTIVES_MIN_POP 10
+
+## Point thresholds for tracks to run events. The lesser the more frequent events will be.
+MUNDANE_POINT_THRESHOLD 25
+MODERATE_POINT_THRESHOLD 50
+MAJOR_POINT_THRESHOLD 90
+ROLESET_POINT_THRESHOLD 120
+OBJECTIVES_POINT_THRESHOLD 130

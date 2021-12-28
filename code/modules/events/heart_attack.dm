@@ -5,6 +5,10 @@
 	max_occurrences = 2
 	min_players = 40 // To avoid shafting lowpop
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_TARGETED)
+	min_med_crew = 1
+
 /datum/round_event/heart_attack/start()
 	var/list/heart_attack_contestants = list()
 	for(var/mob/living/carbon/human/victim in shuffle(GLOB.player_list))

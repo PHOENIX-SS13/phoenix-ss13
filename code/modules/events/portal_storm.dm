@@ -5,6 +5,9 @@
 	min_players = 15
 	earliest_start = 30 MINUTES
 
+	track = EVENT_TRACK_MAJOR
+	tags = list(TAG_COMBAT)
+
 /datum/round_event/portal_storm/syndicate_shocktroop
 	boss_types = list(/mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper = 2)
 	hostile_types = list(/mob/living/simple_animal/hostile/syndicate/melee/space = 8,\

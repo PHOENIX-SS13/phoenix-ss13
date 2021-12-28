@@ -118,8 +118,6 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 		gangbangers += gangbanger
 		gangbanger.restricted_roles = restricted_jobs
 		log_game("[key_name(gangbanger)] has been selected as a starting gangster!")
-		if(!midround_ruleset)
-			GLOB.pre_setup_antags += gangbanger
 	for(var/j = 0, j < gangs_to_generate, j++)
 		if(!antag_candidates.len)
 			break
@@ -133,8 +131,6 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 		undercover_cops += undercover_cop
 		undercover_cop.restricted_roles = restricted_jobs
 		log_game("[key_name(undercover_cop)] has been selected as a starting undercover cop!")
-		if(!midround_ruleset)
-			GLOB.pre_setup_antags += undercover_cop
 	deaths_during_shift_at_beginning = GLOB.deaths_during_shift // don't want to mix up pre-families and post-families deaths
 	start_time = world.time
 	end_time = start_time + ((60 MINUTES) / (midround_ruleset ? 2 : 1)) // midround families rounds end quicker
@@ -161,8 +157,6 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 	var/replacement_cops = 0
 	for(var/datum/mind/gangbanger in gangbangers)
 		if(!ishuman(gangbanger.current))
-			if(!midround_ruleset)
-				GLOB.pre_setup_antags -= gangbanger
 			gangbangers.Remove(gangbanger)
 			log_game("[gangbanger] was not a human, and thus has lost their gangster role.")
 			replacement_gangsters++
@@ -183,8 +177,6 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 	for(var/datum/mind/undercover_cop in undercover_cops)
 		if(!ishuman(undercover_cop.current))
 			undercover_cops.Remove(undercover_cop)
-			if(!midround_ruleset)
-				GLOB.pre_setup_antags -= undercover_cop
 			log_game("[undercover_cop] was not a human, and thus has lost their undercover cop role.")
 			replacement_cops++
 	if(replacement_cops)

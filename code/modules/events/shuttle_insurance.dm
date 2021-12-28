@@ -5,6 +5,9 @@
 	typepath = /datum/round_event/shuttle_insurance
 	max_occurrences = 1
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list()
+
 /datum/round_event_control/shuttle_insurance/canSpawnEvent(players)
 	if(!SSeconomy.get_dep_account(ACCOUNT_CAR))
 		return FALSE //They can't pay?

@@ -3,6 +3,9 @@
 	typepath = /datum/round_event/communications_blackout
 	weight = 30
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMMUNAL)
+
 /datum/round_event/communications_blackout
 	announceWhen = 1
 

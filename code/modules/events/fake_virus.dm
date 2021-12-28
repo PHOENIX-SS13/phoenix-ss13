@@ -3,6 +3,9 @@
 	typepath = /datum/round_event/fake_virus
 	weight = 20
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_TARGETED)
+
 /datum/round_event/fake_virus/start()
 	var/list/fake_virus_victims = list()
 	for(var/mob/living/carbon/human/victim in shuffle(GLOB.player_list))

@@ -6,6 +6,9 @@
 	max_occurrences = 2
 	weight = 10
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_DESTRUCTIVE)
+
 /datum/round_event/anomaly/anomaly_vortex
 	startWhen = 10
 	announceWhen = 3

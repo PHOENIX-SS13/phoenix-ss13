@@ -5,6 +5,9 @@
 	max_occurrences = 2
 	min_players = 1
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_COMMUNAL)
+
 /datum/round_event/mass_hallucination
 	fakeable = FALSE
 

@@ -5,6 +5,8 @@
 	max_occurrences = 5
 	weight = 25
 
+	track = EVENT_TRACK_MODERATE
+
 /datum/round_event/anomaly/anomaly_grav
 	startWhen = 3
 	announceWhen = 20

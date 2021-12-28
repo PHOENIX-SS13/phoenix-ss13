@@ -162,7 +162,7 @@
 				return
 			LAZYREMOVE(messages, LAZYACCESS(messages, message_index))
 		if ("emergency_meeting")
-			if(!(SSevents.holidays && SSevents.holidays[APRIL_FOOLS]))
+			if(!(SSgamemode.holidays && SSgamemode.holidays[APRIL_FOOLS]))
 				return
 			if (!authenticated_as_silicon_or_captain(usr))
 				return
@@ -211,7 +211,7 @@
 			if (bank_account.account_balance < shuttle.credit_cost)
 				return
 			SSshuttle.shuttle_purchased = SHUTTLEPURCHASE_PURCHASED
-			for(var/datum/round_event_control/shuttle_insurance/insurance_event in SSevents.control)
+			for(var/datum/round_event_control/shuttle_insurance/insurance_event in SSgamemode.control)
 				insurance_event.weight *= 20
 			SSshuttle.unload_preview()
 			SSshuttle.existing_shuttle = SSshuttle.emergency
@@ -409,7 +409,7 @@
 				data["importantActionReady"] = COOLDOWN_FINISHED(src, important_action_cooldown)
 				data["shuttleCalled"] = FALSE
 				data["shuttleLastCalled"] = FALSE
-				data["aprilFools"] = SSevents.holidays && SSevents.holidays[APRIL_FOOLS]
+				data["aprilFools"] = SSgamemode.holidays && SSgamemode.holidays[APRIL_FOOLS]
 				data["alertLevel"] = get_security_level()
 				data["authorizeName"] = authorize_name
 				data["canLogOut"] = !issilicon(user)

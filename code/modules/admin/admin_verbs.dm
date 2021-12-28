@@ -170,7 +170,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/clear_dynamic_transit,
 	/client/proc/toggle_medal_disable,
 	/client/proc/view_runtimes,
-	/client/proc/pump_random_event,
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
@@ -181,8 +180,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/print_cards,
 	#ifdef TESTING
 	/client/proc/check_missing_sprites,
-	/client/proc/export_dynamic_json,
-	/client/proc/run_dynamic_simulations,
 	#endif
 	#ifdef SENDMAPS_PROFILE
 	/client/proc/display_sendmaps,

@@ -5,7 +5,9 @@
 	max_occurrences = 1
 	earliest_start = 1 HOURS
 	min_players = 20
-	dynamic_should_hijack = TRUE
+
+	track = EVENT_TRACK_ROLESET
+	tags = list(TAG_COMBAT, TAG_SPOOKY)
 
 
 

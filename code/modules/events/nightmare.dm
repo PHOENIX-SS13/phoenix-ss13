@@ -3,7 +3,9 @@
 	typepath = /datum/round_event/ghost_role/nightmare
 	max_occurrences = 1
 	min_players = 20
-	dynamic_should_hijack = TRUE
+
+	track = EVENT_TRACK_ROLESET
+	tags = list(TAG_COMBAT, TAG_SPOOKY)
 
 /datum/round_event/ghost_role/nightmare
 	minimum_required = 1

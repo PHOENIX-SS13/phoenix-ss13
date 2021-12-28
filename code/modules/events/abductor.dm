@@ -4,7 +4,9 @@
 	weight = 10
 	max_occurrences = 1
 	min_players = 20
-	dynamic_should_hijack = TRUE
+
+	track = EVENT_TRACK_MAJOR
+	tags = list(TAG_TARGETED, TAG_SPOOKY)
 
 /datum/round_event/ghost_role/abductor
 	minimum_required = 2

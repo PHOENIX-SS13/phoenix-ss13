@@ -14,6 +14,9 @@
 	max_occurrences = 1
 	earliest_start = 7 MINUTES
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_POSITIVE)
+
 /datum/round_event/shuttle_loan
 	announceWhen = 1
 	endWhen = 500

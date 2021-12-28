@@ -4,6 +4,9 @@
 	weight = 10
 	max_occurrences = 3
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
+
 /datum/round_event/grid_check
 	announceWhen = 1
 	startWhen = 1

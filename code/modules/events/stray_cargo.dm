@@ -6,6 +6,9 @@
 	max_occurrences = 4
 	earliest_start = 10 MINUTES
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_POSITIVE)
+
 ///Spawns a cargo pod containing a random cargo supply pack on a random area of the station
 /datum/round_event/stray_cargo
 	var/area/impact_area ///Randomly picked area

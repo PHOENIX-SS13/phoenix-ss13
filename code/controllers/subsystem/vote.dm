@@ -118,6 +118,8 @@ SUBSYSTEM_DEF(vote)
 			if("map")
 				SSmapping.changemap(global.config.maplist[.])
 				SSmapping.map_voted = TRUE
+			if(STORYTELLER_VOTE)
+				SSgamemode.storyteller_vote_result(.)
 	if(restart)
 		var/active_admins = FALSE
 		for(var/client/C in GLOB.admins + GLOB.deadmins)
@@ -171,6 +173,8 @@ SUBSYSTEM_DEF(vote)
 
 		reset()
 		switch(vote_type)
+			if(STORYTELLER_VOTE)
+				choices.Add(SSgamemode.storyteller_vote_choices())
 			if("restart")
 				choices.Add("Restart Round","Continue Playing")
 			if("map")

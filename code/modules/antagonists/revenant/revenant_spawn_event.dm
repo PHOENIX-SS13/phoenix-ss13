@@ -6,7 +6,9 @@
 	weight = 7
 	max_occurrences = 1
 	min_players = 5
-	dynamic_should_hijack = TRUE
+
+	track = EVENT_TRACK_ROLESET
+	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY)
 
 
 /datum/round_event/ghost_role/revenant

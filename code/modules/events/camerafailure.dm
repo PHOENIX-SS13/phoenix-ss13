@@ -5,6 +5,9 @@
 	max_occurrences = 20
 	alert_observers = FALSE
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_DESTRUCTIVE)
+
 /datum/round_event/camera_failure
 	fakeable = FALSE
 

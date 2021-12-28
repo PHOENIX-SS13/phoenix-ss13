@@ -4,7 +4,10 @@
 	weight = 10
 	max_occurrences = 1
 	min_players = 20
-	dynamic_should_hijack = TRUE
+
+	track = EVENT_TRACK_MAJOR //Spiders on tg can be absolutely bonkers
+	tags = list(TAG_COMBAT)
+	min_sec_crew = 2
 
 /datum/round_event/spider_infestation
 	announceWhen = 400

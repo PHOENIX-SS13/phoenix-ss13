@@ -4,6 +4,9 @@
 	weight = 15
 	min_players = 20
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_DESTRUCTIVE, TAG_COMMUNAL)
+
 /datum/round_event/processor_overload
 	announceWhen = 1
 

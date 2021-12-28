@@ -86,7 +86,7 @@
 		qdel(AM)
 
 /mob/living/simple_animal/mouse/handle_automated_action()
-	/**if(prob(chew_probability))
+	if(prob(chew_probability))
 		var/turf/open/floor/F = get_turf(src)
 		if(istype(F) && !F.intact)
 			var/obj/structure/cable/C = locate() in F
@@ -101,7 +101,7 @@
 				C.deconstruct()
 				if(powered)
 					playsound(src, 'sound/effects/sparks2.ogg', 100, TRUE)
-	**/ //Disables Mouse nombing wires because lowpop
+
 	for(var/obj/item/food/cheese/cheese in range(1, src))
 		if(prob(10))
 			be_fruitful()

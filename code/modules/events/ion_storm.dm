@@ -4,6 +4,9 @@
 	weight = 15
 	min_players = 2
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_TARGETED)
+
 /datum/round_event/ion_storm
 	var/replaceLawsetChance = 25 //chance the AI's lawset is completely replaced with something else per config weights
 	var/removeRandomLawChance = 10 //chance the AI has one random supplied or inherent law removed

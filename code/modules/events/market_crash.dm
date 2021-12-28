@@ -8,6 +8,9 @@
 	typepath = /datum/round_event/market_crash
 	weight = 10
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_COMMUNAL)
+
 /datum/round_event/market_crash
 	var/market_dip = 0
 

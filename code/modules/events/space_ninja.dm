@@ -5,7 +5,9 @@
 	weight = 10
 	earliest_start = 20 MINUTES
 	min_players = 20
-	dynamic_should_hijack = TRUE
+
+	track = EVENT_TRACK_ROLESET
+	tags = list(TAG_COMBAT)
 
 /datum/round_event/ghost_role/space_ninja
 	minimum_required = 1

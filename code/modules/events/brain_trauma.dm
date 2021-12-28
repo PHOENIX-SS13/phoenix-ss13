@@ -3,6 +3,10 @@
 	typepath = /datum/round_event/brain_trauma
 	weight = 25
 
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_TARGETED)
+	min_med_crew = 1
+
 /datum/round_event/brain_trauma
 	fakeable = FALSE
 

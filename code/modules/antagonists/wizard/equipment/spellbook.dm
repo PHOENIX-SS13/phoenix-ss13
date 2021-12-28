@@ -532,9 +532,6 @@
 	name = "Friendly Wizard Scum"
 	desc = "A \"Friendly\" Wizard will protect the station, and try to kill you. They get a spellbook much like you, but will use it for \"GOOD\"."
 
-/// How much threat we need to let these rituals happen on dynamic
-#define MINIMUM_THREAT_FOR_RITUALS 100
-
 /datum/spellbook_entry/summon
 	name = "Summon Stuff"
 	category = "Rituals"
@@ -565,10 +562,6 @@
 /datum/spellbook_entry/summon/guns/IsAvailable()
 	if(!SSticker.mode) // In case spellbook is placed on map
 		return FALSE
-	if(istype(SSticker.mode, /datum/game_mode/dynamic)) // Disable events on dynamic
-		var/datum/game_mode/dynamic/mode = SSticker.mode
-		if(mode.threat_level < MINIMUM_THREAT_FOR_RITUALS)
-			return FALSE
 	return !CONFIG_GET(flag/no_summon_guns)
 
 /datum/spellbook_entry/summon/guns/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -587,10 +580,6 @@
 /datum/spellbook_entry/summon/magic/IsAvailable()
 	if(!SSticker.mode) // In case spellbook is placed on map
 		return FALSE
-	if(istype(SSticker.mode, /datum/game_mode/dynamic)) // Disable events on dynamic
-		var/datum/game_mode/dynamic/mode = SSticker.mode
-		if(mode.threat_level < MINIMUM_THREAT_FOR_RITUALS)
-			return FALSE
 	return !CONFIG_GET(flag/no_summon_magic)
 
 /datum/spellbook_entry/summon/magic/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -611,10 +600,6 @@
 /datum/spellbook_entry/summon/events/IsAvailable()
 	if(!SSticker.mode) // In case spellbook is placed on map
 		return FALSE
-	if(istype(SSticker.mode, /datum/game_mode/dynamic)) // Disable events on dynamic
-		var/datum/game_mode/dynamic/mode = SSticker.mode
-		if(mode.threat_level < MINIMUM_THREAT_FOR_RITUALS)
-			return FALSE
 	return !CONFIG_GET(flag/no_summon_events)
 
 /datum/spellbook_entry/summon/events/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -647,8 +632,6 @@
 	to_chat(user, SPAN_NOTICE("You have cast the curse of insanity!"))
 	playsound(user, 'sound/magic/mandswap.ogg', 50, TRUE)
 	return TRUE
-
-#undef MINIMUM_THREAT_FOR_RITUALS
 
 /obj/item/spellbook
 	name = "spell book"

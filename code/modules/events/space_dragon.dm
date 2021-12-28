@@ -4,7 +4,9 @@
 	weight = 10
 	max_occurrences = 1
 	min_players = 20
-	dynamic_should_hijack = TRUE
+
+	track = EVENT_TRACK_ROLESET
+	tags = list(TAG_COMBAT)
 
 /datum/round_event/ghost_role/space_dragon
 	minimum_required = 1

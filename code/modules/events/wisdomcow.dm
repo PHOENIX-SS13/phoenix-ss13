@@ -4,6 +4,9 @@
 	max_occurrences = 1
 	weight = 20
 
+	track = EVENT_TRACK_MUNDANE
+	tags = list()
+
 /datum/round_event/wisdomcow/announce(fake)
 	priority_announce("A wise cow has been spotted in the area. Be sure to ask for her advice.", "Nanotrasen Cow Ranching Agency")
 

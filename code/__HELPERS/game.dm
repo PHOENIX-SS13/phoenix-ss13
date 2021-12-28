@@ -422,8 +422,7 @@
 	if(!(GLOB.ghost_role_flags & GHOSTROLE_STATION_SENTIENCE))
 		return candidates
 
-	for(var/mob/dead/observer/G in GLOB.player_list)
-		candidates += G
+	candidates = SSgamemode.get_candidates(be_special_flag, jobbanType, observers = TRUE)
 
 	return pollCandidates(Question, jobbanType, be_special_flag, poll_time, ignore_category, flashwindow, candidates)
 
@@ -432,28 +431,17 @@
 	if (!Question)
 		Question = "Would you like to be a special role?"
 	var/list/result = list()
-	for(var/m in group)
-		var/mob/M = m
-		if(!M.key || !M.client || (ignore_category && GLOB.poll_ignore[ignore_category] && (M.ckey in GLOB.poll_ignore[ignore_category])))
+	for(var/mob/mob_we_check as anything in group)
+		if((ignore_category && GLOB.poll_ignore[ignore_category] && (mob_we_check.ckey in GLOB.poll_ignore[ignore_category])))
 			continue
-		if(be_special_flag)
-			if(!(M.client.prefs) || !(be_special_flag in M.client.prefs.be_special))
-				continue
 
-			var/required_time = GLOB.special_roles[be_special_flag] || 0
-			if (M.client && M.client.get_remaining_days(required_time) > 0)
-				continue
-		if(jobbanType)
-			if(is_banned_from(M.ckey, list(jobbanType, ROLE_SYNDICATE)) || QDELETED(M))
-				continue
-
-		showCandidatePollWindow(M, poll_time, Question, result, ignore_category, time_passed, flashwindow)
+		showCandidatePollWindow(mob_we_check, poll_time, Question, result, ignore_category, time_passed, flashwindow)
 	sleep(poll_time)
 
 	//Check all our candidates, to make sure they didn't log off or get deleted during the wait period.
-	for(var/mob/M in result)
-		if(!M.key || !M.client)
-			result -= M
+	for(var/mob/mob_we_check as anything in result)
+		if(!mob_we_check.key || !mob_we_check.client || QDELETED(mob_we_check))
+			result -= mob_we_check
 
 	listclearnulls(result)
 
