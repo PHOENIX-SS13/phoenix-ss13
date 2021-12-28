@@ -110,6 +110,7 @@
 
 /obj/structure/mineral_door/proc/Open()
 	isSwitchingStates = TRUE
+	play_blind_effect(src, 5, "door_open", dir)
 	playsound(src, openSound, 100, TRUE)
 	set_opacity(FALSE)
 	update_appearance()
@@ -131,6 +132,7 @@
 	for(var/mob/living/L in T)
 		return
 	isSwitchingStates = TRUE
+	play_blind_effect(src, 5, "door_close", dir)
 	playsound(src, closeSound, 100, TRUE)
 	update_appearance()
 	sleep(10)

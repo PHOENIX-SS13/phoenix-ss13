@@ -149,12 +149,6 @@
 #define CAMERA_STATIC_PLANE 200
 #define CAMERA_STATIC_RENDER_TARGET "CAMERA_STATIC_PLANE"
 
-///Popup Chat Messages
-#define RUNECHAT_PLANE 250
-
-/// Plane for balloon text (text that fades up)
-#define BALLOON_CHAT_PLANE 251
-
 ///Debug Atmos Overlays
 #define ATMOS_GROUP_PLANE 450
 
@@ -167,6 +161,13 @@
 #define BLIND_LAYER 4
 #define CRIT_LAYER 5
 #define CURSE_LAYER 6
+#define FOV_EFFECTS_LAYER 10000 //Blindness effects are not layer 4, they lie to you
+
+///Popup Chat Messages
+#define RUNECHAT_PLANE 501
+
+/// Plane for balloon text (text that fades up)
+#define BALLOON_CHAT_PLANE 502
 
 
 //-------------------- HUD ---------------------

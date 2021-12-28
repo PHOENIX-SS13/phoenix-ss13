@@ -106,7 +106,7 @@
 		return
 	playsound(T, pick(footstep_sounds[turf_footstep][1]), footstep_sounds[turf_footstep][2] * volume, TRUE, footstep_sounds[turf_footstep][3] + e_range, falloff_distance = 1, vary = sound_vary)
 
-/datum/component/footstep/proc/play_humanstep()
+/datum/component/footstep/proc/play_humanstep(mob/living/carbon/human/source, atom/oldloc, direction)
 	SIGNAL_HANDLER
 
 	if(HAS_TRAIT(parent, TRAIT_SILENT_FOOTSTEPS))
@@ -133,6 +133,7 @@
 		return
 	if(!T.footstep)
 		return
+	play_blind_effect(source, 5, "footstep", direction, ignore_self = TRUE)
 	if(established_type == FOOTSTEP_MOB_SHOE)
 		playsound(T, pick(GLOB.footstep[T.footstep][1]),
 			GLOB.footstep[T.footstep][2] * volume * volume_multiplier,

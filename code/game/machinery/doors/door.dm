@@ -331,6 +331,7 @@
 		return 1
 	if(operating)
 		return
+	play_blind_effect(src, 5, "door_open_vert", dir)
 	operating = TRUE
 	do_animate("opening")
 	set_opacity(0)
@@ -360,6 +361,7 @@
 					autoclose_in(DOOR_CLOSE_WAIT)
 				return
 
+	play_blind_effect(src, 5, "door_close_vert", dir)
 	operating = TRUE
 
 	do_animate("closing")

@@ -1088,6 +1088,7 @@
 
 	if(!density)
 		return TRUE
+	play_blind_effect(src, 5, "door_open", dir)
 	SEND_SIGNAL(src, COMSIG_AIRLOCK_OPEN, forced)
 	operating = TRUE
 	update_icon(ALL, AIRLOCK_OPENING, TRUE)
@@ -1135,6 +1136,7 @@
 	var/obj/structure/window/killthis = (locate(/obj/structure/window) in get_turf(src))
 	if(killthis)
 		SSexplosions.med_mov_atom += killthis
+	play_blind_effect(src, 5, "door_close", dir)
 	SEND_SIGNAL(src, COMSIG_AIRLOCK_CLOSE, forced)
 	operating = TRUE
 	update_icon(ALL, AIRLOCK_CLOSING, 1)
