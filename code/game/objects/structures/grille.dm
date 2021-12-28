@@ -40,8 +40,6 @@
 	. = ..()
 	if(broken)
 		icon_state = "brokengrille"
-	else
-		QUEUE_SMOOTH(src)
 
 /obj/structure/grille/set_smoothed_icon_state(new_junction)
 	if(broken)
@@ -290,6 +288,7 @@
 		rods_amount = 2
 		rods_broken = TRUE
 		smoothing_flags = SMOOTH_BITMASK
+		QUEUE_SMOOTH(src)
 		update_appearance()
 		return TRUE
 	return FALSE
