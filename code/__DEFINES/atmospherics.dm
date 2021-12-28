@@ -308,8 +308,9 @@
 #define ATMOS_PASS_DENSITY -2
 
 //DO NOT USE THESE FOR ACCESSING ATMOS DATA, THEY MUTATE THINGS WHEN CALLED. I WILL BEAT YOU WITH A STICK. See the actual proc for more details
-#define CANATMOSPASS(A, O) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
-#define CANVERTICALATMOSPASS(A, O) ( A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : ( A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical ) )
+///Check if an atom (A) and a turf (O) allow gas passage based on the atom's CanAtmosPass var, do not use.
+///(V) is if the share is vertical or not. True or False
+#define CANATMOSPASS(A, O, V) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O, V) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
 
 //OPEN TURF ATMOS
 /// the default air mix that open turfs spawn

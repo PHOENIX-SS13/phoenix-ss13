@@ -7,7 +7,7 @@
 	anchored = TRUE
 	plane = FLOOR_PLANE
 	layer = ABOVE_NORMAL_TURF_LAYER
-	CanAtmosPassVertical = ATMOS_PASS_PROC
+	CanAtmosPass = ATMOS_PASS_PROC
 
 /obj/effect/abstract/shuttle_roof/Initialize()
 	. = ..()
@@ -46,7 +46,9 @@
 	var/turf/my_turf = loc
 	my_turf.attackby(I, user, params)
 
-/obj/effect/abstract/shuttle_roof/CanAtmosPass(turf/T)
+/obj/effect/abstract/shuttle_roof/CanAtmosPass(turf/T, vertical = FALSE)
+	if(!vertical)
+		return TRUE
 	var/turf/below_turf = SSmapping.get_turf_below(src)
 	if(T == below_turf)
 		return FALSE
