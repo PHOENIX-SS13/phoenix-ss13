@@ -1,0 +1,5 @@
+author: "Azarak"
+delete-after: True
+changes: 
+  - rscadd: "Blind people will now see visual effects from sound cues"
+  - rscadd: "Blind people will now see runechat and balloon alerts"
