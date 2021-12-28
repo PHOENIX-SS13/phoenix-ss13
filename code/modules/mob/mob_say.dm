@@ -41,6 +41,28 @@
 
 	usr.emote("me",1,message,TRUE)
 
+/mob/verb/subtle_verb(message as text)
+	set name = "Subtle"
+	set category = "IC"
+	if(GLOB.say_disabled) //This is here to try to identify lag problems
+		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
+		return
+
+	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+
+	usr.emote("subtle",1,message,TRUE)
+
+/mob/verb/subtler_verb(message as text)
+	set name = "Subtler Anti-Ghost"
+	set category = "IC"
+	if(GLOB.say_disabled) //This is here to try to identify lag problems
+		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
+		return
+
+	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+
+	usr.emote("subtler",1,message,TRUE)
+
 ///Speak as a dead person (ghost etc)
 /mob/proc/say_dead(message)
 	var/name = real_name

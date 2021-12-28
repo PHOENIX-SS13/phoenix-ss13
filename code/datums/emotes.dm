@@ -63,6 +63,10 @@
 	var/can_message_change = FALSE
 	/// How long is the cooldown on the audio of the emote, if it has one?
 	var/audio_cooldown = 2 SECONDS
+	/// How far will the emote be displayed
+	var/emote_distance = DEFAULT_MESSAGE_RANGE
+	/// Whether the emote will be shown to ghosts
+	var/show_ghosts = TRUE
 
 /datum/emote/New()
 	if (ispath(mob_type_allowed_typecache))
@@ -114,18 +118,19 @@
 	if(tmp_sound && (!only_forced_audio || !intentional) && !TIMER_COOLDOWN_CHECK(user, type))
 		TIMER_COOLDOWN_START(user, type, audio_cooldown)
 		playsound(user, tmp_sound, sound_volume, vary)
-
-	var/user_turf = get_turf(user)
-	for(var/mob/ghost in GLOB.dead_mob_list)
-		if(!ghost.client || isnewplayer(ghost))
-			continue
-		if(ghost.stat == DEAD && ghost.client && user.client && (ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(ghost in viewers(user_turf, null)))
-			ghost.show_message(SPAN_EMOTE("[FOLLOW_LINK(ghost, user)] [dchatmsg]"))
+	
+	if(show_ghosts)
+		var/user_turf = get_turf(user)
+		for(var/mob/ghost in GLOB.dead_mob_list)
+			if(!ghost.client || isnewplayer(ghost))
+				continue
+			if(ghost.stat == DEAD && ghost.client && user.client && (ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(ghost in viewers(user_turf, emote_distance)))
+				ghost.show_message(SPAN_EMOTE("[FOLLOW_LINK(ghost, user)] [dchatmsg]"))
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = SPAN_EMOTE("You see how <b>[user]</b> [msg]"), audible_message_flags = EMOTE_MESSAGE)
+		user.audible_message(msg, deaf_message = SPAN_EMOTE("You see how <b>[user]</b> [msg]"), audible_message_flags = EMOTE_MESSAGE, hearing_distance = emote_distance, show_ghosts = show_ghosts)
 	else
-		user.visible_message(msg, blind_message = SPAN_EMOTE("You hear how <b>[user]</b> [msg]"), visible_message_flags = EMOTE_MESSAGE)
+		user.visible_message(msg, blind_message = SPAN_EMOTE("You hear how <b>[user]</b> [msg]"), visible_message_flags = EMOTE_MESSAGE, vision_distance = emote_distance, show_ghosts = show_ghosts)
 
 /**
  * For handling emote cooldown, return true to allow the emote to happen.
