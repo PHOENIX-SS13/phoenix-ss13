@@ -57,8 +57,6 @@
 
 	var/parallax_movedir = 0
 
-	var/ambience_index = AMBIENCE_GENERIC
-	var/list/ambientsounds
 	flags_1 = CAN_BE_DIRTY_1
 
 	var/list/firedoors
@@ -85,11 +83,6 @@
 	///Used to decide what kind of reverb the area makes sound have
 	var/sound_environment = SOUND_ENVIRONMENT_NONE
 
-	///Used to decide what the minimum time between ambience is
-	var/min_ambience_cooldown = 30 SECONDS
-	///Used to decide what the maximum time between ambience is
-	var/max_ambience_cooldown = 90 SECONDS
-
 	/// Whether the area is underground, checked for the purposes of above/underground weathers
 	var/underground = FALSE
 
@@ -101,6 +94,11 @@
 	var/last_day_night_alpha
 	var/last_day_night_luminosity
 	var/datum/day_night_controller/subbed_day_night_controller
+
+	/// Main ambience that will play for users in the area.
+	var/main_ambience = AMBIENCE_GENERIC
+	/// A list of miscellanous ambient noises that will also play for users in the area.
+	var/list/ambient_noises
 
 /**
  * A list of teleport locations
@@ -157,8 +155,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  */
 /area/Initialize(mapload)
 	icon_state = ""
-	if(!ambientsounds)
-		ambientsounds = GLOB.ambience_assoc[ambience_index]
 	if(requires_power)
 		luminosity = 0
 	else
@@ -604,24 +600,12 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  * Call back when an atom enters an area
  *
  * Sends signals COMSIG_AREA_ENTERED and COMSIG_ENTER_AREA (to a list of atoms)
- *
- * If the area has ambience, then it plays some ambience music to the ambience channel
  */
 /area/Entered(atom/movable/arrived, direction)
 	set waitfor = FALSE
 	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, arrived, direction)
 	for(var/atom/movable/recipient as anything in arrived.area_sensitive_contents)
 		SEND_SIGNAL(recipient, COMSIG_ENTER_AREA, src)
-	if(!isliving(arrived))
-		return
-
-	var/mob/living/L = arrived
-	if(!L.ckey)
-		return
-
-	//Ship ambience just loops if turned on.
-	if(L.client?.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		SEND_SOUND(L, sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 20, channel = CHANNEL_BUZZ))
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()

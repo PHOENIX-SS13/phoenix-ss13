@@ -237,8 +237,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/settings/sound, Toggle_Soundscape)()
 		to_chat(usr, "<span class='infoplain'>You will now hear ambient sounds.</span>")
 	else
 		to_chat(usr, "<span class='infoplain'>You will no longer hear ambient sounds.</span>")
-		usr.stop_sound_channel(CHANNEL_AMBIENCE)
-		usr.stop_sound_channel(CHANNEL_BUZZ)
 	usr.client.update_ambience_pref()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ambience", "[usr.client.prefs.toggles & SOUND_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/settings/sound/Toggle_Soundscape/Get_checked(client/C)
@@ -255,7 +253,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/settings/sound, toggle_ship_ambience)()
 		to_chat(usr, "<span class='infoplain'>You will now hear ship ambience.</span>")
 	else
 		to_chat(usr, "<span class='infoplain'>You will no longer hear ship ambience.</span>")
-		usr.stop_sound_channel(CHANNEL_BUZZ)
+	usr.client.update_ambience_pref()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ship Ambience", "[usr.client.prefs.toggles & SOUND_SHIP_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, I bet you read this comment expecting to see the same thing :^)
 /datum/verbs/menu/settings/sound/toggle_ship_ambience/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_SHIP_AMBIENCE

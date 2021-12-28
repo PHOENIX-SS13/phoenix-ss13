@@ -23,8 +23,8 @@
 	power_environ = FALSE
 	power_equip = FALSE
 	power_light = FALSE
-	ambientsounds = list('sound/ambience/ambimine.ogg')
 	icon_state = "awaycontent5"
+	main_ambience = AMBIENCE_MINING
 
 /area/awaymission/moonoutpost19/hive
 	name = "The Hive"

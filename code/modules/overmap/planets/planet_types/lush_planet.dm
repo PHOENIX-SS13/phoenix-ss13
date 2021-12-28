@@ -25,16 +25,7 @@
 
 /area/planet/lush
 	name = "Lush Planet Surface"
-	ambientsounds = list(
-		'sound/effects/wind/wind1.ogg',
-		'sound/effects/wind/wind2.ogg',
-		'sound/effects/wind/wind3.ogg',
-		'sound/effects/wind/wind4.ogg',
-		'sound/effects/wind/wind5.ogg',
-		'sound/effects/wind/wind6.ogg',
-	)
-	min_ambience_cooldown = 12 SECONDS
-	max_ambience_cooldown = 30 SECONDS
+	main_ambience = AMBIENCE_WINDY
 
 /datum/map_generator/planet_gen/lush
 	possible_biomes = list(

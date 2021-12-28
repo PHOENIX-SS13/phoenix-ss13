@@ -250,6 +250,7 @@
 		burning = TRUE
 		set_light(6)
 		Burn()
+		set_ambience(AMBIENCE_FIRE)
 		START_PROCESSING(SSobj, src)
 
 /obj/structure/bonfire/fire_act(exposed_temperature, exposed_volume)
@@ -304,6 +305,7 @@
 		icon_state = "bonfire"
 		burning = 0
 		set_light(0)
+		set_ambience(null)
 		STOP_PROCESSING(SSobj, src)
 
 /obj/structure/bonfire/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)

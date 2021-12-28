@@ -24,6 +24,7 @@
 	light_power = 1.5
 	light_color = LIGHT_COLOR_FIRE
 	mouse_opacity = FALSE
+	ambience = AMBIENCE_FIRE
 	/// How much power have we got. This is treated like fuel, be it flamethrower liquid or any random thing you could come up with
 	var/fire_power = 20
 	/// Is it magical, if it is then it wont interact with atmos, and it will not loose power by itself. Mainly for adminbus events or mapping
@@ -118,8 +119,6 @@
 	if(!magical)
 		if(prob(fire_power))
 			open_turf.burn_tile()
-		if(prob(6))
-			playsound(open_turf, 'sound/effects/comfyfire.ogg', 40, TRUE)
 		UpdateFireState()
 
 /obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/AM)

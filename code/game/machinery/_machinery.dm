@@ -97,6 +97,9 @@
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 
+	/// What ambience do we play when we're powered and not broken
+	var/powered_ambience
+
 	var/machine_stat = NONE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
@@ -141,6 +144,9 @@
 		armor = list(MELEE = 25, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 70)
 	. = ..()
 	GLOB.machines += src
+
+	if(powered_ambience)
+		set_ambience(powered_ambience)
 
 	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit(src)
@@ -208,8 +214,12 @@
 	if(old_value & (NOPOWER|BROKEN|MAINT))
 		if(!(machine_stat & (NOPOWER|BROKEN|MAINT))) //From off to on.
 			set_is_operational(TRUE)
+			if(powered_ambience)
+				set_ambience(powered_ambience)
 	else if(machine_stat & (NOPOWER|BROKEN|MAINT)) //From on to off.
 		set_is_operational(FALSE)
+		if(powered_ambience)
+			set_ambience(null)
 
 
 /obj/machinery/emp_act(severity)

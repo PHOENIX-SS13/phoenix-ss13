@@ -20,9 +20,7 @@
 
 /area/planet/volcanic
 	name = "Volcanic Planet Surface"
-	ambientsounds = list('sound/ambience/magma.ogg')
-	min_ambience_cooldown = 2 MINUTES
-	max_ambience_cooldown = 4 MINUTES
+	main_ambience = AMBIENCE_MAGMA
 
 /datum/map_generator/planet_gen/volcanic
 	possible_biomes = list(

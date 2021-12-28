@@ -17,11 +17,6 @@
 	playsound(src.loc, 'sound/effects/splat.ogg', 30, TRUE)
 	return ..()
 
-/datum/looping_sound/core_heartbeat
-	mid_length = 3 SECONDS
-	mid_sounds = list('hrzn/sound/effects/heart_beat_loop3.ogg'=1)
-	volume = 20
-
 /obj/structure/mold/core
 	density = TRUE
 	layer = TABLE_LAYER
@@ -42,8 +37,6 @@
 	var/retaliate_effect_cooldown = 40 SECONDS
 	/// Next retaliate effect.
 	var/next_retaliate_effect = 0
-	/// Heartbeat soundloop of the core.
-	var/datum/looping_sound/core_heartbeat/soundloop
 
 /obj/structure/mold/core/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	if(controller)
@@ -57,13 +50,10 @@
 /obj/structure/mold/core/Initialize()
 	. = ..()
 	controller = new controller_type(src)
-	soundloop = new(list(src),  TRUE)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/mold/core/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	soundloop.stop()
-	QDEL_NULL(soundloop)
 	if(controller)
 		controller.core_death()
 	return ..()

@@ -68,6 +68,8 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	var/area/underlying_area
 	/// If this turf is a part of a shuttle, this is a reference to its roof.
 	var/obj/effect/abstract/shuttle_roof/shuttle_roof
+	/// List of all the ambiences coming from other atoms on the turf
+	var/list/ambience_list
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")

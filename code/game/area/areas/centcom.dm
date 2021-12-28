@@ -145,7 +145,7 @@
 	has_gravity = STANDARD_GRAVITY
 	area_flags = UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 	network_root_id = SYNDICATE_NETWORK_ROOT
 
 /area/syndicate_mothership/control

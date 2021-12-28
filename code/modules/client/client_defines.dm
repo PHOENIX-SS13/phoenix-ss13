@@ -209,3 +209,5 @@
 
 	/// If the client is currently under the restrictions of the interview system
 	var/interviewee = FALSE
+	/// Ambience controller which will play sounds to the client, respecting its prefs and other stuff.
+	var/datum/ambience_controller/ambience_controller

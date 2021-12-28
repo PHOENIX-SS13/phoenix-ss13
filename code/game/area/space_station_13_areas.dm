@@ -7,8 +7,6 @@
 	icon = 'ICON FILENAME' (defaults to 'icons/turf/areas.dmi')
 	icon_state = "NAME OF ICON" (defaults to "unknown" (blank))
 	requires_power = FALSE (defaults to true)
-	ambience_index = AMBIENCE_GENERIC   (picks the ambience from an assoc list in ambience.dm)
-	ambientsounds = list() (defaults to ambience_index's assoc on Initialize(). override it as "ambientsounds = list('sound/ambience/signal.ogg')" or by changing ambience_index)
 
 NOTE: there are two lists of areas in the end of this file: centcom and station itself. Please maintain these lists valid. --rastaf0
 
@@ -20,6 +18,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ai_monitored //stub defined ai_monitored.dm
 
 /area/ai_monitored/turret_protected
+	main_ambience = AMBIENCE_AI_CORE
 
 /area/space
 	icon_state = "space"
@@ -31,7 +30,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_environ = FALSE
 	area_flags = UNIQUE_AREA | NO_ALERTS
 	outdoors = TRUE
-	ambience_index = AMBIENCE_SPACE
+	main_ambience = AMBIENCE_SPACE
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_SPACE
 
@@ -61,15 +60,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	area_flags = UNIQUE_AREA
-	ambience_index = AMBIENCE_MINING
+	main_ambience = AMBIENCE_MINING
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_ASTEROID
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 
 /area/asteroid/nearstation
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	ambience_index = AMBIENCE_RUINS
+	main_ambience = AMBIENCE_RUINS
 	always_unpowered = FALSE
 	requires_power = TRUE
 	area_flags = UNIQUE_AREA | BLOBS_ALLOWED
@@ -92,13 +89,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ai_monitored/command/storage/satellite
 	name = "AI Satellite Maint"
 	icon_state = "ai_storage"
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 	airlock_wires = /datum/wires/airlock/ai
 
 //AI - Turret_protected
 
 /area/ai_monitored/turret_protected
-	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
 	airlock_wires = /datum/wires/airlock/ai
 
 /area/ai_monitored/turret_protected/ai_upload
@@ -157,7 +153,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/maintenance
 	name = "Generic Maintenance"
-	ambience_index = AMBIENCE_MAINT
+	main_ambience = AMBIENCE_MAINT
 	area_flags = BLOBS_ALLOWED | UNIQUE_AREA | CULT_PERMITTED
 	airlock_wires = /datum/wires/airlock/maint
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
@@ -463,7 +459,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/command
 	name = "Command"
 	icon_state = "Bridge"
-	ambientsounds = list('sound/ambience/signal.ogg')
 	airlock_wires = /datum/wires/airlock/command
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
@@ -548,19 +543,19 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/command/teleporter
 	name = "Teleporter Room"
 	icon_state = "teleporter"
-	ambience_index = AMBIENCE_ENGI
+	main_ambience = AMBIENCE_ENGI
 
 /area/command/gateway
 	name = "Gateway"
 	icon_state = "gateway"
-	ambience_index = AMBIENCE_ENGI
+	main_ambience = AMBIENCE_ENGI
 
 //Command - AI Monitored
 
 /area/ai_monitored/command/storage/eva
 	name = "EVA Storage"
 	icon_state = "eva"
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 
 /area/ai_monitored/command/storage/eva/upper
 	name = "Upper EVA Storage"
@@ -647,7 +642,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/commons/vacant_room
 	name = "Vacant Room"
 	icon_state = "vacant_room"
-	ambience_index = AMBIENCE_MAINT
+	main_ambience = AMBIENCE_MAINT
 
 /area/commons/vacant_room/office
 	name = "Vacant Office"
@@ -783,7 +778,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	mood_bonus = 5
 	mood_message = "<span class='nicegreen'>Being in the chapel brings me peace.</span>\n"
 	mood_trait = TRAIT_SPIRITUAL
-	ambience_index = AMBIENCE_HOLY
+	main_ambience = AMBIENCE_HOLY
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
@@ -846,7 +841,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 //Engineering
 
 /area/engineering
-	ambience_index = AMBIENCE_ENGI
+	main_ambience = AMBIENCE_ENGI
 	airlock_wires = /datum/wires/airlock/engineering
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
@@ -922,7 +917,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/construction
 	name = "Construction Area"
 	icon_state = "construction"
-	ambience_index = AMBIENCE_ENGI
+	main_ambience = AMBIENCE_ENGI
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/construction/mining/aux_base
@@ -941,7 +936,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	area_flags = UNIQUE_AREA
 	flags_1 = NONE
-	ambience_index = AMBIENCE_ENGI
+	main_ambience = AMBIENCE_ENGI
 	airlock_wires = /datum/wires/airlock/engineering
 	sound_environment = SOUND_AREA_SPACE
 
@@ -1026,17 +1021,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical
 	name = "Medical"
 	icon_state = "medbay1"
-	ambience_index = AMBIENCE_MEDICAL
+	main_ambience = AMBIENCE_MEDICAL
 	airlock_wires = /datum/wires/airlock/medbay
 	sound_environment = SOUND_AREA_STANDARD_STATION
-	min_ambience_cooldown = 90 SECONDS
-	max_ambience_cooldown = 180 SECONDS
 
 /area/medical/abandoned
 	name = "Abandoned Medbay"
 	icon_state = "abandoned_medbay"
-	ambientsounds = list('sound/ambience/signal.ogg')
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+	main_ambience = AMBIENCE_SIGNAL
 
 /area/medical/medbay/central
 	name = "Medbay Central"
@@ -1104,7 +1097,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/morgue
 	name = "Morgue"
 	icon_state = "morgue"
-	ambience_index = AMBIENCE_SPOOKY
+	main_ambience = AMBIENCE_SPOOKY
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
 /area/medical/chemistry
@@ -1140,7 +1133,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "psychology"
 	mood_bonus = 3
 	mood_message = "<span class='nicegreen'>I feel at ease here.</span>\n"
-	ambientsounds = list('sound/ambience/aurora_caelus_short.ogg')
+	main_ambience = AMBIENCE_PSYCH
 
 //Security
 ///When adding a new area to the security areas, make sure to add it to /datum/bounty/item/security/paperwork as well!
@@ -1148,7 +1141,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security
 	name = "Security"
 	icon_state = "security"
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 	airlock_wires = /datum/wires/airlock/security
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
@@ -1234,7 +1227,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security/detectives_office
 	name = "Detective's Office"
 	icon_state = "detective"
-	ambientsounds = list('sound/ambience/ambidet1.ogg','sound/ambience/ambidet2.ogg')
+	main_ambience = AMBIENCE_DETECTIVE
 
 /area/security/detectives_office/private_investigators_office
 	name = "Private Investigator's Office"
@@ -1296,7 +1289,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ai_monitored/security/armory
 	name = "Armory"
 	icon_state = "armory"
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 	airlock_wires = /datum/wires/airlock/security
 
 /area/ai_monitored/security/armory/upper
@@ -1440,10 +1433,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 // Telecommunications Satellite
 
 /area/tcommsat
-	ambientsounds = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambitech.ogg',\
-											'sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg', 'sound/ambience/ambimystery.ogg')
 	airlock_wires = /datum/wires/airlock/engineering
 	network_root_id = STATION_NETWORK_ROOT // They should of unpluged the router before they left
+	main_ambience = AMBIENCE_TCOMM
 
 /area/tcommsat/computer
 	name = "Telecomms Control Room"

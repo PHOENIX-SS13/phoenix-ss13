@@ -48,7 +48,7 @@
 
 /area/ruin/space/has_grav/powered/aesthetic
 	name = "Aesthetic"
-	ambientsounds = list('sound/ambience/ambivapor1.ogg')
+	main_ambience = AMBIENCE_VAPORWAVE
 
 
 //Ruin of Hotel
@@ -228,7 +228,7 @@
 /area/ruin/space/has_grav/ancientstation/atmo
 	name = "Beta Station Atmospherics"
 	icon_state = "red"
-	ambience_index = AMBIENCE_ENGI
+	main_ambience = AMBIENCE_ENGI
 	has_gravity = TRUE
 
 /area/ruin/space/has_grav/ancientstation/betacorridor
@@ -238,7 +238,7 @@
 /area/ruin/space/has_grav/ancientstation/engi
 	name = "Charlie Station Engineering"
 	icon_state = "engine"
-	ambience_index = AMBIENCE_ENGI
+	main_ambience = AMBIENCE_ENGI
 
 /area/ruin/space/has_grav/ancientstation/comm
 	name = "Charlie Station Command"
@@ -271,7 +271,7 @@
 /area/ruin/space/has_grav/ancientstation/deltaai
 	name = "Delta Station AI Core"
 	icon_state = "ai"
-	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
+	main_ambience = AMBIENCE_AI_CORE
 
 /area/ruin/space/has_grav/ancientstation/mining
 	name = "Beta Station Mining Equipment"
@@ -379,7 +379,7 @@
 /area/ruin/space/abandoned_tele
 	name = "Abandoned Teleporter"
 	icon_state = "teleporter"
-	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/signal.ogg')
+	main_ambience = AMBIENCE_ABANDONED_TELEPORTER
 
 //OLD AI SAT
 

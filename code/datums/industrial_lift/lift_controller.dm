@@ -222,7 +222,7 @@
 			next_action_time = world.time + 0.5 SECONDS
 			return TRUE
 		if(exterior_closed)
-			playsound(GetSoundTurf(), 'sound/lifts/elevator_ding.ogg', 100)
+			playsound(GetSoundTurf(), 'sound/lifts/elevator_ding.ogg', 60)
 			//Put code to open exteriors here
 			exterior_closed = FALSE
 			next_action_time = world.time + 0.5 SECONDS

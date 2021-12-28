@@ -91,6 +91,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	var/list/old_baseturfs = baseturfs
 	var/old_type = type
 
+	var/list/old_ambience_list = ambience_list
+
 	var/list/post_change_callbacks = list()
 	SEND_SIGNAL(src, COMSIG_TURF_CHANGE, path, new_baseturfs, flags, post_change_callbacks)
 
@@ -121,6 +123,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	lighting_corner_NW = old_lighting_corner_NW
 
 	dynamic_lumcount = old_dynamic_lumcount
+
+	ambience_list = old_ambience_list
 
 	if(SSlighting.initialized)
 		lighting_object = old_lighting_object

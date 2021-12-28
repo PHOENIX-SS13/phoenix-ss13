@@ -62,6 +62,7 @@
 	light_range = LIGHT_RANGE_FIRE
 	light_power = 1
 	light_color = LIGHT_COLOR_FIRE
+	ambience = AMBIENCE_FIRE
 
 	/**
 	 * Volume is the representation of how big and healthy a fire is.

@@ -29,7 +29,7 @@
 
 /area/shuttle/syndicate
 	name = "Syndicate Infiltrator"
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 	area_limited_icon_smoothing = /area/shuttle/syndicate
 
 /area/shuttle/syndicate/bridge

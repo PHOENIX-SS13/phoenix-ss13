@@ -15,11 +15,9 @@
 	power_light = FALSE
 	outdoors = TRUE
 	flags_1 = NONE
-	ambience_index = AMBIENCE_MINING
+	main_ambience = AMBIENCE_MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NO_ALERTS | CULT_PERMITTED
 	sound_environment = SOUND_AREA_STANDARD_STATION
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 
 /area/mine/unexplored
 	name = "Mine"
@@ -31,11 +29,9 @@
 	power_light = FALSE
 	outdoors = TRUE
 	flags_1 = NONE
-	ambience_index = AMBIENCE_MINING
+	main_ambience = AMBIENCE_MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NO_ALERTS | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | MEGAFAUNA_SPAWN_ALLOWED
 	map_generator = /datum/map_generator/cave_generator
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 
 /area/mine/lobby
 	name = "Mining Station"
@@ -85,7 +81,7 @@
 /area/mine/laborcamp/security
 	name = "Labor Camp Security"
 	icon_state = "security"
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 
 
 
@@ -107,10 +103,8 @@
 	power_equip = FALSE
 	power_light = FALSE
 	requires_power = TRUE
-	ambience_index = AMBIENCE_MINING
+	main_ambience = AMBIENCE_MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 
 /area/lavaland/underground
 	name = "Lavaland Caves"
@@ -120,10 +114,8 @@
 	power_environ = FALSE
 	power_equip = FALSE
 	power_light = FALSE
-	ambience_index = AMBIENCE_MINING
+	main_ambience = AMBIENCE_MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 
 /area/lavaland/surface/outdoors
 	name = "Lavaland Wastes"
@@ -161,10 +153,8 @@
 	power_equip = FALSE
 	power_light = FALSE
 	requires_power = TRUE
-	ambience_index = AMBIENCE_MINING
+	main_ambience = AMBIENCE_MINING
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 
 /area/icemoon/surface/outdoors // weather happens here
 	name = "Icemoon Wastes"
@@ -193,10 +183,8 @@
 	power_environ = FALSE
 	power_equip = FALSE
 	power_light = FALSE
-	ambience_index = AMBIENCE_MINING
+	main_ambience = AMBIENCE_MINING
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 	underground = TRUE
 
 /area/icemoon/underground/unexplored // mobs and megafauna and ruins spawn here

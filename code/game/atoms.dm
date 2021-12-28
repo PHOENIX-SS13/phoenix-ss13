@@ -143,6 +143,8 @@
 	var/atom/orbit_target
 	///AI controller that controls this atom. type on init, then turned into an instance during runtime
 	var/datum/ai_controller/ai_controller
+	/// Ambience emitter ID this atom is emitting
+	var/ambience
 
 /**
  * Called when an atom is created in byond (built in engine proc)

@@ -58,7 +58,7 @@
 		return
 
 	if(LM.body_position == LYING_DOWN) //play crawling sound if we're lying
-		playsound(T, 'sound/effects/footstep/crawl1.ogg', 30 * volume, falloff_distance = 1, vary = sound_vary)
+		playsound(T, 'sound/effects/footstep/crawl1.ogg', 20 * volume, falloff_distance = 1, vary = sound_vary)
 		return
 
 	if(iscarbon(LM))

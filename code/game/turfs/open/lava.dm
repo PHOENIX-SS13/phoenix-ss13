@@ -17,6 +17,8 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
+	ambience = AMBIENCE_LAVA
+
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)
 

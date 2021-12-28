@@ -43,12 +43,7 @@
 
 /area/planet/shrouded
 	name = "Shrouded Planet Surface"
-	ambientsounds = list(
-		"sound/ambience/spookyspace1.ogg",
-		"sound/ambience/spookyspace2.ogg",
-	)
-	min_ambience_cooldown = 2 MINUTES
-	max_ambience_cooldown = 4 MINUTES
+	main_ambience = AMBIENCE_SHROUDED
 
 /datum/map_generator/planet_gen/shrouded
 	possible_biomes = list(

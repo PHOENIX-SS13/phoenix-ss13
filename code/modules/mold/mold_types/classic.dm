@@ -5,6 +5,7 @@
 	light_range = 2
 	light_power = 1
 	light_color = LIGHT_COLOR_LAVA
+	ambience = AMBIENCE_HEARTBEAT
 
 /obj/structure/mold/core/classic/Initialize()
 	. = ..()

@@ -41,12 +41,12 @@
 /area/ruin/unpowered/syndicate_lava_base
 	name = "Secret Base"
 	icon_state = "dk_yellow"
-	ambience_index = AMBIENCE_DANGER
+	main_ambience = AMBIENCE_DANGER
 
 /area/ruin/unpowered/cultaltar
 	name = "Cult Altar"
 	area_flags = CULT_PERMITTED
-	ambience_index = AMBIENCE_SPOOKY
+	main_ambience = AMBIENCE_SPOOKY
 
 //Syndicate lavaland base
 

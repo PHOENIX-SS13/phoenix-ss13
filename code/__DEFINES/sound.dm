@@ -4,9 +4,14 @@
 #define CHANNEL_VOX 1022
 #define CHANNEL_JUKEBOX 1021
 #define CHANNEL_HEARTBEAT 1020 //sound channel for heartbeats
-#define CHANNEL_AMBIENCE 1019
-#define CHANNEL_BUZZ 1018
-#define CHANNEL_BICYCLE 1017
+#define CHANNEL_BUZZ 1019
+#define CHANNEL_BICYCLE 1018
+#define CHANNEL_AMBIENT_SOUNDS_END 1017
+#define CHANNEL_AMBIENT_SOUNDS_START 986
+
+//THIS SHOULD ALWAYS BE THE LOWEST ONE!
+//KEEP IT UPDATED
+#define CHANNEL_HIGHEST_AVAILABLE 985
 
 ///Default range of a sound.
 #define SOUND_RANGE 17
@@ -20,11 +25,6 @@
 ///The default exponent of sound falloff
 #define SOUND_FALLOFF_EXPONENT 6
 
-//THIS SHOULD ALWAYS BE THE LOWEST ONE!
-//KEEP IT UPDATED
-
-#define CHANNEL_HIGHEST_AVAILABLE 1015
-
 #define MAX_INSTRUMENT_CHANNELS (128 * 6)
 
 #define SOUND_MINIMUM_PRESSURE 10
@@ -34,20 +34,6 @@
 #define PICKUP_SOUND_VOLUME 15
 #define DROP_SOUND_VOLUME 20
 #define YEET_SOUND_VOLUME 90
-
-#define AMBIENCE_GENERIC "generic"
-#define AMBIENCE_HOLY "holy"
-#define AMBIENCE_DANGER "danger"
-#define AMBIENCE_RUINS "ruins"
-#define AMBIENCE_ENGI "engi"
-#define AMBIENCE_MINING "mining"
-#define AMBIENCE_MEDICAL "med"
-#define AMBIENCE_SPOOKY "spooky"
-#define AMBIENCE_SPACE "space"
-#define AMBIENCE_MAINT "maint"
-#define AMBIENCE_AWAY "away"
-#define AMBIENCE_REEBE "reebe" //unused
-#define AMBIENCE_CREEPY "creepy" //not to be confused with spooky
 
 //default byond sound environments
 #define SOUND_ENVIRONMENT_NONE -1
