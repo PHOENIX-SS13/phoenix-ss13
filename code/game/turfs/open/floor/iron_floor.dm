@@ -308,7 +308,7 @@
 /turf/open/floor/iron/kitchen_coldroom
 	name = "cold room floor"
 
-/turf/open/floor/iron/kitchen_coldroom/Initialize(mapload)
+/turf/open/floor/iron/kitchen_coldroom/Initialize(mapload, inherited_virtual_z)
 	initial_gas_mix = KITCHEN_COLDROOM_ATMOS
 	return ..()
 

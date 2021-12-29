@@ -31,23 +31,12 @@ SUBSYSTEM_DEF(mapping)
 	var/list/areas_in_z = list()
 
 	var/loading_ruins = FALSE
-	var/list/turf/unused_turfs = list() //Not actually unused turfs they're unused but reserved for use for whatever requests them. "[zlevel_of_turf]" = list(turfs)
-	var/list/datum/turf_reservations //list of turf reservations
-	var/list/used_turfs = list() //list of turf = datum/turf_reservation
-
-	var/list/reservation_ready = list()
-	var/clearing_reserved_turfs = FALSE
 
 	///All possible biomes in assoc list as type || instance
 	var/list/biomes = list()
 
 	// Z-manager stuff
-	var/station_start  // should only be used for maploading-related tasks
-	var/space_levels_so_far = 0
 	var/list/z_list
-	var/datum/space_level/transit
-	var/datum/space_level/empty_space
-	var/num_of_res_levels = 1
 	/// True when in the process of adding a new Z-level, global locking
 	var/adding_new_zlevel = FALSE
 
@@ -56,6 +45,8 @@ SUBSYSTEM_DEF(mapping)
 	var/datum/map_zone/station_map_zone
 	/// List of all map zones
 	var/list/map_zones = list()
+	/// Translation of virtual level ID to a virtual level reference
+	var/list/virtual_z_translation = list()
 
 /datum/controller/subsystem/mapping/New()
 	..()
@@ -81,7 +72,6 @@ SUBSYSTEM_DEF(mapping)
 	process_teleport_locs() //Sets up the wizard teleport locations
 
 #ifndef LOWMEMORYMODE
-	empty_space = add_new_zlevel("Empty Area [space_levels_so_far]")
 
 	// Pick a random away mission.
 	if(CONFIG_GET(flag/roundstart_away))
@@ -96,57 +86,31 @@ SUBSYSTEM_DEF(mapping)
 	// Generate mining ruins
 	loading_ruins = TRUE
 
-	var/list/ice_ruins = sub_zones_by_trait(ZTRAIT_ICE_RUINS)
+	var/list/ice_ruins = virtual_levels_by_trait(ZTRAIT_ICE_RUINS)
 	if (ice_ruins.len)
 		// needs to be whitelisted for underground too so place_below ruins work
 		seedRuins(ice_ruins, CONFIG_GET(number/icemoon_budget), list(/area/icemoon/surface/outdoors/unexplored, /area/icemoon/underground/unexplored), ice_ruins_templates)
-		for (var/datum/sub_map_zone/ice_sub in ice_ruins)
+		for (var/datum/virtual_level/ice_sub in ice_ruins)
 			spawn_rivers(ice_sub, 4, /turf/open/openspace/icemoon, /area/icemoon/surface/outdoors/unexplored/rivers)
 
-	var/list/ice_ruins_underground = sub_zones_by_trait(ZTRAIT_ICE_RUINS_UNDERGROUND)
+	var/list/ice_ruins_underground = virtual_levels_by_trait(ZTRAIT_ICE_RUINS_UNDERGROUND)
 	if (ice_ruins_underground.len)
 		seedRuins(ice_ruins_underground, CONFIG_GET(number/icemoon_budget), list(/area/icemoon/underground/unexplored), ice_ruins_underground_templates)
-		for (var/datum/sub_map_zone/ice_sub in ice_ruins_underground)
+		for (var/datum/virtual_level/ice_sub in ice_ruins_underground)
 			spawn_rivers(ice_sub, 4, ice_sub.get_trait(ZTRAIT_BASETURF), /area/icemoon/underground/unexplored/rivers)
 
 	// Generate deep space ruins
-	var/list/space_ruins = sub_zones_by_trait(ZTRAIT_SPACE_RUINS)
+	var/list/space_ruins = virtual_levels_by_trait(ZTRAIT_SPACE_RUINS)
 	if (space_ruins.len)
 		seedRuins(space_ruins, CONFIG_GET(number/space_budget), list(/area/space), space_ruins_templates)
 	loading_ruins = FALSE
 #endif
 	// Run map generation after ruin generation to prevent issues
 	run_map_generation()
-	// Add the transit level
-	transit = add_new_zlevel("Transit/Reserved")
-	var/datum/map_zone/mapzone = new("Transit/Reserved")
-	new /datum/sub_map_zone("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE), mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
+	
 	repopulate_sorted_areas()
 	generate_station_area_list()
-	initialize_reserved_level(transit.z_value)
 	return ..()
-
-/datum/controller/subsystem/mapping/proc/wipe_reservations(wipe_safety_delay = 100)
-	if(clearing_reserved_turfs || !initialized) //in either case this is just not needed.
-		return
-	clearing_reserved_turfs = TRUE
-	SSshuttle.transit_requesters.Cut()
-	message_admins("Clearing dynamic reservation space.")
-	var/list/obj/docking_port/mobile/in_transit = list()
-	for(var/i in SSshuttle.transit)
-		var/obj/docking_port/stationary/transit/T = i
-		if(!istype(T))
-			continue
-		in_transit[T] = T.get_docked()
-	var/go_ahead = world.time + wipe_safety_delay
-	if(in_transit.len)
-		message_admins("Shuttles in transit detected. Attempting to fast travel. Timeout is [wipe_safety_delay/10] seconds.")
-	var/list/cleared = list()
-	for(var/i in in_transit)
-		INVOKE_ASYNC(src, .proc/safety_clear_transit_dock, i, in_transit[i], cleared)
-	UNTIL((go_ahead < world.time) || (cleared.len == in_transit.len))
-	do_wipe_turf_reservations()
-	clearing_reserved_turfs = FALSE
 
 /datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
 	M.setTimer(0)
@@ -188,15 +152,10 @@ Used by the AI doomsday and the self-destruct nuke.
 	planet_ruins_templates = SSmapping.planet_ruins_templates
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	unused_turfs = SSmapping.unused_turfs
-	turf_reservations = SSmapping.turf_reservations
-	used_turfs = SSmapping.used_turfs
 	holodeck_templates = SSmapping.holodeck_templates
 
 	config = SSmapping.config
 	next_map_config = SSmapping.next_map_config
-
-	clearing_reserved_turfs = SSmapping.clearing_reserved_turfs
 
 	z_list = SSmapping.z_list
 
@@ -229,7 +188,7 @@ Used by the AI doomsday and the self-destruct nuke.
 		files = list(files)
 
 	// check that the total z count of all maps matches the list of traits
-	var/total_z = 0
+	var/total_levels = 0
 	var/list/parsed_maps = list()
 	for (var/file in files)
 		var/full_path = "_maps/[path]/[file]"
@@ -238,41 +197,39 @@ Used by the AI doomsday and the self-destruct nuke.
 		if (!bounds)
 			errorList |= full_path
 			continue
-		parsed_maps[pm] = total_z  // save the start Z of this file
-		total_z += bounds[MAP_MAXZ] - bounds[MAP_MINZ] + 1
+		parsed_maps[pm] = total_levels  // save the start Z of this file
+		total_levels += bounds[MAP_MAXZ] - bounds[MAP_MINZ] + 1
 
 	if (!length(traits))  // null or empty - default
-		for (var/i in 1 to total_z)
+		for (var/i in 1 to total_levels)
 			traits += list(default_traits)
-	else if (total_z != traits.len)  // mismatch
-		INIT_ANNOUNCE("WARNING: [traits.len] trait sets specified for [total_z] z-levels in [path]!")
-		if (total_z < traits.len)  // ignore extra traits
-			traits.Cut(total_z + 1)
-		while (total_z > traits.len)  // fall back to defaults on extra levels
+	else if (total_levels != traits.len)  // mismatch
+		INIT_ANNOUNCE("WARNING: [traits.len] trait sets specified for [total_levels] z-levels in [path]!")
+		if (total_levels < traits.len)  // ignore extra traits
+			traits.Cut(total_levels + 1)
+		while (total_levels > traits.len)  // fall back to defaults on extra levels
 			traits += list(default_traits)
 
 	// preload the relevant space_level datums
-	var/start_z = world.maxz + 1
 	var/i = 0
-	var/list/space_levels = list()
-	var/list/ordered_subzones = list()
+	var/list/ordered_vlevels = list()
 	for (var/list/level as anything in traits)
-		var/level_name = "[name][i ? " [i + 1]" : ""]"
-		var/datum/space_level/space_lev = add_new_zlevel(level_name)
-		space_levels += space_lev
-		var/datum/sub_map_zone/subzone = new(level_name, level.Copy(), mapzone, 1, 1, world.maxx, world.maxy, space_lev.z_value)
-		ordered_subzones += subzone
-		++i
+		i++
+		var/level_name = "[name] [i]"
+		
+		var/datum/virtual_level/vlevel = create_virtual_level(level_name, level.Copy(), mapzone, world.maxx, world.maxy, ALLOCATION_FULL)
+		
+		ordered_vlevels += vlevel
 	var/subi = 0
-	for(var/datum/sub_map_zone/subzone as anything in ordered_subzones)
+	for(var/datum/virtual_level/vlevel as anything in ordered_vlevels)
 		subi++
-		var/list/subzone_traits = subzone.traits
-		var/up_value = subzone_traits["Up"]
-		var/down_value = subzone_traits["Down"]
+		var/list/vlevel_traits = vlevel.traits
+		var/up_value = vlevel_traits["Up"]
+		var/down_value = vlevel_traits["Down"]
 		if(!isnull(up_value))
-			subzone.up_linkage = ordered_subzones[subi+up_value]
+			vlevel.up_linkage = ordered_vlevels[subi+up_value]
 		if(!isnull(down_value))
-			subzone.down_linkage = ordered_subzones[subi+down_value]
+			vlevel.down_linkage = ordered_vlevels[subi+down_value]
 	if(atmosphere_type)
 		var/datum/atmosphere/atmos = new atmosphere_type()
 		mapzone.set_planetary_atmos(atmos)
@@ -280,9 +237,9 @@ Used by the AI doomsday and the self-destruct nuke.
 	var/datum/ore_node_seeder/ore_node_seeder
 	if(ore_node_seeder_type)
 		ore_node_seeder = new ore_node_seeder_type
-	for(var/datum/sub_map_zone/iterated_subzone in mapzone.sub_map_zones)
+	for(var/datum/virtual_level/iterated_vlevel in mapzone.virtual_levels)
 		if(ore_node_seeder)
-			ore_node_seeder.SeedToLevel(iterated_subzone.z_value)
+			ore_node_seeder.SeedToLevel(iterated_vlevel)
 	if(rock_color)
 		mapzone.rock_color = rock_color
 	if(plant_color)
@@ -298,18 +255,20 @@ Used by the AI doomsday and the self-destruct nuke.
 		new weather_controller_type(mapzone)
 	if(day_night_controller_type)
 		new day_night_controller_type(mapzone)
-	space_levels = null
 
 	// load the maps
+	i = 0
 	for (var/P in parsed_maps)
+		i++
+		var/datum/virtual_level/vlevel = ordered_vlevels[i]
 		var/datum/parsed_map/pm = P
-		if (!pm.load(1, 1, start_z + parsed_maps[P], no_changeturf = TRUE))
+		if (!pm.load(vlevel.low_x, vlevel.low_y, vlevel.z_value, no_changeturf = TRUE))
 			errorList |= pm.original_path
-	for(var/datum/sub_map_zone/subzone as anything in ordered_subzones)
+	for(var/datum/virtual_level/vlevel as anything in ordered_vlevels)
 		if(map_margin)
-			subzone.reserve_margin(map_margin)
+			vlevel.reserve_margin(map_margin)
 		if(self_looping)
-			subzone.selfloop()
+			vlevel.selfloop()
 	if(!silent)
 		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
 	return parsed_maps
@@ -325,7 +284,6 @@ Used by the AI doomsday and the self-destruct nuke.
 	SSovermap.MappingInit()
 
 	// load the station
-	station_start = world.maxz + 1
 	INIT_ANNOUNCE("Loading [config.map_name]...")
 	var/station_overmap_object = new config.overmap_object_type(SSovermap.main_system, rand(3,10), rand(3,10))
 	var/picked_rock_color = CHECK_AND_PICK_OR_NULL(config.rock_color)
@@ -362,12 +320,10 @@ Used by the AI doomsday and the self-destruct nuke.
 	// TODO: remove this when the DB is prepared for the z-levels getting reordered
 	if(config.space_ruin_levels)
 		for(var/i in 1 to config.space_ruin_levels)
-			++space_levels_so_far
 			var/ruins_name = "Ruins Area [i]"
-			add_new_zlevel(ruins_name)
 			var/overmap_obj = new /datum/overmap_object/ruins(SSovermap.main_system, rand(5,25), rand(5,25))
-			var/datum/map_zone/mapzone = new(ruins_name, overmap_obj)
-			new /datum/sub_map_zone(ruins_name, ZTRAITS_SPACE, mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
+			var/datum/map_zone/mapzone = create_map_zone(ruins_name, overmap_obj)
+			create_virtual_level(ruins_name, ZTRAITS_SPACE, mapzone, world.maxx, world.maxy, ALLOCATION_FULL)
 	//Load planets
 	if(config.minetype == "lavaland")
 		var/datum/planet_template/lavaland_template = planet_templates[/datum/planet_template/lavaland]
@@ -416,8 +372,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			continue
 		if (!A.contents.len || !(A.area_flags & UNIQUE_AREA))
 			continue
-		var/turf/picked = A.contents[1]
-		if (is_station_level(picked))
+		if (is_station_level(A))
 			GLOB.the_station_areas += A.type
 
 	if(!GLOB.the_station_areas.len)
@@ -622,80 +577,6 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		message_admins("Loading [away_name] failed!")
 		return
 
-/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, z, type = /datum/turf_reservation, turf_type_override)
-	UNTIL((!z || reservation_ready["[z]"]) && !clearing_reserved_turfs)
-	var/datum/turf_reservation/reserve = new type
-	if(turf_type_override)
-		reserve.turf_type = turf_type_override
-	if(!z)
-		for(var/datum/sub_map_zone/iterated_subzonesubzone in sub_zones_by_trait(ZTRAIT_RESERVED))
-			if(reserve.Reserve(width, height, iterated_subzonesubzone.z_value))
-				return reserve
-		//If we didn't return at this point, theres a good chance we ran out of room on the exisiting reserved z levels, so lets try a new one
-		num_of_res_levels += 1
-		var/transit_name = "Transit/Reserved [num_of_res_levels]"
-		var/datum/space_level/newReserved = add_new_zlevel(transit_name)
-		var/datum/map_zone/mapzone = new(transit_name)
-		new /datum/sub_map_zone(transit_name, list(ZTRAIT_RESERVED = TRUE), mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
-		initialize_reserved_level(newReserved.z_value)
-		if(reserve.Reserve(width, height, newReserved.z_value))
-			return reserve
-	else
-		if(!sub_zone_trait(locate(1,1,z), ZTRAIT_RESERVED))
-			qdel(reserve)
-			return
-		else
-			if(reserve.Reserve(width, height, z))
-				return reserve
-	QDEL_NULL(reserve)
-
-//This is not for wiping reserved levels, use wipe_reservations() for that.
-/datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
-	UNTIL(!clearing_reserved_turfs) //regardless, lets add a check just in case.
-	clearing_reserved_turfs = TRUE //This operation will likely clear any existing reservations, so lets make sure nothing tries to make one while we're doing it.
-	if(!sub_zone_trait(locate(1,1,z),ZTRAIT_RESERVED))
-		clearing_reserved_turfs = FALSE
-		CRASH("Invalid z level prepared for reservations.")
-	var/turf/A = get_turf(locate(SHUTTLE_TRANSIT_BORDER,SHUTTLE_TRANSIT_BORDER,z))
-	var/turf/B = get_turf(locate(world.maxx - SHUTTLE_TRANSIT_BORDER,world.maxy - SHUTTLE_TRANSIT_BORDER,z))
-	var/block = block(A, B)
-	for(var/t in block)
-		// No need to empty() these, because it's world init and they're
-		// already /turf/open/space/basic.
-		var/turf/T = t
-		T.flags_1 |= UNUSED_RESERVATION_TURF
-	unused_turfs["[z]"] = block
-	reservation_ready["[z]"] = TRUE
-	clearing_reserved_turfs = FALSE
-
-/datum/controller/subsystem/mapping/proc/reserve_turfs(list/turfs)
-	for(var/i in turfs)
-		var/turf/T = i
-		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
-		LAZYINITLIST(unused_turfs["[T.z]"])
-		unused_turfs["[T.z]"] |= T
-		T.flags_1 |= UNUSED_RESERVATION_TURF
-		GLOB.areas_by_type[world.area].contents += T
-		CHECK_TICK
-
-//DO NOT CALL THIS PROC DIRECTLY, CALL wipe_reservations().
-/datum/controller/subsystem/mapping/proc/do_wipe_turf_reservations()
-	PRIVATE_PROC(TRUE)
-	UNTIL(initialized) //This proc is for AFTER init, before init turf reservations won't even exist and using this will likely break things.
-	for(var/i in turf_reservations)
-		var/datum/turf_reservation/TR = i
-		if(!QDELETED(TR))
-			qdel(TR, TRUE)
-	UNSETEMPTY(turf_reservations)
-	var/list/clearing = list()
-	for(var/l in unused_turfs) //unused_turfs is an assoc list by z = list(turfs)
-		if(islist(unused_turfs[l]))
-			clearing |= unused_turfs[l]
-	clearing |= used_turfs //used turfs is an associative list, BUT, reserve_turfs() can still handle it. If the code above works properly, this won't even be needed as the turfs would be freed already.
-	unused_turfs.Cut()
-	used_turfs.Cut()
-	reserve_turfs(clearing)
-
 ///Initialize all biomes, assoc as type || instance
 /datum/controller/subsystem/mapping/proc/initialize_biomes()
 	for(var/biome_path in subtypesof(/datum/biome))
@@ -707,19 +588,11 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		var/area/A = B
 		A.reg_in_areas_in_z()
 
-/datum/controller/subsystem/mapping/proc/get_isolated_ruin_z()
-	if(!isolated_ruins_z)
-		isolated_ruins_z = add_new_zlevel("Isolated Ruins/Reserved")
-		var/datum/map_zone/mapzone = new("Isolated Ruins/Reserved")
-		new /datum/sub_map_zone("Isolated Ruins/Reserved", list(ZTRAIT_RESERVED = TRUE), mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
-		initialize_reserved_level(isolated_ruins_z.z_value)
-	return isolated_ruins_z.z_value
-
-/datum/controller/subsystem/mapping/proc/GetMapZoneWeatherController(atom/Atom)
-	var/datum/map_zone/mapzone = get_map_zone(Atom)
+/datum/controller/subsystem/mapping/proc/get_map_zone_weather_controller(atom/Atom)
+	var/datum/map_zone/mapzone = Atom.get_map_zone()
 	if(!mapzone)
 		return
-	mapzone.AssertWeatherController()
+	mapzone.assert_weather_controller()
 	return mapzone.weather_controller
 
 /datum/controller/subsystem/mapping/proc/get_map_zone_id(mapzone_id)
@@ -729,3 +602,85 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			returned_mapzone = iterated_mapzone
 			break
 	return returned_mapzone
+
+/datum/controller/subsystem/mapping/proc/get_virtual_level_id(vlevel_id)
+	return virtual_z_translation["[vlevel_id]"]
+
+/// Searches for a free allocation for the passed type and size, creates new physical levels if nessecary.
+/datum/controller/subsystem/mapping/proc/get_free_allocation(allocation_type, size_x, size_y, allocation_jump = DEFAULT_ALLOC_JUMP)
+	var/list/allocation_list
+	var/list/levels_to_check = z_list.Copy()
+	var/created_new_level = FALSE
+	while(TRUE)
+		for(var/datum/space_level/iterated_level as anything in levels_to_check)
+			if(iterated_level.allocation_type != allocation_type)
+				continue
+			allocation_list = find_allocation_in_level(iterated_level, size_x, size_y, allocation_jump)
+			if(allocation_list)
+				return allocation_list
+
+		if(created_new_level)
+			stack_trace("MAPPING: We have failed to find allocation after creating a new level just for it, something went terribly wrong")
+			return FALSE
+		/// None of the levels could faciliate a new allocation, make a new one
+		created_new_level = TRUE
+		levels_to_check.Cut()
+
+		var/allocation_name
+		switch(allocation_type)
+			if(ALLOCATION_FREE)
+				allocation_name = "Free Allocation"
+			if(ALLOCATION_QUADRANT)
+				allocation_name = "Quadrant Allocation"
+			if(ALLOCATION_FULL)
+				allocation_name = "Full Allocation"
+			else
+				allocation_name = "Unaccounted Allocation"
+
+		levels_to_check += add_new_zlevel("Generated [allocation_name] Level", allocation_type = allocation_type)
+
+/// Finds a box allocation inside a Z level. Uses a methodical box boundary check method
+/datum/controller/subsystem/mapping/proc/find_allocation_in_level(datum/space_level/level, size_x, size_y, allocation_jump)
+	var/target_x = 1
+	var/target_y = 1
+
+	/// Sanity
+	if(size_x > world.maxx || size_y > world.maxy)
+		stack_trace("Tried to find virtual level allocation that cannot possibly fit in a physical level.")
+		return FALSE
+
+	/// Methodical trial and error method
+	while(TRUE)
+		var/upper_target_x = target_x+size_x
+		var/upper_target_y = target_y+size_y
+
+		var/out_of_bounds = FALSE
+		if((target_x < 1 || upper_target_x > world.maxx) || (target_y < 1 || upper_target_y > world.maxy))
+			out_of_bounds = TRUE
+
+		if(!out_of_bounds && level.is_box_free(target_x, target_y, upper_target_x, upper_target_y))
+			return list(target_x, target_y, level.z_value) //hallelujah we found the unallocated spot
+
+		if(upper_target_x > world.maxx) //If we can't increment x, then the search is over
+			break
+
+		var/increments_y = TRUE
+		if(upper_target_y > world.maxy)
+			target_y = 1
+			increments_y = FALSE
+		if(increments_y)
+			target_y += allocation_jump
+		else
+			target_x += allocation_jump
+
+/// Creates and passes a new map zone
+/datum/controller/subsystem/mapping/proc/create_map_zone(new_name, datum/overmap_object/passed_ov_obj)
+	return new /datum/map_zone(new_name, passed_ov_obj)
+
+/// Allocates, creates and passes a new virtual level
+/datum/controller/subsystem/mapping/proc/create_virtual_level(new_name, list/traits, datum/map_zone/mapzone, width, height, allocation_type = ALLOCATION_FREE, allocation_jump = DEFAULT_ALLOC_JUMP)
+	/// Because we add an implicit extra 1 in the way we do reservation
+	width--
+	height--
+	var/list/allocation_coords = SSmapping.get_free_allocation(allocation_type, width, height, allocation_jump)
+	return new /datum/virtual_level(new_name, traits, mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])

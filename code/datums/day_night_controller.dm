@@ -36,31 +36,52 @@
 	var/datum/map_zone/mapzone
 	/// All the areas that are affected by day/night
 	var/list/affected_areas = list()
-	/// Whether we have applied luminosity to the areas
-	var/has_applied_luminosity = FALSE
 	var/last_color = "#FFFFFF"
 	var/last_alpha = 1
+	var/last_luminosity = FALSE
 	var/mutable_appearance/area_appearance
 	var/list/subscribed_blend_areas = list()
 
 /datum/day_night_controller/proc/subscribe_blend_area(area/area_to_sub)
 	subscribed_blend_areas[area_to_sub] = TRUE
 	area_to_sub.subbed_day_night_controller = src
-	area_to_sub.last_day_night_luminosity = FALSE
 
 /datum/day_night_controller/proc/unsubscribe_blend_area(area/area_to_unsub)
 	subscribed_blend_areas -= area_to_unsub
 	area_to_unsub.subbed_day_night_controller = null
-	area_to_unsub.last_day_night_color = null
-	area_to_unsub.last_day_night_alpha = null
-	area_to_unsub.last_day_night_luminosity = null
 
 /datum/day_night_controller/process()
 	update_areas()
 
+/datum/day_night_controller/proc/remove_effect()
+	if(area_appearance)
+		for(var/area/my_area as anything in affected_areas)
+			my_area.underlays -= area_appearance
+			if(my_area.last_day_night_luminosity)
+				my_area.last_day_night_luminosity = 0
+				my_area.luminosity--
+			my_area.last_day_night_color = null
+			my_area.last_day_night_alpha = null
+
+	for(var/area/my_area as anything in subscribed_blend_areas)
+		my_area.ClearDayNightTurfs()
+
+/datum/day_night_controller/proc/apply_effect()
+	last_luminosity = (last_alpha > MINIMUM_LIGHT_FOR_LUMINOSITY) ? TRUE : FALSE
+	for(var/area/my_area as anything in affected_areas)
+		if(last_luminosity != my_area.last_day_night_luminosity)
+			my_area.luminosity++
+			my_area.last_day_night_luminosity = TRUE
+		my_area.last_day_night_color = last_color
+		my_area.last_day_night_alpha = last_alpha
+		my_area.underlays += area_appearance
+
+	for(var/area/my_area as anything in subscribed_blend_areas)
+		my_area.ApplyDayNightTurfs()
+
 /datum/day_night_controller/proc/update_areas()
 	if(!length(affected_areas))
-		GetAreas() //Need to get it later because otherwise it wont get the areas, quirky stuff
+		build_areas() //Need to get it later because otherwise it wont get the areas, quirky stuff
 	//Station time goes from 0 to 864000, which makes 600 a 1 minute
 	var/time = station_time() / 600 / 60 //600 - minutes //60 - hours. We get from 0 to 24 here
 	
@@ -86,10 +107,7 @@
 	if(target_color == last_color && target_light == last_alpha)
 		return
 
-	if(area_appearance)
-		for(var/i in affected_areas)
-			var/area/my_area = i
-			my_area.underlays -= area_appearance
+	remove_effect()
 
 	
 	last_color = target_color
@@ -101,23 +119,16 @@
 	appearance_to_add.color = target_color
 	appearance_to_add.alpha = target_light
 	area_appearance = appearance_to_add
-	var/do_luminosity = (target_light > MINIMUM_LIGHT_FOR_LUMINOSITY) ? TRUE : FALSE
+	
+	apply_effect()
 
-	for(var/i in affected_areas)
-		var/area/my_area = i
-		if(do_luminosity != has_applied_luminosity)
-			if(do_luminosity)
-				my_area.luminosity++
-			else
-				my_area.luminosity--
-		my_area.underlays += area_appearance
-	has_applied_luminosity = do_luminosity
+/datum/day_night_controller/proc/free_areas()
+	remove_effect()
+	affected_areas.Cut()
+	for(var/area/my_area as anything in subscribed_blend_areas)
+		my_area.UpdateDayNightTurfs(full_unsub = TRUE)
 
-	for(var/i in subscribed_blend_areas)
-		var/area/iterated_area = i
-		iterated_area.UpdateDayNightTurfsSimple()
-
-/datum/day_night_controller/proc/GetAreas()
+/datum/day_night_controller/proc/build_areas()
 	//Get the areas
 	var/list/possible_blending_areas = list()
 	for(var/i in get_areas(/area))
@@ -161,8 +172,8 @@
 		color_lookup_table["[my_index]"] = next_color
 		light_lookup_table["[my_index]"] = next_light
 
-/// In theory this should never be destroyed, unless you plan to dynamically change existing z levels
 /datum/day_night_controller/Destroy()
+	free_areas()
 	mapzone.day_night_controller = null
 	mapzone = null
 	SSday_night.day_night_controllers -= src

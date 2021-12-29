@@ -108,12 +108,6 @@
 		ship = new /datum/map_template/shuttle/hunter/russian
 	else
 		ship = new /datum/map_template/shuttle/hunter/bounty
-	var/x = rand(TRANSITIONEDGE,world.maxx - TRANSITIONEDGE - ship.width)
-	var/y = rand(TRANSITIONEDGE,world.maxy - TRANSITIONEDGE - ship.height)
-	var/z = SSmapping.empty_space.z_value
-	var/turf/T = locate(x,y,z)
-	if(!T)
-		CRASH("Fugitive Hunters (Created from fugitive event) found no turf to load in")
-	if(!ship.load(T))
+	if(!SSshuttle.action_load(ship))
 		CRASH("Loading [backstory] ship failed!")
 	priority_announce("Unidentified ship detected near the station.")

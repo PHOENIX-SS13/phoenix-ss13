@@ -296,8 +296,8 @@
 		var/obj/item/bodypart/head/head = itemUser.get_bodypart(BODY_ZONE_HEAD)
 		if(head)
 			head.drop_limb()
-			var/list/safeZones = SSmapping.sub_zones_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
-			var/datum/sub_map_zone/submap = pick(safeZones)
+			var/list/safeZones = SSmapping.virtual_levels_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
+			var/datum/virtual_level/submap = pick(safeZones)
 			head.forceMove(submap.get_random_position())
 			itemUser.visible_message(SPAN_SUICIDE("The portal snaps closed taking [user]'s head with it!"))
 		else

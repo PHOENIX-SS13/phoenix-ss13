@@ -31,6 +31,7 @@
 		var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 		if(!M)
 			return
+		M.possible_destinations = possible_destinations //Because shuttles being dumb with their data structure not making a speck of sense, something to fix another day
 		var/list/dat = list("<center>")
 		var/status_info
 		if(admin_controlled)

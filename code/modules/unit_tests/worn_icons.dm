@@ -40,7 +40,6 @@
 
 		var/clothing_allowed_bodytypes = initial(cast_clothing.allowed_bodytypes)
 		var/clothing_fitted_bodytypes = initial(cast_clothing.fitted_bodytypes)
-		var/clothing_template_bodytypes = initial(cast_clothing.worn_template_bodytypes)
 
 		var/list/icon_states_available = icon_states(clothing_worn_icon)
 

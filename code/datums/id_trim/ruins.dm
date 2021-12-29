@@ -2,11 +2,11 @@
 /datum/id_trim/away
 	access = list(ACCESS_AWAY_GENERAL)
 
-/// Trim for the hotel ruin. Not Hilbert's Hotel.
+/// Trim for the hotel ruin.
 /datum/id_trim/away/hotel
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT)
 
-/// Trim for the hotel ruin. Not Hilbert's Hotel.
+/// Trim for the hotel ruin.
 /datum/id_trim/away/hotel/security
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_AWAY_SEC)
 
@@ -34,12 +34,6 @@
 	assignment = "Cat Surgeon"
 	trim_state = "trim_medicaldoctor"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT)
-
-/// Trim for Hilber in Hilbert's Hotel.
-/datum/id_trim/away/hilbert
-	assignment = "Head Researcher"
-	trim_state = "trim_researchdirector"
-	access = list(ACCESS_AWAY_GENERIC3, ACCESS_RESEARCH)
 
 /// Trim for beach bum lifeguards.
 /datum/id_trim/lifeguard

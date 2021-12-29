@@ -20,8 +20,8 @@ SUBSYSTEM_DEF(minor_mapping)
 /proc/find_satchel_suitable_turfs()
 	var/list/suitable = list()
 
-	for(var/datum/sub_map_zone/subzone in SSmapping.sub_zones_by_trait(ZTRAIT_STATION))
-		for(var/t in subzone.get_block())
+	for(var/datum/virtual_level/vlevel as anything in SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
+		for(var/t in vlevel.get_block())
 			if(isfloorturf(t) && !isplatingturf(t))
 				suitable += t
 

@@ -99,12 +99,8 @@
 				dir = shuttle.current_parallax_dir
 			else
 				dir = pick(GLOB.cardinals)
-			if(shuttle.transit_instance)
-				var/turf/pickedstart = shuttle.transit_instance.GetActionSideTurf(dir)
-				var/turf/pickedgoal = shuttle.transit_instance.GetActionSideTurf(REVERSE_DIR(dir))
-				new picked_meteor_type(pickedstart, pickedgoal)
-			else if(shuttle.related_map_zone)
-				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
+			if(shuttle.related_map_zone)
+				var/datum/virtual_level/picked_sub = pick(shuttle.related_map_zone.virtual_levels)
 				spawn_meteor(picked_meteor_type, dir, picked_sub)
 
 /datum/overmap_object/hazard/asteroid/get_random_icon_state()
@@ -147,12 +143,8 @@
 				dir = shuttle.current_parallax_dir
 			else
 				dir = pick(GLOB.cardinals)
-			if(shuttle.transit_instance)
-				var/turf/pickedstart = shuttle.transit_instance.GetActionSideTurf(dir)
-				var/turf/pickedgoal = shuttle.transit_instance.GetActionSideTurf(REVERSE_DIR(dir))
-				new picked_meteor_type(pickedstart, pickedgoal)
-			else if(shuttle.related_map_zone)
-				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
+			if(shuttle.related_map_zone)
+				var/datum/virtual_level/picked_sub = pick(shuttle.related_map_zone.virtual_levels)
 				spawn_meteor(picked_meteor_type, dir, picked_sub)
 
 /datum/overmap_object/hazard/dust/get_random_icon_state()
@@ -178,18 +170,8 @@
 				if(!remaining_damage)
 					return
 			//Do effect here
-			if(shuttle.transit_instance)
-				var/turf/pickedturf = shuttle.transit_instance.GetActionSideTurf(middle = TRUE)
-				if(prob(50))
-					for(var/a in GLOB.apcs_list) //Yes very inefficient
-						var/obj/machinery/power/apc/A = a
-						if(get_dist(pickedturf, A) <= ELECTRICAL_STORM_LIGHTS_OUT_RANGE_SHUTTLE)
-							A.overload_lighting()
-				else
-					//EMP
-					empulse(pickedturf, 2, 6)
-			else if(shuttle.related_map_zone)
-				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
+			if(shuttle.related_map_zone)
+				var/datum/virtual_level/picked_sub = pick(shuttle.related_map_zone.virtual_levels)
 				var/turf/epicentre_turf = picked_sub.get_random_position()
 				if(prob(50))
 					//Light discharge
@@ -241,21 +223,21 @@
 		if(!has_shields && shuttle.transit_instance)
 			probability += shuttle_velocity * 5
 		if(prob(probability))
-			var/carp_type = prob(95) ? /mob/living/simple_animal/hostile/carp : /mob/living/simple_animal/hostile/carp/megacarp
-			if(shuttle.transit_instance)
-				var/set_dir
-				if(shuttle_velocity > 0.5)
-					set_dir = shuttle.current_parallax_dir
-				new carp_type(shuttle.transit_instance.GetActionSideTurf(set_dir))
-			else if(shuttle.related_map_zone)
-				var/datum/sub_map_zone/picked_sub = pick(shuttle.related_map_zone.sub_map_zones)
-				var/datum/space_level/spawn_level = SSmapping.z_list[picked_sub.z_value]
-				var/carp_spawn_list = GetLandmarksInZLevel(/obj/effect/landmark/carpspawn, spawn_level)
-				if(!length(carp_spawn_list))
-					continue
-				var/obj/effect/landmark/picked_spot = pick(carp_spawn_list)
-				new carp_type(picked_spot.loc)
-			//TODO: SHUTTLE HANDLING
+			if(shuttle.related_map_zone)
+				var/datum/virtual_level/picked_sub = pick(shuttle.related_map_zone.virtual_levels)
+				var/turf/spot_to_spawn
+				var/carp_type = prob(95) ? /mob/living/simple_animal/hostile/carp : /mob/living/simple_animal/hostile/carp/megacarp
+				if(shuttle)
+					var/set_dir
+					if(shuttle_velocity > 0.5)
+						set_dir = shuttle.current_parallax_dir
+					spot_to_spawn = picked_sub.get_side_turf(set_dir)
+				else
+					var/carp_spawn_list = get_landmarks_in_virtual_level(/obj/effect/landmark/carpspawn, picked_sub)
+					if(!length(carp_spawn_list))
+						continue
+					spot_to_spawn = pick(carp_spawn_list)
+				new carp_type(spot_to_spawn)
 
 /datum/overmap_object/hazard/carp_school/get_random_icon_state()
 	return pick(list("carp1", "carp2", "carp3", "carp4"))

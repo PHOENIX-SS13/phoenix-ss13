@@ -35,11 +35,6 @@
 
 	if(LAZYACCESS(modifiers, LEFT_CLICK))
 		var/datum/map_generator/G = new generator_path
-		if(istype(G, /datum/map_generator/repair/reload_station_map))
-			if(GLOB.reloading_map)
-				to_chat(c, SPAN_BOLDWARNING("You are already reloading an area! Please wait for it to fully finish loading before trying to load another!"))
-				deselect_region()
-				return
 		G.defineRegion(cornerA, cornerB, 1)
 		highlight_region(G.map)
 		var/confirm = tgui_alert(usr,"Are you sure you want to run the map generator?", "Run generator", list("Yes", "No"))

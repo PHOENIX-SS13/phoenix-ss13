@@ -9,12 +9,12 @@
 /obj/structure/cable/multilayer/multiz/get_cable_connections(powernetless_only)
 	. = ..()
 	var/turf/T = get_turf(src)
-	. +=  locate(/obj/structure/cable/multilayer/multiz) in (SSmapping.get_turf_below(T))
-	. +=  locate(/obj/structure/cable/multilayer/multiz) in (SSmapping.get_turf_above(T))
+	. +=  locate(/obj/structure/cable/multilayer/multiz) in (T.below())
+	. +=  locate(/obj/structure/cable/multilayer/multiz) in (T.above())
 
 /obj/structure/cable/multilayer/examine(mob/user)
 	. += ..()
 	var/turf/T = get_turf(src)
-	. += SPAN_NOTICE("[locate(/obj/structure/cable/multilayer/multiz) in (SSmapping.get_turf_below(T)) ? "Detected" : "Undetected"] hub UP.")
-	. += SPAN_NOTICE("[locate(/obj/structure/cable/multilayer/multiz) in (SSmapping.get_turf_above(T)) ? "Detected" : "Undetected"] hub DOWN.")
+	. += SPAN_NOTICE("[locate(/obj/structure/cable/multilayer/multiz) in (T.below()) ? "Detected" : "Undetected"] hub UP.")
+	. += SPAN_NOTICE("[locate(/obj/structure/cable/multilayer/multiz) in (T.above()) ? "Detected" : "Undetected"] hub DOWN.")
 

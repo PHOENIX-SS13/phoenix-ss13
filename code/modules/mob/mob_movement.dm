@@ -500,7 +500,7 @@
 	set category = "IC"
 
 	var/turf/current_turf = get_turf(src)
-	var/turf/above_turf = SSmapping.get_turf_above(current_turf)
+	var/turf/above_turf = current_turf.above()
 	var/ventcrawling_mob = HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING)
 
 	if(can_zFall(above_turf, 1, current_turf, DOWN) && !ventcrawling_mob) //Will be fall down if we go up?

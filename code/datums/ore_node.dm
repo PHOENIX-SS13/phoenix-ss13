@@ -15,13 +15,15 @@
 	range = _range
 	scanner_range = range * 3
 	//Add to the level list
-	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(locate(x,y,z))
-	subzone.ore_nodes += src
+	var/turf/located = locate(x,y,z)
+	var/datum/virtual_level/vlevel = located.get_virtual_level()
+	vlevel.ore_nodes += src
 
 /datum/ore_node/Destroy()
 	//Remove from the level list
-	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(locate(x_coord,y_coord,z_coord))
-	subzone.ore_nodes -= src
+	var/turf/located = locate(x_coord,y_coord,z_coord)
+	var/datum/virtual_level/vlevel = located.get_virtual_level()
+	vlevel.ore_nodes -= src
 	return ..()
 
 /datum/ore_node/proc/GetRemainingOreAmount()
@@ -132,20 +134,20 @@
 	return ore_to_return
 
 /proc/GetNearbyOreNode(turf/T)
-	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(T)
-	if(!length(subzone.ore_nodes))
+	var/datum/virtual_level/vlevel = T.get_virtual_level()
+	if(!length(vlevel.ore_nodes))
 		return
-	var/list/iterated = subzone.ore_nodes
+	var/list/iterated = vlevel.ore_nodes
 	for(var/i in iterated)
 		var/datum/ore_node/ON = i
 		if(T.x < (ON.x_coord + ON.range) && T.x > (ON.x_coord - ON.range) && T.y < (ON.y_coord + ON.range) && T.y > (ON.y_coord - ON.range))
 			return ON
 
 /proc/GetOreNodeInScanRange(turf/T)
-	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(T)
-	if(!length(subzone.ore_nodes))
+	var/datum/virtual_level/vlevel = T.get_virtual_level()
+	if(!length(vlevel.ore_nodes))
 		return
-	var/list/iterated = subzone.ore_nodes
+	var/list/iterated = vlevel.ore_nodes
 	for(var/i in iterated)
 		var/datum/ore_node/ON = i
 		if(T.x < (ON.x_coord + ON.scanner_range) && T.x > (ON.x_coord - ON.scanner_range) && T.y < (ON.y_coord + ON.scanner_range) && T.y > (ON.y_coord - ON.scanner_range))
@@ -204,8 +206,8 @@
 	var/list/spawners_weight = list(/obj/effect/ore_node_spawner = 100)
 	var/spawners_amount = 6
 
-/datum/ore_node_seeder/proc/SeedToLevel(z)
+/datum/ore_node_seeder/proc/SeedToLevel(datum/virtual_level/vlevel)
 	for(var/i in 1 to spawners_amount)
 		var/picked_type = pickweight(spawners_weight)
-		var/turf/loc_to_spawn = locate(rand(1,world.maxx), rand(1,world.maxy), z)
+		var/turf/loc_to_spawn = locate(rand(vlevel.low_x,vlevel.high_x), rand(vlevel.low_y,vlevel.high_y), vlevel.z_value)
 		new picked_type(loc_to_spawn)

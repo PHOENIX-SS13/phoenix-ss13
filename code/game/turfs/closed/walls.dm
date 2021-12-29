@@ -56,7 +56,7 @@
 	else
 		name += "wall"
 
-/turf/closed/wall/Initialize(mapload)
+/turf/closed/wall/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	paint_wall(wall_paint) //To ensure varedit wall paint works properly
 	if(mapload)

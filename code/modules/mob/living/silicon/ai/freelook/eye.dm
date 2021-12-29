@@ -83,7 +83,7 @@
 			return //we are already here!
 		if (destination)
 			if(!force_update)
-				var/datum/map_zone/mapzone = SSmapping.get_map_zone(loc)
+				var/datum/map_zone/mapzone = loc.get_map_zone()
 				if(!mapzone.is_in_bounds(destination))
 					return
 			abstract_move(destination)

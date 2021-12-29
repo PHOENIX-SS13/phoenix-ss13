@@ -164,8 +164,8 @@
 				return
 			usr.changeNext_move(CLICK_CD_RAPID) //Anti-spam
 			var/list/all_mining_turfs = list()
-			for(var/datum/sub_map_zone/subzone in SSmapping.sub_zones_by_trait(ZTRAIT_MINING))
-				all_mining_turfs += subzone.get_block()
+			for(var/datum/virtual_level/vlevel in SSmapping.virtual_levels_by_trait(ZTRAIT_MINING))
+				all_mining_turfs += vlevel.get_block()
 			var/turf/LZ = pick(all_mining_turfs) //Pick a random mining Z-level turf
 			if(!ismineralturf(LZ) && !istype(LZ, /turf/open/floor/plating/asteroid))
 			//Find a suitable mining turf. Reduces chance of landing in a bad area

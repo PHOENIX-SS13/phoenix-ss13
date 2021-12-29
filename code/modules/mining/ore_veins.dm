@@ -110,7 +110,7 @@
 
 /obj/structure/ore_vein/proc/initialize_vein_vars()
 	var/datum/material/material_ref = GET_MATERIAL_REF(material_type)
-	var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+	var/datum/map_zone/mapzone = get_map_zone()
 	greyscale_colors = "[material_ref.greyscale_colors][mapzone.rock_color]"
 	name = "[material_ref.name] vein"
 

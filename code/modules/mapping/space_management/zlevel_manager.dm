@@ -18,9 +18,10 @@
 		var/datum/space_level/S = new(I, name)
 		z_list += S
 		var/datum/map_zone/mapzone = new(name)
-		new /datum/sub_map_zone(name, traits, mapzone, 1, 1, world.maxx, world.maxy, I)
+		new /datum/virtual_level(name, traits, mapzone, 1, 1, world.maxx, world.maxy, I)
 
-/datum/controller/subsystem/mapping/proc/add_new_zlevel(name, traits = list(), z_type = /datum/space_level)
+/// Adds new physical space level. DO NOT USE THIS TO LOAD SOMETHING NEW. SSmapping.get_free_allocation() will create any levels nessecary and pass you coordinates to create a new virtual level
+/datum/controller/subsystem/mapping/proc/add_new_zlevel(name, allocation_type)
 	UNTIL(!adding_new_zlevel)
 	adding_new_zlevel = TRUE
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_Z, args)
@@ -29,7 +30,7 @@
 		world.incrementMaxZ()
 		CHECK_TICK
 	// TODO: sleep here if the Z level needs to be cleared
-	var/datum/space_level/S = new z_type(new_z, name, traits)
+	var/datum/space_level/S = new /datum/space_level(new_z, name, allocation_type)
 	z_list += S
 	adding_new_zlevel = FALSE
 	return S

@@ -191,7 +191,7 @@
 	var/required_range = get_required_radius(inserted_core.anomaly_type)
 	var/turf/location = get_turf(src)
 
-	var/cap_multiplier = SSmapping.sub_zone_trait(location, ZTRAIT_BOMBCAP_MULTIPLIER)
+	var/cap_multiplier = location.virtual_level_trait(ZTRAIT_BOMBCAP_MULTIPLIER)
 	if(isnull(cap_multiplier))
 		cap_multiplier = 1
 	var/capped_heavy = min(GLOB.MAX_EX_DEVESTATION_RANGE * cap_multiplier, heavy)

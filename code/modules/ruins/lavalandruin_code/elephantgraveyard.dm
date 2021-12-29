@@ -43,7 +43,7 @@
 /turf/open/floor/plating/asteroid/basalt/wasteland/setup_broken_states()
 	return list("wasteland")
 
-/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize()
+/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize(mapload, inherited_virtual_z)
 	.=..()
 	if(prob(floor_variance))
 		icon_state = "[base_icon_state][rand(0,6)]"

@@ -12,9 +12,9 @@ SUBSYSTEM_DEF(overmap)
 	var/list/id_object_lookup = list()
 
 	var/list/objects_to_process = list()
-
-	var/datum/space_level/overmap_reserved_level
-	var/reserved_z_level
+	
+	var/datum/map_zone/overmap_mapzone
+	var/datum/virtual_level/overmap_reserved_level
 
 /datum/controller/subsystem/overmap/proc/AddObjToProcess(datum/overmap_object/ovobj)
 	objects_to_process += ovobj
@@ -47,9 +47,8 @@ SUBSYSTEM_DEF(overmap)
 */
 /datum/controller/subsystem/overmap/proc/MappingInit()
 	//Initialize our reserved level
-	SSmapping.add_new_zlevel("Overmap Level", list(ZTRAIT_LINKAGE = UNAFFECTED))
-	reserved_z_level = world.maxz
-	overmap_reserved_level = SSmapping.z_list[reserved_z_level]
+	overmap_mapzone = SSmapping.create_map_zone("Overmap Map Zone")
+	overmap_reserved_level = SSmapping.create_virtual_level("Overmap Virtual Level", list(), overmap_mapzone, QUADRANT_MAP_SIZE, QUADRANT_MAP_SIZE, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
 	//Initialize sun systems
 	main_system = CreateNewSunSystem(new /datum/overmap_sun_system(overmap_reserved_level))
 	//Seed some random objects in the main system

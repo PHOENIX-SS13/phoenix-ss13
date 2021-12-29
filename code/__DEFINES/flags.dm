@@ -84,11 +84,10 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 //TURF FLAGS
 /// If a turf cant be jaunted through.
 #define NOJAUNT (1<<0)
-#define UNUSED_RESERVATION_TURF (1<<1)
 /// Blocks lava rivers being generated on the turf.
-#define NO_LAVA_GEN (1<<3)
+#define NO_LAVA_GEN (1<<1)
 /// Blocks ruins spawning on the turf.
-#define NO_RUINS (1<<4)
+#define NO_RUINS (1<<2)
 
 ////////////////Area flags\\\\\\\\\\\\\\
 /// If it's a valid territory for cult summoning or the CRAB-17 phone to spawn

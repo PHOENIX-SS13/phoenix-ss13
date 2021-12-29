@@ -361,7 +361,7 @@
 	var/sound/alert_sound = sound('sound/effects/alert.ogg')
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
-		if(M.z != z && !(SSmapping.sub_zone_trait(src, ZTRAITS_STATION) && SSmapping.sub_zone_trait(M, ZTRAITS_STATION)))
+		if(M.z != z && !(virtual_level_trait(ZTRAITS_STATION) && M.virtual_level_trait(ZTRAITS_STATION)))
 			continue
 		M.update_gravity(M.mob_has_gravity())
 		if(M.client)
@@ -376,7 +376,7 @@
 /obj/machinery/gravity_generator/main/proc/update_list()
 	var/turf/T = get_turf(src)
 
-	var/datum/map_zone/found_mapzone = SSmapping.get_map_zone(T)
+	var/datum/map_zone/found_mapzone = T.get_map_zone()
 	if(mapzone == found_mapzone)
 		return
 	if(mapzone && found_mapzone != mapzone)

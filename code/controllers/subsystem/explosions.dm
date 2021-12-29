@@ -266,7 +266,7 @@ SUBSYSTEM_DEF(explosions)
 	var/orig_max_distance = max(devastation_range, heavy_impact_range, light_impact_range, flame_range, flash_range)
 
 	//Zlevel specific bomb cap multiplier
-	var/cap_multiplier = SSmapping.sub_zone_trait(epicenter, ZTRAIT_BOMBCAP_MULTIPLIER)
+	var/cap_multiplier = epicenter.virtual_level_trait(ZTRAIT_BOMBCAP_MULTIPLIER)
 	if (isnull(cap_multiplier))
 		cap_multiplier = 1
 
@@ -446,7 +446,7 @@ SUBSYSTEM_DEF(explosions)
 	var/frequency = get_rand_frequency()
 	var/blast_z = epicenter.z
 	if(isnull(creaking)) // Autoset creaking.
-		var/on_station = SSmapping.sub_zone_trait(epicenter, ZTRAIT_STATION)
+		var/on_station = epicenter.virtual_level_trait(ZTRAIT_STATION)
 		if(on_station && prob((quake_factor * QUAKE_CREAK_PROB) + (echo_factor * ECHO_CREAK_PROB))) // Huge explosions are near guaranteed to make the station creak and whine, smaller ones might.
 			creaking = TRUE // prob over 100 always returns true
 		else

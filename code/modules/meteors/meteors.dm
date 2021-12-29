@@ -1,5 +1,4 @@
 #define DEFAULT_METEOR_LIFETIME 1800
-#define MAP_EDGE_PAD 5
 
 GLOBAL_VAR_INIT(meteor_wave_delay, 625) //minimum wait between waves in tenths of seconds
 //set to at least 100 unless you want evarr ruining every round
@@ -27,55 +26,19 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(pickweight(meteortypes))
 
-/proc/spawn_meteor(meteor_type, dir, datum/sub_map_zone/subzone, padding = MAP_EDGE_PAD)
+/proc/spawn_meteor(meteor_type, dir, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
 	var/turf/pickedstart
 	var/turf/pickedgoal
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart) && !isopenspaceturf(pickedstart))
 		var/startSide = dir || pick(GLOB.cardinals)
-		var/datum/sub_map_zone/startsub = subzone || pick(SSmapping.sub_zones_by_trait(ZTRAIT_STATION))
-		pickedstart = spaceDebrisStartLoc(startSide, startsub, padding)
-		pickedgoal = spaceDebrisFinishLoc(startSide, startsub, padding)
+		var/datum/virtual_level/startsub = vlevel || pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
+		pickedstart = startsub.get_side_turf(startSide, padding)
+		pickedgoal = startsub.get_side_turf(REVERSE_DIR(startSide), padding)
 		max_i--
 		if(max_i<=0)
 			return
 	new meteor_type(pickedstart, pickedgoal)
-
-/proc/spaceDebrisStartLoc(startSide, datum/sub_map_zone/subzone, padding = MAP_EDGE_PAD)
-	var/starty
-	var/startx
-	switch(startSide)
-		if(NORTH)
-			starty = subzone.high_y-(subzone.reserved_margin + padding)
-			startx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
-		if(EAST)
-			starty = rand(subzone.low_y + (subzone.reserved_margin + padding),subzone.high_y-(subzone.reserved_margin + padding))
-			startx = subzone.high_x-(subzone.reserved_margin + padding)
-		if(SOUTH)
-			starty = (subzone.reserved_margin + padding)
-			startx = rand(subzone.low_x + (subzone.reserved_margin + padding),subzone.high_x-(subzone.reserved_margin + padding))
-		if(WEST)
-			starty = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
-			startx = (subzone.reserved_margin + padding)
-	. = locate(startx, starty, subzone.z_value)
-
-/proc/spaceDebrisFinishLoc(startSide, datum/sub_map_zone/subzone, padding = MAP_EDGE_PAD)
-	var/endy
-	var/endx
-	switch(startSide)
-		if(NORTH)
-			endy = (subzone.reserved_margin + padding)
-			endx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
-		if(EAST)
-			endy = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
-			endx = (subzone.reserved_margin + padding)
-		if(SOUTH)
-			endy = subzone.high_y-(subzone.reserved_margin + padding)
-			endx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
-		if(WEST)
-			endy = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
-			endx = subzone.high_x-(subzone.reserved_margin + padding)
-	. = locate(endx, endy, subzone.z_value)
 
 ///////////////////////
 //The meteor effect
@@ -385,4 +348,3 @@ GLOBAL_LIST_INIT(meteorsSPOOKY, list(/obj/effect/meteor/pumpkin))
 	meteorsound = pick('sound/hallucinations/im_here1.ogg','sound/hallucinations/im_here2.ogg')
 //////////////////////////
 #undef DEFAULT_METEOR_LIFETIME
-#undef MAP_EDGE_PAD

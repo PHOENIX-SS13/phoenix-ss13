@@ -18,10 +18,11 @@
 	// otherwise, go to the linked object
 	if(multiz_dir) //Are we a trunk that goes up? Or down?
 		var/turf/T = null
+		var/turf/my_turf = get_turf(src)
 		if(multiz_dir == MULTIZ_PIPE_UP)
-			T = SSmapping.get_turf_above(get_turf(src)) //Get the turf above us
+			T = my_turf.above() //Get the turf above us
 		if(multiz_dir == MULTIZ_PIPE_DOWN)
-			T = SSmapping.get_turf_below(get_turf(src))
+			T = my_turf.below()
 		if(!T)
 			expel(H, get_turf(src), pick(GLOB.cardinals))
 			return //Nothing located.

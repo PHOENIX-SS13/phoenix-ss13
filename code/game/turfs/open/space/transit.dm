@@ -6,7 +6,7 @@
 	flags_1 = NOJAUNT //This line goes out to every wizard that ever managed to escape the den. I'm sorry.
 	explosion_block = INFINITY
 
-/turf/open/space/transit/Initialize()
+/turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	RegisterSignal(src, COMSIG_ATOM_CREATED, .proc/CreatedOnTransit) //Why isn't this a turf proc too..
 
@@ -29,7 +29,8 @@
 		return
 	if(arrived.loc != src || src.loc.type != /area/shuttle/transit)
 		return
-	var/datum/transit_instance/this_transit = SSshuttle.get_transit_instance(src)
+	var/datum/virtual_level/vlevel = get_virtual_level()
+	var/datum/transit_instance/this_transit = vlevel.transit_instance
 	if(!this_transit)
 		return
 	arrived.AddComponent(/datum/component/transit_handler, this_transit)
@@ -57,7 +58,7 @@
 /turf/open/space/transit/CanBuildHere()
 	return SSshuttle.is_in_shuttle_bounds(src)
 
-/turf/open/space/transit/Initialize()
+/turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	update_appearance()
 

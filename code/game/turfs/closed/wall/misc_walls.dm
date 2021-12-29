@@ -5,7 +5,7 @@
 	plating_material = /datum/material/runedmetal
 	color = "#3C3434" //To display in mapping softwares
 
-/turf/closed/wall/mineral/cult/Initialize()
+/turf/closed/wall/mineral/cult/Initialize(mapload, inherited_virtual_z)
 	new /obj/effect/temp_visual/cult/turf(src)
 	. = ..()
 

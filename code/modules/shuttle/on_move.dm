@@ -170,7 +170,7 @@ All ShuttleMove procs go here
 	newT.change_area(old_dest_area, src)
 	newT.underlying_area = old_dest_area
 
-	var/turf/above_turf = SSmapping.get_turf_above(newT)
+	var/turf/above_turf = newT.above()
 	if(above_turf)
 		newT.shuttle_roof = new(above_turf)
 	return TRUE

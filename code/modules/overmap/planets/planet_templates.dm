@@ -78,13 +78,13 @@
 			WARNING("No area type passed on planet generation")
 		if(!generator_type)
 			WARNING("No generator type passed on planet generation")
-		var/datum/space_level/new_level = SSmapping.add_new_zlevel(name)
-		var/datum/map_zone/mapzone = new(name, linked_overmap_object)
-		var/datum/sub_map_zone/subzone = new(name, default_traits_input, mapzone, 1, 1, world.maxx, world.maxy, new_level.z_value)
+
+		var/datum/map_zone/mapzone = SSmapping.create_map_zone(name, linked_overmap_object)
+		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(name, default_traits_input, mapzone, world.maxx, world.maxy, ALLOCATION_FULL)
 		if(map_margin)
-			subzone.reserve_margin(map_margin)
+			vlevel.reserve_margin(map_margin)
 		if(self_looping)
-			subzone.selfloop()
+			vlevel.selfloop()
 		if(picked_rock_color)
 			mapzone.rock_color = picked_rock_color
 		if(picked_plant_color)
@@ -99,11 +99,17 @@
 			qdel(atmos)
 		if(ore_node_seeder_type)
 			var/datum/ore_node_seeder/seeder = new ore_node_seeder_type
-			seeder.SeedToLevel(new_level.z_value)
+			seeder.SeedToLevel(vlevel)
 			qdel(seeder)
 		var/area/new_area = new area_type()
-		var/list/gen_turfs = block(locate(1 + map_margin,1 + map_margin,new_level.z_value),locate(world.maxx - map_margin,world.maxy - map_margin,new_level.z_value))
-		var/list/turfs = block(locate(1,1,new_level.z_value),locate(world.maxx,world.maxy,new_level.z_value))
+		var/list/gen_turfs = block(
+			locate(vlevel.low_x + map_margin,vlevel.low_y + map_margin,vlevel.z_value),
+			locate(vlevel.high_x - map_margin,vlevel.high_y - map_margin, vlevel.z_value)
+			)
+		var/list/turfs = block(
+			locate(vlevel.low_x,vlevel.low_y,vlevel.z_value),
+			locate(vlevel.high_x,vlevel.high_y,vlevel.z_value)
+			)
 		new_area.contents.Add(turfs)
 		var/datum/map_generator/my_generator = new generator_type()
 		my_generator.generate_terrain(gen_turfs)
@@ -128,7 +134,7 @@
 		if(!(planet_flags & planetary_ruin.planet_requirements))
 			eligible_ruins -= ruin_name
 
-	seedRuins(mapzone.sub_map_zones, ruin_budget, list(area_type), eligible_ruins)
+	seedRuins(mapzone.virtual_levels, ruin_budget, list(area_type), eligible_ruins)
 
 
 /datum/planet_template/lavaland
@@ -151,6 +157,6 @@
 	map_margin = 0
 
 /datum/planet_template/lavaland/SeedRuins(datum/map_zone/mapzone)
-	seedRuins(mapzone.sub_map_zones, CONFIG_GET(number/lavaland_budget), list(/area/lavaland/surface/outdoors/unexplored), SSmapping.lava_ruins_templates)
-	for (var/datum/sub_map_zone/submapz in mapzone.sub_map_zones)
+	seedRuins(mapzone.virtual_levels, CONFIG_GET(number/lavaland_budget), list(/area/lavaland/surface/outdoors/unexplored), SSmapping.lava_ruins_templates)
+	for (var/datum/virtual_level/submapz in mapzone.virtual_levels)
 		spawn_rivers(submapz)

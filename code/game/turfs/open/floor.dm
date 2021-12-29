@@ -28,7 +28,7 @@
 	var/list/burnt_states
 
 
-/turf/open/floor/Initialize(mapload)
+/turf/open/floor/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if (broken_states)
 		stack_trace("broken_states defined at the object level for [type], move it to setup_broken_states()")

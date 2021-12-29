@@ -31,7 +31,7 @@
 /mob/living/carbon/getorganszone(zone, subzones = 0)
 	var/list/returnorg = list()
 	if(subzones)
-		// Include subzones - groin for chest, eyes and mouth for head
+		// Include vlevels - groin for chest, eyes and mouth for head
 		if(zone == BODY_ZONE_HEAD)
 			returnorg = getorganszone(BODY_ZONE_PRECISE_EYES) + getorganszone(BODY_ZONE_PRECISE_MOUTH)
 		if(zone == BODY_ZONE_CHEST)

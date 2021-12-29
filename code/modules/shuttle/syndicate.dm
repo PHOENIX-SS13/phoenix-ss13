@@ -49,7 +49,7 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	if(!is_centcom_level(z))
+	if(!is_centcom_level(src))
 		to_chat(user, SPAN_WARNING("Pods are one way!"))
 		return FALSE
 	return TRUE

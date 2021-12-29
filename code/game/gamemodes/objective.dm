@@ -494,7 +494,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	for(var/datum/mind/mind as anything in owners)
 		if(!considered_alive(mind))
 			return FALSE
-		if(SSmapping.sub_zone_has_any_trait(mind.current, list(ZTRAIT_STATION, ZTRAIT_CENTCOM))) //went to centcom or ended round on station
+		if(mind.current.virtual_level_has_any_trait(list(ZTRAIT_STATION, ZTRAIT_CENTCOM))) //went to centcom or ended round on station
 			return FALSE
 	return TRUE
 

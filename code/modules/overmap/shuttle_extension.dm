@@ -13,7 +13,7 @@
 		if(M)
 			AddToShuttle(M)
 	else
-		var/datum/map_zone/foundzone = SSmapping.get_map_zone(position)
+		var/datum/map_zone/foundzone = position.get_map_zone()
 		if(foundzone && foundzone.related_overmap_object && foundzone.related_overmap_object.is_overmap_controllable)
 			AddToZLevel(foundzone)
 

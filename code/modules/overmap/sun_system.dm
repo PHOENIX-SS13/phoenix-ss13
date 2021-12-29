@@ -8,9 +8,8 @@
 	/// All overmap objects that are inside the sunsystem
 	var/list/overmap_objects = list()
 	/// The simulated Z level
-	var/datum/space_level/my_space_level
-	/// The z value of the simulated space level, for easier lookup
-	var/z_level = 0
+	var/datum/virtual_level/my_virtual_level
+	var/z_level
 
 	/// The levels are initialised in reserved blocks on the overmap level. Those offsets are this level's starting point
 	var/x_offset = 0
@@ -72,9 +71,9 @@
 		return TRUE
 	return FALSE
 
-/datum/overmap_sun_system/New(datum/space_level/passed_level)
-	my_space_level = passed_level
-	z_level = my_space_level.z_value
+/datum/overmap_sun_system/New(datum/virtual_level/passed_level)
+	my_virtual_level = passed_level
+	z_level = passed_level.z_value
 	//Initialize the turfs
 	var/list/transportables_loot_list = TRANSPORTABLE_LOOT_TABLE
 	for(var/iterated_x in 1 to maxx+1)

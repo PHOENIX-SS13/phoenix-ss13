@@ -117,7 +117,7 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/planetary/chlorine_sand/Initialize()
+/turf/open/floor/planetary/chlorine_sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(20))
 		icon_state = "[base_icon_state][rand(1,11)]"

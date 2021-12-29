@@ -47,22 +47,13 @@ require only minor tweaks.
 #define ZTRAIT_UP "Up"
 #define ZTRAIT_DOWN "Down"
 
-// enum - how space transitions should affect this level
-#define ZTRAIT_LINKAGE "Linkage"
-	// UNAFFECTED if absent - no space transitions
-	#define UNAFFECTED null
-	// SELFLOOPING - space transitions always self-loop
-	#define SELFLOOPING "Self"
-	// CROSSLINKED - mixed in with the cross-linked space pool
-	#define CROSSLINKED "Cross"
-
 // string - type path of the z-level's baseturf (defaults to space)
 #define ZTRAIT_BASETURF "Baseturf"
 
 // default trait definitions, used by SSmapping
 #define ZTRAITS_CENTCOM list(ZTRAIT_CENTCOM = TRUE)
-#define ZTRAITS_STATION list(ZTRAIT_LINKAGE = SELFLOOPING, ZTRAIT_STATION = TRUE)
-#define ZTRAITS_SPACE list(ZTRAIT_LINKAGE = SELFLOOPING, ZTRAIT_SPACE_RUINS = TRUE)
+#define ZTRAITS_STATION list(ZTRAIT_STATION = TRUE)
+#define ZTRAITS_SPACE list(ZTRAIT_SPACE_RUINS = TRUE)
 #define ZTRAITS_LAVALAND list(\
 	ZTRAIT_MINING = TRUE, \
 	ZTRAIT_LAVA_RUINS = TRUE, \
@@ -90,7 +81,6 @@ require only minor tweaks.
 #define PLACE_SPACE_RUIN "space" //On space ruin z level(s)
 #define PLACE_LAVA_RUIN "lavaland" //On lavaland ruin z levels(s)
 #define PLACE_BELOW "below" //On z levl below - centered on same tile
-#define PLACE_ISOLATED "isolated" //On isolated ruin z level
 
 
 ///Map generation defines
@@ -107,3 +97,15 @@ require only minor tweaks.
 #define BIOME_LOWMEDIUM_HUMIDITY "lowmedium_humidity"
 #define BIOME_HIGHMEDIUM_HUMIDITY "highmedium_humidity"
 #define BIOME_HIGH_HUMIDITY "high_humidity"
+
+#define ALLOCATION_FREE 1
+#define ALLOCATION_QUADRANT 2
+#define ALLOCATION_FULL 3
+
+#define QUADRANT_MAP_SIZE 127
+
+#define DEFAULT_ALLOC_JUMP 5
+
+#define TRANSIT_SIZE_BORDER 2
+
+#define MAP_EDGE_PAD 5

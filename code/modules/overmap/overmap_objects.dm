@@ -19,6 +19,8 @@
 	var/visual_type = /obj/effect/abstract/overmap
 	/// Related map zone of this overmap object, for objects like the station, planets, ruin clusters
 	var/datum/map_zone/related_map_zone
+	/// Whether the related map zone can be accessed through the overmap by docking.
+	var/can_be_docked = TRUE
 	/// If true then the SSovermap will call process() on it every time it fires
 	var/overmap_process = FALSE
 	/// When this object is spawned it will clear all the hazards in its current position

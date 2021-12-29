@@ -2,10 +2,10 @@
 	var/name = "Map Zone"
 	var/id
 	var/static/next_id = 0
-	var/next_subzone_id = 0
+	var/next_vlevel_id = 0
 	var/list/traits
 	var/datum/overmap_object/related_overmap_object
-	var/parallax_direction_override
+	var/parallax_movedir
 	///Extensions for z levels as overmap objects
 	var/list/all_extensions = list()
 	/// Weather controller for this level
@@ -22,20 +22,12 @@
 	var/water_color = COLOR_WHITE
 	/// Gas string for planetary atmospherics of this map zone
 	var/planetary_gas_string
-	/// List of all sub map zones this map zone contains
-	var/list/sub_map_zones = list()
+	/// List of all virtual levels this map zone contains
+	var/list/virtual_levels = list()
 
 	//Content variables
 	/// List of all gravity generators inside of the sub levels of this map zone
 	var/list/gravity_generators = list()
-
-/datum/map_zone/proc/get_sub_zone_id(subzone_id)
-	var/datum/sub_map_zone/found_subzone
-	for(var/datum/sub_map_zone/iterated_subzone as anything in sub_map_zones)
-		if(iterated_subzone.id == subzone_id)
-			found_subzone = iterated_subzone
-			break
-	return found_subzone
 
 /datum/map_zone/New(passed_name, datum/overmap_object/passed_ov_obj)
 	name = passed_name
@@ -47,8 +39,24 @@
 	id = next_id
 	. = ..()
 
+/datum/map_zone/Destroy()
+	/// Excepts overmap extensions (like engines and such), gravity generators etc. to have been deleted before this.
+	if(weather_controller)
+		QDEL_NULL(weather_controller)
+	if(day_night_controller)
+		QDEL_NULL(day_night_controller)
+	SSmapping.map_zones -= src
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		qdel(vlevel)
+	return ..()
+
+/// Clears all of what's inside the virtual levels managed by the mapzone.
+/datum/map_zone/proc/clear_reservation(immediate = FALSE)
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		vlevel.clear_reservation(immediate)
+
 ///If something requires a level to have a weather controller, use this
-/datum/map_zone/proc/AssertWeatherController()
+/datum/map_zone/proc/assert_weather_controller()
 	if(!weather_controller)
 		new /datum/weather_controller(list(src))
 
@@ -61,34 +69,47 @@
 
 /datum/map_zone/proc/get_alive_client_mobs()
 	. = list()
-	for(var/datum/sub_map_zone/subzone as anything in sub_map_zones)
-		. += subzone.get_alive_client_mobs()
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		. += vlevel.get_alive_client_mobs()
 
 /datum/map_zone/proc/get_dead_client_mobs()
 	. = list()
-	for(var/datum/sub_map_zone/subzone as anything in sub_map_zones)
-		. += subzone.get_dead_client_mobs()
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		. += vlevel.get_dead_client_mobs()
+
+/datum/map_zone/proc/get_mind_mobs()
+	. = list()
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		. += vlevel.get_mind_mobs()
 
 /datum/map_zone/proc/is_in_bounds(atom/Atom)
-	for(var/datum/sub_map_zone/subzone as anything in sub_map_zones)
-		if(subzone.is_in_bounds(Atom))
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		if(vlevel.is_in_bounds(Atom))
 			return TRUE
 	return FALSE
 
-/datum/map_zone/proc/add_sub_zone(datum/sub_map_zone/addsub)
-	sub_map_zones += addsub
+/datum/map_zone/proc/add_virtual_level(datum/virtual_level/addsub)
+	virtual_levels += addsub
 	addsub.parent_map_zone = src
-	next_subzone_id++
-	addsub.id = next_subzone_id
+	next_vlevel_id++
+	addsub.relative_id = next_vlevel_id
+
+/datum/map_zone/proc/remove_virtual_level(datum/virtual_level/subsub)
+	virtual_levels -= subsub
+	subsub.parent_map_zone = null
 
 #define MAPPING_MARGIN 5
 
-/datum/sub_map_zone
-	var/name = "Sub Map Zone"
+/datum/virtual_level
+	var/name = "Virtual Level"
+	var/relative_id
+	var/static/next_id = 0
 	var/id
 	var/datum/map_zone/parent_map_zone
-	/// Z level which contains this sub map zone
+	/// Z level which contains this virtual level
 	var/datum/space_level/parent_level
+	/// Transit handler of virtual level.
+	var/datum/transit_instance/transit_instance
 	/// The low X boundary of the sub-zone
 	var/low_x
 	/// The low Y boundary of the sub-zone
@@ -101,15 +122,15 @@
 	var/x_distance
 	/// Distance in the Y axis of the sub-zone
 	var/y_distance
-	/// Z value of the sub map zone, for easy access
+	/// Z value of the virtual level, for easy access
 	var/z_value
-	/// Sub map zone that is above this one (multi-z)
-	var/datum/sub_map_zone/up_linkage
-	/// Sub map zone that is below this one (multi-z)
-	var/datum/sub_map_zone/down_linkage
-	/// Neighboring sub map zones, associative by direction
+	/// Virtual level that is above this one (multi-z)
+	var/datum/virtual_level/up_linkage
+	/// Virtual level that is below this one (multi-z)
+	var/datum/virtual_level/down_linkage
+	/// Neighboring virtual levels, associative by direction
 	var/list/crosslinked = list()
-	/// Traits of this sub map zone
+	/// Traits of this virtual level
 	var/list/traits = list()
 	/// The amount of margin we have reserved in turfs on all sides of the reservation
 	var/reserved_margin = 0
@@ -120,19 +141,19 @@
 	/// A list of all ore nodes on this level
 	var/list/ore_nodes = list()
 
-/datum/sub_map_zone/proc/is_in_mapping_bounds(atom/Atom)
+/datum/virtual_level/proc/is_in_mapping_bounds(atom/Atom)
 	if(Atom.x >= low_x + mapping_margin && Atom.x <= high_x - mapping_margin && Atom.y >= low_y + mapping_margin && Atom.y <= high_y - mapping_margin && Atom.z == z_value)
 		return TRUE
 	return FALSE
 
-/datum/sub_map_zone/proc/get_relative_coords(atom/A)
+/datum/virtual_level/proc/get_relative_coords(atom/A)
 	var/rel_x = A.x - low_x + 1
 	var/rel_y = A.y - low_y + 1
 	return list(rel_x, rel_y)
 
-/datum/sub_map_zone/proc/reserve_margin(margin)
+/datum/virtual_level/proc/reserve_margin(margin)
 	if(reserved_margin)
-		CRASH("Sub Map Zone [name] tried reserving a margin while already reserving one.")
+		CRASH("Virtual Level [name] tried reserving a margin while already reserving one.")
 	reserved_margin = margin
 	mapping_margin = reserved_margin + MAPPING_MARGIN
 
@@ -149,21 +170,21 @@
 		for(var/turf/Turf as anything in turfblock)
 			Turf.ChangeTurf(/turf/closed/indestructible/edge, flags = CHANGETURF_IGNORE_AIR)
 
-/datum/sub_map_zone/proc/selfloop()
+/datum/virtual_level/proc/selfloop()
 	link_with(NORTH, src)
 	link_with(WEST, src)
 
-/datum/sub_map_zone/proc/unlink(direction)
+/datum/virtual_level/proc/unlink(direction)
 	if(!crosslinked["[direction]"])
-		CRASH("Sub map zone tried to unlink a direction that wasn't linked.")
-	var/datum/sub_map_zone/other_zone = crosslinked["[direction]"]
+		CRASH("Virtual level tried to unlink a direction that wasn't linked.")
+	var/datum/virtual_level/other_zone = crosslinked["[direction]"]
 	var/reversed_dir = REVERSE_DIR(direction)
 	crosslinked -= "[direction]"
 	other_zone.crosslinked -= "[reversed_dir]"
 	clear_dir_linkage(direction)
 	other_zone.clear_dir_linkage(reversed_dir)
 
-/datum/sub_map_zone/proc/clear_dir_linkage(direction)
+/datum/virtual_level/proc/clear_dir_linkage(direction)
 	var/start_x
 	var/start_y
 	var/end_x
@@ -205,9 +226,9 @@
 		edgy_turf.destination_y = null
 		edgy_turf.vis_contents.Cut()
 
-/datum/sub_map_zone/proc/link_with(direction, datum/sub_map_zone/other_zone)
+/datum/virtual_level/proc/link_with(direction, datum/virtual_level/other_zone)
 	if(!reserved_margin || !other_zone.reserved_margin)
-		CRASH("Sub map zone tried to link with no reserved margin.")
+		CRASH("Virtual level tried to link with no reserved margin.")
 	///Should you want to do any advanced shanenigans, you can turn this into an argument and adjust unlink logic, and it'll work
 	var/nb_direction = REVERSE_DIR(direction)
 	if(crosslinked["[direction]"])
@@ -299,7 +320,7 @@
 	var/min_margin = min(reserved_margin, other_zone.reserved_margin)
 
 	if(min_margin < 2)
-		CRASH("[src] - Attempted to crosslink sub map zones with minimum height margin less than 2.")
+		CRASH("[src] - Attempted to crosslink virtual levels with minimum height margin less than 2.")
 
 	var/extra_start_width = round((transition_len - min_transition) / 2)
 	var/nb_extra_start_width = round((nb_transition_len - min_transition) / 2)
@@ -389,87 +410,200 @@
 			nb_cur_turf.destination_y = cur_mirage_turf.y
 			nb_cur_turf.destination_z = cur_mirage_turf.z
 
-/datum/sub_map_zone/New(passed_name, list/passed_traits, datum/map_zone/passed_map, lx, ly, hx, hy, passed_z)
+/datum/virtual_level/New(passed_name, list/passed_traits, datum/map_zone/passed_map, lx, ly, hx, hy, passed_z)
+	next_id++
+	id = next_id
 	name = passed_name
 	traits = passed_traits.Copy()
-	passed_map.add_sub_zone(src)
+	passed_map.add_virtual_level(src)
+	SSmapping.virtual_z_translation["[id]"] = src
 	reserve(lx, ly, hx, hy, passed_z)
 	return ..()
 
-/datum/sub_map_zone/proc/get_trait(trait)
+/datum/virtual_level/Destroy()
+	if(transit_instance)
+		QDEL_NULL(transit_instance)
+	for(var/dir in crosslinked)
+		if(crosslinked[dir]) //Because it could be linking with itself
+			unlink(dir)
+	var/datum/space_level/level = SSmapping.z_list[z_value]
+	level.virtual_levels -= src
+	SSmapping.virtual_z_translation -= "[id]"
+	parent_map_zone.remove_virtual_level(src)
+	return ..()
+
+/datum/virtual_level/proc/mark_turfs()
+	for(var/turf/turf as anything in get_block())
+		turf.virtual_z = id
+
+/datum/virtual_level/proc/get_trait(trait)
 	return traits[trait]
 
-/datum/sub_map_zone/proc/reserve(x1, y1, x2, y2, passed_z)
+/datum/virtual_level/proc/reserve(x1, y1, x2, y2, passed_z)
 	low_x = x1
 	low_y = y1
 	high_x = x2
 	high_y = y2
 	z_value = passed_z
 	parent_level = SSmapping.z_list[z_value]
-	parent_level.sub_map_zones += src
+	parent_level.virtual_levels += src
 	x_distance = high_x - low_x + 1
 	y_distance = high_y - low_y + 1
+	mark_turfs()
 
-/datum/sub_map_zone/proc/is_in_bounds(atom/Atom)
-	if(Atom.x >= low_x && Atom.x <= high_x && Atom.y >= low_y && Atom.y <= high_y && Atom.z == z_value)
+/datum/virtual_level/proc/is_in_bounds(atom/Atom)
+	if(Atom.virtual_z() == id)
 		return TRUE
 	return FALSE
 
-/datum/sub_map_zone/proc/get_block()
+/datum/virtual_level/proc/get_block()
 	return block(locate(low_x,low_y,z_value), locate(high_x,high_y,z_value))
 
-/datum/sub_map_zone/proc/get_center()
+/datum/virtual_level/proc/get_unreserved_block()
+	return block(locate(low_x + reserved_margin, low_y + reserved_margin, z_value), locate(high_x - reserved_margin,high_y - reserved_margin,z_value))
+
+/datum/virtual_level/proc/get_center()
 	return locate(round((low_x + high_x) / 2), round((low_y + high_y) / 2), z_value)
 
-/datum/sub_map_zone/proc/get_random_position()
+/datum/virtual_level/proc/get_random_position()
 	return locate(rand(low_x, high_x), rand(low_y, high_y), z_value)
 
-/datum/sub_map_zone/proc/get_below_turf(turf/Turf)
+/datum/virtual_level/proc/get_below_turf(turf/Turf)
 	if(!down_linkage)
 		return
 	var/abs_x = Turf.x - low_x
 	var/abs_y = Turf.y - low_y
 	return locate(down_linkage.low_x + abs_x, down_linkage.low_y + abs_y, down_linkage.z_value)
 
-/datum/sub_map_zone/proc/get_above_turf(turf/Turf)
+/datum/virtual_level/proc/get_above_turf(turf/Turf)
 	if(!up_linkage)
 		return
 	var/abs_x = Turf.x - low_x
 	var/abs_y = Turf.y - low_y
 	return locate(up_linkage.low_x + abs_x, up_linkage.low_y + abs_y, up_linkage.z_value)
 
-/datum/sub_map_zone/proc/get_client_mobs()
+/datum/virtual_level/proc/get_client_mobs()
 	return get_alive_client_mobs() + get_dead_client_mobs()
 
-/datum/sub_map_zone/proc/get_alive_client_mobs()
+/datum/virtual_level/proc/get_alive_client_mobs()
 	. = list()
 	for(var/mob/Mob as anything in SSmobs.clients_by_zlevel[z_value])
 		if(is_in_bounds(Mob))
 			. += Mob
 
-/datum/sub_map_zone/proc/get_dead_client_mobs()
+/datum/virtual_level/proc/get_dead_client_mobs()
 	. = list()
 	for(var/mob/Mob as anything in SSmobs.dead_players_by_zlevel[z_value])
 		if(is_in_bounds(Mob))
 			. += Mob
 
-/// Gets the sub zone that contains the passed atom
-/datum/controller/subsystem/mapping/proc/get_sub_zone(atom/Atom)
-	var/datum/space_level/level = z_list[Atom.z]
-	if(!level) //This can happen with areas trying to get their sub zone, Hyperspace for example, unsure why, areas weird
-		return
-	var/datum/sub_map_zone/sub_map
-	for(var/datum/sub_map_zone/iterated_zone as anything in level.sub_map_zones)
-		if(iterated_zone.is_in_bounds(Atom))
-			sub_map = iterated_zone
-			break
-	return sub_map
+/datum/virtual_level/proc/get_mind_mobs()
+	. = list()
+	for(var/mob/living/living_mob as anything in GLOB.mob_living_list)
+		if(!living_mob.mind)
+			continue
+		if(is_in_bounds(living_mob))
+			. += living_mob
 
-/// A helper pretty much
-/datum/controller/subsystem/mapping/proc/get_map_zone(atom/Atom)
-	var/datum/sub_map_zone/sub_map = get_sub_zone(Atom)
-	if(sub_map)
-		return sub_map.parent_map_zone
+/datum/virtual_level/proc/fill_in(turf/turf_type, area/area_override, immediate = FALSE)
+	var/area/area_to_use = null
+	if(area_override)
+		if(ispath(area_override))
+			area_to_use = new area_override
+		else
+			area_to_use = area_override
+
+	if(area_to_use)
+		for(var/turf/iterated_turf as anything in get_block())
+			var/area/old_area = get_area(iterated_turf)
+			area_to_use.contents += iterated_turf
+			iterated_turf.change_area(old_area, area_to_use)
+			if(immediate)
+				continue
+			CHECK_TICK
+			if(QDELETED(src))
+				return
+
+	for(var/turf/iterated_turf as anything in get_unreserved_block())
+		iterated_turf.ChangeTurf(turf_type, turf_type)
+		if(immediate)
+			continue
+		CHECK_TICK
+		if(QDELETED(src))
+			return
+
+/datum/virtual_level/proc/add_transit_instance(obj/docking_port/stationary/transit/new_transit_dock)
+	new /datum/transit_instance(src, new_transit_dock)
+
+/datum/virtual_level/proc/clear_reservation(immediate = FALSE)
+	/// Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
+	var/datum/dummy_space_reservation/safeguard
+	if(!immediate)
+		safeguard = new(low_x, low_y, high_x, high_y, z_value)
+
+	var/area/space_area = GLOB.areas_by_type[/area/space]
+	for(var/turf/turf as anything in get_block())
+		//Reset turf
+		turf.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
+		// Reset area
+		var/area/old_area = get_area(turf)
+		space_area.contents += turf
+		turf.change_area(old_area, space_area)
+		if(immediate)
+			continue
+		CHECK_TICK
+
+	if(safeguard)
+		qdel(safeguard)
+
+/// Checks whether an atom is at or past the edge reservation turfs. Assumes atom is in bounds
+/datum/virtual_level/proc/on_edge_reservation(atom/Atom)
+	if(Atom.x < low_x + reserved_margin || Atom.x > high_x - reserved_margin || Atom.y < low_y + reserved_margin || Atom.y > high_y - reserved_margin)
+		return TRUE
+	return FALSE
+
+/// Checks whether an atom is at or past the edge, adjacent to reservation if any. Assumes atom is in bounds
+/datum/virtual_level/proc/on_edge(atom/Atom)
+	if(Atom.x <= low_x + reserved_margin || Atom.x >= high_x - reserved_margin || Atom.y <= low_y + reserved_margin || Atom.y >= high_y - reserved_margin)
+		return TRUE
+	return FALSE
+
+/// Gets a random turf on a side of a virtual level
+/datum/virtual_level/proc/get_side_turf(dir, padding = 0, middle = FALSE)
+	var/r_low_x = low_x + reserved_margin
+	var/r_low_y = low_y + reserved_margin
+	var/r_high_x = high_x - reserved_margin
+	var/r_high_y = high_y - reserved_margin
+	if(!dir)
+		dir = pick(GLOB.cardinals)
+	var/turf/found_turf
+	if(middle)
+		switch(dir)
+			if(NORTH)
+				found_turf = locate(round((low_x + high_x) / 2), r_high_y, z_value)
+			if(SOUTH)
+				found_turf = locate(round((low_x + high_x) / 2), r_low_y, z_value)
+			if(EAST)
+				found_turf = locate(r_high_x, round((low_y + high_y) / 2), z_value)
+			if(WEST)
+				found_turf = locate(r_low_x, round((low_y + high_y) / 2), z_value)
+	else
+		switch(dir)
+			if(NORTH)
+				found_turf = locate(rand(r_low_x + padding, r_high_x - padding), r_high_y, z_value)
+			if(SOUTH)
+				found_turf = locate(rand(r_low_x + padding, r_high_x - padding), r_low_y, z_value)
+			if(EAST)
+				found_turf = locate(r_high_x, rand(r_low_y + padding, r_high_y - padding), z_value)
+			if(WEST)
+				found_turf = locate(r_low_x, rand(r_low_y + padding, r_high_y - padding), z_value)
+	return found_turf
+
+/datum/virtual_level/proc/get_unreserved_bottom_left_turf()
+	return locate(low_x + reserved_margin, low_y + reserved_margin, z_value)
+
+/datum/virtual_level/proc/get_unreserved_top_right_turf()
+	return locate(high_x - reserved_margin, high_y - reserved_margin, z_value)
 
 /turf/closed/indestructible/edge
 	name = "edge"
@@ -491,6 +625,10 @@
 /turf/closed/indestructible/edge/Entered(atom/movable/arrived, direction)
 	. = ..()
 	if(!arrived || src != arrived.loc)
+		return
+
+	if(!destination_z && isliving(arrived))
+		stack_trace("Living mob entered level edge turf, somehow")
 		return
 
 	if(destination_z && !(arrived.pulledby || !arrived.can_be_z_moved))

@@ -49,7 +49,8 @@
 /obj/effect/abstract/shuttle_roof/CanAtmosPass(turf/T, vertical = FALSE)
 	if(!vertical)
 		return TRUE
-	var/turf/below_turf = SSmapping.get_turf_below(src)
+	var/turf/my_turf = get_turf(src)
+	var/turf/below_turf = my_turf.below()
 	if(T == below_turf)
 		return FALSE
 	return TRUE

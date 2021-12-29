@@ -69,16 +69,18 @@
 
 /area/proc/ApplyDayNightTurfs()
 	LAZYINITLIST(day_night_turf_appearance_translation)
-	last_day_night_color = subbed_day_night_controller.last_color
-	last_day_night_alpha = subbed_day_night_controller.last_alpha
-	
-	last_day_night_luminosity = subbed_day_night_controller.has_applied_luminosity
+
+	var/datum/day_night_controller/controller = subbed_day_night_controller
+	last_day_night_color = controller.last_color
+	last_day_night_alpha = controller.last_alpha
+	last_day_night_luminosity = controller.last_luminosity
+
 	for(var/i in day_night_adjacent_turfs)
 		var/turf/iterated_turf = i
 		var/mutable_appearance/appearance_to_add = mutable_appearance('icons/effects/daynight_blend.dmi', "white", DAY_NIGHT_LIGHTING_LAYER, LIGHTING_PLANE, 255, RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
+		appearance_to_add.icon_state = "[day_night_adjacent_turfs[i]]"
 		appearance_to_add.color = last_day_night_color
 		appearance_to_add.alpha = last_day_night_alpha
-		appearance_to_add.icon_state = "[day_night_adjacent_turfs[i]]"
 		day_night_turf_appearance_translation[iterated_turf] = appearance_to_add
 		iterated_turf.underlays += appearance_to_add
 		if(iterated_turf.lighting_object)
@@ -99,7 +101,7 @@
 		return
 	if(find_controller)
 		if(SSmapping && SSmapping.z_list) //Goddamn areas that initialize out of order?!
-			var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+			var/datum/map_zone/mapzone = get_map_zone()
 			if(mapzone && mapzone.day_night_controller)
 				newsub = mapzone.day_night_controller
 				rebuild = TRUE
@@ -122,10 +124,6 @@
 		newsub.subscribe_blend_area(src)
 	if(subbed_day_night_controller)
 		ApplyDayNightTurfs()
-
-/area/proc/UpdateDayNightTurfsSimple() //Assumes we have a controller and turfs to do work with
-	ClearDayNightTurfs()
-	ApplyDayNightTurfs()
 
 #undef NORTH_JUNCTION
 #undef SOUTH_JUNCTION

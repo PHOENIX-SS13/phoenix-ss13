@@ -32,13 +32,12 @@
 	if(mapzone && mapzone.day_night_controller)
 		mapzone.day_night_controller.update_areas()
 
-/// In theory this should never be destroyed, unless you plan to dynamically change existing z levels
 /datum/weather_controller/Destroy()
 	mapzone.weather_controller = null
 	mapzone = null
 	if(current_weathers)
 		for(var/i in current_weathers)
-			var/datum/weather/W = i
+			var/datum/weather/W = current_weathers[i]
 			W.end()
 	SSweather.weather_controllers -= src
 	return ..()

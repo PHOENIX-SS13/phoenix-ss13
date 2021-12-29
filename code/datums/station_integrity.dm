@@ -24,8 +24,8 @@
 	door = 0
 	grille = 0
 	mach = 0
-	for(var/datum/sub_map_zone/subzone in SSmapping.sub_zones_by_trait(ZTRAIT_STATION))
-		for(var/turf/T as anything in subzone.get_block())
+	for(var/datum/virtual_level/vlevel in SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
+		for(var/turf/T as anything in vlevel.get_block())
 			// don't count shuttles since they may have just left
 			if(istype(T.loc, /area/shuttle))
 				continue

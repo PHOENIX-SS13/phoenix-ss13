@@ -32,15 +32,25 @@ GLOBAL_VAR(test_log)
 	var/list/allocated
 	var/list/fail_reasons
 
-	var/static/datum/space_level/reservation
+	var/static/datum/map_zone/mapzone
 
 /proc/cmp_unit_test_priority(datum/unit_test/a, datum/unit_test/b)
 	return initial(a.priority) - initial(b.priority)
 
 /datum/unit_test/New()
-	if (isnull(reservation))
+	if(isnull(mapzone))
+		var/height = 8
+		var/width = 8
+		mapzone = SSmapping.create_map_zone("Integration Test Mapzone")
+		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level("Integration Test Virtual Level", ZTRAITS_STATION, mapzone, width, height, ALLOCATION_FREE)
+		vlevel.reserve_margin(2)
+
 		var/datum/map_template/unit_tests/template = new
-		reservation = template.load_new_z()
+		template.load(locate(
+			vlevel.low_x + vlevel.reserved_margin, 
+			vlevel.low_y + vlevel.reserved_margin, 
+			vlevel.z_value)
+		)
 
 	allocated = new
 	run_loc_floor_bottom_left = get_turf(locate(/obj/effect/landmark/unit_test_bottom_left) in GLOB.landmarks_list)
@@ -135,9 +145,3 @@ GLOBAL_VAR(test_log)
 /datum/map_template/unit_tests
 	name = "Unit Tests Zone"
 	mappath = "_maps/templates/unit_tests.dmm"
-
-///Wrap the loaded z_level into a map_zone
-/datum/map_template/unit_tests/initTemplateBounds()
-	var/datum/map_zone/mapzone = new("Integration Test Mapzone")
-	new /datum/sub_map_zone("Integration Test Subzone", ZTRAITS_STATION, mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
-	. = ..()
