@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - rscadd: "Replaces dynamic and SSevents with a Storyteller system. Check https://github.com/hrzntal/horizon/pull/559 for more info"

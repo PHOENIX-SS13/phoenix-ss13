@@ -6,3 +6,17 @@
   - rscadd: New chairs sprite!
   - code_imp: Turf Fire subsystem code improvements
   - rscadd: Adds Metal Rubble, exploded walls will now look cooler now
+2021-12-29:
+  Azarak:
+  - bugfix: Actually fixes reinforced plasma window spawner
+  - bugfix: Fixes up multiz atmos connection, cleans some things up in general
+  - rscadd: Ambient noises have been updated
+  - balance: Lowers fauna density in jungle planets and leaper spawn chance
+  - rscadd: Replaces dynamic and SSevents with a Storyteller system. Check https://github.com/hrzntal/horizon/pull/559
+      for more info
+  - rscadd: Blind people will now see visual effects from sound cues
+  - rscadd: Blind people will now see runechat and balloon alerts
+  - balance: Getting floored no longer makes you rest down.
+  - rscadd: Guarantees one spawn of a habitable planet
+  - bugfix: Fixes grilles queueing SMOOTHING indefinetly
+  - rscadd: Subtle and Subtler Anti Ghost emotes, in IC tab
