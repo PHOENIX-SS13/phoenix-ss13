@@ -101,7 +101,7 @@
 	key_third_person = "circles"
 	hands_use_check = TRUE
 
-/datum/emote/living/carbon/circle/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/circle/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(!length(user.get_empty_held_indexes()))
 		to_chat(user, SPAN_WARNING("You don't have any free hands to make a circle with."))
@@ -116,7 +116,7 @@
 	hands_use_check = TRUE
 	cooldown = 3 SECONDS // to prevent endless table slamming
 
-/datum/emote/living/carbon/slap/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/slap/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(!.)
 		return
@@ -132,7 +132,7 @@
 	key_third_person = "noogies"
 	hands_use_check = TRUE
 
-/datum/emote/living/carbon/noogie/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/noogie/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(!.)
 		return

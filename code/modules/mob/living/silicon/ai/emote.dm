@@ -7,7 +7,7 @@
 	key = "blank"
 	var/emotion = AI_EMOTION_BLANK
 
-/datum/emote/ai/emotion_display/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/ai/emotion_display/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(!.)
 		return
@@ -79,7 +79,7 @@
 	key = "friendcomputer"
 	emotion = AI_EMOTION_FRIEND_COMPUTER
 
-/datum/emote/ai/emotion_display/friend_computer/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/ai/emotion_display/friend_computer/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(!.)
 		return

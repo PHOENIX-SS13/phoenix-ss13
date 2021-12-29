@@ -46,7 +46,7 @@
 	message = "collapses!"
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/collapse/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/collapse/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(. && isliving(user))
 		var/mob/living/L = user
@@ -82,7 +82,7 @@
 	cooldown = (15 SECONDS)
 	stat_allowed = HARD_CRIT
 
-/datum/emote/living/deathgasp/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/deathgasp/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	var/mob/living/simple_animal/S = user
 	if(istype(S) && S.deathmessage)
 		message_simple = S.deathmessage
@@ -105,7 +105,7 @@
 	key_third_person = "faints"
 	message = "faints."
 
-/datum/emote/living/faint/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/faint/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(. && isliving(user))
 		var/mob/living/L = user
@@ -118,7 +118,7 @@
 	hands_use_check = TRUE
 	var/wing_time = 20
 /* Fix this later
-/datum/emote/living/flap/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/flap/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(. && ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -197,7 +197,7 @@
 	key_third_person = "kisses"
 	cooldown = 3 SECONDS
 
-/datum/emote/living/kiss/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/kiss/run_emote(mob/living/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(!.)
 		return
@@ -256,7 +256,7 @@
 	message_param = "points at %t."
 	hands_use_check = TRUE
 
-/datum/emote/living/point/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/point/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	message_param = initial(message_param) // reset
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -335,7 +335,7 @@
 	message = "sniffs."
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/sniff/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/sniff/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(.)
 		var/turf/open/current_turf = get_turf(user)
@@ -377,7 +377,7 @@
 	message = "puts their hands on their head and falls to the ground, they surrender%s!"
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(. && isliving(user))
 		var/mob/living/L = user
@@ -437,7 +437,6 @@
 	key_third_person = "custom"
 	message = null
 	var/subtle = FALSE
-	var/anti_ghost = FALSE
 
 /datum/emote/living/custom/can_run_emote(mob/user, status_check, intentional)
 	. = ..() && intentional
@@ -449,7 +448,7 @@
 		return TRUE
 	return FALSE
 
-/datum/emote/living/custom/run_emote(mob/user, params, type_override = null, intentional = FALSE)
+/datum/emote/living/custom/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	var/custom_emote
 	var/custom_emote_type
 	if(!can_run_emote(user, TRUE, intentional))
@@ -480,11 +479,9 @@
 			custom_emote_type = type_override
 	if(subtle)
 		custom_emote = "<i>[custom_emote]</i>"
-	message = custom_emote
-	emote_type = custom_emote_type
+	override_message = custom_emote
+	override_emote_type = custom_emote_type
 	. = ..()
-	message = null
-	emote_type = EMOTE_VISIBLE
 
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
 	return message

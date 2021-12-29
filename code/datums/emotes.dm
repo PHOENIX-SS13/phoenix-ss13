@@ -93,11 +93,12 @@
  *
  * Returns TRUE if it was able to run the emote, FALSE otherwise.
  */
-/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
+/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE, override_message, override_emote_type)
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
-	var/msg = select_message_type(user, message, intentional)
+	var/message_to_use = override_message || message
+	var/msg = select_message_type(user, message_to_use, intentional)
 	if(params && message_param)
 		msg = select_param(user, params)
 
@@ -127,7 +128,8 @@
 			if(ghost.stat == DEAD && ghost.client && user.client && (ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(ghost in viewers(user_turf, emote_distance)))
 				ghost.show_message(SPAN_EMOTE("[FOLLOW_LINK(ghost, user)] [dchatmsg]"))
 
-	if(emote_type == EMOTE_AUDIBLE)
+	var/emote_type_to_use = override_emote_type || emote_type
+	if(emote_type_to_use == EMOTE_AUDIBLE)
 		user.audible_message(msg, deaf_message = SPAN_EMOTE("You see how <b>[user]</b> [msg]"), audible_message_flags = EMOTE_MESSAGE, hearing_distance = emote_distance, show_ghosts = show_ghosts)
 	else
 		user.visible_message(msg, blind_message = SPAN_EMOTE("You hear how <b>[user]</b> [msg]"), visible_message_flags = EMOTE_MESSAGE, vision_distance = emote_distance, show_ghosts = show_ghosts)

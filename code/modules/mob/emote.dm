@@ -36,7 +36,7 @@
 	key = "help"
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer, /mob/living/silicon/ai)
 
-/datum/emote/help/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/help/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	var/list/keys = list()
 	var/list/message = list("Available emotes, you can use them with say \"*emote\": ")
@@ -61,7 +61,7 @@
 	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer, /mob/living/silicon/ai)
 
-/datum/emote/flip/run_emote(mob/user, params , type_override, intentional)
+/datum/emote/flip/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(.)
 		user.SpinAnimation(7,1)
@@ -95,7 +95,7 @@
 	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
 
-/datum/emote/spin/run_emote(mob/user, params ,  type_override, intentional)
+/datum/emote/spin/run_emote(mob/user, params, type_override, intentional, override_message, override_emote_type)
 	. = ..()
 	if(.)
 		user.spin(20, 1)
