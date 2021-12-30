@@ -170,7 +170,7 @@
 "cN" = (
 /obj/structure/lattice,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "cT" = (
 /obj/structure/cable,
@@ -302,7 +302,7 @@
 	dir = 6
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "eU" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction{
@@ -365,7 +365,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
 	},
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "fO" = (
 /obj/structure/cable,
@@ -397,7 +397,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 4
 	},
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "gf" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -1161,7 +1161,7 @@
 	name = "FTV Bearcat Starboard Dock";
 	roundstart_template = /datum/map_template/shuttle/crow
 	},
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "pF" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
@@ -1705,7 +1705,7 @@
 	dir = 10
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "wZ" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
@@ -1737,7 +1737,7 @@
 	dir = 5
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "xw" = (
 /obj/item/radio/intercom/directional/east,
@@ -1863,7 +1863,7 @@
 	dir = 4
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "zk" = (
 /obj/item/kirbyplants/random,
@@ -2021,7 +2021,7 @@
 	dir = 9
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Bj" = (
 /obj/machinery/reagentgrinder{
@@ -2192,11 +2192,11 @@
 /turf/open/floor/carpet,
 /area/command/bridge)
 "DB" = (
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "DC" = (
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "DD" = (
 /obj/machinery/door/airlock/external,
@@ -2343,7 +2343,7 @@
 	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /obj/structure/lattice,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "EI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -2788,7 +2788,7 @@
 /area/hallway/primary/fore)
 "JL" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "JM" = (
 /obj/structure/cable,
@@ -2855,7 +2855,7 @@
 "Kz" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/burgundy,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "KD" = (
 /obj/machinery/light/directional/north,
@@ -3151,7 +3151,7 @@
 	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Oo" = (
 /obj/structure/table/reinforced,
@@ -3174,7 +3174,7 @@
 	dir = 8;
 	name = "FTV Bearcat Port Dock"
 	},
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "OU" = (
 /obj/structure/cable,
@@ -3486,7 +3486,7 @@
 "Tf" = (
 /obj/structure/ladder,
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Th" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/cyan/visible,
@@ -3542,7 +3542,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Uh" = (
 /obj/structure/cable,
@@ -3696,7 +3696,7 @@
 /area/cargo/warehouse/upper)
 "Wg" = (
 /obj/effect/landmark/carpspawn,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "Wm" = (
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
@@ -3946,7 +3946,7 @@
 /area/service/hydroponics)
 "Zg" = (
 /obj/structure/lattice,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Zi" = (
 /obj/machinery/light/directional/south,

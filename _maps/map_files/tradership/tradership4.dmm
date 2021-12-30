@@ -93,7 +93,7 @@
 /area/tcommsat/server)
 "lE" = (
 /obj/structure/grille,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "lK" = (
 /obj/machinery/power/smes/engineering,
@@ -108,7 +108,7 @@
 /area/tcommsat/server)
 "mV" = (
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "nP" = (
 /obj/machinery/telecomms/bus/preset_four,
@@ -344,7 +344,7 @@
 /area/space/nearstation)
 "Jc" = (
 /obj/effect/landmark/carpspawn,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "JQ" = (
 /obj/effect/turf_decal/stripes/corner,
@@ -368,7 +368,7 @@
 /area/maintenance/solars/port/aft)
 "Nf" = (
 /obj/structure/lattice,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Ou" = (
 /turf/open/floor/engine/hull/reinforced,
@@ -470,7 +470,7 @@
 /area/maintenance/solars/port/aft)
 "UH" = (
 /obj/structure/lattice,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "UI" = (
 /obj/item/solar_assembly,
@@ -526,7 +526,7 @@
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "Zw" = (
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "ZG" = (
 /obj/structure/cable,

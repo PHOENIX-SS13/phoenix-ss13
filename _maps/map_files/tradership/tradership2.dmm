@@ -654,7 +654,7 @@
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/science)
 "pJ" = (
 /obj/machinery/door/airlock/external,
@@ -700,7 +700,7 @@
 /area/hallway/primary/central)
 "qP" = (
 /obj/structure/lattice,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "qU" = (
 /obj/structure/ladder,
@@ -1079,7 +1079,7 @@
 /obj/docking_port/stationary/huge{
 	name = "FTV Bearcat Cargo Dock"
 	},
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "AJ" = (
 /obj/structure/cable,
@@ -1249,7 +1249,7 @@
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/science)
 "Gd" = (
 /obj/structure/closet/crate,
@@ -1282,7 +1282,7 @@
 /area/hallway/primary/central)
 "GV" = (
 /obj/effect/landmark/carpspawn,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "Hd" = (
 /obj/machinery/light/red/directional/south,
@@ -1551,7 +1551,7 @@
 /turf/closed/wall/r_wall,
 /area/construction/storage_wing)
 "Mg" = (
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space)
 "Mh" = (
 /obj/structure/sign/warning/vacuum/external{
@@ -1773,7 +1773,7 @@
 "Rh" = (
 /obj/structure/ladder,
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Rr" = (
 /turf/open/floor/plating,
@@ -1964,7 +1964,7 @@
 /area/maintenance/port/aft)
 "Xq" = (
 /obj/structure/lattice/catwalk,
-/turf/open/openspace/airless/planetary,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "Xs" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
