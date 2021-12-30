@@ -1,4 +1,0 @@
-author: "Azarak"
-delete-after: True
-changes: 
-  - code_imp: "Map areas are now wrapped in virtual levels, which are managed in a smart way"

@@ -20,3 +20,10 @@
   - rscadd: Guarantees one spawn of a habitable planet
   - bugfix: Fixes grilles queueing SMOOTHING indefinetly
   - rscadd: Subtle and Subtler Anti Ghost emotes, in IC tab
+2021-12-30:
+  Azarak:
+  - bugfix: Fixes asynchronous emote overwrite bug
+  - code_imp: Map areas are now wrapped in virtual levels, which are managed in a
+      smart way
+  retlaw34:
+  - imageadd: Resprites the flashlights, they are now more flashy!
