@@ -27,3 +27,8 @@
       smart way
   retlaw34:
   - imageadd: Resprites the flashlights, they are now more flashy!
+2021-12-31:
+  Azarak:
+  - bugfix: Some fixes to virtual levels
+  - bugfix: Creates /turf/open/space/openspace to properly simulate openspace space
+      behaviours and help on performance
