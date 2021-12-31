@@ -27,6 +27,8 @@
 #define CHAT_LAYER_Z_STEP 0.0001
 /// The number of z-layer 'slices' usable by the chat message layering
 #define CHAT_LAYER_MAX_Z (CHAT_LAYER_MAX - CHAT_LAYER) / CHAT_LAYER_Z_STEP
+/// The color of the chat message when its an emote
+#define CHAT_MESSAGE_EMOTE_COLOR "#949494"
 
 /**
  * # Chat Message Overlay
@@ -142,14 +144,17 @@
 		extra_classes |= "small"
 
 	var/list/prefixes
+	var/is_emote = FALSE
 
 	// Append radio icon if from a virtual speaker
 	if (extra_classes.Find("virtual-speaker"))
 		var/image/r_icon = image('icons/ui_icons/chat/chat_icons.dmi', icon_state = "radio")
 		LAZYADD(prefixes, "\icon[r_icon]")
 	else if (extra_classes.Find("emote"))
-		var/image/r_icon = image('icons/ui_icons/chat/chat_icons.dmi', icon_state = "emote")
-		LAZYADD(prefixes, "\icon[r_icon]")
+		is_emote = TRUE
+		/// Add small, remove italics when it's an emote
+		extra_classes |= "small"
+		extra_classes -= "italics"
 
 	// Append language icon if the language uses one
 	var/datum/language/language_instance = GLOB.language_datum_instances[language]
@@ -163,8 +168,12 @@
 
 	text = "[prefixes?.Join("&nbsp;")][text]"
 
-	// We dim italicized text to make it more distinguishable from regular text
-	var/tgt_color = extra_classes.Find("italics") ? target.chat_color_darkened : target.chat_color
+	// We turn the emote color into gray, or dim italicized text
+	var/tgt_color
+	if(is_emote)
+		tgt_color = CHAT_MESSAGE_EMOTE_COLOR
+	else
+		tgt_color = extra_classes.Find("italics") ? target.chat_color_darkened : target.chat_color
 
 	// Approximate text height
 	var/complete_text = "<span class='center [extra_classes.Join(" ")]' style='color: [tgt_color]'>[text]</span>"
@@ -250,7 +259,7 @@
 
 	// Display visual above source
 	if(runechat_flags & EMOTE_MESSAGE)
-		new /datum/chatmessage(raw_message, speaker, src, message_language, list("emote", "italics"))
+		new /datum/chatmessage(raw_message, speaker, src, message_language, list("emote"))
 	else
 		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, message_language, spans)
 
@@ -318,3 +327,4 @@
 #undef CHAT_LAYER_Z_STEP
 #undef CHAT_LAYER_MAX_Z
 #undef CHAT_MESSAGE_ICON_SIZE
+#undef CHAT_MESSAGE_EMOTE_COLOR
