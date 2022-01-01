@@ -106,6 +106,6 @@ require only minor tweaks.
 
 #define DEFAULT_ALLOC_JUMP 5
 
-#define TRANSIT_SIZE_BORDER 2
+#define TRANSIT_SIZE_BORDER 3
 
 #define MAP_EDGE_PAD 5
