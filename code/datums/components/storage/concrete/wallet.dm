@@ -5,6 +5,7 @@
 		to_chat(user, SPAN_WARNING("[parent] seems to be locked!"))
 		return
 
+	. = COMPONENT_CANCEL_CLICK_RIGHT
 	var/obj/item/storage/wallet/A = parent
 	if(istype(A) && A.front_id && !issilicon(user) && !(A.item_flags & IN_STORAGE)) //if it's a wallet in storage seeing the full inventory is more useful
 		var/obj/item/I = A.front_id
