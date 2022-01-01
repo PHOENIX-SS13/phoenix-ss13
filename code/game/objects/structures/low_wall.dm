@@ -85,13 +85,17 @@
 /obj/structure/low_wall/attackby(obj/item/weapon, mob/living/user, params)
 	if(is_top_obstructed())
 		return TRUE
-	if(!(flags_1 & NODECONSTRUCT_1))
+	var/list/modifiers = params2list(params)
+	if(!(flags_1 & NODECONSTRUCT_1) && LAZYACCESS(modifiers, RIGHT_CLICK))
 		if(weapon.tool_behaviour == TOOL_WELDER)
 			if(weapon.tool_start_check(user, amount = 0))
 				to_chat(user, SPAN_NOTICE("You start cutting \the [src]..."))
 				if (weapon.use_tool(src, user, 50, volume = 50))
 					to_chat(user, SPAN_NOTICE("You cut \the [src] down."))
 					deconstruct(TRUE)
+			return TRUE
+	if(!user.combat_mode && !(weapon.item_flags & ABSTRACT))
+		if(user.transferItemToLoc(weapon, loc, silent = FALSE, user_click_modifiers = modifiers))
 			return TRUE
 	return ..()
 

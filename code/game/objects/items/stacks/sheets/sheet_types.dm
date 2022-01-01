@@ -66,6 +66,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	)),
 	null, \
 	new/datum/stack_recipe("rack parts", /obj/item/rack_parts), \
+	new/datum/stack_recipe("shelf parts", /obj/item/rack_parts/shelf), \
 	new/datum/stack_recipe("closet", /obj/structure/closet, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("canister frame", /obj/structure/canister_frame/machine/frame_tier_0, 5, time = 8, one_per_turf = TRUE, on_floor = TRUE), \

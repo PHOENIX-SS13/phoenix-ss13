@@ -214,13 +214,7 @@
 		return TRUE
 
 	if(!user.combat_mode && !(I.item_flags & ABSTRACT))
-		if(user.transferItemToLoc(I, drop_location(), silent = FALSE))
-			//Center the icon where the user clicked.
-			if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
-				return
-			//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-			I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
-			I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
+		if(user.transferItemToLoc(I, drop_location(), silent = FALSE, user_click_modifiers = modifiers))
 			AfterPutItemOnTable(I, user)
 			return TRUE
 	else
@@ -627,6 +621,8 @@
 	anchored = TRUE
 	pass_flags_self = LETPASSTHROW //You can throw objects over this, despite it's density.
 	max_integrity = 20
+	/// Type of the construction parts this deconstructs to
+	var/construction_parts = /obj/item/rack_parts
 
 /obj/structure/rack/examine(mob/user)
 	. = ..()
@@ -656,8 +652,8 @@
 		return
 	if(user.combat_mode)
 		return ..()
-	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+	if(user.transferItemToLoc(W, drop_location(), user_click_modifiers = modifiers))
+		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user, list/modifiers)
 	attack_hand(user, modifiers)
@@ -683,6 +679,12 @@
 		if(BURN)
 			playsound(loc, 'sound/items/welder.ogg', 40, TRUE)
 
+/obj/structure/rack/shelf
+	name = "shelf"
+	desc = "For showing off your collections of dust, electronics and tools."
+	icon_state = "shelf"
+	construction_parts = /obj/item/rack_parts/shelf
+
 /*
  * Rack destruction
  */
@@ -690,7 +692,7 @@
 /obj/structure/rack/deconstruct(disassembled = TRUE)
 	if(!(flags_1&NODECONSTRUCT_1))
 		set_density(FALSE)
-		var/obj/item/rack_parts/newparts = new(loc)
+		var/obj/item/rack_parts/newparts = new construction_parts(loc)
 		transfer_fingerprints_to(newparts)
 	qdel(src)
 
@@ -707,6 +709,8 @@
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron=2000)
 	var/building = FALSE
+	/// Type of the rack this will construct to
+	var/rack_type = /obj/structure/rack
 
 /obj/item/rack_parts/attackby(obj/item/W, mob/user, params)
 	if (W.tool_behaviour == TOOL_WRENCH)
@@ -723,9 +727,15 @@
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
-		var/obj/structure/rack/R = new /obj/structure/rack(user.loc)
+		var/obj/structure/rack/R = new rack_type(user.loc)
 		user.visible_message("<span class='notice'>[user] assembles \a [R].\
 			</span>", SPAN_NOTICE("You assemble \a [R]."))
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE
+
+/obj/item/rack_parts/shelf
+	name = "shelf parts"
+	desc = "Parts of a shelf."
+	icon_state = "shelf_parts"
+	rack_type = /obj/structure/rack/shelf
