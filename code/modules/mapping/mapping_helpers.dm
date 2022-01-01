@@ -362,6 +362,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 			else
 				openturfs += thing
 
+	if(!table.len)
+		WARNING("Ian's New Years Helpers placed in an area without any tables.")
+		return
+
 	var/turf/fireworks_turf = get_turf(pick(table))
 	var/obj/item/storage/box/matches/matchbox = new(fireworks_turf)
 	matchbox.pixel_y += 8

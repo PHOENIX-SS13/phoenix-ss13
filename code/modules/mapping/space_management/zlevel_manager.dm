@@ -32,6 +32,11 @@
 	// TODO: sleep here if the Z level needs to be cleared
 	var/datum/space_level/S = new /datum/space_level(new_z, name, allocation_type)
 	z_list += S
+
+	/// Initialize the turfs on the new space level
+	if(SSatoms.initialized != INITIALIZATION_INSSATOMS)
+		SSatoms.InitializeAtoms(block(locate(1,1,world.maxz), locate(world.maxx,world.maxy,world.maxz)))
+
 	adding_new_zlevel = FALSE
 	return S
 

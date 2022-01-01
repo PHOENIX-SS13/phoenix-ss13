@@ -39,16 +39,13 @@ GLOBAL_VAR(test_log)
 
 /datum/unit_test/New()
 	if(isnull(mapzone))
-		var/height = 8
-		var/width = 8
 		mapzone = SSmapping.create_map_zone("Integration Test Mapzone")
-		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level("Integration Test Virtual Level", ZTRAITS_STATION, mapzone, width, height, ALLOCATION_FREE)
-		vlevel.reserve_margin(2)
+		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level("Integration Test Virtual Level", ZTRAITS_STATION, mapzone, world.maxx, world.maxy, ALLOCATION_FULL)
 
 		var/datum/map_template/unit_tests/template = new
 		template.load(locate(
-			vlevel.low_x + vlevel.reserved_margin, 
-			vlevel.low_y + vlevel.reserved_margin, 
+			vlevel.low_x, 
+			vlevel.low_y, 
 			vlevel.z_value)
 		)
 

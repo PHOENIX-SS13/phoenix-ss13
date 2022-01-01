@@ -68,6 +68,7 @@ SUBSYSTEM_DEF(mapping)
 	initialize_biomes()
 	preloadTemplates()
 	loadWorld()
+	pre_load_allocation_levels()
 	repopulate_sorted_areas()
 	process_teleport_locs() //Sets up the wizard teleport locations
 
@@ -111,6 +112,10 @@ SUBSYSTEM_DEF(mapping)
 	repopulate_sorted_areas()
 	generate_station_area_list()
 	return ..()
+
+/// Pre loads some allocation levels that are very likely to be used so they dont have to initalized on runtime. Completely fine if this didn't exist.
+/datum/controller/subsystem/mapping/proc/pre_load_allocation_levels()
+	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
 
 /datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
 	M.setTimer(0)
