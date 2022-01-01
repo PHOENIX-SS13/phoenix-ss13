@@ -58,6 +58,9 @@
 	return ..()
 
 /datum/ambience_controller/process()
+	//This shouldn't happen. But it does. Ambience controllers are added in client/New() and removed in client/Del(), so yeah client screwiness thanks byond.
+	if(!client)
+		qdel(src)
 	var/mob/client_mob = client.mob
 	// Dont try and play ambience for new players
 	if(isnewplayer(client_mob))
