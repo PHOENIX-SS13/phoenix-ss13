@@ -1363,3 +1363,7 @@
 		client.movingmob.client_mobs_in_contents -= src
 		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
 		client.movingmob = null
+
+/// Used for typing indicator, relevant on /living level
+/mob/proc/set_typing_indicator(state)
+	return

@@ -3902,7 +3902,6 @@
 #include "hrzn\modules\icspawning\code\game\objects\items\cards_ids.dm"
 #include "hrzn\modules\icspawning\code\modules\clothing\outfits\standard.dm"
 #include "hrzn\modules\icspawning\code\modules\spells\spell.dm"
-#include "hrzn\modules\typing_indicator\code\mob.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"

@@ -2017,3 +2017,28 @@
 
 	hold_onto_things = !hold_onto_things
 	to_chat(usr, SPAN_NOTICE("You will [hold_onto_things ? "now" : "no longer"] hold onto things in no gravity."))
+
+/// Special key down handling of /living mobs, currently only used for typing indicator
+/mob/living/key_down(_key, client/user)
+	if(!typing_indicator && stat == CONSCIOUS)
+		for(var/kb_name in user.prefs.key_bindings[_key])
+			switch(kb_name)
+				if("Say")
+					set_typing_indicator(TRUE)
+					break
+				if("Me")
+					set_typing_indicator(TRUE)
+					break
+	return ..()
+
+/// Used for setting typing indicator on/off. Checking the state should be done not on the proc to avoid overhead.
+/mob/living/set_typing_indicator(state)
+	typing_indicator = state
+	if(typing_indicator)
+		var/state_of_bubble = bubble_icon? "[bubble_icon]0" : "default0"
+		typing_indicator_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, layer = FLY_LAYER)
+		typing_indicator_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
+		add_overlay(typing_indicator_overlay)
+	else
+		cut_overlay(typing_indicator_overlay)
+		typing_indicator_overlay = null

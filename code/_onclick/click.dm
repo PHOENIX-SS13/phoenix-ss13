@@ -77,6 +77,9 @@
 	if(notransform)
 		return
 
+	if(typing_indicator) //For async typing indicator
+		set_typing_indicator(FALSE)
+
 	if(SEND_SIGNAL(src, COMSIG_MOB_CLICKON, A, params) & COMSIG_MOB_CANCEL_CLICKON)
 		return
 	var/list/modifiers = params2list(params)
@@ -105,8 +108,6 @@
 		CtrlClickOn(A)
 		return
 
-	if(typing_indicator) //For async typing indicator
-		set_typing_indicator(FALSE)
 	if(incapacitated(ignore_restraints = TRUE, ignore_stasis = TRUE))
 		return
 
