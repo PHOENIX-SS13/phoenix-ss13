@@ -28,6 +28,8 @@
  */
 /turf/open/space/Initialize(mapload, inherited_virtual_z)
 	SHOULD_CALL_PARENT(FALSE)
+	if(inherited_virtual_z)
+		virtual_z = inherited_virtual_z
 	icon_state = SPACE_ICON_STATE
 	air = space_gas
 	vis_contents.Cut() //removes inherited overlays
@@ -36,9 +38,6 @@
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
-
-	if(inherited_virtual_z)
-		virtual_z = inherited_virtual_z
 
 	if (length(smoothing_groups))
 		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
