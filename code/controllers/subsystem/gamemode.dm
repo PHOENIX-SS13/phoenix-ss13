@@ -132,6 +132,8 @@ SUBSYSTEM_DEF(gamemode)
 			uncategorized += event
 			continue
 		event_pools[event.track] += event //Add it to the categorized event pools
+
+	halted_storyteller = CONFIG_GET(flag/halt_storyteller)
 	return ..()
 
 
