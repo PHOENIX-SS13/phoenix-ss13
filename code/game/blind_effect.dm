@@ -40,7 +40,7 @@
 			if(carbon_me.glasses)
 				var/obj/item/clothing/glasses/glass = carbon_me.glasses
 				if(glass.vision_correction)
-					return
+					return TRUE
 		var/turf/my_turf = get_turf(src)
 		var/rel_x = observed_atom.x - my_turf.x
 		var/rel_y = observed_atom.y - my_turf.y
