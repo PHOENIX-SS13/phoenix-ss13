@@ -156,7 +156,8 @@
 
 		L.transform = newtransform
 
-		animate(L, transform = matrix(), time = T, loop = -1, flags = ANIMATION_END_NOW)
+		animate(L, transform = L.transform, time = 0, loop = -1, flags = ANIMATION_END_NOW)
+		animate(transform = matrix(), time = T)
 
 /datum/hud/proc/update_parallax(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
@@ -206,13 +207,8 @@
 		if (L.view_sized != C.view)
 			L.update_o(C.view)
 
-		var/change_x
-		var/change_y
-
-		change_x = offset_x * L.speed
-		L.offset_x -= change_x
-		change_y = offset_y * L.speed
-		L.offset_y -= change_y
+		L.offset_x -= offset_x * L.speed
+		L.offset_y -= offset_y * L.speed
 
 		if(L.offset_x > 240)
 			L.offset_x -= 480
@@ -222,11 +218,6 @@
 			L.offset_y -= 480
 		if(L.offset_y < -240)
 			L.offset_y += 480
-
-
-		if(!destined_parallax_movedir && C.dont_animate_parallax <= world.time && (offset_x || offset_y) && abs(offset_x) <= max(C.parallax_throttle/world.tick_lag+1,1) && abs(offset_y) <= max(C.parallax_throttle/world.tick_lag+1,1) && (round(abs(change_x)) > 1 || round(abs(change_y)) > 1))
-			L.transform = matrix(1, 0, offset_x*L.speed, 0, 1, offset_y*L.speed)
-			animate(L, transform=matrix(), time = last_delay)
 
 		L.screen_loc = "CENTER-7:[round(L.offset_x,1)],CENTER-7:[round(L.offset_y,1)]"
 
