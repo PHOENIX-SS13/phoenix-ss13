@@ -14,6 +14,7 @@
 	layer = GAS_SCRUBBER_LAYER
 	hide = TRUE
 	shift_underlay_only = FALSE
+	powered_ambience = AMBIENCE_AIR_PUMP
 
 	var/scrubbing = SCRUBBING //0 = siphoning, 1 = scrubbing
 

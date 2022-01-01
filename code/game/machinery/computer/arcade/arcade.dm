@@ -72,6 +72,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	icon_keyboard = null
 	icon_screen = "invaders"
 	light_color = LIGHT_COLOR_GREEN
+	powered_ambience = null
 	var/list/prize_override
 
 /obj/machinery/computer/arcade/proc/Reset()

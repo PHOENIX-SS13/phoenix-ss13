@@ -69,6 +69,7 @@
 	id = AMBIENCE_FIRE
 	sounds = list('sound/effects/comfyfire.ogg') //Truly the fiercest fire sound
 	frequency_time = 4 SECONDS
+	volume = 25
 	maximum_emitters = 2
 	cooldown_between_emitters = 2 SECONDS
 
@@ -98,7 +99,7 @@
 		)
 	frequency_time = 2 SECONDS
 	sound_length = 2.8 SECONDS
-	range = 3
+	range = 5
 	volume = 15
 
 /datum/ambient_sound/vending
@@ -112,7 +113,7 @@
 		)
 	frequency_time = 2 SECONDS
 	sound_length = 2.8 SECONDS
-	range = 3
+	range = 5
 	volume = 10
 
 /datum/ambient_sound/generic
@@ -493,3 +494,21 @@
 		)
 	frequency_time = 1.8 SECONDS
 	sound_length = 1.8 SECONDS
+
+/datum/ambient_sound/beep_console
+	id = AMBIENCE_BEEP_CONSOLE
+	sounds = list('sound/ambience/emitters/periodic_beep.ogg')
+	volume = 10
+	maximum_emitters = 2
+	cooldown_between_emitters = 4 SECONDS
+	frequency_time = 8 SECONDS
+	frequency_time_high = 24 SECONDS
+	loops = FALSE
+
+/datum/ambient_sound/air_pump
+	id = AMBIENCE_AIR_PUMP
+	sounds = list('sound/ambience/emitters/air_pump_idle.ogg')
+	volume = 8
+	frequency_time = 8 SECONDS
+	sound_length = 8 SECONDS
+	loops = TRUE

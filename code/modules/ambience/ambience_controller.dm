@@ -153,7 +153,7 @@
 
 	pref_ship_ambience = (prefs.toggles & SOUND_SHIP_AMBIENCE)
 	pref_area_ambience = (prefs.toggles & SOUND_AMBIENCE)
-	pref_object_ambience = TRUE
+	pref_object_ambience = (prefs.toggles & SOUND_AMBIENCE) //We ran out of bitflags and I guess I'll split the bitfields in prefs in another PR
 
 	if(isnewplayer(client_mob))
 		return
@@ -224,6 +224,11 @@
 	var/list/cooldown_list = ambience_cooldowns[ambience]
 	var/cooldown_list_index = 1
 	var/cooldown_time_to_set = world_time + frequency_time
+
+	var/queue_time = AMBIENCE_SWEEP_TIME
+	//Looping sounds get an extra time for queueing to not cut out. Non looping sounds would interpret emitters wrong with bigger queue time
+	if(sound_datum.loops)
+		queue_time += AMBIENCE_LOOPING_EXTRA_QUEUE_TIME
 	/// Check the cooldown in the cooldown lists
 	var/wait_time = world_time
 	if(cooldown_list)
@@ -238,7 +243,7 @@
 			/// Iterate over all cooldowns and see if we can play a sound in the next 5s (AMBIENCE_QUEUE_TIME)
 			for(var/current_cooldown in cooldown_list)
 				cooldown_list_index++
-				if(current_cooldown < world_time + AMBIENCE_QUEUE_TIME)
+				if(current_cooldown < world_time + queue_time)
 					found_any = TRUE
 					wait_time = current_cooldown
 					cooldown_time_to_set = current_cooldown + frequency_time
@@ -252,7 +257,7 @@
 		cooldown_list += 0
 
 	/// While the next played ambience would have to happen before the next queue, add another queued sound and increment cooldown approprietly
-	while(cooldown_time_to_set < world_time + AMBIENCE_QUEUE_TIME)
+	while(cooldown_time_to_set < world_time + queue_time)
 		invoke_ambient_sound(ambience, ambience_turf, cooldown_time_to_set, cooldown_list_index, sound_datum)
 		cooldown_time_to_set = cooldown_time_to_set + frequency_time
 	/// Set the cooldown and add a queued sound.

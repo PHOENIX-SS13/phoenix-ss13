@@ -7,6 +7,7 @@
 	anchored = TRUE
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/nanite_program_hub
+	powered_ambience = AMBIENCE_SERVER
 
 	var/obj/item/disk/nanite_program/disk
 	var/datum/techweb/linked_techweb
