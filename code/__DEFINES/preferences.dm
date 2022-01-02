@@ -58,6 +58,7 @@
 #define PIXEL_SCALING_1X 1
 #define PIXEL_SCALING_1_2X 1.5
 #define PIXEL_SCALING_2X 2
+#define PIXEL_SCALING_2_2X 2.5
 #define PIXEL_SCALING_3X 3
 
 #define SCALING_METHOD_NORMAL "normal"
