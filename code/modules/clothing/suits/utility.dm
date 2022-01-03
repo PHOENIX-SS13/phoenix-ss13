@@ -31,6 +31,11 @@
 	equip_delay_other = 60
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/suit/fire/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix)
+	. = ..()
+	if(!isinhands)
+		. += emissive_appearance(icon_file, "[worn_state]_emissive", alpha = src.alpha)
+
 /obj/item/clothing/suit/fire/firefighter
 	icon_state = "firesuit"
 	inhand_icon_state = "firefighter"
@@ -150,3 +155,8 @@
 	resistance_flags = NONE
 	flags_1 = RAD_PROTECT_CONTENTS_1
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_TAUR_ALL
+
+/obj/item/clothing/suit/radiation/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix)
+	. = ..()
+	if(!isinhands)
+		. += emissive_appearance(icon_file, "[worn_state]_emissive", alpha = src.alpha)

@@ -143,6 +143,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/lung_harm = 0.3 //How bad it is for you
 	/// What type of pollution does this produce on smoking, changed to weed pollution sometimes
 	var/pollution_type = /datum/pollutant/smoke
+	var/has_emissive_overlay = TRUE
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
 	user.visible_message(SPAN_SUICIDE("[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer."))
@@ -185,6 +186,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				to_chat(user, SPAN_WARNING("[glass] is empty!"))
 			else
 				to_chat(user, SPAN_WARNING("[src] is full!"))
+
+/obj/item/clothing/mask/cigarette/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix)
+	. = ..()
+	if(!has_emissive_overlay || !lit)
+		return
+	// Add emissives
+	if(isinhands)
+		. += emissive_appearance(icon_file, "cig_emissive")
+	else
+		. += emissive_appearance(icon_file, "[worn_prefix]_cig_emissive")
 
 /obj/item/clothing/mask/cigarette/proc/light(flavor_text = null)
 	if(lit)
@@ -541,6 +552,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	smoketime = 0
 	chem_volume = 100
 	list_reagents = null
+	has_emissive_overlay = FALSE
 	var/packeditem = FALSE
 
 /obj/item/clothing/mask/cigarette/pipe/Initialize()

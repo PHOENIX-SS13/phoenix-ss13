@@ -100,6 +100,11 @@
 	species_exception = list(/datum/species/golem)
 	fitted_bodytypes = NONE
 
+/obj/item/clothing/suit/hazardvest/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix)
+	. = ..()
+	if(!isinhands)
+		. += emissive_appearance(icon_file, "[worn_state]_emissive", alpha = src.alpha)
+
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
 	name = "blue suit jacket"

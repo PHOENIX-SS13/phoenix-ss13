@@ -260,10 +260,12 @@
 	var/datum/sprite_accessory/S = GLOB.hairstyles_list[hairstyle]
 	if(!S)
 		return
-	var/mutable_appearance/M = mutable_appearance(S.icon, S.icon_state,layer = -HAIR_LAYER)
-	M.appearance_flags |= RESET_COLOR
-	M.color = color
-	. += M
+	var/mutable_appearance/hair_overlay = mutable_appearance(S.icon, S.icon_state,layer = -HAIR_LAYER)
+	hair_overlay.appearance_flags |= RESET_COLOR
+	hair_overlay.color = color
+
+	hair_overlay.overlays += emissive_blocker(hair_overlay.icon, hair_overlay.icon_state, alpha = hair_overlay.alpha)
+	. += hair_overlay
 
 /obj/item/clothing/head/wig/attack_self(mob/user)
 	var/new_style = input(user, "Select a hairstyle", "Wig Styling")  as null|anything in (GLOB.hairstyles_list - "Bald")

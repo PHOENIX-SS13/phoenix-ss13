@@ -372,6 +372,11 @@
 	dynamic_hair_suffix = ""
 	fitted_bodytypes = BODYTYPE_VOX
 
+/obj/item/clothing/head/cone/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix)
+	. = ..()
+	if(!isinhands)
+		. += emissive_appearance(icon_file, "[worn_state]_emissive", alpha = src.alpha)
+
 /obj/item/clothing/head/santa
 	name = "santa hat"
 	desc = "On the first day of christmas my employer gave to me!"

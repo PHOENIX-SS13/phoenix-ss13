@@ -108,6 +108,11 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX
 
+/obj/item/clothing/head/hardhat/atmos/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix)
+	. = ..()
+	if(!isinhands)
+		. += emissive_appearance(icon_file, "[worn_prefix]_hardhat_atmos_emissive", alpha = src.alpha)
+
 /obj/item/clothing/head/hardhat/weldhat
 	name = "welding hard hat"
 	desc = "A piece of headgear used in dangerous working conditions to protect the head. Comes with a built-in flashlight AND welding shield! The bulb seems a little smaller though."

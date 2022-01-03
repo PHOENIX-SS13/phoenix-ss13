@@ -368,9 +368,7 @@ There are several things that need to be remembered:
 	if(legcuffed)
 		var/mutable_appearance/legcuff_overlay = mutable_appearance('icons/mob/mob.dmi', "legcuff1", -LEGCUFF_LAYER)
 		if(legcuffed.blocks_emissive)
-			var/mutable_appearance/legcuff_blocker = mutable_appearance('icons/mob/mob.dmi', "legcuff1", plane = EMISSIVE_PLANE, appearance_flags = KEEP_APART)
-			legcuff_blocker.color = GLOB.em_block_color
-			legcuff_overlay.overlays += legcuff_blocker
+			legcuff_overlay.overlays += emissive_blocker(legcuff_overlay.icon, legcuff_overlay.icon_state, alpha = legcuff_overlay.alpha)
 
 		overlays_standing[LEGCUFF_LAYER] = legcuff_overlay
 		apply_overlay(LEGCUFF_LAYER)
@@ -480,11 +478,13 @@ generate/load female uniform sprites matching all previously decided variables
 		t_state = !isinhands ? (worn_icon_state ? worn_icon_state : icon_state) : (inhand_icon_state ? inhand_icon_state : icon_state)
 
 	var/translated_slot = slot_translation["[slot]"]
+	var/worn_prefix
 	if(!isinhands)
+		worn_prefix = "[translated_slot]_[bodytype_translation["[perc_bodytype]"]]"
 		if(wear_template)
-			t_state = "[translated_slot]_[bodytype_translation["[perc_bodytype]"]]"
+			t_state = worn_prefix
 		else
-			t_state = "[translated_slot]_[bodytype_translation["[perc_bodytype]"]]_[t_state]"
+			t_state = "[worn_prefix]_[t_state]"
 
 	var/chosen_worn_icon
 	if(wear_template)
@@ -520,7 +520,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 	//Get the overlays for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
-	var/list/worn_overlays = worn_overlays(standing, isinhands, file2use, perc_bodytype)
+	var/list/worn_overlays = worn_overlays(standing, isinhands, file2use, perc_bodytype, slot, t_state, worn_prefix)
 	if(worn_overlays?.len)
 		standing.overlays.Add(worn_overlays)
 
