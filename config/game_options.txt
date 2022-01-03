@@ -51,9 +51,6 @@ MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal 0
 ## If uncommented this adds a random surname to a player's name if they only specify one name.
 HUMANS_NEED_SURNAMES
 
-## If uncommented, this forces all players to use random names !and appearances!.
-#FORCE_RANDOM_NAMES
-
 ## Unhash this to turn on automatic reopening of a player's job if they suicide at roundstart
 #REOPEN_ROUNDSTART_SUICIDE_ROLES
 
@@ -159,9 +156,6 @@ PROTECT_ROLES_FROM_ANTAGONIST
 
 ## Uncomment to prohibit assistants from becoming most antagonists.
 #PROTECT_ASSISTANT_FROM_ANTAGONIST
-
-## If non-human species are barred from joining as a head of staff
-#ENFORCE_HUMAN_AUTHORITY
 
 ## If late-joining players have a chance to become a traitor/changeling
 ALLOW_LATEJOIN_ANTAGONISTS

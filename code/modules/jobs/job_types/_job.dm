@@ -412,8 +412,6 @@
 		return // Disconnected while checking for the appearance ban.
 	if(GLOB.current_anonymous_theme)
 		fully_replace_character_name(null, GLOB.current_anonymous_theme.anonymous_name(src))
-	else if(CONFIG_GET(flag/force_random_names))
-		player_client.prefs.real_name = player_client.prefs.pref_species.random_name(player_client.prefs.gender, TRUE)
 	player_client.prefs.apply_prefs_to(src)
 	dna.update_dna_identity()
 
@@ -431,10 +429,6 @@
 		var/organic_name 
 		if(GLOB.current_anonymous_theme)
 			organic_name = GLOB.current_anonymous_theme.anonymous_name(src)
-		else if(CONFIG_GET(flag/force_random_names) || is_banned_from(player_client.ckey, "Appearance"))
-			if(!player_client)
-				return // Disconnected while checking the appearance ban.
-			organic_name = player_client.prefs.pref_species.random_name(player_client.prefs.gender, TRUE)
 		else
 			if(!player_client)
 				return // Disconnected while checking the appearance ban.
