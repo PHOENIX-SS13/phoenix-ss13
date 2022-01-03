@@ -1,5 +1,3 @@
-GLOBAL_LIST_EMPTY(all_wormholes) // So we can pick wormholes to teleport to
-
 /datum/round_event_control/wormholes
 	name = "Wormholes"
 	typepath = /datum/round_event/wormholes
@@ -13,38 +11,52 @@ GLOBAL_LIST_EMPTY(all_wormholes) // So we can pick wormholes to teleport to
 
 /datum/round_event/wormholes
 	announceWhen = 10
-	endWhen = 60
+	endWhen = 90
 
 	var/list/pick_turfs = list()
 	var/list/wormholes = list()
-	var/shift_frequency = 3
-	var/number_of_wormholes = 400
+	var/shift_frequency = 10
+	var/pairs_of_wormholes = 200
+	/// Amount of pairs to persist and stabilize. Randomized in setup()
+	var/pairs_to_persist = 0
 
 /datum/round_event/wormholes/setup()
 	announceWhen = rand(0, 20)
-	endWhen = rand(40, 80)
+	endWhen = rand(70, 100)
+	pairs_to_persist = rand(1, 3)
 
 /datum/round_event/wormholes/start()
-	for(var/turf/open/floor/T in world)
-		if(is_station_level(T))
-			pick_turfs += T
+	pick_turfs = SSmapping.station_map_zone.get_block()
 
-	for(var/i = 1, i <= number_of_wormholes, i++)
-		var/turf/T = pick(pick_turfs)
-		wormholes += new /obj/effect/portal/wormhole(T, 0, null, FALSE)
+	for(var/i in 1 to pairs_of_wormholes)
+		var/turf/turf_one = pick(pick_turfs)
+		var/turf/turf_two = pick(pick_turfs)
+		var/obj/effect/portal/wormhole/wormhole_one = new /obj/effect/portal/wormhole(turf_one, 0, null, FALSE)
+		var/obj/effect/portal/wormhole/wormhole_two = new /obj/effect/portal/wormhole(turf_two, 0, null, FALSE)
+		wormhole_one.linked = wormhole_two
+		wormhole_two.linked = wormhole_one
+		if(pairs_to_persist)
+			pairs_to_persist--
+			wormhole_one.will_persist = TRUE
+			wormhole_two.will_persist = TRUE
+		wormholes += wormhole_one
+		wormholes += wormhole_two
 
 /datum/round_event/wormholes/announce(fake)
 	priority_announce("Space-time anomalies detected on the station. There is no additional data.", "Anomaly Alert", ANNOUNCER_SPANOMALIES)
 
 /datum/round_event/wormholes/tick()
 	if(activeFor % shift_frequency == 0)
-		for(var/obj/effect/portal/wormhole/O in wormholes)
-			var/turf/T = pick(pick_turfs)
-			if(T)
-				O.forceMove(T)
+		for(var/obj/effect/portal/wormhole/wormhole as anything in wormholes)
+			var/turf/picked_turf = pick(pick_turfs)
+			wormhole.forceMove(picked_turf)
 
 /datum/round_event/wormholes/end()
-	QDEL_LIST(wormholes)
+	for(var/obj/effect/portal/wormhole/wormhole as anything in wormholes)
+		if(wormhole.will_persist)
+			wormhole.make_stable()
+			continue
+		qdel(wormhole)
 	wormholes = null
 
 /obj/effect/portal/wormhole
@@ -53,28 +65,86 @@ GLOBAL_LIST_EMPTY(all_wormholes) // So we can pick wormholes to teleport to
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "anom"
 	mech_sized = TRUE
+	var/stable = FALSE
+	/// Keeping track of which will persist, to make stable and not delete when the event ends
+	var/will_persist = FALSE
 
-
-/obj/effect/portal/wormhole/Initialize(mapload, _creator, _lifespan = 0, obj/effect/portal/_linked, automatic_link = FALSE, turf/hard_target_override, atmos_link_override)
+/obj/effect/portal/wormhole/examine(mob/user)
 	. = ..()
-	GLOB.all_wormholes += src
+	if(stable)
+		. += SPAN_NOTICE("Using an anomaly neutralizer may destabilize the wormhole.")
 
-/obj/effect/portal/wormhole/Destroy()
+/obj/effect/portal/wormhole/update_icon_state()
 	. = ..()
-	GLOB.all_wormholes -= src
+	icon_state = stable ? "anom_stable" : "anom"
 
-/obj/effect/portal/wormhole/teleport(atom/movable/M)
-	if(iseffect(M)) //sparks don't teleport
+/obj/effect/portal/wormhole/teleport(atom/movable/movable_atom)
+	if(!linked)
 		return
-	if(M.anchored)
-		if(!(ismecha(M) && mech_sized))
+	if(iseffect(movable_atom)) //sparks don't teleport
+		return
+	if(movable_atom.anchored)
+		if(!(ismecha(movable_atom) && mech_sized))
 			return
 
-	if(ismovable(M))
-		if(GLOB.all_wormholes.len)
-			var/obj/effect/portal/wormhole/P = pick(GLOB.all_wormholes)
-			if(P && isturf(P.loc))
-				hard_target = P.loc
-		if(!hard_target)
-			return
-		do_teleport(M, hard_target, 1, 1, 0, 0, channel = TELEPORT_CHANNEL_WORMHOLE) ///You will appear adjacent to the beacon
+	if(ismovable(movable_atom))
+		///You will appear adjacent to the beacon
+		var/turf/target_turf = linked.loc
+		do_teleport(movable_atom, target_turf, TRUE, TRUE, FALSE, FALSE, channel = TELEPORT_CHANNEL_WORMHOLE)
+
+/obj/effect/portal/wormhole/attackby(obj/item/weapon, mob/user, params)
+	if(stable && istype(weapon, /obj/item/anomaly_neutralizer))
+		to_chat(user, SPAN_NOTICE("You destabilize \the [src] with \the [weapon]."))
+		destabilize()
+		qdel(weapon)
+		return
+	return ..()
+
+/// Make it visually stable and be able to be interacted with some rnd devices and such.
+/obj/effect/portal/wormhole/proc/make_stable()
+	stable = TRUE
+	name = "stable wormhole"
+	desc = "This one doesn't look too unstable."
+	update_appearance()
+
+/// 66.6% something bad happens
+#define WORMHOLE_DESTAB_FIRE 1
+#define WORMHOLE_DESTAB_EMP 2
+#define WORMHOLE_DESTAB_NOTHING 3
+#define WORMHOLE_DESTAB_EFFECTS 3
+
+/// When an anomaly neutralizer is used on a stable wormhole
+/obj/effect/portal/wormhole/proc/destabilize()
+	var/obj/effect/portal/wormhole/wormhole_two = linked
+	/// Save their locations before closing
+	var/turf/turf_one = loc
+	var/turf/turf_two = wormhole_two.loc
+
+	/// Close them first so we dont teleport any effects of destabilization around
+	close_from_neutralizer()
+	wormhole_two.close_from_neutralizer()
+
+	/// Roll the funny effect!
+	var/rand_roll = rand(1, WORMHOLE_DESTAB_EFFECTS)
+	switch(rand_roll)
+		if(WORMHOLE_DESTAB_FIRE)
+			/// Create a small fire at both of the spots where anomalies used to be.
+			turf_one.atmos_spawn_air("o2=20;plasma=40;TEMP=600")
+			turf_two.atmos_spawn_air("o2=20;plasma=40;TEMP=600")
+		if(WORMHOLE_DESTAB_EMP)
+			/// EMP at both spots of where the anomalies used to be.
+			empulse(turf_one, 4, 1)
+			empulse(turf_two, 4, 1)
+	/// Create an anomaly core at either of the places where wormholes used to be.
+	var/turf/location = prob(50) ? turf_one : turf_two
+	new /obj/item/raw_anomaly_core/random(location)
+
+#undef WORMHOLE_DESTAB_FIRE
+#undef WORMHOLE_DESTAB_EMP
+#undef WORMHOLE_DESTAB_NOTHING
+#undef WORMHOLE_DESTAB_EFFECTS
+
+/// Do some effects and close
+/obj/effect/portal/wormhole/proc/close_from_neutralizer()
+	do_sparks(5, FALSE, src)
+	qdel(src)

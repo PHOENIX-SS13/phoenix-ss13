@@ -50,6 +50,11 @@
 		qdel(vlevel)
 	return ..()
 
+/datum/map_zone/proc/get_block()
+	. = list()
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		. += vlevel.get_block()
+
 /// Clears all of what's inside the virtual levels managed by the mapzone.
 /datum/map_zone/proc/clear_reservation(immediate = FALSE)
 	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
