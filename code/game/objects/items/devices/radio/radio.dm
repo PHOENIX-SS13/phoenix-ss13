@@ -43,6 +43,8 @@
 	var/syndie = FALSE  // If true, hears all well-known channels automatically, and can say/hear on the Syndicate channel.
 	var/list/channels = list()  // Map from name (see communications.dm) to on/off. First entry is current department (:h)
 	var/list/secure_radio_connections
+	/// Sound played when someone speaks into the radio implement. 
+	var/radio_sound = 'sound/effects/radio/common.ogg'
 
 /obj/item/radio/suicide_act(mob/living/user)
 	user.visible_message(SPAN_SUICIDE("[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -209,6 +211,8 @@
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
+	if(radio_sound)
+		playsound(M, radio_sound, rand(14, 17), FALSE)
 	INVOKE_ASYNC(src, .proc/talk_into_impl, M, message, channel, spans.Copy(), language, message_mods)
 	return ITALICS | REDUCE_RANGE
 

@@ -111,6 +111,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by your elite security force."
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_sec
+	radio_sound = 'sound/effects/radio/security.ogg'
 
 /obj/item/radio/headset/headset_sec/alt
 	name = "security bowman headset"
