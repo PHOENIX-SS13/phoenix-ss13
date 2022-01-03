@@ -73,23 +73,6 @@
 	maximum_emitters = 2
 	cooldown_between_emitters = 2 SECONDS
 
-/// Obnoxious tcomms ambience, but slightly more bearable now
-/datum/ambient_sound/crunchy_server
-	id = AMBIENCE_CRUNCHY_SERVER
-	sounds = list(
-		'sound/machines/tcomms/tcomms_mid1.ogg',
-		'sound/machines/tcomms/tcomms_mid2.ogg',
-		'sound/machines/tcomms/tcomms_mid3.ogg',
-		'sound/machines/tcomms/tcomms_mid4.ogg',
-		'sound/machines/tcomms/tcomms_mid5.ogg',
-		'sound/machines/tcomms/tcomms_mid6.ogg',
-		'sound/machines/tcomms/tcomms_mid7.ogg'
-		)
-	frequency_time = 2 SECONDS
-	sound_length = 2 SECONDS
-	volume = 2
-	range = 3
-
 /datum/ambient_sound/server //Nice, subtle hdd crunching
 	id = AMBIENCE_SERVER
 	sounds = list(
