@@ -104,9 +104,6 @@
 #define KINGGOAT_SCORE      "King Goat Killed"
 #define TENDRIL_CLEAR_SCORE  "Tendrils Killed"
 
-// DB ID for hardcore random mode
-#define HARDCORE_RANDOM_SCORE "Hardcore Random Score"
-
 // DB ID for amount of consumed maintenance pills
 #define MAINTENANCE_PILL_SCORE "Maintenance Pill Score"
 

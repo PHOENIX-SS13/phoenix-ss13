@@ -14,8 +14,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/quirks = list() //Assoc. list of all roundstart quirk datum types; "name" = /path/
 	var/list/quirk_points = list() //Assoc. list of quirk names and their "point cost"; positive numbers are good traits, and negative ones are bad
 	var/list/quirk_blacklist = list() //A list of quirks that can not be used with each other. Format: list(quirk1,quirk2),list(quirk3,quirk4)
-	///An assoc list of quirks that can be obtained as a hardcore character, and their hardcore value.
-	var/list/hardcore_quirks = list()
 
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	if(!quirks.len)
@@ -46,12 +44,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 		quirks[initial(quirk_type.name)] = quirk_type
 		quirk_points[initial(quirk_type.name)] = initial(quirk_type.value)
-
-		var/hardcore_value = initial(quirk_type.hardcore_value)
-
-		if(!hardcore_value)
-			continue
-		hardcore_quirks[quirk_type] += hardcore_value
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli)
 	var/badquirk = FALSE

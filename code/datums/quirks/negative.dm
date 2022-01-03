@@ -8,7 +8,6 @@
 	gain_text = SPAN_DANGER("Your back REALLY hurts!")
 	lose_text = SPAN_NOTICE("Your back feels better.")
 	medical_record_text = "Patient scans indicate severe and chronic back pain."
-	hardcore_value = 4
 	var/datum/weakref/backpack
 
 /datum/quirk/badback/add()
@@ -56,7 +55,6 @@
 	gain_text = SPAN_DANGER("You feel your vigor slowly fading away.")
 	lose_text = SPAN_NOTICE("You feel vigorous again.")
 	medical_record_text = "Patient requires regular treatment for blood loss due to low production of blood."
-	hardcore_value = 8
 	processing_quirk = TRUE
 
 /datum/quirk/blooddeficiency/process(delta_time)
@@ -77,7 +75,6 @@
 	gain_text = SPAN_DANGER("You can't see anything.")
 	lose_text = SPAN_NOTICE("You miraculously gain back your vision.")
 	medical_record_text = "Patient has permanent blindness."
-	hardcore_value = 15
 
 /datum/quirk/item_quirk/blindness/add_unique()
 	give_item_to_holder(/obj/item/clothing/glasses/blindfold/white, list(LOCATION_EYES = ITEM_SLOT_EYES, LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
@@ -100,7 +97,6 @@
 	gain_text = SPAN_DANGER("You feel smooth.")
 	lose_text = SPAN_NOTICE("You feel wrinkled again.")
 	medical_record_text = "Patient has a tumor in their brain that is slowly driving them to brain death."
-	hardcore_value = 12
 	processing_quirk = TRUE
 
 /datum/quirk/item_quirk/brainproblems/add_unique()
@@ -132,7 +128,6 @@
 	gain_text = SPAN_DANGER("You can't hear anything.")
 	lose_text = SPAN_NOTICE("You're able to hear again!")
 	medical_record_text = "Patient's cochlear nerve is incurably damaged."
-	hardcore_value = 12
 
 /datum/quirk/depression
 	name = "Depression"
@@ -143,7 +138,6 @@
 	lose_text = SPAN_NOTICE("You no longer feel depressed.") //if only it were that easy!
 	medical_record_text = "Patient has a mild mood disorder causing them to experience acute episodes of depression."
 	mood_quirk = TRUE
-	hardcore_value = 2
 
 /datum/quirk/item_quirk/family_heirloom
 	name = "Family Heirloom"
@@ -151,7 +145,6 @@
 	value = -2
 	mood_quirk = TRUE
 	medical_record_text = "Patient demonstrates an unnatural attachment to a family heirloom."
-	hardcore_value = 1
 	processing_quirk = TRUE
 	/// A weak reference to our heirloom.
 	var/datum/weakref/heirloom
@@ -226,7 +219,6 @@
 	gain_text = SPAN_DANGER("You feel frail.")
 	lose_text = SPAN_NOTICE("You feel sturdy again.")
 	medical_record_text = "Patient is absurdly easy to injure. Please take all due dilligence to avoid possible malpractice suits."
-	hardcore_value = 4
 
 /datum/quirk/heavy_sleeper
 	name = "Heavy Sleeper"
@@ -236,7 +228,6 @@
 	gain_text = SPAN_DANGER("You feel sleepy.")
 	lose_text = SPAN_NOTICE("You feel awake again.")
 	medical_record_text = "Patient has abnormal sleep study results and is difficult to wake up."
-	hardcore_value = 2
 
 /datum/quirk/hypersensitive
 	name = "Hypersensitive"
@@ -245,7 +236,6 @@
 	gain_text = SPAN_DANGER("You seem to make a big deal out of everything.")
 	lose_text = SPAN_NOTICE("You don't seem to make a big deal out of everything anymore.")
 	medical_record_text = "Patient demonstrates a high level of emotional volatility."
-	hardcore_value = 3
 
 /datum/quirk/hypersensitive/add()
 	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
@@ -265,7 +255,6 @@
 	gain_text = SPAN_NOTICE("Just the thought of drinking alcohol makes your head spin.")
 	lose_text = SPAN_DANGER("You're no longer severely affected by alcohol.")
 	medical_record_text = "Patient demonstrates a low tolerance for alcohol. (Wimp)"
-	hardcore_value = 3
 
 /datum/quirk/item_quirk/nearsighted
 	name = "Nearsighted"
@@ -274,7 +263,6 @@
 	gain_text = SPAN_DANGER("Things far away from you start looking blurry.")
 	lose_text = SPAN_NOTICE("You start seeing faraway things normally again.")
 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
-	hardcore_value = 5
 
 /datum/quirk/item_quirk/nearsighted/add_unique()
 	give_item_to_holder(/obj/item/clothing/glasses/regular, list(LOCATION_EYES = ITEM_SLOT_EYES, LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
@@ -290,7 +278,6 @@
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
 	value = -3
 	medical_record_text = "Patient demonstrates a fear of the dark. (Seriously?)"
-	hardcore_value = 5
 
 /datum/quirk/nyctophobia/add()
 	RegisterSignal(quirk_holder, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
@@ -332,7 +319,6 @@
 	gain_text = SPAN_DANGER("You feel repulsed by the thought of violence!")
 	lose_text = SPAN_NOTICE("You think you can defend yourself again.")
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
-	hardcore_value = 6
 
 /datum/quirk/paraplegic
 	name = "Paraplegic"
@@ -342,7 +328,6 @@
 	gain_text = null // Handled by trauma.
 	lose_text = null
 	medical_record_text = "Patient has an untreatable impairment in motor function in the lower extremities."
-	hardcore_value = 15
 
 /datum/quirk/paraplegic/add_unique()
 	if(quirk_holder.buckled) // Handle late joins being buckled to arrival shuttle chairs.
@@ -351,11 +336,7 @@
 	var/turf/holder_turf = get_turf(quirk_holder)
 	var/obj/structure/chair/spawn_chair = locate() in holder_turf
 
-	var/obj/vehicle/ridden/wheelchair/wheels
-	if(quirk_holder.client?.get_award_status(HARDCORE_RANDOM_SCORE) >= 5000) //More than 5k score? you unlock the gamer wheelchair.
-		wheels = new /obj/vehicle/ridden/wheelchair/gold(holder_turf)
-	else
-		wheels = new(holder_turf)
+	var/obj/vehicle/ridden/wheelchair/wheels = new(holder_turf)
 	if(spawn_chair) // Makes spawning on the arrivals shuttle more consistent looking
 		wheels.setDir(spawn_chair.dir)
 
@@ -381,7 +362,6 @@
 	value = -4
 	mob_trait = TRAIT_POOR_AIM
 	medical_record_text = "Patient possesses a strong tremor in both hands."
-	hardcore_value = 3
 
 /datum/quirk/prosopagnosia
 	name = "Prosopagnosia"
@@ -389,7 +369,6 @@
 	value = -4
 	mob_trait = TRAIT_PROSOPAGNOSIA
 	medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
-	hardcore_value = 5
 
 /datum/quirk/pushover
 	name = "Pushover"
@@ -399,7 +378,6 @@
 	gain_text = SPAN_DANGER("You feel like a pushover.")
 	lose_text = SPAN_NOTICE("You feel like standing up for yourself.")
 	medical_record_text = "Patient presents a notably unassertive personality and is easy to manipulate."
-	hardcore_value = 4
 
 /datum/quirk/insanity
 	name = "Reality Dissociation Syndrome"
@@ -409,7 +387,6 @@
 	gain_text = SPAN_USERDANGER("...")
 	lose_text = SPAN_NOTICE("You feel in tune with the world again.")
 	medical_record_text = "Patient suffers from acute Reality Dissociation Syndrome and experiences vivid hallucinations."
-	hardcore_value = 6
 	processing_quirk = TRUE
 
 /datum/quirk/insanity/process(delta_time)
@@ -432,7 +409,6 @@
 	gain_text = SPAN_DANGER("You start worrying about what you're saying.")
 	lose_text = SPAN_NOTICE("You feel easier about talking again.") //if only it were that easy!
 	medical_record_text = "Patient is usually anxious in social encounters and prefers to avoid them."
-	hardcore_value = 4
 	mob_trait = TRAIT_ANXIOUS
 	var/dumb_thing = TRUE
 
@@ -557,7 +533,6 @@
 	value = -6
 	gain_text = SPAN_DANGER("You suddenly feel the craving for drugs.")
 	medical_record_text = "Patient has a history of hard drugs."
-	hardcore_value = 4
 	processing_quirk = TRUE
 	var/drug_list = list(/datum/reagent/drug/crank, /datum/reagent/drug/krokodil, /datum/reagent/medicine/morphine, /datum/reagent/drug/happiness, /datum/reagent/drug/methamphetamine) //List of possible IDs
 	var/datum/reagent/reagent_type //!If this is defined, reagent_id will be unused and the defined reagent type will be instead.
@@ -647,7 +622,6 @@
 	medical_record_text = "Patient is a current smoker."
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale
-	hardcore_value = 1
 	drug_flavour_text = "Make sure you get your favorite brand when you run out."
 
 /datum/quirk/item_quirk/junkie/smoker/New()
@@ -683,7 +657,6 @@
 	gain_text = SPAN_DANGER("There's a lot on your mind right now.")
 	lose_text = SPAN_NOTICE("Your mind finally feels calm.")
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
-	hardcore_value = 9
 
 /datum/quirk/item_quirk/allergic
 	name = "Medicine Allergy"
@@ -692,7 +665,6 @@
 	gain_text = SPAN_DANGER("You feel your immune system shift lightly.")
 	lose_text = SPAN_NOTICE("You feel your immune system phase back into perfect shape.")
 	medical_record_text = "Patient's immune system responds undesirably to certain chemicals."
-	hardcore_value = 3
 	processing_quirk = TRUE
 	var/list/allergies = list()
 	var/list/blacklist = list(
@@ -782,7 +754,6 @@
 	lose_text = SPAN_NOTICE("You could use a big hug.")
 	medical_record_text = "Patient has disdain for being touched. Potentially has undiagnosed haphephobia."
 	mood_quirk = TRUE
-	hardcore_value = 1
 
 /datum/quirk/bad_touch/add()
 	RegisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT), .proc/uncomfortable_touch)

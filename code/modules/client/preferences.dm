@@ -141,9 +141,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/action_buttons_screen_locs = list()
 
-	///This var stores the amount of points the owner will get for making it out alive.
-	var/hardcore_survival_score = 0
-
 	///Someone thought we were nice! We get a little heart in OOC until we join the server past the below time (we can keep it until the end of the round otherwise)
 	var/hearted
 	///If we have a hearted commendations, we honor it every time the player loads preferences until this time has been passed
@@ -2876,9 +2873,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts()
-
-/datum/preferences/proc/should_be_random_hardcore(datum/job/job, datum/mind/mind)
-	return FALSE
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

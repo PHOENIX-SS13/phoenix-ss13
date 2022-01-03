@@ -298,7 +298,7 @@ SUBSYSTEM_DEF(ticker)
 		else
 			stack_trace("[S] [S.type] found in start landmarks list, which isn't a start landmark!")
 
-	// handle persistence stuff that requires ckeys, in this case hardcore mode and temporal scarring
+	// handle persistence stuff that requires ckeys, in this case temporal scarring
 	for(var/i in GLOB.player_list)
 		if(!ishuman(i))
 			continue
@@ -306,13 +306,6 @@ SUBSYSTEM_DEF(ticker)
 
 		iter_human.increment_scar_slot()
 		iter_human.load_persistent_scars()
-
-		if(!iter_human.hardcore_survival_score)
-			continue
-		if(iter_human.mind?.special_role)
-			to_chat(iter_human, SPAN_NOTICE("You will gain [round(iter_human.hardcore_survival_score) * 2] hardcore random points if you greentext this round!"))
-		else
-			to_chat(iter_human, SPAN_NOTICE("You will gain [round(iter_human.hardcore_survival_score)] hardcore random points if you survive this round!"))
 
 //These callbacks will fire after roundstart key transfer
 /datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
@@ -402,8 +395,6 @@ SUBSYSTEM_DEF(ticker)
 			continue
 		var/datum/job/player_assigned_role = new_player_living.mind.assigned_role
 		if(ishuman(new_player_living) && CONFIG_GET(flag/roundstart_traits))
-			if(new_player_mob.client?.prefs?.should_be_random_hardcore(player_assigned_role, new_player_living.mind))
-				new_player_mob.client.prefs.hardcore_random_setup(new_player_living)
 			SSquirks.AssignQuirks(new_player_living, new_player_mob.client)
 		if(player_assigned_role.job_flags & JOB_EQUIP_RANK)
 			SSjob.EquipRank(new_player_living, player_assigned_role, new_player_mob.client)
