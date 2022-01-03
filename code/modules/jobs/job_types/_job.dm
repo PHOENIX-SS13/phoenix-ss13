@@ -337,11 +337,6 @@
 /datum/job/proc/get_mail_goodies(mob/recipient)
 	return mail_goodies
 
-
-/datum/job/proc/award_service(client/winner, award)
-	return
-
-
 /datum/job/proc/get_captaincy_announcement(mob/living/captain)
 	return "Due to extreme staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
 

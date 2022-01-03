@@ -348,7 +348,6 @@
 	desc = "A delicious and spongy little cake, with berries."
 	tastes = list("muffin" = 3, "berry" = 1)
 	foodtypes = GRAIN | FRUIT | SUGAR | BREAKFAST
-	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/muffin/booberry
 	name = "booberry muffin"
@@ -711,7 +710,6 @@
 	foodtypes = GRAIN | SUGAR | BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
 	burns_on_grill = TRUE
-	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/pancakes/raw
 	name = "goopy pancake"
@@ -858,8 +856,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("pastry" = 1)
 	foodtypes = GRAIN | DAIRY | SUGAR
-	w_class = WEIGHT_CLASS_TINY
-	venue_value = FOOD_PRICE_CHEAP // Pastry base, 3u of sugar and a single. fucking. unit. of. milk. really?
+	w_class = WEIGHT_CLASS_TINY // Pastry base, 3u of sugar and a single. fucking. unit. of. milk. really?
 
 /obj/item/food/icecream
 	name = "waffle cone"

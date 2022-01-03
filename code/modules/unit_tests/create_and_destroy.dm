@@ -15,12 +15,8 @@
 		/obj/item/slimecross/recurring,
 		//This should be obvious
 		/obj/machinery/doomsday_device,
-		//Yet more templates
-		/obj/machinery/restaurant_portal,
 		//Template type
 		/obj/effect/mob_spawn,
-		//Template type
-		/obj/structure/holosign/robot_seat,
 		//Say it with me now, type template
 		/obj/effect/mapping_helpers/component_injector,
 		//template type

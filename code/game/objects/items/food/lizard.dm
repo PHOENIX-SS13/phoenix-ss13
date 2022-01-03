@@ -355,7 +355,6 @@
 	tastes = list("bread" = 8, "nuts" = 2)
 	foodtypes = VEGETABLES | NUTS
 	w_class = WEIGHT_CLASS_SMALL
-	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/bread/root/Initialize()
 	. = ..()
@@ -372,7 +371,6 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("bread" = 8, "nuts" = 2)
 	foodtypes = VEGETABLES | NUTS
-	venue_value = FOOD_PRICE_TRASH
 
 /obj/item/food/breadslice/root/Initialize()
 	. = ..()

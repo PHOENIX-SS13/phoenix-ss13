@@ -479,9 +479,6 @@
 ///Generate a report for how much money is on station, as well as the richest crewmember on the station.
 /datum/controller/subsystem/ticker/proc/market_report()
 	var/list/parts = list()
-
-	///total service income
-	var/tourist_income = 0
 	///This is the richest account on station at roundend.
 	var/datum/bank_account/mr_moneybags
 	///This is the station's total wealth at the end of the round.
@@ -497,26 +494,6 @@
 		if(!mr_moneybags || mr_moneybags.account_balance < current_acc.account_balance)
 			mr_moneybags = current_acc
 	parts += ("<div class='panel stationborder'>" + SPAN("header", "Station Economic Summary:") + "<br>")
-	parts += (SPAN("service", "Service Statistics:") + "<br>")
-	for(var/venue_path in SSrestaurant.all_venues)
-		var/datum/venue/venue = SSrestaurant.all_venues[venue_path]
-		tourist_income += venue.total_income
-		parts += "The [venue] served [venue.customers_served] customer\s and made [venue.total_income] credits.<br>"
-	parts += "In total, they earned [tourist_income] credits[tourist_income ? "!" : "..."]<br>"
-	log_econ("Roundend service income: [tourist_income] credits.")
-	switch(tourist_income)
-		if(0)
-			parts += "[SPAN_REDTEXT("Service did not earn any credits...")]<br>"
-		if(1 to 2000)
-			parts += "[SPAN_REDTEXT("Centcom is displeased. Come on service, surely you can do better than that.")]<br>"
-			award_service(/datum/award/achievement/jobs/service_bad)
-		if(2001 to 4999)
-			parts += "[SPAN_GREENTEXT("Centcom is satisfied with service's job today.")]<br>"
-			award_service(/datum/award/achievement/jobs/service_okay)
-		else
-			parts += (SPAN("reallybig greentext", "Centcom is incredibly impressed with service today! What a team!") + "<br>")
-			award_service(/datum/award/achievement/jobs/service_good)
-
 	parts += "<b>General Statistics:</b><br>"
 	parts += "There were [station_vault] credits collected by crew this shift.<br>"
 	if(total_players > 0)
@@ -527,22 +504,6 @@
 	else
 		parts += "Somehow, nobody made any money this shift! This'll result in some budget cuts...</div>"
 	return parts
-
-/**
- * Awards the service department an achievement and updates the chef and bartender's highscore for tourists served.
- *
- * Arguments:
- * * award: Achievement to give service department
- */
-/datum/controller/subsystem/ticker/proc/award_service(award)
-	for(var/mob/living/carbon/human/human as anything in GLOB.human_list)
-		if(!human.client || !human.mind)
-			continue
-		var/datum/job/human_job = human.mind.assigned_role
-		if(!(human_job.departments_bitflags & DEPARTMENT_SERVICE))
-			continue
-		human_job.award_service(human.client, award)
-
 
 /datum/controller/subsystem/ticker/proc/medal_report()
 	if(GLOB.commendations.len)

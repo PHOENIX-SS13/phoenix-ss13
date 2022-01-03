@@ -114,7 +114,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	tastes = list("egg" = 1, "cheese" = 1)
 	foodtypes = MEAT | BREAKFAST | DAIRY
-	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/omelette/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/kitchen/fork))
@@ -142,7 +141,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	tastes = list("egg" = 1, "bacon" = 1, "bun" = 1)
 	foodtypes = MEAT | BREAKFAST | GRAIN
-	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/eggwrap
 	name = "egg wrap"

@@ -10992,7 +10992,6 @@
 /area/medical/virology)
 "aKt" = (
 /obj/structure/table/wood,
-/obj/item/holosign_creator/robot_seat/bar,
 /turf/open/floor/wood,
 /area/service/bar)
 "aKu" = (
@@ -12470,7 +12469,6 @@
 /obj/structure/table,
 /obj/item/clothing/suit/apron/chef,
 /obj/item/kitchen/rollingpin,
-/obj/item/holosign_creator/robot_seat/restaurant,
 /turf/open/floor/iron/white,
 /area/service/kitchen)
 "aTM" = (
@@ -22211,14 +22209,6 @@
 /obj/effect/loot_site_spawner,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
-"etq" = (
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/obj/machinery/restaurant_portal/bar,
-/turf/open/floor/iron,
-/area/service/bar)
 "etv" = (
 /obj/effect/landmark/blobstart,
 /turf/open/floor/engine,
@@ -64551,10 +64541,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/security/checkpoint)
-"uTG" = (
-/obj/machinery/restaurant_portal/restaurant,
-/turf/open/floor/glass,
-/area/service/kitchen)
 "uTR" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -94597,7 +94583,7 @@ aOF
 nTE
 aeK
 abX
-etq
+ahV
 ahV
 ahV
 aZE
@@ -160911,7 +160897,7 @@ pco
 jya
 aUE
 gyC
-uTG
+aUE
 aUE
 aDI
 aqB
