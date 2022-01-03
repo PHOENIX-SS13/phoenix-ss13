@@ -210,6 +210,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/languages = list()
 	/// Whether this client has gotten their interview accepted at any point in time.
 	var/interview_accepted = FALSE
+	/// Jukebox pref. It's not in a flag anywhere because the flags need to be split around first and this pref is important enough to implement now
+	var/hear_jukebox = TRUE
 
 /datum/preferences/New(client/C)
 	parent = C

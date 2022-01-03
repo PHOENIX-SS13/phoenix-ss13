@@ -211,3 +211,5 @@
 	var/interviewee = FALSE
 	/// Ambience controller which will play sounds to the client, respecting its prefs and other stuff.
 	var/datum/ambience_controller/ambience_controller
+	/// Jukebox controller which manages sounds played to the client from jukeboxes.
+	var/datum/jukebox_controller/jukebox_controller

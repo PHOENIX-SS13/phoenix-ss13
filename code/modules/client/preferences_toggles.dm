@@ -270,6 +270,21 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/settings/sound, toggle_announcement_sound)()
 /datum/verbs/menu/settings/sound/toggle_announcement_sound/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_ANNOUNCEMENTS
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/settings/sound, toggle_jukebox)()
+	set name = "Hear/Silence Jukebox"
+	set category = "Preferences"
+	set desc = "Hear Jukebox"
+	usr.client.prefs.hear_jukebox = !usr.client.prefs.hear_jukebox
+	usr.client.prefs.save_preferences()
+	if(usr.client.prefs.hear_jukebox)
+		to_chat(usr, "<span class='infoplain'>You will now hear jukeboxes.</span>")
+	else
+		to_chat(usr, "<span class='infoplain'>You will no longer hear jukeboxes.</span>")
+	usr.client.update_jukebox_pref()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Jukebox", "[usr.client.prefs.hear_jukebox ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, I bet you read this comment expecting to see the same thing :^)
+/datum/verbs/menu/settings/sound/toggle_jukebox/Get_checked(client/C)
+	return C.prefs.hear_jukebox
+
 
 /datum/verbs/menu/settings/sound/verb/stop_client_sounds()
 	set name = "Stop Sounds"

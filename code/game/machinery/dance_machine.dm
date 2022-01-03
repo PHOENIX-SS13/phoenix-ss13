@@ -5,13 +5,18 @@
 	icon_state = "jukebox"
 	verb_say = "states"
 	density = TRUE
+	/// Whether we are active or not. Being active means we have a `played_track`
 	var/active = FALSE
-	var/list/rangers = list()
-	var/stop = 0
-	var/list/songs = list()
-	var/datum/track/selection = null
+	/// Reference to the song list from the jukebox subsystem.
+	var/static/list/songs
+	/// Currently selected track.
+	var/datum/jukebox_track/selection
+	/// Currently played track.
+	var/datum/jukebox_playing_track/played_track
 	/// Volume of the songs played
-	var/volume = 100
+	var/volume = 70
+	/// Cooldown for stopping a sound after playing one
+	var/stop = 0
 	COOLDOWN_DECLARE(jukebox_error_cd)
 
 /obj/machinery/jukebox/disco
@@ -31,37 +36,14 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	flags_1 = NODECONSTRUCT_1
 
-/datum/track
-	var/song_name = "generic"
-	var/song_path = null
-	var/song_length = 0
-	var/song_beat = 0
-
-/datum/track/New(name, path, length, beat)
-	song_name = name
-	song_path = path
-	song_length = length
-	song_beat = beat
-
 /obj/machinery/jukebox/Initialize()
 	. = ..()
-	var/list/tracks = flist("[global.config.directory]/jukebox_music/sounds/")
-
-	for(var/S in tracks)
-		var/datum/track/T = new()
-		T.song_path = file("[global.config.directory]/jukebox_music/sounds/[S]")
-		var/list/L = splittext(S,"+")
-		if(L.len != 3)
-			continue
-		T.song_name = L[1]
-		T.song_length = text2num(L[2])
-		T.song_beat = text2num(L[3])
-		songs |= T
-
-	if(songs.len)
-		selection = pick(songs)
+	if(!songs)
+		songs = SSjukebox.tracks
 
 /obj/machinery/jukebox/Destroy()
+	if(played_track)
+		qdel(played_track)
 	dance_over()
 	return ..()
 
@@ -106,7 +88,7 @@
 	var/list/data = list()
 	data["active"] = active
 	data["songs"] = list()
-	for(var/datum/track/S in songs)
+	for(var/datum/jukebox_track/S in songs)
 		var/list/track_data = list(
 			name = S.song_name
 		)
@@ -142,17 +124,18 @@
 				START_PROCESSING(SSobj, src)
 				return TRUE
 			else
-				stop = 0
+				/// Deleting the track stops the song.
+				qdel(played_track)
 				return TRUE
 		if("select_track")
 			if(active)
 				to_chat(usr, SPAN_WARNING("Error: You cannot change the song until the current one is over."))
 				return
 			var/list/available = list()
-			for(var/datum/track/S in songs)
+			for(var/datum/jukebox_track/S in songs)
 				available[S.song_name] = S
 			var/selected = params["track"]
-			if(QDELETED(src) || !selected || !istype(available[selected], /datum/track))
+			if(QDELETED(src) || !selected || !istype(available[selected], /datum/jukebox_track))
 				return
 			selection = available[selected]
 			return TRUE
@@ -162,25 +145,31 @@
 				volume = initial(volume)
 				return TRUE
 			else if(new_volume == "min")
-				volume = 0
+				volume = max(volume - 20, 0)
 				return TRUE
 			else if(new_volume == "max")
-				volume = 100
+				volume = min(volume + 20, 100)
 				return TRUE
 			else if(text2num(new_volume) != null)
 				volume = text2num(new_volume)
 				return TRUE
 
 /obj/machinery/jukebox/proc/activate_music()
+	if(played_track)
+		qdel(played_track)
+	var/free_channel = SSjukebox.get_free_channel()
+	if(!free_channel)
+		return
 	active = TRUE
+	stop = world.time + 5 SECONDS
+	played_track = new(src, selection, free_channel)
 	update_appearance()
-	START_PROCESSING(SSobj, src)
-	stop = world.time + selection.song_length
 
 /obj/machinery/jukebox/disco/activate_music()
 	..()
 	dance_setup()
 	lights_spin()
+	START_PROCESSING(SSobj, src)
 
 /obj/machinery/jukebox/disco/proc/dance_setup()
 	var/turf/cen = get_turf(src)
@@ -310,7 +299,7 @@
 					glow.even_cycle = !glow.even_cycle
 		if(prob(2))  // Unique effects for the dance floor that show up randomly to mix things up
 			INVOKE_ASYNC(src, .proc/hierofunk)
-		sleep(selection.song_beat)
+		sleep(played_track.track.song_beat)
 		if(QDELETED(src))
 			return
 
@@ -392,7 +381,7 @@
 		sleep(speed)
 		for(var/i in 1 to speed)
 			M.setDir(pick(GLOB.cardinals))
-			for(var/mob/living/carbon/NS in rangers)
+			for(var/mob/living/carbon/NS in range(10,src))
 				NS.set_resting(!NS.resting, TRUE, TRUE)
 		time--
 
@@ -436,44 +425,26 @@
 	lying_prev = 0
 
 /obj/machinery/jukebox/proc/dance_over()
-	for(var/mob/living/L in rangers)
-		if(!L || !L.client)
-			continue
-		L.stop_sound_channel(CHANNEL_JUKEBOX)
-	rangers = list()
+	return
 
 /obj/machinery/jukebox/disco/dance_over()
 	..()
 	QDEL_LIST(spotlights)
 	QDEL_LIST(sparkles)
 
-/obj/machinery/jukebox/process()
-	if(world.time < stop && active)
-		var/sound/song_played = sound(selection.song_path)
+/obj/machinery/jukebox/proc/song_ended()
+	active = FALSE
+	dance_over()
+	playsound(src,'sound/machines/terminal_off.ogg',50,TRUE)
+	played_track = null
+	update_appearance()
 
-		for(var/mob/M in range(10,src))
-			if(!M.client || !(M.client.prefs.toggles & SOUND_INSTRUMENTS))
-				continue
-			if(!(M in rangers))
-				rangers[M] = TRUE
-				M.playsound_local(get_turf(M), null, volume, channel = CHANNEL_JUKEBOX, S = song_played, use_reverb = FALSE)
-		for(var/mob/L in rangers)
-			if(get_dist(src,L) > 10)
-				rangers -= L
-				if(!L || !L.client)
-					continue
-				L.stop_sound_channel(CHANNEL_JUKEBOX)
-	else if(active)
-		active = FALSE
-		STOP_PROCESSING(SSobj, src)
-		dance_over()
-		playsound(src,'sound/machines/terminal_off.ogg',50,TRUE)
-		update_appearance()
-		stop = world.time + 100
+/obj/machinery/jukebox/disco/song_ended()
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
 
 /obj/machinery/jukebox/disco/process()
-	. = ..()
 	if(active)
-		for(var/mob/living/M in rangers)
+		for(var/mob/living/M in range(10,src))
 			if(prob(5+(allowed(M)*4)) && (M.mobility_flags & MOBILITY_MOVE))
 				dance(M)
