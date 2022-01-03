@@ -100,7 +100,7 @@
 	return (BRUTELOSS)
 
 /obj/item/crowbar/power/attack_self(mob/user)
-	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, TRUE)
+	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 40, TRUE)
 	if(tool_behaviour == TOOL_CROWBAR)
 		tool_behaviour = TOOL_WIRECUTTER
 		to_chat(user, SPAN_NOTICE("You attach the cutting jaws to [src]."))
