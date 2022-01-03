@@ -508,7 +508,7 @@
 /datum/ambient_sound/air_pump
 	id = AMBIENCE_AIR_PUMP
 	sounds = list('sound/ambience/emitters/air_pump_idle.ogg')
-	volume = 8
+	volume = 6
 	frequency_time = 8 SECONDS
 	sound_length = 8 SECONDS
 	loops = TRUE
