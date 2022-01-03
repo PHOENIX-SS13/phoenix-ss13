@@ -62,6 +62,10 @@
 	log_admin_private("[key_name(approved_by)] has approved interview #[id] for [owner_ckey][!owner ? "(DC)": ""].")
 	message_admins(SPAN_ADMINNOTICE("[key_name(approved_by)] has approved [link_self()] for [owner_ckey][!owner ? "(DC)": ""]."))
 	if (owner)
+		/// Register the interview accepted in the users prefs
+		owner.prefs.interview_accepted = TRUE
+		owner.prefs.save_preferences()
+
 		SEND_SOUND(owner, sound('sound/effects/adminhelp.ogg'))
 		to_chat(owner, "<font color='red' size='4'><b>-- Interview Update --</b></font>" \
 			+ "\n[SPAN_ADMINSAY("Your interview was approved, you will now be reconnected in 5 seconds.")]", confidential = TRUE)
