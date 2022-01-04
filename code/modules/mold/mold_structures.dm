@@ -20,7 +20,7 @@
 /obj/structure/mold/core
 	density = TRUE
 	layer = TABLE_LAYER
-	max_integrity = 550
+	max_integrity = 800
 	/// Type of our controller to be instantiated.
 	var/controller_type = /datum/mold_controller
 	/// Whether the core can attack nearby hostiles as its processing.
@@ -64,21 +64,34 @@
 	var/has_attacked = FALSE
 	for(var/turf/range_turf as anything in RANGE_TURFS(1, loc))
 		for(var/thing in range_turf)
-			if(istype(thing, /mob/living))
-				var/mob/living/living_thing = thing
-				if(!(faction_type in living_thing.faction))
-					living_thing.apply_damage(attack_damage, attack_damage_type)
-					has_attacked = TRUE
-			else if(istype(thing, /obj/vehicle/sealed/mecha))
-				var/obj/vehicle/sealed/mecha/mecha_thing = thing
-				mecha_thing.take_damage(attack_damage, attack_damage_type, MELEE, 0, get_dir(mecha_thing, src))
-				has_attacked = TRUE
+			has_attacked = core_attack_atom(thing)
 			if(has_attacked)
-				playsound(loc, 'sound/effects/attackblob.ogg', 100, TRUE)
-				do_attack_animation(thing, ATTACK_EFFECT_PUNCH)
 				break
 		if(has_attacked)
 			break
+
+/obj/structure/mold/core/proc/core_attack_atom(atom/thing)
+	. = FALSE
+	var/has_attacked
+	if(istype(thing, /mob/living))
+		var/mob/living/living_thing = thing
+		if(!(faction_type in living_thing.faction))
+			switch(attack_damage_type)
+				if(BRUTE)
+					living_thing.take_bodypart_damage(brute = attack_damage, check_armor = TRUE)
+				if(BURN)
+					living_thing.take_bodypart_damage(burn = attack_damage, check_armor = TRUE)
+			has_attacked = TRUE
+	else if(istype(thing, /obj/vehicle/sealed/mecha))
+		var/obj/vehicle/sealed/mecha/mecha_thing = thing
+		mecha_thing.take_damage(attack_damage, attack_damage_type, MELEE, 0, get_dir(mecha_thing, src))
+		has_attacked = TRUE
+	if(has_attacked)
+		thing.visible_message(SPAN_WARNING("\The [src] strikes [thing]!"), SPAN_USERDANGER("\The [src] strikes you!"))
+		playsound(loc, 'sound/effects/attackblob.ogg', 100, TRUE)
+		do_attack_animation(thing, ATTACK_EFFECT_PUNCH)
+		return TRUE
+
 
 /obj/structure/mold/core/proc/retaliate_effect()
 	return
