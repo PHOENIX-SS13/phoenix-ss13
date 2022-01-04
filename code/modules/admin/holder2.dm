@@ -102,7 +102,7 @@ GLOBAL_PROTECT(href_token)
 	var/client/C
 	if ((C = owner) || (C = GLOB.directory[target]))
 		disassociate()
-		add_verb(C, /client/proc/readmin)
+		add_verb(C, GLOB.admin_verbs_deadmins)
 
 /datum/admins/proc/associate(client/client)
 	if(IsAdminAdvancedProcCall())
@@ -140,7 +140,8 @@ GLOBAL_PROTECT(href_token)
 	owner = client
 	owner.holder = src
 	owner.add_admin_verbs()
-	remove_verb(owner, /client/proc/readmin)
+	remove_verb(owner, GLOB.admin_verbs_deadmins)
+	GLOB.asay_deadmins -= client.ckey //Remove from asay deadmins
 	owner.init_verbs() //re-initialize the verb list
 	GLOB.admins |= client
 

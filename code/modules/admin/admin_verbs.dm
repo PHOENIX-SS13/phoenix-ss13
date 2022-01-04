@@ -259,6 +259,12 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	))
 GLOBAL_PROTECT(admin_verbs_hideable)
 
+GLOBAL_LIST_INIT(admin_verbs_deadmins, list(
+	/client/proc/readmin,
+	/client/proc/deadmin_asay
+	))
+GLOBAL_PROTECT(admin_verbs_deadmins)
+
 /client/proc/add_admin_verbs()
 	if(holder)
 		control_freak = CONTROL_FREAK_SKIN | CONTROL_FREAK_MACROS

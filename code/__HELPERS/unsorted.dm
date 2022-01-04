@@ -326,6 +326,13 @@ Turf and target are separate in case you want to teleport some distance from a t
 		if(M.ckey == key)
 			return M
 
+/proc/get_client_by_ckey(key)
+	if(!key)
+		return
+	for(var/client/checked_client as anything in GLOB.clients)
+		if(checked_client.ckey == key)
+			return checked_client
+
 //Returns the atom sitting on the turf.
 //For example, using this on a disk, which is in a bag, on a mob, will return the mob because it's on the turf.
 //Optional arg 'type' to stop once it reaches a specific type instead of a turf.
