@@ -15,6 +15,7 @@
 
 	var/sound/ship_ambience_sound
 	var/ship_ambience_volume = 0
+	var/ship_ambience_volume_mult = 0
 
 	var/mob_x
 	var/mob_y
@@ -141,18 +142,19 @@
 /datum/ambience_controller/proc/handle_ship_ambience(mob/client_mob)
 	var/area/current_area = get_area(client_mob)
 	var/should_play_ship_ambience = (pref_ship_ambience && !current_area.outdoors)
-	if(ship_ambience_volume == should_play_ship_ambience)
-		return
 	if(should_play_ship_ambience)
-		ship_ambience_volume = min(ship_ambience_volume + 0.2, 1)
+		ship_ambience_volume_mult = min(ship_ambience_volume_mult + 0.2, 1)
 	else
-		ship_ambience_volume = max(ship_ambience_volume - 0.2, 0)
+		ship_ambience_volume_mult = max(ship_ambience_volume_mult - 0.2, 0)
+	var/new_ship_ambience_volume = SHIP_AMBIENCE_VOLUME * ship_ambience_volume_mult * jukebox_volume_multiplier
+	if(new_ship_ambience_volume == ship_ambience_volume)
+		return
+	ship_ambience_volume = new_ship_ambience_volume
 	if(ship_ambience_volume <= 0)
 		ship_ambience_sound.status = SOUND_UPDATE | SOUND_MUTE
 	else
 		ship_ambience_sound.status = SOUND_UPDATE
-	var/target_multiplier = ship_ambience_volume * jukebox_volume_multiplier
-	ship_ambience_sound.volume = ship_ambience_volume * target_multiplier
+		ship_ambience_sound.volume = ship_ambience_volume
 	SEND_SOUND(client, ship_ambience_sound)
 
 /// When our client pref gets updated.
