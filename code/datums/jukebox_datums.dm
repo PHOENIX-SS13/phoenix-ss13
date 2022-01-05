@@ -52,6 +52,8 @@
 /// Jukebox subscription that gets attached to clients and manages the sounds that are being played to it.
 /datum/jukebox_controller
 	var/client/client
+	/// The loudest volume of a jukebox a client is currently hearing. This is used to clamp the ambience by a little when jukeboxes are playing
+	var/loudest_jukebox_volume = 0
 	/// Associative list pointing to a sound from a jukebox playing track
 	var/list/track_to_sound = list()
 
@@ -145,6 +147,10 @@
 	target_volume *= pressure_factor
 
 	sound_to_update.volume = target_volume
+
+	/// Update loudest volume.
+	if(loudest_jukebox_volume < target_volume)
+		loudest_jukebox_volume = target_volume
 
 /datum/jukebox_controller/proc/add_played_track(datum/jukebox_playing_track/played_track, list/jukebox_hearers)
 	///Create a sound for us from the track

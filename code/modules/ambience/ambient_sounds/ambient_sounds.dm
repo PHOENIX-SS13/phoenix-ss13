@@ -113,6 +113,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/holy
@@ -126,6 +127,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/danger
@@ -136,6 +138,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/ruins
@@ -152,6 +155,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/engi
@@ -166,6 +170,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/mining
@@ -183,6 +188,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 70 SECONDS
 	frequency_time_high = 220 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/medical
@@ -191,6 +197,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/spooky
@@ -203,6 +210,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/space
@@ -214,6 +222,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/maint
@@ -228,6 +237,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/away
@@ -245,6 +255,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/creepy
@@ -266,6 +277,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/reebe
@@ -278,6 +290,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 
@@ -294,6 +307,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/vaporwave
@@ -302,6 +316,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/ai_core
@@ -316,6 +331,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/abandoned_teleporter
@@ -324,6 +340,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/signal
@@ -332,6 +349,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/psych
@@ -340,6 +358,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/detective
@@ -348,6 +367,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/forgotten_ship
@@ -356,6 +376,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/forgotten_cargo
@@ -364,6 +385,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/forgotten_vault
@@ -372,6 +394,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/tcomm
@@ -389,6 +412,7 @@
 	sound_length = 30 SECONDS
 	frequency_time = 30 SECONDS
 	frequency_time_high = 90 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/windy
@@ -404,6 +428,7 @@
 	sound_length = 10 SECONDS
 	frequency_time = 10 SECONDS
 	frequency_time_high = 12 SECONDS
+	volume = 20
 	loops = FALSE
 
 /datum/ambient_sound/desert

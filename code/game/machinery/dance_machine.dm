@@ -145,10 +145,10 @@
 				volume = initial(volume)
 				return TRUE
 			else if(new_volume == "min")
-				volume = max(volume - 20, 0)
+				volume = max(volume - 10, 0)
 				return TRUE
 			else if(new_volume == "max")
-				volume = min(volume + 20, 100)
+				volume = min(volume + 10, 100)
 				return TRUE
 			else if(text2num(new_volume) != null)
 				volume = text2num(new_volume)

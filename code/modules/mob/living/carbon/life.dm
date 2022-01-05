@@ -518,11 +518,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				slurring += 2
 			jitteriness = max(jitteriness - (1.5 * delta_time), 0)
 			throw_alert("drunk", /atom/movable/screen/alert/drunk)
-			sound_environment_override = SOUND_ENVIRONMENT_PSYCHOTIC
 		else
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
 			clear_alert("drunk")
-			sound_environment_override = SOUND_ENVIRONMENT_NONE
 
 		if(drunkenness >= 11 && slurring < 5)
 			slurring += 0.6 * delta_time
@@ -547,6 +545,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				add_confusion(15)
 				vomit() // vomiting clears toxloss, consider this a blessing
 			Dizzy(12.5 * delta_time)
+			sound_environment_override = SOUND_ENVIRONMENT_DIZZY
+		else
+			sound_environment_override = SOUND_ENVIRONMENT_NONE
 
 		if(drunkenness >= 61)
 			if(DT_PROB(30, delta_time))

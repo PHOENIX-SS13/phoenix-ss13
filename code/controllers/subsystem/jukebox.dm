@@ -22,10 +22,11 @@ SUBSYSTEM_DEF(jukebox)
 	return ..()
 
 /datum/controller/subsystem/jukebox/fire(resumed)
-	/// Safety check because clients are a HECK
 	for(var/datum/jukebox_controller/controller in controller_list)
+		/// Safety check because clients are a HECK
 		if(!controller.client)
 			qdel(controller)
+		controller.loudest_jukebox_volume = 0
 
 	for(var/datum/jukebox_playing_track/played_track in playing_tracks)
 		if(played_track.end_when <= world.time)
