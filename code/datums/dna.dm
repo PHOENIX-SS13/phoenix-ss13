@@ -385,7 +385,10 @@
 		update_hair()
 		update_body_parts()
 		update_mutations_overlay()// no lizard with human hulk overlay please.
-
+	// Adjust body temperatures to not burn special species as they spawn.
+	var/datum/species/my_species = dna.species
+	bodytemperature = my_species.bodytemp_normal
+	coretemperature = my_species.bodytemp_normal
 
 /mob/proc/has_dna()
 	return
