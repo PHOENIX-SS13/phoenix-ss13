@@ -239,13 +239,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	var/sourceBandanaType
 
-/obj/item/clothing/neck/neckerchief/worn_overlays(mutable_appearance/standing, isinhands)
-	. = ..()
-	if(!isinhands)
-		var/mutable_appearance/realOverlay = mutable_appearance('icons/mob/clothing/mask.dmi', icon_state)
-		realOverlay.pixel_y = -3
-		. += realOverlay
-
 /obj/item/clothing/neck/neckerchief/AltClick(mob/user)
 	. = ..()
 	if(iscarbon(user))

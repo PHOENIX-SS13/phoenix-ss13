@@ -126,6 +126,7 @@
 	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT
 	visor_flags_inv = HIDEEYES | HIDEFACE | HIDESNOUT
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	worn_icon = 'icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/hardhat/weldhat/Initialize()
 	. = ..()
@@ -143,14 +144,14 @@
 		playsound(src, 'sound/mecha/mechmove03.ogg', 50, TRUE) //Visors don't just come from nothing
 	update_appearance()
 
-/obj/item/clothing/head/hardhat/weldhat/worn_overlays(mutable_appearance/standing, isinhands)
+/obj/item/clothing/head/hardhat/weldhat/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix)
 	. = ..()
 	if(isinhands)
 		return
 
-	. += mutable_appearance('icons/mob/clothing/head.dmi', "weldhelmet")
+	. += mutable_appearance(worn_icon, "[worn_prefix]_weldhelmet")
 	if(!up)
-		. += mutable_appearance('icons/mob/clothing/head.dmi', "weldvisor")
+		. += mutable_appearance(worn_icon, "[worn_prefix]_weldvisor")
 
 /obj/item/clothing/head/hardhat/weldhat/update_overlays()
 	. = ..()

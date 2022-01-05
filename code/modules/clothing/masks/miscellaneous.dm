@@ -136,7 +136,7 @@
 			nk.desc = "[desc] It's tied up like a neckerchief."
 			nk.icon_state = icon_state
 			nk.item_flags = item_flags
-			nk.worn_icon = 'icons/misc/hidden.dmi' //hide underlying neckerchief object while it applies its own mutable appearance
+			nk.worn_icon = worn_icon
 			nk.sourceBandanaType = src.type
 			var/currentHandIndex = user.get_held_index_of_item(src)
 			user.transferItemToLoc(src, null)

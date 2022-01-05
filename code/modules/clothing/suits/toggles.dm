@@ -6,6 +6,8 @@
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
 	///Alternative mode for hiding the hood, instead of storing the hood in the suit it qdels it, useful for when you deal with hooded suit with storage.
 	var/alternative_mode = FALSE
+	/// Whether we change our icon state to "[icon_state]_t" with the hood up
+	var/hooded_icon_state = TRUE
 
 /obj/item/clothing/suit/hooded/Initialize()
 	. = ..()
@@ -36,7 +38,8 @@
 	..()
 
 /obj/item/clothing/suit/hooded/proc/RemoveHood()
-	src.icon_state = "[initial(icon_state)]"
+	if(hooded_icon_state)
+		icon_state = "[initial(icon_state)]"
 	suittoggled = FALSE
 
 	if(hood)
@@ -77,7 +80,8 @@
 					RemoveHood()
 				return
 			suittoggled = TRUE
-			icon_state = "[initial(icon_state)]_t"
+			if(hooded_icon_state)
+				icon_state = "[initial(icon_state)]_t"
 			H.update_inv_wear_suit()
 			for(var/X in actions)
 				var/datum/action/A = X
