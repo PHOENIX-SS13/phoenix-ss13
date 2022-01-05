@@ -142,6 +142,7 @@
 
 /// Messages admins who have the storyteller pref on.
 /datum/storyteller/proc/message_storyteller(string)
+	string = "<b>[string]</b>" //The spans have failed me
 	for(var/client/admin_client as anything in GLOB.admins)
 		if(admin_client.prefs.hear_storyteller)
 			to_chat(admin_client, SPAN_ADMINNOTICE(string))
