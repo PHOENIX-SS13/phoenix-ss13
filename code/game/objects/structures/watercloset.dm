@@ -388,14 +388,14 @@
 
 	if(istype(O, /obj/item/stack/medical/gauze))
 		var/obj/item/stack/medical/gauze/G = O
-		new /obj/item/reagent_containers/glass/rag(src.loc)
+		new /obj/item/reagent_containers/rag(src.loc)
 		to_chat(user, SPAN_NOTICE("You tear off a strip of gauze and make a rag."))
 		G.use(1)
 		return
 
 	if(istype(O, /obj/item/stack/sheet/cloth))
 		var/obj/item/stack/sheet/cloth/cloth = O
-		new /obj/item/reagent_containers/glass/rag(loc)
+		new /obj/item/reagent_containers/rag(loc)
 		to_chat(user, SPAN_NOTICE("You tear off a strip of cloth and make a rag."))
 		cloth.use(1)
 		return
@@ -573,14 +573,14 @@
 
 	if(istype(O, /obj/item/stack/medical/gauze))
 		var/obj/item/stack/medical/gauze/G = O
-		new /obj/item/reagent_containers/glass/rag(loc)
+		new /obj/item/reagent_containers/rag(loc)
 		to_chat(user, SPAN_NOTICE("You tear off a strip of gauze and make a rag."))
 		G.use(1)
 		return
 
 	if(istype(O, /obj/item/stack/sheet/cloth))
 		var/obj/item/stack/sheet/cloth/cloth = O
-		new /obj/item/reagent_containers/glass/rag(loc)
+		new /obj/item/reagent_containers/rag(loc)
 		to_chat(user, SPAN_NOTICE("You tear off a strip of cloth and make a rag."))
 		cloth.use(1)
 		return

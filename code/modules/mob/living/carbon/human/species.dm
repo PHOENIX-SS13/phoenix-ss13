@@ -1166,12 +1166,13 @@ GLOBAL_LIST_EMPTY(customizable_races)
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_BELT)
-			var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
-
-			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
-				if(!disable_warning)
-					to_chat(H, SPAN_WARNING("You need a jumpsuit before you can attach this [I.name]!"))
-				return FALSE
+			if(!(I.item_flags & NO_STRAPS_NEEDED))
+				var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
+	
+				if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
+					if(!disable_warning)
+						to_chat(H, SPAN_WARNING("You need a jumpsuit before you can attach this [I.name]!"))
+					return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_EYES)
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
@@ -1191,12 +1192,13 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		if(ITEM_SLOT_ICLOTHING)
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_ID)
-			var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
-			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
-				if(!disable_warning)
-					to_chat(H, SPAN_WARNING("You need a jumpsuit before you can attach this [I.name]!"))
-				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			if(!(I.item_flags & NO_STRAPS_NEEDED))
+				var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
+				if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
+					if(!disable_warning)
+						to_chat(H, SPAN_WARNING("You need a jumpsuit before you can attach this [I.name]!"))
+					return FALSE
+				return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_LPOCKET)
 			if(HAS_TRAIT(I, TRAIT_NODROP)) //Pockets aren't visible, so you can't move TRAIT_NODROP items into them.
 				return FALSE
@@ -2441,7 +2443,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	if(!item_slot)
 		return bodytype
 	var/perceived_bodytype = bodytype
-	if((item_slot == ITEM_SLOT_FEET || item_slot == ITEM_SLOT_OCLOTHING || item_slot == ITEM_SLOT_ICLOTHING) && (DIGITIGRADE in species_traits))
+	if((item_slot == ITEM_SLOT_BELT || item_slot == ITEM_SLOT_FEET || item_slot == ITEM_SLOT_OCLOTHING || item_slot == ITEM_SLOT_ICLOTHING) && (DIGITIGRADE in species_traits))
 		perceived_bodytype = BODYTYPE_DIGITIGRADE
 	if((item_slot == ITEM_SLOT_HEAD || item_slot == ITEM_SLOT_MASK) && mutant_bodyparts["snout"])
 		var/datum/sprite_accessory/snouts/snout_accessory = GLOB.sprite_accessories["snout"][mutant_bodyparts["snout"][MUTANT_INDEX_NAME]]

@@ -299,6 +299,8 @@ LINEN BINS
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
 	var/amount = 10
+	var/spawned_sheet = /obj/item/bedsheet
+	var/list/allowed_sheets = list(/obj/item/bedsheet, /obj/item/reagent_containers/rag/towel)
 	var/list/sheets = list()
 	var/obj/item/hidden = null
 
@@ -311,11 +313,11 @@ LINEN BINS
 /obj/structure/bedsheetbin/examine(mob/user)
 	. = ..()
 	if(amount < 1)
-		. += "There are no bed sheets in the bin."
+		. += "There are no sheets in the bin."
 	else if(amount == 1)
-		. += "There is one bed sheet in the bin."
+		. += "There is one sheet in the bin."
 	else
-		. += "There are [amount] bed sheets in the bin."
+		. += "There are [amount] sheets in the bin."
 
 
 /obj/structure/bedsheetbin/update_icon_state()
@@ -335,7 +337,7 @@ LINEN BINS
 	..()
 
 /obj/structure/bedsheetbin/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/bedsheet))
+	if(is_type_in_list(I, allowed_sheets))
 		if(!user.transferItemToLoc(I, src))
 			return
 		sheets.Add(I)
@@ -379,13 +381,13 @@ LINEN BINS
 	if(amount >= 1)
 		amount--
 
-		var/obj/item/bedsheet/B
+		var/obj/item/B
 		if(sheets.len > 0)
 			B = sheets[sheets.len]
 			sheets.Remove(B)
 
 		else
-			B = new /obj/item/bedsheet(loc)
+			B = new spawned_sheet(loc)
 
 		B.forceMove(drop_location())
 		user.put_in_hands(B)
@@ -404,13 +406,13 @@ LINEN BINS
 	if(amount >= 1)
 		amount--
 
-		var/obj/item/bedsheet/B
+		var/obj/item/B
 		if(sheets.len > 0)
 			B = sheets[sheets.len]
 			sheets.Remove(B)
 
 		else
-			B = new /obj/item/bedsheet(loc)
+			B = new spawned_sheet(loc)
 
 		B.forceMove(drop_location())
 		to_chat(user, SPAN_NOTICE("You telekinetically remove [B] from [src]."))
@@ -422,3 +424,8 @@ LINEN BINS
 
 	add_fingerprint(user)
 	return COMPONENT_CANCEL_ATTACK_CHAIN
+
+/obj/structure/bedsheetbin/towel
+	name = "linen bin"
+	desc = "It looks rather cosy. This one is designed to hold towels."
+	spawned_sheet = /obj/item/reagent_containers/rag/towel

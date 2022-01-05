@@ -199,9 +199,9 @@
 				dropItemToGround(r_store, TRUE) //Again, makes sense for pockets to drop.
 			if(l_store)
 				dropItemToGround(l_store, TRUE)
-			if(wear_id)
+			if(wear_id && !(wear_id.item_flags & NO_STRAPS_NEEDED))
 				dropItemToGround(wear_id)
-			if(belt)
+			if(belt && !(belt.item_flags & NO_STRAPS_NEEDED))
 				dropItemToGround(belt)
 		w_uniform = null
 		update_suit_sensors()
