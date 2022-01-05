@@ -1,7 +1,7 @@
 /datum/round_event_control/brain_trauma
 	name = "Spontaneous Brain Trauma"
 	typepath = /datum/round_event/brain_trauma
-	weight = 25
+	weight = 10
 
 	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_TARGETED)

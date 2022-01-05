@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/list/storytellers = list()
 	/// Next process for our storyteller. The wait time is STORYTELLER_WAIT_TIME
 	var/next_storyteller_process = 0
-	/// Associative list of even track points.
+	/// Associative list of event track points.
 	var/list/event_track_points = list(
 		EVENT_TRACK_MUNDANE = 0, 
 		EVENT_TRACK_MODERATE = 0, 
@@ -64,6 +64,36 @@ SUBSYSTEM_DEF(gamemode)
 		EVENT_TRACK_MAJOR = 1, 
 		EVENT_TRACK_ROLESET = 1, 
 		EVENT_TRACK_OBJECTIVES = 1
+		)
+
+	/// Whether we allow pop scaling. This is configured by config, or the storyteller UI
+	var/allow_pop_scaling = TRUE
+
+	/// Associative list of pop scale thresholds.
+	var/list/pop_scale_thresholds = list(
+		EVENT_TRACK_MUNDANE = MUNDANE_POP_SCALE_THRESHOLD, 
+		EVENT_TRACK_MODERATE = MODERATE_POP_SCALE_THRESHOLD, 
+		EVENT_TRACK_MAJOR = MAJOR_POP_SCALE_THRESHOLD, 
+		EVENT_TRACK_ROLESET = ROLESET_POP_SCALE_THRESHOLD, 
+		EVENT_TRACK_OBJECTIVES = OBJECTIVES_POP_SCALE_THRESHOLD
+		)
+
+	/// Associative list of pop scale penalties.
+	var/list/pop_scale_penalties = list(
+		EVENT_TRACK_MUNDANE = MUNDANE_POP_SCALE_PENALTY, 
+		EVENT_TRACK_MODERATE = MODERATE_POP_SCALE_PENALTY, 
+		EVENT_TRACK_MAJOR = MAJOR_POP_SCALE_PENALTY, 
+		EVENT_TRACK_ROLESET = ROLESET_POP_SCALE_PENALTY, 
+		EVENT_TRACK_OBJECTIVES = OBJECTIVES_POP_SCALE_PENALTY
+		)
+
+	/// Associative list of active multipliers from pop scale penalty.
+	var/list/current_pop_scale_multipliers = list(
+		EVENT_TRACK_MUNDANE = 0, 
+		EVENT_TRACK_MODERATE = 0, 
+		EVENT_TRACK_MAJOR = 0, 
+		EVENT_TRACK_ROLESET = 0, 
+		EVENT_TRACK_OBJECTIVES = 0
 		)
 
 	/// Associative list of control events by their track category. Compiled in Init
@@ -132,8 +162,6 @@ SUBSYSTEM_DEF(gamemode)
 			uncategorized += event
 			continue
 		event_pools[event.track] += event //Add it to the categorized event pools
-
-	halted_storyteller = CONFIG_GET(flag/halt_storyteller)
 	return ..()
 
 
@@ -347,6 +375,28 @@ SUBSYSTEM_DEF(gamemode)
 				med_crew++
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
 				sec_crew++
+	if(allow_pop_scaling)
+		update_pop_scaling()
+
+/datum/controller/subsystem/gamemode/proc/update_pop_scaling()
+	for(var/track in event_tracks)
+		var/low_pop_bound = min_pop_thresholds[track]
+		var/high_pop_bound = pop_scale_thresholds[track]
+		var/scale_penalty = pop_scale_penalties[track]
+
+		var/perceived_pop = min(max(low_pop_bound, active_players), high_pop_bound)
+
+		var/divisor = high_pop_bound - low_pop_bound
+		/// If the bounds are equal, we'd be dividing by zero or worse, if upper is smaller than lower, we'd be increasing the factor, just make it 1 and continue.
+		/// this is only a problem for bad configs
+		if(divisor <= 0)
+			current_pop_scale_multipliers[track] = 1
+			continue
+		var/scalar = (perceived_pop - low_pop_bound) / divisor
+		var/penalty = scale_penalty - (scale_penalty * scalar)
+		var/calculated_multiplier = 1 - (penalty / 100)
+
+		current_pop_scale_multipliers[track] = calculated_multiplier
 
 /datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event)
 	. = event.preRunEvent()
@@ -660,6 +710,9 @@ SUBSYSTEM_DEF(gamemode)
 
 /// Loads config values from game_options.txt
 /datum/controller/subsystem/gamemode/proc/load_config_vars()
+	halted_storyteller = CONFIG_GET(flag/halt_storyteller)
+	allow_pop_scaling = CONFIG_GET(flag/allow_storyteller_pop_scaling)
+
 	point_gain_multipliers[EVENT_TRACK_MUNDANE] = CONFIG_GET(number/mundane_point_gain_multiplier)
 	point_gain_multipliers[EVENT_TRACK_MODERATE] = CONFIG_GET(number/moderate_point_gain_multiplier)
 	point_gain_multipliers[EVENT_TRACK_MAJOR] = CONFIG_GET(number/major_point_gain_multiplier)
@@ -683,6 +736,18 @@ SUBSYSTEM_DEF(gamemode)
 	point_thresholds[EVENT_TRACK_MAJOR] = CONFIG_GET(number/major_point_threshold)
 	point_thresholds[EVENT_TRACK_ROLESET] = CONFIG_GET(number/roleset_point_threshold)
 	point_thresholds[EVENT_TRACK_OBJECTIVES] = CONFIG_GET(number/objectives_point_threshold)
+
+	pop_scale_thresholds[EVENT_TRACK_MUNDANE] = CONFIG_GET(number/mundane_pop_scale_threshold)
+	pop_scale_thresholds[EVENT_TRACK_MODERATE] = CONFIG_GET(number/moderate_pop_scale_threshold)
+	pop_scale_thresholds[EVENT_TRACK_MAJOR] = CONFIG_GET(number/major_pop_scale_threshold)
+	pop_scale_thresholds[EVENT_TRACK_ROLESET] = CONFIG_GET(number/roleset_pop_scale_threshold)
+	pop_scale_thresholds[EVENT_TRACK_OBJECTIVES] = CONFIG_GET(number/objectives_pop_scale_threshold)
+
+	pop_scale_penalties[EVENT_TRACK_MUNDANE] = CONFIG_GET(number/mundane_pop_scale_penalty)
+	pop_scale_penalties[EVENT_TRACK_MODERATE] = CONFIG_GET(number/moderate_pop_scale_penalty)
+	pop_scale_penalties[EVENT_TRACK_MAJOR] = CONFIG_GET(number/major_pop_scale_penalty)
+	pop_scale_penalties[EVENT_TRACK_ROLESET] = CONFIG_GET(number/roleset_pop_scale_penalty)
+	pop_scale_penalties[EVENT_TRACK_OBJECTIVES] = CONFIG_GET(number/objectives_pop_scale_penalty)
 
 /datum/controller/subsystem/gamemode/proc/storyteller_vote_choices()
 	var/client_amount = GLOB.clients.len
@@ -760,6 +825,26 @@ SUBSYSTEM_DEF(gamemode)
 			dat += "<BR><font color='#888888'><i>Those are thresholds the tracks require to reach with points to make an event.</i></font>"
 			for(var/track in event_tracks)
 				dat += "<BR>[track]: <a href='?src=[REF(src)];panel=main;action=vars;var=pts_threshold;track=[track]'>[point_thresholds[track]]</a>"
+
+			dat += "<HR><b>Allow Storyteller Pop Scaling:</b> <a href='?src=[REF(src)];panel=main;action=vars;var=allow_pop_scaling'>[allow_pop_scaling ? "Yes" : "No"]</a>"
+			dat += "<BR><font color='#888888'><i>This makes the events happens less frequency the less population there is, up to a cap.</i></font>"
+			dat += "<BR>Current pop penalties: "
+			for(var/track in event_tracks)
+				var/multiplier
+				if(allow_pop_scaling)
+					multiplier =  (1 - current_pop_scale_multipliers[track]) * 100
+				else
+					multiplier = 0
+				dat += "[track]: -[multiplier]% "
+			dat += "<BR><b>Population Scale Thresholds:</b>"
+			dat += "<BR><font color='#888888'><i>Those are thresholds at which the population scaling penalties for event frequency no longer will apply.</i></font>"
+			for(var/track in event_tracks)
+				dat += "<BR>[track]: <a href='?src=[REF(src)];panel=main;action=vars;var=pop_scale_threshold;track=[track]'>[pop_scale_thresholds[track]]</a>"
+
+			dat += "<BR><b>Population Scale Penalties:</b>"
+			dat += "<BR><font color='#888888'><i>Those are maximum penalties for event frequencies from population scaling. Calculates as percentages.</i></font>"
+			for(var/track in event_tracks)
+				dat += "<BR>[track]: <a href='?src=[REF(src)];panel=main;action=vars;var=pop_scale_penalty;track=[track]'>[pop_scale_penalties[track]]%</a>"
 
 		if(GAMEMODE_PANEL_MAIN)
 			var/even = TRUE
@@ -909,7 +994,10 @@ SUBSYSTEM_DEF(gamemode)
 			occurence_string += " (shared: [event.get_occurences()])"
 		dat += "<td>[occurence_string]</td>" //Occurences
 		dat += "<td>[event.min_players]</td>" //Minimum pop
-		dat += "<td>[event.earliest_start / (1 MINUTES)] m.</td>" //Minimum time
+		if(event.roundstart) //Minimum time
+			dat += "<td>-N/A-</td>"
+		else
+			dat += "<td>[event.earliest_start / (1 MINUTES)] m.</td>"
 		dat += "<td>[assoc_spawn_weight[event] ? "Yes" : "No"]</td>" //Can happen?
 		var/weight_string = "([event.calculated_weight] /raw.[event.weight])"
 		if(assoc_spawn_weight[event])
@@ -950,6 +1038,10 @@ SUBSYSTEM_DEF(gamemode)
 				if("vars")
 					var/track = href_list["track"]
 					switch(href_list["var"])
+						if("allow_pop_scaling")
+							allow_pop_scaling = !allow_pop_scaling
+							if(allow_pop_scaling)
+								update_pop_scaling()
 						if("pts_multiplier")
 							var/new_value = input(usr, "New value:", "Set new value") as num|null
 							if(isnull(new_value) || new_value < 0)
@@ -974,6 +1066,20 @@ SUBSYSTEM_DEF(gamemode)
 								return
 							message_admins("[key_name_admin(usr)] set point threshold of [track] track to [new_value].")
 							point_thresholds[track] = new_value
+						if("pop_scale_threshold")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set population scale threshold of [track] track to [new_value].")
+							pop_scale_thresholds[track] = new_value
+							update_pop_scaling()
+						if("pop_scale_penalty")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set population scale penalty of [track] track to [new_value].")
+							pop_scale_penalties[track] = new_value
+							update_pop_scaling()
 				if("reload_config_vars")
 					message_admins("[key_name_admin(usr)] reloaded gamemode config vars.")
 					load_config_vars()

@@ -209,6 +209,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/interview_accepted = FALSE
 	/// Jukebox pref. It's not in a flag anywhere because the flags need to be split around first and this pref is important enough to implement now
 	var/hear_jukebox = TRUE
+	/// Admin pref to hear storyteller logging, because bitfield is full lol.
+	var/hear_storyteller = TRUE
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -1113,6 +1115,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Adminhelp Sounds:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Enabled":"Disabled"]</a><br>"
 				dat += "<b>Prayer Sounds:</b> <a href = '?_src_=prefs;preference=hear_prayers'>[(toggles & SOUND_PRAYERS)?"Enabled":"Disabled"]</a><br>"
 				dat += "<b>Announce Login:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Enabled":"Disabled"]</a><br>"
+				dat += "<b>Storyteller Messages:</b> <a href='?_src_=prefs;preference=hear_storyteller'>[hear_storyteller ?"Enabled":"Disabled"]</a><br>"
 				dat += "<br>"
 				dat += "<b>Combo HUD Lighting:</b> <a href = '?_src_=prefs;preference=combohud_lighting'>[(toggles & COMBOHUD_LIGHTING)?"Full-bright":"No Change"]</a><br>"
 				dat += "<br>"
@@ -2568,6 +2571,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					windowflashing = !windowflashing
 
 				//here lies the badmins
+				if("hear_storyteller")
+					user.client.togglehearstoryteller()
 				if("hear_adminhelps")
 					user.client.toggleadminhelpsound()
 				if("hear_prayers")

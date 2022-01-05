@@ -297,6 +297,8 @@
 
 /datum/config_entry/flag/halt_storyteller // Stops storyteller from playing random events and spawning antags. This can be freely toggled in game in the storyteller menu
 
+/datum/config_entry/flag/allow_storyteller_pop_scaling // Allows storyteller to scale down the event frequency by population
+
 /datum/config_entry/number/events_min_time_mul // Multipliers for random events minimal starting time and minimal players amounts
 	config_entry_value = 1
 	min_val = 0
@@ -423,6 +425,58 @@
 
 /datum/config_entry/number/objectives_min_pop
 	config_entry_value = OBJECTIVES_MIN_POP
+	integer = TRUE
+	min_val = 0
+
+// Pop scalling thresholds
+/datum/config_entry/number/mundane_pop_scale_threshold
+	config_entry_value = MUNDANE_POP_SCALE_THRESHOLD
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/moderate_pop_scale_threshold
+	config_entry_value = MODERATE_POP_SCALE_THRESHOLD
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/major_pop_scale_threshold
+	config_entry_value = MAJOR_POP_SCALE_THRESHOLD
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/roleset_pop_scale_threshold
+	config_entry_value = ROLESET_POP_SCALE_THRESHOLD
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/objectives_pop_scale_threshold
+	config_entry_value = OBJECTIVES_POP_SCALE_THRESHOLD
+	integer = TRUE
+	min_val = 0
+
+// Pop scalling penalties
+/datum/config_entry/number/mundane_pop_scale_penalty
+	config_entry_value = MUNDANE_POP_SCALE_PENALTY
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/moderate_pop_scale_penalty
+	config_entry_value = MODERATE_POP_SCALE_PENALTY
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/major_pop_scale_penalty
+	config_entry_value = MAJOR_POP_SCALE_PENALTY
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/roleset_pop_scale_penalty
+	config_entry_value = ROLESET_POP_SCALE_PENALTY
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/objectives_pop_scale_penalty
+	config_entry_value = OBJECTIVES_POP_SCALE_PENALTY
 	integer = TRUE
 	min_val = 0
 
