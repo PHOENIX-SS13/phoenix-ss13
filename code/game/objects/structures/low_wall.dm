@@ -94,6 +94,10 @@
 					to_chat(user, SPAN_NOTICE("You cut \the [src] down."))
 					deconstruct(TRUE)
 			return TRUE
+	if(istype(weapon, /obj/item/stack/sheet))
+		var/obj/item/stack/sheet/my_sheet = weapon
+		if(my_sheet.try_install_window(user, src.loc, src))
+			return TRUE
 	if(!user.combat_mode && !(weapon.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(weapon, loc, silent = FALSE, user_click_modifiers = modifiers))
 			return TRUE
@@ -103,6 +107,49 @@
 	var/datum/material/plating_mat_ref = GET_MATERIAL_REF(plating_material)
 	new plating_mat_ref.sheet_type(loc, 2)
 	qdel(src)
+
+/obj/structure/low_wall/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
+	if(is_top_obstructed())
+		return FALSE
+	switch(the_rcd.mode)
+		if(RCD_DECONSTRUCT)
+			return list("mode" = RCD_DECONSTRUCT, "delay" = 20, "cost" = 5)
+		if(RCD_WINDOWGRILLE)
+			/// Slight copypasta from grilles
+			var/cost = 8
+			var/delay = 2 SECONDS
+
+			if(the_rcd.window_glass == RCD_WINDOW_REINFORCED)
+				delay = 4 SECONDS
+				cost = 12
+
+			return rcd_result_with_memory(
+				list("mode" = RCD_WINDOWGRILLE, "delay" = delay, "cost" = cost),
+				get_turf(src), RCD_MEMORY_WINDOWGRILLE,
+			)
+	return FALSE
+
+/obj/structure/low_wall/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
+	if(is_top_obstructed())
+		return FALSE
+	switch(passed_mode)
+		if(RCD_DECONSTRUCT)
+			to_chat(user, SPAN_NOTICE("You deconstruct \the [src]."))
+			qdel(src)
+			return TRUE
+		if(RCD_WINDOWGRILLE)
+			/// Slight copypasta from grilles
+			var/turf/my_turf = loc
+			if(!ispath(the_rcd.window_type, /obj/structure/window))
+				CRASH("Invalid window path type in RCD: [the_rcd.window_type]")
+			var/obj/structure/window/window_path = the_rcd.window_type
+			if(!valid_window_location(my_turf, user.dir, is_fulltile = initial(window_path.fulltile)))
+				return FALSE
+			to_chat(user, SPAN_NOTICE("You construct the window."))
+			var/obj/structure/window/WD = new the_rcd.window_type(my_turf, user.dir)
+			WD.set_anchored(TRUE)
+			return TRUE
+	return FALSE
 
 /obj/structure/low_wall/proc/set_wall_paint(new_paint)
 	wall_paint = new_paint
