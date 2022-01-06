@@ -983,7 +983,7 @@
 		// Scale the icon.
 		I.transform *= 0.4
 		// The icon should not rotate.
-		I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+		I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | RESET_COLOR
 
 		// Set the direction of the icon animation.
 		var/direction = get_dir(src, A)
