@@ -334,20 +334,6 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	// Express that we've unignored the selected player in chat
 	to_chat(src, "<span class='infoplain'>You are no longer ignoring [selection] on the OOC channel.</span>")
 
-/client/proc/show_previous_roundend_report()
-	set name = "Your Last Round"
-	set category = "OOC"
-	set desc = "View the last round end report you've seen"
-
-	SSticker.show_roundend_report(src, report_type = PERSONAL_LAST_ROUND)
-
-/client/proc/show_servers_last_roundend_report()
-	set name = "Server's Last Round"
-	set category = "OOC"
-	set desc = "View the last round end report from this server"
-
-	SSticker.show_roundend_report(src, report_type = SERVER_LAST_ROUND)
-
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"
 	set category = "OOC"
