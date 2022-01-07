@@ -395,7 +395,9 @@
 //this is shitcode but all of construction is shitcode and needs a refactor, it works for now
 //If you find this like 4 years later and construction still hasn't been refactored, I'm so sorry for this //Adding a timestamp, I found this in 2020, I hope it's from this year -Lemon
 //2021 AND STILLLL GOING STRONG
-/obj/structure/window/reinforced/attackby_secondary(obj/item/tool, mob/user, params)
+/obj/structure/window/attackby_secondary(obj/item/tool, mob/user, params)
+	if(!reinf)
+		return
 	switch(state)
 		if(RWINDOW_SECURE)
 			if(tool.tool_behaviour == TOOL_WELDER)
