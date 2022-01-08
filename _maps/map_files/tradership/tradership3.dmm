@@ -1541,17 +1541,6 @@
 	},
 /turf/open/floor/iron,
 /area/commons/lounge)
-"uK" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 4
-	},
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchen_counter";
-	name = "Kitchen Counter Shutters"
-	},
-/turf/open/floor/iron/dark,
-/area/engineering/atmos)
 "uL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -33974,7 +33963,7 @@ oi
 or
 Mo
 uO
-uK
+uO
 AE
 rQ
 LO
