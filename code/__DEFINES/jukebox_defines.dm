@@ -19,3 +19,5 @@
 #define JUKEBOX_AMBIENCE_CLAMP_MAXIMUM 25
 /// How much %s do we clamp from ambience per each volume of the jukebox playing
 #define JUKEBOX_AMBIENCE_CLAMP_PER_VOLUME 1
+
+#define BOOMBOX_RANGE_MULTIPLIER 0.6

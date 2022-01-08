@@ -1,28 +1,44 @@
 /// Track that is currently playing from some jukebox
 /datum/jukebox_playing_track
+	var/atom/movable/song_source
 	var/obj/machinery/jukebox/jukebox
+	var/obj/item/boombox/boombox
 	var/datum/jukebox_track/track
 	var/channel
 	var/end_when = 0
+	var/max_range
+	var/falloff_distance
 
-/datum/jukebox_playing_track/New(obj/machinery/jukebox/jukebox, datum/jukebox_track/track, channel)
-	src.jukebox = jukebox
+/datum/jukebox_playing_track/New(atom/movable/song_source, datum/jukebox_track/track, channel, range_multiplier = 1)
+	src.song_source = song_source
+	//Currently rather bad hack
+	if(istype(song_source, /obj/machinery/jukebox))
+		jukebox = song_source
+	else
+		boombox = song_source
 	src.track = track
 	src.channel = channel
 	end_when = world.time + track.song_length
+
+	max_range = round(JUKEBOX_MAX_RANGE * range_multiplier)
+	falloff_distance = round(JUKEBOX_FALLOFF_DISTANCE * range_multiplier)
+
 
 	SSjukebox.playing_tracks += src
 	add_to_controllers(SSjukebox.controller_list)
 
 /datum/jukebox_playing_track/Destroy()
-	jukebox.song_ended()
+	if(jukebox)
+		jukebox.song_ended()
+	else
+		boombox.song_ended()
 	SSjukebox.playing_tracks -= src
 	SSjukebox.free_channel(channel)
 	remove_from_controllers(SSjukebox.controller_list)
 	return ..()
 
 /datum/jukebox_playing_track/proc/add_to_controllers(list/controller_list)
-	var/list/hearers = get_hearers_in_view(JUKEBOX_VIEW_RANGE, jukebox)
+	var/list/hearers = get_hearers_in_view(JUKEBOX_VIEW_RANGE, song_source)
 	for(var/datum/jukebox_controller/controller in controller_list)
 		controller.add_played_track(src, hearers)
 
@@ -32,7 +48,7 @@
 
 /// Updates all controllers
 /datum/jukebox_playing_track/proc/update_controllers(list/controller_list)
-	var/list/hearers = get_hearers_in_view(JUKEBOX_VIEW_RANGE, jukebox)
+	var/list/hearers = get_hearers_in_view(JUKEBOX_VIEW_RANGE, song_source)
 	for(var/datum/jukebox_controller/controller in controller_list)
 		controller.update_played_track(src, hearers)
 
@@ -69,12 +85,12 @@
 	return ..()
 
 /datum/jukebox_controller/proc/update_sound_data(sound/sound_to_update, datum/jukebox_playing_track/played_track, list/jukebox_hearers)
-	var/obj/machinery/jukebox/jukebox = played_track.jukebox
+	var/atom/movable/song_source = played_track.song_source
 	var/mob/client_mob = client.mob
 	var/in_jukebox_viscinity = FALSE
 	var/target_volume = 100
 
-	var/turf/jukebox_turf = get_turf(jukebox)
+	var/turf/jukebox_turf = get_turf(song_source)
 	var/turf/relative_jukebox_turf = jukebox_turf
 	var/turf/mob_turf = get_turf(client_mob)
 
@@ -101,8 +117,9 @@
 	else
 		distance = get_dist(jukebox_turf, mob_turf)
 
-	target_volume *= (jukebox.volume / 100)
-	target_volume -= (max(distance - JUKEBOX_FALLOFF_DISTANCE, 0) ** (1 / JUKEBOX_FALLOFF_EXPONENT)) / ((max(JUKEBOX_MAX_RANGE, distance) - JUKEBOX_FALLOFF_DISTANCE) ** (1 / JUKEBOX_FALLOFF_EXPONENT)) * target_volume
+	var/jukebox_volume = played_track.jukebox ? played_track.jukebox.volume : played_track.boombox.volume
+	target_volume *= (jukebox_volume / 100)
+	target_volume -= (max(distance - played_track.falloff_distance, 0) ** (1 / JUKEBOX_FALLOFF_EXPONENT)) / ((max(played_track.max_range, distance) - played_track.falloff_distance) ** (1 / JUKEBOX_FALLOFF_EXPONENT)) * target_volume
 
 	if(target_volume <= 0)
 		sound_to_update.status |= SOUND_MUTE
@@ -123,7 +140,7 @@
 
 	/// If we're close enough, check if we're jukebox view or the same area to not get echo.
 	if(distance < JUKEBOX_ECHO_RANGE)
-		if(get_area(client_mob) == get_area(jukebox))
+		if(get_area(client_mob) == get_area(song_source))
 			in_jukebox_viscinity = TRUE
 		else if(client_mob in jukebox_hearers)
 			in_jukebox_viscinity = TRUE
@@ -156,7 +173,7 @@
 	///Create a sound for us from the track
 	var/datum/jukebox_track/track_info = played_track.track
 	var/sound/new_sound = new(track_info.song_path, repeat = FALSE, wait = 0, volume = 100, channel = played_track.channel)
-	new_sound.falloff = JUKEBOX_MAX_RANGE
+	new_sound.falloff = played_track.max_range
 	new_sound.status |= SOUND_STREAM
 	update_sound_data(new_sound, played_track, jukebox_hearers)
 	SEND_SOUND(client, new_sound)
