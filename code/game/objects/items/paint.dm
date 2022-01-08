@@ -59,6 +59,7 @@
 	gender = PLURAL
 	name = "adaptive paint"
 	icon_state = "paint_neutral"
+	custom_price = PAYCHECK_HARD * 2 //200 bucks for premium paint
 
 /obj/item/paint/anycolor/examine(mob/user)
 	. = ..()
