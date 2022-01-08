@@ -4,7 +4,7 @@
 	desc = "Heavy duty mechanical shutters with an atmospheric seal that keeps them airtight once closed."
 	icon = 'icons/obj/doors/shutters.dmi'
 	layer = SHUTTER_LAYER
-	closingLayer = SHUTTER_LAYER
+	closingLayer = SHUTTER_LAYER_CLOSED
 	damage_deflection = 20
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 75, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
 	max_integrity = 100

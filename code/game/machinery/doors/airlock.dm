@@ -21,12 +21,15 @@
 /// Someone, for the love of god, profile this.  Is there a reason to cache mutable_appearance
 /// if so, why are we JUST doing the airlocks when we can put this in mutable_appearance.dm for
 /// everything
-/proc/get_airlock_overlay(icon_state, icon_file, em_block)
+/proc/get_airlock_overlay(icon_state, icon_file, em_block, color)
 	var/static/list/airlock_overlays = list()
 
-	var/base_icon_key = "[icon_state][icon_file]"
+	var/base_icon_key = "[icon_state][icon_file][color]"
 	if(!(. = airlock_overlays[base_icon_key]))
-		. = airlock_overlays[base_icon_key] = mutable_appearance(icon_file, icon_state)
+		var/mutable_appearance/airlock_overlay = mutable_appearance(icon_file, icon_state)
+		if(color)
+			airlock_overlay.color = color
+		. = airlock_overlays[base_icon_key] = airlock_overlay
 	if(isnull(em_block))
 		return
 
@@ -84,7 +87,7 @@
 
 /obj/machinery/door/airlock
 	name = "airlock"
-	icon = 'icons/obj/doors/airlocks/station/public.dmi'
+	icon = 'icons/obj/doors/airlocks/station/airlock.dmi'
 	icon_state = "closed"
 	max_integrity = 300
 	var/normal_integrity = AIRLOCK_INTEGRITY_N
@@ -100,6 +103,8 @@
 
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_REQUIRES_SILICON | INTERACT_MACHINE_OPEN
 	blocks_emissive = NONE // Custom emissive blocker. We don't want the normal behavior.
+	align_to_windows = TRUE
+	door_align_type = /obj/machinery/door/airlock
 
 	var/security_level = 0 //How much are wires secured
 	var/aiControlDisabled = AI_WIRE_NORMAL //If 1, AI control is disabled until the AI hacks back in and disables the lock. If 2, the AI has bypassed the lock. If -1, the control is enabled but the AI had bypassed it earlier, so if it is disabled again the AI would have no trouble getting back in.
@@ -128,9 +133,17 @@
 	var/boltDown = 'sound/machines/boltsdown.ogg'
 	var/noPower = 'sound/machines/doorclick.ogg'
 	var/previous_airlock = /obj/structure/door_assembly //what airlock assembly mineral plating was applied to
-	var/airlock_material //material of inner filling; if its an airlock with glass, this should be set to "glass"
+	
+	var/stripe_overlays = 'icons/obj/doors/airlocks/station/airlock_stripe.dmi'
+	var/color_overlays = 'icons/obj/doors/airlocks/station/airlock_color.dmi'
+	var/glass_fill_overlays = 'icons/obj/doors/airlocks/station/glass_overlays.dmi'
 	var/overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi'
-	var/note_overlay_file = 'icons/obj/doors/airlocks/station/overlays.dmi' //Used for papers and photos pinned to the airlock
+	var/note_overlay_file = 'icons/obj/doors/airlocks/station/note_overlays.dmi' //Used for papers and photos pinned to the airlock
+
+	var/has_fill_overlays = TRUE
+
+	var/airlock_paint
+	var/stripe_paint
 
 	var/cyclelinkeddir = 0
 	var/obj/machinery/door/airlock/cyclelinkedairlock
@@ -149,8 +162,6 @@
 	wires = set_wires()
 	if(frequency)
 		set_frequency(frequency)
-	if(glass)
-		airlock_material = "glass"
 	if(security_level > AIRLOCK_SECURITY_IRON)
 		obj_integrity = normal_integrity * AIRLOCK_INTEGRITY_MULTIPLIER
 		max_integrity = normal_integrity * AIRLOCK_INTEGRITY_MULTIPLIER
@@ -522,10 +533,21 @@
 			light_state = AIRLOCK_LIGHT_OPENING
 
 	. += get_airlock_overlay(frame_state, icon, em_block = TRUE)
-	if(airlock_material)
-		. += get_airlock_overlay("[airlock_material]_[frame_state]", overlays_file, em_block = TRUE)
-	else
-		. += get_airlock_overlay("fill_[frame_state]", icon, em_block = TRUE)
+	if(has_fill_overlays)
+		if(glass)
+			. += get_airlock_overlay("glass_[frame_state]", glass_fill_overlays, em_block = TRUE)
+		else
+			. += get_airlock_overlay("fill_[frame_state]", icon, em_block = TRUE)
+
+	if(airlock_paint && color_overlays)
+		. += get_airlock_overlay(frame_state, color_overlays, color = airlock_paint)
+		if(!glass && has_fill_overlays)
+			. += get_airlock_overlay("fill_[frame_state]", color_overlays, color = airlock_paint)
+
+	if(stripe_paint && stripe_overlays)
+		. += get_airlock_overlay(frame_state, stripe_overlays, color = stripe_paint)
+		if(!glass && has_fill_overlays)
+			. += get_airlock_overlay("fill_[frame_state]", stripe_overlays, color = stripe_paint)
 
 	if(lights && hasPower())
 		. += get_airlock_overlay("lights_[light_state]", overlays_file, em_block = FALSE)
@@ -556,19 +578,19 @@
 
 	if(hasPower() && unres_sides)
 		if(unres_sides & NORTH)
-			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_n")
+			var/image/I = image(icon='icons/obj/doors/airlocks/unrestricted_overlays.dmi', icon_state="unres_n")
 			I.pixel_y = 32
 			. += I
 		if(unres_sides & SOUTH)
-			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_s")
+			var/image/I = image(icon='icons/obj/doors/airlocks/unrestricted_overlays.dmi', icon_state="unres_s")
 			I.pixel_y = -32
 			. += I
 		if(unres_sides & EAST)
-			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_e")
+			var/image/I = image(icon='icons/obj/doors/airlocks/unrestricted_overlays.dmi', icon_state="unres_e")
 			I.pixel_x = 32
 			. += I
 		if(unres_sides & WEST)
-			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_w")
+			var/image/I = image(icon='icons/obj/doors/airlocks/unrestricted_overlays.dmi', icon_state="unres_w")
 			I.pixel_x = -32
 			. += I
 
@@ -1186,14 +1208,20 @@
 	var/obj/machinery/door/airlock/airlock = airlock_type // we need to create a new instance of the airlock and assembly to read vars from them
 	var/obj/structure/door_assembly/assembly = initial(airlock.assemblytype)
 
-	if(airlock_material == "glass" && initial(assembly.noglass)) // prevents painting glass airlocks with a paint job that doesn't have a glass version, such as the freezer
+	if(glass && initial(assembly.noglass)) // prevents painting glass airlocks with a paint job that doesn't have a glass version, such as the freezer
 		to_chat(user, SPAN_WARNING("This paint job can only be applied to non-glass airlocks."))
 		return
 
 	// applies the user-chosen airlock's icon, overlays and assemblytype to the src airlock
 	painter.use_paint(user)
 	icon = initial(airlock.icon)
+	stripe_overlays = initial(airlock.stripe_overlays)
+	color_overlays = initial(airlock.color_overlays)
+	glass_fill_overlays = initial(airlock.glass_fill_overlays)
 	overlays_file = initial(airlock.overlays_file)
+	note_overlay_file = initial(airlock.note_overlay_file)
+	airlock_paint = initial(airlock.airlock_paint)
+	stripe_paint = initial(airlock.stripe_paint)
 	assemblytype = initial(airlock.assemblytype)
 	update_appearance()
 

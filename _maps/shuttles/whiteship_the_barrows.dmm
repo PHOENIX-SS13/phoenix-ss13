@@ -1018,7 +1018,6 @@
 /area/shuttle/barrow/bar)
 "hN" = (
 /obj/machinery/door/airlock/glass/incinerator/syndicatelava_exterior{
-	icon = 'icons/obj/doors/airlocks/station/command.dmi';
 	name = "Medical Bay"
 	},
 /turf/open/floor/wood,
@@ -1144,7 +1143,6 @@
 /area/shuttle/barrow/medbay)
 "or" = (
 /obj/machinery/door/airlock/glass/incinerator/syndicatelava_exterior{
-	icon = 'icons/obj/doors/airlocks/station/medical.dmi';
 	name = "Medical Bay"
 	},
 /turf/open/floor/wood,
