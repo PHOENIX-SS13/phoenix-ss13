@@ -13,7 +13,7 @@
 		if(GENITAL_ALWAYS_SHOW)
 			return FALSE
 		if(GENITAL_HIDDEN_BY_CLOTHES)
-			if((H.w_uniform && H.w_uniform.body_parts_covered & genital_location) || (H.wear_suit && H.wear_suit.body_parts_covered & genital_location))
+			if((H.w_uniform && H.w_uniform.body_parts_covered & genital_location) || (H.wear_suit && H.wear_suit.body_parts_covered & genital_location) || (H.belt && H.belt.body_parts_covered & genital_location))
 				return TRUE
 			else
 				return FALSE
