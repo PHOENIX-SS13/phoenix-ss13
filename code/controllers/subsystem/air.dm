@@ -717,7 +717,9 @@ GLOBAL_LIST_EMPTY(colored_images)
 				plane.alpha = 0
 			return TRUE
 
-/datum/controller/subsystem/air/proc/register_planetary_atmos(datum/atmosphere/atmos_datum)
+/datum/controller/subsystem/air/proc/register_planetary_atmos(gas_string)
+	if(planetary[gas_string])
+		return
 	var/datum/gas_mixture/immutable/planetary/our_gasmix = new
-	our_gasmix.parse_string_immutable(atmos_datum.gas_string)
-	planetary["[atmos_datum.gas_string]"] = our_gasmix
+	our_gasmix.parse_string_immutable(gas_string)
+	planetary[gas_string] = our_gasmix

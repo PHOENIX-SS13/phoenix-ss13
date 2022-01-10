@@ -54,14 +54,15 @@
 	#endif
 
 /turf/open/Initialize(mapload, inherited_virtual_z)
+	if(inherited_virtual_z)
+		virtual_z = inherited_virtual_z
 	if(!blocks_air)
 		air = new
 		air.copy_from_turf(src)
+		/// Register the planetary atmospherics we may have that isn't a part of a mapzone
+		/// In future only have this happen on /datum/map_zone level
 		if(planetary_atmos)
-			if(!SSair.planetary[initial_gas_mix])
-				var/datum/gas_mixture/immutable/planetary/mix = new
-				mix.parse_string_immutable(initial_gas_mix)
-				SSair.planetary[initial_gas_mix] = mix
+			SSair.register_planetary_atmos(initial_gas_mix)
 	. = ..()
 
 /turf/open/Destroy()
