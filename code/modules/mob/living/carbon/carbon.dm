@@ -594,7 +594,7 @@
 		become_blind(EYES_COVERED)
 	else if(tinttotal >= TINT_DARKENED)
 		cure_blind(EYES_COVERED)
-		overlay_fullscreen("tint", /atom/movable/screen/fullscreen/impaired, 2)
+		overlay_fullscreen("tint", /atom/movable/screen/fullscreen/impaired, HUD_IMPAIRMENT_HALF_BLIND)
 	else
 		cure_blind(EYES_COVERED)
 		clear_fullscreen("tint", 0)
