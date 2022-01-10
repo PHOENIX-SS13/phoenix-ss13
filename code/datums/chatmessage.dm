@@ -28,7 +28,7 @@
 /// The number of z-layer 'slices' usable by the chat message layering
 #define CHAT_LAYER_MAX_Z (CHAT_LAYER_MAX - CHAT_LAYER) / CHAT_LAYER_Z_STEP
 /// The color of the chat message when its an emote
-#define CHAT_MESSAGE_EMOTE_COLOR "#949494"
+#define CHAT_MESSAGE_EMOTE_COLOR "#ADADAD"
 
 /**
  * # Chat Message Overlay
