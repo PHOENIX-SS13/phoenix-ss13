@@ -29,7 +29,7 @@
 	/// Tags of the event
 	var/tags = list()
 	/// Multiplier to the penalty applied to weight for re-occurance. The smaller the lesser the penalty
-	var/reoccurence_penalty_multiplier = 1
+	var/reoccurence_penalty_multiplier = 0.75
 	/// Whether this event uses a shared occurence type, sharing occurence counts with the ones that also do have this set. Important if you want different event types to share weight penalties for recurrence.
 	var/shared_occurence_type
 	/// List of the shared occurence types.
