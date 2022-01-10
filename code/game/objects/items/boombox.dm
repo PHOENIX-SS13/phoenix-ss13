@@ -30,15 +30,15 @@
 
 /obj/item/boombox/attack_self(mob/user)
 	show_boombox_ui(user)
-	return
+	return TRUE
 
 /obj/item/boombox/RightClick(mob/user)
 	show_boombox_ui(user)
-	return
+	return TRUE
 
 /obj/item/boombox/attack_robot(mob/user)
 	show_boombox_ui(user)
-	return
+	return TRUE
 
 /obj/item/boombox/Destroy()
 	stop_song()
