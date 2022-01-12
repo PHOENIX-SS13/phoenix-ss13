@@ -53,6 +53,12 @@
 	icon_state = "cuirass"
 	inhand_icon_state = "armor"
 
+/obj/item/clothing/suit/armor/vest/debug
+	name = "fast response emergency tech vest"
+	desc = "A sleek piece of armour designed for FRET agents."
+	armor = list("melee" = 95, "bullet" = 95, "laser" = 95, "energy" = 95, "bomb" = 95, "bio" = 95, "rad" = 100, "fire" = 98, "acid" = 98)
+	w_class = WEIGHT_CLASS_TINY
+
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"
 	desc = "A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence."

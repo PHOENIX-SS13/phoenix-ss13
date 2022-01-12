@@ -28,19 +28,19 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	//Example list of offset_features:
 	/*
 	list(
-		OFFSET_UNIFORM = list(0,0), 
-		OFFSET_ID = list(0,0), 
-		OFFSET_GLOVES = list(0,0), 
-		OFFSET_GLASSES = list(0,0), 
-		OFFSET_EARS = list(0,0), 
-		OFFSET_SHOES = list(0,0), 
-		OFFSET_S_STORE = list(0,0), 
-		OFFSET_FACEMASK = list(0,0), 
-		OFFSET_HEAD = list(0,0), 
-		OFFSET_FACE = list(0,0), 
-		OFFSET_BELT = list(0,0), 
-		OFFSET_BACK = list(0,0), 
-		OFFSET_SUIT = list(0,0), 
+		OFFSET_UNIFORM = list(0,0),
+		OFFSET_ID = list(0,0),
+		OFFSET_GLOVES = list(0,0),
+		OFFSET_GLASSES = list(0,0),
+		OFFSET_EARS = list(0,0),
+		OFFSET_SHOES = list(0,0),
+		OFFSET_S_STORE = list(0,0),
+		OFFSET_FACEMASK = list(0,0),
+		OFFSET_HEAD = list(0,0),
+		OFFSET_FACE = list(0,0),
+		OFFSET_BELT = list(0,0),
+		OFFSET_BACK = list(0,0),
+		OFFSET_SUIT = list(0,0),
 		OFFSET_NECK = list(0,0),
 		OFFSET_INHANDS = list(0,0)
 		)
@@ -256,6 +256,23 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	var/list/learnable_languages = list(/datum/language/common)
 	/// Whether this species is forbidden from customizing its body size in prefs
 	var/body_size_restricted
+	/// List of keyed lists of MALE and FEMALE scream-sounds
+	var/list/scream_sounds = list(
+		MALE = list(
+			'sound/voice/scream_m1.ogg',
+			'sound/voice/scream_m2.ogg',
+		),
+		FEMALE = list(
+			'sound/voice/scream_f1.ogg',
+			'sound/voice/scream_f2.ogg',
+		),
+		NEUTER = list(
+			'sound/voice/scream_m1.ogg',
+			'sound/voice/scream_m2.ogg',
+			'sound/voice/scream_f1.ogg',
+			'sound/voice/scream_f2.ogg',
+		)
+	)
 
 ///////////
 // PROCS //
@@ -263,7 +280,6 @@ GLOBAL_LIST_EMPTY(customizable_races)
 
 
 /datum/species/New()
-
 	if(!limbs_id) //if we havent set a limbs id to use, just use our own id
 		limbs_id = id
 	wings_icons = string_list(wings_icons)
@@ -1134,7 +1150,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 			excused = TRUE
 		if(!excused)
 			return FALSE
-		
+
 	var/perceived_bodytype = get_bodytype(slot, I)
 
 	if(!excused && !(I.allowed_bodytypes & perceived_bodytype))

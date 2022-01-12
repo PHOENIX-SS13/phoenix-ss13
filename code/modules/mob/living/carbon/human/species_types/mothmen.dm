@@ -30,6 +30,9 @@
 	payday_modifier = 0.75
 	family_heirlooms = list(/obj/item/flashlight/lantern/heirloom_moth)
 	limbs_icon = 'icons/mob/species/moth_parts_greyscale.dmi'
+	scream_sounds = list(
+		NEUTER = 'sound/voice/moth/scream_moth.ogg'
+	)
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
 	. = ..()

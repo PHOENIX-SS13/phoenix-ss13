@@ -20,6 +20,9 @@
 	mutantstomach = /obj/item/organ/stomach/fly
 	mutantappendix = /obj/item/organ/appendix/fly
 	mutant_organs = list(/obj/item/organ/fly, /obj/item/organ/fly/groin)
+	scream_sounds = list(
+		NEUTER = 'sound/voice/scream_moth.ogg'
+	)
 
 /datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, delta_time, times_fired)
 	if(chem.type == /datum/reagent/toxin/pestkiller)

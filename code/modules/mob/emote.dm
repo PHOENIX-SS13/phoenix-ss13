@@ -118,6 +118,11 @@
 		if(current_confusion < BEYBLADE_CONFUSION_LIMIT)
 			user.add_confusion(BEYBLADE_CONFUSION_INCREMENT)
 
+/datum/emote/beep
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/emotes/twobeep.ogg'
+	mob_type_allowed_typecache = list(/mob/living) //Beep already exists on brains and silicons
 
 #undef BEYBLADE_PUKE_THRESHOLD
 #undef BEYBLADE_PUKE_NUTRIENT_LOSS

@@ -898,6 +898,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		game = create_mafia_game("mafia")
 	game.ui_interact(usr)
 
+/mob/dead/observer/CtrlClickOn(mob/user)
+	quickicspawn(user)
+
 /mob/dead/observer/CtrlShiftClick(mob/user)
 	if(isobserver(user) && check_rights(R_SPAWN))
 		change_mob_type( /mob/living/carbon/human , null, null, TRUE) //always delmob, ghosts shouldn't be left lingering
@@ -968,3 +971,137 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			client.images += t_ray_images
 		else
 			client.images -= stored_t_ray_images
+
+#define CHOICE_CANCEL "Cancel"
+#define CHOICE_YES "Yes"
+#define CHOICE_NO "No"
+#define CHOICE_TPOPTION_QUIET "Quietly"
+#define CHOICE_TPOPTION_LOUD "Noisily"
+#define CHOICE_TPOPTION_POD "Pod"
+
+/mob/dead/observer/proc/quickicspawn(mob/user)
+	if(isobserver(user) && check_rights(R_SPAWN))
+		var/list/outfits = list()
+		outfits["FRET Outfit"] = /datum/outfit/admin
+		outfits["FRET (Hardsuit)"] = /datum/outfit/admin/hardsuit
+		outfits["Show All"] = "Show All"
+
+		var/dresscode
+		var/teleport_option = tgui_alert(
+			usr,
+			"How would you like to be spawned in?",
+			"IC Quick Spawn",
+			list(
+				CHOICE_TPOPTION_QUIET,
+				CHOICE_TPOPTION_LOUD,
+				CHOICE_TPOPTION_POD,
+				CHOICE_CANCEL,
+			)
+		)
+
+		if (teleport_option == CHOICE_CANCEL) return
+
+		var/character_option = tgui_alert(
+			usr,
+			"Which character?",
+			"IC Quick Spawn",
+			list("Selected Character", "Randomly Created", CHOICE_CANCEL)
+		)
+		if (character_option == CHOICE_CANCEL) return
+
+		var/initial_outfits = input("Select outfit", "Quick Dress") as null|anything in outfits
+
+		if (!initial_outfits || initial_outfits == "" || initial_outfits == CHOICE_CANCEL) return
+
+		if (initial_outfits == "As Job...")
+			var/list/job_paths = subtypesof(/datum/outfit/job)
+			var/list/job_outfits = list()
+			for(var/path in job_paths)
+				var/datum/outfit/O = path
+				job_outfits[initial(O.name)] = path
+
+			dresscode = input("Select job equipment", "Robust quick dress shop") as null|anything in sortList(job_outfits)
+			dresscode = job_outfits[dresscode]
+			if(isnull(dresscode))
+				return
+
+		if (initial_outfits == "Show All")
+			dresscode = client.robust_dress_shop()
+			if (!dresscode)
+				return
+		else
+			dresscode = outfits[initial_outfits]
+
+		// We're spawning someone else
+		var/give_return
+		if (user != usr)
+			give_return = tgui_alert(
+				usr,
+				"Do you want to give them the power to return? Not recommended for non-admins.",
+				"Give power?",
+				list(CHOICE_YES, CHOICE_NO, CHOICE_CANCEL)
+			)
+			if(give_return == CHOICE_CANCEL)
+				return
+
+
+		var/turf/current_turf = get_turf(user)
+		var/mob/living/carbon/human/spawned_player = new(user)
+
+		if (character_option == "Selected Character")
+			spawned_player.name = user.name
+			spawned_player.real_name = user.real_name
+
+			var/mob/living/carbon/human/H = spawned_player
+			user.client?.prefs.apply_prefs_to(H)
+			H.dna.update_dna_identity()
+
+		QDEL_IN(user, 1)
+
+		if (teleport_option == CHOICE_TPOPTION_LOUD)
+			playsound(spawned_player, 'sound/magic/Disable_Tech.ogg', 100, TRUE)
+
+		if(user.mind && isliving(spawned_player))
+			user.mind.transfer_to(spawned_player, TRUE) // second argument to force key move to new mob
+		else
+			spawned_player.ckey = user.key
+
+		// Remove all return_back spells from the mind, in case their body got removed by other means
+		for(var/obj/effect/proc_holder/spell/self/return_back/knownspell in spawned_player.mind.spell_list)
+			spawned_player.mind.RemoveSpell(knownspell)
+
+		if(give_return != CHOICE_NO)
+			if(teleport_option == CHOICE_TPOPTION_QUIET)
+				spawned_player.mind.AddSpell(new /obj/effect/proc_holder/spell/self/return_back(null, TRUE))
+			else
+				spawned_player.mind.AddSpell(new /obj/effect/proc_holder/spell/self/return_back)
+
+		if(dresscode != "Naked")
+			spawned_player.equipOutfit(dresscode)
+
+		switch(teleport_option)
+			if(CHOICE_TPOPTION_POD)
+				var/obj/structure/closet/supplypod/empty_pod = new()
+
+				empty_pod.style = STYLE_BLUESPACE
+				empty_pod.bluespace = TRUE
+				empty_pod.explosionSize = list(0,0,0,0)
+				empty_pod.desc = "A sleek, and slightly worn bluespace pod - its probably seen many deliveries..."
+
+				spawned_player.forceMove(empty_pod)
+
+				new /obj/effect/pod_landingzone(current_turf, empty_pod)
+			else
+				spawned_player.forceMove(current_turf)
+
+				var/datum/effect_system/spark_spread/quantum/sparks = new
+				sparks.set_up(10, 1, spawned_player)
+				sparks.attach(get_turf(spawned_player))
+				sparks.start()
+
+#undef CHOICE_CANCEL
+#undef CHOICE_YES
+#undef CHOICE_NO
+#undef CHOICE_TPOPTION_QUIET
+#undef CHOICE_TPOPTION_LOUD
+#undef CHOICE_TPOPTION_POD

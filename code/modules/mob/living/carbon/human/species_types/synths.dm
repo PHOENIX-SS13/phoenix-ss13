@@ -24,6 +24,9 @@
 	var/list/initial_inherent_traits
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	species_language_holder = /datum/language_holder/synthetic
+	scream_sounds = list(
+		NEUTER = 'sound/voice/scream_silicon.ogg'
+	)
 
 /datum/species/synth/New()
 	initial_species_traits = species_traits.Copy()

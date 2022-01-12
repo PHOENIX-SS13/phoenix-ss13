@@ -553,7 +553,7 @@
 	inhand_icon_state = "plushie_borb"
 	attack_verb_continuous = list("pecks", "peeps")
 	attack_verb_simple = list("peck", "peep")
-	squeak_override = list('hrzn/modules/emotes/sound/voice/peep_once.ogg' = 1)
+	squeak_override = list('sound/voice/peep_once.ogg' = 1)
 
 /obj/item/toy/plush/nukeplushie
 	name = "operative plushie"

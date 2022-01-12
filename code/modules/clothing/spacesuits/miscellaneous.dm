@@ -287,6 +287,32 @@ Contains:
 	allowed = list(/obj/item/tank/internals, /obj/item/bikehorn, /obj/item/instrument, /obj/item/food/grown/banana, /obj/item/grown/bananapeel)
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 
+/obj/item/clothing/head/helmet/space/hardsuit/ert/fret
+	name = "fast response emergency tech helmet"
+	desc = "The integrated helmet of a FRET hardsuit, this one has blue highlights."
+	icon_state = "hardsuit0-flight"
+	inhand_icon_state = "hardsuit0-flight"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	hardsuit_type = "flight"
+	armor = list("melee" = 98, "bullet" = 98, "laser" = 98, "energy" = 98, "bomb" = 98, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+
+/obj/item/clothing/suit/space/hardsuit/ert/fret
+	name = "fast response emergency tech hardsuit"
+	desc = "A specialised hardsuit for FRET agents."
+	icon_state = "flightsuit"
+	inhand_icon_state = "flightsuit"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/fret
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list("melee" = 98, "bullet" = 98, "laser" = 98, "energy" = 98, "bomb" = 98, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	cell = /obj/item/stock_parts/cell/infinite
+	clothing_flags = BLOCKS_SHOVE_KNOCKDOWN
+	w_class = WEIGHT_CLASS_TINY
+	strip_delay = 1000
+	equip_delay_other = 1000
+	slowdown = 0
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	worn_template_greyscale_color = "#0056E5"
+
 /obj/item/clothing/suit/space/eva
 	name = "EVA suit"
 	icon_state = "space"

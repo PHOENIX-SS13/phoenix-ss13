@@ -62,3 +62,22 @@
 	message = "activates their slow clap processor."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/machines/slowclap.ogg'
+
+/datum/emote/silicon/dwoop
+	key = "dwoop"
+	key_third_person = "dwoops"
+	message = "chirps happily!"
+	vary = TRUE
+	sound = 'sound/voice/emotes/dwoop.ogg'
+
+/datum/emote/silicon/yes
+	key = "yes"
+	message = "emits an affirmative blip."
+	vary = TRUE
+	sound = 'sound/voice/emotes/synth_yes.ogg'
+
+/datum/emote/silicon/no
+	key = "no"
+	message = "emits a negative blip."
+	vary = TRUE
+	sound = 'sound/voice/emotes/synth_no.ogg'

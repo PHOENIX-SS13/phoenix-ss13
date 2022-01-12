@@ -77,6 +77,17 @@
 	playsound(src, "rustle", 50, TRUE, -5)
 	qdel(user)
 
+/obj/item/storage/backpack/holding/debug
+	desc = "A backpack that opens into a localized black hole."
+	armor = list(MELEE = 95, BULLET = 95, LASER = 95, ENERGY = 95, BOMB = 95, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
+
+/obj/item/storage/backpack/holding/debug/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.allow_big_nesting = TRUE
+	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
+	STR.max_combined_w_class = 60
+
 /obj/item/storage/backpack/santabag
 	name = "Santa's Gift Bag"
 	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"

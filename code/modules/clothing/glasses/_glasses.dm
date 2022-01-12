@@ -591,6 +591,7 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = FALSE
 	clothing_flags = SCAN_REAGENTS
+	clothing_traits = list(TRAIT_SUPERMATTER_MADNESS_IMMUNE)
 	vision_flags = SEE_TURFS
 	var/list/hudlist = list(DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED, DATA_HUD_SECURITY_ADVANCED)
 	var/xray = FALSE

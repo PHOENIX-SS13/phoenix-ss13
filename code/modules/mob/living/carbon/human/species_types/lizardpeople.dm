@@ -24,6 +24,9 @@
 	liked_food = GROSS | MEAT
 	inert_mutation = FIREBREATH
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
+	scream_sounds = list(
+		NEUTER = 'sound/voice/scream_lizard.ogg'
+	)
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
 	// Lizards are coldblooded and can stand a greater temperature range than humans

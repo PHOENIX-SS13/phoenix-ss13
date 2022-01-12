@@ -1,7 +1,7 @@
 /// Trim for admins and debug cards. Has every single access in the game.
 /datum/id_trim/admin
-	assignment = "Jannie"
-	trim_state = "trim_ert_janitor"
+	assignment = "FRET Agent"
+	trim_state = "trim_centcom"
 
 /datum/id_trim/admin/New()
 	. = ..()

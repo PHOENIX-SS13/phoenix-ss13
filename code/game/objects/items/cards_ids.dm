@@ -969,6 +969,14 @@
 	. = ..()
 	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 
+/obj/item/card/id/advanced/debug/fret
+	name = "\improper FRET agent ID card"
+	desc = "A fast response emergency tech ID card. Complete access."
+	icon_state = "card_gold"
+	worn_icon_state = "card_gold"
+	inhand_icon_state = "gold_id"
+	trim = /datum/id_trim/admin
+
 /obj/item/card/id/advanced/prisoner
 	name = "prisoner ID card"
 	desc = "You are a number, you are not a free man."

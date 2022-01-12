@@ -29,6 +29,9 @@
 	limbs_id = "synth"
 	wings_icons = list("Robotic")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	scream_sounds = list(
+		NEUTER = 'sound/voice/scream_silicon.ogg'
+	)
 
 /datum/species/android/on_species_gain(mob/living/carbon/C)
 	. = ..()

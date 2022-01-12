@@ -47,6 +47,9 @@
 	ass_image = 'icons/ass/assplasma.png'
 	can_have_genitals = FALSE
 	can_augment = FALSE
+	scream_sounds = list(
+		NEUTER = 'sound/voice/scream_skeleton.ogg'
+	)
 
 /datum/species/plasmaman/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()

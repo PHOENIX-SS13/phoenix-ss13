@@ -438,13 +438,13 @@
 	W.update_icon()
 
 /datum/outfit/admin //for admeem shenanigans and testing things that arent related to equipment, not a subtype of debug just in case debug changes things
-	name = "Admin outfit"
+	name = "FRET Agent (Admin outfit)"
 
-	id = /obj/item/card/id/advanced/debug
-	uniform = /obj/item/clothing/under/misc/patriotsuit
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi/elite/admin
-	suit_store = /obj/item/tank/internals/oxygen
-	back = /obj/item/storage/backpack/holding
+	id = /obj/item/card/id/advanced/debug/fret
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/hooded/ablative
+	suit_store = /obj/item/gun/energy/pulse
+	back = /obj/item/storage/backpack/holding/debug
 	backpack_contents = list(
 		/obj/item/melee/transforming/energy/axe = 1,
 		/obj/item/storage/part_replacer/bluespace/tier4 = 1,
@@ -453,19 +453,26 @@
 		/obj/item/debug/human_spawner = 1,
 		/obj/item/debug/omnitool = 1,
 		/obj/item/storage/box/stabilized = 1,
-)
+		/obj/item/gun/energy/taser = 1,
+	)
 	belt = /obj/item/storage/belt/utility/chief/full
 	ears = /obj/item/radio/headset/headset_cent/commander
 	glasses = /obj/item/clothing/glasses/debug
-	gloves = /obj/item/clothing/gloves/combat
-	mask = /obj/item/clothing/mask/gas/welding/up
-	shoes = /obj/item/clothing/shoes/magboots/advance
-
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	mask = null
+	shoes = /obj/item/clothing/shoes/combat/debug
 	box = /obj/item/storage/box/debugtools
-	internals_slot = ITEM_SLOT_SUITSTORE
 
 /datum/outfit/admin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	var/obj/item/card/id/W = H.wear_id
 	W.registered_name = H.real_name
 	W.update_label()
 	W.update_icon()
+
+/datum/outfit/admin/hardsuit
+	name = "FRET Agent (Hardsuit)"
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/fret
+	mask = /obj/item/clothing/mask/gas/welding/up
+	shoes = /obj/item/clothing/shoes/magboots/advance
+	suit_store = /obj/item/tank/internals/oxygen
+	internals_slot = ITEM_SLOT_SUITSTORE

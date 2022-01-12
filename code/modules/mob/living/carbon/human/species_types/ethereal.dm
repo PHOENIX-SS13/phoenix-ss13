@@ -46,6 +46,13 @@
 	//this is shit but how do i fix it? no clue.
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
+	scream_sounds = list(
+		NEUTER = list(
+			'sound/voice/ethereal/ethereal_scream_1.ogg',
+			'sound/voice/ethereal/ethereal_scream_2.ogg',
+			'sound/voice/ethereal/ethereal_scream_3.ogg',
+		)
+	)
 
 /datum/species/ethereal/Destroy(force)
 	if(ethereal_light)

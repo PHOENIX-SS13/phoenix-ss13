@@ -16,6 +16,10 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 12 SECONDS
 
+/obj/item/clothing/shoes/combat/debug
+	clothing_flags = NOSLIP
+	w_class = WEIGHT_CLASS_TINY
+
 /obj/item/clothing/shoes/combat/sneakboots
 	name = "sneakboots"
 	desc = "These boots have special noise cancelling soles. Perfect for stealth, if it wasn't for the color scheme."

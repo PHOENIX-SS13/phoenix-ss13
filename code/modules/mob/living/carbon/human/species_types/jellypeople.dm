@@ -34,6 +34,9 @@
 	ass_image = 'icons/ass/assslime.png'
 	default_mutant_bodyparts = list("tail" = "None", "snout" = "None", "ears" = "None", "taur" = "None", "wings" = "None", "legs" = "Normal Legs")
 	hair_alpha = 160 //a notch brighter so it blends better.
+	scream_sounds = list(
+		NEUTER = 'sound/voice/jelly_scream.ogg'
+	)
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
 	if(regenerate_limbs)

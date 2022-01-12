@@ -119,7 +119,7 @@
 	if(tmp_sound && (!only_forced_audio || !intentional) && !TIMER_COOLDOWN_CHECK(user, type))
 		TIMER_COOLDOWN_START(user, type, audio_cooldown)
 		playsound(user, tmp_sound, sound_volume, vary)
-	
+
 	if(show_ghosts)
 		var/user_turf = get_turf(user)
 		for(var/mob/ghost in GLOB.dead_mob_list)
@@ -150,7 +150,7 @@
 	#endif
 	if(!intentional)
 		return TRUE
-	if((user.emotes_used && user.emotes_used[src] + cooldown > world.time) || (user.nextsoundemote > world.time))
+	if((user.emotes_used && user.emotes_used[src] + cooldown > world.time) || (user.next_emote_time > world.time))
 		var/datum/emote/default_emote = /datum/emote
 		if(cooldown > initial(default_emote.cooldown)) // only worry about longer-than-normal emotes
 			to_chat(user, SPAN_DANGER("You must wait another [DisplayTimeText(user.emotes_used[src] - world.time + cooldown)] before using that emote."))
@@ -158,7 +158,7 @@
 	if(!user.emotes_used)
 		user.emotes_used = list()
 	user.emotes_used[src] = world.time
-	user.nextsoundemote = world.time + cooldown
+	user.next_emote_time = world.time + cooldown
 	return TRUE
 
 /**

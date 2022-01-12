@@ -36,6 +36,9 @@
 	//They can technically be in an ERT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 	species_language_holder = /datum/language_holder/skeleton
+	scream_sounds = list(
+		NEUTER = 'sound/voice/scream_skeleton.ogg'
+	)
 
 /datum/species/skeleton/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
