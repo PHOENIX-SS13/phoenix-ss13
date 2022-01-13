@@ -1,0 +1,33 @@
+﻿name: Feature Request
+description: Suggest an idea for this Project
+title: "<title>"
+labels: ["Issue : Feature Request"]
+body:
+  - type: dropdown
+    attributes:
+      label: Type of Request
+      multiple: true
+      options:
+        - Addition
+        - Change
+        - Removal
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: About the Request
+      description: Describe what you wish to be implemented or changed.
+      placeholder: Please add orange soda to vending machines.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Why should it be considered
+      description: |
+        Please add a short description of why you think these changes would benefit this project.
+        If you can't justify it in words, it might not be worth adding.
+      placeholder: There's an option for it but it dispenses lemon lime. Having both would be fair to everyone involved.
+    validations:
+      required: true
