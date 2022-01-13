@@ -1,4 +1,4 @@
-﻿name: Bug Report
+name: Bug Report
 description: Report a bug or issue to help reproduce and fix it
 title: "<title>"
 labels: ["Issue : Unconfirmed Bug"]
@@ -12,7 +12,6 @@ body:
       placeholder: 69 or 955ae56ce4d5c571b1d81f1c9dd595faf2d13dd7
     validations:
       required: false
-
   - type: textarea
     attributes:
       label: Description of the Issue
@@ -20,7 +19,6 @@ body:
       placeholder: I bought orange soda at the vending machine on Icebox, but it gave me lemon lime!
     validations:
       required: true
-
   - type: textarea
     attributes:
       label: Reproduction Steps
