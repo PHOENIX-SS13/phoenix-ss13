@@ -1,4 +1,4 @@
-﻿name: Feature Request
+name: Feature Request
 description: Suggest an idea for this Project
 title: "<title>"
 labels: ["Issue : Feature Request"]
@@ -13,7 +13,6 @@ body:
         - Removal
     validations:
       required: false
-
   - type: textarea
     attributes:
       label: About the Request
@@ -21,7 +20,6 @@ body:
       placeholder: Please add orange soda to vending machines.
     validations:
       required: true
-
   - type: textarea
     attributes:
       label: Why should it be considered
