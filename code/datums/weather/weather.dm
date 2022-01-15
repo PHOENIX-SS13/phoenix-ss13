@@ -183,8 +183,6 @@
 	for(var/M in GLOB.player_list)
 		var/turf/mob_turf = get_turf(M)
 		if(mob_turf && my_controller.mapzone.is_in_bounds(mob_turf))
-			if(telegraph_message)
-				to_chat(M, telegraph_message)
 			if(telegraph_sound)
 				SEND_SOUND(M, sound(telegraph_sound))
 	addtimer(CALLBACK(src, .proc/start), telegraph_duration)
