@@ -392,6 +392,28 @@
 	emote_type = EMOTE_AUDIBLE
 	vary = FALSE
 
+/datum/emote/living/raptorscream
+	key = "raptorscream"
+	message = "screams!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/scream_raptor.ogg'
+
+/datum/emote/living/rodentscream
+	key = "rodentscream"
+	message = "screams!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/scream_rodent.ogg'
+
+/datum/emote/living/felinescream
+	key = "felinescream"
+	message = "screams!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound_volume = 40
+	sound = 'sound/voice/cat_scream.ogg'
+
 /datum/emote/living/scowl
 	key = "scowl"
 	key_third_person = "scowls"
@@ -752,6 +774,14 @@
 	vary = TRUE
 	sound = 'sound/voice/baa2.ogg'
 
+/datum/emote/living/warble
+	key = "warble"
+	key_third_person = "warbles"
+	message = "warbles!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/warbles.ogg'
+
 /datum/emote/living/wurble
 	key = "wurble"
 	key_third_person = "wurbles"
@@ -937,6 +967,42 @@
 	vary = TRUE
 	sound = 'sound/voice/bark2.ogg'
 
+/datum/emote/living/whine
+	key = "whine"
+	message = "whines!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/whine1.ogg'
+
+/datum/emote/living/whine2
+	key = "whine2"
+	message = "whines!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/whine2.ogg'
+
+/datum/emote/living/yelp
+	key = "yelp"
+	message = "yelps!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/yelp1.ogg'
+
+/datum/emote/living/yelp2
+	key = "yelp2"
+	message = "yelps!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/yelp2.ogg'
+
+/datum/emote/living/rawr
+	key = "rawr"
+	key_third_person = "rawrs"
+	message = "rawrs!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/rawr.ogg'
+
 /datum/emote/living/squish
 	key = "squish"
 	key_third_person = "squishes"
@@ -953,6 +1019,29 @@
 	vary = TRUE
 	sound = 'sound/voice/meow.ogg'
 
+/datum/emote/living/purr
+	key = "purr"
+	key_third_person = "purrs"
+	message = "purrs!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/feline_purr.ogg'
+
+/datum/emote/living/felinehiss
+	key = "fhiss"
+	key_third_person = "fhisses"
+	message = "hisses!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/feline_hiss.ogg'
+
+/datum/emote/living/catchirp
+	key = "catchirp"
+	message = "chirps!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/catchirp.ogg'
+
 /datum/emote/living/hiss
 	key = "hiss"
 	key_third_person = "hisses"
@@ -961,6 +1050,14 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon, /mob/living/silicon/pai)
 	vary = TRUE
 	sound = 'sound/voice/hiss.ogg'
+
+/datum/emote/living/trills
+	key = "trill"
+	key_third_person = "trills"
+	message = "trills!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/voice/trills.ogg'
 
 /datum/emote/living/chitter
 	key = "chitter"
