@@ -54,13 +54,15 @@
 
 /// Loaded tracks that jukeboxes can pick and play
 /datum/jukebox_track
-	var/song_name = "generic"
+	var/song_artist = "various"
+	var/song_title = "generic"
 	var/song_path = null
 	var/song_length = 0
 	var/song_beat = 0
 
-/datum/jukebox_track/New(name, path, length, beat)
-	song_name = name
+/datum/jukebox_track/New(artist, title, path, length, beat)
+	song_artist = artist
+	song_title = title
 	song_path = path
 	song_length = length
 	song_beat = beat

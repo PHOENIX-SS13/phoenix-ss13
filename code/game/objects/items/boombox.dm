@@ -69,7 +69,7 @@
 		return
 	var/list/dat = list()
 
-	dat += "Selected track: <a href='?src=[REF(src)];action=selection'>[selection ? "[selection.song_name]" : "None"]</a>"
+	dat += "Selected track: <a href='?src=[REF(src)];action=selection'>[selection ? "[selection.song_artist] - [selection.song_title]" : "None"]</a>"
 	dat += "<a href='?src=[REF(src)];action=toggle_play' [played_track ? "class='linkOn'" : ""]>[played_track ? "Stop" : "Start"]</a>"
 	dat += "<BR>Volume:<a href='?src=[REF(src)];action=minus_volume'>-</a> <a href='?src=[REF(src)];action=set_volume'>[volume]</a> <a href='?src=[REF(src)];action=plus_volume'>+</a>"
 
@@ -104,7 +104,8 @@
 				return
 			var/list/available = list()
 			for(var/datum/jukebox_track/song in songs)
-				available[song.song_name] = song
+				available["[song.song_artist] - [song.song_title]"] = song
+			sortList(available)
 			var/song_input = input(user, "Select track:") as anything in available
 			if(!song_input)
 				return
