@@ -4,8 +4,8 @@
 	default_color = "6060FF"
 	eyes_icon = 'icons/mob/species/teshari_eyes.dmi'
 	species_traits = list(
-		MUTCOLORS, 
-		EYECOLOR, 
+		MUTCOLORS,
+		EYECOLOR,
 		NO_UNDERWEAR,
 		HAS_FLESH,
 		HAS_BONE,
@@ -19,6 +19,7 @@
 		"tail" = ACC_RANDOM,
 		"ears" = ACC_RANDOM
 	)
+	mutanttongue = /obj/item/organ/tongue/avian
 	disliked_food = GROSS | GRAIN
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -27,15 +28,15 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	limbs_icon = 'icons/mob/species/teshari_parts_greyscale.dmi'
 	offset_features = list(
-		OFFSET_EARS = list(0,-4), 
-		OFFSET_FACEMASK = list(0,-5), 
-		OFFSET_HEAD = list(0,-4), 
-		OFFSET_FACE = list(0,-4), 
-		OFFSET_BELT = list(0,-4), 
-		OFFSET_BACK = list(0,-4), 
+		OFFSET_EARS = list(0,-4),
+		OFFSET_FACEMASK = list(0,-5),
+		OFFSET_HEAD = list(0,-4),
+		OFFSET_FACE = list(0,-4),
+		OFFSET_BELT = list(0,-4),
+		OFFSET_BACK = list(0,-4),
 		OFFSET_NECK = list(0,-4),
 		OFFSET_INHANDS = list(0,-2),
-		OFFSET_SUIT = list(0,-4), 
+		OFFSET_SUIT = list(0,-4),
 		OFFSET_S_STORE = list(0,-2),
 		OFFSET_GLASSES = list(0,-5),
 		OFFSET_ID = list(0,-4)

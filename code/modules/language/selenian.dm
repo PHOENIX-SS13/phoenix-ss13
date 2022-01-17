@@ -1,7 +1,7 @@
 /datum/language/selenian
 	name = "Selenian"
 	desc = "An informal dialect of Galactic Common that arose from the close confines, mixed population, and technical focus of the moon's first city."
-	key = "7"
+	key = "s"
 	flags = TONGUELESS_SPEECH
 	space_chance = 100
 	syllables = list(

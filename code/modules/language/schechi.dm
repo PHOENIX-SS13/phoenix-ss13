@@ -1,7 +1,7 @@
 /datum/language/schechi
 	name = "Schechi"
 	desc = "The common language of the Avali, and later adapted by many other avian species, consisting of miscellaneous chirps."
-	key = "F"
+	key = "v"
 	space_chance = 40
 	syllables = list(
 		"i", "ii", "si", "aci", "hi", "ni", "li", "schi", "tari",

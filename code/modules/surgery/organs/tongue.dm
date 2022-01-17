@@ -472,3 +472,36 @@
 		signer.visible_message(SPAN_NOTICE("[signer] raises [signer.p_their()] eyebrows."))
 	else if(question_found)
 		signer.visible_message(SPAN_NOTICE("[signer] lowers [signer.p_their()] eyebrows."))
+
+/obj/item/organ/tongue/avian
+	name = "avian tongue"
+	desc = "A rather thing and long muscle. Can do a lot of chirping and peeping."
+	say_mod = "chirps"
+	taste_sensitivity = 10
+	// Some avians can mimic sounds quite well, let's portrait that
+	var/static/list/languages_possible_avian = typecacheof(list(
+		/datum/language/common,
+		/datum/language/uncommon,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/nekomimetic,
+		/datum/language/russian,
+		/datum/language/spacer,
+		/datum/language/selenian,
+		/datum/language/gutter,
+		/datum/language/vox,
+		/datum/language/schechi,
+	))
+
+/obj/item/organ/tongue/avian/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_avian

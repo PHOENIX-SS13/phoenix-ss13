@@ -16,6 +16,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutantlungs = /obj/item/organ/lungs/vox
 	mutantbrain = /obj/item/organ/brain/vox
+	mutanttongue = /obj/item/organ/tongue/avian
 	breathid = "n2"
 	mutant_bodyparts = list()
 	default_mutant_bodyparts = list("tail" = "Vox Tail", "legs" = "Digitigrade Legs", "snout" = "Vox Snout", "spines" = ACC_RANDOM)
