@@ -17,52 +17,52 @@ SUBSYSTEM_DEF(gamemode)
 	var/next_storyteller_process = 0
 	/// Associative list of event track points.
 	var/list/event_track_points = list(
-		EVENT_TRACK_MUNDANE = 0, 
-		EVENT_TRACK_MODERATE = 0, 
-		EVENT_TRACK_MAJOR = 0, 
-		EVENT_TRACK_ROLESET = 0, 
+		EVENT_TRACK_MUNDANE = 0,
+		EVENT_TRACK_MODERATE = 0,
+		EVENT_TRACK_MAJOR = 0,
+		EVENT_TRACK_ROLESET = 0,
 		EVENT_TRACK_OBJECTIVES = 0
 		)
 	/// Last point amount gained of each track. Those are recorded for purposes of estimating how long until next event.
 	var/list/last_point_gains = list(
-		EVENT_TRACK_MUNDANE = 0, 
-		EVENT_TRACK_MODERATE = 0, 
-		EVENT_TRACK_MAJOR = 0, 
-		EVENT_TRACK_ROLESET = 0, 
+		EVENT_TRACK_MUNDANE = 0,
+		EVENT_TRACK_MODERATE = 0,
+		EVENT_TRACK_MAJOR = 0,
+		EVENT_TRACK_ROLESET = 0,
 		EVENT_TRACK_OBJECTIVES = 0
 		)
 	/// Point thresholds at which the events are supposed to be rolled, it is also the base cost for events.
 	var/list/point_thresholds = list(
-		EVENT_TRACK_MUNDANE = MUNDANE_POINT_THRESHOLD, 
-		EVENT_TRACK_MODERATE = MODERATE_POINT_THRESHOLD, 
-		EVENT_TRACK_MAJOR = MAJOR_POINT_THRESHOLD, 
-		EVENT_TRACK_ROLESET = ROLESET_POINT_THRESHOLD, 
+		EVENT_TRACK_MUNDANE = MUNDANE_POINT_THRESHOLD,
+		EVENT_TRACK_MODERATE = MODERATE_POINT_THRESHOLD,
+		EVENT_TRACK_MAJOR = MAJOR_POINT_THRESHOLD,
+		EVENT_TRACK_ROLESET = ROLESET_POINT_THRESHOLD,
 		EVENT_TRACK_OBJECTIVES = OBJECTIVES_POINT_THRESHOLD
 		)
 
 	/// Minimum population thresholds for the tracks to fire off events.
 	var/list/min_pop_thresholds = list(
-		EVENT_TRACK_MUNDANE = MUNDANE_MIN_POP, 
-		EVENT_TRACK_MODERATE = MODERATE_MIN_POP, 
-		EVENT_TRACK_MAJOR = MAJOR_MIN_POP, 
-		EVENT_TRACK_ROLESET = ROLESET_MIN_POP, 
+		EVENT_TRACK_MUNDANE = MUNDANE_MIN_POP,
+		EVENT_TRACK_MODERATE = MODERATE_MIN_POP,
+		EVENT_TRACK_MAJOR = MAJOR_MIN_POP,
+		EVENT_TRACK_ROLESET = ROLESET_MIN_POP,
 		EVENT_TRACK_OBJECTIVES = OBJECTIVES_MIN_POP
 		)
 
 	/// Configurable multipliers for point gain over time.
 	var/list/point_gain_multipliers = list(
-		EVENT_TRACK_MUNDANE = 1, 
-		EVENT_TRACK_MODERATE = 1, 
-		EVENT_TRACK_MAJOR = 1, 
-		EVENT_TRACK_ROLESET = 1, 
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_MAJOR = 1,
+		EVENT_TRACK_ROLESET = 1,
 		EVENT_TRACK_OBJECTIVES = 1
 		)
 	/// Configurable multipliers for roundstart points.
 	var/list/roundstart_point_multipliers = list(
-		EVENT_TRACK_MUNDANE = 1, 
-		EVENT_TRACK_MODERATE = 1, 
-		EVENT_TRACK_MAJOR = 1, 
-		EVENT_TRACK_ROLESET = 1, 
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_MAJOR = 1,
+		EVENT_TRACK_ROLESET = 1,
 		EVENT_TRACK_OBJECTIVES = 1
 		)
 
@@ -71,28 +71,28 @@ SUBSYSTEM_DEF(gamemode)
 
 	/// Associative list of pop scale thresholds.
 	var/list/pop_scale_thresholds = list(
-		EVENT_TRACK_MUNDANE = MUNDANE_POP_SCALE_THRESHOLD, 
-		EVENT_TRACK_MODERATE = MODERATE_POP_SCALE_THRESHOLD, 
-		EVENT_TRACK_MAJOR = MAJOR_POP_SCALE_THRESHOLD, 
-		EVENT_TRACK_ROLESET = ROLESET_POP_SCALE_THRESHOLD, 
+		EVENT_TRACK_MUNDANE = MUNDANE_POP_SCALE_THRESHOLD,
+		EVENT_TRACK_MODERATE = MODERATE_POP_SCALE_THRESHOLD,
+		EVENT_TRACK_MAJOR = MAJOR_POP_SCALE_THRESHOLD,
+		EVENT_TRACK_ROLESET = ROLESET_POP_SCALE_THRESHOLD,
 		EVENT_TRACK_OBJECTIVES = OBJECTIVES_POP_SCALE_THRESHOLD
 		)
 
 	/// Associative list of pop scale penalties.
 	var/list/pop_scale_penalties = list(
-		EVENT_TRACK_MUNDANE = MUNDANE_POP_SCALE_PENALTY, 
-		EVENT_TRACK_MODERATE = MODERATE_POP_SCALE_PENALTY, 
-		EVENT_TRACK_MAJOR = MAJOR_POP_SCALE_PENALTY, 
-		EVENT_TRACK_ROLESET = ROLESET_POP_SCALE_PENALTY, 
+		EVENT_TRACK_MUNDANE = MUNDANE_POP_SCALE_PENALTY,
+		EVENT_TRACK_MODERATE = MODERATE_POP_SCALE_PENALTY,
+		EVENT_TRACK_MAJOR = MAJOR_POP_SCALE_PENALTY,
+		EVENT_TRACK_ROLESET = ROLESET_POP_SCALE_PENALTY,
 		EVENT_TRACK_OBJECTIVES = OBJECTIVES_POP_SCALE_PENALTY
 		)
 
 	/// Associative list of active multipliers from pop scale penalty.
 	var/list/current_pop_scale_multipliers = list(
-		EVENT_TRACK_MUNDANE = 0, 
-		EVENT_TRACK_MODERATE = 0, 
-		EVENT_TRACK_MAJOR = 0, 
-		EVENT_TRACK_ROLESET = 0, 
+		EVENT_TRACK_MUNDANE = 0,
+		EVENT_TRACK_MODERATE = 0,
+		EVENT_TRACK_MAJOR = 0,
+		EVENT_TRACK_ROLESET = 0,
 		EVENT_TRACK_OBJECTIVES = 0
 		)
 
@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(gamemode)
 			///Alert admins 1 minute before running and allow them to cancel or refund the event, once again.
 			sch_event.alerted_admins = TRUE
 			message_admins("Scheduled Event: [sch_event.event] will run in [(sch_event.start_time - world.time) / 10] seconds. (<a href='?src=[REF(sch_event)];action=cancel'>CANCEL</a>) (<a href='?src=[REF(sch_event)];action=refund'>REFUND</a>)")
-	
+
 	if(!halted_storyteller && next_storyteller_process <= world.time && storyteller)
 		next_storyteller_process = world.time + STORYTELLER_WAIT_TIME
 		storyteller.process(STORYTELLER_WAIT_TIME * 0.1)
@@ -208,7 +208,7 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/get_candidates(be_special, job_ban, observers, ready_newplayers, living_players, required_time, inherit_required_time = TRUE, midround_antag_pref, no_antags = TRUE, list/restricted_roles)
 	var/list/candidates = list()
 	var/list/candidate_candidates = list() //lol
-	
+
 	for(var/mob/player as anything in GLOB.player_list)
 		if(ready_newplayers && isnewplayer(player))
 			var/mob/dead/new_player/new_player = player
@@ -362,7 +362,7 @@ SUBSYSTEM_DEF(gamemode)
 			continue
 		if(player_mob.client.is_afk()) //If afk
 			continue
-		if(!ishuman(player_mob))
+		if(!ishuman(player_mob) && !iscyborg(player_mob) && !isAI(player_mob))
 			continue
 		active_players++
 		if(player_mob.mind?.assigned_role)
@@ -876,7 +876,7 @@ SUBSYSTEM_DEF(gamemode)
 				dat += "<td><a href='?src=[REF(src)];panel=main;action=track_action;track_action=set_pts;track=[track]'>Set Pts.</a> <a href='?src=[REF(src)];panel=main;action=track_action;track_action=next_event;track=[track]'>Next Event</a></td>" //Actions
 				dat += "</tr>"
 			dat += "</table>"
-		
+
 			dat += "<h2>Scheduled Events:</h2>"
 			dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
 			dat += "<tr style='vertical-align:top'>"
@@ -901,7 +901,7 @@ SUBSYSTEM_DEF(gamemode)
 				dat += "<td>[scheduled.get_href_actions()]</td>" //Actions
 				dat += "</tr>"
 			dat += "</table>"
-		
+
 			dat += "<h2>Running Events:</h2>"
 			dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
 			dat += "<tr style='vertical-align:top'>"
