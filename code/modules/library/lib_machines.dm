@@ -187,6 +187,7 @@
 	var/obj/machinery/libraryscanner/scanner // Book scanner that will be used when uploading books to the Archive
 	var/page = 1 //current page of the external archives
 	var/printer_cooldown = 0
+	var/painting_save_cooldown = 0
 	COOLDOWN_DECLARE(library_console_topic_cooldown)
 
 /obj/machinery/computer/bookmanagement/Initialize()
@@ -208,8 +209,9 @@
 			dat += "<A href='?src=[REF(src)];switchscreen=5'>5. Upload New Title to Archive</A><BR>"
 			dat += "<A href='?src=[REF(src)];switchscreen=6'>6. Upload Scanned Title to Newscaster</A><BR>"
 			dat += "<A href='?src=[REF(src)];switchscreen=7'>7. Print Corporate Materials</A><BR>"
+			dat += "<A href='?src=[REF(src)];savepainting=1'>8. Upload Paintings to Archive</A><BR>"
 			if(obj_flags & EMAGGED)
-				dat += "<A href='?src=[REF(src)];switchscreen=8'>8. Access the Forbidden Lore Vault</A><BR>"
+				dat += "<A href='?src=[REF(src)];switchscreen=9'>9. Access the Forbidden Lore Vault</A><BR>"
 			if(src.arcanecheckout)
 				print_forbidden_lore(user)
 				src.arcanecheckout = 0
@@ -316,7 +318,7 @@
 			dat += "<A href='?src=[REF(src)];printbible=1'>\[Bible\]</A><BR>"
 			dat += "<A href='?src=[REF(src)];printposter=1'>\[Poster\]</A><BR>"
 			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(8)
+		if(9)
 			dat += "<h3>Accessing Forbidden Lore Vault v 1.3</h3>"
 			dat += "Are you absolutely sure you want to proceed? EldritchRelics Inc. takes no responsibilities for loss of sanity resulting from this action.<p>"
 			dat += "<A href='?src=[REF(src)];arccheckout=1'>Yes.</A><BR>"
@@ -505,6 +507,13 @@
 			printer_cooldown = world.time + PRINTER_COOLDOWN
 		else
 			say("Printer currently unavailable, please wait a moment.")
+	if(href_list["savepainting"])
+		if(painting_save_cooldown < world.time)
+			SSpersistence.SavePaintings()
+			say("Paintings have been uploaded to the Archive.")
+			painting_save_cooldown = world.time + 300 SECONDS
+		else
+			say("Painting Archives currently unavailable, please wait a moment.")
 	add_fingerprint(usr)
 	updateUsrDialog()
 
