@@ -218,7 +218,7 @@
 	if(eye_user)
 		destination = get_turf(destination)
 		if (destination)
-			if(!force_update)
+			if(!force_update && loc) //If we dont have a loc, let it be moved out regardless boundaries. Removing this bandaid will require checking all sources of AI eyes manipulations
 				var/datum/map_zone/mapzone = loc.get_map_zone()
 				if(!mapzone.is_in_bounds(destination))
 					return

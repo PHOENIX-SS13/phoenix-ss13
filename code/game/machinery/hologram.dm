@@ -258,6 +258,9 @@ Possible to do for anyone motivated enough:
 				to_chat(usr, SPAN_INFO("A request for AI presence was already sent recently."))
 				return
 		if("holocall")
+			/// Admin ghosts trying to holocall through AI powers. Please don't
+			if(isobserver(usr))
+				return
 			if(outgoing_call)
 				return
 			if(usr.loc == loc)
@@ -419,9 +422,8 @@ Possible to do for anyone motivated enough:
 		Hologram.set_anchored(TRUE)//So space wind cannot drag it.
 		Hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
 		Hologram.set_light(2) //hologram lighting
-		move_hologram()
-
 		set_holo(user, Hologram)
+		move_hologram(user, get_turf(src))
 		visible_message(SPAN_NOTICE("A holographic image of [user] flickers to life before your eyes!"))
 
 		return Hologram
@@ -515,7 +517,10 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 //Can we display holos there
 //Area check instead of line of sight check because this is a called a lot if AI wants to move around.
-/obj/machinery/holopad/proc/validate_location(turf/T,check_los = FALSE)
+/obj/machinery/holopad/proc/validate_location(turf/T, check_los = FALSE)
+	if(!T)
+		stack_trace("Something tried to validate a null turf for displaying holograms. Used holopad's turf.")
+		T = get_turf(src)
 	if(T.z == z && get_dist(T, src) <= holo_range && T.loc == get_area(src))
 		return TRUE
 	else
@@ -527,6 +532,12 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/transfered = FALSE
 		if(!validate_location(new_turf))
 			if(!transfer_to_nearby_pad(new_turf,user))
+				if(!holo.HC) //An AI is moving the hologram, holy fucking shit this code is bad
+					/// What are we even supposed to do at this point???
+					/// I guess clear it.
+					/// God damn you whoever stampled some AI functionality onto holopad code carelessly
+					clear_holo(user)
+					return
 				holo.HC.eye.setLoc(get_turf(holo)) //Set back the eye to where the hologram is
 				return FALSE
 			else
