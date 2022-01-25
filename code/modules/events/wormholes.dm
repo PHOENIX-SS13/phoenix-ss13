@@ -13,10 +13,11 @@
 	announceWhen = 10
 	endWhen = 90
 
-	var/list/pick_turfs = list()
+	var/list/pick_turfs
+	var/list/pick_areas
 	var/list/wormholes = list()
 	var/shift_frequency = 10
-	var/pairs_of_wormholes = 200
+	var/pairs_of_wormholes = 150
 	/// Amount of pairs to persist and stabilize. Randomized in setup()
 	var/pairs_to_persist = 0
 
@@ -27,10 +28,10 @@
 
 /datum/round_event/wormholes/start()
 	pick_turfs = SSmapping.station_map_zone.get_block()
-
+	pick_areas = GLOB.the_station_areas
 	for(var/i in 1 to pairs_of_wormholes)
-		var/turf/turf_one = pick(pick_turfs)
-		var/turf/turf_two = pick(pick_turfs)
+		var/turf/turf_one = random_wormhole_turf()
+		var/turf/turf_two = random_wormhole_turf()
 		var/obj/effect/portal/wormhole/wormhole_one = new /obj/effect/portal/wormhole(turf_one, 0, null, FALSE)
 		var/obj/effect/portal/wormhole/wormhole_two = new /obj/effect/portal/wormhole(turf_two, 0, null, FALSE)
 		wormhole_one.linked = wormhole_two
@@ -42,13 +43,21 @@
 		wormholes += wormhole_one
 		wormholes += wormhole_two
 
+/// Picks a semi-random turf across the station z levels for the wormholes to spawn in / move to
+/datum/round_event/wormholes/proc/random_wormhole_turf()
+	if(prob(50))
+		return pick(pick_turfs)
+	else
+		var/area/picked_area = pick(pick_areas)
+		return pick(get_area_turfs(picked_area))
+
 /datum/round_event/wormholes/announce(fake)
 	priority_announce("Space-time anomalies detected on the station. There is no additional data.", "Anomaly Alert", ANNOUNCER_SPANOMALIES)
 
 /datum/round_event/wormholes/tick()
 	if(activeFor % shift_frequency == 0)
 		for(var/obj/effect/portal/wormhole/wormhole as anything in wormholes)
-			var/turf/picked_turf = pick(pick_turfs)
+			var/turf/picked_turf = random_wormhole_turf()
 			wormhole.forceMove(picked_turf)
 
 /datum/round_event/wormholes/end()
