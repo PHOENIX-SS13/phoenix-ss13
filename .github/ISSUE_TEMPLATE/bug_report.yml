@@ -1,6 +1,6 @@
 name: Bug Report
 description: Report a bug or issue to help reproduce and fix it
-title: "<title>"
+title: ""
 labels: ["Issue : Unconfirmed Bug"]
 body:
   - type: input
@@ -8,14 +8,24 @@ body:
       label: Round ID / Commit SHA
       description: |
         Insert the round ID or server commit SHA here, to help us track where in the code's lifetime this bug occurred.
-        You can find the commit SHA by using the "Show-Server-Revision" Verb in-game.
+        You can find the commit SHA by using the `Show-Server-Revision` Verb in-game.
       placeholder: 69 or 955ae56ce4d5c571b1d81f1c9dd595faf2d13dd7
     validations:
       required: false
+  - type: input
+    attributes:
+      label: Client Version
+      description: |
+        Put in your full client version in the format `xxx.yyyy` - for example `514.1578`
+      placeholder: 123.4567
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Description of the Issue
-      description: Describe the bug/issue you have encountered. Feel free to attach screenshots or videos as well.
+      description: |
+        Describe the bug/issue you have encountered.
+        Feel free to attach screenshots or videos as well.
       placeholder: I bought orange soda at the vending machine on Icebox, but it gave me lemon lime!
     validations:
       required: true
