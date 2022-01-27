@@ -1,6 +1,5 @@
 name: Feature Request
-description: Suggest an idea for this Project
-title: "<title>"
+description: Suggest an Idea for this Project
 labels: ["Issue : Feature Request"]
 body:
   - type: dropdown
@@ -22,10 +21,11 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Why should it be considered
+      label: Why should this Idea be considered
       description: |
         Please add a short description of why you think these changes would benefit this project.
         If you can't justify it in words, it might not be worth adding.
-      placeholder: There's an option for it but it dispenses lemon lime. Having both would be fair to everyone involved.
+      placeholder: |
+        There's an option for it but it dispenses lemon lime. Having both would be fair to everyone involved.
     validations:
       required: true
