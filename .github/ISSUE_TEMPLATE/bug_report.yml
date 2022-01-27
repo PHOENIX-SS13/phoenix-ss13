@@ -1,6 +1,5 @@
 name: Bug Report
 description: Report a bug or issue to help reproduce and fix it
-title: ""
 labels: ["Issue : Unconfirmed Bug"]
 body:
   - type: input
@@ -17,7 +16,7 @@ body:
       label: Client Version
       description: |
         Put in your full client version in the format `xxx.yyyy` - for example `514.1578`
-      placeholder: 123.4567
+      placeholder: "123.4567"
     validations:
       required: true
   - type: textarea
