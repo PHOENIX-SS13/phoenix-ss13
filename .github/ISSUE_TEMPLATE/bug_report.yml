@@ -1,6 +1,6 @@
 name: Bug Report
 description: Report a bug or issue to help reproduce and fix it
-labels: ["Issue : Unconfirmed Bug"]
+labels: ["Issue : Bug - Unconfirmed"]
 body:
   - type: input
     attributes:
