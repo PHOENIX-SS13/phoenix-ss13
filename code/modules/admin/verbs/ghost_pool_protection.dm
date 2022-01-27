@@ -19,7 +19,6 @@
 	var/events_or_midrounds = TRUE //ie fugitives, space dragon, etc. also includes dynamic midrounds as it's the same deal
 	var/spawners = TRUE //ie ashwalkers, free golems, beach bums
 	var/station_sentience = TRUE //ie posibrains, mind monkeys, sentience potion, etc.
-	var/minigames = TRUE //ie mafia, ctf
 	var/misc = TRUE //oddities like split personality and any animal ones like spiders, xenos
 	*/
 
@@ -50,7 +49,6 @@
 	data["spawners"] = (new_role_flags & GHOSTROLE_SPAWNER)
 	data["station_sentience"] = (new_role_flags & GHOSTROLE_STATION_SENTIENCE)
 	data["silicons"] = (new_role_flags & GHOSTROLE_SILICONS)
-	data["minigames"] = (new_role_flags & GHOSTROLE_MINIGAME)
 	return data
 
 /datum/ghost_pool_menu/ui_act(action, params)
@@ -67,8 +65,6 @@
 			new_role_flags ^= GHOSTROLE_STATION_SENTIENCE
 		if("toggle_silicons")
 			new_role_flags ^= GHOSTROLE_SILICONS
-		if("toggle_minigames")
-			new_role_flags ^= GHOSTROLE_MINIGAME
 		if("all_roles")
 			new_role_flags = ALL
 		if("no_roles")

@@ -158,38 +158,3 @@
 	name = "Syndicate Elite Squad"
 	icon_state = "syndie-elite"
 	network_root_id = SYNDICATE_NETWORK_ROOT
-//CAPTURE THE FLAG
-
-/area/ctf
-	name = "Capture the Flag"
-	icon_state = "yellow"
-	requires_power = FALSE
-	has_gravity = STANDARD_GRAVITY
-	flags_1 = NONE
-
-/area/ctf/control_room
-	name = "Control Room A"
-
-/area/ctf/control_room2
-	name = "Control Room B"
-
-/area/ctf/central
-	name = "Central"
-
-/area/ctf/main_hall
-	name = "Main Hall A"
-
-/area/ctf/main_hall2
-	name = "Main Hall B"
-
-/area/ctf/corridor
-	name = "Corridor A"
-
-/area/ctf/corridor2
-	name = "Corridor B"
-
-/area/ctf/flag_room
-	name = "Flag Room A"
-
-/area/ctf/flag_room2
-	name = "Flag Room B"

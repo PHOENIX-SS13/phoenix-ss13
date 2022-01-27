@@ -235,10 +235,6 @@
 		"rustascend" = 'icons/ui_icons/achievements/misc/rustascend.png',
 		"voidascend" = 'icons/ui_icons/achievements/misc/voidascend.png',
 		"mining" = 'icons/ui_icons/achievements/skills/mining.png',
-		"changeling" = 'icons/ui_icons/achievements/mafia/mafia.png',
-		"chaplain" = 'icons/ui_icons/achievements/mafia/town.png',
-		"clown" = 'icons/ui_icons/achievements/mafia/neutral.png',
-		"basemafia" ='icons/ui_icons/achievements/basemafia.png',
 		"frenching" = 'icons/ui_icons/achievements/misc/frenchingthebubble.png'
 	)
 
@@ -456,13 +452,6 @@
 
 	// Special case to handle Bluespace Crystals
 	Insert("polycrystal", 'icons/obj/telescience.dmi', "polycrystal")
-	..()
-
-/datum/asset/spritesheet/mafia
-	name = "mafia"
-
-/datum/asset/spritesheet/mafia/register()
-	InsertAll("", 'icons/obj/mafia.dmi')
 	..()
 
 /datum/asset/simple/portraits

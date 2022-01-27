@@ -47,8 +47,6 @@
 
 #define MODE_MONKEY "monkeyhive"
 
-#define MODE_MAFIA "mafia"
-
 #define MODE_SING "sing"
 
 //Spans. Robot speech, italics, etc. Applied in compose_message().

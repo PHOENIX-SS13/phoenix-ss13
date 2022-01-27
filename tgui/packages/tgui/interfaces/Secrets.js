@@ -189,14 +189,6 @@ const HelpfulTab = (props, context) => {
         <Stack fill>
           <Stack.Item>
             <Button
-              icon="flag"
-              lineHeight={lineHeightNormal}
-              width={buttonWidthNormal}
-              content="Toggle CTF"
-              onClick={() => act("ctfbutton")} />
-          </Stack.Item>
-          <Stack.Item>
-            <Button
               icon="sync-alt"
               lineHeight={lineHeightNormal}
               width={buttonWidthNormal}

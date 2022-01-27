@@ -257,14 +257,6 @@
 /obj/effect/landmark/start/new_player,
 /turf/open/floor/plating,
 /area/start)
-"fZ" = (
-/obj/effect/landmark/ctf,
-/turf/open/space/basic,
-/area/space)
-"gt" = (
-/obj/effect/landmark/mafia_game_area,
-/turf/open/space/basic,
-/area/space)
 "gu" = (
 /turf/closed/indestructible/splashscreen,
 /area/start)
@@ -46531,7 +46523,7 @@ aa
 aa
 aa
 aa
-gt
+aa
 aa
 aa
 aa
@@ -63181,7 +63173,7 @@ aa
 aa
 aa
 aa
-fZ
+aa
 aa
 aa
 aa

@@ -84,15 +84,3 @@
 			if((IS_MONKEY_LEADER(M.mind) || ismonkey(M)) && IS_INFECTED_MONKEY(M.mind))
 				to_chat(M, msg)
 		return FALSE
-
-/datum/saymode/mafia
-	key = "j"
-	mode = MODE_MAFIA
-
-/datum/saymode/mafia/handle_message(mob/living/user, message, datum/language/language)
-	var/datum/mafia_controller/MF = GLOB.mafia_game
-	var/datum/mafia_role/R = MF.player_role_lookup[user]
-	if(!R || R.team != "mafia")
-		return TRUE
-	MF.send_message(SPAN_CHANGELING("<b>[R.body.real_name]:</b> [message]"),"mafia")
-	return FALSE

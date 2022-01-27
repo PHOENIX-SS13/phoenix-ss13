@@ -74,7 +74,7 @@
 	timeofdeath = world.time
 	tod = station_time_timestamp()
 	var/turf/T = get_turf(src)
-	if(mind && real_name && mind.active && !istype(T.loc, /area/ctf))
+	if(mind && real_name && mind.active)
 		deadchat_broadcast(" has died at <b>[get_area_name(T)]</b>.", "<b>[real_name]</b>", follow_target = src, turf_target = T, message_type=DEADCHAT_DEATHRATTLE)
 	if(mind)
 		mind.store_memory("Time of death: [tod]", 0)

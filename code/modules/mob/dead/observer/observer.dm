@@ -880,24 +880,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		to_chat(usr, SPAN_WARNING("Can't become a pAI candidate while not dead!"))
 
-/mob/dead/observer/verb/mafia_game_signup()
-	set category = "Ghost"
-	set name = "Signup for Mafia"
-	set desc = "Sign up for a game of Mafia to pass the time while dead."
-
-	mafia_signup()
-
-/mob/dead/observer/proc/mafia_signup()
-	if(!client)
-		return
-	if(!isobserver(src))
-		to_chat(usr, SPAN_WARNING("You must be a ghost to join mafia!"))
-		return
-	var/datum/mafia_controller/game = GLOB.mafia_game //this needs to change if you want multiple mafia games up at once.
-	if(!game)
-		game = create_mafia_game("mafia")
-	game.ui_interact(usr)
-
 /mob/dead/observer/CtrlClickOn(mob/user)
 	quickicspawn(user)
 

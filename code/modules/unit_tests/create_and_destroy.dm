@@ -86,8 +86,6 @@
 	ignore += typesof(/obj/effect/sliding_puzzle)
 	//Stacks baseturfs, can't be tested here
 	ignore += typesof(/obj/effect/temp_visual/lava_warning)
-	//Stacks baseturfs, can't be tested here
-	ignore += typesof(/obj/effect/landmark/ctf)
 	//Our system doesn't support it without warning spam from unregister calls on things that never registered
 	ignore += typesof(/obj/docking_port)
 	//Asks for a shuttle that may not exist, let's leave it alone
