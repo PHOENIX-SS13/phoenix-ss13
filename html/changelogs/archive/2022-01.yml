@@ -1,0 +1,218 @@
+2022-01-01:
+  Avunia Takiya:
+  - qol: Laying down while turned east or west will not randomize your direction anymore
+  Azarak:
+  - code_imp: ALLOW_RANDOM_EVENTS is now HALT_STORYTELLER config
+  - bugfix: Fixes blind effects playing for nearsighted people with their vision corrected
+  - rscadd: Rune chat for messages is now gray and small
+  - bugfix: Fixed parallax animation.
+  - bugfix: Fixes ambience controller runtime error
+  - bugfix: Fixes alternate wallet action click chain
+  - bugfix: Fixed pickweight sometimes picking badly.
+  - bugfix: Fixes bugs failing CI
+  - rscadd: Bigger transit padding and reservation
+  - rscadd: Typing indicators now can use the special icon states and are now opaque
+  - bugfix: Fixes scraped turfs not having planetary atmospherics
+  - rscadd: Better paint colors for survival pod walls
+  - rscadd: Adds shelves.
+  - rscadd: Items can be pixel shifted as you place them on racks or shelves or low
+      walls
+  - rscadd: Allows placing items on low walls
+  - rscadd: Ambience update, features some tweaks and new ambient noises.
+  - rscadd: Makes Aurora Caelus last 3 minutes
+2022-01-02:
+  Avunia Takiya:
+  - rscadd: Added an option for 2.5x pixel scaling.
+2022-01-03:
+  Avunia Takiya:
+  - server: Removed unused tools from code repo
+  - qol: Reduced jaws-of-life head-switch volume slightly
+  Azarak:
+  - bugfix: Better returns for emoting without the first parameter
+  - rscadd: Speaking into radios now makes a noise
+  - soundadd: Added sounds for speaking into radios
+  - rscadd: Makes air pump ambience slightly more quiet
+  - rscadd: Cigarettes and various clothing with hazard stripes will now glow in the
+      dark
+  - rscadd: Flushing things via disposals can no longer ear violate you.
+  - rscadd: Jukebox has been reworked and should play music much better.
+  - bugfix: Accepted interviewees will no longer need to do 90 seconds of living time
+      in order to save their bypass status.
+  - rscadd: Adds examines for shuttle engines construction states
+  - rscadd: Changes tcomms ambience into server ambience
+  - rscdel: Removes Restaurant system
+  - rscdel: Completely removes random hardcore
+  - rscdel: Removes ENFORCE_HUMAN_AUTHORITY and FORCE_RANDOM_NAMES configs
+  - rscdel: Removes appearance bans
+  - rscadd: Makes wormholes more fun
+2022-01-04:
+  Azarak:
+  - admin: Asay for deadmins through a verb
+  - rscadd: Added an event which spawns Mold and made some tweaks to it.
+2022-01-05:
+  Azarak:
+  - balance: Weakens the ridiculously armored reinforced windows. Now melee attacks
+      with strong weapons wont take ridiculously large time to break them open, and
+      it&#x27;s much more viable to break them open with gunshots.
+  - rscadd: The storyteller system has been updated check https://github.com/hrzntal/horizon/pull/617
+      for more info.
+  - rscadd: Added towels and bins for towels
+  - rscadd: Belts can now be worn without a jumpsuit
+  - bugfix: Fixes span in storyteller messages
+  - rscadd: Jukebox, ambience and sound improvements
+  - bugfix: Fixes reagent overlays for glasses
+  - bugfix: Avali no longer burn after being spawned in.
+  - bugfix: Fixes ship ambience volume handling
+  - bugfix: Fixes neckerchiefs, welding hard hats and hooded explorer suits having
+      missing worn states.
+  Miss Fox (MissFox0810):
+  - bugfix: Atmos Engine scrubbers and pumps now fixed and take air from distro
+  - rscadd: Thermos to Atmos, Engine and RnD
+  - rscadd: Radiator to atmos
+  - bugfix: Atmos distro room redesign to fit Thermos
+  - bugfix: pubbstation airalarms pos in medical now fixed
+  - rscadd: Mining suits in mining.
+2022-01-06:
+  Avunia Takiya:
+  - rscdel: Removed pop-up window with round-end statistics
+  Azarak:
+  - bugfix: Attack animation effects no longer inherit color from attached atom
+  - rscadd: You can now deconstruct low walls by use of RCD
+  - bugfix: You can now install windows on low walls by use of sheets of RCD
+  - rscadd: Adds sauna ovens, you can construct them with wood. Add some water to
+      them and turn them on for a nice time.
+  Miss Fox (MissFox0810):
+  - bugfix: Runtimes with APCs on pubby from old APC code
+  - bugfix: Thermos dir in atmos for Distro
+  - rscadd: Grinder to Xeno
+  - bugfix: Sec now no longer on separate atmos network
+  - bugfix: Added missing cameras to fix AI blind spots
+  - bugfix: Added missing atmos pipes in arrives to vents
+  - bugfix: Changed Access id on petting garden to 70 to stop the butterflies escaping
+  - bugfix: Changed Chapple launchers to use tiny fans rather than vent pumps.
+  - rscadd: Added power and atmos backup system to monastery
+2022-01-07:
+  Avunia Takiya:
+  - bugfix: Fixed camodeagle and mini-egun sprites.
+  Azarak:
+  - bugfix: Fixes deconstruction of some reinforced windows
+2022-01-08:
+  Azarak:
+  - rscadd: Airlock and shutters sprites update
+  - bugfix: Fixes gravity generator issues on bearcat
+  - rscadd: Cyborgs now have 1 job slots
+  - rscadd: Added boomboxes. Buy them at your local games vendor.
+  - rscadd: Adaptive paint can be purchased from YouTool
+  - bugfix: Fixes storytellers being unpickable after setting one
+  Miss Fox (MissFox0810):
+  - bugfix: Fixed rouge shutter in atmos on bearcat
+  retlaw34:
+  - imageadd: makes the button used for mass drivers and igniters match the rest of
+      the buttons
+2022-01-09:
+  Azarak:
+  - bugfix: Belt items can now cover up private parts
+2022-01-10:
+  Avunia Takiya:
+  - bugfix: Fixed deathchat death broadcast using the wrong name for some people.
+  Azarak:
+  - rscadd: Boombox now has more jammy active state
+  - rscadd: Makes hallucination strings more RP friendly now
+  - bugfix: Fixes planetary atmos on changed turfs (gas from mined rocks)
+  - rscadd: Makes runechat emote color a notch higher
+  - rscadd: Storyteller tweaks. Better reoccurance and better pop scale
+  - rscadd: Improvements for impaired fullscreen overlays
+  - bugfix: Fixes a bug with one missing animation on blind overlays
+  Miss Fox (MissFox0810):
+  - rscadd: Solars for AI Minisat
+  - rscadd: vents and scrubbers to Aft hallway
+  - bugfix: Area over tcomm sat waste injector
+2022-01-12:
+  Avunia Takiya:
+  - rscadd: Don&#x27;t fret, FRETs are here now! The Fast-Response-Emergency-Techs
+      may appear in a flash to help with issues byond the scope of reality!
+  - bugfix: Fixed duplicate return actions/spells when ic-spawned players were ghosted
+      by other means than using the action
+  - sounddel: Removed some duplicate soundeffects
+  - code_imp: Refactored BSTs into FRETs, outfit and more.
+  - code_imp: Moved contents and deleted the hrzn/ directory
+  - code_imp: Refactored species-unique screams into keyed lists
+  - admin: Admins can now spawn-in as FRET agents. Quietly too. Shhh.
+2022-01-15:
+  Avunia Takiya:
+  - rscdel: Removed the ping display from the TGUI chat to improve client reliability.
+  - rscdel: Removed weather forecast messages from chat. Our IT department is working
+      hard to instead bring you weather forecasts straight to your communicator and
+      tablets!
+  SpookyTheFox:
+  - bugfix: Tweaked soda dispenser reagent temperatures, no more water turning into
+      ice.
+2022-01-16:
+  Avunia Takiya:
+  - qol: Jukebox and Boombox song lists can now show artist and title
+  - qol: Boombox song list is now alphabetically ordered
+  - server: Jukebox audio files now require four parameters
+  - server: Jukebox audio files length is now in seconds instead of deciseconds
+  - server: Jukebox audio files beats per deciseconds is now beats per minute
+  FedTheCat:
+  - rscadd: Added *catchirp emote
+  - rscadd: Added *fhiss emote
+  - rscadd: Added *felinepurr emote
+  - rscadd: Added *felinescream emote
+  - rscadd: Added *raptorscream emote
+  - rscadd: Added *rawr emote
+  - rscadd: Added *rodentscream emote
+  - rscadd: Added *warble emote
+  - rscadd: Added *whine emote
+  - rscadd: Added *whine2 emote
+  - rscadd: Added *wurble emote
+  - rscadd: Added *yelp emote
+  - rscadd: Added *yelp2 emote
+  - soundadd: Added sound files.
+2022-01-17:
+  Avunia Takiya:
+  - qol: Emotes can be hotkey-bound again
+  - bugfix: Voxx&#x27; and Avali should now be able to speak vox-pidgin and Schechi!
+      Peep SKREE!
+  - bugfix: Gutter language doesn&#x27;t conflict with code speak anymore
+  - code_imp: Added a general-purpose avian tongue
+  - code_imp: Changed a few language keys around, check your languages!
+2022-01-18:
+  Miss Fox (MissFox0810):
+  - admin: Added jukebox reload verb to server tab
+  - bugfix: Makes storyteller count the AI and borgos as people too.
+  - imageadd: HRZN server icon
+  - imagedel: tg_32 icon
+2022-01-19:
+  Avunia Takiya:
+  - admin: FRET agent hardsuits have been upgraded to be space worthy again.
+  Miss Fox (MissFox0810):
+  - bugfix: Pubby - Stacked Lattices
+  - bugfix: Pubby - Added missing limb grower to medical
+  - bugfix: Pubby - Recolored all pipes in secuirty area to match rest of station
+  - qol: Pubby - Atmos room redesign, no more mixing loop, now layer adapters for
+      each tank
+  - rscadd: Added Painting save function to Library computer
+  neopythagorean (via /tg/station):
+  - bugfix: Fortune cookies now give you your fortune.
+2022-01-21:
+  Azarak:
+  - bugfix: Fixes issues with holopads and remote eyes
+  KathrinBailey:
+  - bugfix: Corporate sofa sprites are no longer wonky.
+  - rscadd: New sofa types from TG.
+  - rscadd: Double beds from TG/SR.
+  Miss Fox (MissFox0810):
+  - bugfix: Pipe net errors on pubby
+  - bugfix: Cabling errors on pubby
+  - rscadd: Expanded Pink Rad loop into R&amp;D for thermos on pubby
+  - rscadd: Toy vendor to dorms area.
+2022-01-25:
+  Azarak:
+  - rscadd: Wormholes spawn less of them but are much more likely to lead into station
+      areas.
+2022-01-27:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscdel: Removed CTF minigame
+  - rscdel: Removed mafia minigame
+  - rscdel: Removed all minigame interfaces
