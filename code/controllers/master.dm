@@ -56,7 +56,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/queue_priority_count_bg = 0 //Same, but for background subsystems
 	var/map_loading = FALSE //!Are we loading in a new map?
 
-	var/current_runlevel //!for scheduling different subsystems for different stages of the round
+	var/current_runlevel = RUNLEVEL_INIT //!for scheduling different subsystems for different stages of the round
 	var/sleep_offline_after_initializations = TRUE
 
 	var/static/restart_clear = 0
@@ -205,8 +205,10 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	to_chat(world, SPAN_BOLDANNOUNCE("[msg]"))
 	log_world(msg)
 
-	if (!current_runlevel)
-		SetRunLevel(1)
+	if (current_runlevel == RUNLEVEL_INIT)
+		SetRunLevel(RUNLEVEL_LOBBY)
+
+	update_new_players_ui()
 
 	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, /proc/cmp_subsystem_display)
@@ -626,3 +628,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	for (var/thing in subsystems)
 		var/datum/controller/subsystem/SS = thing
 		SS.OnConfigLoad()
+
+/// Updates the UI for all new players, called after initializations of the subsystems.
+/datum/controller/master/proc/update_new_players_ui()
+	for(var/mob/dead/new_player/new_guy as anything in GLOB.new_player_list)
+		new_guy.new_player_panel()

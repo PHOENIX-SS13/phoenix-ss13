@@ -47,15 +47,15 @@
 /mob/dead/new_player/proc/new_player_panel()
 	if (client?.interviewee)
 		return
+	if(Master.current_runlevel == RUNLEVEL_INIT)
+		return
 
 	var/datum/asset/asset_datum = get_asset_datum(/datum/asset/simple/lobby)
 	asset_datum.send(client)
 	var/list/output = list("<center>")
-	var/greeting_title = "New Player Options"
 
-	if(SSmapping && SSmapping.config)
-		output += "[SSmapping.config.get_map_info()]<HR>"
-		greeting_title = "Welcome to [SSmapping.config.map_name]"
+	output += "[SSmapping.config.get_map_info()]<HR>"
+	var/greeting_title = "Welcome to [SSmapping.config.map_name]"
 
 	output += "<p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
 
