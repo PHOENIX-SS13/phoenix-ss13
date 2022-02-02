@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "config.schema.json",
+	"title": "Horizon Changelog Script Config Schema",
+	"definitions": {
+		"filePath": {
+			"pattern": "^(?!\\.?\\/).*(?<!\\/)$",
+			"type": "string"
+		},
+		"fileName": {
+			"pattern": "^[A-z0-9_-]*$",
+			"type": "string"
+		}
+	},
+	"type": "object",
+	"required": [
+		"directories",
+		"filenamePrefix"
+	],
+	"properties": {
+		"directories": {
+			"title": "Array of directory configurations",
+			"default": {
+				"changelog": "html/changelogs",
+				"archive": "html/changelogs/archive"
+			},
+			"properties": {
+				"changelog": {
+					"$ref": "#/definitions/filePath",
+					"title": "Changelog Directory",
+					"description": "Data directory in which to save pull request changelogs and read them from\nFormat is any path, without leading or trailing slashes.",
+					"default": "html/changelogs"
+				},
+				"archive": {
+					"$ref": "#/definitions/filePath",
+					"title": "Changelog Archive Directory",
+					"description": "Data directory in which to save monthly changelogs and read them from\nFormat is any path, without leading or trailing slashes.",
+					"default": "html/changelogs/archive"
+				}
+			},
+			"type": "object"
+		},
+		"filenamePrefix": {
+			"$ref": "#/definitions/fileName",
+			"title": "Automatic PR changelog prefix",
+			"description": "Prefix for the automatically generated PR changelogs",
+			"default": "auto-pr-changelog-"
+		}
+	}
+}

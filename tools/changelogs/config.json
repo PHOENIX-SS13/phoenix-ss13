@@ -1,0 +1,8 @@
+{
+	"$schema": "config.schema.json",
+	"directories": {
+		"changelog": "html/changelogs",
+		"archive": "html/changelogs/archive"
+	},
+	"filenamePrefix": "auto-pr-changelog-"
+}

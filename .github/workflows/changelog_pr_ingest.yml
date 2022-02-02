@@ -1,0 +1,37 @@
+﻿name: Changelogs - Ingest Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  ingest:
+    if: ${{ github.event.pull_request.merged }}
+    name: Ingest changelog
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.x'
+          cache: 'pip'
+          cache-dependency-path: '**/changelogs/requirements.txt'
+      - name: Fetch dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r **/changelogs/requirements.txt
+      - name: Ingest and generate Changelog
+        run: |
+          python tools/changelogs/ingest_pr_changelog.py -vv --strict ${{ github.repository }} ${{ github.event.number }} --auth ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and Push Changelog
+        run: |
+          git config user.name github-actions
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add html/changelogs
+          git commit -m "Automatic changelog generation for PR #${{ github.event.number }} [ci skip]"
+          git push

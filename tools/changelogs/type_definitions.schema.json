@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "type_definitions.schema.json",
+	"title": "Horizon Changelog Type Definitions Schema",
+	"definitions": {
+		"changetype": {
+			"description": "Type of the changelog entry",
+			"type": "object",
+			"properties": {
+				"keywords": {
+					"$ref": "#/definitions/keywordlist"
+				}
+			}
+		},
+		"keyword": {
+			"type": "string",
+			"pattern": "^[A-z]*$"
+		},
+		"keywordlist": {
+			"description": "Keywords to search for that assign to this type",
+			"oneOf": [
+				{
+					"$ref": "#/definitions/keyword"
+				},
+				{
+					"type": "array",
+					"items": { "$ref": "#/definitions/keyword" },
+					"uniqueItems": true
+				}
+			]
+		}
+	},
+	"type": "object",
+	"properties": {
+		"types": {
+			"$id": "#root/types",
+			"title": "Changelog Types",
+			"description": "Object of all valid changelog types.",
+			"type": "object",
+			"default": "{}",
+			"patternProperties": {
+				"^[a-z_]*$": {
+					"$ref": "#/definitions/changetype"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

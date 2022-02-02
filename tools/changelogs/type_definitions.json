@@ -1,0 +1,69 @@
+{
+	"$schema": "type_definitions.schema.json",
+	"types": {
+		"bugfix": {
+			"keywords": [
+				"fix",
+				"fixes",
+				"bugfix"
+			]
+		},
+		"qol": {
+			"keywords": "qol"
+		},
+		"soundadd": {
+			"keywords": "soundadd"
+		},
+		"sounddel": {
+			"keywords": "sounddel"
+		},
+		"rscadd": {
+			"keywords": [
+				"add",
+				"adds",
+				"rscadd"
+			]
+		},
+		"rscdel": {
+			"keywords": [
+				"del",
+				"dels",
+				"rscdel"
+			]
+		},
+		"imageadd": {
+			"keywords": "imageadd"
+		},
+		"imagedel": {
+			"keywords": "imagedel"
+		},
+		"spellcheck": {
+			"keywords": [
+				"typo",
+				"spellcheck"
+			]
+		},
+		"balance": {
+			"keywords": [
+				"rebalance",
+				"balance"
+			]
+		},
+		"code_imp": {
+			"keywords": [
+				"code",
+				"code_imp",
+				"refactor"
+			]
+		},
+		"config": {
+			"keywords": "config"
+		},
+		"admin": {
+			"keywords": "admin"
+		},
+		"server": {
+			"keywords": "server"
+		}
+	}
+}
