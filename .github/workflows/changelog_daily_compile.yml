@@ -31,5 +31,5 @@ jobs:
           git config user.name github-actions
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add html/changelogs
-          git commit -m "Automatic daily changelog compile [ci skip]"
+          git diff-index --quiet --cached HEAD || git commit -m "Automatic daily changelog compile [ci skip]"
           git push
