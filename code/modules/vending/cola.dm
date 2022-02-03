@@ -13,6 +13,8 @@
 					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
 					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 	contraband = list(/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 6,

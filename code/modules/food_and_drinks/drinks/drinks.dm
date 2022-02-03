@@ -845,3 +845,17 @@
 	desc = "There is no air shortage. Do not drink."
 	icon_state = "air"
 	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
+
+/obj/item/reagent_containers/food/drinks/soda_cans/lubricola
+	name = "LubriCola"
+	desc = "The perfect lubricant for your weary gears."
+	icon_state = "lubricola"
+	list_reagents = list(/datum/reagent/fuel/oil = 30)
+	custom_price = PAYCHECK_ASSISTANT * 1.2
+
+/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz
+	name = "Welding Fizz"
+	desc = "More energy than in an IED! Now carbonated. WARNING: Contains toxic and flammable fuels."
+	icon_state = "welding_fizz"
+	list_reagents = list(/datum/reagent/fuel = 25, /datum/reagent/carbondioxide = 5)
+	custom_price = PAYCHECK_ASSISTANT * 1.2
