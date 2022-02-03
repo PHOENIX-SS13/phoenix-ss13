@@ -22,7 +22,6 @@
 	damage_deflection = 70
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTERS_BLASTDOORS)
 	door_align_type = /obj/machinery/door/poddoor
-	door_align_blocked = TRUE
 	var/datum/crafting_recipe/recipe_type = /datum/crafting_recipe/blast_doors
 	var/deconstruction = BLASTDOOR_FINISHED // deconstruction step
 

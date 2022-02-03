@@ -45,8 +45,6 @@
 
 	/// What door types do we want to align with if any
 	var/door_align_type
-	/// Whether this will align to other door types despite being blocked
-	var/door_align_blocked = FALSE
 	var/align_to_windows = FALSE
 	var/auto_dir_align = TRUE
 
@@ -142,8 +140,7 @@
 				align_dir = dir_to_align
 				break
 
-	/// Align to a door only if we can align to a door and the blocked direction was set to WEST (is SOUTH if unblocked)
-	if(align_dir && (door_align_blocked && block_dir == WEST))
+	if(align_dir)
 		setDir(align_dir)
 	else
 		setDir(block_dir)
