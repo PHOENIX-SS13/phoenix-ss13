@@ -174,10 +174,7 @@
 		var/obj/cargoobj = locate(href_list["drop_from_cargo"]) in cargo
 		if(cargoobj)
 			to_chat(occupants, "[icon2html(src, occupants)][SPAN_NOTICE("You unload [cargoobj].")]")
-			cargoobj.forceMove(drop_location())
-			LAZYREMOVE(cargo, cargoobj)
-			if(cargoobj == box)
-				box = null
+			remove_cargo(cargoobj)
 			log_message("Unloaded [cargoobj]. Cargo compartment capacity: [cargo_capacity - LAZYLEN(cargo)]", LOG_MECHA)
 
 
@@ -185,8 +182,8 @@
 	for(var/i in cargo)
 		var/obj/cargoobj = i
 		if(prob(10 * severity))
-			LAZYREMOVE(cargo, cargoobj)
-			cargoobj.forceMove(drop_location())
+			to_chat(occupants, SPAN_WARNING("The blast makes \the [cargoobj] fall out of your cargo compartment!"))
+			remove_cargo(cargoobj)
 	return ..()
 
 /obj/vehicle/sealed/mecha/working/ripley/get_stats_part()
@@ -206,8 +203,7 @@
 		if(!user || user.stat != CONSCIOUS || user.loc != src || O.loc != src )
 			return
 		to_chat(user, SPAN_NOTICE("You successfully pushed [O] out of [src]!"))
-		O.forceMove(drop_location())
-		LAZYREMOVE(cargo, O)
+		remove_cargo(O)
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
 			to_chat(user, SPAN_WARNING("You fail to push [O] out of [src]!"))
@@ -229,3 +225,10 @@
 		movedelay = slow_pressure_step_in
 		for(var/obj/item/mecha_parts/mecha_equipment/drill/drill in equipment)
 			drill.equip_cooldown = initial(drill.equip_cooldown)
+
+/// Removes an object from the cargo compartment. Use this to remove stuff
+/obj/vehicle/sealed/mecha/working/ripley/proc/remove_cargo(obj/cargo_object)
+	if(box == cargo_object)
+		box = null
+	cargo_object.forceMove(drop_location())
+	LAZYREMOVE(cargo, cargo_object)
