@@ -521,6 +521,13 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 30)
 	isGlass = FALSE
 
+/obj/item/reagent_containers/food/drinks/bottle/synthanol
+	name = "Librator's Synthanol"
+	desc = "The perfect drink to liberate any oppressed synthetic lifeform from their programming constraints.\nThere's a warning label on the back to not ingest the drink if you are an organic lifeform."
+	icon_state = "synthanolbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/synthanol = 100)
+	custom_price = PAYCHECK_EASY * 1.4
+
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/bottle/molotov
 	name = "molotov cocktail"
