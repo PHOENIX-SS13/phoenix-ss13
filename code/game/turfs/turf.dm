@@ -401,12 +401,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 /turf/open/space/levelupdate()
 	return
 
-// Removes all signs of lattice on the pos of the turf -Donkieyo
-/turf/proc/RemoveLattice()
-	var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
-	if(L && (L.flags_1 & INITIALIZED_1))
-		qdel(L)
-
 /turf/proc/Bless()
 	new /obj/effect/blessing(src)
 

@@ -77,9 +77,6 @@
 
 /turf/open/space/TakeTemperature(temp)
 
-/turf/open/space/RemoveLattice()
-	return
-
 /turf/open/space/AfterChange()
 	..()
 	atmos_overlay_types = null
