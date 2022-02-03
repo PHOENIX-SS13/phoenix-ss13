@@ -446,6 +446,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 /client/Del()
 	if(!gc_destroyed)
+		// Yes this is the same as what's found in qdel(). Yes it does need to be here
+		// The reason for this is because clients get hard deleted by BYOND when disconnection happens.
+		SEND_SIGNAL(src, COMSIG_PARENT_QDELETING, TRUE)
 		Destroy() //Clean up signals and timers.
 	return ..()
 
