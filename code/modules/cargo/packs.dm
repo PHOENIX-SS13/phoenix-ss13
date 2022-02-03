@@ -223,13 +223,30 @@
 	crate_name = "radiation protection crate"
 	crate_type = /obj/structure/closet/crate/radiation
 
+/datum/supply_pack/emergency/emergency_spacesuits
+	name = "Emergency Spacesuits (Fragile)"
+	desc = "Are there bombs going off left and right? Are there meteors shooting around the station? Well then! Here's two fragile space suits for emergencies. Comes with oxygen tanks and masks."
+	cost = CARGO_CRATE_VALUE * 3
+	contains = list(
+		/obj/item/tank/internals/oxygen,
+		/obj/item/tank/internals/oxygen,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/suit/space/fragile,
+		/obj/item/clothing/suit/space/fragile,
+		/obj/item/clothing/head/helmet/space/fragile,
+		/obj/item/clothing/head/helmet/space/fragile
+		)
+	crate_name = "emergency crate"
+	crate_type = /obj/structure/closet/crate/internals
+
 /datum/supply_pack/emergency/spacesuit
 	name = "Space Suit Crate"
 	desc = "Contains one aging suit from Space-Goodwill and a jetpack. Requires EVA access to open."
 	cost = CARGO_CRATE_VALUE * 3
 	access = ACCESS_EVA
-	contains = list(/obj/item/clothing/suit/space,
-					/obj/item/clothing/head/helmet/space,
+	contains = list(/obj/item/clothing/suit/space/eva,
+					/obj/item/clothing/head/helmet/space/eva,
 					/obj/item/clothing/mask/breath,
 					/obj/item/tank/jetpack/carbondioxide)
 	crate_name = "space suit crate"
@@ -269,6 +286,17 @@
 	group = "Security"
 	access = ACCESS_SECURITY
 	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/security/sec_hardsuit
+	name = "Security Hardsuit"
+	desc = "One security hardsuit with an oxygen tank and sechailer mask."
+	cost = CARGO_CRATE_VALUE * 6
+	contains = list(
+		/obj/item/clothing/suit/space/hardsuit/security,
+		/obj/item/tank/internals/oxygen,
+		/obj/item/clothing/mask/gas/sechailer
+		)
+	crate_name = "sec hardsuit crate"
 
 /datum/supply_pack/security/ammo
 	name = "Ammo Crate"
@@ -662,6 +690,32 @@
 /datum/supply_pack/engineering
 	group = "Engineering"
 	crate_type = /obj/structure/closet/crate/engineering
+
+/datum/supply_pack/engineering/engi_hardsuit
+	name = "Engineering Hardsuit"
+	desc = "Poly 'Who stole all the hardsuits!' Well now you can get more hardsuits if needed! NOTE ONE HARDSUIT IS IN THIS CRATE, as well as one oxygen tank and mask!"
+	cost = CARGO_CRATE_VALUE * 4
+	access = ACCESS_ENGINE
+	contains = list(
+		/obj/item/tank/internals/oxygen,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/suit/space/hardsuit/engine
+		)
+	crate_name = "engineering hardsuit"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
+/datum/supply_pack/engineering/atmos_hardsuit
+	name = "Atmospherics Hardsuit"
+	desc = "Too many techs and not enough hardsuits? Time to buy some more! Comes with gas mask and an oxygen tank. Ask the CE to open."
+	cost = CARGO_CRATE_VALUE * 7
+	access = ACCESS_CE //100% Fire and Bio resistance
+	contains = list(
+		/obj/item/tank/internals/oxygen,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/suit/space/hardsuit/engine/atmos
+		)
+	crate_name = "atmospherics hardsuit"
+	crate_type = /obj/structure/closet/crate/secure/engineering
 
 /datum/supply_pack/engineering/shieldgen
 	name = "Anti-breach Shield Projector Crate"
@@ -1175,6 +1229,18 @@
 	access_view = ACCESS_MEDICAL
 	crate_type = /obj/structure/closet/crate/medical
 
+/datum/supply_pack/medical/med_hardsuit
+	name = "Medical Hardsuit"
+	desc = "A lightweight medical hardsuit, designed for ease of movement during rescue operations in dangerous envrionments. Comes with a breath mask and an oxygen tank!"
+	cost = CARGO_CRATE_VALUE * 4
+	access = ACCESS_MEDICAL
+	contains = list(
+		/obj/item/tank/internals/oxygen,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/suit/space/hardsuit/medical
+		)
+	crate_name = "medical hardsuit"
+
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
 	desc = "Contains eight different blood packs for reintroducing blood to patients."
@@ -1367,6 +1433,19 @@
 	group = "Science"
 	access_view = ACCESS_RESEARCH
 	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/science/sci_hardsuit
+	name = "Prototype Hardsuit"
+	desc = "A prototyped hardsuit made with composite materials, protecting from biological hazards and keeping the body of the wearer intact after explosive accidents. Comes with a breath mask and an oxygen tank!"
+	cost = CARGO_CRATE_VALUE * 7
+	access = ACCESS_RESEARCH
+	contains = list(
+		/obj/item/tank/internals/oxygen,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/suit/space/hardsuit/rd
+		)
+	crate_name = "prototype hardsuit"
+	crate_type = /obj/structure/closet/crate/secure/science
 
 /datum/supply_pack/science/plasma
 	name = "Plasma Assembly Crate"
