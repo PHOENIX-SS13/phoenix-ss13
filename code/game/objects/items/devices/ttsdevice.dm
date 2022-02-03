@@ -1,6 +1,6 @@
 /obj/item/ttsdevice
 	name = "TTS Device"
-	desc = "A small device with a keyboard attached. Anything entered on the keyboard is played out the speaker. \n<span class='notice'>Alt-click the device to make it beep.</span> \n<span class='notice'>Ctrl-click to name the device.</span>"
+	desc = "A small device with a keyboard attached. Anything entered on the keyboard is played out the speaker."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "gangtool-purple"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -8,6 +8,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 	obj_flags = UNIQUE_RENAME
 	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/ttsdevice/examine(mob/user)
+	. = ..()
+	. += SPAN_NOTICE("Alt-click the device to make it beep.")
+	. += SPAN_NOTICE("Ctrl-click to name the device.")
 
 /obj/item/ttsdevice/attack_self(mob/user)
 	var/input = stripped_input(user,"What would you like the device to say?", ,"", 500)
