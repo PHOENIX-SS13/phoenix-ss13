@@ -660,28 +660,35 @@
 	anchored = anchorvalue
 	SEND_SIGNAL(src, COMSIG_MOVABLE_SET_ANCHORED, anchorvalue)
 
-/atom/movable/proc/forceMove(atom/destination)
+// destination - which atom does the src go to
+// graceful - whether the movement is "graceful" and will not break pulls or buckles
+/atom/movable/proc/forceMove(atom/destination, graceful = FALSE)
 	. = FALSE
 	if(destination)
-		. = doMove(destination)
+		. = doMove(destination, graceful)
 	else
 		CRASH("No valid destination passed into forceMove")
 
 /atom/movable/proc/moveToNullspace()
 	return doMove(null)
 
-/atom/movable/proc/doMove(atom/destination)
+/atom/movable/proc/doMove(atom/destination, graceful)
 	. = FALSE
 	move_stacks++
 	var/atom/oldloc = loc
 	if(destination)
-		if(pulledby)
+		if(!graceful && pulledby)
 			pulledby.stop_pulling()
 		var/same_loc = oldloc == destination
 		var/area/old_area = get_area(oldloc)
 		var/area/destarea = get_area(destination)
 
 		moving_diagonally = 0
+
+		// If we found a destination and have buckled mobs, move them before we move ourselves
+		if(graceful && buckled_mobs)
+			for(var/mob/buckled_mob as anything in buckled_mobs)
+				buckled_mob.forceMove(destination, TRUE)
 
 		loc = destination
 
@@ -873,7 +880,7 @@
 /atom/movable/proc/handle_buckled_mob_movement(newloc, direct, glide_size_override)
 	for(var/m in buckled_mobs)
 		var/mob/living/buckled_mob = m
-		if(!buckled_mob.Move(newloc, direct, glide_size_override))
+		if(buckled_mob.loc != loc && !buckled_mob.Move(newloc, direct, glide_size_override))
 			forceMove(buckled_mob.loc)
 			last_move = buckled_mob.last_move
 			inertia_dir = last_move

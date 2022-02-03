@@ -129,7 +129,12 @@
 			var/atom/movable/movable_atom = b
 			if(movable_atom.glide_size != calculated_glide_size)
 				movable_atom.glide_size = calculated_glide_size
-			movable_atom.forceMove(platform.loc)
+			// Buckled mobs which would be moved by the buckled object being moved are left alone to not break buckles.
+			if(ismob(movable_atom))
+				var/mob/moved_mob = movable_atom
+				if(moved_mob.buckled)
+					continue
+			movable_atom.forceMove(platform.loc, TRUE)
 
 	//And here we move ALL the roofs of the platforms, and then ALL their contents
 	if(managing_roof)

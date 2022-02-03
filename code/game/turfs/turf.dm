@@ -241,30 +241,49 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		flags |= thing.intercept_zImpact(A, levels)
 		if(flags & FALL_STOP_INTERCEPTING)
 			break
-	if(prev_turf && !(flags & FALL_NO_MESSAGE))
-		prev_turf.visible_message(SPAN_DANGER("[mov_name] falls through [prev_turf]!"))
+
+	/// If graceful fall, gracefully move down and early return, if not, just move down
+	if(flags & FALL_GRACEFUL)
+		// If a mob is gracefully falling down, and he's buckled, don't move him and let the buckler move him instead
+		if(ismob(A))
+			var/mob/fallen_mob = A
+			if(fallen_mob.buckled)
+				return FALSE
+		A.forceMove(src, TRUE)
+		return FALSE
+	else
+		A.forceMove(src)
+
+	/// Something blocked our fall, make a message and return early
 	if(flags & FALL_INTERCEPTED)
-		return
+		A.visible_message(SPAN_DANGER("[A]'s fall is intercepted!"))
+		return FALSE
+
+	if(prev_turf)
+		prev_turf.visible_message(SPAN_DANGER("[mov_name] falls through [prev_turf]!"))
+
+	/// Let's see if we can fall further and recursively start this chain again.
 	if(zFall(A, levels + 1))
 		return FALSE
+
+	/// ...if we can't we crash into the floor.
 	A.visible_message(SPAN_DANGER("[A] crashes into [src]!"))
 	A.onZImpact(src, levels)
 	return TRUE
 
-/turf/proc/can_zFall(atom/movable/A, levels = 1, turf/target)
+/turf/proc/can_zFall(atom/movable/A, turf/target)
 	SHOULD_BE_PURE(TRUE)
 	return zPassOut(A, DOWN, target) && target.zPassIn(A, DOWN, src)
 
-/turf/proc/zFall(atom/movable/A, levels = 1, force = FALSE)
+/turf/proc/zFall(atom/movable/A, levels = 1)
 	var/turf/target = get_step_multiz(src, DOWN)
 	if(!target || (!isobj(A) && !ismob(A)))
 		return FALSE
-	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
+	if(!can_zFall(A, target) || !A.can_zFall(src, target, DOWN))
 		return FALSE
 	A.zfalling = TRUE
-	A.forceMove(target)
-	A.zfalling = FALSE
 	target.zImpact(A, levels, src)
+	A.zfalling = FALSE
 	return TRUE
 
 /turf/proc/handleRCL(obj/item/rcl/C, mob/user)

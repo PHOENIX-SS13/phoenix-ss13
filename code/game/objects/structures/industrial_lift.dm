@@ -30,7 +30,7 @@
 
 /obj/structure/industrial_lift/Initialize()
 	if(!type_blacklist)
-		InitializeBlacklist()
+		type_blacklist = typecacheof(INDUSTRIAL_LIFT_BLACKLISTED_TYPESOF)
 	AddElement(/datum/element/footstep_override, FOOTSTEP_LATTICE, FOOTSTEP_HARD_BAREFOOT, FOOTSTEP_LATTICE, FOOTSTEP_LATTICE)
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_EXITED =.proc/UncrossedRemoveItemFromLift,
@@ -42,12 +42,6 @@
 		return ..()
 	new lift_controller_type(src)
 	return ..()
-
-/obj/structure/industrial_lift/proc/InitializeBlacklist()
-	type_blacklist = list()
-	for(var/mastertype in INDUSTRIAL_LIFT_BLACKLISTED_TYPESOF)
-		for(var/undertype in typesof(mastertype))
-			type_blacklist[undertype] = TRUE
 
 /obj/structure/industrial_lift/proc/UncrossedRemoveItemFromLift(datum/source, atom/movable/gone, direction)
 	SIGNAL_HANDLER

@@ -682,21 +682,7 @@
 				ty--
 			DT = locate(tx, ty, destination_z)
 
-		var/atom/movable/pulling = arrived.pulling
-		var/atom/movable/puller = arrived
-		arrived.forceMove(DT)
-
-		while (pulling != null)
-			var/next_pulling = pulling.pulling
-
-			var/turf/T = get_step(puller.loc, turn(puller.dir, 180))
-			pulling.can_be_z_moved = FALSE
-			pulling.forceMove(T)
-			puller.start_pulling(pulling)
-			pulling.can_be_z_moved = TRUE
-
-			puller = pulling
-			pulling = next_pulling
+		arrived.forceMove(DT, TRUE)
 
 		//now we're on the new z_level, proceed the space drifting
 		stoplag()//Let a diagonal move finish, if necessary
