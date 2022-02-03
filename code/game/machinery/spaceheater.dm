@@ -147,7 +147,6 @@
 		cell.emp_act(severity)
 
 /obj/machinery/space_heater/attackby(obj/item/I, mob/user, params)
-	. = ..()
 	add_fingerprint(user)
 
 	if(default_deconstruction_screwdriver(user, icon_state, icon_state, I))
@@ -175,6 +174,7 @@
 		user.visible_message(SPAN_NOTICE("\The [user] inserts a power cell into \the [src]."), SPAN_NOTICE("You insert the power cell into \the [src]."))
 		SStgui.update_uis(src)
 		return TRUE
+	. = ..()
 
 /obj/machinery/space_heater/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -323,36 +323,37 @@
 /obj/machinery/space_heater/improvised_chem_heater/attackby(obj/item/item, mob/user, params)
 	add_fingerprint(user)
 	if(default_unfasten_wrench(user, item))
-		return
+		return TRUE
 	if(default_deconstruction_crowbar(item))
-		return
+		return TRUE
 	if(istype(item, /obj/item/stock_parts/cell))
 		if(cell)
 			to_chat(user, SPAN_WARNING("There is already a power cell inside!"))
-			return
+			return TRUE
 		else if(!user.transferItemToLoc(item, src))
-			return
+			return TRUE
 		cell = item
 		item.add_fingerprint(usr)
 
 		user.visible_message(SPAN_NOTICE("\The [user] inserts a power cell into \the [src]."), SPAN_NOTICE("You insert the power cell into \the [src]."))
 		SStgui.update_uis(src)
+		return TRUE
 	//reagent containers
 	if(is_reagent_container(item) && !(item.item_flags & ABSTRACT) && item.is_open_container())
 		. = TRUE //no afterattack
 		var/obj/item/reagent_containers/container = item
 		if(!user.transferItemToLoc(container, src))
-			return
+			return TRUE
 		replace_beaker(user, container)
 		to_chat(user, SPAN_NOTICE("You add [container] to [src]'s water bath."))
 		updateUsrDialog()
-		return
+		return TRUE
 	//Dropper tools
 	if(beaker)
 		if(is_type_in_list(item, list(/obj/item/reagent_containers/dropper, /obj/item/ph_meter, /obj/item/ph_paper, /obj/item/reagent_containers/syringe)))
 			item.afterattack(beaker, user, 1)
-		return
-
+		return TRUE
+	. = ..()
 
 /obj/machinery/space_heater/improvised_chem_heater/on_deconstruction(disassembled = TRUE)
 	. = ..()
