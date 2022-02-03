@@ -156,6 +156,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
 	visible_message(SPAN_NOTICE("[occupant] emerges from [src]!"),
 		SPAN_NOTICE("You climb out of [src]!"))
+	message_admins("[key_name_admin(user)] resisted out of a stasis pod. [ADMIN_JMP(src)]")
 	open_machine()
 
 /obj/machinery/cryopod/relaymove(mob/user)
@@ -276,30 +277,34 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	open_machine()
 	name = initial(name)
 
-/obj/machinery/cryopod/MouseDrop_T(mob/living/target, mob/user)
+// Checks whether a user can put a target into the cryopod, user can be the target.
+/obj/machinery/cryopod/proc/cryopod_action_check(mob/living/target, mob/user)
 	if(!istype(target) || !can_interact(user) || !target.Adjacent(user) || !ismob(target) || isanimal(target) || !istype(user.loc, /turf) || target.buckled)
-		return
-
+		return FALSE
 	if(occupant)
 		to_chat(user, SPAN_NOTICE("[src] is already occupied!"))
-		return
-
+		return FALSE
 	if(target.stat == DEAD)
 		to_chat(user, SPAN_NOTICE("Dead people can not be put into cryo."))
-		return
-
-	if(target.key && user != target)
+		return FALSE
+	if(user != target && target.client)
 		if(iscyborg(target))
 			to_chat(user, SPAN_DANGER("You can't put [target] into [src]. [target.p_theyre(capitalized = TRUE)] online."))
 		else
 			to_chat(user, SPAN_DANGER("You can't put [target] into [src]. [target.p_theyre(capitalized = TRUE)] conscious."))
+		return FALSE
+	return TRUE
+
+/obj/machinery/cryopod/MouseDrop_T(mob/living/target, mob/user)
+	if(!cryopod_action_check(target, user))
 		return
 
 	if(target == user && (tgalert(target, "Would you like to enter cryosleep?", "Enter Cryopod?", "Yes", "No") != "Yes"))
 		return
 
-	if(user != target && round((world.time - target.lastclienttime) / (1 MINUTES), 1) <= CONFIG_GET(number/cryo_min_ssd_time))
-		to_chat(user, SPAN_DANGER("You can't put [target] into [src]. They might wake up soon."))
+	var/remaining_minutes = CONFIG_GET(number/cryo_min_ssd_time) - round((world.time - target.lastclienttime) / (1 MINUTES), 1)
+	if(user != target && remaining_minutes > 0)
+		to_chat(user, SPAN_DANGER("You can't put [target] into [src]. They might wake up soon. Try again in [remaining_minutes] minutes."))
 		return
 
 	if(target == user)
@@ -309,20 +314,25 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		if(antag)
 			tgui_alert(target, "You're \a [antag.name]! [AHELP_FIRST_MESSAGE]")
 
-	if(!istype(target) || !can_interact(user) || !target.Adjacent(user) || !ismob(target) || isanimal(target) || !istype(user.loc, /turf) || target.buckled)
-		return
-		// rerun the checks in case of shenanigans
-
-	if(occupant)
-		to_chat(user, SPAN_NOTICE("[src] is already occupied!"))
-		return
-
 	if(target == user)
 		visible_message("<span class='infoplain'>[user] starts climbing into the cryo pod.</span>")
 	else
 		visible_message("<span class='infoplain'>[user] starts putting [target] into the cryo pod.</span>")
 
-	to_chat(target, SPAN_WARNING("<b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b>"))
+	/// 3 second delay to stop people from tactically using cryopods.
+	if(!do_mob(user, target, 3 SECONDS))
+		return
+
+	// rerun the checks because delay happened
+	if(!cryopod_action_check(target, user))
+		return
+
+	if(target == user)
+		visible_message("<span class='infoplain'>[user] climbs into the cryo pod.</span>")
+	else
+		visible_message("<span class='infoplain'>[user] puts [target] into the cryo pod.</span>")
+
+	to_chat(target, SPAN_WARNING("<b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.\nIf you changed your mind, you can resist out of the cryopod to eject yourself.</b>"))
 
 	log_admin("[key_name(target)] entered a stasis pod.")
 	message_admins("[key_name_admin(target)] entered a stasis pod. [ADMIN_JMP(src)]")
