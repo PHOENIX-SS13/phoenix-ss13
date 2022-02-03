@@ -1,0 +1,5 @@
+author: LemonInTheDark
+changes:
+- bugfix: Fixed client deletion signalling
+merge-date: 2022-02-03
+prnumber: 784
