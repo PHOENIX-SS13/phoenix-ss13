@@ -14,6 +14,10 @@
 	merge_type = /obj/item/stack/catwalk
 	var/catwalk_type = /obj/structure/lattice/catwalk
 
+/obj/item/stack/catwalk/examine(mob/user)
+	. = ..()
+	. += SPAN_NOTICE("It takes 2 rods to make one catwalk, or 1 to make it on top of a lattice.")
+
 /obj/item/stack/catwalk/plated
 	name = "plated catwalk rods"
 	singular_name = "plated catwalk rod"
