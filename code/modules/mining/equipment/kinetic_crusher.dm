@@ -31,6 +31,10 @@
 	var/backstab_bonus = 30
 	var/wielded = FALSE // track wielded status on item
 
+/obj/item/kinetic_crusher/cyborg //probably give this a unique sprite later
+	desc = "An integrated version of the standard kinetic crusher. Borgo Smash"
+	wielded = 1
+
 /obj/item/kinetic_crusher/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)

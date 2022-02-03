@@ -356,7 +356,8 @@
 		/obj/item/storage/bag/sheetsnatcher/borg,
 		/obj/item/gun/energy/kinetic_accelerator/cyborg,
 		/obj/item/gps/cyborg,
-		/obj/item/stack/marker_beacon)
+		/obj/item/stack/marker_beacon,
+		/obj/item/kinetic_crusher/cyborg)
 	radio_channels = list(RADIO_CHANNEL_SCIENCE, RADIO_CHANNEL_SUPPLY)
 	emag_modules = list(/obj/item/borg/stun)
 	cyborg_base_icon = "miner"
