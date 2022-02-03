@@ -108,6 +108,7 @@
 /// One planet from this list is guaranteed
 #define HABITABLE_PLANETS list(/datum/planet_template/snow_planet = 100, \
 					/datum/planet_template/lush_planet = 100, \
+					/datum/planet_template/desert_planet = 100, \
 					/datum/planet_template/jungle_planet = 100)
 
 //Planetary proprties for ruins to check
