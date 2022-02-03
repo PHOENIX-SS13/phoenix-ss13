@@ -79,6 +79,7 @@
 	wall_type = /turf/closed/wall/mineral/plastitanium
 	false_wall_type = /obj/structure/falsewall/plastitanium
 	hard_wall_decon = TRUE
+	wall_color = "#423b3b"
 
 /** Plasmaglass
  *
