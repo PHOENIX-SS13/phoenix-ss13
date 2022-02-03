@@ -58,8 +58,8 @@
 
 /area/ruin/space/has_grav/hotel/guestroom
 	name = "Hotel Guest Room"
-	icon_state = "Sleep"
-
+	icon_state = "dorms"
+	
 /area/ruin/space/has_grav/hotel/guestroom/room_1
 	name = "Hotel Guest Room 1"
 
@@ -78,21 +78,70 @@
 /area/ruin/space/has_grav/hotel/guestroom/room_6
 	name = "Hotel Guest Room 6"
 
+/area/ruin/space/has_grav/hotel/guestroom/room_7
+	name = "Hotel Guest Room 7"
+
+/area/ruin/space/has_grav/hotel/guestroom/room_8
+	name = "Hotel Guest Room 8"
+
+/area/ruin/space/has_grav/hotel/guestroom/room_9
+	name = "Hotel Family Room"
+
+/area/ruin/space/has_grav/hotel/guestroom/room_10
+	name = "Hotel Deluxe Suite"
+
 /area/ruin/space/has_grav/hotel/security
 	name = "Hotel Security Post"
 	icon_state = "security"
 
-/area/ruin/space/has_grav/hotel/pool
-	name = "Hotel Pool Room"
+/area/ruin/space/has_grav/hotel/fitness
+	name = "Hotel Fitness Room"
 	icon_state = "fitness"
+	main_ambience = AMBIENCE_PSYCH
+
+/area/ruin/space/has_grav/hotel/toilet
+	name = "Hotel Restrooms"
+	icon_state = "toilet"
+
+/area/ruin/space/has_grav/hotel/pool
+	name = "Hotel Pool"
+	icon_state = "fitness"
+	main_ambience = AMBIENCE_PSYCH
+
+/area/ruin/space/has_grav/hotel/sauna
+	name = "Hotel Sauna"
+	icon_state = "fitness"
+	main_ambience = AMBIENCE_PSYCH
 
 /area/ruin/space/has_grav/hotel/bar
 	name = "Hotel Bar"
 	icon_state = "cafeteria"
 
+/area/ruin/space/has_grav/hotel/laundry
+	name = "Hotel Laundry"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/hotel/bar_backroom
+	name = "Hotel Bar Backroom"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/hotel/dining_hall
+	name = "Hotel Dining Hall"
+	icon_state = "cafeteria"
+	main_ambience = AMBIENCE_DETECTIVE
+
+/area/ruin/space/has_grav/hotel/kitchen
+	name = "Hotel Kitchen"
+	icon_state = "kitchen"
+
+/area/ruin/space/has_grav/hotel/hydroponics
+	name = "Hotel Hydroponics"
+	icon_state = "hydro"
+
 /area/ruin/space/has_grav/hotel/power
-	name = "Hotel Power Room"
+	name = "Hotel Engineering Room"
 	icon_state = "engine_smes"
+	main_ambience = AMBIENCE_ENGI
 
 /area/ruin/space/has_grav/hotel/custodial
 	name = "Hotel Custodial Closet"
@@ -110,9 +159,32 @@
 /area/ruin/space/has_grav/hotel/workroom
 	name = "Hotel Staff Room"
 	icon_state = "crew_quarters"
+	
+/area/ruin/space/has_grav/hotel/maintenance
+	name = "Hotel Maintenence"
+	icon_state = "maintcentral"
 
+/area/ruin/space/has_grav/hotel/first_aid
+	name = "Hotel First Aid"
+	icon_state = "medbay1"
+	main_ambience = AMBIENCE_MEDICAL
+	
+/area/ruin/space/has_grav/hotel/hall_aft
+	name = "Hotel Arrivals Hallway"
+	icon_state = "hallA"
 
+/area/ruin/space/has_grav/hotel/hall_fore
+	name = "Hotel Rooms Hallway"
+	icon_state = "hallF"
+	
+/area/ruin/space/has_grav/hotel/docking_hall
+	name = "Hotel Docking Ports"
+	icon_state = "entry"
 
+/area/ruin/space/has_grav/hotel/teleporter
+	name = "Hotel Teleporter"
+	icon_state = "entry"
+	main_ambience = AMBIENCE_ENGI
 
 //Ruin of Derelict Oupost
 
