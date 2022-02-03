@@ -10,7 +10,7 @@
 	/// How much does it cost
 	var/cost = 5000
 	/// How much left in stock
-	var/stock = 1
+	var/stock = 2
 	/// What type of the shuttle it is. Consoles may have limited purchase range
 	var/shuttle_type = SHUTTLE_CIV
 	/// Associative to TRUE list of dock id's that this template can fit into
