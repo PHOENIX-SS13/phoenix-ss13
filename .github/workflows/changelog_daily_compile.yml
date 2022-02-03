@@ -26,22 +26,10 @@ jobs:
           pip install -r **/changelogs/requirements.txt
       - name: Compile Daily Changelogs into Monthly file
         run: python tools/changelogs/compile_monthly_changelogs.py -vv
-      - name: Disable Branch Protection
-        uses: benjefferies/branch-protection-bot@6d0ac2b2d9bfd39794b017f8241adb7da7f0ab98
-        if: always()
-        with:
-          access_token: ${{ secrets.HRZN_TOKEN_BRANCHPROTECT }}
-          branch: ${{ github.event.repository.default_branch }}
       - name: Commit and Push Compiled Changelog
         run: |
-          git config user.name hrzn-actions
-          git config user.email 68955348+hrzn-actions@users.noreply.github.com
+          git config user.name github-actions
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add html/changelogs
           git diff-index --quiet --cached HEAD || git commit -m "Automatic daily changelog compile [ci skip]"
           git push
-      - name: Re-enable Branch Protection
-        uses: benjefferies/branch-protection-bot@6d0ac2b2d9bfd39794b017f8241adb7da7f0ab98
-        if: always()
-        with:
-          access_token: ${{ secrets.HRZN_TOKEN_BRANCHPROTECT }}
-          branch: ${{ github.event.repository.default_branch }}
