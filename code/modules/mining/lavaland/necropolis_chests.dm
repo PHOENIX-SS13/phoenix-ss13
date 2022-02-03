@@ -71,7 +71,7 @@
 		if(17)
 			new /obj/item/book_of_babel(src)
 		if(18)
-			new /obj/item/borg/upgrade/modkit/lifesteal(src)
+			new /obj/item/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
 		if(19)
 			new /obj/item/clothing/neck/necklace/memento_mori(src)
@@ -122,21 +122,21 @@
 	desc = "A device which causes kinetic accelerators to fire AoE blasts that destroy rock and damage creatures."
 	id = "hyperaoemod"
 	materials = list(/datum/material/iron = 7000, /datum/material/glass = 3000, /datum/material/silver = 3000, /datum/material/gold = 3000, /datum/material/diamond = 4000)
-	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs/andmobs
+	build_path = /obj/item/modkit/aoe/turfs/andmobs
 
 /datum/design/unique_modkit/rapid_repeater
 	name = "Kinetic Accelerator Rapid Repeater Mod"
 	desc = "A device which greatly reduces a kinetic accelerator's cooldown on striking a living target or rock, but greatly increases its base cooldown."
 	id = "repeatermod"
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 5000, /datum/material/uranium = 8000, /datum/material/bluespace = 2000)
-	build_path = /obj/item/borg/upgrade/modkit/cooldown/repeater
+	build_path = /obj/item/modkit/cooldown/repeater
 
 /datum/design/unique_modkit/resonator_blast
 	name = "Kinetic Accelerator Resonator Blast Mod"
 	desc = "A device which causes kinetic accelerators to fire shots that leave and detonate resonator blasts."
 	id = "resonatormod"
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 5000, /datum/material/silver = 5000, /datum/material/uranium = 5000)
-	build_path = /obj/item/borg/upgrade/modkit/resonator_blasts
+	build_path = /obj/item/modkit/resonator_blasts
 
 /datum/design/unique_modkit/bounty
 	name = "Kinetic Accelerator Death Syphon Mod"
@@ -144,7 +144,7 @@
 	id = "bountymod"
 	materials = list(/datum/material/iron = 4000, /datum/material/silver = 4000, /datum/material/gold = 4000, /datum/material/bluespace = 4000)
 	reagents_list = list(/datum/reagent/blood = 40)
-	build_path = /obj/item/borg/upgrade/modkit/bounty
+	build_path = /obj/item/modkit/bounty
 
 //Spooky special loot
 

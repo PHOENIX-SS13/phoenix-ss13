@@ -157,7 +157,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 		if(10)
 			new /obj/item/clothing/neck/necklace/memento_mori(loc)
 		if(11)
-			new /obj/item/borg/upgrade/modkit/lifesteal(loc)
+			new /obj/item/modkit/lifesteal(loc)
 			new /obj/item/bedsheet/cult(loc)
 		if(12)
 			new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(loc)

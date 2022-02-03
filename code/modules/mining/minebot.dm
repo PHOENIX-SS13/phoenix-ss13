@@ -86,7 +86,7 @@
 	Field repairs can be done with a welder."}
 	if(stored_gun?.max_mod_capacity)
 		. += "<b>[stored_gun.get_remaining_mod_capacity()]%</b> mod capacity remaining."
-		for(var/obj/item/borg/upgrade/modkit/modkit as anything in stored_gun.modkits)
+		for(var/obj/item/modkit/modkit as anything in stored_gun.modkits)
 			. += SPAN_NOTICE("There is \a [modkit] installed, using <b>[modkit.cost]%</b> capacity.")
 
 /mob/living/simple_animal/hostile/mining_drone/welder_act(mob/living/user, obj/item/welder)
@@ -109,7 +109,7 @@
 		to_chat(user, SPAN_INFO("You instruct [src] to drop any collected ore."))
 		DropOre()
 		return
-	if(item_used.tool_behaviour == TOOL_CROWBAR || istype(item_used, /obj/item/borg/upgrade/modkit))
+	if(item_used.tool_behaviour == TOOL_CROWBAR || istype(item_used, /obj/item/modkit))
 		item_used.melee_attack_chain(user, stored_gun, params)
 		return
 	..()
@@ -117,7 +117,7 @@
 /mob/living/simple_animal/hostile/mining_drone/death()
 	DropOre()
 	if(stored_gun)
-		for(var/obj/item/borg/upgrade/modkit/modkit as anything in stored_gun.modkits)
+		for(var/obj/item/modkit/modkit as anything in stored_gun.modkits)
 			modkit.uninstall(stored_gun)
 	deathmessage = "blows apart!"
 	..()
@@ -140,7 +140,7 @@
 	if(istype(object, /obj/projectile/kinetic))
 		var/obj/projectile/kinetic/projectile = object
 		if(projectile.kinetic_gun)
-			if (locate(/obj/item/borg/upgrade/modkit/minebot_passthrough) in projectile.kinetic_gun.modkits)
+			if (locate(/obj/item/modkit/minebot_passthrough) in projectile.kinetic_gun.modkits)
 				return TRUE
 	if(istype(object, /obj/projectile/destabilizer))
 		return TRUE

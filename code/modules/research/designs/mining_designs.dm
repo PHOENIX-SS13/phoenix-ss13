@@ -88,7 +88,7 @@
 	id = "triggermod"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/trigger_guard
+	build_path = /obj/item/modkit/trigger_guard
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
@@ -96,9 +96,9 @@
 	name = "Kinetic Accelerator Damage Mod"
 	desc = "A device which allows kinetic accelerators to deal more damage."
 	id = "damagemod"
-	build_type = PROTOLATHE | AWAY_LATHE | MECHFAB
+	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/damage
+	build_path = /obj/item/modkit/damage
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
@@ -106,9 +106,9 @@
 	name = "Kinetic Accelerator Cooldown Mod"
 	desc = "A device which decreases the cooldown of a Kinetic Accelerator."
 	id = "cooldownmod"
-	build_type = PROTOLATHE | AWAY_LATHE | MECHFAB
+	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/cooldown
+	build_path = /obj/item/modkit/cooldown
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
@@ -116,9 +116,9 @@
 	name = "Kinetic Accelerator Range Mod"
 	desc = "A device which allows kinetic accelerators to fire at a further range."
 	id = "rangemod"
-	build_type = PROTOLATHE | AWAY_LATHE | MECHFAB
+	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/range
+	build_path = /obj/item/modkit/range
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
@@ -126,9 +126,9 @@
 	name = "Kinetic Accelerator Mining AoE Mod"
 	desc = "A modification kit for Kinetic Accelerators which causes it to fire AoE blasts that destroy rock."
 	id = "hypermod"
-	build_type = PROTOLATHE | AWAY_LATHE | MECHFAB
+	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = 8000, /datum/material/glass = 1500, /datum/material/silver = 2000, /datum/material/gold = 2000, /datum/material/diamond = 2000)
-	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs
+	build_path = /obj/item/modkit/aoe/turfs
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
