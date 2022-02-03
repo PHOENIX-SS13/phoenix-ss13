@@ -70,6 +70,7 @@
 	if (!msg)
 		message_admins("[key_name_admin(src)] has cancelled their reply to [key_name_admin(C, 0, 0)]'s admin help.")
 		return
+	msg = strip_html_simple(msg)
 	if(!C) //We lost the client during input, disconnected or relogged.
 		if(GLOB.directory[AH.initiator_ckey]) // Client has reconnected, lets try to recover
 			whom = GLOB.directory[AH.initiator_ckey]
@@ -139,6 +140,7 @@
 
 		if(!msg)
 			return
+		msg = strip_html_simple(msg)
 		if(holder)
 			to_chat(src,
 				type = MESSAGE_TYPE_ADMINPM,
@@ -151,7 +153,7 @@
 		//get message text, limit it's length.and clean/escape html
 		if(!msg)
 			msg = input(src,"Message:", "Private message to [recipient.holder?.fakekey ? "an Administrator" : key_name(recipient, 0, 0)].") as message|null
-			msg = trim(msg)
+			msg = strip_html_simple(msg)
 			if(!msg)
 				return
 
@@ -317,6 +319,7 @@
 	var/sendername = key
 	var/reply = input(recipient, msg,"Admin PM from-[sendername]", "") as message|null //show message and await a reply
 	if(recipient && reply)
+		reply = strip_html_simple(reply)
 		if(sender)
 			recipient.cmd_admin_pm(sender,reply) //sender is still about, let's reply to them
 		else
