@@ -105,6 +105,12 @@
 	color_src = USE_ONE_COLOR
 	default_color = DEFAULT_TERTIARY
 
+/datum/sprite_accessory/ears/mutant/deer2
+	name = "Deer Ears"
+	icon_state = "deer2"
+	color_src = USE_ONE_COLOR
+	default_color = DEFAULT_TERTIARY
+
 /datum/sprite_accessory/ears/mutant/eevee
 	name = "Eevee"
 	icon_state = "eevee"

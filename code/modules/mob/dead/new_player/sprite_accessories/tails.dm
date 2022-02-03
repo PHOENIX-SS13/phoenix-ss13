@@ -338,3 +338,7 @@
 	name = "Leopard"
 	icon_state = "leopard"
 	general_type = "feline"
+
+/datum/sprite_accessory/tails/mammal/wagging/deer
+	name = "Deer"
+	icon_state = "deer"

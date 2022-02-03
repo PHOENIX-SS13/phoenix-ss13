@@ -46,3 +46,14 @@
 /datum/sprite_accessory/horns/knight
 	name = "Knight"
 	icon_state = "knight"
+
+//BIG HORNS
+
+
+/datum/sprite_accessory/horns/big
+	icon = 'icons/mob/sprite_accessory/horns_big.dmi'
+
+/datum/sprite_accessory/horns/big/antlers
+	name = "Antlers"
+	icon_state = "antlers"
+	relevent_layers = list(BODY_FRONT_LAYER, BODY_ADJ_LAYER, BODY_BEHIND_LAYER)

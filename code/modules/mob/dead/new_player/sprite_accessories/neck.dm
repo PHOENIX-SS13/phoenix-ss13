@@ -102,3 +102,8 @@
 	name = "Snow (Top)"
 	icon_state = "fsnow"
 	relevent_layers = list(BODY_FRONT_LAYER)
+
+/datum/sprite_accessory/neck/mothfluff/snowdual
+	name = "Snow (Dual-Color)"
+	icon_state = "snowdual"
+	color_src = USE_MATRIXED_COLORS
