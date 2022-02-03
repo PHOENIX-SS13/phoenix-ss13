@@ -2698,8 +2698,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
-						var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in parent.screen
-						PM.backdrop(parent.mob)
+						var/atom/movable/screen/plane_master/game_world/GPM = locate(/atom/movable/screen/plane_master/game_world) in parent.screen
+						GPM.backdrop(parent.mob)
+
+						var/atom/movable/screen/plane_master/runechat/RPM = locate(/atom/movable/screen/plane_master/runechat) in parent.screen
+						RPM.backdrop(parent.mob)
 
 				if("auto_fit_viewport")
 					auto_fit_viewport = !auto_fit_viewport
