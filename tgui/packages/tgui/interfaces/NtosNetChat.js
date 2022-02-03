@@ -222,10 +222,10 @@ export const NtosNetChat = (props, context) => {
                               <>
                                 <Stack.Item>
                                   <Button
-                                    disabled={this_client.muted}
+                                    disabled={this_client?.muted}
                                     compact
                                     icon="bullhorn"
-                                    tooltip={!this_client.muted
+                                    tooltip={!this_client?.muted
                                       && "Ping" || "You are muted!"}
                                     tooltipPosition="left"
                                     onClick={() => act('PRG_ping_user', {
