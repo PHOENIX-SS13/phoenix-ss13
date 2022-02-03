@@ -236,15 +236,7 @@
 	icon_state = "bed_double"
 	buildstackamount = 4
 	max_buckled_mobs = 2
-	///The mob who buckled to this bed second, to avoid other mobs getting pixel-shifted before he unbuckles.
-	var/mob/living/goldilocks
 
 /obj/structure/bed/double/post_buckle_mob(mob/living/target)
-	if(buckled_mobs.len > 1 && !goldilocks) //Push the second buckled mob a bit higher from the normal lying position
+	if(buckled_mobs.len >= 2 && buckled_mobs[2] == target) //Push the second buckled mob a bit higher from the normal lying position
 		target.pixel_y = target.base_pixel_y + 6
-		goldilocks = target
-
-/obj/structure/bed/double/post_unbuckle_mob(mob/living/target)
-	target.pixel_y = target.base_pixel_y + target.body_position_pixel_y_offset
-	if(target == goldilocks)
-		goldilocks = null
