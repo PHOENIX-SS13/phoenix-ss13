@@ -28,10 +28,22 @@ jobs:
       - name: Ingest and generate Changelog
         run: |
           python tools/changelogs/ingest_pr_changelog.py -vv --strict ${{ github.repository }} ${{ github.event.number }} --auth ${{ secrets.GITHUB_TOKEN }}
+      - name: Disable Branch Protection
+        uses: benjefferies/branch-protection-bot@6d0ac2b2d9bfd39794b017f8241adb7da7f0ab98
+        if: always()
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.event.repository.default_branch }}
       - name: Commit and Push Changelog
         run: |
-          git config user.name github-actions
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config user.name hrzn-actions
+          git config user.email 68955348+hrzn-actions@users.noreply.github.com
           git add html/changelogs
           git diff-index --quiet --cached HEAD || git commit -m "Automatic changelog generation for PR #${{ github.event.number }} [ci skip]"
           git push
+      - name: Re-enable Branch Protection
+        uses: benjefferies/branch-protection-bot@6d0ac2b2d9bfd39794b017f8241adb7da7f0ab98
+        if: always()
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.event.repository.default_branch }}
