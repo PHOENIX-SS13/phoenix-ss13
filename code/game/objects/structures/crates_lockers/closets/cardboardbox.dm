@@ -17,6 +17,7 @@
 	open_sound_volume = 35
 	close_sound_volume = 35
 	has_closed_overlay = FALSE
+	pass_flags_self = PASSSTRUCTURE
 	var/move_speed_multiplier = 1
 	var/move_delay = FALSE
 	var/egged = 0

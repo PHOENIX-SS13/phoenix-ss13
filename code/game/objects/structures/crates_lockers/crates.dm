@@ -17,6 +17,7 @@
 	material_drop = /obj/item/stack/sheet/plasteel
 	material_drop_amount = 2
 	drag_slowdown = 0
+	pass_flags_self = PASSSTRUCTURE | LETPASSTHROW
 	var/crate_climb_time = 20
 	var/obj/item/paper/fluff/jobs/cargo/manifest/manifest
 
