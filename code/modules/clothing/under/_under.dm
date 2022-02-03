@@ -25,7 +25,7 @@
 	var/mutable_appearance/accessory_overlay
 	var/freshly_laundered = FALSE
 
-/obj/item/clothing/under/worn_overlays(mutable_appearance/standing, isinhands = FALSE)
+/obj/item/clothing/under/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodytype = BODYTYPE_HUMANOID, slot, worn_state, worn_prefix, list/accessory_offsets)
 	. = ..()
 	if(isinhands)
 		return
@@ -35,6 +35,10 @@
 	if(HAS_BLOOD_DNA(src))
 		. += mutable_appearance('icons/effects/blood.dmi', "uniformblood")
 	if(accessory_overlay)
+		// Apply offsets from the passed list if any.
+		if(accessory_offsets)
+			accessory_overlay.pixel_x = accessory_offsets[1]
+			accessory_overlay.pixel_y = accessory_offsets[2]
 		. += accessory_overlay
 
 /obj/item/clothing/under/attackby(obj/item/I, mob/user, params)

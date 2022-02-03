@@ -39,7 +39,8 @@
 		OFFSET_SUIT = list(0,-4),
 		OFFSET_S_STORE = list(0,-2),
 		OFFSET_GLASSES = list(0,-5),
-		OFFSET_ID = list(0,-4)
+		OFFSET_ID = list(0,-4),
+		OFFSET_ACCESSORY = list(0,-4)
 		)
 	coldmod = 0.3 // Except cold.
 	heatmod = 1.5

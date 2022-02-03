@@ -42,7 +42,8 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		OFFSET_BACK = list(0,0),
 		OFFSET_SUIT = list(0,0),
 		OFFSET_NECK = list(0,0),
-		OFFSET_INHANDS = list(0,0)
+		OFFSET_INHANDS = list(0,0),
+		OFFSET_ACCESSORY = list(0,0)
 		)
 	*/
 

@@ -461,9 +461,10 @@ generate/load female uniform sprites matching all previously decided variables
 /obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state, femaleuniform = NO_FEMALE_UNIFORM, mob/living/carbon/wearer, slot = NONE)
 	var/static/list/slot_translation = SLOT_TRANSLATION_LIST
 	var/static/list/bodytype_translation = BODYTYPE_TRANSLATION_LIST
+	var/datum/species/species = wearer ? wearer.dna.species : null
 
-	var/real_bodytype = wearer ? wearer.dna.species.bodytype : BODYTYPE_HUMANOID
-	var/bodytype = wearer ? wearer.dna.species.get_bodytype(slot, src) : BODYTYPE_HUMANOID
+	var/real_bodytype = wearer ? species.bodytype : BODYTYPE_HUMANOID
+	var/bodytype = wearer ? species.get_bodytype(slot, src) : BODYTYPE_HUMANOID
 	var/perc_bodytype = bodytype
 	var/wear_template = FALSE
 	if(!(fitted_bodytypes & bodytype))
@@ -511,7 +512,7 @@ generate/load female uniform sprites matching all previously decided variables
 	var/taur_alpha_mask
 	//If we're a taur, and what we're wearing will not get a taur variant
 	if(bodytype & BODYTYPE_TAUR_ALL && !(perc_bodytype & BODYTYPE_TAUR_ALL) && slot == ITEM_SLOT_ICLOTHING)
-		var/datum/sprite_accessory/taur/taur_sprite = GLOB.sprite_accessories["taur"][wearer.dna.species.mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
+		var/datum/sprite_accessory/taur/taur_sprite = GLOB.sprite_accessories["taur"][species.mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
 		if(body_parts_covered & LEGS) //If we cover legs, apply the taur alpha mask
 			taur_alpha_mask = taur_sprite.alpha_mask_type
 
@@ -520,9 +521,11 @@ generate/load female uniform sprites matching all previously decided variables
 	if(!standing)
 		standing = mutable_appearance(file2use, t_state, -layer2use)
 
+	//Because we don't really know what might or might not, and because the things using it are rather loose (accessories). We want to pass them as an argument to worn overlays (Because doing it in the reverse would be even worse)
+	var/list/accessory_offsets = (species && species.offset_features && species.offset_features[OFFSET_ACCESSORY]) ? species.offset_features[OFFSET_ACCESSORY] : null
 	//Get the overlays for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
-	var/list/worn_overlays = worn_overlays(standing, isinhands, file2use, perc_bodytype, slot, t_state, worn_prefix)
+	var/list/worn_overlays = worn_overlays(standing, isinhands, file2use, perc_bodytype, slot, t_state, worn_prefix, accessory_offsets)
 	if(worn_overlays?.len)
 		standing.overlays.Add(worn_overlays)
 
@@ -541,13 +544,14 @@ generate/load female uniform sprites matching all previously decided variables
 	standing.color = color
 
 	///Species offsets, only applied when the bodytype is not fitted. (using human variants instead)
-	if(!wear_template && wearer && wearer.dna.species.offset_features)
-		if(isinhands && wearer.dna.species.offset_features[OFFSET_INHANDS])
-			var/list/offset_list = wearer.dna.species.offset_features[OFFSET_INHANDS]
-			standing.pixel_x += offset_list[1]
-			standing.pixel_y += offset_list[2]
-		else if(real_bodytype != perc_bodytype && wearer.dna.species.offset_features[translated_slot])
-			var/list/offset_list = wearer.dna.species.offset_features[translated_slot]
+	if(!wear_template && wearer && species.offset_features)
+		if(isinhands)
+			if(species.offset_features[OFFSET_INHANDS])
+				var/list/offset_list = species.offset_features[OFFSET_INHANDS]
+				standing.pixel_x += offset_list[1]
+				standing.pixel_y += offset_list[2]
+		else if(real_bodytype != perc_bodytype && species.offset_features[translated_slot])
+			var/list/offset_list = species.offset_features[translated_slot]
 			standing.pixel_x += offset_list[1]
 			standing.pixel_y += offset_list[2]
 
