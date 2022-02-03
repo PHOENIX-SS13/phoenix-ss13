@@ -306,9 +306,16 @@
 
 		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!supress_message && !(iscarbon(AM) && HAS_TRAIT(src, TRAIT_STRONG_GRABBER)))
-			if(zone_selected == BODY_ZONE_PRECISE_GROIN && M.getorganslot(ORGAN_SLOT_TAIL) && src.getorganslot(ORGAN_SLOT_TAIL))
-				M.visible_message(SPAN_WARNING("[src] coils their tail with [AM], wow is that okay in public?!"), "[src] has entwined their tail with yours!")
-				to_chat(src, SPAN_NOTICE("You entwine your tail with [AM]'s"))
+			// Pull them by their tail if we try to select a groin and they have one >:)
+			if(zone_selected == BODY_ZONE_PRECISE_GROIN && M.getorganslot(ORGAN_SLOT_TAIL))
+				var/mob/living/carbon/carbon_mob = M
+				visible_message(SPAN_WARNING("[src] pulls on [M]'s tail!"), \
+							null, SPAN_HEAR("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(M, src))
+				to_chat(src, SPAN_WARNING("You pull on [M]'s tail!"))
+				to_chat(M, SPAN_WARNING("[src] pulls on your tail!"))
+				carbon_mob.dna?.species?.stop_wagging_tail(carbon_mob)
+				if(HAS_TRAIT(M, TRAIT_BADTOUCH)) //How dare they!
+					to_chat(src, SPAN_WARNING("[M] makes a grumbling noise as you pull on [M.p_their()] tail."))
 			else
 				M.visible_message(SPAN_WARNING("[src] grabs [M] [(zone_selected == "l_arm" || zone_selected == "r_arm" && ishuman(M))? "by their hands":"passively"]!"), \
 								SPAN_WARNING("[src] grabs you [(zone_selected == "l_arm" || zone_selected == "r_arm" && ishuman(M))? "by your hands":"passively"]!"), null, null, src)

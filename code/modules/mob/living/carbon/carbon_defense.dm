@@ -246,6 +246,29 @@
  * or another carbon.
 */
 /mob/living/carbon/proc/disarm(mob/living/carbon/target)
+	// If not on combat mode, see if we want to do any of the flavorful interactions.
+	if(!combat_mode)
+		// Try to slap a face when targetting face without combat mode
+		if(zone_selected == BODY_ZONE_PRECISE_MOUTH)
+			var/target_on_help_and_unarmed = !target.combat_mode && !target.get_active_held_item()
+			if(target_on_help_and_unarmed || HAS_TRAIT(target, TRAIT_RESTRAINED))
+				do_slap_animation(target)
+				playsound(target.loc, 'sound/weapons/slap.ogg', 50, TRUE, -1)
+				visible_message(SPAN_DANGER("[src] slaps [target] in the face!"),
+					SPAN_NOTICE("You slap [target] in the face!"),\
+					SPAN_HEAR("You hear a slap."))
+				target.dna?.species?.stop_wagging_tail(target)
+				return
+		// Try to slap their ass when targetting groin without combat mode (requires to face the same direction)
+		if(zone_selected == BODY_ZONE_PRECISE_GROIN && target.dir == dir)
+			do_slap_animation(target, -8)
+			playsound(target.loc, 'sound/weapons/slap.ogg', 50, TRUE, -1)
+			visible_message(SPAN_DANGER("[src] slaps [target] right on the ass!"),\
+				SPAN_NOTICE("You slap [target] on the ass, how satisfying."),\
+				"You hear a slap.", ignored_mobs = list(target))
+			to_chat(target, SPAN_DANGER("[src] slaps your ass!"))
+			return
+	// We didn't do any flavorful stuff, do disarm as usual.
 	do_attack_animation(target, ATTACK_EFFECT_DISARM)
 	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 	if (ishuman(target))
@@ -427,14 +450,22 @@
 	if(M == src && check_self_for_injuries())
 		return
 
-	if(body_position == LYING_DOWN)
-		if(buckled)
-			to_chat(M, SPAN_WARNING("You need to unbuckle [src] first to do that!"))
-			return
-		M.visible_message(SPAN_NOTICE("[M] shakes [src] trying to get [p_them()] up!"), \
-						null, SPAN_HEAR("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
-		to_chat(M, SPAN_NOTICE("You shake [src] trying to pick [p_them()] up!"))
-		to_chat(src, SPAN_NOTICE("[M] shakes you to get you up!"))
+	/// First check flavorful interactions and early return on them
+	if(M.zone_selected == BODY_ZONE_PRECISE_GROIN && M.getorganslot(ORGAN_SLOT_TAIL) && getorganslot(ORGAN_SLOT_TAIL))
+		visible_message(SPAN_NOTICE("[M] coils their tail with [src], wow is that okay in public?!"), "[M] has entwined their tail with yours!")
+		to_chat(M, SPAN_NOTICE("You entwine your tail with [src]'s"))
+		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
+			to_chat(M, SPAN_WARNING("[src] looks visibly upset as you entwine with [p_their()] tail."))
+		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+		return
+	else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH)
+		M.visible_message(SPAN_NOTICE("[M] boops [src]'s nose."), \
+		SPAN_NOTICE("You boop [src] on the nose."))
+		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
+			to_chat(M, SPAN_WARNING("[src] looks visibly upset as you boop [p_their()] nose."))
+		playsound(loc, 'sound/effects/nose_boop.ogg', 50, FALSE, -1)
+		// Flavorful interactions have an early return because they dont actually try and help someone
+		return
 
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //Headpats!
 		SEND_SIGNAL(src, COMSIG_CARBON_HEADPAT, M)
@@ -445,7 +476,18 @@
 
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
 			to_chat(M, SPAN_WARNING("[src] looks visibly upset as you pat [p_them()] on the head."))
-
+		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+		// Flavorful interactions have an early return because they dont actually try and help someone
+		return
+	// Try to help someone stand up.
+	else if(body_position == LYING_DOWN)
+		if(buckled)
+			to_chat(M, SPAN_WARNING("You need to unbuckle [src] first to do that!"))
+			return
+		M.visible_message(SPAN_NOTICE("[M] shakes [src] trying to get [p_them()] up!"), \
+						null, SPAN_HEAR("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
+		to_chat(M, SPAN_NOTICE("You shake [src] trying to pick [p_them()] up!"))
+		to_chat(src, SPAN_NOTICE("[M] shakes you to get you up!"))
 	else
 		SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
 		SEND_SIGNAL(M, COMSIG_CARBON_HUG, M, src)
