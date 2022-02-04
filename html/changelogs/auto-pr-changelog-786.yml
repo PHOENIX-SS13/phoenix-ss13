@@ -1,7 +1,0 @@
-author: Azarak
-changes:
-- qol: More feedback regarding cryo pods
-- qol: Now it takes 3 seconds to climb into a cryo pod
-- bugfix: Fixed a bug that prevented people from being cryod
-merge-date: 2022-02-03
-prnumber: 786

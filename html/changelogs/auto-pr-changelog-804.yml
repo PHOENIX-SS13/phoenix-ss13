@@ -1,7 +1,0 @@
-author: Azarak
-changes:
-- rscadd: Re-adds hardsuits and spacesuits to cargo packs
-- rscadd: Space suit crate now gives the EVA space suit, instead of the generic space
-    suit (ugly looking)
-merge-date: 2022-02-03
-prnumber: 804

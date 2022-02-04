@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- qol: Added feedback when a cargo falls out of ripley compartment due to explosion
-- code_imp: Refactors ripley cargo code
-merge-date: 2022-02-03
-prnumber: 769

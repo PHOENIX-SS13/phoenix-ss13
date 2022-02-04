@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Fixes planet atmosphere gas string generation, which will guarantee that
-    Lavaland always has low pressure atmos
-merge-date: 2022-02-03
-prnumber: 793

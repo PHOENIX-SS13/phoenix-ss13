@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Changing a turf no longer disintegrates lattices and its subtypes (shuttle
-    moving for example)
-merge-date: 2022-02-03
-prnumber: 759
