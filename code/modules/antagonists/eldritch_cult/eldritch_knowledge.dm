@@ -260,7 +260,9 @@
 		if(heart.target && heart.target.stat == DEAD)
 			to_chat(carbon_user,SPAN_DANGER("Your patrons accepts your offer.."))
 			var/mob/living/carbon/human/current_target = heart.target
-			current_target.gib()
+			current_target.adjustBruteLoss(150)
+			current_target.spill_organs()
+			current_target.spawn_gibs()
 			heart.target = null
 			var/datum/antagonist/heretic/heretic_datum = carbon_user.mind.has_antag_datum(/datum/antagonist/heretic)
 
