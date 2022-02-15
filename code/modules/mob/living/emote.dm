@@ -814,7 +814,12 @@
 	message = "cackles hysterically!"
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
-	sound = 'sound/voice/cackle_yeen.ogg'
+
+/datum/emote/living/cackle/get_sound(mob/living/user)
+	return pick(
+		'sound/voice/hyena/cackle.ogg',
+		'sound/voice/hyena/cackle_giggle.ogg',
+	)
 
 /datum/emote/living/headtilt
 	key = "tilt"
@@ -1067,6 +1072,36 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon, /mob/living/silicon/pai)
 	vary = TRUE
 	sound = 'sound/voice/mothchitter.ogg'
+
+/datum/emote/living/whoop
+	key = "whoop"
+	key_third_person = "whoops"
+	message = "lets out a whoop!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/whoop/get_sound(mob/living/user)
+	return pick(
+		'sound/voice/hyena/whoop.ogg',
+		'sound/voice/hyena/whoop_long.ogg',
+	)
+
+/datum/emote/living/hyena_laugh
+	key = "hlaugh"
+	message = "laughs like a hyena!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound_volume = 25
+
+/datum/emote/living/hyena_laugh/get_sound(mob/living/user)
+	return pick(
+		'sound/voice/hyena/laugh_bright.ogg',
+		'sound/voice/hyena/laugh_low.ogg',
+		'sound/voice/hyena/laugh_short.ogg',
+		'sound/voice/hyena/laugh_twice.ogg',
+		'sound/voice/hyena/laugh1.ogg',
+		'sound/voice/hyena/laugh2.ogg',
+	)
 
 /mob/living/proc/do_ass_slap_animation(atom/slapped)
 	do_attack_animation(slapped, no_effect=TRUE)
