@@ -71,3 +71,10 @@
 2022-02-07:
   AtoriBirb:
   - code_imp: removes the gib call from heretic sacrifice
+2022-02-15:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscadd: Added a hyena-laugh emote, *hlaugh
+  - rscadd: Added a hyena-whoop emote, *whoop
+  - soundadd: Added sfx for *cackle
+  - soundadd: Added sfx for *hlaugh
+  - soundadd: Added sfx for *whoop
