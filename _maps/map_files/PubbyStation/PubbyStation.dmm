@@ -4236,7 +4236,6 @@
 /turf/open/floor/iron/dark,
 /area/ai_monitored/security/armory)
 "akN" = (
-/obj/effect/landmark/event_spawn,
 /mob/living/simple_animal/bot/secbot{
 	arrest_type = 1;
 	health = 45;
@@ -7101,7 +7100,6 @@
 /turf/open/floor/iron/cafeteria,
 /area/commons/dorms)
 "ase" = (
-/obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
@@ -7488,7 +7486,6 @@
 /turf/open/floor/iron,
 /area/command/gateway)
 "atc" = (
-/obj/effect/landmark/event_spawn,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/command/gateway)
@@ -8075,7 +8072,6 @@
 /turf/open/floor/iron,
 /area/security/brig)
 "auA" = (
-/obj/effect/landmark/event_spawn,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
@@ -8703,7 +8699,6 @@
 /turf/open/floor/iron/dark,
 /area/command/bridge)
 "avO" = (
-/obj/effect/landmark/event_spawn,
 /obj/machinery/camera{
 	c_tag = "Bridge MiniSat Access Foyer";
 	dir = 1
@@ -15169,7 +15164,6 @@
 /area/command/teleporter)
 "aNw" = (
 /obj/machinery/holopad,
-/obj/effect/landmark/event_spawn,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
 /obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
@@ -18850,7 +18844,6 @@
 /turf/open/floor/iron/dark,
 /area/service/janitor)
 "aXO" = (
-/obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -20212,7 +20205,6 @@
 /area/security/checkpoint/customs)
 "baS" = (
 /obj/structure/chair/office,
-/obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -22670,7 +22662,6 @@
 /turf/open/floor/iron,
 /area/science/robotics/mechbay)
 "bhT" = (
-/obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -23924,7 +23915,6 @@
 /turf/open/floor/iron/dark/telecomms,
 /area/science/server)
 "blP" = (
-/obj/effect/landmark/event_spawn,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -24207,7 +24197,6 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "bni" = (
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "bnj" = (
@@ -26531,7 +26520,6 @@
 /turf/open/floor/iron,
 /area/science/xenobiology)
 "btF" = (
-/obj/effect/landmark/event_spawn,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -32777,7 +32765,6 @@
 /turf/open/floor/iron/dark,
 /area/service/chapel/dock)
 "bMA" = (
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/engine,
 /area/maintenance/department/engine)
 "bMB" = (
@@ -33769,7 +33756,6 @@
 "bPH" = (
 /obj/machinery/holopad,
 /obj/structure/cable,
-/obj/effect/landmark/event_spawn,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron,
 /area/hallway/primary/aft)
@@ -38055,7 +38041,6 @@
 /turf/open/floor/iron,
 /area/engineering/main)
 "cbh" = (
-/obj/effect/landmark/event_spawn,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
@@ -38129,7 +38114,6 @@
 /area/engineering/atmos)
 "cbx" = (
 /obj/machinery/portable_atmospherics/canister/air,
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/engine/air,
 /area/engineering/atmos)
 "cby" = (
@@ -38456,7 +38440,6 @@
 /turf/open/floor/plating,
 /area/engineering/main)
 "cda" = (
-/obj/effect/landmark/event_spawn,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/engineering/main)
@@ -39494,7 +39477,6 @@
 "chk" = (
 /obj/structure/water_source/puddle,
 /obj/item/reagent_containers/glass/bucket,
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/grass,
 /area/service/hydroponics/garden/monastery)
 "chl" = (
@@ -48165,7 +48147,6 @@
 /area/maintenance/department/engine)
 "hCE" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/engine,
 /area/engineering/main)
 "hDG" = (
@@ -49718,7 +49699,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/landmark/event_spawn,
 /obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/engine,
 /area/engineering/main)
@@ -51527,7 +51507,6 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "lRS" = (
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/dark,
 /area/maintenance/disposal/incinerator)
 "lTW" = (
@@ -54049,7 +54028,6 @@
 	},
 /area/maintenance/department/science)
 "oEN" = (
-/obj/effect/landmark/event_spawn,
 /obj/machinery/door/poddoor/shutters/radiation/preopen{
 	id = "Supermatter";
 	name = "supermatter shielding"

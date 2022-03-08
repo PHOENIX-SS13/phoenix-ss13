@@ -2531,7 +2531,6 @@
 "Eb" = (
 /obj/structure/water_source/puddle,
 /obj/item/reagent_containers/glass/bucket,
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/grass,
 /area/shuttle/escape)
 "En" = (

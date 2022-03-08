@@ -1944,7 +1944,6 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "jJ" = (
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "jM" = (
@@ -5089,7 +5088,6 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "MV" = (
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
 "MX" = (
