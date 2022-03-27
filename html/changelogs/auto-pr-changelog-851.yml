@@ -1,0 +1,9 @@
+author: Avunia Takiya, Azarak
+changes:
+- rscadd: Added Automatic Transfer Votes
+- qol: Added a way for transfer votes to be initiated on-demand
+- config: Added AUTOTRANSFER_VOTE_TIMER
+- config: Added AUTOTRANSFER_VOTE_INTERVAL
+- config: Added AUTOTRANSFER_VOTE_MAX_EXTENSIONS
+merge-date: 2022-03-27
+prnumber: 851
