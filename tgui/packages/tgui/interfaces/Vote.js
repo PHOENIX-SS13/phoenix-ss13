@@ -76,9 +76,15 @@ const VoteOptions = (props, context) => {
                   </Button.Checkbox>
                 )}
                 <Button
+                  mr={1.6}
                   disabled={!allow_vote_restart}
                   onClick={() => act('restart')}>
                   Restart
+                </Button>
+                <Button
+                  disabled={!allow_vote_restart}
+                  onClick={() => act('transfer')}>
+                  Transfer
                 </Button>
               </Stack.Item>
             </Stack>

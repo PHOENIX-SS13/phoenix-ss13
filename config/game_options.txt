@@ -550,3 +550,12 @@ MODERATE_POP_SCALE_PENALTY 35
 MAJOR_POP_SCALE_PENALTY 35
 ROLESET_POP_SCALE_PENALTY 35
 OBJECTIVES_POP_SCALE_PENALTY 35
+
+## Timer before the first autotransfer vote will be initiated (in deciseconds)
+AUTOTRANSFER_VOTE_TIMER 144000
+## Timer between each vote after the initial autotransfer vote (in deciseconds)
+AUTOTRANSFER_VOTE_INTERVAL 36000
+## Maximum round extensions before force-ending the round
+###  0 for automatic shuttle call on the first vote
+### -1 to enable infinite extensions
+AUTOTRANSFER_VOTE_MAX_EXTENSIONS 4

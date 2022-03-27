@@ -297,7 +297,7 @@
 	height = 11
 	dir = EAST
 	port_direction = WEST
-	var/sound_played = 0 //If the launch sound has been sent to all players on the shuttle itself
+	var/sound_played = FALSE //If the launch sound has been sent to all players on the shuttle itself
 	var/hijack_status = NOT_BEGUN
 
 /obj/docking_port/mobile/emergency/canDock(obj/docking_port/stationary/S)
@@ -316,7 +316,7 @@
 
 	. = ..()
 
-/obj/docking_port/mobile/emergency/request(obj/docking_port/stationary/S, area/signalOrigin, reason, redAlert, set_coefficient=null)
+/obj/docking_port/mobile/emergency/request(obj/docking_port/stationary/S, area/signalOrigin, reason, redAlert, set_coefficient = null, silent = FALSE)
 	if(!isnum(set_coefficient))
 		var/security_num = seclevel2num(get_security_level())
 		switch(security_num)
@@ -326,7 +326,7 @@
 				set_coefficient = 1
 			else
 				set_coefficient = 0.5
-	var/call_time = SSshuttle.emergencyCallTime * set_coefficient * engine_coeff
+	var/call_time = SSshuttle.emergency_call_time * set_coefficient * engine_coeff
 	switch(mode)
 		// The shuttle can not normally be called while "recalling", so
 		// if this proc is called, it's via admin fiat
@@ -336,29 +336,30 @@
 		else
 			return
 
-	SSshuttle.emergencyCallAmount++
+	SSshuttle.emergency_call_amount++
 
 	if(prob(70))
-		SSshuttle.emergencyLastCallLoc = signalOrigin
+		SSshuttle.emergency_last_call_location = signalOrigin
 	else
-		SSshuttle.emergencyLastCallLoc = null
+		SSshuttle.emergency_last_call_location = null
 
-	priority_announce("The emergency shuttle has been called. [redAlert ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [timeLeft(600)] minutes.[reason][SSshuttle.emergencyLastCallLoc ? "\n\nCall signal traced. Results can be viewed on any communications console." : "" ][SSshuttle.adminEmergencyNoRecall ? "\n\nWarning: Shuttle recall subroutines disabled; Recall not possible." : ""]", null, ANNOUNCER_SHUTTLECALLED, "Priority")
+	if(!silent)
+		priority_announce("The emergency shuttle has been called. [redAlert ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [timeLeft(600)] minutes.[reason][SSshuttle.emergency_last_call_location ? "\n\nCall signal traced. Results can be viewed on any communications console." : "" ][SSshuttle.admin_emergency_no_recall ? "\n\nWarning: Shuttle recall subroutines disabled; Recall not possible." : ""]", null, ANNOUNCER_SHUTTLECALLED, "Priority")
 
 /obj/docking_port/mobile/emergency/cancel(area/signalOrigin)
 	if(mode != SHUTTLE_CALL)
 		return
-	if(SSshuttle.emergencyNoRecall)
+	if(SSshuttle.emergency_no_recall)
 		return
 
 	invertTimer()
 	mode = SHUTTLE_RECALL
 
 	if(prob(70))
-		SSshuttle.emergencyLastCallLoc = signalOrigin
+		SSshuttle.emergency_last_call_location = signalOrigin
 	else
-		SSshuttle.emergencyLastCallLoc = null
-	priority_announce("The emergency shuttle has been recalled.[SSshuttle.emergencyLastCallLoc ? " Recall signal traced. Results can be viewed on any communications console." : "" ]", null, ANNOUNCER_SHUTTLERECALLED, "Priority")
+		SSshuttle.emergency_last_call_location = null
+	priority_announce("The emergency shuttle has been recalled.[SSshuttle.emergency_last_call_location ? " Recall signal traced. Results can be viewed on any communications console." : "" ]", null, ANNOUNCER_SHUTTLERECALLED, "Priority")
 
 	SSticker.emergency_reason = null
 
@@ -445,7 +446,7 @@
 					setTimer(20)
 					return
 				mode = SHUTTLE_DOCKED
-				setTimer(SSshuttle.emergencyDockTime)
+				setTimer(SSshuttle.emergency_dock_time)
 				send2adminchat("Server", "The Emergency Shuttle has docked with the station.")
 				priority_announce("[SSshuttle.emergency] has docked with the station. You have [timeLeft(600)] minutes to board the Emergency Shuttle.", null, ANNOUNCER_SHUTTLEDOCK, "Priority")
 				ShuttleDBStuff()
@@ -477,13 +478,13 @@
 				setTimer(ENGINES_START_TIME)
 
 			if(time_left <= 50 && !sound_played) //4 seconds left:REV UP THOSE ENGINES BOYS. - should sync up with the launch
-				sound_played = 1 //Only rev them up once.
+				sound_played = TRUE //Only rev them up once.
 				var/list/areas = list()
 				for(var/area/shuttle/escape/E in GLOB.sortedAreas)
 					areas += E
 				hyperspace_sound(HYPERSPACE_WARMUP, areas)
 
-			if(time_left <= 0 && !SSshuttle.emergencyNoEscape)
+			if(time_left <= 0 && !SSshuttle.emergency_no_escape)
 				//move each escape pod (or applicable spaceship) to its corresponding transit dock
 				for(var/A in SSshuttle.mobile)
 					var/obj/docking_port/mobile/M = A
@@ -497,7 +498,7 @@
 				enterTransit()
 				mode = SHUTTLE_ESCAPE
 				launch_status = ENDGAME_LAUNCHED
-				setTimer(SSshuttle.emergencyEscapeTime * engine_coeff)
+				setTimer(SSshuttle.emergency_escape_time * engine_coeff)
 				priority_announce("The Emergency Shuttle has left the station. Estimate [timeLeft(600)] minutes until the shuttle docks at Central Command.", null, null, "Priority")
 				INVOKE_ASYNC(SSticker, /datum/controller/subsystem/ticker.proc/poll_hearts)
 				SSmapping.mapvote() //If no map vote has been run yet, start one.
@@ -552,7 +553,7 @@
 
 	mode = SHUTTLE_ESCAPE
 	launch_status = ENDGAME_LAUNCHED
-	setTimer(SSshuttle.emergencyEscapeTime)
+	setTimer(SSshuttle.emergency_escape_time)
 	priority_announce("The Emergency Shuttle is preparing for direct jump. Estimate [timeLeft(600)] minutes until the shuttle docks at Central Command.", null, null, "Priority")
 
 

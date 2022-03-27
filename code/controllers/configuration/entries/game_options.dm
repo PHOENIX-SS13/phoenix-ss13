@@ -505,3 +505,20 @@
 	config_entry_value = OBJECTIVES_POINT_THRESHOLD
 	integer = TRUE
 	min_val = 0
+
+/// Timer before the first autotransfer vote will be initiated (in deciseconds)
+/datum/config_entry/number/autotransfer_vote_timer
+	config_entry_value = 144000
+	min_val = 0
+
+/// Timer between each vote after the initial autotransfer vote (in deciseconds)
+/datum/config_entry/number/autotransfer_vote_interval
+	config_entry_value = 36000
+	min_val = 0
+
+/// Maximum round extensions before force-ending the round
+/// 0 for automatic shuttle call on the first vote
+/// -1 to enable infinite extensions
+/datum/config_entry/number/autotransfer_vote_max_extensions
+	config_entry_value = 4
+	min_val = -1

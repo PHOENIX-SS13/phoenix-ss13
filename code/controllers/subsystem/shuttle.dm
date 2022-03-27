@@ -23,19 +23,19 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/mobile/emergency/emergency
 	var/obj/docking_port/mobile/arrivals/arrivals
 	var/obj/docking_port/mobile/emergency/backup/backup_shuttle
-	var/emergencyCallTime = 6000 //time taken for emergency shuttle to reach the station when called (in deciseconds)
-	var/emergencyDockTime = 1800 //time taken for emergency shuttle to leave again once it has docked (in deciseconds)
-	var/emergencyEscapeTime = 1200 //time taken for emergency shuttle to reach a safe distance after leaving station (in deciseconds)
-	var/area/emergencyLastCallLoc
-	var/emergencyCallAmount = 0 //how many times the escape shuttle was called
-	var/emergencyNoEscape
-	var/emergencyNoRecall = FALSE
-	var/adminEmergencyNoRecall = FALSE
-	var/lastMode = SHUTTLE_IDLE
-	var/lastCallTime = 6000
-	var/list/hostileEnvironments = list() //Things blocking escape shuttle from leaving
-	var/list/tradeBlockade = list() //Things blocking cargo from leaving.
-	var/supplyBlocked = FALSE
+	var/emergency_call_time = 6000 //time taken for emergency shuttle to reach the station when called (in deciseconds)
+	var/emergency_dock_time = 1800 //time taken for emergency shuttle to leave again once it has docked (in deciseconds)
+	var/emergency_escape_time = 1200 //time taken for emergency shuttle to reach a safe distance after leaving station (in deciseconds)
+	var/area/emergency_last_call_location
+	var/emergency_call_amount = 0 //how many times the escape shuttle was called
+	var/emergency_no_escape
+	var/emergency_no_recall = FALSE
+	var/admin_emergency_no_recall = FALSE
+	var/last_mode = SHUTTLE_IDLE
+	var/last_call_time = 6000
+	var/list/hostile_environments = list() //Things blocking escape shuttle from leaving
+	var/list/trade_blockade = list() //Things blocking cargo from leaving.
+	var/supply_blocked = FALSE
 
 		//supply shuttle stuff
 	var/obj/docking_port/mobile/supply/supply
@@ -188,7 +188,7 @@ SUBSYSTEM_DEF(shuttle)
 			break
 
 /datum/controller/subsystem/shuttle/proc/CheckAutoEvac()
-	if(emergencyNoEscape || adminEmergencyNoRecall || emergencyNoRecall || !emergency || !SSticker.HasRoundStarted())
+	if(emergency_no_escape || admin_emergency_no_recall || emergency_no_recall || !emergency || !SSticker.HasRoundStarted())
 		return
 
 	var/threshold = CONFIG_GET(number/emergency_shuttle_autocall_threshold)
@@ -209,24 +209,24 @@ SUBSYSTEM_DEF(shuttle)
 		var/msg = "Automatically dispatching emergency shuttle due to crew death."
 		message_admins(msg)
 		log_shuttle("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
-		emergencyNoRecall = TRUE
+		emergency_no_recall = TRUE
 		priority_announce("Catastrophic casualties detected: crisis shuttle protocols activated - jamming recall signals across all frequencies.")
-		if(emergency.timeLeft(1) > emergencyCallTime * 0.4)
+		if(emergency.timeLeft(1) > emergency_call_time * 0.4)
 			emergency.request(null, set_coefficient = 0.4)
 
 /datum/controller/subsystem/shuttle/proc/block_recall(lockout_timer)
-	if(adminEmergencyNoRecall)
+	if(admin_emergency_no_recall)
 		priority_announce("Error!", "Emergency Shuttle Uplink Alert", 'sound/misc/announce_dig.ogg')
 		addtimer(CALLBACK(src, .proc/unblock_recall), lockout_timer)
 		return
-	emergencyNoRecall = TRUE
+	emergency_no_recall = TRUE
 	addtimer(CALLBACK(src, .proc/unblock_recall), lockout_timer)
 
 /datum/controller/subsystem/shuttle/proc/unblock_recall()
-	if(adminEmergencyNoRecall)
+	if(admin_emergency_no_recall)
 		priority_announce("Error!", "Emergency Shuttle Uplink Alert", 'sound/misc/announce_dig.ogg')
 		return
-	emergencyNoRecall = FALSE
+	emergency_no_recall = FALSE
 
 /datum/controller/subsystem/shuttle/proc/getShuttle(id)
 	for(var/obj/docking_port/mobile/M in mobile)
@@ -351,18 +351,18 @@ SUBSYSTEM_DEF(shuttle)
 		return 1
 
 /datum/controller/subsystem/shuttle/proc/canRecall()
-	if(!emergency || emergency.mode != SHUTTLE_CALL || adminEmergencyNoRecall || emergencyNoRecall)
+	if(!emergency || emergency.mode != SHUTTLE_CALL || admin_emergency_no_recall || emergency_no_recall)
 		return
 	var/security_num = seclevel2num(get_security_level())
 	switch(security_num)
 		if(SEC_LEVEL_GREEN)
-			if(emergency.timeLeft(1) < emergencyCallTime)
+			if(emergency.timeLeft(1) < emergency_call_time)
 				return
 		if(SEC_LEVEL_BLUE)
-			if(emergency.timeLeft(1) < emergencyCallTime * 0.5)
+			if(emergency.timeLeft(1) < emergency_call_time * 0.5)
 				return
 		else
-			if(emergency.timeLeft(1) < emergencyCallTime * 0.25)
+			if(emergency.timeLeft(1) < emergency_call_time * 0.25)
 				return
 	return 1
 
@@ -396,53 +396,53 @@ SUBSYSTEM_DEF(shuttle)
 			message_admins("All the communications consoles were destroyed and all AIs are inactive. Shuttle called.")
 
 /datum/controller/subsystem/shuttle/proc/registerHostileEnvironment(datum/bad)
-	hostileEnvironments[bad] = TRUE
+	hostile_environments[bad] = TRUE
 	checkHostileEnvironment()
 
 /datum/controller/subsystem/shuttle/proc/clearHostileEnvironment(datum/bad)
-	hostileEnvironments -= bad
+	hostile_environments -= bad
 	checkHostileEnvironment()
 
 
 /datum/controller/subsystem/shuttle/proc/registerTradeBlockade(datum/bad)
-	tradeBlockade[bad] = TRUE
+	trade_blockade[bad] = TRUE
 	checkTradeBlockade()
 
 /datum/controller/subsystem/shuttle/proc/clearTradeBlockade(datum/bad)
-	tradeBlockade -= bad
+	trade_blockade -= bad
 	checkTradeBlockade()
 
 
 /datum/controller/subsystem/shuttle/proc/checkTradeBlockade()
-	for(var/datum/d in tradeBlockade)
+	for(var/datum/d in trade_blockade)
 		if(!istype(d) || QDELETED(d))
-			tradeBlockade -= d
-	supplyBlocked = tradeBlockade.len
+			trade_blockade -= d
+	supply_blocked = trade_blockade.len
 
-	if(supplyBlocked && (supply.mode == SHUTTLE_IGNITING))
+	if(supply_blocked && (supply.mode == SHUTTLE_IGNITING))
 		supply.mode = SHUTTLE_STRANDED
 		supply.timer = null
 		//Make all cargo consoles speak up
-	if(!supplyBlocked && (supply.mode == SHUTTLE_STRANDED))
+	if(!supply_blocked && (supply.mode == SHUTTLE_STRANDED))
 		supply.mode = SHUTTLE_DOCKED
 		//Make all cargo consoles speak up
 
 /datum/controller/subsystem/shuttle/proc/checkHostileEnvironment()
-	for(var/datum/d in hostileEnvironments)
+	for(var/datum/d in hostile_environments)
 		if(!istype(d) || QDELETED(d))
-			hostileEnvironments -= d
-	emergencyNoEscape = hostileEnvironments.len
+			hostile_environments -= d
+	emergency_no_escape = hostile_environments.len
 
-	if(emergencyNoEscape && (emergency.mode == SHUTTLE_IGNITING))
+	if(emergency_no_escape && (emergency.mode == SHUTTLE_IGNITING))
 		emergency.mode = SHUTTLE_STRANDED
 		emergency.timer = null
 		emergency.sound_played = FALSE
 		priority_announce("Hostile environment detected. \
 			Departure has been postponed indefinitely pending \
 			conflict resolution.", null, 'sound/misc/notice1.ogg', "Priority")
-	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))
+	if(!emergency_no_escape && (emergency.mode == SHUTTLE_STRANDED))
 		emergency.mode = SHUTTLE_DOCKED
-		emergency.setTimer(emergencyDockTime)
+		emergency.setTimer(emergency_dock_time)
 		priority_announce("Hostile environment resolved. \
 			You have 3 minutes to board the Emergency Shuttle.",
 			null, ANNOUNCER_SHUTTLEDOCK, "Priority")
@@ -604,11 +604,11 @@ SUBSYSTEM_DEF(shuttle)
 	if (istype(SSshuttle.backup_shuttle))
 		backup_shuttle = SSshuttle.backup_shuttle
 
-	if (istype(SSshuttle.emergencyLastCallLoc))
-		emergencyLastCallLoc = SSshuttle.emergencyLastCallLoc
+	if (istype(SSshuttle.emergency_last_call_location))
+		emergency_last_call_location = SSshuttle.emergency_last_call_location
 
-	if (istype(SSshuttle.hostileEnvironments))
-		hostileEnvironments = SSshuttle.hostileEnvironments
+	if (istype(SSshuttle.hostile_environments))
+		hostile_environments = SSshuttle.hostile_environments
 
 	if (istype(SSshuttle.supply))
 		supply = SSshuttle.supply
@@ -633,8 +633,8 @@ SUBSYSTEM_DEF(shuttle)
 	centcom_message = SSshuttle.centcom_message
 	ordernum = SSshuttle.ordernum
 	points = D.account_balance
-	emergencyNoEscape = SSshuttle.emergencyNoEscape
-	emergencyCallAmount = SSshuttle.emergencyCallAmount
+	emergency_no_escape = SSshuttle.emergency_no_escape
+	emergency_call_amount = SSshuttle.emergency_call_amount
 	shuttle_purchased = SSshuttle.shuttle_purchased
 	lockdown = SSshuttle.lockdown
 
@@ -1022,3 +1022,13 @@ SUBSYSTEM_DEF(shuttle)
 			has_purchase_shuttle_access |= shuttle_template.who_can_purchase
 
 	return has_purchase_shuttle_access
+
+/datum/controller/subsystem/shuttle/proc/auto_transfer()
+	if(EMERGENCY_IDLE_OR_RECALLED)
+		SSshuttle.emergency.request(silent = TRUE)
+		var/ic_message = "The current shift is about to end. A transfer shuttle has been dispatched."
+		priority_announce(ic_message)
+		var/log_message = "Transfer vote passed. Shuttle has been auto-called."
+		log_game(log_message)
+		message_admins(log_message)
+	emergency_no_recall = TRUE
