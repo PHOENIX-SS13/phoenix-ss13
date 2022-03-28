@@ -3,3 +3,10 @@
   - rscdel: Generic Event Spawner landmark
   retlaw34:
   - imageadd: Suit storage unit sprites ported from Shipstation!
+2022-03-27:
+  Avunia Takiya, Azarak:
+  - rscadd: Added Automatic Transfer Votes
+  - qol: Added a way for transfer votes to be initiated on-demand
+  - config: Added AUTOTRANSFER_VOTE_TIMER
+  - config: Added AUTOTRANSFER_VOTE_INTERVAL
+  - config: Added AUTOTRANSFER_VOTE_MAX_EXTENSIONS
