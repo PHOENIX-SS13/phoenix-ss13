@@ -428,6 +428,9 @@ GLOBAL_LIST_EMPTY(species_list)
 // Automatically gives the class deadsay to the whole message (message + source)
 /proc/deadchat_broadcast(message, source=null, mob/follow_target=null, turf/turf_target=null, speaker_key=null, message_type=DEADCHAT_REGULAR, admin_only=FALSE)
 	message = SPAN_DEADSAY("[source]<span class='linkify'>[message]</span>")
+	
+	if(admin_only)
+		message += SPAN_DEADSAY(" (This is viewable to admins only).")
 
 	for(var/mob/M in GLOB.player_list)
 		var/chat_toggles = TOGGLES_DEFAULT_CHAT
@@ -438,11 +441,8 @@ GLOBAL_LIST_EMPTY(species_list)
 			chat_toggles = prefs.chat_toggles
 			toggles = prefs.toggles
 			ignoring = prefs.ignoring
-		if(admin_only)
-			if (!M.client.holder)
-				return
-			else
-				message += SPAN_DEADSAY(" (This is viewable to admins only).")
+		if(admin_only && !M.client.holder)
+			return
 		var/override = FALSE
 		if(M.client.holder && (chat_toggles & CHAT_DEAD))
 			override = TRUE
