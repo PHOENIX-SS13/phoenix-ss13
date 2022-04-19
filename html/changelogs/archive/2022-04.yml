@@ -1,3 +1,12 @@
 2022-04-16:
   Azarak:
   - bugfix: Fixes admin only suffix for deadchat broadcast messages
+2022-04-18:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscadd: 'Added Panic Bunker: Discord Requirement, if enabled, only ckeys with
+      a valid linked Discord account will be able to fully connect. OTP and instructions
+      get printed in chat before dropping connection.'
+  - rscdel: Removed Notify-Restart verb
+  - code_imp: OTP tokens use EFF wordlist (~7000 words) now, with 3 words length
+  - config: Added PANIC_BUNKER_DISCORD_REQUIRE
+  - config: Added PANIC_BUNKER_DISCORD_REGISTER_MESSAGE
