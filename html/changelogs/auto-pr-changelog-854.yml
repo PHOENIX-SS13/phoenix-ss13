@@ -1,0 +1,6 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- code_imp: Refactored some switch statements and cases, there should be no gameplay
+    changes unless something was not working before.
+merge-date: 2022-04-20
+prnumber: 854
