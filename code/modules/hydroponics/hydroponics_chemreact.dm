@@ -30,3 +30,6 @@
 		if(1 to 10)
 			mutatepest(user)
 			return
+		if(0)
+			// 1% chance for nothing to happen
+			return

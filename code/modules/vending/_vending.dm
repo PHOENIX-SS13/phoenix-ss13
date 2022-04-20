@@ -438,6 +438,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		to_chat(user, SPAN_WARNING("You must first secure [src]."))
 	return TRUE
 
+#define ATTACK_RESPONSE_PROBABILITY 50
 /obj/machinery/vending/attackby(obj/item/I, mob/living/user, params)
 	if(panel_open && is_wire_tool(I))
 		wires.interact(user)
@@ -486,18 +487,19 @@ GLOBAL_LIST_EMPTY(vending_products)
 				updateUsrDialog()
 	else
 		. = ..()
-		if(tiltable && !tilted && I.force)
+		if(tiltable && !tilted && I.force && prob(ATTACK_RESPONSE_PROBABILITY))
 			switch(rand(1, 100))
-				if(1 to 5)
+				if(1 to 10)
 					freebie(user, 3)
-				if(6 to 15)
+				if(11 to 30)
 					freebie(user, 2)
-				if(16 to 25)
+				if(31 to 50)
 					freebie(user, 1)
-				if(76 to 90)
+				if(51 to 80)
 					tilt(user)
-				if(91 to 100)
+				if(81 to 100)
 					tilt(user, crit=TRUE)
+#undef ATTACK_RESPONSE_PROBABILITY
 
 /obj/machinery/vending/proc/freebie(mob/fatty, freebies)
 	visible_message(SPAN_NOTICE("[src] yields [freebies > 1 ? "several free goodies" : "a free goody"]!"))

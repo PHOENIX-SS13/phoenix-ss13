@@ -179,7 +179,7 @@
 		return
 
 	var/high_stress = (stress > 60) //things get psychosomatic from here on
-	switch(rand(1,6))
+	switch(rand(1,5))
 		if(1)
 			if(!high_stress)
 				to_chat(owner, SPAN_WARNING("You feel sick..."))
@@ -187,25 +187,20 @@
 				to_chat(owner, SPAN_WARNING("You feel really sick at the thought of being alone!"))
 			addtimer(CALLBACK(owner, /mob/living/carbon.proc/vomit, high_stress), 50) //blood vomit if high stress
 		if(2)
+			owner.Dizzy(owner.dizziness + 20)
+			owner.add_confusion(20)
+			owner.Jitter(20)
 			if(!high_stress)
 				to_chat(owner, SPAN_WARNING("You can't stop shaking..."))
-				owner.dizziness += 20
-				owner.add_confusion(20)
-				owner.Jitter(20)
 			else
 				to_chat(owner, SPAN_WARNING("You feel weak and scared! If only you weren't alone..."))
-				owner.dizziness += 20
-				owner.add_confusion(20)
-				owner.Jitter(20)
 				owner.adjustStaminaLoss(50)
-
 		if(3, 4)
 			if(!high_stress)
 				to_chat(owner, SPAN_WARNING("You feel really lonely..."))
 			else
 				to_chat(owner, SPAN_WARNING("You're going mad with loneliness!"))
 				owner.hallucination += 30
-
 		if(5)
 			if(!high_stress)
 				to_chat(owner, SPAN_WARNING("Your heart skips a beat."))

@@ -132,7 +132,12 @@
 /obj/structure/closet/crate/grave/filled/PopulateContents()  //GRAVEROBBING IS NOW A FEATURE
 	..()
 	new /obj/effect/decal/remains/human/grave(src)
-	switch(rand(1,8))
+
+	if(prob(12.5))
+		// Nothing's in here!
+		return
+
+	switch(rand(1, 7))
 		if(1)
 			new /obj/item/coin/gold(src)
 			new /obj/item/storage/wallet(src)
@@ -147,7 +152,6 @@
 			new /obj/item/clothing/neck/stethoscope(src)
 			new /obj/item/scalpel(src)
 			new /obj/item/hemostat(src)
-
 		if(6)
 			new /obj/item/reagent_containers/glass/beaker(src)
 			new /obj/item/clothing/glasses/science(src)
