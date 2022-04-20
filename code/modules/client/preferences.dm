@@ -163,11 +163,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	///How many loadout points we've got remaining
 	var/loadout_points = LOADOUT_POINTS_MAX
-	///Loadout items, this is an associative list stored as [name] = "info". Info can be either colors or styles for the loadout items
-	var/loadout = list()
+	/// List with all loadout slots we have.
+	var/list/loadouts = list()
+	/// Currently selected loadout slot
+	var/loadout_slot = 1
+	/// Whether to only show the loadout equipped items instead of the catalogue
+	var/show_loadout_equipped_items = FALSE
 
-	var/loadout_category = ""
-	var/loadout_subcategory = ""
+	var/loadout_category
+	var/loadout_subcategory
 
 	var/preview_pref = PREVIEW_PREF_JOB
 
@@ -305,7 +309,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<center>"
 			dat += "<table width='100%'>"
 			dat += "<tr>"
-			dat += "<td width=35%>"
+			dat += "<td width=20%>"
 			dat += "Preview:"
 			dat += "<a href='?_src_=prefs;preference=character_preview;tab=[PREVIEW_PREF_JOB]' [preview_pref == PREVIEW_PREF_JOB ? "class='linkOn'" : ""]>[PREVIEW_PREF_JOB]</a>"
 			dat += "<a href='?_src_=prefs;preference=character_preview;tab=[PREVIEW_PREF_LOADOUT]' [preview_pref == PREVIEW_PREF_LOADOUT ? "class='linkOn'" : ""]>[PREVIEW_PREF_LOADOUT]</a>"
@@ -313,11 +317,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 			switch(character_settings_tab)
 				if(4) //Loadout
-					dat += "<td width=50%>"
-					dat += "<b>Remaining loadout points: [loadout_points]</b>"
+					dat += "<td width=20%>"
+					dat += "<b>Remaining points: [loadout_points]</b>"
 					dat += "</td>"
-					dat += "<td width=15%>"
-					dat += "<a href='?_src_=prefs;preference=reset_loadout'>Reset Loadout</a>"
+					dat += "<td width=25%>"
+					dat += "<b>Slot: </b>"
+					/// Put slots in here
+					var/slot_index = 0
+					for(var/slot_list in loadouts)
+						slot_index++
+						dat += "<a href='?_src_=prefs;preference=loadout_slot;slot=[slot_index]' [slot_index == loadout_slot ? "class='linkOn'" : ""]>[slot_index]</a> "
+					if(slot_index < MAX_LOADOUT_SLOTS)
+						dat += "<a href='?_src_=prefs;preference=loadout_new_slot'>+</a> "
+					dat += "</td>"
+					dat += "<td width=25%>"
+					dat += "<a href='?_src_=prefs;preference=loadout_show_equipped' [show_loadout_equipped_items ? "class='linkOn'" : ""]>Equipped</a> "
+					dat += "<a href='?_src_=prefs;preference=reset_loadout'>Reset Slot</a>"
 					dat += "</td>"
 				if(5) //Augments
 					dat += "<td width=65%>"
@@ -790,84 +805,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</tr></table>"
 				if(4) //Loadout
 					dat += "<center>"
-					for(var/category in GLOB.loadout_category_to_subcategory_to_items)
-						dat += "<a href='?_src_=prefs;preference=loadout_cat;tab=[category]' [loadout_category == category ? "class='linkOn'" : ""]>[category]</a> "
-					dat += "</center>"
-					dat += "<HR>"
-					if(loadout_category != "")
-						dat += "<center>"
-						for(var/subcategory in GLOB.loadout_category_to_subcategory_to_items[loadout_category])
-							dat += "<a href='?_src_=prefs;preference=loadout_subcat;tab=[subcategory]' [loadout_subcategory == subcategory ? "class='linkOn'" : ""]>[subcategory]</a> "
+					dat += "<b>Please customize your loadout items in a way where they will make sense.</b><HR>"
+					if(show_loadout_equipped_items)
+						dat += print_loadout_table(equipped = TRUE)
+					else
+						for(var/category in GLOB.loadout_category_to_subcategory_to_items)
+							dat += "<a href='?_src_=prefs;preference=loadout_cat;tab=[category]' [loadout_category == category ? "class='linkOn'" : ""]>[category]</a> "
 						dat += "</center>"
 						dat += "<HR>"
-						if(loadout_subcategory != "")
-							var/list/item_names = GLOB.loadout_category_to_subcategory_to_items[loadout_category][loadout_subcategory]
+						if(loadout_category)
+							dat += "<center>"
+							for(var/subcategory in GLOB.loadout_category_to_subcategory_to_items[loadout_category])
+								dat += "<a href='?_src_=prefs;preference=loadout_subcat;tab=[subcategory]' [loadout_subcategory == subcategory ? "class='linkOn'" : ""]>[subcategory]</a> "
+							dat += "</center>"
+							dat += "<HR>"
+							if(loadout_subcategory)
+								dat += print_loadout_table(category = loadout_category, subcategory = loadout_subcategory)
 
-							dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
-							dat += "<tr style='vertical-align:top'>"
-							dat += "<td width=18%><font size=2><b>Name</b></font></td>"
-							dat += "<td width=20%><font size=2> </font></td>"
-							dat += "<td width=40%><font size=2><b>Description</b></font></td>"
-							dat += "<td width=17%><font size=2><b>Restrictions</b></font></td>"
-							dat += "<td width=5%><font size=2><center><b>Cost</b></center></font></td>"
-							dat += "</tr>"
-							var/even = FALSE
-							for(var/path in item_names)
-								var/datum/loadout_item/LI = GLOB.loadout_items[path]
-								if(LI.ckeywhitelist && !(user.ckey in LI.ckeywhitelist))
-									continue
-								var/background_cl = "#23273C"
-								if(even)
-									background_cl = "#17191C"
-								even = !even
-								var/loadout_button_class
-								var/customization_button = ""
-								if(loadout[LI.path]) //We have this item purchased, but we can sell it
-									loadout_button_class = "href='?_src_=prefs;task=change_loadout;item=[path]' class='linkOn'"
-									var/custom_info = loadout[LI.path]
-									switch(LI.extra_info)
-										if(LOADOUT_INFO_ONE_COLOR)
-											customization_button = "<center><span style='border: 1px solid #161616; background-color: ["#[custom_info]"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;task=change_loadout_customization;item=[path]'>Change</a></center>"
-										if(LOADOUT_INFO_THREE_COLORS)
-											var/list/color_list = splittext(custom_info, "|")
-											if(length(color_list) != 3)
-												stack_trace("WARNING! Loadout item information of [LI.name] for ckey [user.ckey] has invalid amount of entries.")
-												continue
-											customization_button += "<center><span style='border: 1px solid #161616; background-color: ["#[color_list[1]]"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;task=change_loadout_customization;item=[path];color_slot=1'>Change</a></center>"
-											customization_button += "<center><span style='border: 1px solid #161616; background-color: ["#[color_list[2]]"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;task=change_loadout_customization;item=[path];color_slot=2'>Change</a></center>"
-											customization_button += "<center><span style='border: 1px solid #161616; background-color: ["#[color_list[3]]"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;task=change_loadout_customization;item=[path];color_slot=3'>Change</a></center>"
-										if(LOADOUT_INFO_STYLE)
-											customization_button = "" //TODO
-								//We check for whether the item is donator only, and if the person isn't donator, then check cost
-								else if((LI.donator_only && !GLOB.donator_list[user.ckey] && !user.client.holder) || LI.cost > loadout_points) //We cannot afford this item
-									loadout_button_class = "class='linkOff'"
-								else //We can buy it
-									loadout_button_class = "href='?_src_=prefs;task=change_loadout;item=[path]'"
-								if(!loadout[LI.path]) //Let the user know if something is colorable, so we can avoid mentioning it in the titles
-									switch(LI.extra_info)
-										if(LOADOUT_INFO_ONE_COLOR)
-											customization_button = "<i>Colorable</i>"
-										if(LOADOUT_INFO_THREE_COLORS)
-											customization_button += "<i>Polychromic</i>"
-										if(LOADOUT_INFO_STYLE)
-											customization_button = "" //TODO
-								dat += "<tr style='vertical-align:top; background-color: [background_cl];'>"
-								dat += "<td><font size=2><a [loadout_button_class]>[LI.name]</a></font></td>"
-								dat += "<td><font size=2>[customization_button]</font></td>"
-								dat += "<td><font size=2><i>[LI.description]</i></font></td>"
-								dat += "<td><font size=2><i>[LI.restricted_desc]</i></font></td>"
-								dat += "<td><font size=2><center>[LI.cost]</center></font></td>"
-								dat += "</tr>"
-
-							dat += "</table>"
-							if(loadout_subcategory == LOADOUT_SUBCATEGORY_DONATOR)
-								dat += "<HR>"
-								if(GLOB.donator_list[user.ckey])
-									dat += "<center><b>Thank you for your support!</b></center>"
-								else if (user.client.holder)
-									dat += "<center>Thank you for staffing the server! Enjoy those cool items</center>"
-								else
-									dat += "<center>You can support us on our patreon to help us run the servers, and get access to cool loadout items, and more points!</center>"
 				if(5) //Augmentations
 					if(!pref_species.can_augment)
 						dat += "Sorry, but your species doesn't support augmentations"
@@ -1636,45 +1590,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if("augment_slot")
 			var/slot_name = href_list["slot"]
 			chosen_augment_slot = slot_name
-		if("change_loadout_customization")
-			needs_update = TRUE
-			var/path = text2path(href_list["item"])
-			if(!loadout[path])
-				return
-			var/datum/loadout_item/LI = GLOB.loadout_items[path]
-			switch(LI.extra_info)
-				if(LOADOUT_INFO_ONE_COLOR)
-					var/new_color = input(user, "Choose your item's color:", "Character Preference","#[loadout[path]]") as color|null
-					if(new_color)
-						if(!loadout[path])
-							return
-						loadout[path] = sanitize_hexcolor(new_color)
-				if(LOADOUT_INFO_THREE_COLORS)
-					var/color_slot = text2num(href_list["color_slot"])
-					if(color_slot)
-						var/list/color_list = splittext(loadout[path], "|")
-						var/new_color = input(user, "Choose your item's color:", "Character Preference","#[color_list[color_slot]]") as color|null
-						if(new_color)
-							if(!loadout[path])
-								return
-							color_list[color_slot] = sanitize_hexcolor(new_color)
-							loadout[path] = color_list.Join("|")
-				if(LOADOUT_INFO_STYLE)
-					return
+
+		if("customize_loadout")
+			var/customization_type = text2num(href_list["customize"])
+			var/item_path = text2path(href_list["item"])
+			var/gags_index
+			if(href_list["index"])
+				gags_index = text2num(href_list["index"])
+			customize_loadout_entry(item_path, customization_type, user, gags_index)
+
 		if("change_loadout")
-			needs_update = TRUE
-			var/path = text2path(href_list["item"])
-			var/datum/loadout_item/LI = GLOB.loadout_items[path]
-			if(loadout[path]) //We sell it!
-				loadout -= path
-				loadout_points += LI.cost
-			else //We attempt to buy it
-				if(LI.cost > loadout_points)
-					return
-				if(LI.ckeywhitelist && !(user.ckey in LI.ckeywhitelist) && !user.client.holder)
-					return
-				loadout_points -= LI.cost
-				loadout[LI.path] = LI.default_customization() //As in "No extra information associated"
+			var/item_path = text2path(href_list["item"])
+			change_loadout_item(item_path)
+
 		if("change_marking")
 			needs_update = TRUE
 			switch(href_list["preference"])
@@ -2430,17 +2358,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 		else
 			switch(href_list["preference"])
+				if("loadout_show_equipped")
+					show_loadout_equipped_items = !show_loadout_equipped_items
+				if("loadout_slot")
+					var/new_slot = text2num(href_list["slot"])
+					set_loadout_slot(new_slot)
+				if("loadout_new_slot")
+					set_loadout_slot(loadouts.len + 1)
 				if("reset_loadout")
 					var/action = tgui_alert(
 						user,
-						"Are you sure you want to reset your loadout?",
+						"Are you sure you want to reset your loadout slot?",
 						null,
 						list("Yes", "No")
 					)
 					if(action && action != "Yes")
 						return
-					loadout = list()
-					loadout_points = initial_loadout_points()
+					reset_loadout_slot()
 
 				if("mismatch")
 					mismatched_customization = !mismatched_customization
@@ -2948,12 +2882,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	features["skin_color"] = sanitize_hexcolor(skintone2hex(skin_tone), 3, 0)
 	if(!allow_advanced_colors)
 		reset_colors()
-
-/datum/preferences/proc/initial_loadout_points()
-	if(GLOB.donator_list[parent.ckey])
-		return LOADOUT_POINTS_MAX_DONATOR
-	else
-		return LOADOUT_POINTS_MAX
 
 /datum/preferences/proc/CanBuyAugment(datum/augment_item/target_aug, datum/augment_item/current_aug)
 	//Check biotypes

@@ -188,10 +188,7 @@ This is highly likely to cause a lag spike for a few seconds."},
 			queue_refresh()
 
 /datum/greyscale_modify_menu/proc/ReadColorsFromString(colorString)
-	var/list/raw_colors = splittext(colorString, "#")
-	split_colors = list()
-	for(var/i in 2 to length(raw_colors))
-		split_colors += "#[raw_colors[i]]"
+	split_colors = color_string_to_list(colorString)
 
 /datum/greyscale_modify_menu/proc/randomize_color(color_index)
 	var/new_color = "#"

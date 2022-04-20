@@ -155,21 +155,19 @@
 	if(!ishuman(H))
 		return
 	var/list/items_to_pack = list()
-	for(var/item_name in loadout)
-		var/datum/loadout_item/LI = GLOB.loadout_items[item_name]
-		var/obj/item/ITEM = LI.get_spawned_item(loadout[item_name])
-		//Skip the item if the job doesn't match, but only if that not used for the preview
-		if(!just_preview && (choosen_job && LI.restricted_roles && !(choosen_job.title in LI.restricted_roles)))
-			continue
-		if(!H.equip_to_appropriate_slot(ITEM,blacklist=blacklist,initial=initial))
+	var/list/loadout_slot = get_loadout_slot()
+	for(var/datum/loadout_entry/entry as anything in loadout_slot)
+		var/obj/item/loadout_item = entry.get_spawned_item()
+		if(!H.equip_to_appropriate_slot(loadout_item ,blacklist=blacklist,initial=initial))
 			if(!just_preview)
-				items_to_pack += ITEM
+				items_to_pack += loadout_item
 				//Here we stick it into a bag, if possible
-				if(!H.equip_to_slot_if_possible(ITEM, ITEM_SLOT_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE, initial=initial))
+				if(!H.equip_to_slot_if_possible(loadout_item, ITEM_SLOT_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE, initial=initial))
 					//Otherwise - on the ground
-					ITEM.forceMove(get_turf(H))
+					loadout_item.forceMove(get_turf(H))
 			else
-				qdel(ITEM)
+				qdel(loadout_item)
+
 	return items_to_pack
 
 //This needs to be a seperate proc because the character could not have the proper backpack during the moment of loadout equip

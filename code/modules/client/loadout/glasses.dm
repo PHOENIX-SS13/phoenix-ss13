@@ -3,46 +3,34 @@
 
 //MISC
 /datum/loadout_item/glasses/blindfold
-	name = "Blindfold"
 	path = /obj/item/clothing/glasses/blindfold
 
 /datum/loadout_item/glasses/cold
-	name = "Cold goggles"
 	path = /obj/item/clothing/glasses/cold
 
 /datum/loadout_item/glasses/eyepatch
-	name = "Eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
 
 /datum/loadout_item/glasses/heat
-	name = "Heat goggles"
 	path = /obj/item/clothing/glasses/heat
 
 /datum/loadout_item/glasses/hipster
-	name = "Hipster glasses"
 	path = /obj/item/clothing/glasses/regular/hipster
 
 /datum/loadout_item/glasses/jamjar
-	name = "Jamjar glasses"
 	path = /obj/item/clothing/glasses/regular/jamjar
 
 /datum/loadout_item/glasses/monocle
-	name = "Monocle"
 	path = /obj/item/clothing/glasses/monocle
 
 /datum/loadout_item/glasses/orange
-	name = "Orange glasses"
 	path = /obj/item/clothing/glasses/orange
+	customization_flags = CUSTOMIZE_NAME_DESC_ROTATION
 
 /datum/loadout_item/glasses/red
-	name = "Red Glasses"
 	path = /obj/item/clothing/glasses/red
+	customization_flags = CUSTOMIZE_NAME_DESC_ROTATION
 
 /datum/loadout_item/glasses/prescription
-	name = "Prescription glasses"
 	path = /obj/item/clothing/glasses/regular
 
-/datum/loadout_item/glasses/sechud
-	name = "Security Hud"
-	path = /obj/item/clothing/glasses/hud/security
-	restricted_roles = list("Security Officer", "Warden", "Head of Security")

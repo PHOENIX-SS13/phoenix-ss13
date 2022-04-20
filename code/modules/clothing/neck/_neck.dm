@@ -362,3 +362,43 @@
 	icon_state = "choker"
 	is_polychromic = FALSE
 	color = "#222222"
+
+/obj/item/clothing/neck/cloak/rscloak
+	name = "black cape"
+	desc = "A black cape with a purple finish at the end."
+	icon_state = "black"
+	icon = 'icons/obj/clothing/neck/rscapes.dmi'
+	worn_icon = 'icons/mob/clothing/neck/rscapes.dmi'
+
+/obj/item/clothing/neck/cloak/rscloak/cross
+	name = "black cape"
+	desc = "A black cape with a grey cross pattern on the back."
+	icon_state = "black_cross"
+
+/obj/item/clothing/neck/cloak/rscloak/champion
+	name = "champion cape"
+	desc = "A regal blue and gold cape!"
+	icon_state = "champion"
+
+/obj/item/clothing/neck/cloak/tailored
+	name = "tailored cloak"
+	icon_state = "cloak"
+	greyscale_config = /datum/greyscale_config/tailored_cloak
+	greyscale_config_worn = /datum/greyscale_config/tailored_cloak_worn
+	greyscale_colors = "#917A57#4e412e#4e412e"
+	fitted_bodytypes = BODYTYPE_HUMANOID|BODYTYPE_TESHARI
+
+/obj/item/clothing/neck/cloak/tailored/veil
+	name = "tailored veil"
+	greyscale_config = /datum/greyscale_config/tailored_cloak/veil
+	greyscale_config_worn = /datum/greyscale_config/tailored_cloak_worn/veil
+
+/obj/item/clothing/neck/cloak/tailored/boat
+	name = "tailored boatcloak"
+	greyscale_config = /datum/greyscale_config/tailored_cloak/boat
+	greyscale_config_worn = /datum/greyscale_config/tailored_cloak_worn/boat
+
+/obj/item/clothing/neck/cloak/tailored/shroud
+	name = "tailored shroud"
+	greyscale_config = /datum/greyscale_config/tailored_cloak/shroud
+	greyscale_config_worn = /datum/greyscale_config/tailored_cloak_worn/shroud

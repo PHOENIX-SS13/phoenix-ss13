@@ -1,82 +1,86 @@
 /datum/loadout_item
+	///Name of the loadout item, automatically set by New() if null
 	var/name
-	///Category in which the item belongs to LOADOUT_CATEGORY_UNIFORM, LOADOUT_CATEGORY_BACKPACK etc.
-	var/category = LOADOUT_CATEGORY_NONE
-	///Subcategory in which the item belongs to
-	var/subcategory = LOADOUT_SUBCATEGORY_MISC
 	///Description of the loadout item, automatically set by New() if null
 	var/description
 	///Typepath to the item being spawned
 	var/path
 	///How much loadout points does it cost?
 	var/cost = 1
-	///If set, it's a list containing ckeys which only can get the item
-	var/list/ckeywhitelist
-	///If set, is a list of job names of which can get the loadout item
-	var/list/restricted_roles
-	///Descriptive explanation of the restricted roles, if empty will automatically generate on New() if nessecary
-	var/restricted_desc
-	///Extra information which the user can set. (LOADOUT_INFO_NONE, LOADOUT_INFO_STYLE, LOADOUT_INFO_ONE_COLOR, LOADOUT_INFO_THREE_COLORS)
-	var/extra_info
-	///Whether the item is restricted to supporters
-	var/donator_only
+	///Category in which the item belongs to LOADOUT_CATEGORY_UNIFORM, LOADOUT_CATEGORY_BACKPACK etc.
+	var/category = LOADOUT_CATEGORY_NONE
+	///Subcategory in which the item belongs to
+	var/subcategory = LOADOUT_SUBCATEGORY_MISC
+	/// Flags for customizing the item
+	var/customization_flags = CUSTOMIZE_ALL
+	/// String of the default gags colors. Can be null even if `gags_colors` is something (for cases where default items randomize for example)
+	var/gags_colors_string
+	/// Amount of gags colors this item expects. If null, it's not a GAGS item
+	var/gags_colors
 
 /datum/loadout_item/New()
-	if(!description && path)
-		var/obj/O = path
-		description = initial(O.desc)
-	if(restricted_roles && !restricted_desc)
-		var/passed_first = FALSE
-		restricted_desc = ""
-		for(var/job_name in restricted_roles)
-			if(!passed_first)
-				passed_first = TRUE
-			else
-				restricted_desc += ", "
-			restricted_desc += job_name
+	var/obj/loadout_item = path
+	if(!description)
+		description = initial(loadout_item.desc)
+	if(!name)
+		name = initial(loadout_item.name)
 
-/datum/loadout_item/proc/get_spawned_item(customization) //Pass the value from the associative list
-	var/obj/item/spawned = new path()
-	if(customization != "None")
-		customize(spawned, customization)
+/// Ran from SSloadouts after SSgreyscale initializes so we can properly read some information
+/datum/loadout_item/proc/parse_gags()
+	var/obj/loadout_item = path
+	var/gags_config_type = initial(loadout_item.greyscale_config)
+	if(gags_config_type)
+		gags_colors_string = initial(loadout_item.greyscale_colors)
+		var/datum/greyscale_config/gags_config = SSgreyscale.configurations["[gags_config_type]"] //TODO: unwrap the gags config association from strings, literally no reason to do this
+		gags_colors = gags_config.expected_colors
+
+/// Gets a string for the gags config
+/datum/loadout_item/proc/get_gags_string()
+	if(!gags_colors)
+		return
+	if(gags_colors_string)
+		return gags_colors_string
+	. = ""
+	for(var/i in 1 to gags_colors)
+		. += "#FFFFFF" //If for some reason the item doesn't have default values. Fill it with whites
+
+/// Datum for storing and customizing a selected loadout item
+/datum/loadout_entry
+	/// Path to the loadout item (/datum/loadout_item)
+	var/path
+	/// Customized name if any.
+	var/custom_name
+	/// Customized description if any.
+	var/custom_desc
+	/// Customized color if any.
+	var/custom_color
+	/// Customized GAGS colors if any.
+	var/custom_gags_colors
+	/// Customized color rotation if any.
+	var/custom_color_rotation
+
+/datum/loadout_entry/New(path, custom_name, custom_desc, custom_color, custom_gags_colors, custom_color_rotation)
+	src.path = path
+	src.custom_name = custom_name
+	src.custom_desc = custom_desc
+	src.custom_color = custom_color
+	src.custom_gags_colors = custom_gags_colors
+	src.custom_color_rotation = custom_color_rotation
+
+/datum/loadout_entry/proc/get_spawned_item()
+	var/datum/loadout_item/loadout_item = GLOB.loadout_items[path]
+	var/obj/item/spawned = new loadout_item.path()
+	customize(spawned, loadout_item)
 	return spawned
 
-//Proc designed to be overwritten by invidivual loadout items. has support for a one color feed, and poly colors
-/datum/loadout_item/proc/customize(obj/item/spawned, customization)
-	switch(extra_info)
-		if(LOADOUT_INFO_ONE_COLOR)
-			spawned.color = "#[customization]"
-		if(LOADOUT_INFO_THREE_COLORS)
-			var/list/color_list = splittext(customization, "|")
-			var/list/finished_list = list()
-			finished_list += ReadRGB("[color_list[1]]0")
-			finished_list += ReadRGB("[color_list[2]]0")
-			finished_list += ReadRGB("[color_list[3]]0")
-			finished_list += list(0,0,0,255)
-			for(var/index in 1 to finished_list.len)
-				finished_list[index] /= 255
-			spawned.color = finished_list
-
-/datum/loadout_item/proc/default_customization()
-	switch(extra_info)
-		if(LOADOUT_INFO_ONE_COLOR)
-			return "FFF"
-		if(LOADOUT_INFO_THREE_COLORS)
-			return "FFF|FFF|FFF"
-		else
-			return "None"
-
-//Used to validate extra information from loadout on savefiles
-/datum/loadout_item/proc/get_valid_information(passed_string)
-	switch(extra_info)
-		if(LOADOUT_INFO_ONE_COLOR)
-			return sanitize_hexcolor(passed_string)
-		if(LOADOUT_INFO_THREE_COLORS)
-			//No way I need to sanitize colors themselves in this thing, right. Like it's too specific to fail this check by chance
-			var/list/color_list = splittext(passed_string, "|")
-			if(length(color_list) == 3)
-				return passed_string
-			else
-				return default_customization()
-		else
-			return "None"
+/datum/loadout_entry/proc/customize(obj/item/spawned, datum/loadout_item/loadout_item)
+	if(custom_name && loadout_item.customization_flags & CUSTOMIZE_NAME)
+		spawned.name = custom_name
+	if(custom_desc && loadout_item.customization_flags & CUSTOMIZE_DESC)
+		spawned.desc = custom_desc
+	if(custom_gags_colors && loadout_item.customization_flags & CUSTOMIZE_COLOR && loadout_item.gags_colors)
+		spawned.set_greyscale(custom_gags_colors)
+	if(custom_color && loadout_item.customization_flags & CUSTOMIZE_COLOR && !loadout_item.gags_colors)
+		spawned.add_atom_colour(custom_color, FIXED_COLOUR_PRIORITY)
+	if(custom_color_rotation && loadout_item.customization_flags & CUSTOMIZE_COLOR_ROTATION)
+		spawned.add_atom_colour(color_matrix_rotate_hue(custom_color_rotation), FIXED_COLOUR_PRIORITY)

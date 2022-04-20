@@ -5,7 +5,7 @@
 // You do not need to raise this if you are adding new values that have sane defaults.
 // Only raise this value when changing the meaning/format/name/layout of an existing value
 // where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 40
+#define SAVEFILE_VERSION_MAX 41
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -94,7 +94,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		LAZYADD(key_bindings["Space"], "hold_throw_mode")
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
-	return
+	if(current_version < 41)
+		migrate_loadout(S)
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
@@ -418,6 +419,38 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["dominant_hand"], dominant_hand)
 
+	READ_FILE(S["features"], features)
+	READ_FILE(S["mutant_bodyparts"], mutant_bodyparts)
+	READ_FILE(S["body_markings"], body_markings)
+
+	READ_FILE(S["loadouts"], loadouts)
+	READ_FILE(S["loadout_slot"], loadout_slot)
+
+	READ_FILE(S["ooc_prefs"], ooc_prefs)
+	READ_FILE(S["erp_pref"], erp_pref)
+	READ_FILE(S["noncon_pref"], noncon_pref)
+	READ_FILE(S["vore_pref"], vore_pref)
+	READ_FILE(S["general_record"], general_record)
+	READ_FILE(S["security_record"], security_record)
+	READ_FILE(S["medical_record"], medical_record)
+	READ_FILE(S["background_info"], background_info)
+	READ_FILE(S["exploitable_info"], exploitable_info)
+
+	READ_FILE(S["mismatched_customization"] , mismatched_customization)
+	READ_FILE(S["allow_advanced_colors"] , allow_advanced_colors)
+
+	READ_FILE(S["augments"] , augments)
+	READ_FILE(S["augment_limb_styles"] , augment_limb_styles)
+
+	READ_FILE(S["undershirt_color"], undershirt_color)
+
+	READ_FILE(S["socks_color"], socks_color)
+	READ_FILE(S["pref_culture"] , pref_culture)
+	READ_FILE(S["pref_location"] , pref_location)
+	READ_FILE(S["pref_faction"] , pref_faction)
+
+	READ_FILE(S["languages"] , languages)
+
 	switch(dominant_hand)
 		if(DOMINANT_HAND_LEFT, DOMINANT_HAND_RIGHT, DOMINANT_HAND_AMBI) // do nothing
 		else
@@ -493,40 +526,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	all_quirks = SANITIZE_LIST(all_quirks)
 	validate_quirks()
 
-	//All the new horizon related stuff here
-	READ_FILE(S["features"], features)
-	READ_FILE(S["mutant_bodyparts"], mutant_bodyparts)
-	READ_FILE(S["body_markings"], body_markings)
-
-	READ_FILE(S["loadout"], loadout)
-
-	READ_FILE(S["ooc_prefs"], ooc_prefs)
-	READ_FILE(S["erp_pref"], erp_pref)
-	READ_FILE(S["noncon_pref"], noncon_pref)
-	READ_FILE(S["vore_pref"], vore_pref)
-	READ_FILE(S["general_record"], general_record)
-	READ_FILE(S["security_record"], security_record)
-	READ_FILE(S["medical_record"], medical_record)
-	READ_FILE(S["background_info"], background_info)
-	READ_FILE(S["exploitable_info"], exploitable_info)
-
-	READ_FILE(S["mismatched_customization"] , mismatched_customization)
-	READ_FILE(S["allow_advanced_colors"] , allow_advanced_colors)
-
-	READ_FILE(S["augments"] , augments)
-	READ_FILE(S["augment_limb_styles"] , augment_limb_styles)
-
-	READ_FILE(S["undershirt_color"], undershirt_color)
 	undershirt_color			= sanitize_hexcolor(undershirt_color, 3, 0)
-
-	READ_FILE(S["socks_color"], socks_color)
 	socks_color			= sanitize_hexcolor(socks_color, 3, 0)
 
-	READ_FILE(S["pref_culture"] , pref_culture)
-	READ_FILE(S["pref_location"] , pref_location)
-	READ_FILE(S["pref_faction"] , pref_faction)
-
-	READ_FILE(S["languages"] , languages)
 	languages = SANITIZE_LIST(languages)
 
 	if(!pref_culture || !GLOB.culture_cultures[pref_culture])
@@ -542,22 +544,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	mutant_bodyparts = SANITIZE_LIST(mutant_bodyparts)
 	body_markings = SANITIZE_LIST(body_markings)
 
-	loadout = SANITIZE_LIST(loadout)
-	//LOADOUT POINT VALIDATION
-	//Here we calculate if we truly can use the loaded loadout
-	loadout_points = initial_loadout_points()
-	var/accumulated_cost = 0
-	for(var/path in loadout)
-		var/datum/loadout_item/LI = GLOB.loadout_items[path]
-		if(!LI)
-			loadout -= path
-			continue
-		loadout[path] = LI.get_valid_information(loadout[path])//Savefile validation
-		accumulated_cost += LI.cost
-	if(accumulated_cost > loadout_points) //Not enough points, reset loadout
-		loadout = list()
-	else
-		loadout_points -= accumulated_cost //We got enough points, subtract the cost
+	loadouts = SANITIZE_LIST(loadouts)
+	var/temp_loadout_slot = sanitize_integer(loadout_slot, 1, MAX_LOADOUT_SLOTS, 1)
+	validate_loadouts()
+	set_loadout_slot(temp_loadout_slot, TRUE)
 
 	ooc_prefs = sanitize_text(ooc_prefs)
 	if(!length(erp_pref))
@@ -660,7 +650,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["mutant_bodyparts"] , mutant_bodyparts)
 	WRITE_FILE(S["body_markings"] , body_markings)
 
-	WRITE_FILE(S["loadout"] , loadout)
+	WRITE_FILE(S["loadouts"] , loadouts)
+	WRITE_FILE(S["loadout_slot"], loadout_slot)
 
 	WRITE_FILE(S["ooc_prefs"] , ooc_prefs)
 	WRITE_FILE(S["erp_pref"] , erp_pref)
@@ -689,6 +680,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	return TRUE
 
+/datum/preferences/proc/migrate_loadout(savefile/S)
+	var/list/old_loadout_list = S["loadout"]
+	if(isnull(old_loadout_list))
+		return
+	to_chat(parent, SPAN_USERDANGER("Your loadout items have been migrated to the new system, this may be lossy. Check your items and make sure everything is in order."))
+	loadouts = list()
+	set_loadout_slot(1)
+	for(var/loadout_item_type in old_loadout_list)
+		add_loadout_item(loadout_item_type)
 
 /proc/sanitize_keybindings(value)
 	var/list/base_bindings = sanitize_islist(value,list())

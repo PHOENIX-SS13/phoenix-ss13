@@ -35,9 +35,3 @@ SUBSYSTEM_DEF(greyscale)
 	else if(!istext(colors))
 		CRASH("Invalid colors were given to `GetColoredIconByType()`: [colors]")
 	return configurations[type].Generate(colors)
-
-/datum/controller/subsystem/greyscale/proc/ParseColorString(color_string)
-	. = list()
-	var/list/split_colors = splittext(color_string, "#")
-	for(var/color in 2 to length(split_colors))
-		. += "#[split_colors[color]]"
