@@ -10,3 +10,11 @@
   - code_imp: OTP tokens use EFF wordlist (~7000 words) now, with 3 words length
   - config: Added PANIC_BUNKER_DISCORD_REQUIRE
   - config: Added PANIC_BUNKER_DISCORD_REGISTER_MESSAGE
+2022-04-20:
+  Alex 'Avunia' Takiya (atakiya):
+  - code_imp: Refactored some switch statements and cases, there should be no gameplay
+      changes unless something was not working before.
+  - imageadd: Fixed two rogue pixels on the male digitigrade chest, which caused pants
+      to not fully cover your legs. Stay warm and fluffy now.
+  Azarak:
+  - rscadd: Loadout system has been reworked and improved
