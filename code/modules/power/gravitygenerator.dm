@@ -285,6 +285,9 @@
 
 // Set the state of the gravity.
 /obj/machinery/gravity_generator/main/proc/set_state(new_state)
+	// Return if setting the same state.
+	if(on == new_state)
+		return
 	charging_state = POWER_IDLE
 	on = new_state
 	use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
