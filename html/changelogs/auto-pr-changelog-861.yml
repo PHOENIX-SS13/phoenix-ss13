@@ -1,5 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Fixes gravity generator turning itself off while already off
-merge-date: 2022-04-30
-prnumber: 861

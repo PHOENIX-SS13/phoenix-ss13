@@ -18,3 +18,6 @@
       to not fully cover your legs. Stay warm and fluffy now.
   Azarak:
   - rscadd: Loadout system has been reworked and improved
+2022-04-30:
+  Azarak:
+  - bugfix: Fixes gravity generator turning itself off while already off
