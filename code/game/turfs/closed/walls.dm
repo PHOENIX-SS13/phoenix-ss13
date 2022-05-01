@@ -46,6 +46,13 @@
 	/// Typecache of all objects that we seek out to apply a neighbor stripe overlay
 	var/static/list/neighbor_typecache
 
+/turf/closed/wall/has_material_type(datum/material/mat_type, exact=FALSE, mat_amount=0)
+	if(plating_material == mat_type)
+		return TRUE
+	if(reinf_material == mat_type)
+		return TRUE
+	return FALSE
+
 /turf/closed/wall/update_name()
 	. = ..()
 	name = ""
