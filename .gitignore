@@ -1,11 +1,11 @@
 ###Files and folders specified here will never be tracked.
 
 #Ignore everything in datafolder and subdirectories
-/data/**/*
-/tmp/**/*
+/data/
+/tmp/
 
 #Ignore byond config folder.
-/cfg/**/*
+/cfg/
 
 # Ignore compiled linux libs in the root folder, e.g. librust_g.so
 /*.so
@@ -160,11 +160,8 @@ Temporary Items
 *.sublime-workspace
 
 #Visual studio stuff
-*.vscode/*
-/tools/MapAtmosFixer/MapAtmosFixer/obj/*
-/tools/MapAtmosFixer/MapAtmosFixer/bin/*
-/tools/CreditsTool/bin/*
-/tools/CreditsTool/obj/*
+/.vs/
+/.vscode/
 
 #GitHub Atom
 .atom-build.json
@@ -178,7 +175,7 @@ Temporary Items
 /_maps/templates.dm
 
 #dmdoc default folder
-/dmdoc
+/dmdoc/
 
 # Ignore custom music and title screens (amend as appropriate)
 /config/jukebox_music/sounds/*
@@ -189,8 +186,8 @@ Temporary Items
 !/config/title_screens/images/exclude
 
 #Linux docker
-/tools/LinuxOneShot/SetupProgram/obj/*
-/tools/LinuxOneShot/SetupProgram/bin/*
+/tools/LinuxOneShot/SetupProgram/obj/
+/tools/LinuxOneShot/SetupProgram/bin/
 /tools/LinuxOneShot/SetupProgram/.vs
 /tools/LinuxOneShot/Database
 /tools/LinuxOneShot/TGS_Config
