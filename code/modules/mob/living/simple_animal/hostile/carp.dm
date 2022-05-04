@@ -266,8 +266,6 @@
 		disky = potential_disky
 		to_chat(src, SPAN_NICEGREEN("YES!! You manage to pick up [disky]. (Click anywhere to place it back down.)"))
 		update_icon()
-		if(!disky.fake)
-			client.give_award(/datum/award/achievement/misc/cayenne_disk, src)
 		return
 	if(disky)
 		if(isopenturf(attacked_target))

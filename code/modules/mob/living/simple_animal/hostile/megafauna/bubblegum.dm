@@ -64,9 +64,6 @@ Difficulty: Hard
 	var/enrage_time = 70
 	var/revving_charge = FALSE
 	gps_name = "Bloody Signal"
-	achievement_type = /datum/award/achievement/boss/bubblegum_kill
-	crusher_achievement_type = /datum/award/achievement/boss/bubblegum_crusher
-	score_achievement_type = /datum/award/score/bubblegum_score
 
 	deathmessage = "sinks into a pool of blood, fleeing the battle. You've won, for now... "
 	deathsound = 'sound/magic/enter_blood.ogg'
@@ -196,21 +193,6 @@ Difficulty: Hard
 		var/list/bloodpool = get_pools(get_turf(L), 0)
 		if(bloodpool.len && (!faction_check_mob(L) || L.stat == DEAD))
 			. += L
-
-/**
- * Attack by override for bubblegum
- *
- * This is used to award the frenching achievement for hitting bubblegum with a tongue
- *
- * Arguments:
- * * obj/item/W the item hitting bubblegum
- * * mob/user The user of the item
- * * params, extra parameters
- */
-/mob/living/simple_animal/hostile/megafauna/bubblegum/attackby(obj/item/W, mob/user, params)
-	. = ..()
-	if(istype(W, /obj/item/organ/tongue))
-		user.client?.give_award(/datum/award/achievement/misc/frenching, user)
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/proc/try_bloodattack()
 	var/list/targets = get_mobs_on_blood()
@@ -415,11 +397,6 @@ Difficulty: Hard
 /obj/effect/decal/cleanable/blood/gibs/bubblegum/can_bloodcrawl_in()
 	return TRUE
 
-/mob/living/simple_animal/hostile/megafauna/bubblegum/grant_achievement(medaltype,scoretype)
-	. = ..()
-	if(!(flags_1 & ADMIN_SPAWNED_1))
-		SSshuttle.shuttle_purchase_requirements_met[SHUTTLE_UNLOCK_BUBBLEGUM] = TRUE
-
 /mob/living/simple_animal/hostile/megafauna/bubblegum/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!charging)
 		..()
@@ -527,9 +504,6 @@ Difficulty: Hard
 	alpha = 127.5
 	crusher_loot = null
 	loot = null
-	achievement_type = null
-	crusher_achievement_type = null
-	score_achievement_type = null
 	deathmessage = "Explodes into a pool of blood!"
 	deathsound = 'sound/effects/splat.ogg'
 	true_spawn = FALSE

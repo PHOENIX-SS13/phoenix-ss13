@@ -1768,13 +1768,6 @@ GLOBAL_LIST_EMPTY(intento_players)
 	COOLDOWN_START(src, next_process, TIME_PER_DEMO_STEP)
 
 /obj/item/toy/intento/proc/process_end(mob/user)
-	if(user && GLOB.intento_players[user.ckey] < score)
-		GLOB.intento_players[user.ckey] = score
-		var/award_status = user.client.get_award_status(/datum/award/score/intento_score)
-		var/award_score = score - award_status
-		if(award_score > 0)
-			user.client.give_award(/datum/award/score/intento_score, user, award_score)
-
 	say("GAME OVER. Your score was [score]!")
 	playsound(src, 'sound/machines/synth_no.ogg', 50, FALSE)
 

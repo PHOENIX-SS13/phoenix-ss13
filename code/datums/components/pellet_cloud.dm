@@ -38,8 +38,6 @@
 	var/list/wound_info_by_part = list()
 	/// For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs]
 	var/list/bodies
-	/// For grenades, tracking people who die covering a grenade for achievement purposes, see [/datum/component/pellet_cloud/proc/handle_martyrs]
-	var/list/purple_hearts
 
 	/// For grenades, tracking how many pellets are removed due to martyrs and how many pellets are added due to the last person to touch it being on top of it
 	var/pellet_delta = 0
@@ -69,7 +67,6 @@
 		radius = magnitude
 
 /datum/component/pellet_cloud/Destroy(force, silent)
-	purple_hearts = null
 	pellets = null
 	targets_hit = null
 	wound_info_by_part = null
@@ -173,7 +170,6 @@
  * Once the grenade detonates, handle_martyrs() is called and gets all the new mobs on the tile, and add the ones not in var/list/bodies to var/list/martyrs
  * We then iterate through the martyrs and reduce the shrapnel magnitude for each mob on top of it, shredding each of them with some of the shrapnel they helped absorb. This can snuff out all of the shrapnel if there's enough bodies
  *
- * Note we track anyone who's alive and client'd when they get shredded in var/list/purple_hearts, for achievement checking later
  */
 /datum/component/pellet_cloud/proc/handle_martyrs(mob/living/punishable_triggerer)
 	var/magnitude_absorbed
@@ -211,10 +207,6 @@
 		var/pellets_absorbed = (radius ** 2) - ((radius - magnitude_absorbed - 1) ** 2)
 		radius -= magnitude_absorbed
 		pellet_delta -= round(pellets_absorbed * 0.5)
-
-		if(martyr.stat != DEAD && martyr.client)
-			LAZYADD(purple_hearts, martyr)
-			RegisterSignal(martyr, COMSIG_PARENT_QDELETING, .proc/on_target_qdel, override=TRUE)
 
 		for(var/i in 1 to round(pellets_absorbed * 0.5))
 			pew(martyr)
@@ -314,10 +306,6 @@
 			target.visible_message(SPAN_DANGER("[target] is hit by a [proj_name][hit_part ? " in the [hit_part.name]" : ""][did_damage ? ", which doesn't leave a mark" : ""]!"), null, null, COMBAT_MESSAGE_RANGE, target)
 			to_chat(target, SPAN_USERDANGER("You're hit by a [proj_name][hit_part ? " in the [hit_part.name]" : ""]!"))
 
-	for(var/M in purple_hearts)
-		var/mob/living/martyr = M
-		if(martyr.stat == DEAD && martyr.client)
-			martyr.client.give_award(/datum/award/achievement/misc/lookoutsir, martyr)
 	UnregisterSignal(parent, COMSIG_PARENT_PREQDELETED)
 	if(queued_delete)
 		qdel(parent)
@@ -375,7 +363,6 @@
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	targets_hit -= target
 	LAZYREMOVE(bodies, target)
-	LAZYREMOVE(purple_hearts, target)
 
 
 #undef CLOUD_POSITION_DAMAGE

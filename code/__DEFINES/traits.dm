@@ -346,8 +346,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CAN_STRIP "can_strip"
 
 // If present on a mob or mobmind, allows them to "suplex" an immovable rod
-// turning it into a glorified potted plant, and giving them an
-// achievement. Can also be used on rod-form wizards.
+// turning it into a glorified potted plant. Can also be used on rod-form wizards.
 // Normally only present in the mind of a Research Director.
 #define TRAIT_ROD_SUPLEX "rod_suplex"
 

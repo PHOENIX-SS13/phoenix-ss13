@@ -238,7 +238,6 @@
 	var/mob/living/carbon/human/lord_of_arms = user
 	lord_of_arms.physiology.brute_mod *= 0.5
 	lord_of_arms.physiology.burn_mod *= 0.5
-	lord_of_arms.client?.give_award(/datum/award/achievement/misc/flesh_ascension, lord_of_arms)
 	var/datum/antagonist/heretic/heretic_datum = user.mind.has_antag_datum(/datum/antagonist/heretic)
 	var/datum/eldritch_knowledge/flesh_grasp/grasp_ghoul = heretic_datum.get_knowledge(/datum/eldritch_knowledge/flesh_grasp)
 	grasp_ghoul.ghoul_amt *= 3

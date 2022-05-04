@@ -483,7 +483,6 @@
 
 /obj/item/clothing/shoes/cowboy/proc/handle_table_slam(mob/living/user)
 	user.say(pick("Hot damn!", "Hoo-wee!", "Got-dang!"), spans = list(SPEECH_SPAN_YELL), forced=TRUE)
-	user.client?.give_award(/datum/award/achievement/misc/hot_damn, user)
 
 /obj/item/clothing/shoes/cowboy/MouseDrop_T(mob/living/target, mob/living/user)
 	. = ..()

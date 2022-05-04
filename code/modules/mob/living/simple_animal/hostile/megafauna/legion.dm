@@ -40,9 +40,6 @@
 	minimum_distance = 5
 	ranged_cooldown_time = 20
 	gps_name = "Echoing Signal"
-	achievement_type = /datum/award/achievement/boss/legion_kill
-	crusher_achievement_type = /datum/award/achievement/boss/legion_crusher
-	score_achievement_type = /datum/award/score/legion_score
 	pixel_x = -32
 	base_pixel_x = -32
 	pixel_y = -16

@@ -50,9 +50,6 @@
 	var/list/prefixes
 	var/list/suffixes
 
-	var/ascended = FALSE // if we have all the top titles, grant achievements to living mobs that gaze upon our cleanbot god
-
-
 /mob/living/simple_animal/bot/cleanbot/proc/deputize(obj/item/W, mob/user)
 	if(in_range(src, user))
 		to_chat(user, SPAN_NOTICE("You attach \the [W] to \the [src]."))
@@ -66,8 +63,6 @@
 /mob/living/simple_animal/bot/cleanbot/proc/update_titles()
 	var/working_title = ""
 
-	ascended = TRUE
-
 	for(var/pref in prefixes)
 		for(var/title in pref)
 			if(title in stolen_valor)
@@ -75,8 +70,6 @@
 				if(title in officers)
 					commissioned = TRUE
 				break
-			else
-				ascended = FALSE // we didn't have the first entry in the list if we got here, so we're not achievement worthy yet
 
 	working_title += chosen_name
 
@@ -85,8 +78,6 @@
 			if(title in stolen_valor)
 				working_title += " " + suf[title]
 				break
-			else
-				ascended = FALSE
 
 	name = working_title
 
@@ -94,9 +85,6 @@
 	. = ..()
 	if(weapon)
 		. += " [SPAN_WARNING("Is that \a [weapon] taped to it...?")]"
-
-		if(ascended && user.stat == CONSCIOUS && user.client)
-			user.client.give_award(/datum/award/achievement/misc/cleanboss, user)
 
 /mob/living/simple_animal/bot/cleanbot/Initialize()
 	. = ..()

@@ -62,9 +62,6 @@ Difficulty: Hard
 	crusher_loot = list(/obj/item/hierophant_club, /obj/item/crusher_trophy/vortex_talisman)
 	wander = FALSE
 	gps_name = "Zealous Signal"
-	achievement_type = /datum/award/achievement/boss/hierophant_kill
-	crusher_achievement_type = /datum/award/achievement/boss/hierophant_crusher
-	score_achievement_type = /datum/award/score/hierophant_score
 	del_on_death = TRUE
 	deathsound = 'sound/magic/repulse.ogg'
 	attack_action_types = list(/datum/action/innate/megafauna_attack/blink,
@@ -409,12 +406,9 @@ Difficulty: Hard
 		blinking = TRUE //we do a fancy animation, release a huge burst(), and leave our staff.
 		visible_message(SPAN_HIEROPHANT("\"Mrmxmexmrk wipj-hiwxvygx wiuyirgi...\""))
 		visible_message(SPAN_HIEROPHANT_WARNING("[src] shrinks, releasing a massive burst of energy!"))
-		var/list/stored_nearby = list()
-		for(var/mob/living/L in view(7,src))
-			stored_nearby += L // store the people to grant the achievements to once we die
 		hierophant_burst(null, get_turf(src), 10)
 		set_stat(CONSCIOUS) // deathgasp won't run if dead, stupid
-		..(force_grant = stored_nearby)
+		..()
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/devour(mob/living/L)
 	for(var/obj/item/W in L)

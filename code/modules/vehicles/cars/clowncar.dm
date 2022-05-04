@@ -50,12 +50,6 @@
 	. = ..()
 	playsound(src, pick('sound/vehicles/clowncar_load1.ogg', 'sound/vehicles/clowncar_load2.ogg'), 75)
 
-/obj/vehicle/sealed/car/clowncar/after_add_occupant(mob/M, control_flags)
-	. = ..()
-	if(return_controllers_with_flag(VEHICLE_CONTROL_KIDNAPPED).len >= 30)
-		for(var/mob/voreman as anything in return_drivers())
-			voreman.client.give_award(/datum/award/achievement/misc/round_and_full, voreman)
-
 /obj/vehicle/sealed/car/clowncar/attack_animal(mob/living/simple_animal/user, list/modifiers)
 	if((user.loc != src) || user.environment_smash & (ENVIRONMENT_SMASH_WALLS|ENVIRONMENT_SMASH_RWALLS))
 		return ..()
@@ -236,5 +230,3 @@
 	thankscount++
 	if(thankscount < 100)
 		return
-	for(var/mob/busdriver as anything in return_drivers())
-		busdriver.client.give_award(/datum/award/achievement/misc/the_best_driver, busdriver)

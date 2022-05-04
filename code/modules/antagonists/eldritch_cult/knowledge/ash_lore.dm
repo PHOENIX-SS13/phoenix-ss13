@@ -206,7 +206,6 @@
 	var/mob/living/carbon/human/ascendant = user
 	ascendant.physiology.brute_mod *= 0.5
 	ascendant.physiology.burn_mod *= 0.5
-	ascendant.client?.give_award(/datum/award/achievement/misc/ash_ascension, ascendant)
 	for(var/trait in trait_list)
 		ADD_TRAIT(user, trait, MAGIC_TRAIT)
 	return ..()

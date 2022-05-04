@@ -65,7 +65,6 @@
 
 			if(shell && eyes && tongue && DT_PROB(2.5, delta_time))
 				affected_mob.set_species(/datum/species/snail)
-				affected_mob.client?.give_award(/datum/award/achievement/misc/snail, affected_mob)
 				affected_mob.visible_message(SPAN_WARNING("[affected_mob] turns into a snail!"), \
 				SPAN_BOLDNOTICE("You turned into a snail person! You feel an urge to cccrrraaawwwlll..."))
 				cure()

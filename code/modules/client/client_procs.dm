@@ -1061,14 +1061,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		qdel(S)
 	char_render_holders = null
 
-///Redirect proc that makes it easier to call the unlock achievement proc. Achievement type is the typepath to the award, user is the mob getting the award, and value is an optional variable used for leaderboard value increments
-/client/proc/give_award(achievement_type, mob/user, value = 1)
-	return player_details.achievements.unlock(achievement_type, user, value)
-
-///Redirect proc that makes it easier to get the status of an achievement. Achievement type is the typepath to the award.
-/client/proc/get_award_status(achievement_type, mob/user, value = 1)
-	return player_details.achievements.get_achievement_status(achievement_type)
-
 ///Gives someone hearted status for OOC, from behavior commendations
 /client/proc/adjust_heart(duration = 24 HOURS)
 	var/new_duration = world.realtime + duration

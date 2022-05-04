@@ -44,10 +44,6 @@
 	shooter.apply_status_effect(STATUS_EFFECT_HOLDUP, shooter)
 	target.apply_status_effect(STATUS_EFFECT_HELDUP, shooter)
 
-	if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher) && weapon.chambered)
-		if(target.stat == CONSCIOUS && IS_NUKE_OP(shooter) && !IS_NUKE_OP(target) && (locate(/obj/item/disk/nuclear) in target.get_contents()) && shooter.client)
-			shooter.client.give_award(/datum/award/achievement/misc/rocket_holdup, shooter)
-
 	target.do_alert_animation()
 	target.playsound_local(target.loc, 'sound/machines/chime.ogg', 50, TRUE)
 	SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gunpoint", /datum/mood_event/gunpoint)

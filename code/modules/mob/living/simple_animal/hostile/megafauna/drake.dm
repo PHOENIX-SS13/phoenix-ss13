@@ -66,9 +66,6 @@
 	var/swooping = NONE
 	var/player_cooldown = 0
 	gps_name = "Fiery Signal"
-	achievement_type = /datum/award/achievement/boss/drake_kill
-	crusher_achievement_type = /datum/award/achievement/boss/drake_crusher
-	score_achievement_type = /datum/award/score/drake_score
 	deathmessage = "collapses into a pile of bones, its flesh sloughing away."
 	deathsound = 'sound/magic/demon_dies.ogg'
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -602,6 +599,3 @@
 	swoop_attack(FALSE, A)
 	lava_pools(10, 2) // less pools but longer delay before spawns
 	player_cooldown = world.time + 200 // needs seperate cooldown or cant use fire attacks
-
-/mob/living/simple_animal/hostile/megafauna/dragon/lesser/grant_achievement(medaltype,scoretype)
-	return
