@@ -1,3 +1,8 @@
 2022-05-01:
   Azarak:
   - bugfix: fixes experiments that required you to scan a mineral wall.
+2022-05-03:
+  Alex 'Avunia' Takiya (atakiya):
+  - server: Minimum BYOND version for compiling and hosting has been raised to 514
+  Azarak:
+  - balance: Lavaland megafauna are now slower, and easier to run away from.
