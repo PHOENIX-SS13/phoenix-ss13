@@ -6,3 +6,7 @@
   - server: Minimum BYOND version for compiling and hosting has been raised to 514
   Azarak:
   - balance: Lavaland megafauna are now slower, and easier to run away from.
+2022-05-04:
+  Azarak:
+  - rscdel: Removes achievements
+  - rscdel: Removes the intern announcer
