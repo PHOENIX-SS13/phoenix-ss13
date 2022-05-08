@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- rscadd: Emoting now makes a blue typing indicator
+merge-date: 2022-05-08
+prnumber: 872
