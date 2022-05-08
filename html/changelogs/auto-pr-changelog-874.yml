@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- bugfix: Navigation beacons now display under catwalks
+merge-date: 2022-05-08
+prnumber: 874
