@@ -57,10 +57,7 @@
 /obj/item/grown/log/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		user.show_message(SPAN_NOTICE("You make [plank_name] out of \the [src]!"), MSG_VISUAL)
-		var/seed_modifier = 0
-		if(seed)
-			seed_modifier = round(seed.potency / 25)
-		var/obj/item/stack/plank = new plank_type(user.loc, 1 + seed_modifier)
+		var/obj/item/stack/plank = new plank_type(user.loc, get_plank_amount())
 		var/old_plank_amount = plank.amount
 		for(var/obj/item/stack/ST in user.loc)
 			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
@@ -83,6 +80,13 @@
 			to_chat(usr, SPAN_WARNING("You must dry this first!"))
 	else
 		return ..()
+
+/// Returns an amount of planks that the log will yield
+/obj/item/grown/log/proc/get_plank_amount()
+	var/plank_amount = 1
+	if(seed)
+		plank_amount += round(seed.potency / 25)
+	return plank_amount 
 
 /obj/item/grown/log/proc/CheckAccepted(obj/item/I)
 	return is_type_in_typecache(I, accepted)
