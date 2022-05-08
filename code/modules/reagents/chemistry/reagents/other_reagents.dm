@@ -1842,22 +1842,6 @@
 	name = "Royal Carpet?"
 	description = "For those that break the game and need to make an issue report."
 
-/datum/reagent/carpet/royal/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	. = ..()
-	var/obj/item/organ/liver/liver = M.getorganslot(ORGAN_SLOT_LIVER)
-	if(liver)
-		// Heads of staff and the captain have a "royal metabolism"
-		if(HAS_TRAIT(liver, TRAIT_ROYAL_METABOLISM))
-			if(DT_PROB(5, delta_time))
-				to_chat(M, "You feel like royalty.")
-			if(DT_PROB(2.5, delta_time))
-				M.say(pick("Peasants..","This carpet is worth more than your contracts!","I could fire you at any time..."), forced = "royal carpet")
-
-		// The quartermaster, as a semi-head, has a "pretender royal" metabolism
-		else if(HAS_TRAIT(liver, TRAIT_PRETENDER_ROYAL_METABOLISM))
-			if(DT_PROB(8, delta_time))
-				to_chat(M, "You feel like an impostor...")
-
 /datum/reagent/carpet/royal/black
 	name = "Royal Black Carpet"
 	description = "For those that feel the need to show off their timewasting skills."

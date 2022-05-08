@@ -18,8 +18,6 @@
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_SEC
 
-	liver_traits = list(TRAIT_ROYAL_METABOLISM)
-
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 	departments_list = list(
 		/datum/job_department/command,
@@ -51,8 +49,6 @@
 	paycheck_department = ACCOUNT_SRV
 	bounty_types = CIV_JOB_RANDOM
 
-	liver_traits = list(TRAIT_ROYAL_METABOLISM)
-
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_PERSONNEL
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE
 
@@ -72,8 +68,6 @@
 
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_ENG
-
-	liver_traits = list(TRAIT_ENGINEER_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
 	bounty_types = CIV_JOB_ENG
@@ -96,8 +90,6 @@
 
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_MED
-
-	liver_traits = list(TRAIT_MEDICAL_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_MEDICAL_DOCTOR
 	bounty_types = CIV_JOB_MED
@@ -166,8 +158,6 @@
 	paycheck = PAYCHECK_EASY
 	paycheck_department = ACCOUNT_SRV
 
-	liver_traits = list(TRAIT_CULINARY_METABOLISM)
-
 	display_order = JOB_DISPLAY_ORDER_COOK
 	bounty_types = CIV_JOB_CHEF
 	departments_list = list(
@@ -206,8 +196,6 @@
 	outfit = /datum/outfit/job/assistant
 	plasmaman_outfit = /datum/outfit/plasmaman
 	paycheck = PAYCHECK_ASSISTANT
-
-	liver_traits = list(TRAIT_GREYTIDE_METABOLISM)
 
 	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT

@@ -17,8 +17,6 @@
 	paycheck = PAYCHECK_EASY
 	paycheck_department = ACCOUNT_SRV
 
-	liver_traits = list(TRAIT_CULINARY_METABOLISM)
-
 	display_order = JOB_DISPLAY_ORDER_COOK
 	bounty_types = CIV_JOB_CHEF
 	required_languages = null

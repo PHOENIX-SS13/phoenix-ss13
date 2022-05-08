@@ -455,12 +455,6 @@
 			to_chat(M, SPAN_DANGER("You can't get the scent of garlic out of your nose! You can barely think..."))
 			M.Paralyze(10)
 			M.Jitter(10)
-	else
-		var/obj/item/organ/liver/liver = M.getorganslot(ORGAN_SLOT_LIVER)
-		if(liver && HAS_TRAIT(liver, TRAIT_CULINARY_METABOLISM))
-			if(DT_PROB(10, delta_time)) //stays in the system much longer than sprinkles/banana juice, so heals slower to partially compensate
-				M.heal_bodypart_damage(brute = 1, burn = 1)
-				. = TRUE
 	..()
 
 /datum/reagent/consumable/sprinkles
@@ -469,13 +463,6 @@
 	color = "#FF00FF" // rgb: 255, 0, 255
 	taste_description = "childhood whimsy"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-
-/datum/reagent/consumable/sprinkles/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	var/obj/item/organ/liver/liver = M.getorganslot(ORGAN_SLOT_LIVER)
-	if(liver && HAS_TRAIT(liver, TRAIT_LAW_ENFORCEMENT_METABOLISM))
-		M.heal_bodypart_damage(1 * REM * delta_time, 1 * REM * delta_time, 0)
-		. = TRUE
-	..()
 
 /datum/reagent/consumable/cornoil
 	name = "Corn Oil"

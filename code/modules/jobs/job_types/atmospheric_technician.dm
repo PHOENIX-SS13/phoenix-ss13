@@ -16,8 +16,6 @@
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_ENG
 
-	liver_traits = list(TRAIT_ENGINEER_METABOLISM)
-
 	display_order = JOB_DISPLAY_ORDER_ATMOSPHERIC_TECHNICIAN
 	bounty_types = CIV_JOB_ENG
 	departments_list = list(

@@ -23,28 +23,6 @@
 	var/toxLethality = LIVER_DEFAULT_TOX_LETHALITY
 	var/filterToxins = TRUE //whether to filter toxins
 
-/obj/item/organ/liver/Initialize()
-	. = ..()
-	// If the liver handles foods like a clown, it honks like a bike horn
-	// Don't think about it too much.
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_COMEDY_METABOLISM), .proc/on_add_comedy_metabolism)
-
-/* Signal handler for the liver gaining the TRAIT_COMEDY_METABOLISM trait
- *
- * Adds the "squeak" component, so clown livers will act just like their
- * bike horns, and honk when you hit them with things, or throw them
- * against things, or step on them.
- *
- * The removal of the component, if this liver loses that trait, is handled
- * by the component itself.
- */
-/obj/item/organ/liver/proc/on_add_comedy_metabolism()
-	SIGNAL_HANDLER
-
-	// Are clown "bike" horns made from the livers of ex-clowns?
-	// Would that make the clown more or less likely to honk it
-	AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50, falloff_exponent = 20)
-
 #define HAS_SILENT_TOXIN 0 //don't provide a feedback message if this is the only toxin present
 #define HAS_NO_TOXIN 1
 #define HAS_PAINFUL_TOXIN 2

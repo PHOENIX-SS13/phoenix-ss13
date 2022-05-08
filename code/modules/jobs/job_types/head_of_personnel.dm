@@ -26,8 +26,6 @@
 	paycheck_department = ACCOUNT_SRV
 	bounty_types = CIV_JOB_RANDOM
 
-	liver_traits = list(TRAIT_ROYAL_METABOLISM)
-
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_PERSONNEL
 
 	banned_quirks = list(HEAD_RESTRICTED_QUIRKS)

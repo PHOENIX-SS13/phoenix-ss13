@@ -38,8 +38,7 @@
 				eatverbs = eatverbs,\
 				bite_consumption = bite_consumption,\
 				microwaved_type = microwaved_type,\
-				junkiness = junkiness,\
-				check_liked = CALLBACK(src, .proc/check_liked))
+				junkiness = junkiness)
 
 /obj/item/food/donut/proc/decorate_donut()
 	if(is_decorated || !decorated_icon)
@@ -53,11 +52,6 @@
 /// Returns the sprite of the donut while in a donut box
 /obj/item/food/donut/proc/in_box_sprite()
 	return "[icon_state]_inbox"
-
-///Override for checkliked in edible component, because all cops LOVE donuts
-/obj/item/food/donut/proc/check_liked(fraction, mob/living/carbon/human/H)
-	if(!HAS_TRAIT(H, TRAIT_AGEUSIA) && H.mind && HAS_TRAIT(H.mind, TRAIT_DONUT_LOVER))
-		return FOOD_LIKED
 
 //Use this donut ingame
 /obj/item/food/donut/plain
