@@ -8,7 +8,8 @@
 	base_icon_state = "navbeacon"
 	name = "navigation beacon"
 	desc = "A radio beacon used for bot navigation and crew wayfinding."
-	layer = LOW_OBJ_LAYER
+	plane = FLOOR_PLANE
+	layer = UNDER_CATWALK_LAYER
 	max_integrity = 500
 	armor = list(MELEE = 70, BULLET = 70, LASER = 70, ENERGY = 70, BOMB = 0, BIO = 0, RAD = 0, FIRE = 80, ACID = 80)
 

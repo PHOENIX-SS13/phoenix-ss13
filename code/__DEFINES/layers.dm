@@ -46,10 +46,11 @@
 #define DISPOSAL_PIPE_LAYER 2.3
 #define GAS_PIPE_HIDDEN_LAYER 2.35 //layer = initial(layer) + piping_layer / 1000 in atmospherics/update_icon() to determine order of pipe overlap
 #define WIRE_LAYER 2.4
-#define WIRE_BRIDGE_LAYER 2.44
-#define WIRE_TERMINAL_LAYER 2.45
-#define GAS_SCRUBBER_LAYER 2.46
-#define CATWALK_LAYER 2.465
+#define WIRE_BRIDGE_LAYER 2.41
+#define WIRE_TERMINAL_LAYER 2.42
+#define GAS_SCRUBBER_LAYER 2.43
+#define UNDER_CATWALK_LAYER 2.44
+#define CATWALK_LAYER 2.46
 #define GAS_PIPE_VISIBLE_LAYER 2.47 //layer = initial(layer) + piping_layer / 1000 in atmospherics/update_icon() to determine order of pipe overlap
 #define GAS_FILTER_LAYER 2.48
 #define GAS_PUMP_LAYER 2.49
