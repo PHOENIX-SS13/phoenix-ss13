@@ -28,8 +28,6 @@
 		if(LAZYLEN(diseases_to_add))
 			AddComponent(/datum/component/infective, diseases_to_add)
 
-	AddElement(/datum/element/beauty, beauty)
-
 	var/turf/T = get_turf(src)
 	if(T && is_station_level(T))
 		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)

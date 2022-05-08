@@ -709,7 +709,6 @@
 #include "code\datums\elements\art.dm"
 #include "code\datums\elements\atmos_sensitive.dm"
 #include "code\datums\elements\backblast.dm"
-#include "code\datums\elements\beauty.dm"
 #include "code\datums\elements\bed_tucking.dm"
 #include "code\datums\elements\bsa_blocker.dm"
 #include "code\datums\elements\caltrop.dm"
