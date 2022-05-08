@@ -2040,15 +2040,19 @@
 					set_typing_indicator(TRUE)
 					break
 				if("Me")
-					set_typing_indicator(TRUE)
+					set_typing_indicator(TRUE, TRUE)
 					break
 	return ..()
 
 /// Used for setting typing indicator on/off. Checking the state should be done not on the proc to avoid overhead.
-/mob/living/set_typing_indicator(state)
+/mob/living/set_typing_indicator(state, emote = FALSE)
 	typing_indicator = state
 	if(typing_indicator)
-		var/state_of_bubble = bubble_icon? "[bubble_icon]0" : "default0"
+		var/state_of_bubble
+		if(emote)
+			state_of_bubble = "default_emote"
+		else
+			state_of_bubble = bubble_icon? "[bubble_icon]0" : "default0"
 		typing_indicator_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, layer = FLY_LAYER)
 		typing_indicator_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 		add_overlay(typing_indicator_overlay)
