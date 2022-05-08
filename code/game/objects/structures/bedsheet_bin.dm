@@ -267,6 +267,7 @@ LINEN BINS
 
 /obj/item/bedsheet/random/Initialize(mapload)
 	..()
+	var/saved_dir = dir
 	if(!LAZYACCESS(bedsheet_list, spawn_type))
 		var/list/spawn_list = list()
 		var/list/possible_types = typesof(/obj/item/bedsheet)
@@ -275,18 +276,19 @@ LINEN BINS
 				spawn_list += sheet
 		LAZYSET(bedsheet_list, spawn_type, spawn_list)
 	var/chosen_type = pick(bedsheet_list[spawn_type])
-	new chosen_type(loc)
+	var/obj/item/bedsheet/new_sheet = new chosen_type(loc)
+	new_sheet.setDir(saved_dir)
 	return INITIALIZE_HINT_QDEL
 
 /obj/item/bedsheet/random/double
-	icon_state = "random_bedsheet"
+	icon_state = "random_doublesheet"
 	spawn_type = BEDSHEET_DOUBLE
 
 /obj/item/bedsheet/dorms
 	icon_state = "random_bedsheet"
 	name = "random dorms bedsheet"
 	desc = "If you're reading this description ingame, something has gone wrong! Honk!"
-	bedsheet_type = BEDSHEET_DOUBLE
+	bedsheet_type = BEDSHEET_ABSTRACT
 	slot_flags = null
 
 /obj/item/bedsheet/dorms/Initialize(mapload)
