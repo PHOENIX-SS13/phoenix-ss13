@@ -72,17 +72,6 @@
 		M.swap_hand()
 	return 1
 
-/atom/movable/screen/skills
-	name = "skills"
-	icon = 'icons/hud/screen_midnight.dmi'
-	icon_state = "skills"
-	screen_loc = ui_skill_menu
-
-/atom/movable/screen/skills/Click()
-	if(ishuman(usr))
-		var/mob/living/carbon/human/H = usr
-		H.mind.print_levels(H)
-
 /atom/movable/screen/craft
 	name = "crafting menu"
 	icon = 'icons/hud/screen_midnight.dmi'

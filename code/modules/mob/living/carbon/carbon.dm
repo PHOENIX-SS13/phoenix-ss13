@@ -1211,17 +1211,6 @@
 /mob/living/carbon/proc/wearing_shock_proof_gloves()
 	return gloves?.siemens_coefficient == 0
 
-/// Modifies max_skillchip_count and updates active skillchips
-/mob/living/carbon/proc/adjust_skillchip_complexity_modifier(delta)
-	skillchip_complexity_modifier += delta
-
-	var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
-
-	if(!brain)
-		return
-
-	brain.update_skillchips()
-
 
 /// Modifies the handcuffed value if a different value is passed, returning FALSE otherwise. The variable should only be changed through this proc.
 /mob/living/carbon/proc/set_handcuffed(new_value)

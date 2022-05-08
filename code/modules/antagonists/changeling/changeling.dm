@@ -296,8 +296,6 @@
 	prof.undershirt = H.undershirt
 	prof.socks = H.socks
 
-	prof.skillchips = H.clone_skillchip_list(TRUE)
-
 	for(var/i in H.all_scars)
 		var/datum/scar/iter_scar = i
 		LAZYADD(prof.stored_scars, iter_scar.format())
@@ -467,39 +465,6 @@
 		if(iter_scar.fake)
 			qdel(iter_scar)
 
-	// Do skillchip code after DNA code.
-	// There's a mutation that increases max chip complexity available, even though we force-implant skillchips.
-
-	// Remove existing skillchips.
-	user.destroy_all_skillchips(silent = FALSE)
-
-	// Add new set of skillchips.
-	for(var/chip in chosen_prof.skillchips)
-		var/chip_type = chip["type"]
-		var/obj/item/skillchip/skillchip = new chip_type(user)
-
-		if(!istype(skillchip))
-			stack_trace("Failure to implant changeling from [chosen_prof] with skillchip [skillchip]. Tried to implant with non-skillchip type [chip_type]")
-			qdel(skillchip)
-			continue
-
-		// Try force-implanting and activating. If it doesn't work, there's nothing much we can do. There may be some
-		// incompatibility out of our hands
-		var/implant_msg = user.implant_skillchip(skillchip, TRUE)
-		if(implant_msg)
-			// Hopefully recording the error message will help debug it.
-			stack_trace("Failure to implant changeling from [chosen_prof] with skillchip [skillchip]. Error msg: [implant_msg]")
-			qdel(skillchip)
-			continue
-
-		// Time to set the metadata. This includes trying to activate the chip.
-		var/set_meta_msg = skillchip.set_metadata(chip)
-
-		if(set_meta_msg)
-			// Hopefully recording the error message will help debug it.
-			stack_trace("Failure to activate changeling skillchip from [chosen_prof] with skillchip [skillchip] using [chip] metadata. Error msg: [set_meta_msg]")
-			continue
-
 	//vars hackery. not pretty, but better than the alternative.
 	for(var/slot in slot2type)
 		if(istype(user.vars[slot], slot2type[slot]) && !(chosen_prof.exists_list[slot])) //remove unnecessary flesh items
@@ -569,7 +534,6 @@
 	var/undershirt
 	var/socks
 
-	var/list/skillchips = list()
 	/// What scars the target had when we copied them, in string form (like persistent scars)
 	var/list/stored_scars
 	/// Icon snapshot of the profile
@@ -599,7 +563,6 @@
 	newprofile.socks = socks
 	newprofile.worn_icon_list = worn_icon_list.Copy()
 	newprofile.worn_icon_state_list = worn_icon_state_list.Copy()
-	newprofile.skillchips = skillchips.Copy()
 	newprofile.stored_scars = stored_scars.Copy()
 	newprofile.profile_snapshot = profile_snapshot
 	newprofile.id_icon = id_icon

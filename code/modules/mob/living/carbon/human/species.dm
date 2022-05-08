@@ -421,8 +421,6 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		if(!current_organ || replace_current)
 			var/obj/item/organ/replacement = new organ_path()
 			// If there's an existing mutant organ, we're technically replacing it.
-			// Let's abuse the snowflake proc that skillchips added. Basically retains
-			// feature parity with every other organ too.
 			if(current_organ)
 				current_organ.before_organ_replacement(replacement)
 			// organ.Insert will qdel any current organs in that slot, so we don't need to.

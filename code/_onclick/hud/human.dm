@@ -63,11 +63,6 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new/atom/movable/screen/skills
-	using.icon = ui_style
-	using.hud = src
-	static_inventory += using
-
 	using = new /atom/movable/screen/area_creator
 	using.icon = ui_style
 	using.hud = src

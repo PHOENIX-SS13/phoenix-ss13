@@ -263,34 +263,6 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	if(smeared_mob.density || prob(10))
 		smeared_mob.ex_act(EXPLODE_HEAVY)
 
-/obj/effect/immovablerod/attack_hand(mob/living/user, list/modifiers)
-	. = ..()
-	if(.)
-		return
-
-	if(!(HAS_TRAIT(user, TRAIT_ROD_SUPLEX) || (user.mind && HAS_TRAIT(user.mind, TRAIT_ROD_SUPLEX))))
-		return
-
-	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	for(var/mob/M in urange(8, src))
-		if(M.stat != CONSCIOUS)
-			continue
-		shake_camera(M, 2, 3)
-
-	if(wizard)
-		user.visible_message(SPAN_BOLDWARNING("[src] transforms into [wizard] as [user] suplexes them!"), SPAN_WARNING("As you grab [src], it suddenly turns into [wizard] as you suplex them!"))
-		to_chat(wizard, SPAN_BOLDWARNING("You're suddenly jolted out of rod-form as [user] somehow manages to grab you, slamming you into the ground!"))
-		wizard.Stun(60)
-		wizard.apply_damage(25, BRUTE)
-		qdel(src)
-	else
-		user.visible_message(SPAN_BOLDWARNING("[user] suplexes [src] into the ground!"), SPAN_WARNING("You suplex [src] into the ground!"))
-		new /obj/structure/festivus/anchored(drop_location())
-		new /obj/effect/anomaly/flux(drop_location())
-		qdel(src)
-
-	return TRUE
-
 /* Below are a couple of admin helper procs when dealing with immovable rod memes. */
 /**
  * Stops your rod's automated movement. Sit... Stay... Good rod!

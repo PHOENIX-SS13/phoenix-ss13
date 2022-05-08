@@ -451,6 +451,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	READ_FILE(S["languages"] , languages)
 
+	READ_FILE(S["attributes"] , attributes)
+	READ_FILE(S["skills"] , skills)
+
 	switch(dominant_hand)
 		if(DOMINANT_HAND_LEFT, DOMINANT_HAND_RIGHT, DOMINANT_HAND_AMBI) // do nothing
 		else
@@ -589,6 +592,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(!GLOB.robotic_styles_list[augment_limb_styles[limb_slot]])
 			augment_limb_styles -= limb_slot
 
+	validate_attributes()
+
 	validate_species_parts()
 
 	needs_update = TRUE
@@ -677,6 +682,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pref_faction"] , pref_faction)
 
 	WRITE_FILE(S["languages"] , languages)
+
+	WRITE_FILE(S["attributes"] , attributes)
+	WRITE_FILE(S["skills"] , skills)
 
 	return TRUE
 

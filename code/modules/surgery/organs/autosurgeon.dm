@@ -2,7 +2,7 @@
 
 /obj/item/autosurgeon
 	name = "autosurgeon"
-	desc = "A device that automatically inserts an implant, skillchip or organ into the user without the hassle of extensive surgery. \
+	desc = "A device that automatically inserts an implant or organ into the user without the hassle of extensive surgery. \
 		It has a screwdriver slot for removing accidentally added items."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "autoimplanter"

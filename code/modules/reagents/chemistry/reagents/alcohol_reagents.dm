@@ -390,14 +390,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(src.data && data && data["vintage"] != src.data["vintage"])
 		src.data["vintage"] = "mixed wine"
 
-/datum/reagent/consumable/ethanol/wine/get_taste_description(mob/living/taster)
-	if(HAS_TRAIT(taster,TRAIT_WINE_TASTER))
-		if(data && data["vintage"])
-			return list("[data["vintage"]]" = 1)
-		else
-			return list("synthetic wine"=1)
-	return ..()
-
 /datum/reagent/consumable/ethanol/lizardwine
 	name = "Lizard wine"
 	description = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol."

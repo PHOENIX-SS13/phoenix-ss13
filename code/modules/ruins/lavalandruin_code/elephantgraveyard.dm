@@ -48,7 +48,7 @@
 	if(prob(floor_variance))
 		icon_state = "[base_icon_state][rand(0,6)]"
 
-/turf/closed/mineral/strong/wasteland
+/turf/closed/mineral/wasteland
 	name = "ancient dry rock"
 	color = "#B5651D"
 	environment_type = "wasteland"
@@ -58,7 +58,7 @@
 	base_icon_state = "rock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 
-/turf/closed/mineral/strong/wasteland/drop_ores()
+/turf/closed/mineral/wasteland/drop_ore_loot()
 	if(prob(10))
 		new /obj/item/stack/ore/iron(src, 1)
 		new /obj/item/stack/ore/glass(src, 1)

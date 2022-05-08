@@ -816,17 +816,8 @@
 			var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 			if(affecting?.receive_damage( 0, 5 )) // 5 burn damage
 				H.update_damage_overlays()
-			if(HAS_TRAIT(user, TRAIT_LIGHTBULB_REMOVER))
-				to_chat(user, SPAN_NOTICE("You feel like you're burning, but you can push through."))
-				if(!do_after(user, 5 SECONDS, target = src))
-					return
-				if(affecting?.receive_damage( 0, 10 )) // 10 more burn damage
-					H.update_damage_overlays()
-				to_chat(user, SPAN_NOTICE("You manage to remove the light [fitting], shattering it in process."))
-				break_light_tube()
-			else
-				to_chat(user, SPAN_WARNING("You try to remove the light [fitting], but you burn your hand on it!"))
-				return
+			to_chat(user, SPAN_WARNING("You try to remove the light [fitting], but you burn your hand on it!"))
+			return
 	else
 		to_chat(user, SPAN_NOTICE("You remove the light [fitting]."))
 	// create a light tube/bulb item and put it in the user's hand

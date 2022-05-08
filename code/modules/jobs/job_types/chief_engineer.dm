@@ -73,8 +73,6 @@
 	pda_slot = ITEM_SLOT_LPOCKET
 	chameleon_extras = /obj/item/stamp/ce
 
-	skillchips = list(/obj/item/skillchip/job/engineer)
-
 	id_trim = /datum/id_trim/job/chief_engineer
 
 /datum/outfit/job/ce/rig

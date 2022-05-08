@@ -201,7 +201,6 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/reset_ooc,
 	/client/proc/deadmin,
 	/datum/admins/proc/show_traitor_panel,
-	/datum/admins/proc/show_skill_panel,
 	/datum/admins/proc/toggleenter,
 	/datum/admins/proc/toggleguests,
 	/datum/admins/proc/announce,
@@ -840,3 +839,15 @@ GLOBAL_PROTECT(admin_verbs_deadmins)
 
 	src << link("?debug=profile&type=sendmaps&window=test")
 #endif
+
+/client/proc/modify_skills(mob/living/living)
+	set category = "Admin.Fun"
+	set name = "Modify Skills"
+	set desc = "Opens a menu to modify skills."
+	if(!istype(living))
+		to_chat(src, SPAN_NOTICE("You can only modify skills to a mob of type /mob/living."), confidential = TRUE)
+		return
+	living.attributes.show_admin_edit_panel(usr)
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Modify Skills") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	log_admin("[key_name(usr)] opened [key_name(living)]'s skills menu.")
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] opened [key_name_admin(living)]'s skills menu.</span>")

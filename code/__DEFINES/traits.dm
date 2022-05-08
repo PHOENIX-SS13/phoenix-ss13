@@ -255,8 +255,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SPECIAL_TRAUMA_BOOST "special_trauma_boost"
 #define TRAIT_BLOODCRAWL_EAT "bloodcrawl_eat"
 #define TRAIT_SPACEWALK "spacewalk"
-/// Gets double arcade prizes
-#define TRAIT_GAMERGOD "gamer-god"
 #define TRAIT_GIANT "giant"
 #define TRAIT_DWARF "dwarf"
 /// makes your footsteps completely silent
@@ -309,11 +307,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 // You're immune to the hallucination effect of the supermatter, either
 // through force of will, or equipment. Present on /mob or /datum/mind
 #define TRAIT_SUPERMATTER_MADNESS_IMMUNE "supermatter_madness_immune"
-
-// You can stare into the abyss, and it turns pink.
-// Being close enough to the supermatter makes it heal at higher temperatures
-// and emit less heat. Present on /mob or /datum/mind
-#define TRAIT_SUPERMATTER_SOOTHER "supermatter_soother"
 /*
 * Trait granted by various security jobs, and checked by [/obj/item/food/donut]
 * When present in the mob's mind, they will always love donuts.
@@ -344,20 +337,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// This mob can strip other mobs.
 #define TRAIT_CAN_STRIP "can_strip"
-
-// If present on a mob or mobmind, allows them to "suplex" an immovable rod
-// turning it into a glorified potted plant. Can also be used on rod-form wizards.
-// Normally only present in the mind of a Research Director.
-#define TRAIT_ROD_SUPLEX "rod_suplex"
-
-//SKILLS
-#define TRAIT_UNDERWATER_BASKETWEAVING_KNOWLEDGE "underwater_basketweaving"
-#define TRAIT_WINE_TASTER "wine_taster"
-#define TRAIT_BONSAI "bonsai"
-#define TRAIT_LIGHTBULB_REMOVER "lightbulb_remover"
-#define TRAIT_KNOW_CYBORG_WIRES "know_cyborg_wires"
-#define TRAIT_KNOW_ENGI_WIRES "know_engi_wires"
-#define TRAIT_ENTRAILS_READER "entrails_reader"
 
 ///Movement type traits for movables. See elements/movetype_handler.dm
 #define TRAIT_MOVE_GROUND "move_ground"
@@ -585,7 +564,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define LEAPER_BUBBLE_TRAIT "leaper-bubble"
 /// sticky nodrop sounds like a bad soundcloud rapper's name
 #define STICKY_NODROP "sticky-nodrop"
-#define SKILLCHIP_TRAIT "skillchip"
 #define BUSY_FLOORBOT_TRAIT "busy-floorbot"
 #define PULLED_WHILE_SOFTCRIT_TRAIT "pulled-while-softcrit"
 #define LOCKED_BORG_TRAIT "locked-borg"

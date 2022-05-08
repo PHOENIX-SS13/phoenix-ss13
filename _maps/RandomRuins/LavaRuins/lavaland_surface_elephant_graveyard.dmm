@@ -91,7 +91,7 @@
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "at" = (
-/turf/closed/mineral/strong/wasteland,
+/turf/closed/mineral/wasteland,
 /area/lavaland/surface)
 "au" = (
 /obj/structure/table,
@@ -282,7 +282,7 @@
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "bf" = (
-/turf/closed/mineral/strong/wasteland,
+/turf/closed/mineral/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "bg" = (
 /obj/structure/sign/warning/securearea,
@@ -342,7 +342,7 @@
 /area/ruin/unpowered/elephant_graveyard)
 "bt" = (
 /obj/structure/table,
-/turf/closed/mineral/strong/wasteland,
+/turf/closed/mineral/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "bu" = (
 /obj/structure/bed,
@@ -443,7 +443,7 @@
 "bN" = (
 /obj/structure/sign/warning/securearea,
 /obj/structure/sign/warning/securearea,
-/turf/closed/mineral/strong/wasteland,
+/turf/closed/mineral/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "bO" = (
 /obj/item/paper/fluff/ruins/elephant_graveyard,

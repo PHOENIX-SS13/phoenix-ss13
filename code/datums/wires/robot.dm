@@ -92,12 +92,6 @@
 			if(R.has_model() && !mend)
 				R.ResetModel()
 
-/datum/wires/robot/can_reveal_wires(mob/user)
-	if(HAS_TRAIT(user, TRAIT_KNOW_CYBORG_WIRES))
-		return TRUE
-
-	return ..()
-
 /datum/wires/robot/always_reveal_wire(color)
 	// Always reveal the reset model wire.
 	if(color == get_color_of_wire(WIRE_RESET_MODEL))

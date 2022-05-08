@@ -85,11 +85,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 /obj/machinery/computer/arcade/proc/prizevend(mob/user, prizes = 1)
 	SEND_SIGNAL(src, COMSIG_ARCADE_PRIZEVEND, user, prizes)
-	if(user.mind?.get_skill_level(/datum/skill/gaming) >= SKILL_LEVEL_LEGENDARY && HAS_TRAIT(user, TRAIT_GAMERGOD))
-		visible_message("<span class='notice'>[user] inputs an intense cheat code!",\
-		SPAN_NOTICE("You hear a flurry of buttons being pressed."))
-		say("CODE ACTIVATED: EXTRA PRIZES.")
-		prizes *= 2
 	for(var/i = 0, i < prizes, i++)
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "arcade", /datum/mood_event/arcade)
 		if(prob(0.0001)) //1 in a million
@@ -187,7 +182,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 
 ///creates the enemy base stats for a new round along with the enemy passives
-/obj/machinery/computer/arcade/battle/proc/enemy_setup(player_skill)
+/obj/machinery/computer/arcade/battle/proc/enemy_setup()
 	player_hp = 85
 	player_mp = 20
 	enemy_hp = 100
@@ -212,9 +207,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		chosen_weapon = pick(weapons)
 	else
 		chosen_weapon = "null gun" //if the weapons list is somehow empty, shouldn't happen but runtimes are sneaky bastards.
-
-	if(player_skill)
-		player_hp += player_skill * 2
 
 
 /obj/machinery/computer/arcade/battle/Reset()
@@ -247,7 +239,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	enemy_name = ("The " + name_part1 + " " + name_part2)
 	name = (name_action + " " + enemy_name)
 
-	enemy_setup(0) //in the case it's reset we assume the player skill is 0 because the VOID isn't a gamer
+	enemy_setup()
 
 
 /obj/machinery/computer/arcade/battle/ui_interact(mob/user)
@@ -281,12 +273,9 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 /obj/machinery/computer/arcade/battle/Topic(href, href_list)
 	if(..())
 		return
-	var/gamerSkill = 0
-	if(usr?.mind)
-		gamerSkill = usr.mind.get_skill_level(/datum/skill/gaming)
 
 	if (!blocked && !gameover)
-		var/attackamt = rand(5,7) + rand(0, gamerSkill)
+		var/attackamt = rand(5,7)
 
 		if(finishing_move) //time to bonk that fucker,cuban pete will sometime survive a finishing move.
 			attackamt *= 100
@@ -340,7 +329,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			Reset()
 			obj_flags &= ~EMAGGED
 
-		enemy_setup(gamerSkill)
+		enemy_setup()
 		screen_setup(usr)
 
 
@@ -574,9 +563,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 				living_user.gib()
 		SSblackbox.record_feedback("nested tally", "arcade_results", 1, list("loss", "hp", (obj_flags & EMAGGED ? "emagged":"normal")))
 
-	if(gameover)
-		user?.mind?.adjust_experience(/datum/skill/gaming, xp_gained+1)//always gain at least 1 point of XP
-
 
 ///used to check if the last three move of the player are the one we want in the right order and if the passive's weakpoint has been triggered yet
 /obj/machinery/computer/arcade/battle/proc/weakpoint_check(passive,first_move,second_move,third_move)
@@ -615,10 +601,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	temp = "<br><center><h2>If you die in the game, you die for real!<center><h2>"
 	max_passive = 6
 	bomb_cooldown = 18
-	var/gamerSkill = 0
-	if(usr?.mind)
-		gamerSkill = usr.mind.get_skill_level(/datum/skill/gaming)
-	enemy_setup(gamerSkill)
+	enemy_setup()
 	enemy_hp += 100 //extra HP just to make cuban pete even more bullshit
 	player_hp += 30 //the player will also get a few extra HP in order to have a fucking chance
 
@@ -656,7 +639,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		var/obj/item/bodypart/chopchop = c_user.get_bodypart(which_hand)
 		chopchop.dismember()
 		qdel(chopchop)
-		user.mind?.adjust_experience(/datum/skill/gaming, 100)
 		playsound(loc, 'sound/arcade/win.ogg', 50, TRUE)
 		prizevend(user, rand(3,5))
 	else

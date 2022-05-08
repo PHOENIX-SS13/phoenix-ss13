@@ -223,13 +223,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define RELIGION_TOOL_SACRIFICE (1<<1)
 #define RELIGION_TOOL_SECTSELECT (1<<2)
 
-// ---- Skillchip incompatability flags ---- //
-// These flags control which skill chips are compatible with eachother.
-// By default, skillchips are incompatible with themselves and multiple of the same istype() cannot be implanted together. Set this flag to disable that check.
-#define SKILLCHIP_ALLOWS_MULTIPLE (1<<0)
-// This skillchip is incompatible with other skillchips from the incompatible_category list.
-#define SKILLCHIP_RESTRICTED_CATEGORIES (1<<1)
-
 //dir macros
 ///Returns true if the dir is diagonal, false otherwise
 #define ISDIAGONALDIR(d) (d&(d-1))

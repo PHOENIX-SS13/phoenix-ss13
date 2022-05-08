@@ -276,14 +276,6 @@
 	deconstructible = FALSE
 	max_integrity = 80
 
-/obj/structure/fluff/hedge/attacked_by(obj/item/I, mob/living/user)
-	if(opacity && HAS_TRAIT(user, TRAIT_BONSAI) && I.get_sharpness())
-		to_chat(user,SPAN_NOTICE("You start trimming \the [src]."))
-		if(do_after(user, 3 SECONDS,target=src))
-			to_chat(user,SPAN_NOTICE("You finish trimming \the [src]."))
-			opacity = FALSE
-	else
-		return ..()
 /**
  * useful for mazes and such
  */

@@ -316,9 +316,6 @@
 	throw_speed = 2
 	throw_range = 4
 	item_flags = NO_PIXEL_RANDOM_DROP
-
-	/// Can this plant be trimmed by someone with TRAIT_BONSAI
-	var/trimmable = TRUE
 	var/list/static/random_plant_states
 
 /obj/item/kirbyplants/ComponentInitialize()
@@ -326,22 +323,6 @@
 	AddComponent(/datum/component/tactical)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
 	AddElement(/datum/element/beauty, 500)
-
-/obj/item/kirbyplants/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
-	if(trimmable && HAS_TRAIT(user,TRAIT_BONSAI) && isturf(loc) && I.get_sharpness())
-		to_chat(user,SPAN_NOTICE("You start trimming [src]."))
-		if(do_after(user,3 SECONDS,target=src))
-			to_chat(user,SPAN_NOTICE("You finish trimming [src]."))
-			change_visual()
-
-/// Cycle basic plant visuals
-/obj/item/kirbyplants/proc/change_visual()
-	if(!random_plant_states)
-		generate_states()
-	var/current = random_plant_states.Find(icon_state)
-	var/next = WRAP(current+1,1,length(random_plant_states))
-	icon_state = random_plant_states[next]
 
 /obj/item/kirbyplants/random
 	icon = 'icons/obj/flora/_flora.dmi'
@@ -370,7 +351,6 @@
 	name = "RD's potted plant"
 	desc = "A gift from the botanical staff, presented after the RD's reassignment. There's a tag on it that says \"Y'all come back now, y'hear?\"\nIt doesn't look very healthy..."
 	icon_state = "plant-25"
-	trimmable = FALSE
 
 /obj/item/kirbyplants/photosynthetic
 	name = "photosynthetic potted plant"
@@ -384,7 +364,6 @@
 	desc = "A fake, cheap looking, plastic tree. Perfect for people who kill every plant they touch."
 	icon_state = "plant-26"
 	custom_materials = (list(/datum/material/plastic = 8000))
-	trimmable = FALSE
 
 /obj/item/kirbyplants/fullysynthetic/Initialize()
 	. = ..()
@@ -394,7 +373,6 @@
 	name = "Potty the Potted Plant"
 	desc = "A secret agent staffed in the station's bar to protect the mystical cakehat."
 	icon_state = "potty"
-	trimmable = FALSE
 
 //a rock is flora according to where the icon file is
 //and now these defines

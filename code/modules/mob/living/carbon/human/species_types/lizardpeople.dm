@@ -128,7 +128,6 @@ Lizard subspecies: SILVER SCALED
 		TRAIT_HOLY,
 		TRAIT_NOBREATH,
 		TRAIT_VIRUSIMMUNE,
-		TRAIT_WINE_TASTER,
 	)
 	species_language_holder = /datum/language_holder/lizard/silver
 	mutanttongue = /obj/item/organ/tongue/lizard/silver

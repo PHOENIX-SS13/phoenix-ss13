@@ -215,6 +215,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/hear_jukebox = TRUE
 	/// Admin pref to hear storyteller logging, because bitfield is full lol.
 	var/hear_storyteller = TRUE
+	/// Customized character attributed. In difference from the base value
+	var/list/attributes = list()
+	/// Customized character skills. In difference from the base value
+	var/list/skills = list()
+	/// Attributes that the character will end up with, accounting in for other factors
+	var/list/perceived_attributes = list()
+	/// Skills that the character will end up with, accounting in for other factors
+	var/list/perceived_skills = list()
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -303,6 +311,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=3' [character_settings_tab == 3 ? "class='linkOn'" : ""]>Background</a>"
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=4' [character_settings_tab == 4 ? "class='linkOn'" : ""]>Loadout</a>" //If you change the index of this tab, change all the logic regarding tab
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=5' [character_settings_tab == 5 ? "class='linkOn'" : ""]>Augmentation</a>"
+			dat += "<a href='?_src_=prefs;preference=character_tab;tab=6' [character_settings_tab == 6 ? "class='linkOn'" : ""]>Attributes</a>"
 			dat += "</center>"
 
 			dat += "<HR>"
@@ -891,6 +900,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									dat += "</tr>"
 								dat += "</table>"
 						dat += "</td></tr></table>"
+
+				if(6) //Attributes
+					dat += print_attributes_page()
 
 		if (1) // Game Preferences
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -1562,6 +1574,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return TRUE
 
 	switch(href_list["task"])
+		if("attributes")
+			handle_attributes_topic(usr, href_list)
 		if("close_language")
 			user << browse(null, "window=culture_lang")
 			ShowChoices(user)
@@ -2812,6 +2826,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		for(var/key in augments)
 			var/datum/augment_item/aug = GLOB.augment_items[augments[key]]
 			aug.apply(character, character_setup, src)
+
+	character.attributes.add_attributes(attributes)
+	character.attributes.add_skills(skills)
 
 	if(icon_updates)
 		character.update_body()

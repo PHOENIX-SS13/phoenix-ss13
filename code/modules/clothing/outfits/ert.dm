@@ -516,10 +516,6 @@
 	r_pocket = /obj/item/shield/energy
 	l_hand = /obj/item/gun/energy/pulse/loyalpin
 
-	skillchips = list(
-		/obj/item/skillchip/disk_verifier,
-)
-
 /datum/outfit/centcom/death_commando/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return

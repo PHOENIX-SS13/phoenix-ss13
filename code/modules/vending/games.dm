@@ -18,11 +18,6 @@
 					/obj/item/cardpack/series_one = 10,
 					/obj/item/cardpack/resin = 10,
 					/obj/item/storage/card_binder = 10,
-					/obj/item/skillchip/basketweaving=2,
-					/obj/item/skillchip/bonsai=2,
-					/obj/item/skillchip/wine_taster=2,
-					/obj/item/skillchip/light_remover=2,
-					/obj/item/skillchip/useless_adapter=5,
 					/obj/item/dyespray=3,
 					)
 	contraband = list(/obj/item/dice/fudge = 9,

@@ -2268,8 +2268,6 @@
 /area/ruin/space/has_grav)
 "UC" = (
 /obj/structure/closet/crate/engineering,
-/obj/item/skillchip/job/engineer,
-/obj/item/skillchip/job/engineer,
 /obj/item/construction/plumbing,
 /obj/item/construction/rcd/loaded/upgraded,
 /turf/open/floor/plating,

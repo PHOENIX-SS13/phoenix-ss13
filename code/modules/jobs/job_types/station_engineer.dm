@@ -55,8 +55,6 @@
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced/engineering=1)
 
-	skillchips = list(/obj/item/skillchip/job/engineer)
-
 	id_trim = /datum/id_trim/job/station_engineer
 
 /datum/outfit/job/engineer/gloved

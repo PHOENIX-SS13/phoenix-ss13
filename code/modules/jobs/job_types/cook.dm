@@ -85,7 +85,6 @@
 		/obj/item/sharpener = 1,
 		/obj/item/choice_beacon/ingredient = 1
 	)
-	skillchips = list(/obj/item/skillchip/job/chef)
 
 	id_trim = /datum/id_trim/job/cook
 
