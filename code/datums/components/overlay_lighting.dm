@@ -274,8 +274,8 @@
 		if(directional)
 			RegisterSignal(new_holder, COMSIG_ATOM_DIR_CHANGE, .proc/on_holder_dir_change)
 	if(overlay_lighting_flags & LIGHTING_ON)
-		make_luminosity_update()
 		add_dynamic_lumi()
+		make_luminosity_update()
 	if(directional)
 		if(old_dir && isitem(new_holder)) //Small adjustment to make dropping flashlights and the kinds much better
 			new_holder.setDir(old_dir)
