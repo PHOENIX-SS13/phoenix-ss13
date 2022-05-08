@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- bugfix: Fixes a rare overlay lighting bug, where it would stack the overlays improperly
+merge-date: 2022-05-08
+prnumber: 870
