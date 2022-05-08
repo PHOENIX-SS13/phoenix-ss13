@@ -32840,7 +32840,7 @@
 /turf/open/floor/iron,
 /area/science/mixing)
 "kdq" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/heater,
+/obj/machinery/atmospherics/components/binary/heat_pump/heater,
 /obj/structure/sign/poster/official/science{
 	pixel_y = 32
 	},
@@ -37095,7 +37095,7 @@
 	},
 /area/science/xenobiology)
 "mxZ" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer{
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer{
 	dir = 8
 	},
 /turf/open/floor/iron,
@@ -38701,7 +38701,7 @@
 /turf/open/floor/iron,
 /area/security/office)
 "nns" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer{
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer{
 	dir = 8
 	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
@@ -40297,7 +40297,7 @@
 /turf/open/floor/iron,
 /area/cargo/miningdock)
 "ont" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer{
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer{
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -40469,7 +40469,7 @@
 /turf/open/floor/iron,
 /area/engineering/break_room)
 "orL" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer{
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer{
 	dir = 8
 	},
 /turf/open/floor/iron,
@@ -41456,7 +41456,7 @@
 /turf/open/floor/iron,
 /area/cargo/sorting)
 "oVS" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/heater/on,
+/obj/machinery/atmospherics/components/binary/heat_pump/heater/on,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "oWf" = (
@@ -43442,7 +43442,7 @@
 /turf/open/floor/iron,
 /area/hallway/primary/starboard)
 "pUD" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/heater{
+/obj/machinery/atmospherics/components/binary/heat_pump/heater{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -45246,7 +45246,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/structure/extinguisher_cabinet/directional/east,
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer{
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer{
 	dir = 8
 	},
 /turf/open/floor/iron/white,
@@ -50679,7 +50679,7 @@
 /turf/open/floor/plating,
 /area/hallway/secondary/exit)
 "udj" = (
-/obj/machinery/atmospherics/components/binary/thermomachine/heater{
+/obj/machinery/atmospherics/components/binary/heat_pump/heater{
 	dir = 8
 	},
 /turf/open/floor/iron,

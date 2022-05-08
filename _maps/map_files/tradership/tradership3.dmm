@@ -2062,7 +2062,7 @@
 /turf/open/floor/iron,
 /area/hallway/primary/aft)
 "BT" = (
-/obj/machinery/atmospherics/components/binary/thermomachine{
+/obj/machinery/atmospherics/components/binary/heat_pump{
 	dir = 8
 	},
 /turf/open/floor/engine,

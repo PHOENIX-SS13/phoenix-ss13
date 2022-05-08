@@ -453,7 +453,7 @@
 		"stack_console",
 		"stack_machine",
 		"tesla_coil",
-		"thermomachine",
+		"heat_pump",
 		"w-recycler" , "emitter",
 		"welding_goggles",
 	)

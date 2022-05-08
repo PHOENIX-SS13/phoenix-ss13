@@ -6,14 +6,14 @@
 	icon = 'icons/obj/atmospherics/components/hypertorus.dmi'
 	icon_state = "core"
 
-	name = "thermomachine"
+	name = "heat_pump"
 	desc = "Heats or cools gas in connected pipes."
 	anchored = TRUE
 	density = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	layer = OBJ_LAYER
 	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
-	circuit = /obj/item/circuitboard/machine/thermomachine
+	circuit = /obj/item/circuitboard/machine/heat_pump
 	///Vars for the state of the icon of the object (open, off, active)
 	var/icon_state_open
 	var/icon_state_off

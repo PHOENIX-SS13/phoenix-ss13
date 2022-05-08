@@ -1,17 +1,17 @@
-#define THERMOMACHINE_SAFE_TEMPERATURE 500000
+#define HEAT_PUMP_SAFE_TEMPERATURE 500000
 
-/obj/machinery/atmospherics/components/binary/thermomachine
-	icon = 'icons/obj/atmospherics/components/thermomachine.dmi'
+/obj/machinery/atmospherics/components/binary/heat_pump
+	icon = 'icons/obj/atmospherics/components/heat_pump.dmi'
 	icon_state = "freezer"
 
-	name = "Temperature control unit"
+	name = "heat pump"
 	desc = "Heats or cools gas in connected pipes."
 
 	density = TRUE
 	max_integrity = 300
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 100, BOMB = 0, BIO = 100, RAD = 100, FIRE = 80, ACID = 30)
 	layer = OBJ_LAYER
-	circuit = /obj/item/circuitboard/machine/thermomachine
+	circuit = /obj/item/circuitboard/machine/heat_pump
 
 	hide = TRUE
 
@@ -40,21 +40,21 @@
 	// Efficiency dictates how much we throttle the heat exchange process.
 	var/efficiency = 1
 
-/obj/machinery/atmospherics/components/binary/thermomachine/Initialize()
+/obj/machinery/atmospherics/components/binary/heat_pump/Initialize()
 	. = ..()
 	RefreshParts()
 	update_appearance()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/isConnectable()
+/obj/machinery/atmospherics/components/binary/heat_pump/isConnectable()
 	if(!anchored || panel_open)
 		return FALSE
 	. = ..()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/getNodeConnects()
+/obj/machinery/atmospherics/components/binary/heat_pump/getNodeConnects()
 	return list(dir, turn(dir, 180))
 
-/obj/machinery/atmospherics/components/binary/thermomachine/on_construction(obj_color, set_layer)
-	var/obj/item/circuitboard/machine/thermomachine/board = circuit
+/obj/machinery/atmospherics/components/binary/heat_pump/on_construction(obj_color, set_layer)
+	var/obj/item/circuitboard/machine/heat_pump/board = circuit
 	if(board)
 		piping_layer = board.pipe_layer
 		set_layer = piping_layer
@@ -64,7 +64,7 @@
 		return
 	return..()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/RefreshParts()
+/obj/machinery/atmospherics/components/binary/heat_pump/RefreshParts()
 	var/calculated_bin_rating
 	for(var/obj/item/stock_parts/matter_bin/bin in component_parts)
 		calculated_bin_rating += bin.rating
@@ -78,7 +78,7 @@
 	max_temperature = T20C + (base_heating * calculated_laser_rating) //573.15K with T1 stock parts
 
 
-/obj/machinery/atmospherics/components/binary/thermomachine/update_icon_state()
+/obj/machinery/atmospherics/components/binary/heat_pump/update_icon_state()
 	if(cooling)
 		icon_state_off = "freezer"
 		icon_state_on = "freezer_1"
@@ -96,7 +96,7 @@
 	icon_state = icon_state_off
 	return ..()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/update_overlays()
+/obj/machinery/atmospherics/components/binary/heat_pump/update_overlays()
 	. = ..()
 	//Doesn't check if the pipes are intact
 	var/mutable_appearance/pipe_appearance1 = mutable_appearance('icons/obj/atmospherics/pipes/pipe_underlays.dmi', "intact_[dir]_[piping_layer]", layer = GAS_SCRUBBER_LAYER)
@@ -109,7 +109,7 @@
 		var/mutable_appearance/skipping = mutable_appearance(icon, "blinking")
 		. += skipping
 
-/obj/machinery/atmospherics/components/binary/thermomachine/examine(mob/user)
+/obj/machinery/atmospherics/components/binary/heat_pump/examine(mob/user)
 	. = ..()
 	if(obj_flags & EMAGGED)
 		. += SPAN_NOTICE("Something seems wrong with [src]'s thermal safeties.")
@@ -121,7 +121,7 @@
 		. += SPAN_NOTICE("Heat capacity at <b>[heat_capacity] Joules per Kelvin</b>.")
 		. += SPAN_NOTICE("Temperature range <b>[min_temperature]K - [max_temperature]K ([(T0C-min_temperature)*-1]C - [(T0C-max_temperature)*-1]C)</b>.")
 
-/obj/machinery/atmospherics/components/binary/thermomachine/AltClick(mob/living/user)
+/obj/machinery/atmospherics/components/binary/heat_pump/AltClick(mob/living/user)
 	if(!can_interact(user))
 		return
 	target_temperature = T20C
@@ -137,7 +137,7 @@
  * M is the motor heat.
  * E is the efficiency variable. At E=1 and M=0 it works out to be ((C1*T1)+(C2*T2))/(C1+C2).
  */
-/obj/machinery/atmospherics/components/binary/thermomachine/process_atmos()
+/obj/machinery/atmospherics/components/binary/heat_pump/process_atmos()
 	if(!is_operational || !on)  //if it has no power or its switched off, dont process atmos
 		on = FALSE
 		update_appearance()
@@ -158,14 +158,14 @@
 	// This variable holds the (C1*C2)/(C1+C2)*(T2-T1) part of the equation.
 	var/heat_amount = temperature_target_delta * (main_port.heat_capacity() * heat_capacity / (main_port.heat_capacity() + heat_capacity))
 
-	// Motor heat is the heat added to both ports of the thermomachine at every tick.
+	// Motor heat is the heat added to both ports of the heat_pump at every tick.
 	var/motor_heat = 5000
 	if(abs(temperature_target_delta) < 5) //Allow the machine to work more finely on lower temperature differences.
 		motor_heat = 0
 
 	// Automatic Switching. Longer if check to prevent unecessary update_appearances.
 	if ((cooling && temperature_target_delta > 0) || (!cooling && temperature_target_delta < 0))
-		cooling = temperature_target_delta <= 0 // Thermomachines that reached the target will default to cooling.
+		cooling = temperature_target_delta <= 0 // Heat pumps that reached the target will default to cooling.
 		update_appearance()
 
 	skipping_work = FALSE
@@ -199,13 +199,13 @@
 		if (use_enviroment_heat)
 			efficiency *= clamp(log(1.55, exchange_target.total_moles()) * 0.15, 0.65, 1)
 
-		if (exchange_target.temperature > THERMOMACHINE_SAFE_TEMPERATURE && safeties)
+		if (exchange_target.temperature > HEAT_PUMP_SAFE_TEMPERATURE && safeties)
 			on = FALSE
 			visible_message(SPAN_WARNING("The heat reservoir has reached critical levels, shutting down..."))
 			update_appearance()
 			return
 
-		else if(exchange_target.temperature > THERMOMACHINE_SAFE_TEMPERATURE && !safeties)
+		else if(exchange_target.temperature > HEAT_PUMP_SAFE_TEMPERATURE && !safeties)
 			if((REALTIMEOFDAY - lastwarning) / 5 >= WARNING_DELAY)
 				lastwarning = REALTIMEOFDAY
 				visible_message(SPAN_WARNING("The heat reservoir has reached critical levels!"))
@@ -230,7 +230,7 @@
 	update_appearance()
 	update_parents()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/attackby(obj/item/item, mob/user, params)
+/obj/machinery/atmospherics/components/binary/heat_pump/attackby(obj/item/item, mob/user, params)
 	if(!on && item.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!anchored)
 			to_chat(user, SPAN_NOTICE("Anchor [src] first!"))
@@ -250,20 +250,20 @@
 		return
 	return ..()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/default_change_direction_wrench(mob/user, obj/item/I)
+/obj/machinery/atmospherics/components/binary/heat_pump/default_change_direction_wrench(mob/user, obj/item/I)
 	if(!..())
 		return FALSE
 	SetInitDirections()
 	update_appearance()
 	return TRUE
 
-/obj/machinery/atmospherics/components/binary/thermomachine/proc/change_pipe_connection(disconnect)
+/obj/machinery/atmospherics/components/binary/heat_pump/proc/change_pipe_connection(disconnect)
 	if(disconnect)
 		disconnect_pipes()
 		return
 	connect_pipes()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/proc/connect_pipes()
+/obj/machinery/atmospherics/components/binary/heat_pump/proc/connect_pipes()
 	var/obj/machinery/atmospherics/node1 = nodes[1]
 	var/obj/machinery/atmospherics/node2 = nodes[2]
 	atmosinit()
@@ -277,7 +277,7 @@
 		node2.addMember(src)
 	SSair.add_to_rebuild_queue(src)
 
-/obj/machinery/atmospherics/components/binary/thermomachine/proc/disconnect_pipes()
+/obj/machinery/atmospherics/components/binary/heat_pump/proc/disconnect_pipes()
 	var/obj/machinery/atmospherics/node1 = nodes[1]
 	var/obj/machinery/atmospherics/node2 = nodes[2]
 	if(node1)
@@ -293,7 +293,7 @@
 	if(parents[2])
 		nullifyPipenet(parents[2])
 
-/obj/machinery/atmospherics/components/binary/thermomachine/attackby_secondary(obj/item/item, mob/user, params)
+/obj/machinery/atmospherics/components/binary/heat_pump/attackby_secondary(obj/item/item, mob/user, params)
 	. = ..()
 	if(panel_open && item.tool_behaviour == TOOL_WRENCH && !check_pipe_on_turf())
 		if(default_unfasten_wrench(user, item))
@@ -306,7 +306,7 @@
 		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	return SECONDARY_ATTACK_CONTINUE_CHAIN
 
-/obj/machinery/atmospherics/components/binary/thermomachine/proc/check_pipe_on_turf()
+/obj/machinery/atmospherics/components/binary/heat_pump/proc/check_pipe_on_turf()
 	for(var/obj/machinery/atmospherics/device in get_turf(src))
 		if(device == src)
 			continue
@@ -315,7 +315,7 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/atmospherics/components/binary/thermomachine/multitool_act(mob/living/user, obj/item/multitool/multitool)
+/obj/machinery/atmospherics/components/binary/heat_pump/multitool_act(mob/living/user, obj/item/multitool/multitool)
 	if(!istype(multitool))
 		return
 	if(panel_open && !anchored)
@@ -323,7 +323,7 @@
 		to_chat(user, SPAN_NOTICE("You change the circuitboard to layer [piping_layer]."))
 		update_appearance()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/emag_act(mob/user)
+/obj/machinery/atmospherics/components/binary/heat_pump/emag_act(mob/user)
 	. = ..()
 	if(!(obj_flags & EMAGGED))
 		if(!do_after(user, 1 SECONDS, src))
@@ -336,7 +336,7 @@
 		user.visible_message(SPAN_WARNING("You emag [src], overwriting thermal safety restrictions."))
 		log_game("[key_name(user)] emagged [src] at [AREACOORD(src)], overwriting thermal safety restrictions.")
 
-/obj/machinery/atmospherics/components/binary/thermomachine/emp_act()
+/obj/machinery/atmospherics/components/binary/heat_pump/emp_act()
 	. = ..()
 	if(!(obj_flags & EMAGGED))
 		var/datum/effect_system/spark_spread/sparks = new
@@ -346,13 +346,13 @@
 		obj_flags |= EMAGGED
 		safeties = FALSE
 
-/obj/machinery/atmospherics/components/binary/thermomachine/proc/check_explosion(temperature)
-	if(temperature < THERMOMACHINE_SAFE_TEMPERATURE + 2000)
+/obj/machinery/atmospherics/components/binary/heat_pump/proc/check_explosion(temperature)
+	if(temperature < HEAT_PUMP_SAFE_TEMPERATURE + 2000)
 		return FALSE
 	if(prob(log(6, temperature) * 10)) //75% at 500000, 100% at 1e8
 		return TRUE
 
-/obj/machinery/atmospherics/components/binary/thermomachine/proc/explode()
+/obj/machinery/atmospherics/components/binary/heat_pump/proc/explode()
 	explosion(loc, 0, 0, 3, 3, TRUE)
 	var/datum/gas_mixture/main_port = airs[1]
 	var/datum/gas_mixture/exchange_target = airs[2]
@@ -362,20 +362,20 @@
 		loc.assume_air(exchange_target.remove_ratio(1))
 	qdel(src)
 
-/obj/machinery/atmospherics/components/binary/thermomachine/ui_status(mob/user)
+/obj/machinery/atmospherics/components/binary/heat_pump/ui_status(mob/user)
 	if(interactive)
 		return ..()
 	return UI_CLOSE
 
-/obj/machinery/atmospherics/components/binary/thermomachine/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/atmospherics/components/binary/heat_pump/ui_interact(mob/user, datum/tgui/ui)
 	if(panel_open)
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ThermoMachine", name)
+		ui = new(user, src, "Heat Pump", name)
 		ui.open()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/ui_data(mob/user)
+/obj/machinery/atmospherics/components/binary/heat_pump/ui_data(mob/user)
 	var/list/data = list()
 	data["on"] = on
 	data["cooling"] = cooling
@@ -397,7 +397,7 @@
 	data["hacked"] = hacked
 	return data
 
-/obj/machinery/atmospherics/components/binary/thermomachine/ui_act(action, params)
+/obj/machinery/atmospherics/components/binary/heat_pump/ui_act(action, params)
 	. = ..()
 	if(.)
 		return
@@ -438,7 +438,7 @@
 
 	update_appearance()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/CtrlClick(mob/living/user)
+/obj/machinery/atmospherics/components/binary/heat_pump/CtrlClick(mob/living/user)
 	if(!panel_open)
 		if(!can_interact(user))
 			return
@@ -448,38 +448,38 @@
 		return
 	. = ..()
 
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer
 	icon_state = "freezer"
 	icon_state_off = "freezer"
 	icon_state_on = "freezer_1"
 	icon_state_open = "freezer-o"
 	cooling = TRUE
 
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer/on
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer/on
 	on = TRUE
 	icon_state = "freezer_1"
 
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer/on/Initialize()
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer/on/Initialize()
 	. = ..()
 	if(target_temperature == initial(target_temperature))
 		target_temperature = min_temperature
 
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer/on/coldroom
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer/on/coldroom
 	name = "Cold room temperature control unit"
 
-/obj/machinery/atmospherics/components/binary/thermomachine/freezer/on/coldroom/Initialize()
+/obj/machinery/atmospherics/components/binary/heat_pump/freezer/on/coldroom/Initialize()
 	. = ..()
 	target_temperature = COLD_ROOM_TEMP
 
-/obj/machinery/atmospherics/components/binary/thermomachine/heater
+/obj/machinery/atmospherics/components/binary/heat_pump/heater
 	icon_state = "heater"
 	icon_state_off = "heater"
 	icon_state_on = "heater_1"
 	icon_state_open = "heater-o"
 	cooling = FALSE
 
-/obj/machinery/atmospherics/components/binary/thermomachine/heater/on
+/obj/machinery/atmospherics/components/binary/heat_pump/heater/on
 	on = TRUE
 	icon_state = "heater_1"
 
-#undef THERMOMACHINE_SAFE_TEMPERATURE
+#undef HEAT_PUMP_SAFE_TEMPERATURE

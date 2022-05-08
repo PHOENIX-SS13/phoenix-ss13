@@ -57,11 +57,11 @@
 	category = list ("Engineering Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/thermomachine
-	name = "Machine Design (Freezer/Heater Board)"
-	desc = "The circuit board for a freezer/heater."
-	id = "thermomachine"
-	build_path = /obj/item/circuitboard/machine/thermomachine
+/datum/design/board/heat_pump
+	name = "Machine Design (Heat Pump Board)"
+	desc = "The circuit board for a heat pump."
+	id = "heat_pump"
+	build_path = /obj/item/circuitboard/machine/heat_pump
 	category = list ("Engineering Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
