@@ -415,18 +415,4 @@
 	qdel(src)
 	return gain
 
-/obj/singularity/deadchat_plays(mode = DEMOCRACY_MODE, cooldown = 12 SECONDS)
-	. = AddComponent(/datum/component/deadchat_control/cardinal_movement, mode, list(), cooldown, CALLBACK(src, .proc/stop_deadchat_plays))
-
-	if(. == COMPONENT_INCOMPATIBLE)
-		return
-
-	move_self = FALSE
-
-/obj/singularity/proc/stop_deadchat_plays()
-	move_self = TRUE
-
-/obj/singularity/deadchat_controlled/Initialize(mapload, starting_energy)
-	. = ..()
-	deadchat_plays(mode = DEMOCRACY_MODE)
 
