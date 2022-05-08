@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- rscadd: Renames thermomachines to heat pumps
+merge-date: 2022-05-08
+prnumber: 879
