@@ -480,7 +480,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	for(var/alarm in firealarms)
 		var/obj/machinery/firealarm/F = alarm
-		F.update_fire_light(fire)
+		F.update_fire_effects(fire)
 	for(var/obj/machinery/light/L in src)
 		L.update()
 
@@ -495,7 +495,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	for(var/alarm in firealarms)
 		var/obj/machinery/firealarm/F = alarm
-		F.update_fire_light(fire)
+		F.update_fire_effects(fire)
 		F.triggered = FALSE
 	for(var/obj/machinery/light/L in src)
 		L.update()

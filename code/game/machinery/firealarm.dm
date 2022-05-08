@@ -38,6 +38,10 @@
 	var/area/myarea = null
 	//Has this firealarm been triggered by its enviroment?
 	var/triggered = FALSE
+	///looping sound datum for our fire alarm siren.
+	var/datum/looping_sound/firealarm/soundloop
+	/// Whether we are playing a sound effect and doing red lights
+	var/playing_effects = FALSE
 
 /obj/machinery/firealarm/Initialize(mapload, dir, building)
 	. = ..()
@@ -54,10 +58,13 @@
 
 	AddElement(/datum/element/atmos_sensitive, mapload)
 	RegisterSignal(SSsecurity_level, COMSIG_SECURITY_LEVEL_CHANGED, .proc/check_security_level)
+	soundloop = new(list(src), FALSE)
 
 /obj/machinery/firealarm/Destroy()
 	myarea.firereset(src)
+	update_fire_effects(FALSE) // Technically `myarea.firereset(src)` will do this, but if you ever refactor fire alarms to be better and not do above, you'll need to stop the looping sound
 	LAZYREMOVE(myarea.firealarms, src)
+	QDEL_NULL(soundloop)
 	return ..()
 
 /obj/machinery/firealarm/update_icon_state()
@@ -168,7 +175,6 @@
 	COOLDOWN_START(src, last_alarm, FIREALARM_COOLDOWN)
 	var/area/area = get_area(src)
 	area.firealert(src)
-	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
 	if(user)
 		log_game("[user] triggered a fire alarm at [COORD(src)]")
 
@@ -349,13 +355,16 @@
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
 
-/obj/machinery/firealarm/proc/update_fire_light(fire)
-	if(fire == !!light_power)
-		return  // do nothing if we're already active
-	if(fire)
+/obj/machinery/firealarm/proc/update_fire_effects(effect_state)
+	if(effect_state == playing_effects)
+		return  // do nothing if it's the same state
+	playing_effects = effect_state
+	if(playing_effects)
 		set_light(l_power = 0.8)
+		soundloop.start()
 	else
 		set_light(l_power = 0)
+		soundloop.stop()
 
 // Allows users to examine the state of the thermal sensor
 /obj/machinery/firealarm/examine(mob/user)
