@@ -104,6 +104,11 @@
 
 	if(href_list["lookup_info"])
 		switch(href_list["lookup_info"])
+			if("compare")
+				var/compare_text = check_out_descriptors(usr, TRUE)
+				if(compare_text)
+					to_chat(usr, SPAN_NOTICE("<i>Comparing yourself to [src] you notice...\n[compare_text]</i>"))
+
 			if("genitals")
 				var/list/line = list()
 				for(var/genital in list("penis", "testicles", "vagina", "breasts"))

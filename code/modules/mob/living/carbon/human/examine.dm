@@ -487,3 +487,9 @@
 			dat += "[new_text]\n" //dat.Join("\n") doesn't work here, for some reason
 	if(dat.len)
 		return dat.Join()
+
+/mob/living/carbon/human/examine_more(mob/user)
+	. = ..()
+	var/descriptor_text = check_out_descriptors(user)
+	if(descriptor_text)
+		. += descriptor_text

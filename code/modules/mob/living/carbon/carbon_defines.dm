@@ -107,3 +107,8 @@
 
 	/// Cooldown for the next smell
 	var/next_smell = 0
+
+	/// List of descriptors this human has. Yes this has to be on a carbon level to be compatible with species
+	var/list/descriptors = list(
+		/datum/descriptor/attribute/strength
+	)
