@@ -1,8 +1,0 @@
-author: Azarak
-changes:
-- rscadd: Adds a tabletop like attributes and skills system, which is currently only
-    cosmetic
-- rscdel: removes TG skills
-- rscdel: removes skillchips
-merge-date: 2022-05-08
-prnumber: 869

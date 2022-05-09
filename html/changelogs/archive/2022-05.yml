@@ -10,3 +10,23 @@
   Azarak:
   - rscdel: Removes achievements
   - rscdel: Removes the intern announcer
+2022-05-08:
+  Azarak:
+  - bugfix: Fixes a cut type of cable coil being invisible
+  - rscdel: Removes deadchat plays component
+  - bugfix: Fixes bedsheet direction, spawn and icon state issues
+  - rscadd: Triples the time things burn in the fireplace
+  - bugfix: You can now add logs to the fireplace
+  - rscdel: Removes liver and mind traits and related effects
+  - rscadd: Emoting now makes a blue typing indicator
+  - rscadd: Adds a tabletop like attributes and skills system, which is currently
+      only cosmetic
+  - rscdel: removes TG skills
+  - rscdel: removes skillchips
+  - bugfix: Fixes a rare overlay lighting bug, where it would stack the overlays improperly
+  - bugfix: Fixes inconsistent pipe layering
+  - rscdel: Monkeys no longer screech while idle
+  - bugfix: Navigation beacons now display under catwalks
+  - rscadd: Renames thermomachines to heat pumps
+  - rscdel: Removes beauty element
+  - rscadd: New fire alarm sound loop
