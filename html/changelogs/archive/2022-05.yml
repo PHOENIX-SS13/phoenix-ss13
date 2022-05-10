@@ -30,3 +30,6 @@
   - rscadd: Renames thermomachines to heat pumps
   - rscdel: Removes beauty element
   - rscadd: New fire alarm sound loop
+2022-05-09:
+  Azarak:
+  - rscadd: Descriptor systems for humans
