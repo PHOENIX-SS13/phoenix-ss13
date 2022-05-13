@@ -11,8 +11,13 @@
 					/obj/item/storage/fancy/cigarettes/cigpack_carp = 3,
 					/obj/item/storage/fancy/cigarettes/cigpack_midori = 3,
 					/obj/item/storage/box/matches = 10,
+					/obj/item/storage/box/matches/matchbook = 5,
 					/obj/item/lighter/greyscale = 4,
-					/obj/item/storage/fancy/rollingpapers = 5)
+					/obj/item/storage/fancy/rollingpapers = 5,
+					/obj/item/storage/fancy/cig_carton = 2,
+					/obj/item/storage/fancy/cig_carton/dromedary = 2,
+					/obj/item/storage/fancy/cig_carton/uplift = 2,
+					/obj/item/storage/fancy/cig_carton/carp = 2)
 	contraband = list(/obj/item/clothing/mask/vape = 5)
 	premium = list(/obj/item/storage/fancy/cigarettes/cigpack_robustgold = 3,
 				   /obj/item/storage/box/gum/nicotine = 2,

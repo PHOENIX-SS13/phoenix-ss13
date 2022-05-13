@@ -508,9 +508,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/cigar/cohiba
 	name = "\improper Cohiba Robusto cigar"
 	desc = "There's little more you could want from a cigar."
-	icon_state = "cigar2off"
-	icon_on = "cigar2on"
-	icon_off = "cigar2off"
 	smoketime = 20 * 60
 	chem_volume = 80
 	list_reagents =list(/datum/reagent/drug/nicotine = 40)
@@ -518,9 +515,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/cigar/havana
 	name = "premium Havanian cigar"
 	desc = "A cigar fit for only the best of the best."
-	icon_state = "cigar2off"
-	icon_on = "cigar2on"
-	icon_off = "cigar2off"
 	smoketime = 30 * 60
 	chem_volume = 50
 	list_reagents =list(/datum/reagent/drug/nicotine = 15)
@@ -645,7 +639,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "\improper Zippo lighter"
 	desc = "The zippo."
 	icon = 'icons/obj/cigarettes.dmi'
-	icon_state = "zippo"
+	icon_state = "zippo_dame"
 	inhand_icon_state = "zippo"
 	worn_icon_state = "lighter"
 	w_class = WEIGHT_CLASS_TINY
@@ -662,18 +656,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	light_on = FALSE
 	var/lit = FALSE
 	var/fancy = TRUE
-	var/overlay_state
-	var/overlay_list = list(
-		"plain",
-		"dame",
-		"thirteen",
-		"snake"
-		)
+	var/variant_name
+	var/list/variant_list = list("zippo_dame", "zippo_13", "zippo_snake")
 
 /obj/item/lighter/Initialize()
 	. = ..()
-	if(!overlay_state)
-		overlay_state = pick(overlay_list)
+	if(!variant_name)
+		variant_name = pick(variant_list)
 	update_appearance()
 
 /obj/item/lighter/cyborg_unequip(mob/user)
@@ -690,16 +679,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		user.visible_message(SPAN_SUICIDE("[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 		return BRUTELOSS
 
-/obj/item/lighter/update_overlays()
-	. = ..()
-	. += create_lighter_overlay()
-
 /obj/item/lighter/update_icon_state()
-	icon_state = "[initial(icon_state)][lit ? "-on" : ""]"
+	icon_state = "[variant_name][lit ? "-on" : ""]"
 	return ..()
-
-/obj/item/lighter/proc/create_lighter_overlay()
-	return mutable_appearance(icon, "lighter_overlay_[overlay_state][lit ? "-on" : ""]")
 
 /obj/item/lighter/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
@@ -790,49 +772,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/greyscale
 	name = "cheap lighter"
 	desc = "A cheap lighter."
-	icon_state = "lighter"
+	icon_state = "lighter-c"
 	fancy = FALSE
-	overlay_list = list(
-		"transp",
-		"tall",
-		"matte",
-		"zoppo" //u cant stoppo th zoppo
-		)
-	var/lighter_color
-	var/list/color_list = list( //Same 16 color selection as electronic assemblies
-		COLOR_ASSEMBLY_BLACK,
-		COLOR_FLOORTILE_GRAY,
-		COLOR_ASSEMBLY_BGRAY,
-		COLOR_ASSEMBLY_WHITE,
-		COLOR_ASSEMBLY_RED,
-		COLOR_ASSEMBLY_ORANGE,
-		COLOR_ASSEMBLY_BEIGE,
-		COLOR_ASSEMBLY_BROWN,
-		COLOR_ASSEMBLY_GOLD,
-		COLOR_ASSEMBLY_YELLOW,
-		COLOR_ASSEMBLY_GURKHA,
-		COLOR_ASSEMBLY_LGREEN,
-		COLOR_ASSEMBLY_GREEN,
-		COLOR_ASSEMBLY_LBLUE,
-		COLOR_ASSEMBLY_BLUE,
-		COLOR_ASSEMBLY_PURPLE
-		)
-
-/obj/item/lighter/greyscale/Initialize()
-	. = ..()
-	if(!lighter_color)
-		lighter_color = pick(color_list)
-	update_appearance()
-
-/obj/item/lighter/greyscale/create_lighter_overlay()
-	var/mutable_appearance/lighter_overlay = ..()
-	lighter_overlay.color = lighter_color
-	return lighter_overlay
+	variant_list = list("lighter-c", "lighter-g", "lighter-r", "lighter-y")
 
 /obj/item/lighter/greyscale/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
 		. = SPAN_NOTICE("After some fiddling, [user] manages to light [A] with [src].")
-
 
 /obj/item/lighter/slime
 	name = "slime zippo"
@@ -840,7 +786,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "slighter"
 	heat = 3000 //Blue flame!
 	light_color = LIGHT_COLOR_CYAN
-	overlay_state = "slime"
+	variant_name = "zippo_slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
 

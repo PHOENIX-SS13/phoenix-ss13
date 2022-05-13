@@ -189,6 +189,56 @@
 	name = "mint candle pack"
 	spawn_type = /obj/item/candle/mint
 
+//////////////
+//CIG CARTON//
+//////////////
+/obj/item/storage/fancy/cig_carton
+	name = "\improper Space Cigarettes carton"
+	desc = "A box containing 10 packets of Space Cigarettes."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "cigcarton"
+	inhand_icon_state = "cigpacket"
+	base_icon_state = "cigcarton"
+	w_class = WEIGHT_CLASS_NORMAL
+	custom_price = PAYCHECK_MEDIUM * 6 //40% discount!!
+	age_restricted = TRUE
+	contents_tag = "cigarette"
+	spawn_type = /obj/item/storage/fancy/cigarettes
+
+/obj/item/storage/fancy/cig_carton/update_icon_state()
+	. = ..()
+	if(!contents.len)
+		icon_state = "[base_icon_state]_empty"
+	else
+		icon_state = base_icon_state
+
+/obj/item/storage/fancy/cig_carton/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 10
+	STR.set_holdable(list(/obj/item/storage/fancy/cigarettes))
+
+/obj/item/storage/fancy/cig_carton/dromedary
+	name = "\improper Dromedary cigarettes carton"
+	desc = "A box containing 10 packets of Dromedary cigarettes."
+	icon_state = "dromedarycarton"
+	base_icon_state = "dromedarycarton"
+	spawn_type = /obj/item/storage/fancy/cigarettes/dromedaryco
+
+/obj/item/storage/fancy/cig_carton/uplift
+	name = "\improper Uplift cigarettes carton"
+	desc = "A box containing 10 packets of Uplift cigarettes."
+	icon_state = "upliftcarton"
+	base_icon_state = "upliftcarton"
+	spawn_type = /obj/item/storage/fancy/cigarettes/cigpack_uplift
+
+/obj/item/storage/fancy/cig_carton/carp
+	name = "\improper Carp cigarettes carton"
+	desc = "A box containing 10 packets of Carp cigarettes."
+	icon_state = "carpcarton"
+	base_icon_state = "carpcarton"
+	spawn_type = /obj/item/storage/fancy/cigarettes/cigpack_carp
+
 ////////////
 //CIG PACK//
 ////////////
@@ -259,15 +309,17 @@
 
 /obj/item/storage/fancy/cigarettes/update_icon_state()
 	. = ..()
-	icon_state = "[base_icon_state][contents.len ? null : "_empty"]"
-	return
+	if(!contents.len)
+		icon_state = "[base_icon_state]_empty"
+	else if (is_open)
+		icon_state = "[base_icon_state]_open"
+	else
+		icon_state = base_icon_state
 
 /obj/item/storage/fancy/cigarettes/update_overlays()
 	. = ..()
 	if(!is_open || !contents.len)
 		return
-
-	. += "[icon_state]_open"
 
 	if(!display_cigs)
 		return
@@ -444,13 +496,16 @@
 /obj/item/storage/fancy/cigarettes/cigars/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
+	STR.max_items = 6
 	STR.set_holdable(list(/obj/item/clothing/mask/cigarette/cigar))
 
 /obj/item/storage/fancy/cigarettes/cigars/update_icon_state()
 	. = ..()
 	//reset any changes the parent call may have made
-	icon_state = base_icon_state
+	if(is_open)
+		icon_state = "[base_icon_state]_open"
+	else
+		icon_state = base_icon_state
 
 /obj/item/storage/fancy/cigarettes/cigars/update_overlays()
 	. = ..()
@@ -464,15 +519,11 @@
 /obj/item/storage/fancy/cigarettes/cigars/cohiba
 	name = "\improper Cohiba Robusto cigar case"
 	desc = "A case of imported Cohiba cigars, renowned for their strong flavor."
-	icon_state = "cohibacase"
-	base_icon_state = "cohibacase"
 	spawn_type = /obj/item/clothing/mask/cigarette/cigar/cohiba
 
 /obj/item/storage/fancy/cigarettes/cigars/havana
 	name = "\improper premium Havanian cigar case"
 	desc = "A case of classy Havanian cigars."
-	icon_state = "cohibacase"
-	base_icon_state = "cohibacase"
 	spawn_type = /obj/item/clothing/mask/cigarette/cigar/havana
 
 /*
