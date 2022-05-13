@@ -442,14 +442,18 @@
 	if(!on || status != LIGHT_OK)
 		return
 
+	var/lightbulb_power = bulb_power
 	var/area/A = get_area(src)
 	if(emergency_mode || (A?.fire))
 		. += mutable_appearance(overlayicon, "[base_state]_emergency")
-		return
-	if(nightshift_enabled)
+		lightbulb_power *= bulb_emergency_pow_mul
+	else if(nightshift_enabled)
 		. += mutable_appearance(overlayicon, "[base_state]_nightshift")
-		return
-	. += mutable_appearance(overlayicon, base_state)
+		lightbulb_power = nightshift_light_power
+	else
+		. += mutable_appearance(overlayicon, base_state)
+
+	. += emissive_appearance(overlayicon, "[base_state]_emissive", alpha = (255 * lightbulb_power))
 
 #define LIGHT_ON_DELAY_UPPER 3 SECONDS
 #define LIGHT_ON_DELAY_LOWER 1 SECONDS
