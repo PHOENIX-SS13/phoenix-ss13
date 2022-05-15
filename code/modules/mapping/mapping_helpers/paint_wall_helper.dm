@@ -55,10 +55,8 @@
 	name = "hotel Wall Paint"
 	stripe_paint = "#54402D"
 	wall_paint = "#303030"
-	icon_state = "paint_hotel"
 
 /obj/effect/mapping_helpers/paint_wall/hotel_wood
 	name = "Hotel Wood Paint"
 	stripe_paint = "#54402D"
 	wall_paint = "#54402D"
-	icon_state = "paint_hotel_wood"

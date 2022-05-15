@@ -110,6 +110,8 @@
 	ignore += typesof(/atom/movable/plane_master_controller)
 	//Magic hands from the cult are managed by their spells
 	ignore += typesof(/obj/item/melee/blood_magic)
+	//Spews warnings about not causing a change as there is no wall
+	ignore += typesof(/obj/effect/mapping_helpers/paint_wall)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 
