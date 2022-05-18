@@ -3045,7 +3045,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/dat = list()
 	dat += "<center><b>Choose your languages:</b></center><br>"
 	dat += "Availability of the languages to choose from depends on your background. If you can't unlearn one, it means it is required for your background."
-	dat += "<BR><center><a href='?_src_=prefs;task=close_language'>Done</a></center>"
+	dat += "<br>A lot of jobs will require you to know the common language, you will be restricted from playing them if your character doesn't know it."
+	dat += "<br><center><a href='?_src_=prefs;task=close_language'>Done</a></center>"
 	dat += "<hr>"
 	var/current_ling_points = get_linguistic_points()
 	dat += "<b>Linguistic Points remaining: [current_ling_points]</b>"
