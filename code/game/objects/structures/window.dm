@@ -51,6 +51,7 @@
 
 /obj/structure/window/Initialize(mapload, direct)
 	. = ..()
+	color = null //To remove the color from map previews
 	if(direct)
 		setDir(direct)
 	if(reinf && anchored)
@@ -628,6 +629,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#AFD3E6"
+	greyscale_config = /datum/greyscale_config/fulltile_window
+	greyscale_colors = "#AFD3E6"
 	alpha = 180
 	max_integrity = 50
 	fulltile = TRUE
@@ -645,6 +648,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#c162ec"
+	greyscale_config = /datum/greyscale_config/fulltile_window
+	greyscale_colors = "#c162ec"
 	alpha = 180
 	max_integrity = 300
 	fulltile = TRUE
@@ -662,6 +667,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#c162ec"
+	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
+	greyscale_colors = "#c162ec"
 	alpha = 180
 	state = RWINDOW_SECURE
 	max_integrity = 500
@@ -681,6 +688,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#AFD3E6"
+	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
+	greyscale_colors = "#AFD3E6"
 	alpha = 180
 	max_integrity = 150
 	fulltile = TRUE
@@ -700,6 +709,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#3b5461"
+	greyscale_config = /datum/greyscale_config/fulltile_window
+	greyscale_colors = "#3b5461"
 	alpha = 180
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
@@ -719,6 +730,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#D0CBD4"
+	greyscale_config = /datum/greyscale_config/fulltile_window
+	greyscale_colors = "#D0CBD4"
 	alpha = 180
 	max_integrity = 150
 	wtype = "shuttle"
@@ -752,6 +765,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#D0CBD4"
+	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
+	greyscale_colors = "#D0CBD4"
 	alpha = 180
 	max_integrity = 600
 	wtype = "shuttle"
@@ -868,6 +883,8 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#92661A"
+	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
+	greyscale_colors = "#92661A"
 	alpha = 180
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)

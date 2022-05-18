@@ -1,16 +1,20 @@
 {
-	"neck_teshari": [
-		{
-			"type": "icon_state",
-			"icon_state": "neck_teshari1",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "neck_teshari2",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		}
-	]
+	"neck_teshari": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "neck_teshari1",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "neck_teshari2",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			}
+		]
+	}
 }

@@ -1,24 +1,3 @@
-//Redefinitions of the diagonal directions so they can be stored in one var without conflicts
-#define NORTH_JUNCTION NORTH //(1<<0)
-#define SOUTH_JUNCTION SOUTH //(1<<1)
-#define EAST_JUNCTION EAST  //(1<<2)
-#define WEST_JUNCTION WEST  //(1<<3)
-#define NORTHEAST_JUNCTION (1<<4)
-#define SOUTHEAST_JUNCTION (1<<5)
-#define SOUTHWEST_JUNCTION (1<<6)
-#define NORTHWEST_JUNCTION (1<<7)
-
-#define ALL_JUNCTION_DIRECTIONS list(\
-	NORTH_JUNCTION,\
-	SOUTH_JUNCTION,\
-	EAST_JUNCTION,\
-	WEST_JUNCTION,\
-	NORTHEAST_JUNCTION,\
-	SOUTHEAST_JUNCTION,\
-	SOUTHWEST_JUNCTION,\
-	NORTHWEST_JUNCTION\
-	)
-
 //Very, VERYYY expensive, unless used on small areas
 /area/proc/InitDayNightAdjacentTurfs()
 	LAZYCLEARLIST(day_night_adjacent_turfs)
@@ -124,14 +103,3 @@
 		newsub.subscribe_blend_area(src)
 	if(subbed_day_night_controller)
 		ApplyDayNightTurfs()
-
-#undef NORTH_JUNCTION
-#undef SOUTH_JUNCTION
-#undef EAST_JUNCTION
-#undef WEST_JUNCTION
-#undef NORTHEAST_JUNCTION
-#undef NORTHWEST_JUNCTION
-#undef SOUTHEAST_JUNCTION
-#undef SOUTHWEST_JUNCTION
-
-#undef ALL_JUNCTION_DIRECTIONS

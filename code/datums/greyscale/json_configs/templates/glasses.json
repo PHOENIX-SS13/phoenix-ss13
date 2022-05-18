@@ -1,10 +1,14 @@
 {
-	"eyes_teshari": [
-		{
-			"type": "icon_state",
-			"icon_state": "eyes_teshari",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		}
-	]
+	"eyes_teshari": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "eyes_teshari",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			}
+		]
+	}
 }

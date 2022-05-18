@@ -1,104 +1,116 @@
 {
-	"ore_vein1": [
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein1_rock_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein1_rock_shade",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein1_rock_shine",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein1_crystal_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein1_crystal_shade",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein1_crystal_shine",
-			"blend_mode": "overlay"
-		}
-	],
-	"ore_vein2": [
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein2_rock_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein2_rock_shade",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein2_rock_shine",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein2_crystal_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein2_crystal_shade",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein2_crystal_shine",
-			"blend_mode": "overlay"
-		}
-	],
-	"ore_vein3": [
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein3_rock_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein3_rock_shade",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein3_rock_shine",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein3_crystal_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein3_crystal_shade",
-			"blend_mode": "overlay"
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "ore_vein3_crystal_shine",
-			"blend_mode": "overlay"
-		}
-	]
+	"ore_vein1": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein1_rock_base",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein1_rock_shade",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein1_rock_shine",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein1_crystal_base",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein1_crystal_shade",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein1_crystal_shine",
+				"blend_mode": "overlay"
+			}
+		]
+	},
+	"ore_vein2": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein2_rock_base",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein2_rock_shade",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein2_rock_shine",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein2_crystal_base",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein2_crystal_shade",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein2_crystal_shine",
+				"blend_mode": "overlay"
+			}
+		]
+	},
+	"ore_vein3": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein3_rock_base",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein3_rock_shade",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein3_rock_shine",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein3_crystal_base",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein3_crystal_shade",
+				"blend_mode": "overlay"
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "ore_vein3_crystal_shine",
+				"blend_mode": "overlay"
+			}
+		]
+	}
 }

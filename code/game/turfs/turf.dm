@@ -141,6 +141,9 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	// apply materials properly from the default custom_materials value
 	set_custom_materials(custom_materials)
 
+	if(greyscale_config && greyscale_colors)
+		update_greyscale()
+
 	ComponentInitialize()
 
 	return INITIALIZE_HINT_NORMAL

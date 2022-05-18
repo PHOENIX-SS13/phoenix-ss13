@@ -14,6 +14,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_LOW_WALL)
 	canSmoothWith = list(SMOOTH_GROUP_LOW_WALL, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTERS_BLASTDOORS)
 	armor = list(MELEE = 20, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 25, BIO = 100, RAD = 100, FIRE = 80, ACID = 100)
+	greyscale_config = /datum/greyscale_config/low_wall
 	/// Material used in construction
 	var/plating_material = /datum/material/iron
 	/// Paint color of our wall
@@ -22,6 +23,23 @@
 	var/stripe_paint
 	/// Typecache of airlocks to apply a neighboring stripe overlay to
 	var/static/list/airlock_typecache
+
+/obj/structure/low_wall/update_greyscale()
+	greyscale_colors = get_wall_color()
+	return ..()
+
+/obj/structure/low_wall/proc/get_wall_color()
+	var/wall_color = wall_paint
+	if(!wall_color)
+		var/datum/material/plating_mat_ref = GET_MATERIAL_REF(plating_material)
+		wall_color = plating_mat_ref.wall_color
+	return wall_color
+
+/obj/structure/low_wall/proc/get_stripe_color()
+	var/stripe_color = stripe_paint
+	if(!stripe_color)
+		stripe_color = get_wall_color()
+	return stripe_color
 
 /obj/structure/low_wall/ex_act(severity)
 	// Obstructed low walls cant be deleted through explosions
@@ -39,6 +57,7 @@
 
 /obj/structure/low_wall/Initialize(mapload)
 	. = ..()
+	color = null //To remove the mapping preview color
 	AddElement(/datum/element/climbable)
 	set_material(plating_material)
 	if(wall_paint)
@@ -51,11 +70,9 @@
 /obj/structure/low_wall/update_overlays()
 	overlays.Cut()
 	var/datum/material/plating_mat_ref = GET_MATERIAL_REF(plating_material)
-	var/mutable_appearance/smoothed_stripe = mutable_appearance(plating_mat_ref.wall_stripe_icon, icon_state, layer = LOW_WALL_STRIPE_LAYER, appearance_flags = RESET_COLOR)
-	if(stripe_paint)
-		smoothed_stripe.color = stripe_paint
-	else
-		smoothed_stripe.color = color
+
+	var/icon/stripe_icon = SSgreyscale.GetColoredIconByType(plating_mat_ref.wall_stripe_greyscale_config, get_stripe_color())
+	var/mutable_appearance/smoothed_stripe = mutable_appearance(stripe_icon, icon_state, layer = LOW_WALL_STRIPE_LAYER)
 	overlays += smoothed_stripe
 
 	if(!airlock_typecache)
@@ -71,11 +88,8 @@
 				neighbor_stripe ^= cardinal
 				break
 	if(neighbor_stripe)
-		var/mutable_appearance/neighb_stripe_appearace = mutable_appearance('icons/turf/walls/neighbor_stripe.dmi', "[neighbor_stripe]", layer = LOW_WALL_STRIPE_LAYER, appearance_flags = RESET_COLOR)
-		if(stripe_paint)
-			neighb_stripe_appearace.color = stripe_paint
-		else
-			neighb_stripe_appearace.color = color
+		var/icon/neighbor_icon = SSgreyscale.GetColoredIconByType(/datum/greyscale_config/wall_neighbor_stripe, get_stripe_color())
+		var/mutable_appearance/neighb_stripe_appearace = mutable_appearance(neighbor_icon, "stripe-[neighbor_stripe]", layer = LOW_WALL_STRIPE_LAYER)
 		overlays += neighb_stripe_appearace
 	return ..()
 
@@ -159,11 +173,7 @@
 
 /obj/structure/low_wall/proc/set_wall_paint(new_paint)
 	wall_paint = new_paint
-	if(wall_paint)
-		color = wall_paint
-	else
-		var/datum/material/plating_mat_ref = GET_MATERIAL_REF(plating_material)
-		color = plating_mat_ref.wall_color
+	update_greyscale()
 	update_appearance()
 
 /obj/structure/low_wall/proc/set_stripe_paint(new_paint)
@@ -172,9 +182,8 @@
 
 /obj/structure/low_wall/proc/set_material(new_material_type)
 	plating_material = new_material_type
-	if(!wall_paint)
-		var/datum/material/plating_mat_ref = GET_MATERIAL_REF(plating_material)
-		color = plating_mat_ref.wall_color
+	update_greyscale()
+	update_appearance()
 
 /// Whether the top of the low wall is obstructed by an installed grille or a window
 /obj/structure/low_wall/proc/is_top_obstructed()

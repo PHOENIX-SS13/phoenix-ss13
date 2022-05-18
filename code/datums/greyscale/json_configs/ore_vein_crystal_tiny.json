@@ -1,41 +1,53 @@
 {
-	"crystal1": [
-		{
-			"type": "icon_state",
-			"icon_state": "crystal1_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "crystal1_shading",
-			"blend_mode": "overlay"
-		}
-	],
-	"crystal2": [
-		{
-			"type": "icon_state",
-			"icon_state": "crystal2_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "crystal2_shading",
-			"blend_mode": "overlay"
-		}
-	],
-	"crystal3": [
-		{
-			"type": "icon_state",
-			"icon_state": "crystal3_base",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "crystal3_shading",
-			"blend_mode": "overlay"
-		}
-	]
+	"crystal1": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "crystal1_base",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "crystal1_shading",
+				"blend_mode": "overlay"
+			}
+		]
+	},
+	"crystal2": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "crystal2_base",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "crystal2_shading",
+				"blend_mode": "overlay"
+			}
+		]
+	},
+	"crystal3": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "crystal3_base",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "crystal3_shading",
+				"blend_mode": "overlay"
+			}
+		]
+	}
 }

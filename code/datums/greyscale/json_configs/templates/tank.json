@@ -1,40 +1,48 @@
 {
-	"back_teshari": [
-		{
-			"type": "icon_state",
-			"icon_state": "back_teshari1",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "back_teshari2",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "back_teshari3",
-			"blend_mode": "overlay"
-		}
-	],
-	"suitstore_teshari": [
-		{
-			"type": "icon_state",
-			"icon_state": "back_teshari1",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "back_teshari2",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "back_teshari3",
-			"blend_mode": "overlay"
-		}
-	]
+	"back_teshari": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "back_teshari1",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "back_teshari2",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "back_teshari3",
+				"blend_mode": "overlay"
+			}
+		]
+	},
+	"suitstore_teshari": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "back_teshari1",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "back_teshari2",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "back_teshari3",
+				"blend_mode": "overlay"
+			}
+		]
+	}
 }

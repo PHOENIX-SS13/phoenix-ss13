@@ -1,18 +1,26 @@
 {
-	"suit_human_suspenders": [
-		{
-			"type": "icon_state",
-			"icon_state": "suspenders",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		}
-	],
-	"suit_human_suspenders_t": [
-		{
-			"type": "icon_state",
-			"icon_state": "suspenders_t",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		}
-	]
+	"suit_human_suspenders": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "suspenders",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			}
+		]
+	},
+	"suit_human_suspenders_t": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "suspenders_t",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			}
+		]
+	}
 }

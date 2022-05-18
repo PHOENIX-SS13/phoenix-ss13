@@ -1,101 +1,125 @@
 {
-	"feet_human_sneakers": [
-		{
-			"type": "icon_state",
-			"icon_state": "sneakers_back",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "sneakers_front",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		}
-	],
-	"feet_human_sneakers_chained": [
-		{
-			"type": "icon_state",
-			"icon_state": "sneakers_back",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "sneakers_front",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "sneakers_chained",
-			"blend_mode": "overlay"
-		}
-	],
-	"feet_digi_sneakers": [
-		{
-			"type": "icon_state",
-			"icon_state": "digi_sneakers_back",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "digi_sneakers_front",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		}
-	],
-	"feet_digi_sneakers_chained": [
-		{
-			"type": "icon_state",
-			"icon_state": "digi_sneakers_back",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "digi_sneakers_front",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "digi_sneakers_chained",
-			"blend_mode": "overlay"
-		}
-	],
-	"feet_teshari_sneakers": [
-		{
-			"type": "icon_state",
-			"icon_state": "teshari_sneakers_back",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "teshari_sneakers_front",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		}
-	],
-	"feet_teshari_sneakers_chained": [
-		{
-			"type": "icon_state",
-			"icon_state": "teshari_sneakers_back",
-			"blend_mode": "overlay",
-			"color_ids": [ 1 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "teshari_sneakers_front",
-			"blend_mode": "overlay",
-			"color_ids": [ 2 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "teshari_sneakers_chained",
-			"blend_mode": "overlay"
-		}
-	]
+	"feet_human_sneakers": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "sneakers_back",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "sneakers_front",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			}
+		]
+	},
+	"feet_human_sneakers_chained": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "sneakers_back",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "sneakers_front",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "sneakers_chained",
+				"blend_mode": "overlay"
+			}
+		]
+	},
+	"feet_digi_sneakers": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "digi_sneakers_back",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "digi_sneakers_front",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			}
+		]
+	},
+	"feet_digi_sneakers_chained": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "digi_sneakers_back",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "digi_sneakers_front",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "digi_sneakers_chained",
+				"blend_mode": "overlay"
+			}
+		]
+	},
+	"feet_teshari_sneakers": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "teshari_sneakers_back",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "teshari_sneakers_front",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			}
+		]
+	},
+	"feet_teshari_sneakers_chained": 
+	{
+		"layers": 
+		[
+			{
+				"type": "icon_state",
+				"icon_state": "teshari_sneakers_back",
+				"blend_mode": "overlay",
+				"color_ids": [1]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "teshari_sneakers_front",
+				"blend_mode": "overlay",
+				"color_ids": [2]
+			},
+			{
+				"type": "icon_state",
+				"icon_state": "teshari_sneakers_chained",
+				"blend_mode": "overlay"
+			}
+		]
+	}
 }
