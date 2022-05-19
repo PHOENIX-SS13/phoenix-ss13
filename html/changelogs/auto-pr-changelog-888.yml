@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- rscadd: The GAGS system supports bitmasking.
-- rscadd: Walls and windows have new icons.
-merge-date: 2022-05-18
-prnumber: 888
