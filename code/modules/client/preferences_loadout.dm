@@ -199,6 +199,8 @@
 	return dat
 
 /datum/preferences/proc/validate_loadouts()
+	if(!length(loadouts))
+		set_loadout_slot(1, TRUE)
 	var/slot_index = 0
 	for(var/list/slot_list as anything in loadouts)
 		slot_index++
