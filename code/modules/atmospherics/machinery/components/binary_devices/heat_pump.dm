@@ -13,8 +13,6 @@
 	layer = OBJ_LAYER
 	circuit = /obj/item/circuitboard/machine/heat_pump
 
-	hide = TRUE
-
 	move_resist = MOVE_RESIST_DEFAULT
 	vent_movement = NONE
 	pipe_flags = PIPING_ONE_PER_TURF
@@ -372,7 +370,7 @@
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Heat Pump", name)
+		ui = new(user, src, "HeatPump", name)
 		ui.open()
 
 /obj/machinery/atmospherics/components/binary/heat_pump/ui_data(mob/user)

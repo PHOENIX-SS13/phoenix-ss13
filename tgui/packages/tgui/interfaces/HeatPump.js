@@ -3,7 +3,7 @@ import { useBackend } from '../backend';
 import { AnimatedNumber, Box, Button, LabeledList, Modal, NumberInput, Section, ProgressBar } from '../components';
 import { Window } from '../layouts';
 
-export const ThermoMachine = (props, context) => {
+export const HeatPump = (props, context) => {
   const { act, data } = useBackend(context);
   const pressure_error = !!data.skipping_work && (
     <Modal>
