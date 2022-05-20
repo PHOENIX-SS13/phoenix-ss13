@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- bugfix: Removes the defunct skill tracker PDA tab
+merge-date: 2022-05-20
+prnumber: 903
