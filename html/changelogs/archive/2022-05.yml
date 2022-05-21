@@ -50,3 +50,8 @@
   - rscadd: The GAGS system supports bitmasking.
   - rscadd: Walls and windows have new icons.
   - rscadd: Adds a warning about job language requirements
+2022-05-20:
+  Azarak:
+  - bugfix: Fixes Heat Pump UI and layering
+  - bugfix: Removes the defunct skill tracker PDA tab
+  - bugfix: Fixes loadouts being broken for completely new prefs
