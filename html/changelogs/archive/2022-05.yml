@@ -55,3 +55,6 @@
   - bugfix: Fixes Heat Pump UI and layering
   - bugfix: Removes the defunct skill tracker PDA tab
   - bugfix: Fixes loadouts being broken for completely new prefs
+2022-05-21:
+  AtoriBirb:
+  - imageadd: 6 new beak sprites
