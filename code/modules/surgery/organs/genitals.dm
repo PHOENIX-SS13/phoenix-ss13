@@ -159,6 +159,8 @@
 	icon_state = passed_string
 
 /obj/item/organ/genital/testicles/get_description_string(datum/sprite_accessory/genital/gas)
+	if(gas.type == /datum/sprite_accessory/genital/testicles/internal)
+		return null
 	return "You see a pair of testicles, they look [lowertext(balls_size_to_description(genital_size))]."
 
 /obj/item/organ/genital/testicles/build_from_dna(datum/dna/DNA, associated_key)

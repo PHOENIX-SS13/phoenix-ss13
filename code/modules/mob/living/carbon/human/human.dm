@@ -122,7 +122,9 @@
 					var/obj/item/organ/genital/ORG = getorganslot(G.associated_organ_slot)
 					if(!ORG)
 						continue
-					line += ORG.get_description_string(G)
+					var/new_line = ORG.get_description_string(G)
+					if(new_line)
+						line += new_line
 				if(length(line))
 					to_chat(usr, SPAN_NOTICE("[jointext(line, "\n")]"))
 			if("flavor_text")
