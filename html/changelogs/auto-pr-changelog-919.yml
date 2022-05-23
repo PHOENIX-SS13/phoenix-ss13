@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- bugfix: Fixes Alien Infestation failing to spawn
+merge-date: 2022-05-23
+prnumber: 919
