@@ -1680,7 +1680,7 @@
 	if(!lower_level) //We are at the lowest z-level.
 		to_chat(src, SPAN_WARNING("You can't see through the floor below you."))
 		return
-	else if(floor.IsTransparent()) //There is no turf we can look through below us
+	else if(!floor.IsTransparent()) //There is no turf we can look through below us
 		var/turf/front_hole = get_step(floor, dir)
 		if(front_hole.IsTransparent())
 			floor = front_hole

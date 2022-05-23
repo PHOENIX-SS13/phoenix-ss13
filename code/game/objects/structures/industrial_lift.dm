@@ -142,6 +142,7 @@
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
+	obj_flags = CAN_BE_HIT | FULL_BLOCK_Z_BELOW
 	//kind of a centerpiece of the station, so pretty tough to destroy
 	armor = list(MELEE = 80, BULLET = 80, LASER = 80, ENERGY = 80, BOMB = 100, BIO = 80, RAD = 80, FIRE = 100, ACID = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
