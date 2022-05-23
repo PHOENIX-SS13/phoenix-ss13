@@ -439,7 +439,7 @@
 		if (!new_job)
 			to_chat(usr, SPAN_WARNING("Job not found."))
 			return
-		set_assigned_role(new_role)
+		set_assigned_role(new_job)
 
 	else if (href_list["memory_edit"])
 		var/new_memo = stripped_multiline_input(usr, "Write new memory", "Memory", memory, MAX_MESSAGE_LEN)

@@ -1089,7 +1089,7 @@
 	new /obj/structure/ai_core/latejoin_inactive(loc)
 	if(src.mind)
 		//Handle job slot/tater cleanup.
-		if(src.mind.assigned_role == "AI")
+		if(is_ai_job(src.mind.assigned_role))
 			SSjob.FreeRole("AI")
 	src.mind.special_role = null
 	qdel(src)
