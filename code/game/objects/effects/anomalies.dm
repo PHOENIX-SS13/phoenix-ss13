@@ -233,11 +233,13 @@
 /obj/effect/anomaly/bluespace/detonate()
 	var/turf/T = pick(get_area_turfs(impact_area))
 	if(T)
-			// Calculate new position (searches through beacons in world)
+		// Find a teleport beacon in the same z-level to teleport the entities to.
 		var/obj/item/beacon/chosen
 		var/list/possible = list()
+		var/datum/virtual_level/my_vlevel = get_virtual_level()
 		for(var/obj/item/beacon/W in GLOB.teleportbeacons)
-			possible += W
+			if(W.get_virtual_level() == my_vlevel)
+				possible += W
 
 		if(possible.len > 0)
 			chosen = pick(possible)
