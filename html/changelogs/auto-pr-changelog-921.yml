@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- bugfix: Industrial lifts no longer move ghosts around
+merge-date: 2022-05-23
+prnumber: 921
