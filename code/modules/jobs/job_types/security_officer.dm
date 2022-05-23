@@ -26,6 +26,8 @@
 
 	banned_quirks = list(SEC_RESTRICTED_QUIRKS)
 
+	required_languages = IMPORTANT_ROLE_LANGUAGE_REQUIREMENT
+
 	family_heirlooms = list(/obj/item/book/manual/wiki/security_space_law, /obj/item/clothing/head/beret/sec)
 
 	mail_goodies = list(

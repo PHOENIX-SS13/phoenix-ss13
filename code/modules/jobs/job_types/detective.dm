@@ -25,6 +25,8 @@
 
 	banned_quirks = list(SEC_RESTRICTED_QUIRKS)
 
+	required_languages = IMPORTANT_ROLE_LANGUAGE_REQUIREMENT
+
 	mail_goodies = list(
 		/obj/item/storage/fancy/cigarettes = 25,
 		/obj/item/ammo_box/c38 = 25,

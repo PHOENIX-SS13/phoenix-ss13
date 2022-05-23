@@ -21,7 +21,7 @@
 
 	family_heirlooms = list(/obj/item/pen/fountain, /obj/item/storage/pill_bottle/dice)
 
-	required_languages = null
+	required_languages = LESS_IMPORTANT_ROLE_LANGUAGE_REQUIREMENT
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS
 
 	voice_of_god_silence_power = 3

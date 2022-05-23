@@ -33,6 +33,8 @@
 
 	voice_of_god_power = 2 //Chaplains are very good at speaking with the voice of god
 
+	required_languages = LESS_IMPORTANT_ROLE_LANGUAGE_REQUIREMENT
+
 
 /datum/job/chaplain/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()

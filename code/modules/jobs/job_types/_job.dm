@@ -94,7 +94,7 @@
 	/// Blacklist of species for this job.
 	var/list/species_blacklist
 	/// Which languages does the job require, associative to LANGUAGE_UNDERSTOOD or LANGUAGE_SPOKEN
-	var/list/required_languages = list(/datum/language/common = LANGUAGE_SPOKEN)
+	var/list/required_languages = NORMAL_ROLE_LANGUAGE_REQUIREMENT
 	/// All values = (JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_BOLD_SELECT_TEXT)
 	var/job_flags = NONE
 

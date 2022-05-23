@@ -19,7 +19,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_COOK
 	bounty_types = CIV_JOB_CHEF
-	required_languages = null
+	required_languages = LESS_IMPORTANT_ROLE_LANGUAGE_REQUIREMENT
 	departments_list = list(
 		/datum/job_department/service,
 		)

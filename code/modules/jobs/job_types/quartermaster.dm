@@ -29,6 +29,8 @@
 
 
 	banned_quirks = list(HEAD_RESTRICTED_QUIRKS) //Not a head.. YET
+	
+	required_languages = IMPORTANT_ROLE_LANGUAGE_REQUIREMENT
 
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"

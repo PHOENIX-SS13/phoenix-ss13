@@ -8,6 +8,10 @@
 #define LANGUAGE_UNDERSTOOD	1
 #define LANGUAGE_SPOKEN	2
 
+#define LESS_IMPORTANT_ROLE_LANGUAGE_REQUIREMENT null
+#define NORMAL_ROLE_LANGUAGE_REQUIREMENT list(/datum/language/common = LANGUAGE_UNDERSTOOD)
+#define IMPORTANT_ROLE_LANGUAGE_REQUIREMENT list(/datum/language/common = LANGUAGE_SPOKEN)
+
 #define LANGUAGES_FOR_EXOTIC_CULTURES /datum/language/draconic, /datum/language/spacer, /datum/language/slime, /datum/language/sylvan, /datum/language/schechi
 
 //GROUPED CULTURAL DEFINES FOR SPECIES
