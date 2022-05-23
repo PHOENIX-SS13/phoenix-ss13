@@ -10,5 +10,6 @@
 	/obj/structure/industrial_lift, \
 	/obj/structure/fluff/tram_rail, \
 	/obj/machinery/atmospherics/pipe, \
+	/mob/dead/observer, \
 	/obj/structure/disposalpipe\
 	)
