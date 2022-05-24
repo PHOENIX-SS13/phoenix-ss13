@@ -1928,7 +1928,9 @@
 		if(mapzone.gravity_generators.len)
 			var/max_grav = 0
 			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
-				max_grav = max(G.setting,max_grav)
+				if(!G.on)
+					continue
+				max_grav = max(G.setting, max_grav)
 			return max_grav
 	return T.virtual_level_trait(ZTRAIT_GRAVITY)
 
