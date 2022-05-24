@@ -187,7 +187,7 @@ Used by the AI doomsday and the self-destruct nuke.
 	)
 	. = list()
 	var/start_time = REALTIMEOFDAY
-	var/datum/map_zone/mapzone = new(name, ov_obj)
+	var/datum/map_zone/mapzone = create_map_zone(name, ov_obj)
 
 	if (!islist(files))  // handle single-level maps
 		files = list(files)
@@ -222,7 +222,7 @@ Used by the AI doomsday and the self-destruct nuke.
 		i++
 		var/level_name = "[name] [i]"
 		
-		var/datum/virtual_level/vlevel = create_virtual_level(level_name, level.Copy(), mapzone, world.maxx, world.maxy, ALLOCATION_FULL)
+		var/datum/virtual_level/vlevel = create_virtual_level(level_name, level.Copy(), mapzone, world.maxx, world.maxy, ALLOCATION_FULL, reservation_margin = map_margin)
 		
 		ordered_vlevels += vlevel
 	var/subi = 0
@@ -270,8 +270,6 @@ Used by the AI doomsday and the self-destruct nuke.
 		if (!pm.load(vlevel.low_x, vlevel.low_y, vlevel.z_value, no_changeturf = TRUE))
 			errorList |= pm.original_path
 	for(var/datum/virtual_level/vlevel as anything in ordered_vlevels)
-		if(map_margin)
-			vlevel.reserve_margin(map_margin)
 		if(self_looping)
 			vlevel.selfloop()
 	if(!silent)
@@ -328,7 +326,7 @@ Used by the AI doomsday and the self-destruct nuke.
 			var/ruins_name = "Ruins Area [i]"
 			var/overmap_obj = new /datum/overmap_object/ruins(SSovermap.main_system, rand(5,25), rand(5,25))
 			var/datum/map_zone/mapzone = create_map_zone(ruins_name, overmap_obj)
-			create_virtual_level(ruins_name, ZTRAITS_SPACE, mapzone, world.maxx, world.maxy, ALLOCATION_FULL)
+			create_virtual_level(ruins_name, ZTRAITS_SPACE, mapzone, world.maxx, world.maxy, ALLOCATION_FULL, reservation_margin = MAP_EDGE_PAD)
 	//Load planets
 	if(config.minetype == "lavaland")
 		var/datum/planet_template/lavaland_template = planet_templates[/datum/planet_template/lavaland]
@@ -683,9 +681,12 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	return new /datum/map_zone(new_name, passed_ov_obj)
 
 /// Allocates, creates and passes a new virtual level
-/datum/controller/subsystem/mapping/proc/create_virtual_level(new_name, list/traits, datum/map_zone/mapzone, width, height, allocation_type = ALLOCATION_FREE, allocation_jump = DEFAULT_ALLOC_JUMP)
+/datum/controller/subsystem/mapping/proc/create_virtual_level(new_name, list/traits, datum/map_zone/mapzone, width, height, allocation_type = ALLOCATION_FREE, allocation_jump = DEFAULT_ALLOC_JUMP, reservation_margin = 0)
 	/// Because we add an implicit extra 1 in the way we do reservation
 	width--
 	height--
 	var/list/allocation_coords = SSmapping.get_free_allocation(allocation_type, width, height, allocation_jump)
-	return new /datum/virtual_level(new_name, traits, mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	var/datum/virtual_level/vlevel = new /datum/virtual_level(new_name, traits, mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	if(reservation_margin)
+		vlevel.reserve_margin(reservation_margin)
+	return vlevel
