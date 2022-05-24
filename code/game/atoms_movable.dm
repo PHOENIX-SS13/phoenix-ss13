@@ -83,7 +83,7 @@
 			add_overlay(list(gen_emissive_blocker))
 		if(EMISSIVE_BLOCK_UNIQUE)
 			render_target = ref(src)
-			em_block = new(src, render_target)
+			em_block = new(null, render_target)
 			add_overlay(list(em_block))
 	if(opacity)
 		AddElement(/datum/element/light_blocking)
