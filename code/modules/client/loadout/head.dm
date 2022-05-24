@@ -51,6 +51,9 @@
 /datum/loadout_item/head/whitekepiold
 	path = /obj/item/clothing/head/kepi/old
 
+/datum/loadout_item/head/bowler
+	path = /obj/item/clothing/head/bowler
+
 /datum/loadout_item/head/maidhead
 	path = /obj/item/clothing/head/maid
 
@@ -60,6 +63,9 @@
 
 /datum/loadout_item/head/sombrero
 	path = /obj/item/clothing/head/sombrero
+
+/datum/loadout_item/head/witch
+	path = /obj/item/clothing/head/witchwig
 
 /datum/loadout_item/head/wig
 	path = /obj/item/clothing/head/wig
@@ -81,6 +87,10 @@
 
 /datum/loadout_item/head/harebell
 	path = /obj/item/food/grown/harebell
+
+/datum/loadout_item/head/cone
+	path = /obj/item/clothing/head/cone
+	cost = 2
 
 //Cowboy Stuff
 /datum/loadout_item/head/cowboyhat

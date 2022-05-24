@@ -13,6 +13,12 @@
 /datum/loadout_item/uniform/assistantformal
 	path = /obj/item/clothing/under/misc/assistantformal
 
+/datum/loadout_item/uniform/henchman
+	path = /obj/item/clothing/under/suit/henchmen
+
+/datum/loadout_item/uniform/overalls
+	path = /obj/item/clothing/under/misc/overalls
+
 /datum/loadout_item/uniform/maidcostume
 	path = /obj/item/clothing/under/costume/maid
 
@@ -30,39 +36,35 @@
 
 /datum/loadout_item/uniform/pinkstripper
 	path = /obj/item/clothing/under/misc/stripper
-	cost = 3
+	cost = 2
 
 /datum/loadout_item/uniform/greenstripper
 	path = /obj/item/clothing/under/misc/stripper/green
-	cost = 3
+	cost = 2
+
+/datum/loadout_item/uniform/corset
+	path = /obj/item/clothing/under/dress/corset
 
 /datum/loadout_item/uniform/qipao
 	path = /obj/item/clothing/under/costume/qipao
-	cost = 3
 
 /datum/loadout_item/uniform/qipao/white
 	path = /obj/item/clothing/under/costume/qipao/white
-	cost = 3
 
 /datum/loadout_item/uniform/qipao/red
 	path = /obj/item/clothing/under/costume/qipao/red
-	cost = 3
 
 /datum/loadout_item/uniform/cheongsam
 	path = /obj/item/clothing/under/costume/cheongsam
-	cost = 3
 
 /datum/loadout_item/uniform/cheongsam/white
 	path = /obj/item/clothing/under/costume/cheongsam/white
-	cost = 3
 
 /datum/loadout_item/uniform/cheongsam/red
 	path = /obj/item/clothing/under/costume/cheongsam/red
-	cost = 3
 
 /datum/loadout_item/uniform/trishirt
 	path = /obj/item/clothing/under/misc/trishirt
-	cost = 3
 
 //SUITS
 /datum/loadout_item/uniform/suit
@@ -91,6 +93,30 @@
 
 /datum/loadout_item/uniform/suit/suitwhite
 	path = /obj/item/clothing/under/suit/white
+
+/datum/loadout_item/uniform/suit/suitskirtwhite
+	path = /obj/item/clothing/under/suit/white/skirt
+
+/datum/loadout_item/uniform/suit/amishsuit
+	path = /obj/item/clothing/under/suit/sl
+
+/datum/loadout_item/uniform/suit/tuxedo
+	path = /obj/item/clothing/under/suit/tuxedo
+
+/datum/loadout_item/uniform/suit/vicesuit
+	path = /obj/item/clothing/under/misc/vice_officer
+
+/datum/loadout_item/uniform/suit/waitersuit
+	path = /obj/item/clothing/under/suit/waiter
+
+/datum/loadout_item/uniform/suit/blacktwopiecesuit
+	path = /obj/item/clothing/under/suit/blacktwopiece
+
+/datum/loadout_item/uniform/suit/executivesuit
+	path = /obj/item/clothing/under/suit/black_really
+
+/datum/loadout_item/uniform/suit/executivesuitfem
+	path = /obj/item/clothing/under/suit/black/female
 
 //SKIRTS
 /datum/loadout_item/uniform/skirt
@@ -136,11 +162,23 @@
 /datum/loadout_item/uniform/dress/stripeddress
 	path = /obj/item/clothing/under/dress/striped
 
+/datum/loadout_item/uniform/dress/blacktangodress
+	path = /obj/item/clothing/under/dress/blacktango
+
 /datum/loadout_item/uniform/dress/sundresswhite
 	path = /obj/item/clothing/under/dress/sundress/white
 
 /datum/loadout_item/uniform/dress/sundress
 	path = /obj/item/clothing/under/dress/sundress
+
+/datum/loadout_item/uniform/dress/westernbustledress
+	path = /obj/item/clothing/under/dress/westernbustle
+
+/datum/loadout_item/uniform/dress/flamencodress
+	path = /obj/item/clothing/under/dress/flamenco
+
+/datum/loadout_item/uniform/dress/sailordress
+	path = /obj/item/clothing/under/dress/sailor
 
 /datum/loadout_item/uniform/dress/greendress
 	path = /obj/item/clothing/under/dress/green
@@ -151,6 +189,17 @@
 /datum/loadout_item/uniform/dress/flowerdress
 	path = /obj/item/clothing/under/dress/flower
 
+/datum/loadout_item/uniform/dress/yellowsinger
+	path = /obj/item/clothing/under/costume/singer/yellow
+
+/datum/loadout_item/uniform/dress/redeveninggowndress
+	path = /obj/item/clothing/under/dress/redeveninggown
+
+/datum/loadout_item/uniform/dress/draculass
+	path = /obj/item/clothing/under/costume/draculass
+
+/datum/loadout_item/uniform/dress/weddingdress
+	path = /obj/item/clothing/under/dress/wedding_dress
 
 //PANTS
 /datum/loadout_item/uniform/pants

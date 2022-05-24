@@ -73,6 +73,9 @@
 /datum/loadout_item/suit/jacket/jacketlettermanNT
 	path = /obj/item/clothing/suit/jacket/letterman_nanotrasen
 
+/datum/loadout_item/suit/jacket/overalls
+	path = /obj/item/clothing/suit/apron/overalls
+
 /datum/loadout_item/suit/jacket/militaryjacket
 	path = /obj/item/clothing/suit/jacket/miljacket
 

@@ -8,6 +8,9 @@
 /datum/loadout_item/mask/moustache
 	path = /obj/item/clothing/mask/fakemoustache
 
+/datum/loadout_item/mask/italianmoustache
+	path = /obj/item/clothing/mask/fakemoustache/italian
+
 /datum/loadout_item/mask/bandana_red
 	path = /obj/item/clothing/mask/bandana/red
 

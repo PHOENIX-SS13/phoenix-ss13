@@ -41,8 +41,18 @@
 /datum/loadout_item/shoes/high_heels
 	path = /obj/item/clothing/shoes/high_heels
 
+/datum/loadout_item/shoes/russian
+	path = /obj/item/clothing/shoes/russian
+
 /datum/loadout_item/shoes/cowboyboots
 	path = /obj/item/clothing/shoes/cowboy
 
 /datum/loadout_item/shoes/cowboyboots/black
 	path = /obj/item/clothing/shoes/cowboy/black
+
+/datum/loadout_item/shoes/cowboyboots/fancy
+	path = /obj/item/clothing/shoes/cowboy/fancy
+	cost = 2
+
+/datum/loadout_item/shoes/yellowsinger
+	path = /obj/item/clothing/shoes/singery

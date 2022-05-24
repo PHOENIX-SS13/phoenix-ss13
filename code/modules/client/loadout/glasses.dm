@@ -5,6 +5,9 @@
 /datum/loadout_item/glasses/blindfold
 	path = /obj/item/clothing/glasses/blindfold
 
+/datum/loadout_item/glasses/trickblindfold
+	path = /obj/item/clothing/glasses/trickblindfold
+
 /datum/loadout_item/glasses/cold
 	path = /obj/item/clothing/glasses/cold
 
@@ -19,6 +22,9 @@
 
 /datum/loadout_item/glasses/jamjar
 	path = /obj/item/clothing/glasses/regular/jamjar
+
+/datum/loadout_item/glasses/circle
+	path = /obj/item/clothing/glasses/regular/circle
 
 /datum/loadout_item/glasses/monocle
 	path = /obj/item/clothing/glasses/monocle
