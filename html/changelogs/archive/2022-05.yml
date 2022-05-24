@@ -61,3 +61,18 @@
 2022-05-22:
   Deek-Za (Deek-Za):
   - imageadd: More crushed can sprites
+2022-05-23:
+  Azarak:
+  - bugfix: Industrial lifts no longer move ghosts around
+  - bugfix: Fixes cases of string use of assigned_role
+  - rscadd: Adresses muteness and language discrepencacies, allowing much larger freedom
+      of language for most jobs
+  - bugfix: Fixes looking down a z level
+  - bugfix: Fixes Alien Infestation failing to spawn
+  - balance: Bluespace anomaly will now only teleport to the same level
+  Deek-Za (Deek-Za):
+  - bugfix: '&#x27;Internal&#x27; option now appropriately hides the organ from examination'
+2022-05-24:
+  Azarak:
+  - rscadd: New windows sprites
+  - rscdel: Mining shuttles no longer use the overmap
