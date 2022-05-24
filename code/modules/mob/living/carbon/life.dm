@@ -525,16 +525,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(drunkenness >= 11 && slurring < 5)
 			slurring += 0.6 * delta_time
 
-		if(mind && (is_scientist_job(mind.assigned_role) || is_research_director_job(mind.assigned_role)))
-			if(SSresearch.science_tech)
-				if(drunkenness >= 12.9 && drunkenness <= 13.8)
-					drunkenness = round(drunkenness, 0.01)
-					if(DT_PROB(2.5, delta_time))
-						say(pick_list_replacements(VISTA_FILE, "ballmer_good_msg"), forced = "ballmer")
-				if(drunkenness > 26) // by this point you're into windows ME territory
-					if(DT_PROB(2.5, delta_time))
-						say(pick_list_replacements(VISTA_FILE, "ballmer_windows_me_msg"), forced = "ballmer")
-
 		if(drunkenness >= 41)
 			if(DT_PROB(16, delta_time))
 				add_confusion(2)
