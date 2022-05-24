@@ -16,9 +16,13 @@
 	canSmoothWith = list(SMOOTH_GROUP_LATTICE, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_WALLS)
 	var/number_of_mats = 1
 	var/build_material = /obj/item/stack/rods
+	var/can_be_unscrewed = FALSE
+	var/unscrewed = FALSE
 
 /obj/structure/lattice/examine(mob/user)
 	. = ..()
+	if(can_be_unscrewed)
+		. += SPAN_NOTICE("You could [unscrewed ? "screw" : "unscrew"] the top of the plating with a screwdriver.")
 	. += deconstruction_hints(user)
 
 /obj/structure/lattice/proc/deconstruction_hints(mob/user)
@@ -36,16 +40,38 @@
 /obj/structure/lattice/blob_act(obj/structure/blob/B)
 	return
 
+/obj/structure/lattice/update_icon_state()
+	. = ..()
+	if(!can_be_unscrewed)
+		return
+	if(unscrewed)
+		icon_state = "[base_icon_state]_open"
+	else
+		icon_state = base_icon_state
+
+/obj/structure/lattice/screwdriver_act(mob/user, obj/item/tool)
+	if(!can_be_unscrewed)
+		return
+	. = TRUE
+	unscrewed = !unscrewed
+	tool.play_tool_sound(src)
+	to_chat(user, SPAN_NOTICE("You [unscrewed ? "unscrew" : "screw back in"] the top of the plating ..."))
+	update_appearance()
+
+/obj/structure/lattice/wirecutter_act(mob/user, obj/item/tool)
+	. = TRUE
+	tool.play_tool_sound(src)
+	to_chat(user, SPAN_NOTICE("Slicing [name] joints..."))
+	deconstruct()
+
 /obj/structure/lattice/attackby(obj/item/C, mob/user, params)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
-	if(C.tool_behaviour == TOOL_WIRECUTTER)
-		C.play_tool_sound(src)
-		to_chat(user, SPAN_NOTICE("Slicing [name] joints ..."))
-		deconstruct()
-	else
-		var/turf/T = get_turf(src)
-		return T.attackby(C, user) //hand this off to the turf instead (for building plating, catwalks, etc)
+	. = ..()
+	if(.)
+		return
+	var/turf/T = get_turf(src)
+	return T.attackby(C, user) //hand this off to the turf instead (for building plating, catwalks, etc)
 
 /obj/structure/lattice/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -109,12 +135,14 @@
 /obj/structure/lattice/catwalk/plated
 	name = "plated catwalk"
 	desc = "A durable catwalk for easier maintenance of pipes and wires. Cats hate this thing."
-	icon = 'icons/obj/smooth_structures/catwalk_plated.dmi'
-	icon_state = "catwalk_plated-0"
+	icon = 'icons/obj/plated_catwalk.dmi'
+	icon_state = "catwalk_plated"
 	base_icon_state = "catwalk_plated"
-	smoothing_groups = list(SMOOTH_GROUP_PLATED_CATWALK)
-	canSmoothWith = list(SMOOTH_GROUP_PLATED_CATWALK)
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
 	build_material = /obj/item/stack/catwalk/plated
+	can_be_unscrewed = TRUE
 
 /obj/structure/lattice/catwalk/plated/deconstruction_hints(mob/user)
 	return SPAN_NOTICE("The plate looks like it could be <b>pried</b> up.")
@@ -130,12 +158,19 @@
 	return ..()
 
 /obj/structure/lattice/catwalk/plated/dark
-	icon = 'icons/obj/smooth_structures/catwalk_plated_dark.dmi'
+	icon_state = "catwalk_plated_dark"
+	base_icon_state = "catwalk_plated_dark"
 	build_material = /obj/item/stack/catwalk/plated/dark
 
 /obj/structure/lattice/catwalk/plated/smooth
-	icon = 'icons/obj/smooth_structures/catwalk_plated_smooth.dmi'
+	icon_state = "catwalk_plated_smooth"
+	base_icon_state = "catwalk_plated_smooth"
 	build_material = /obj/item/stack/catwalk/plated/smooth
+
+/obj/structure/lattice/catwalk/plated/textured
+	icon_state = "catwalk_plated_textured"
+	base_icon_state = "catwalk_plated_textured"
+	build_material = /obj/item/stack/catwalk/plated/textured
 
 /obj/structure/lattice/lava
 	name = "heatproof support lattice"

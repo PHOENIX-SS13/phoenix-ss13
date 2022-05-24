@@ -42,6 +42,14 @@
 	merge_type = /obj/item/stack/catwalk/plated/smooth
 	catwalk_type = /obj/structure/lattice/catwalk/plated/smooth
 
+/obj/item/stack/catwalk/plated/textured
+	name = "textured plated catwalk rods"
+	singular_name = "textured plated catwalk rod"
+	desc = "Rods that could be used to make a plated catwalk, with style."
+	icon_state = "catwalk_plated_smooth"
+	merge_type = /obj/item/stack/catwalk/plated/textured
+	catwalk_type = /obj/structure/lattice/catwalk/plated/textured
+
 /obj/item/stack/catwalk/swarmer
 	name = "swarmer catwalk rods"
 	singular_name = "swarmer catwalk rod"
