@@ -44,6 +44,23 @@
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
+	setDir(dir)
+
+/obj/machinery/shower/setDir(newdir)
+	. = ..()
+	switch(dir)
+		if(NORTH)
+			pixel_x = 0
+			pixel_y = 24
+		if(SOUTH)
+			pixel_x = 0
+			pixel_y = 0
+		if(EAST)
+			pixel_x = 0
+			pixel_y = 0
+		if(WEST)
+			pixel_x = 0
+			pixel_y = 0
 
 /obj/machinery/shower/examine(mob/user)
 	. = ..()
@@ -186,6 +203,18 @@
 		L.adjustFireLoss(5)
 		to_chat(L, SPAN_DANGER("[src] is searing!"))
 
+/obj/machinery/shower/directional/north
+	pixel_y = 24
+	dir = NORTH
+
+/obj/machinery/shower/directional/south
+	dir = SOUTH
+
+/obj/machinery/shower/directional/east
+	dir = EAST
+
+/obj/machinery/shower/directional/west
+	dir = WEST
 
 /obj/structure/showerframe
 	name = "shower frame"
