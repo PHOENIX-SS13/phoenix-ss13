@@ -84,7 +84,7 @@
 //Window
 /obj/structure/window/shuttle/survival_pod
 	name = "pod window"
-	icon = 'icons/obj/smooth_structures/window_reinforced.dmi'
+	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#363636"

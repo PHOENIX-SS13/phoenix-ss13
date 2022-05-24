@@ -628,10 +628,10 @@
 	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	color = "#AFD3E6"
+	color = "#9bbad4"
 	greyscale_config = /datum/greyscale_config/fulltile_window
-	greyscale_colors = "#AFD3E6"
-	alpha = 180
+	greyscale_colors = "#9bbad4"
+	alpha = 150
 	max_integrity = 50
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
@@ -647,10 +647,10 @@
 	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	color = "#c162ec"
+	color = "#be0afa"
 	greyscale_config = /datum/greyscale_config/fulltile_window
-	greyscale_colors = "#c162ec"
-	alpha = 180
+	greyscale_colors = "#B90DF2"
+	alpha = 150
 	max_integrity = 300
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
@@ -663,13 +663,13 @@
 	anchored = FALSE
 
 /obj/structure/window/plasma/reinforced/fulltile
-	icon = 'icons/obj/smooth_structures/window_reinforced.dmi'
+	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	color = "#c162ec"
-	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
-	greyscale_colors = "#c162ec"
-	alpha = 180
+	color = "#8a09b5"
+	greyscale_config = /datum/greyscale_config/fulltile_window
+	greyscale_colors = "#B90DF2"
+	alpha = 150
 	state = RWINDOW_SECURE
 	max_integrity = 500
 	fulltile = TRUE
@@ -684,13 +684,13 @@
 	state = WINDOW_OUT_OF_FRAME
 
 /obj/structure/window/reinforced/fulltile
-	icon = 'icons/obj/smooth_structures/window_reinforced.dmi'
+	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	color = "#AFD3E6"
-	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
-	greyscale_colors = "#AFD3E6"
-	alpha = 180
+	color = "#829eb5"
+	greyscale_config = /datum/greyscale_config/fulltile_window
+	greyscale_colors = "#829eb5"
+	alpha = 150
 	max_integrity = 150
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
@@ -711,7 +711,7 @@
 	color = "#3b5461"
 	greyscale_config = /datum/greyscale_config/fulltile_window
 	greyscale_colors = "#3b5461"
-	alpha = 180
+	alpha = 150
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	smoothing_flags = SMOOTH_BITMASK
@@ -726,13 +726,13 @@
 /obj/structure/window/shuttle
 	name = "shuttle window"
 	desc = "A reinforced, air-locked pod window."
-	icon = 'icons/obj/smooth_structures/window_reinforced.dmi'
+	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#D0CBD4"
 	greyscale_config = /datum/greyscale_config/fulltile_window
 	greyscale_colors = "#D0CBD4"
-	alpha = 180
+	alpha = 150
 	max_integrity = 150
 	wtype = "shuttle"
 	fulltile = TRUE
@@ -761,13 +761,13 @@
 /obj/structure/window/plasma/reinforced/plastitanium
 	name = "plastitanium window"
 	desc = "A durable looking window made of an alloy of of plasma and titanium."
-	icon = 'icons/obj/smooth_structures/window_reinforced.dmi'
+	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#D0CBD4"
-	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
+	greyscale_config = /datum/greyscale_config/fulltile_window
 	greyscale_colors = "#D0CBD4"
-	alpha = 180
+	alpha = 150
 	max_integrity = 600
 	wtype = "shuttle"
 	fulltile = TRUE
@@ -879,13 +879,13 @@
 	anchored = FALSE
 
 /obj/structure/window/bronze/fulltile
-	icon = 'icons/obj/smooth_structures/window_reinforced.dmi'
+	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
 	color = "#92661A"
-	greyscale_config = /datum/greyscale_config/fulltile_reinforced_window
+	greyscale_config = /datum/greyscale_config/fulltile_window
 	greyscale_colors = "#92661A"
-	alpha = 180
+	alpha = 150
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTERS_BLASTDOORS)
