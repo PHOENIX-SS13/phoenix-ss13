@@ -1,0 +1,7 @@
+author: Azarak
+changes:
+- rscadd: Added interaction hints to examine of showers
+- rscadd: You can now deconstruct showers, and you&#x27;ll get back their full parts
+    too
+merge-date: 2022-05-24
+prnumber: 953
