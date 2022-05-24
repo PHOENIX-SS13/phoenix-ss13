@@ -16,14 +16,6 @@
 	/// Associative to TRUE list of dock id's that this template can fit into
 	var/allowed_docks = list()
 
-/datum/sold_shuttle/mining_common
-	name = "Small Travel Shuttle"
-	desc = "Small shuttle fitted for up to 4 people. Perfect for travel, but not much else"
-	detailed_desc = "It's small sized and it's equipped with 1 burst engine"
-	cost = 5000
-	shuttle_id = "mining_common_meta"
-	allowed_docks = list(DOCKS_SMALL_UPWARDS)
-
 /datum/sold_shuttle/vulture
 	name = "MS Vulture"
 	desc = "A medium sized mining shuttle, equipped with a living quarter."
