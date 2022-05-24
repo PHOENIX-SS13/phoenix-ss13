@@ -108,10 +108,10 @@
 
 /datum/bought_goods/space_carp
 	name = "space carps"
-	cost = 400
+	cost = 200
 	trading_types = list(/mob/living/simple_animal/hostile/carp = TRADER_TYPES)
 
 /datum/bought_goods/goliath
 	name = "goliaths"
-	cost = 500
+	cost = 250
 	trading_types = list(/mob/living/simple_animal/hostile/asteroid/goliath = TRADER_TYPES)
