@@ -695,7 +695,7 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/bully2.ogg'\
 		)
 	///The reference to the end of round sound that we have chosen.
-	var/sound/end_of_round_sound_ref = sound(round_end_sound)
+	var/sound/end_of_round_sound_ref = sound(round_end_sound, volume = LOG_AUDIOVOLUME(50))
 	for(var/mob/M in GLOB.player_list)
 		if(M.client.prefs?.toggles & SOUND_ENDOFROUND)
 			SEND_SOUND(M.client, end_of_round_sound_ref)
