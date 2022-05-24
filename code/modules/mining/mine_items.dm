@@ -75,6 +75,7 @@
 	shuttleId = "mining"
 	possible_destinations = "mining_home;mining_away;landing_zone_dock;mining_public;hugedock;largedock;mediumdock;smalldock"
 	no_destination_swap = TRUE
+	uses_overmap = FALSE
 	var/static/list/dumb_rev_heads = list()
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
@@ -91,6 +92,7 @@
 	circuit = /obj/item/circuitboard/computer/mining_shuttle/common
 	shuttleId = "mining_common"
 	possible_destinations = "commonmining_home;lavaland_common_away;landing_zone_dock;mining_public;hugedock;largedock;mediumdock;smalldock"
+	uses_overmap = FALSE
 
 /**********************Mining car (Crate like thing, not the rail car)**************************/
 
