@@ -91,7 +91,7 @@
 	emporium_action.Grant(owner.current)
 
 /datum/antagonist/changeling/on_gain()
-	if(give_objectives)
+	if(give_objectives && !uses_ambitions)
 		forge_objectives()
 	owner.current.grant_all_languages(FALSE, FALSE, TRUE) //Grants omnitongue. We are able to transform our body after all.
 	. = ..()
@@ -408,9 +408,72 @@
 	//OBJECTIVES - random traitor objectives. Unique objectives "steal brain" and "identity theft".
 	//No escape alone because changelings aren't suited for it and it'd probably just lead to rampant robusting
 	//If it seems like they'd be able to do it in play, add a 10% chance to have to escape alone
+	var/escape_objective_possible = TRUE
 
-	objectives += new /datum/objective/ambitions()
+	switch(competitive_objectives ? rand(1,3) : 1)
+		if(1)
+			var/datum/objective/absorb/absorb_objective = new
+			absorb_objective.owner = owner
+			absorb_objective.gen_amount_goal(6, 8)
+			objectives += absorb_objective
+		if(2)
+			var/datum/objective/absorb_most/ac = new
+			ac.owner = owner
+			objectives += ac
+		if(3)
+			var/datum/objective/absorb_changeling/ac = new
+			ac.owner = owner
+			objectives += ac
 
+	if(prob(60))
+		if(prob(85))
+			var/datum/objective/steal/steal_objective = new
+			steal_objective.owner = owner
+			steal_objective.find_target()
+			objectives += steal_objective
+		else
+			var/datum/objective/download/download_objective = new
+			download_objective.owner = owner
+			download_objective.gen_amount_goal()
+			objectives += download_objective
+
+	var/list/active_ais = active_ais()
+	if(active_ais.len && prob(100/GLOB.joined_player_list.len))
+		var/datum/objective/destroy/destroy_objective = new
+		destroy_objective.owner = owner
+		destroy_objective.find_target()
+		objectives += destroy_objective
+	else
+		if(prob(70))
+			var/datum/objective/assassinate/kill_objective = new
+			kill_objective.owner = owner
+			kill_objective.find_target()
+			objectives += kill_objective
+		else
+			var/datum/objective/maroon/maroon_objective = new
+			maroon_objective.owner = owner
+			maroon_objective.find_target()
+			objectives += maroon_objective
+
+			if (!(locate(/datum/objective/escape) in objectives) && escape_objective_possible)
+				var/datum/objective/escape/escape_with_identity/identity_theft = new
+				identity_theft.owner = owner
+				identity_theft.target = maroon_objective.target
+				identity_theft.update_explanation_text()
+				objectives += identity_theft
+				escape_objective_possible = FALSE
+
+	if (!(locate(/datum/objective/escape) in objectives) && escape_objective_possible)
+		if(prob(50))
+			var/datum/objective/escape/escape_objective = new
+			escape_objective.owner = owner
+			objectives += escape_objective
+		else
+			var/datum/objective/escape/escape_with_identity/identity_theft = new
+			identity_theft.owner = owner
+			identity_theft.find_target()
+			objectives += identity_theft
+		escape_objective_possible = FALSE
 
 /datum/antagonist/changeling/admin_add(datum/mind/new_owner,mob/admin)
 	. = ..()

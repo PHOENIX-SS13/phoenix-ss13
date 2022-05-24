@@ -39,7 +39,7 @@
 
 /datum/antagonist/traitor/on_gain()
 	owner.special_role = job_rank
-	if(give_objectives)
+	if(give_objectives && !uses_ambitions)
 		forge_traitor_objectives()
 
 	equip()
@@ -63,8 +63,6 @@
 
 /// Generates a complete set of traitor objectives up to the traitor objective limit, including non-generic objectives such as martyr and hijack.
 /datum/antagonist/traitor/proc/forge_traitor_objectives()
-	objectives.Add(new /datum/objective/ambitions())
-
 	var/is_hijacker = FALSE
 	var/objective_count = 0
 
