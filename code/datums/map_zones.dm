@@ -498,7 +498,11 @@
 	return locate(round((low_x + high_x) / 2), round((low_y + high_y) / 2), z_value)
 
 /datum/virtual_level/proc/get_random_position()
-	return locate(rand(low_x, high_x), rand(low_y, high_y), z_value)
+	return locate(
+		rand(low_x + reserved_margin, high_x - reserved_margin),
+		rand(low_y + reserved_margin, high_y - reserved_margin),
+		z_value
+		)
 
 /datum/virtual_level/proc/get_below_turf(turf/Turf)
 	if(!down_linkage)

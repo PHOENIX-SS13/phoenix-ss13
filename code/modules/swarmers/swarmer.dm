@@ -228,7 +228,7 @@
 	teleport_target(target)
 
 /mob/living/simple_animal/hostile/swarmer/proc/teleport_target(mob/living/target)
-	var/turf/open/floor/safe_turf = find_safe_turf(zlevels = z, extended_safety_checks = TRUE)
+	var/turf/open/floor/safe_turf = find_safe_turf(get_virtual_level(), extended_safety_checks = TRUE)
 
 	if(!safe_turf )
 		return

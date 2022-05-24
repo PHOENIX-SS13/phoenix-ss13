@@ -37,6 +37,8 @@
 		// if there are any chasms and lava on stations in the future, woah
 		var/turf/current_turf = get_turf(dog)
 		var/turf/adventure_turf = find_safe_turf(extended_safety_checks = TRUE, dense_atoms = FALSE)
+		if(!adventure_turf)
+			return
 
 		// Poof!
 		do_smoke(location=current_turf)

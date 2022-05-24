@@ -60,7 +60,9 @@
 	return ..()
 
 /obj/item/melee/sickly_blade/attack_self(mob/user)
-	var/turf/safe_turf = find_safe_turf(zlevels = z, extended_safety_checks = TRUE)
+	var/turf/safe_turf = find_safe_turf(get_virtual_level(), extended_safety_checks = TRUE)
+	if(!safe_turf)
+		return
 	if(IS_HERETIC(user) || IS_HERETIC_MONSTER(user))
 		if(do_teleport(user, safe_turf, forceMove = TRUE, channel = TELEPORT_CHANNEL_MAGIC))
 			to_chat(user,SPAN_WARNING("As you shatter [src], you feel a gust of energy flow through your body. The Rusted Hills heard your call..."))

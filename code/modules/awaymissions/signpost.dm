@@ -5,19 +5,17 @@
 	anchored = TRUE
 	density = TRUE
 	var/question = "Travel back?"
-	var/list/zlevels
 
 /obj/structure/signpost/Initialize()
 	. = ..()
 	set_light(2)
-	//zlevels = SSmapping.levels_by_trait(ZTRAIT_STATION)
 
 /obj/structure/signpost/interact(mob/user)
 	. = ..()
 	if(.)
 		return
 	if(tgui_alert(usr,question,name,list("Yes","No")) == "Yes" && Adjacent(user))
-		var/turf/T = find_safe_turf(zlevels=zlevels)
+		var/turf/T = find_safe_turf()
 
 		if(T)
 			var/atom/movable/AM = user.pulling
@@ -56,18 +54,3 @@
 	name = "\proper salvation"
 	desc = "In the darkest times, we will find our way home."
 	resistance_flags = INDESTRUCTIBLE
-
-/obj/structure/signpost/exit
-	name = "exit"
-	desc = "Make sure to bring all your belongings with you when you \
-		exit the area."
-	question = "Leave? You might never come back."
-
-/obj/structure/signpost/exit/Initialize()
-	. = ..()
-	zlevels = list()
-	for(var/i in 1 to world.maxz)
-		zlevels += i
-	//zlevels -= SSmapping.levels_by_trait(ZTRAIT_CENTCOM) // no easy victory, even with meme signposts
-	// also, could you think of the horror if they ended up in a holodeck
-	// template or something

@@ -189,8 +189,7 @@
 /obj/item/gun/magic/wand/safety/zap_self(mob/living/user)
 	var/turf/origin = get_turf(user)
 	var/turf/destination = find_safe_turf()
-
-	if(do_teleport(user, destination, channel=TELEPORT_CHANNEL_MAGIC))
+	if(destination && do_teleport(user, destination, channel=TELEPORT_CHANNEL_MAGIC))
 		for(var/t in list(origin, destination))
 			var/datum/effect_system/smoke_spread/smoke = new
 			smoke.set_up(0, t)

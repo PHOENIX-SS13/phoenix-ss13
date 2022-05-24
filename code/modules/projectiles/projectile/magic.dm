@@ -100,7 +100,7 @@
 	var/turf/origin_turf = get_turf(target)
 	var/turf/destination_turf = find_safe_turf()
 
-	if(do_teleport(target, destination_turf, channel=TELEPORT_CHANNEL_MAGIC))
+	if(destination_turf && do_teleport(target, destination_turf, channel=TELEPORT_CHANNEL_MAGIC))
 		for(var/t in list(origin_turf, destination_turf))
 			var/datum/effect_system/smoke_spread/smoke = new
 			smoke.set_up(0, t)

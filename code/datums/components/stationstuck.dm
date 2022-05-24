@@ -14,7 +14,7 @@ It has a punishment variable that is what happens to the parent when they leave 
 /datum/component/stationstuck
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 	var/punishment = PUNISHMENT_GIB //see defines above
-	var/stuck_zlevel
+	var/datum/virtual_level/stuck_vlevel
 	var/message = ""
 
 /datum/component/stationstuck/Initialize(_punishment = PUNISHMENT_GIB, _message = "")
@@ -24,7 +24,7 @@ It has a punishment variable that is what happens to the parent when they leave 
 	RegisterSignal(L, list(COMSIG_MOVABLE_Z_CHANGED), .proc/punish)
 	punishment = _punishment
 	message = _message
-	stuck_zlevel = L.z
+	stuck_vlevel = L.get_virtual_level()
 
 /datum/component/stationstuck/InheritComponent(datum/component/stationstuck/newc, original, _punishment, _message)
 	if(newc)
@@ -56,7 +56,6 @@ It has a punishment variable that is what happens to the parent when they leave 
 		if(PUNISHMENT_GIB)
 			L.gib()
 		if(PUNISHMENT_TELEPORT)
-			var/targetturf = find_safe_turf(stuck_zlevel)
+			var/targetturf = find_safe_turf(stuck_vlevel)
 			if(!targetturf)
-				targetturf = locate(world.maxx/2,world.maxy/2,stuck_zlevel)
-			L.forceMove(targetturf)
+				L.forceMove(targetturf)

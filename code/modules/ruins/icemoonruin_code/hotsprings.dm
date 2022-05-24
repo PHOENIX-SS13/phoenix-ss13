@@ -45,8 +45,9 @@ GLOBAL_LIST_EMPTY(cursed_minds)
 			H.dna.unique_enzymes = H.dna.generate_unique_enzymes()
 			L = H
 	var/turf/T = find_safe_turf()
-	L.forceMove(T)
-	to_chat(L, SPAN_NOTICE("You blink and find yourself in [get_area_name(T)]."))
+	if(T)
+		L.forceMove(T)
+		to_chat(L, SPAN_NOTICE("You blink and find yourself in [get_area_name(T)]."))
 
 /**
  * Deletes minds from the cursed minds list after their deletion

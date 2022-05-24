@@ -94,19 +94,17 @@
 			effect.start()
 
 // Safe location finder
-/proc/find_safe_turf(zlevel, list/zlevels, extended_safety_checks = FALSE, dense_atoms = TRUE)
-	if(!zlevels)
-		if (zlevel)
-			zlevels = list(zlevel)
+/proc/find_safe_turf(datum/virtual_level/vlevel, list/vlevels, extended_safety_checks = FALSE, dense_atoms = TRUE)
+	if(!vlevels)
+		if (vlevel)
+			vlevels = list(vlevel)
 		else
-			zlevels = SSmapping.virtual_levels_by_trait(ZTRAIT_STATION)
+			vlevels = SSmapping.virtual_levels_by_trait(ZTRAIT_STATION)
 	var/cycles = 1000
 	for(var/cycle in 1 to cycles)
 		// DRUNK DIALLING WOOOOOOOOO
-		var/x = rand(1, world.maxx)
-		var/y = rand(1, world.maxy)
-		var/z = pick(zlevels)
-		var/random_location = locate(x,y,z)
+		var/datum/virtual_level/picked_vlevel = pick(vlevels)
+		var/random_location = picked_vlevel.get_random_position()
 
 		if(!isfloorturf(random_location))
 			continue

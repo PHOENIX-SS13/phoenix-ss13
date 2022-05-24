@@ -28,7 +28,9 @@
 				if(ishuman(living_cheaterson))
 					shake_camera(living_cheaterson, 20, 1)
 					addtimer(CALLBACK(living_cheaterson, /mob/living/carbon.proc/vomit), 2 SECONDS)
-			phasing_in.forceMove(find_safe_turf(z))
+			var/turf/found_turf = find_safe_turf(get_virtual_level())
+			if(found_turf)
+				phasing_in.forceMove(found_turf)
 	return ..()
 
 /obj/effect/dummy/phased_mob/ex_act()
