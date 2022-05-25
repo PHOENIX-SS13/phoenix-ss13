@@ -1,0 +1,6 @@
+author: Azarak
+changes:
+- balance: Less synthflesh amount to unhusk someone
+- bugfix: Precision error shouldn&#x27;t prevent you from unhusking a person
+merge-date: 2022-05-25
+prnumber: 962
