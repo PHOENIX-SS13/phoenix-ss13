@@ -61,7 +61,15 @@
 	flavor_text = "A plant-based lifeform that does well in suitably-lit environments. Feeds off of light and plants, but shies away from meat and dairy. Over-exposure to light may cause issues with their metabolism."
 	limbs_id = "pod"
 	species_traits = list(MUTCOLORS,EYECOLOR, HAS_FLESH, HAS_BONE, HAIR, FACEHAIR)
-	default_mutant_bodyparts = list()
+	default_mutant_bodyparts = list(
+		"tail" = "None",
+		"snout" = "None",
+		"horns" = "None",
+		"ears" = "None",
+		"taur" = "None",
+		"wings" = "None",
+		"neck" = "None"
+		)
 
 	cultures = list(CULTURES_EXOTIC, CULTURES_HUMAN)
 	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN)
