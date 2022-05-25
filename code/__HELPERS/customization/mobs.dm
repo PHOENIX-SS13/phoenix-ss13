@@ -13,7 +13,12 @@
 
 /proc/random_accessory_of_key_for_species(key, datum/species/S, mismatched=FALSE, ckey)
 	var/list/accessory_list = accessory_list_of_key_for_species(key, S, mismatched, ckey)
-	var/datum/sprite_accessory/SP = GLOB.sprite_accessories[key][pick(accessory_list)]
+	var/datum/sprite_accessory/SP
+	if(length(accessory_list))
+		SP = GLOB.sprite_accessories[key][pick(accessory_list)]
+	// Try and default the choice to "None" if nothing was found
+	if(!SP)
+		SP = GLOB.sprite_accessories[key]["None"]
 	if(!SP)
 		CRASH("Cant find random accessory of [key] key, for species [S.id]")
 	return SP

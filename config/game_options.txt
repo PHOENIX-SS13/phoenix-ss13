@@ -393,6 +393,7 @@ ROUNDSTART_RACES vox
 ROUNDSTART_RACES aquatic
 ROUNDSTART_RACES insect
 ROUNDSTART_RACES teshari
+ROUNDSTART_RACES synthanthro
 
 ##-------------------------------------------------------------------------------------------
 

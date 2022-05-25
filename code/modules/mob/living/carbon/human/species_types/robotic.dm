@@ -146,3 +146,71 @@
 	if(BMS)
 		markings = assemble_body_markings_from_set(BMS, passed_features, src)
 	return markings
+
+/datum/species/robotic/synth_anthro
+	name = "Synthetic Anthromorph"
+	id = "synthanthro"
+	flavor_text = "A robotic lifeform. This model is designed to appear similar to anthromorphs. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
+	species_traits = list(
+		ROBOTIC_DNA_ORGANS,
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAIR,
+		ROBOTIC_LIMBS,
+		NOTRANSSTING,
+		REVIVES_BY_HEALING
+		)
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"horns" = "None",
+		"ears" = ACC_RANDOM,
+		"legs" = ACC_RANDOM,
+		"taur" = "None",
+		"wings" = "None",
+		"neck" = "None"
+		)
+	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	limbs_id = "mammal"
+
+// Somewhat of a paste from the mammal's random features, because they're supposed to mimick them in appearance.
+/datum/species/robotic/synth_anthro/get_random_features()
+	var/list/returned = MANDATORY_FEATURE_LIST
+	var/main_color
+	var/second_color
+	var/third_color
+	var/random = rand(1,7)
+	switch(random)
+		if(1)
+			main_color = "FFFFFF"
+			second_color = "333333"
+			third_color = "333333"
+		if(2)
+			main_color = "FFFFDD"
+			second_color = "DD6611"
+			third_color = "AA5522"
+		if(3)
+			main_color = "DD6611"
+			second_color = "FFFFFF"
+			third_color = "DD6611"
+		if(4)
+			main_color = "CCCCCC"
+			second_color = "FFFFFF"
+			third_color = "FFFFFF"
+		if(5)
+			main_color = "AA5522"
+			second_color = "CC8833"
+			third_color = "FFFFFF"
+		if(6)
+			main_color = "FFFFDD"
+			second_color = "FFEECC"
+			third_color = "FFDDBB"
+		if(7) //Oh no you've rolled the sparkle dog
+			main_color = random_color()
+			second_color = random_color()
+			third_color = random_color()
+	returned["mcolor"] = main_color
+	returned["mcolor2"] = second_color
+	returned["mcolor3"] = third_color
+	return returned
