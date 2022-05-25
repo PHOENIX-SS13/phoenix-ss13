@@ -370,12 +370,33 @@
 	STR.set_holdable(null, list(/obj/item/storage/backpack/satchel/flat)) //muh recursive backpacks)
 
 /obj/item/storage/backpack/satchel/flat/PopulateContents()
-	var/datum/supply_pack/costumes_toys/randomised/contraband/C = new
+	var/list/contraband_list = list(
+		/obj/item/clothing/suit/armor/vest/durathread,
+		/obj/item/clothing/under/syndicate/bloodred,
+		/obj/item/clothing/under/syndicate/bloodred/sleepytime,
+		/obj/item/clothing/under/syndicate/combat,
+		/obj/item/clothing/shoes/combat/sneakboots,
+		/obj/item/clothing/shoes/bhop/rocket,
+		/obj/item/clothing/mask/gas/syndicate,
+		/obj/item/clothing/gloves/tackler/combat,
+		/obj/item/storage/belt/military,
+		/obj/item/storage/pill_bottle/zoom,
+		/obj/item/storage/pill_bottle/happy,
+		/obj/item/storage/pill_bottle/aranesp,
+		/obj/item/storage/pill_bottle/stimulant,
+		/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
+		/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+		/obj/item/storage/belt/holster,
+		/obj/item/pda/clear,
+		/obj/item/wrench/caravan,
+		/obj/item/wirecutters/caravan,
+		/obj/item/screwdriver/caravan,
+		/obj/item/crowbar/red/caravan,
+		/obj/item/switchblade,
+	)
 	for(var/i in 1 to 2)
-		var/ctype = pick(C.contains)
-		new ctype(src)
-
-	qdel(C)
+		var/contraband_type = pick(contraband_list)
+		new contraband_type(src)
 
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/iron/base(src)
