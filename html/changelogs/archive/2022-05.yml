@@ -73,6 +73,33 @@
   Deek-Za (Deek-Za):
   - bugfix: '&#x27;Internal&#x27; option now appropriately hides the organ from examination'
 2022-05-24:
+  Alex 'Avunia' Takiya (atakiya):
+  - soundadd: Added logarithmic audio volume
+  - qol: Lobbymusic now uses logarithmic audio volume at 30% - tune in!
+  - qol: Roundend music now uses the same volume as the lobby music (30% instead of
+      40%)
+  - qol: Roundend sound effects are now quieter
   Azarak:
   - rscadd: New windows sprites
   - rscdel: Mining shuttles no longer use the overmap
+  - bugfix: Fixes find_safe_turf() and all its uses
+  - bugfix: fFixes gravity from disabled gravity generators
+  - bugfix: Fixes up ambitions and antag normal objectives
+  - rscdel: You can no longer purchase the mining shuttle from the shuttle purchase
+      console
+  - rscadd: Added interaction hints to examine of showers
+  - rscadd: You can now deconstruct showers, and you&#x27;ll get back their full parts
+      too
+  - imageadd: Plated catwalks now have new icons which fit the current flooring icons,
+      there is also a new variant for the brighter &quot;textured&quot; flooring.
+  - balance: Mice can&#x27;t chew wires that are on tiles with catwalks.
+  - bugfix: Proper dir offsets and mapping types for bathroom objects
+  - bugfix: Ruin levels now have a reserved margin, you no longer will get &quot;stickied&quot;
+      to its edges
+  - rscdel: Removes scientist drunk lines
+  - bugfix: Emissive blockers no longer are in atom contents
+  - rscadd: Some trading tweaks
+  - balance: Removes access restrictions from using the Science Hub app
+  Emilitia Ennehrt (EmilitiaEnnehrt):
+  - rscadd: Added new options in the character creation loadout
+  - balance: Changed price cost for some loadout clothing

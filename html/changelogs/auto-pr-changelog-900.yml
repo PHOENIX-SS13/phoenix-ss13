@@ -1,8 +1,0 @@
-author: Alex 'Avunia' Takiya (atakiya)
-changes:
-- soundadd: Added logarithmic audio volume
-- qol: Lobbymusic now uses logarithmic audio volume at 30% - tune in!
-- qol: Roundend music now uses the same volume as the lobby music (30% instead of
-    40%)
-merge-date: 2022-05-24
-prnumber: 900

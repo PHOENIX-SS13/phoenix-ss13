@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Ruin levels now have a reserved margin, you no longer will get &quot;stickied&quot;
-    to its edges
-merge-date: 2022-05-24
-prnumber: 956

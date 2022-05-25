@@ -1,7 +1,0 @@
-author: Azarak
-changes:
-- imageadd: Plated catwalks now have new icons which fit the current flooring icons,
-    there is also a new variant for the brighter &quot;textured&quot; flooring.
-- balance: Mice can&#x27;t chew wires that are on tiles with catwalks.
-merge-date: 2022-05-24
-prnumber: 942

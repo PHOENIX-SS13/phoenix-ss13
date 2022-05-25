@@ -1,5 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Fixes find_safe_turf() and all its uses
-merge-date: 2022-05-24
-prnumber: 949
