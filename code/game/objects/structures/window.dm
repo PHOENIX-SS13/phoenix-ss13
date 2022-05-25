@@ -729,9 +729,9 @@
 	icon = 'icons/obj/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	color = "#D0CBD4"
+	color = "#A6A2A9"
 	greyscale_config = /datum/greyscale_config/fulltile_window
-	greyscale_colors = "#D0CBD4"
+	greyscale_colors = "#A6A2A9"
 	alpha = 150
 	max_integrity = 150
 	wtype = "shuttle"
