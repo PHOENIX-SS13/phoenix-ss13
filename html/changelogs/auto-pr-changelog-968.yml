@@ -1,0 +1,6 @@
+author: Azarak
+changes:
+- bugfix: Ruins will no longer cut every flora and monster in their viscinity when
+    spawned.
+merge-date: 2022-05-25
+prnumber: 968
