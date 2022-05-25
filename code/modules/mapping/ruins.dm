@@ -25,16 +25,7 @@
 
 		testing("Ruin \"[name]\" placed at ([central_turf.x], [central_turf.y], [central_turf.z])")
 
-		for(var/i in get_affected_turfs(central_turf, 1))
-			var/turf/T = i
-			for(var/obj/structure/spawner/nest in T)
-				qdel(nest)
-			for(var/mob/living/simple_animal/monster in T)
-				qdel(monster)
-			for(var/obj/structure/flora/plant in T)
-				qdel(plant)
-
-		load(central_turf,centered = TRUE)
+		load(central_turf,centered = TRUE, clear_existing_turfs = TRUE)
 		loaded++
 
 		for(var/turf/T in get_affected_turfs(central_turf, 1))

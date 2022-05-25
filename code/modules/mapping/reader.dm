@@ -133,14 +133,14 @@
 	parsed_bounds = bounds
 
 /// Load the parsed map into the world. See [/proc/load_map] for arguments.
-/datum/parsed_map/proc/load(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop)
+/datum/parsed_map/proc/load(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop, clear_existing_turfs = FALSE)
 	//How I wish for RAII
 	Master.StartLoadingMap()
-	. = _load_impl(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop)
+	. = _load_impl(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop, clear_existing_turfs)
 	Master.StopLoadingMap()
 
 // Do not call except via load() above.
-/datum/parsed_map/proc/_load_impl(x_offset = 1, y_offset = 1, z_offset = world.maxz + 1, cropMap = FALSE, no_changeturf = FALSE, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper = INFINITY, placeOnTop = FALSE)
+/datum/parsed_map/proc/_load_impl(x_offset = 1, y_offset = 1, z_offset = world.maxz + 1, cropMap = FALSE, no_changeturf = FALSE, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper = INFINITY, placeOnTop = FALSE, clear_existing_turfs)
 	PRIVATE_PROC(TRUE)
 	var/list/areaCache = list()
 	var/list/modelCache = build_cache(no_changeturf)
@@ -187,7 +187,7 @@
 							var/list/cache = modelCache[model_key]
 							if(!cache)
 								CRASH("Undefined model key in DMM: [model_key]")
-							build_coordinate(areaCache, cache, locate(xcrd, ycrd, zcrd), no_afterchange, placeOnTop)
+							build_coordinate(areaCache, cache, locate(xcrd, ycrd, zcrd), no_afterchange, placeOnTop, clear_existing_turfs)
 
 							// only bother with bounds that actually exist
 							bounds[MAP_MINX] = min(bounds[MAP_MINX], xcrd)
@@ -298,7 +298,7 @@
 
 		.[model_key] = list(members, members_attributes)
 
-/datum/parsed_map/proc/build_coordinate(list/areaCache, list/model, turf/crds, no_changeturf as num, placeOnTop as num)
+/datum/parsed_map/proc/build_coordinate(list/areaCache, list/model, turf/crds, no_changeturf, placeOnTop, clear_existing_turfs)
 	var/index
 	var/list/members = model[1]
 	var/list/members_attributes = model[2]
@@ -343,6 +343,9 @@
 		T = instance_atom(members[first_turf_index],members_attributes[first_turf_index],crds,no_changeturf,placeOnTop)
 
 	if(T)
+		// Clear existing turf if we got passed the argument for that.
+		if(clear_existing_turfs)
+			clear_turf(T)
 		//if others /turf are presents, simulates the underlays piling effect
 		index = first_turf_index + 1
 		while(index <= members.len - 1) // Last item is an /area
