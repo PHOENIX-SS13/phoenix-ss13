@@ -51,10 +51,10 @@
 	switch(dir)
 		if(NORTH)
 			pixel_x = 0
-			pixel_y = 24
+			pixel_y = 0
 		if(SOUTH)
 			pixel_x = 0
-			pixel_y = 0
+			pixel_y = 24
 		if(EAST)
 			pixel_x = 0
 			pixel_y = 0
@@ -215,11 +215,11 @@
 		to_chat(L, SPAN_DANGER("[src] is searing!"))
 
 /obj/machinery/shower/directional/north
-	pixel_y = 24
 	dir = NORTH
 
 /obj/machinery/shower/directional/south
 	dir = SOUTH
+	pixel_y = 24
 
 /obj/machinery/shower/directional/east
 	dir = EAST

@@ -453,10 +453,10 @@
 	switch(dir)
 		if(NORTH)
 			pixel_x = 0
-			pixel_y = 20
+			pixel_y = -5
 		if(SOUTH)
 			pixel_x = 0
-			pixel_y = -5
+			pixel_y = 20
 		if(EAST)
 			pixel_x = -15
 			pixel_y = 0
@@ -487,12 +487,12 @@
 /obj/structure/sink/directional/north
 	dir = NORTH
 	pixel_x = 0
-	pixel_y = 20
+	pixel_y = -5
 
 /obj/structure/sink/directional/south
 	dir = SOUTH
 	pixel_x = 0
-	pixel_y = -5
+	pixel_y = 20
 
 /obj/structure/sink/directional/east
 	dir = EAST
