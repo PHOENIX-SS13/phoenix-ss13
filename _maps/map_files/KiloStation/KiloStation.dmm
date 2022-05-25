@@ -11471,6 +11471,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/landmark/start/depsec/medical,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/security/checkpoint/medical)
 "aNn" = (
@@ -13785,6 +13786,7 @@
 	name = "Medbay Security Post";
 	req_access_txt = "63"
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/security/checkpoint/medical)
 "aSv" = (
@@ -32115,6 +32117,7 @@
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/security/checkpoint/medical)
 "cgN" = (
