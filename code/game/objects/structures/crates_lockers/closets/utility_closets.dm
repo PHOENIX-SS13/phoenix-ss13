@@ -26,6 +26,9 @@
 	if (prob(40))
 		new /obj/item/storage/toolbox/emergency(src)
 
+	if (prob(65))
+		new /obj/item/inflatable(src)
+
 	switch (pickweight(list("small" = 35, "aid" = 30, "tank" = 20, "both" = 10, "nothing" = 4, "delete" = 1)))
 		if ("small")
 			new /obj/item/tank/internals/emergency_oxygen(src)
@@ -119,6 +122,8 @@
 		new /obj/item/clothing/gloves/color/yellow(src)
 	if(prob(40))
 		new /obj/item/clothing/head/hardhat(src)
+	if(prob(10))
+		new /obj/item/inflatable(src)
 
 
 /*
