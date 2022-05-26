@@ -61,6 +61,7 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/radio,
 		/obj/item/clothing/gloves,
+		/obj/item/clothing/mask/gas,
 		/obj/item/holosign_creator/atmos,
 		/obj/item/holosign_creator/engineering,
 		/obj/item/forcefield_projector,
