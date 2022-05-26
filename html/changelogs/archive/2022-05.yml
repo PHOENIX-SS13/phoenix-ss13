@@ -103,3 +103,28 @@
   Emilitia Ennehrt (EmilitiaEnnehrt):
   - rscadd: Added new options in the character creation loadout
   - balance: Changed price cost for some loadout clothing
+2022-05-25:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscadd: Adds inflatable walls, please don&#x27;t puncture.
+  - imageadd: Added inflatable icons, ports from baystation12, CEV-Eris and space-station-14
+  Azarak:
+  - bugfix: Fixes directionals for showers and sinks
+  - qol: Large input box for subtler anti ghost
+  - rscadd: Adds sprite accessory customization to podpeople
+  - rscadd: Synthetic Anthromorphs
+  - bugfix: More sanity in randomizing sprite accessories
+  - bugfix: Ruins will no longer cut every flora and monster in their viscinity when
+      spawned.
+  - balance: Less synthflesh amount to unhusk someone
+  - bugfix: Precision error shouldn&#x27;t prevent you from unhusking a person
+  - balance: Makes storyteller events around 30% less frequent
+  - balance: Robotic humans no longer raise temperature when in crit
+  Deek-Za (Deek-Za):
+  - bugfix: Med Sec Checkpoint APC on Kilo now properly gains power
+  cacogen:
+  - balance: Cannabis has more believable effects
+2022-05-26:
+  drizzlemutt:
+  - rscadd: Hardened Soles quirk
+  - rscadd: Excitable quirk
+  - balance: allows gasmasks to be stored in toolbelts
