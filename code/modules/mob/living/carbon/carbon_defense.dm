@@ -474,11 +474,16 @@
 		to_chat(M, SPAN_NOTICE("You give [src] a pat on the head to make [p_them()] feel better!"))
 		to_chat(src, SPAN_NOTICE("[M] gives you a pat on the head to make you feel better! "))
 
+		if(HAS_TRAIT(src, TRAIT_EXCITABLE))
+			if(!dna.species.is_wagging_tail(src))
+				emote("wag")
+
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
 			to_chat(M, SPAN_WARNING("[src] looks visibly upset as you pat [p_them()] on the head."))
 		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		// Flavorful interactions have an early return because they dont actually try and help someone
 		return
+
 	// Try to help someone stand up.
 	else if(body_position == LYING_DOWN)
 		if(buckled)

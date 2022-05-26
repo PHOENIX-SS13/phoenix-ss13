@@ -287,3 +287,12 @@
 
 /datum/quirk/item_quirk/colorist/add_unique()
 	give_item_to_holder(/obj/item/dyespray, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
+
+/datum/quirk/excitable
+	name = "Excitable"
+	desc = "Head patting makes your tail wag! WAG WAG."
+	gain_text = "<span class='notice'>You crave for some headpats!</span>"
+	lose_text = "<span class='notice'>You no longer care for headpats all that much.</span>"
+	medical_record_text = "Patient seems to get excited easily."
+	value = 0
+	mob_trait = TRAIT_EXCITABLE
