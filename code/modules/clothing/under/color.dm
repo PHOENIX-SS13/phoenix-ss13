@@ -1,4 +1,5 @@
 /obj/item/clothing/under/color
+	name = "jumpsuit"
 	desc = "A standard issue colored jumpsuit. Variety is the spice of life!"
 	dying_key = DYE_REGISTRY_UNDER
 	greyscale_colors = "#3f3f3f"
@@ -14,6 +15,8 @@
 	worn_icon = 'icons/mob/clothing/under/color.dmi'
 
 /obj/item/clothing/under/color/jumpskirt
+	name = "jumpskirt"
+	desc = "A standard issue colored jumpskirt. Variety is the spice of life!"
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
