@@ -698,10 +698,12 @@
 		if(LAZYLEN(managed_vis_overlays))
 			SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 
-		var/list/new_overlays = update_overlays(updates)
+		// First clear managed overlays because atoms can be managing the appearance of their own overlays on updates.
 		if(managed_overlays)
 			cut_overlay(managed_overlays)
 			managed_overlays = null
+		// Then get the new overlays and apply them if any.
+		var/list/new_overlays = update_overlays(updates)
 		if(length(new_overlays))
 			if (length(new_overlays) == 1)
 				managed_overlays = new_overlays[1]
