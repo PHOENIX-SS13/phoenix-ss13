@@ -41,7 +41,7 @@
 
 	usr.emote("me",1,message,TRUE)
 
-/mob/verb/subtle_verb(message as text)
+/mob/verb/subtle_verb(message as message)
 	set name = "Subtle"
 	set category = "IC"
 	if(GLOB.say_disabled) //This is here to try to identify lag problems
