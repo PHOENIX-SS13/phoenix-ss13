@@ -1,0 +1,6 @@
+author: Azarak
+changes:
+- balance: Bad satiety increases your hunger by 25% instead of 200%.
+- bugfix: Hunger cost is no longer applied twice for being in run intent and moving
+merge-date: 2022-05-28
+prnumber: 1015
