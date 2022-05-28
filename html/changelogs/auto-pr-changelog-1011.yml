@@ -1,0 +1,8 @@
+author: drizzlemutt
+changes:
+- qol: rearranges Vulture cargo
+- qol: adds a glass door to Vulture helm
+- balance: adds a minifridge to the Vulture
+- bugfix: fixed APC connection issue
+merge-date: 2022-05-28
+prnumber: 1011
