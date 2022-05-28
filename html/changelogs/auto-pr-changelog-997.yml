@@ -1,5 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Observers dont go through a buggy do_after to appraise art objects
-merge-date: 2022-05-27
-prnumber: 997

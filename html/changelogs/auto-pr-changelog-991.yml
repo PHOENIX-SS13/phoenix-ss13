@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Fixes saunas heating way more than they should have, and now they properly
-    cap out at their intended temperature.
-merge-date: 2022-05-27
-prnumber: 991

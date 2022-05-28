@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Fixes overlay management conflict
-- bugfix: Booze machines will no longer apply indefinite amount of beaker overlays
-merge-date: 2022-05-27
-prnumber: 995

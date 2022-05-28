@@ -128,3 +128,26 @@
   - rscadd: Hardened Soles quirk
   - rscadd: Excitable quirk
   - balance: allows gasmasks to be stored in toolbelts
+2022-05-27:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscdel: Removed the scary message when spawning as your own character in a ghost
+      role
+  Azarak:
+  - imageadd: Terminals are now visually under catwalks
+  - bugfix: Fixes missing names for base jumpskirt and jumpsuit, and fixes improper
+      jumpskirt description
+  - qol: Larger input box for subtle emote
+  - bugfix: Observers dont go through a buggy do_after to appraise art objects
+  - bugfix: Fixes overlay management conflict
+  - bugfix: Booze machines will no longer apply indefinite amount of beaker overlays
+  - bugfix: Frills, ears, horns show up on robotic heads
+  - bugfix: Fixes saunas heating way more than they should have, and now they properly
+      cap out at their intended temperature.
+2022-05-28:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscdel: Removed braindamage forcing you to say random lines
+  - rscdel: Removed godwoken syndrome
+  - rscdel: Removed unintelligble speech trait, mutation now uses dumbness instead
+  - balance: Hermits now start with slightly better weapons.
+  - balance: Hermits on Ice Box Station won&#x27;t suffocate from smoke, or the cold
+      as easily anymore. (Mapping fixes)
