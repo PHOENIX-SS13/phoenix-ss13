@@ -443,7 +443,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
 	species_exception = list(/datum/species/golem/bone) //bad to the bone
 	worn_template_greyscale_color = "#2B2B2B"
-	
+
 /obj/item/clothing/suit/jacket/leather/overcoat
 	name = "leather overcoat"
 	desc = "That's a damn fine coat."
@@ -702,11 +702,35 @@
 	inhand_icon_state = "capspacesuit"
 	armor = list(MELEE = 25, BULLET = 15, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 
-/obj/item/clothing/suit/hawaiian
-	name = "hawaiian overshirt"
+/obj/item/clothing/suit/hawaiian_blue
+	name = "blue hawaiian overshirt"
 	desc = "A cool shirt for chilling on the beach."
 	icon_state = "hawaiian_blue"
 	inhand_icon_state = "hawaiian_blue"
+	species_exception = list(/datum/species/golem)
+	fitted_bodytypes = NONE
+
+/obj/item/clothing/suit/hawaiian_orange
+	name = "orange hawaiian overshirt"
+	desc = "A cool shirt for chilling on the beach."
+	icon_state = "hawaiian_orange"
+	inhand_icon_state = "hawaiian_orange"
+	species_exception = list(/datum/species/golem)
+	fitted_bodytypes = NONE
+
+/obj/item/clothing/suit/hawaiian_green
+	name = "green hawaiian overshirt"
+	desc = "A cool shirt for chilling on the beach."
+	icon_state = "hawaiian_green"
+	inhand_icon_state = "hawaiian_green"
+	species_exception = list(/datum/species/golem)
+	fitted_bodytypes = NONE
+
+/obj/item/clothing/suit/hawaiian_purple
+	name = "purple hawaiian overshirt"
+	desc = "A cool shirt for chilling on the beach."
+	icon_state = "hawaiian_purple"
+	inhand_icon_state = "hawaiian_purple"
 	species_exception = list(/datum/species/golem)
 	fitted_bodytypes = NONE
 

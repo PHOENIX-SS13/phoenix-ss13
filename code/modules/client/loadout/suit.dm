@@ -21,6 +21,18 @@
 /datum/loadout_item/suit/wornshirt
 	path = /obj/item/clothing/suit/wornshirt
 
+/datum/loadout_item/suit/hawaiian_blue
+	path = /obj/item/clothing/suit/hawaiian_blue
+
+/datum/loadout_item/suit/hawaiian_orange
+	path = /obj/item/clothing/suit/hawaiian_orange
+
+/datum/loadout_item/suit/hawaiian_green
+	path = /obj/item/clothing/suit/hawaiian_green
+
+/datum/loadout_item/suit/hawaiian_purple
+	path = /obj/item/clothing/suit/hawaiian_purple
+
 //COATS
 /datum/loadout_item/suit/coat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
