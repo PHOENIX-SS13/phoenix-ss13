@@ -521,6 +521,17 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	to_chat(usr, "<span class='infoplain'>You will [(prefs.toggles & SOUND_PRAYERS) ? "now" : "no longer"] hear a sound when prayers arrive.</span>")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Prayer Sounds", "[usr.client.prefs.toggles & SOUND_PRAYERS ? "Enabled" : "Disabled"]"))
 
+/client/proc/toggle_admin_looc()
+	set name = "Hear/Silence All LOOC Messages"
+	set category = "Preferences.Admin"
+	set desc = "Toggles hearing LOOC messages from all players"
+	if(!holder)
+		return
+	prefs.chat_toggles ^= CHAT_ADMIN_LOOC
+	prefs.save_preferences()
+	to_chat(usr, "<span class='infoplain'>You will [(prefs.chat_toggles & CHAT_ADMIN_LOOC) ? "now" : "no longer"] hear all LOOC messages.</span>")
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Global LOOC", "[prefs.chat_toggles & CHAT_ADMIN_LOOC ? "Enabled" : "Disabled"]"))
+
 /client/proc/colorasay()
 	set name = "Set Admin Say Color"
 	set category = "Preferences.Admin"

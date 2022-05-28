@@ -59,6 +59,7 @@
 #define SPAN_INFO(str) ("<span class='info'>" + str + "</span>")
 #define SPAN_INTERFACE(str) ("<span class='interface'>" + str + "</span>")
 #define SPAN_LOOC(str) ("<span class='looc'>" + str + "</span>")
+#define SPAN_ALOOC(str) ("<span class='alooc'>" + str + "</span>")
 #define SPAN_MEDAL(str) ("<span class='medal'>" + str + "</span>")
 #define SPAN_MEDRADIO(str) ("<span class='medradio'>" + str + "</span>")
 #define SPAN_MEMO(str) ("<span class='memo'>" + str + "</span>")

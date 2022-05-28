@@ -260,6 +260,7 @@ a.popt {
 .prefix,
 .ooc,
 .looc,
+.alooc,
 .adminooc,
 .admin,
 .medal,
@@ -924,4 +925,10 @@ h1.alert, h2.alert {
   margin-left: 3em;
 }
 
-.looc         {color: #6699CC;  font-weight: bold;}
+.looc {
+  color: #6699CC;
+}
+
+.alooc {
+  color: #3f71a3;
+}

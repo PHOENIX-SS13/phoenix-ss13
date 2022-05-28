@@ -1108,6 +1108,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Hide Dead Chat:</b> <a href = '?_src_=prefs;preference=toggle_dead_chat'>[(chat_toggles & CHAT_DEAD)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Hide Radio Messages:</b> <a href = '?_src_=prefs;preference=toggle_radio_chatter'>[(chat_toggles & CHAT_RADIO)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Hide Prayers:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Shown":"Hidden"]</a><br>"
+				dat += "<b>Hide Admin LOOC:</b> <a href='?_src_=prefs;preference=toggle_admin_looc'>[(chat_toggles & CHAT_ADMIN_LOOC) ? "Shown" : "Hidden"]</a><br/>"
 				dat += "<b>Split Admin Tabs:</b> <a href = '?_src_=prefs;preference=toggle_split_admin_tabs'>[(toggles & SPLIT_ADMIN_TABS)?"Enabled":"Disabled"]</a><br>"
 				dat += "<b>Ignore Being Summoned as Cult Ghost:</b> <a href = '?_src_=prefs;preference=toggle_ignore_cult_ghost'>[(toggles & ADMIN_IGNORE_CULT_GHOST)?"Don't Allow Being Summoned":"Allow Being Summoned"]</a><br>"
 				dat += "<b>Briefing Officer Outfit:</b> <a href = '?_src_=prefs;preference=briefoutfit;task=input'>[brief_outfit]</a><br>"
@@ -2565,6 +2566,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					toggles ^= SPLIT_ADMIN_TABS
 				if("toggle_prayers")
 					user.client.toggleprayers()
+				if("toggle_alooc")
+					user.client.toggle_admin_looc()
 				if("toggle_deadmin_always")
 					toggles ^= DEADMIN_ALWAYS
 				if("toggle_deadmin_antag")

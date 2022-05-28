@@ -243,6 +243,7 @@ a.popt {
 .prefix,
 .ooc,
 .looc,
+.alooc,
 .adminooc,
 .admin,
 .medal,
@@ -886,4 +887,10 @@ em {
   margin-left: 3em;
 }
 
-.looc         {color: #d8b555;}
+.looc {
+  color: #d8b555;
+}
+
+.alooc {
+  color: #b79741;
+}
