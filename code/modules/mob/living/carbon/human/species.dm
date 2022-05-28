@@ -249,6 +249,8 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	var/list/default_mutant_bodyparts = list()
 	///The type of our body. This is used for restricting wearing clothes
 	var/bodytype = BODYTYPE_HUMANOID
+	/// Bodytype variant used for when the species is snouted, for clothing.
+	var/snout_bodytype = BODYTYPE_DIGITIGRADE
 	/// Available cultural informations
 	var/list/cultures = list(CULTURES_EXOTIC, CULTURES_HUMAN)
 	var/list/locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN)
@@ -2473,7 +2475,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	if((item_slot == ITEM_SLOT_HEAD || item_slot == ITEM_SLOT_MASK) && mutant_bodyparts["snout"])
 		var/datum/sprite_accessory/snouts/snout_accessory = GLOB.sprite_accessories["snout"][mutant_bodyparts["snout"][MUTANT_INDEX_NAME]]
 		if(snout_accessory.use_muzzled_sprites)
-			perceived_bodytype = BODYTYPE_DIGITIGRADE
+			perceived_bodytype = snout_bodytype
 	if((item_slot == ITEM_SLOT_OCLOTHING || item_slot == ITEM_SLOT_ICLOTHING) && mutant_bodyparts["taur"])
 		var/datum/sprite_accessory/taur/taur_accessory = GLOB.sprite_accessories["taur"][mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
 		///Special check of applying a style 2 taur bodytype because taurs are spagheti
