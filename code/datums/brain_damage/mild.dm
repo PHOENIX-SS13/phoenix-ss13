@@ -38,8 +38,8 @@
 	name = "Dumbness"
 	desc = "Patient has reduced brain activity, making them less intelligent."
 	scan_desc = "reduced brain activity"
-	gain_text = SPAN_WARNING("You feel dumber.")
-	lose_text = SPAN_NOTICE("You feel smart again.")
+	gain_text = SPAN_WARNING("You can't seem to form any coherent thoughts!")
+	lose_text = SPAN_NOTICE("Your mind feels more clear.")
 
 /datum/brain_trauma/mild/dumbness/on_gain()
 	ADD_TRAIT(owner, TRAIT_DUMB, TRAUMA_TRAIT)
@@ -47,32 +47,17 @@
 	..()
 
 /datum/brain_trauma/mild/dumbness/on_life(delta_time, times_fired)
-	owner.derpspeech = min(owner.derpspeech + 5, 25)
+	// 15% chance to gain derpspeech, so it does not set in immediately
+	if(prob(15))
+		owner.derpspeech = TRUE
 	if(DT_PROB(1.5, delta_time))
 		owner.emote("drool")
-	else if(owner.stat == CONSCIOUS && DT_PROB(1.5, delta_time))
-		owner.say(pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage"), forced = "brain damage")
 	..()
 
 /datum/brain_trauma/mild/dumbness/on_lose()
 	REMOVE_TRAIT(owner, TRAIT_DUMB, TRAUMA_TRAIT)
-	owner.derpspeech = 0
+	owner.derpspeech = FALSE
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "dumb")
-	..()
-
-/datum/brain_trauma/mild/speech_impediment
-	name = "Speech Impediment"
-	desc = "Patient is unable to form coherent sentences."
-	scan_desc = "communication disorder"
-	gain_text = SPAN_DANGER("You can't seem to form any coherent thoughts!")
-	lose_text = SPAN_DANGER("Your mind feels more clear.")
-
-/datum/brain_trauma/mild/speech_impediment/on_gain()
-	ADD_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
-	..()
-
-/datum/brain_trauma/mild/speech_impediment/on_lose()
-	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
 	..()
 
 /datum/brain_trauma/mild/concussion

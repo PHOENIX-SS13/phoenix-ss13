@@ -382,12 +382,10 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 
 
 /mob/living/proc/treat_message(message)
-
-	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
-		message = unintelligize(message)
-
 	if(derpspeech)
 		message = derpspeech(message, stuttering)
+		// TODO: See unintelligize() proc for more info. Should be reimplemented at some point
+		//message = unintelligize(message)
 
 	if(stuttering)
 		message = stutter(message)

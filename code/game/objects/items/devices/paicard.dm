@@ -116,9 +116,9 @@
 					to_chat(pai, SPAN_ROSE("oblivion... "))
 					qdel(pai)
 		if(href_list["fix_speech"])
-			pai.stuttering = 0
-			pai.slurring = 0
-			pai.derpspeech = 0
+			pai.stuttering = FALSE
+			pai.slurring = FALSE
+			pai.derpspeech = FALSE
 		if(href_list["toggle_transmit"] || href_list["toggle_receive"])
 			var/transmitting = href_list["toggle_transmit"] //it can't be both so if we know it's not transmitting it must be receiving.
 			var/transmit_holder = (transmitting ? WIRE_TX : WIRE_RX)

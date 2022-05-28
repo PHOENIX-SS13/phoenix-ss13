@@ -21,7 +21,7 @@
 			slurring = INFINITY // permanent until speech is fixed through the pAI card UI by someone else.
 			to_chat(src, SPAN_DANGER("Warning: Audio synthesizer CPU stuck."))
 		if(3)
-			derpspeech = 1 // Ditto.
+			derpspeech = TRUE // Ditto.
 			to_chat(src, SPAN_DANGER("Warning: Vocabulary databank corrupted."))
 	if(prob(40))
 		mind.language_holder.selected_language = get_random_spoken_language()

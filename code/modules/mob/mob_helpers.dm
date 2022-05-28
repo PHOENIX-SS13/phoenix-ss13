@@ -181,16 +181,17 @@
 	message = replacetext(message, " am ", " ")
 	message = replacetext(message, " is ", " ")
 	message = replacetext(message, " are ", " ")
-	message = replacetext(message, "you", "u")
+	message = replacetext(message, "you", "yu")
 	message = replacetext(message, "help", "halp")
 	message = replacetext(message, "grief", "grife")
 	message = replacetext(message, "space", "spess")
 	message = replacetext(message, "carp", "crap")
 	message = replacetext(message, "reason", "raisin")
-	if(prob(50))
+	message = replacetext(message, "l", "w")
+	if(prob(30))
 		message = uppertext(message)
 		message += "[stutter(pick("!", "!!", "!!!"))]"
-	if(!stuttering && prob(15))
+	if(!stuttering && prob(10))
 		message = stutter(message)
 	return message
 
