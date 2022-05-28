@@ -1364,7 +1364,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 			H.satiety++
 			if(DT_PROB(round(-H.satiety/77), delta_time))
 				H.Jitter(5)
-			hunger_rate = 3 * HUNGER_FACTOR
+			hunger_rate = 1.25 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate * delta_time)
 
