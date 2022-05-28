@@ -73,9 +73,9 @@
 		return
 	autoclose = TRUE
 	if(check_access(null))
-		sleep(50)
+		sleep(6 SECONDS)
 	else //secure doors close faster
-		sleep(20)
+		sleep(4 SECONDS)
 	if(!density && autoclose) //did someone change state while we slept?
 		close()
 
