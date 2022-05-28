@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- bugfix: Fixes Vox not getting proper headwear sprite variants
+merge-date: 2022-05-28
+prnumber: 1014
