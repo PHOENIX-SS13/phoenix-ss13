@@ -30,7 +30,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/shuttle)
 "hv" = (
-/obj/structure/bonfire/prelit,
+/obj/machinery/space_heater,
 /turf/open/floor/wood,
 /area/ruin/powered/shuttle)
 "hN" = (
@@ -56,9 +56,11 @@
 /turf/open/floor/wood,
 /area/ruin/powered/shuttle)
 "sC" = (
-/obj/item/gun/ballistic/rifle/boltaction/pipegun/prime,
 /obj/structure/table/wood,
 /obj/item/flashlight/lantern,
+/obj/item/gun/ballistic/rifle/boltaction,
+/obj/item/ammo_box/a762,
+/obj/item/ammo_box/a762,
 /turf/open/floor/wood,
 /area/ruin/powered/shuttle)
 "sM" = (
@@ -87,7 +89,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered/shuttle)
 "JI" = (
-/obj/machinery/door/airlock/wood{
+/obj/structure/mineral_door/wood{
 	name = "Frozen Shack"
 	},
 /obj/structure/fans/tiny/invisible,

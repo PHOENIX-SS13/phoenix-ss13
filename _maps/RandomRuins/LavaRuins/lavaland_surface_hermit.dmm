@@ -117,6 +117,8 @@
 "A" = (
 /obj/structure/table,
 /obj/item/kitchen/knife/combat/survival,
+/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/storage/box/lethalshot,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "B" = (
