@@ -42,7 +42,7 @@
 
 	var/apply_transparency = TRUE
 	for(var/obj/object in our_turf)
-		if(object.obj_flags & FULL_BLOCK_Z_BELOW) //Something's blocking our mutltiz view
+		if(object.obj_flags & FULL_BLOCK_Z_BELOW && !(object.obj_flags & BLOCK_ALLOW_TRANSPARENCY)) //Something's blocking our mutltiz view
 			apply_transparency = FALSE
 			break
 	if(apply_transparency)

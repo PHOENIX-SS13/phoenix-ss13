@@ -15,8 +15,9 @@
 #define BLOCK_Z_IN_DOWN (1<<11) // Should this object block z falling from above?
 #define BLOCK_Z_IN_UP (1<<12) // Should this object block z uprise from below?
 #define FULL_BLOCK_Z_BELOW (1<<13)  // Should this object block all z interactions to the below turf? Will block turf transparency, but has to be updated by a signal //DOES NOT BLOCK ATMOS (do your own atmos pass logic)
-#define FULL_BLOCK_Z_ABOVE (1<<14) // Should this object block all z interactions to the above turf? //DOES NOT BLOCK ATMOS (do your own atmos pass logic)
-#define NO_BUILD (1<<15) // Can we build on this object?
+#define BLOCK_ALLOW_TRANSPARENCY (1<<14)  // Whether a FULL_BLOCK_Z_BELOW still allows turf transparency to happen. Special flag for cases where you don't really want to update the transparency often so you just dont block it in the first place.
+#define FULL_BLOCK_Z_ABOVE (1<<15) // Should this object block all z interactions to the above turf? //DOES NOT BLOCK ATMOS (do your own atmos pass logic)
+#define NO_BUILD (1<<16) // Can we build on this object?
 
 // If you add new ones, be sure to add them to /obj/Initialize as well for complete mapping support
 
