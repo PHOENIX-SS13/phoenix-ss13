@@ -284,7 +284,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	interview_accepted = sanitize_integer(interview_accepted, FALSE, TRUE, initial(interview_accepted))
 	hear_jukebox = sanitize_integer(hear_jukebox, FALSE, TRUE, initial(hear_jukebox))
 	hear_storyteller = sanitize_integer(hear_storyteller, FALSE, TRUE, initial(hear_storyteller))
-	background_state = SANITIZE_LIST(background_state)
+	background_state = sanitize_inlist(background_state, background_state_options, initial(background_state))
 
 	if(needs_update >= 0) //save the updated version
 		var/old_default_slot = default_slot
