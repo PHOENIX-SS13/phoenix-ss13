@@ -213,6 +213,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["pda_style"], pda_style)
 	READ_FILE(S["pda_color"], pda_color)
 	READ_FILE(S["interview_accepted"], interview_accepted)
+	READ_FILE(S["background_state"], background_state)
 
 	// Custom hotkeys
 	READ_FILE(S["key_bindings"], key_bindings)
@@ -283,6 +284,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	interview_accepted = sanitize_integer(interview_accepted, FALSE, TRUE, initial(interview_accepted))
 	hear_jukebox = sanitize_integer(hear_jukebox, FALSE, TRUE, initial(hear_jukebox))
 	hear_storyteller = sanitize_integer(hear_storyteller, FALSE, TRUE, initial(hear_storyteller))
+	background_state = SANITIZE_LIST(background_state)
 
 	if(needs_update >= 0) //save the updated version
 		var/old_default_slot = default_slot
@@ -365,6 +367,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["hearted_until"], (hearted_until > world.realtime ? hearted_until : null))
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
+	WRITE_FILE(S["background_state"], background_state)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)

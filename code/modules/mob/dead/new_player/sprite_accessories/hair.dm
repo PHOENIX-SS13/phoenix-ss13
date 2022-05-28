@@ -294,7 +294,7 @@
 /datum/sprite_accessory/hair/flattop
 	name = "Flat Top / Sergeant"
 	icon_state = "hair_flattop"
-	
+
 /datum/sprite_accessory/hair/flattop_big
 	name = "Flat Top (Big)"
 	icon_state = "hair_flattop-big"
@@ -714,3 +714,7 @@
 /datum/sprite_accessory/hair/wisp
 	name = "Wisp"
 	icon_state = "hair_wisp"
+
+/datum/sprite_accessory/hair/hyenamane
+	name = "Hyena Mane"
+	icon_state = "hair_hyenamane"

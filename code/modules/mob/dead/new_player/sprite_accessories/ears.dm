@@ -234,3 +234,9 @@
 /datum/sprite_accessory/ears/mutant/miqote
 	name = "Miqo'te"
 	icon_state = "miqote"
+
+/datum/sprite_accessory/ears/mutant/protogen
+	icon = 'icons/mob/sprite_accessory/synthanthro_ears.dmi'
+	name = "Protogen"
+	icon_state = "protogen"
+	recommended_species = list("synthanthro")

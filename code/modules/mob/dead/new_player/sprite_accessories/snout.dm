@@ -53,7 +53,7 @@
 /datum/sprite_accessory/snouts/mammal/bigbeak
 	name = "Big Beak"
 	icon_state = "bigbeak"
-	
+
 /datum/sprite_accessory/snouts/mammal/bigbeakshort
 	name = "Big Beak Short"
 	icon_state = "bigbeakshort"
@@ -394,3 +394,20 @@
 	icon_state = "alienlizardteeth"
 	color_src = USE_ONE_COLOR
 	extra = TRUE
+
+/datum/sprite_accessory/snouts/synthanthro
+	icon = 'icons/mob/sprite_accessory/synthanthro_snouts.dmi'
+	color_src = USE_MATRIXED_COLORS
+	recommended_species = list("synthanthro")
+
+/datum/sprite_accessory/snouts/synthanthro/protogen
+	name = "Protogen"
+	icon_state = "protogen"
+
+/datum/sprite_accessory/snouts/synthanthro/protogen_frame
+	name = "Protogen (Frame)"
+	icon_state = "protogenframe"
+
+/datum/sprite_accessory/snouts/synthanthro/protogen_bolt
+	name = "Protogen (Bolt)"
+	icon_state = "protogenbolt"

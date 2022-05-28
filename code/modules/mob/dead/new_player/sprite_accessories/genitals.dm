@@ -1,6 +1,6 @@
 /datum/sprite_accessory/genital
 	special_render_case = TRUE
-	var/associated_organ_slot 
+	var/associated_organ_slot
 	var/uses_skintones
 	///Where the genital is on the body. If clothing doesn't cover it, it shows up!
 	var/genital_location = GROIN
@@ -82,6 +82,10 @@
 /datum/sprite_accessory/genital/penis/knotted
 	icon_state = "knotted"
 	name = "Knotted"
+
+/datum/sprite_accessory/genital/penis/knotted2
+	name = "Knotted 2"
+	icon_state = "knotted2"
 
 /datum/sprite_accessory/genital/penis/flared
 	icon_state = "flared"
@@ -221,6 +225,10 @@
 /datum/sprite_accessory/genital/vagina/gaping
 	icon_state = "gaping"
 	name = "Gaping"
+
+/datum/sprite_accessory/genital/vagina/cloaca
+	icon_state = "cloaca"
+	name = "Cloaca"
 
 /datum/sprite_accessory/genital/breasts
 	icon = 'icons/mob/sprite_accessory/genitals/breasts_onmob.dmi'

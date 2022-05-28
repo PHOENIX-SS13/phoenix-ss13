@@ -191,6 +191,11 @@
 	icon_state = "fox"
 	general_type = "vulpine"
 
+/datum/sprite_accessory/tails/mammal/wagging/vulpkanin/fox2
+	name = "Fox 2"
+	icon_state = "fox2"
+	general_type = "vulpine"
+
 /datum/sprite_accessory/tails/mammal/wagging/hawk
 	name = "Hawk"
 	icon_state = "hawk"
