@@ -1,0 +1,6 @@
+author: Azarak
+changes:
+- code_imp: Adds a flag for objects to allow transparency if they block multiz
+- bugfix: The tram will no longer leave a black hole where it was first spawned
+merge-date: 2022-05-28
+prnumber: 1007
