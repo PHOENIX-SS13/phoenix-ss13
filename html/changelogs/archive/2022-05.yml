@@ -151,3 +151,27 @@
   - balance: Hermits now start with slightly better weapons.
   - balance: Hermits on Ice Box Station won&#x27;t suffocate from smoke, or the cold
       as easily anymore. (Mapping fixes)
+  - qol: You can now use LOOC while unconcious or dead
+  - admin: Admins can now optionally read all LOOC messages ingame too - for moderation
+      purposes only.
+  - rscadd: Added the ability to change the character editor background
+  - imageadd: Ported a few species accessories (protogen snouts, ears, fox tail, hyena
+      mane and more)
+  Azarak:
+  - balance: Bad satiety increases your hunger by 25% instead of 200%.
+  - bugfix: Hunger cost is no longer applied twice for being in run intent and moving
+  - balance: Windoors take slightly longer to automatically close after bumping to
+      them
+  - bugfix: Fixes Vox not getting proper headwear sprite variants
+  - rscadd: Industrial lifts are a bit more quiet now
+  - code_imp: Adds a flag for objects to allow transparency if they block multiz
+  - bugfix: The tram will no longer leave a black hole where it was first spawned
+  Deek-Za (Deek-Za):
+  - qol: Put credits straight into your PDA/Tablet
+  - imageadd: added sprites for new hawaiian shirt variants
+  - code_imp: added hawaiian shirts to the loadouts section
+  drizzlemutt:
+  - qol: rearranges Vulture cargo
+  - qol: adds a glass door to Vulture helm
+  - balance: adds a minifridge to the Vulture
+  - bugfix: fixed APC connection issue
