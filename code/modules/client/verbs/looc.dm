@@ -32,7 +32,7 @@
 	var/list/hearers_in_view = get_hearers_in_view(7, mob)
 	var/list/seen_by_admins = list()
 
-	for(var/mob/hearer as anything in hearers_in_view)
+	for(var/mob/hearer in hearers_in_view)
 		if(!hearer.client)
 			continue
 		var/client/hearer_client = hearer.client
