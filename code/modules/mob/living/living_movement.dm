@@ -61,5 +61,5 @@
 
 /mob/living/Process_Spacemove(movement_dir = 0)
 	. = ..()
-	if(!hold_onto_things && stat == CONSCIOUS) //Check stat to not change behaviours how dead people work in 0g
+	if(!hold_onto_things && stat == CONSCIOUS && !has_gravity(src)) //Check stat to not change behaviours how dead people work in 0g
 		return FALSE
