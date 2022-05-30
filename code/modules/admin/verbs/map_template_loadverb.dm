@@ -23,13 +23,22 @@
 			center = FALSE
 		else
 			return
+	var/clear_existing_turfs
+	var/clear_alert = tgui_alert(usr,"Clear affected turfs of existing flora and mobs?","Clear Turfs",list("Yes","No"))
+	switch(clear_alert)
+		if("Yes")
+			clear_existing_turfs = TRUE
+		if("No")
+			clear_existing_turfs = FALSE
+		else
+			return
 	for(var/S in template.get_affected_turfs(T,centered = center))
 		var/image/item = image('icons/turf/overlays.dmi',S,"greenOverlay")
 		item.plane = ABOVE_LIGHTING_PLANE
 		preview += item
 	images += preview
 	if(tgui_alert(usr,"Confirm location.","Template Confirm",list("Yes","No")) == "Yes")
-		if(template.load(T, centered = center))
+		if(template.load(T, centered = center, clear_existing_turfs = clear_existing_turfs))
 			var/affected = template.get_affected_turfs(T, centered = center)
 			for(var/AT in affected)
 				for(var/obj/docking_port/mobile/P in AT)

@@ -162,7 +162,7 @@
 	update_blacklist(T, turf_blacklist)
 
 	parsed.turf_blacklist = turf_blacklist
-	if(!parsed.load(T.x, T.y, T.z, cropMap=TRUE, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=should_place_on_top))
+	if(!parsed.load(T.x, T.y, T.z, cropMap=TRUE, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop = should_place_on_top, clear_existing_turfs = clear_existing_turfs))
 		return
 	var/list/bounds = parsed.bounds
 	if(!bounds)
