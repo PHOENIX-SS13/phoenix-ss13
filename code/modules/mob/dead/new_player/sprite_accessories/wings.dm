@@ -137,11 +137,34 @@
 	name = "Witch Wing"
 	icon_state = "witchwing"
 
+/datum/sprite_accessory/wings/moth/rosy
+	name = "Rosy"
+	icon_state = "rosy"
+
+/datum/sprite_accessory/wings/moth/featherful
+	name = "Featherful"
+	icon_state = "featherful"
+
+/datum/sprite_accessory/wings/moth/brown
+	name = "Brown"
+	icon_state = "brown"
+
+/datum/sprite_accessory/wings/moth/plasmafire
+	name = "Plasmafire"
+	icon_state = "plasmafire"
+
 /datum/sprite_accessory/wings/mammal
 	icon = 'icons/mob/sprite_accessory/wings.dmi'
 	default_color = DEFAULT_PRIMARY
 	recommended_species = list("mammal", "lizard")
 	relevent_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
+
+/datum/sprite_accessory/wings/mammal/wide
+	icon = 'icons/mob/sprite_accessory/wingswide.dmi'
+	dimension_x = 46
+	dimension_y = 34
+	center = TRUE
 
 /datum/sprite_accessory/wings/mammal/bat //TODO: port my sprite from hyper for this one
 	name = "Bat"
@@ -155,9 +178,74 @@
 	name = "Feathery"
 	icon_state = "feathery"
 
+/datum/sprite_accessory/wings/mammal/wide/featheryalt1
+	name = "Feathery (alt 1)"
+	icon_state = "featheryalt1"
+
+/datum/sprite_accessory/wings/mammal/wide/featheryalt2
+	name = "Feathery (alt 2)"
+	icon_state = "featheryalt2"
+
 /datum/sprite_accessory/wings/mammal/bee
 	name = "Bee"
 	icon_state = "bee"
+
+/datum/sprite_accessory/wings/mammal/wide/succubus
+	name = "Succubus"
+	icon_state = "succubus"
+
+/datum/sprite_accessory/wings/mammal/wide/dragon_synth
+	name = "Dragon (synthetic alt)"
+	icon_state = "dragonsynth"
+
+/datum/sprite_accessory/wings/mammal/wide/dragon_alt1
+	name = "Dragon (alt 1)"
+	icon_state = "dragonalt1"
+
+/datum/sprite_accessory/wings/mammal/wide/dragon_alt2
+	name = "Dragon (alt 2)"
+	icon_state = "dragonalt2"
+
+/datum/sprite_accessory/wings/mammal/wide/harpywings
+	name = "Harpy"
+	icon_state = "harpy"
+
+/datum/sprite_accessory/wings/mammal/wide/harpywingsalt1
+	name = "Harpy (alt 1)"
+	icon_state = "harpyalt"
+
+/datum/sprite_accessory/wings/mammal/wide/harpywingsalt2
+	name = "Harpy (Bat)"
+	icon_state = "harpybat"
+
+
+/datum/sprite_accessory/wings/mammal/wide/harpywings_top
+	name = "Harpy (Top)"
+	icon_state = "harpy_top"
+
+/datum/sprite_accessory/wings/mammal/wide/harpywingsalt1_top
+	name = "Harpy (alt 1) (Top)"
+	icon_state = "harpyalt_top"
+
+/datum/sprite_accessory/wings/mammal/wide/harpywingsalt2_top
+	name = "Harpy (Bat) (Top)"
+	icon_state = "harpybat_top"
+
+/datum/sprite_accessory/wings/mammal/wide/low_wings
+	name = "Low wings"
+	icon_state = "low"
+
+/datum/sprite_accessory/wings/mammal/wide/low_wings_top
+	name = "Low wings (Top)"
+	icon_state = "low_top"
+
+/datum/sprite_accessory/wings/mammal/wide/spider
+	name = "Spider legs"
+	icon_state = "spider_legs"
+
+/datum/sprite_accessory/wings/mammal/wide/robowing
+	name = "mechanical dragon wings"
+	icon_state = "robowing"
 
 /datum/sprite_accessory/wings/skeleton
 	name = "Skeleton"
