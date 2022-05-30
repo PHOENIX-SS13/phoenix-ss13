@@ -64,6 +64,7 @@
 	for(var/obj/effect/portal/wormhole/wormhole as anything in wormholes)
 		if(wormhole.will_persist)
 			wormhole.make_stable()
+			announce_to_ghosts(wormhole)
 			continue
 		qdel(wormhole)
 	wormholes = null
