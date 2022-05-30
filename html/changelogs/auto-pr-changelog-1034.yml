@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- qol: Quieter PACMAN soundloop
+merge-date: 2022-05-30
+prnumber: 1034
