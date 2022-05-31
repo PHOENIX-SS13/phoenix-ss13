@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- bugfix: Fixes ruins not clearing turfs and adds that option to the template spawn
-    verb
-merge-date: 2022-05-30
-prnumber: 1033

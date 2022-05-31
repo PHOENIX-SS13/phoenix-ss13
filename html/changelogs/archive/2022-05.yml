@@ -175,3 +175,13 @@
   - qol: adds a glass door to Vulture helm
   - balance: adds a minifridge to the Vulture
   - bugfix: fixed APC connection issue
+2022-05-30:
+  AtoriBirb:
+  - imageadd: Several new wing sprites
+  Azarak:
+  - rscadd: Stable wormholes now announce to deadchat
+  - qol: Bioluminescent plants use the static lighting system
+  - qol: Quieter PACMAN soundloop
+  - bugfix: Fixes funny bug with voluntary 0g movement
+  - bugfix: Fixes ruins not clearing turfs and adds that option to the template spawn
+      verb
