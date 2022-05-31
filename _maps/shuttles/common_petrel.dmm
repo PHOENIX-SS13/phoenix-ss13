@@ -1,0 +1,277 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/template_noop)
+"c" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/petrel)
+"e" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"f" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"k" = (
+/obj/item/radio/intercom/wideband/directional/east,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"l" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 4;
+	name = "air supply pump"
+	},
+/obj/machinery/meter,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"o" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/obj/structure/closet/crate,
+/obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"p" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = "petrel_shutter";
+	name = "safety shutters button"
+	},
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"q" = (
+/obj/machinery/mining_laser{
+	dir = 4
+	},
+/obj/structure/marker_beacon/burgundy,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/petrel)
+"u" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 5
+	},
+/obj/item/flashlight,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"z" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/turf/open/floor/plating,
+/area/shuttle/petrel)
+"A" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/petrel)
+"B" = (
+/obj/machinery/computer/shuttle/common_docks{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"C" = (
+/obj/machinery/light_switch/directional/north,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"E" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/item/toy/plush/space_lizard_plushie,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"G" = (
+/obj/machinery/atmospherics/components/unary/engine{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/petrel)
+"H" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"I" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/petrel)
+"K" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/obj/machinery/transporter,
+/obj/effect/turf_decal/box,
+/obj/effect/spawner/lootdrop/ore,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"L" = (
+/obj/machinery/power/apc/auto_name/west{
+	locked = 0
+	},
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/structure/cable,
+/obj/machinery/light/directional/north,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"N" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	dwidth = 5;
+	height = 7;
+	id = "petrel";
+	launch_status = 0;
+	name = "MS Petrel";
+	width = 9;
+	port_direction = 8
+	},
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/fans/tiny,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"P" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/turf/open/floor/plating,
+/area/shuttle/petrel)
+"R" = (
+/obj/machinery/airalarm/directional/west{
+	locked = 0
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/obj/machinery/light/directional/south,
+/obj/structure/ore_box,
+/obj/item/storage/bag/ore,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"S" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+"U" = (
+/obj/structure/marker_beacon/burgundy,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/petrel)
+"V" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "petrel_shutter"
+	},
+/turf/open/floor/plating,
+/area/shuttle/petrel)
+"X" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/pod,
+/area/shuttle/petrel)
+
+(1,1,1) = {"
+a
+U
+G
+A
+G
+U
+a
+"}
+(2,1,1) = {"
+A
+A
+P
+e
+z
+A
+c
+"}
+(3,1,1) = {"
+A
+L
+o
+l
+K
+R
+I
+"}
+(4,1,1) = {"
+A
+C
+H
+E
+f
+X
+I
+"}
+(5,1,1) = {"
+N
+k
+p
+B
+u
+S
+A
+"}
+(6,1,1) = {"
+A
+A
+V
+V
+V
+A
+A
+"}
+(7,1,1) = {"
+A
+A
+a
+a
+a
+A
+A
+"}
+(8,1,1) = {"
+A
+a
+a
+a
+a
+a
+A
+"}
+(9,1,1) = {"
+q
+a
+a
+a
+a
+a
+q
+"}

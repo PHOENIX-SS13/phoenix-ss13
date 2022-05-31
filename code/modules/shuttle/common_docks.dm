@@ -46,6 +46,10 @@
 	suffix = "vulture"
 	name = "MS Vulture"
 
+/datum/map_template/shuttle/common/petrel
+	suffix = "petrel"
+	name = "MS Petrel"
+
 /datum/map_template/shuttle/common/platform_small
 	suffix = "platform_small"
 	name = "Platform Shuttle"

@@ -312,6 +312,11 @@
 /area/shuttle/vulture/dorm
 	name = "MS Vulture Quarters"
 
+/area/shuttle/petrel
+	name = "MS Petrel"
+	requires_power = TRUE
+	area_limited_icon_smoothing = /area/shuttle/petrel
+
 /area/shuttle/barrow
 	name = "The Barrows"
 	requires_power = FALSE
