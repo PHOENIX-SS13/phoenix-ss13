@@ -47,7 +47,7 @@
 		if(!admin)
 			continue
 		var/admin_was_in_range_to_see = seen_by_admins[admin]
-		if((admin.prefs.toggles & CHAT_ADMIN_LOOC) && !admin_was_in_range_to_see)
+		if((admin.prefs.chat_toggles & CHAT_ADMIN_LOOC) && !admin_was_in_range_to_see)
 			to_chat(admin, SPAN_ALOOC("[ADMIN_FLW(usr)] <span class='prefix'>ALOOC:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
 		else if(admin_was_in_range_to_see)
 			to_chat(admin, SPAN_LOOC("[ADMIN_FLW(usr)] <span class='prefix'>LOOC:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
