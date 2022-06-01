@@ -1,0 +1,5 @@
+author: Azarak
+changes:
+- bugfix: Removes extra unnessecary species sanitization
+merge-date: 2022-06-01
+prnumber: 1045
