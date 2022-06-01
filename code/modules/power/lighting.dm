@@ -69,6 +69,9 @@
 	. = ..()
 	if(building)
 		setDir(ndir)
+	else
+		// Set dir to apply the pixel offset.
+		setDir(dir)
 
 /obj/structure/light_construct/setDir(new_dir)
 	. = ..()
@@ -395,6 +398,9 @@
 
 	if(start_with_cell && !no_emergency)
 		cell = new/obj/item/stock_parts/cell/emergency_light(src)
+	
+	// Set dir to apply the pixel offset.
+	setDir(dir)
 
 	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, .proc/on_light_eater)
 	AddElement(/datum/element/atmos_sensitive, mapload)
