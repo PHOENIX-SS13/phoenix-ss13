@@ -2783,10 +2783,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /// Sanitization checks to be performed before using these preferences.
 /datum/preferences/proc/sanitize_chosen_prefs()
-	if(!GLOB.roundstart_races[pref_species.id] && !(pref_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
-		pref_species = new /datum/species/human
-		save_character()
-
 	if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == "human"))
 		var/firstspace = findtext(real_name, " ")
 		var/name_length = length(real_name)
