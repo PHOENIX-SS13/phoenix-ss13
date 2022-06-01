@@ -53,6 +53,29 @@
 	power_gen = 1250 // 2500 on T1, 10000 on T4.
 	circuit = /obj/item/circuitboard/machine/rtg/advanced
 
+// Mapping RTGs
+// Provides a LOTLOT of power, but is unmovable and non-deconstructable
+
+/obj/machinery/power/rtg/mapping
+	desc = "A highly sophisticated and convoluted RTG capable of moderating isotope decay. It is intricate and the method of recreating it is impossible under normal circumstances."
+	power_gen = 15000 //15kw
+	circuit = null
+	flags_1 = NODECONSTRUCT_1 //keeps pesky station engineers from stealing these for on-station projects
+
+/obj/machinery/power/rtg/mapping/RefreshParts() //have to do this to keep parts from increasing power
+	return
+
+/obj/machinery/power/rtg/mapping/attackby(obj/item/item, mob/user)
+	if(item.tool_behaviour == TOOL_SCREWDRIVER)
+		to_chat(user, SPAN_WARNING("Taking this apart would destroy the intricate nature of this machine.")) //reinforcing that these are not be taken apart
+	return
+
+/obj/machinery/power/rtg/mapping/medium
+	power_gen = 25000 //25kw
+
+/obj/machinery/power/rtg/mapping/high
+	power_gen = 50000 //50kw
+
 // Void Core, power source for Abductor ships and bases.
 // Provides a lot of power, but tends to explode when mistreated.
 
