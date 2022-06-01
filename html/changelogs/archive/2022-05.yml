@@ -185,3 +185,9 @@
   - bugfix: Fixes funny bug with voluntary 0g movement
   - bugfix: Fixes ruins not clearing turfs and adds that option to the template spawn
       verb
+2022-05-31:
+  KathrinBailey:
+  - qol: Shaft Miners can now adjust their jumpsuits.
+  - qol: Cargo Technicians now can unzip their jumpsuits.
+  drizzlemutt:
+  - rscadd: New Buyable Shuttle, MS Petrel
