@@ -201,6 +201,15 @@
 /datum/loadout_item/uniform/dress/weddingdress
 	path = /obj/item/clothing/under/dress/wedding_dress
 
+/datum/loadout_item/uniform/dress/black
+	path = /obj/item/clothing/under/dress/black
+
+/datum/loadout_item/uniform/dress/black/onepiece
+	path = /obj/item/clothing/under/dress/black/onepiece
+
+/datum/loadout_item/uniform/dress/black/traditional
+	path = /obj/item/clothing/under/dress/black/traditional
+
 //PANTS
 /datum/loadout_item/uniform/pants
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_PANTS

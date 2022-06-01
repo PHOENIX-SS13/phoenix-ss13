@@ -166,3 +166,23 @@
 	body_parts_covered = CHEST|GROIN
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/black
+	name = "black fashionable dress"
+	desc = "A black skirt with a golden-yellow trim and a matching bra."
+	icon_state = "blackdress_bra"
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/dress/black/onepiece
+	name = "black fashionable dress"
+	desc = "A black one-piece dress with a golden-yellow trim and a raised leg"
+	icon_state = "blackdress"
+	body_parts_covered = CHEST|GROIN
+
+/obj/item/clothing/under/dress/black/traditional
+	name = "black traditional dress"
+	desc = "A cultural dress composed of a skirt and chestpiece."
+	icon_state = "traditional"
+	body_parts_covered = CHEST|GROIN
+	custom_price = PAYCHECK_COMMAND
