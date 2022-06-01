@@ -7,14 +7,6 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 /************************************Base proc************************************/
 
 /atom/proc/shuttleRotate(rotation, params=ROTATE_DIR|ROTATE_SMOOTH|ROTATE_OFFSET)
-	if(params & ROTATE_DIR)
-		//rotate our direction
-		setDir(angle2dir(rotation+dir2angle(dir)))
-
-	//resmooth if need be.
-	if(params & ROTATE_SMOOTH && smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH(src)
-
 	//rotate the pixel offsets too.
 	if((pixel_x || pixel_y) && (params & ROTATE_OFFSET))
 		if(rotation < 0)
@@ -24,6 +16,15 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 			var/oldPY = pixel_y
 			pixel_x = oldPY
 			pixel_y = (oldPX*(-1))
+	
+	// Set direction after rotating the pixel offset because direction setters could manage pixel offsets and want to override them.
+	if(params & ROTATE_DIR)
+		//rotate our direction
+		setDir(angle2dir(rotation+dir2angle(dir)))
+	
+	//resmooth if need be.
+	if(params & ROTATE_SMOOTH && smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
+		QUEUE_SMOOTH(src)
 
 /************************************Base /atom/movable proc************************************/
 
