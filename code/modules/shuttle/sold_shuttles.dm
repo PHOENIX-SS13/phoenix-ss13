@@ -35,8 +35,8 @@
 	shuttle_type = SHUTTLE_MINING
 
 /datum/sold_shuttle/crow
-	name = "ESS Crow - sister"
-	desc = "A medium sized exploration shuttle, sister to the ESS Crow, named the same oddly."
+	name = "ESS Crow"
+	desc = "A medium sized exploration shuttle."
 	detailed_desc = "It's medium sized and is equipped with four propulsion engines, canisters of co2 and oxygen, a portable generator, excavation gear and some emergency supplies."
 	shuttle_id = "exploration_crow"
 	cost = 10000
