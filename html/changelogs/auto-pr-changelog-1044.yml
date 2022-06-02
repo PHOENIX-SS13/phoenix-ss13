@@ -1,6 +1,0 @@
-author: Azarak
-changes:
-- balance: Icebox no longer will roll water vapour, will have less miasma when it
-    rolls as a possible gas, and will have -50C to -30C instead of -90*C temperature
-merge-date: 2022-06-01
-prnumber: 1044

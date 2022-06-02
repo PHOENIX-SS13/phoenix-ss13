@@ -1,0 +1,15 @@
+2022-06-01:
+  Alex 'Avunia' Takiya (atakiya):
+  - qol: You will be returned to the menu by default if no job is available. This
+      won&#x27;t apply to existing players though, please check the setting manually
+      if you wish to change it.
+  Azarak:
+  - bugfix: Light fixtures always setDir on Initialize() for pixel offsets
+  - balance: Icebox no longer will roll water vapour, will have less miasma when it
+      rolls as a possible gas, and will have -50C to -30C instead of -90*C temperature
+  - bugfix: Removes extra unnessecary species sanitization
+  - bugfix: Fixes dir-shifted objects being misaligned after a shuttle is rotated.
+  KathrinBailey:
+  - rscadd: Three new fashionable dresses in the loadout menu!
+  drizzlemutt:
+  - rscadd: adds three tiers of non-deconstructible RTGs for mapping use

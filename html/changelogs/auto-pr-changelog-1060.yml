@@ -1,7 +1,0 @@
-author: Alex 'Avunia' Takiya (atakiya)
-changes:
-- qol: You will be returned to the menu by default if no job is available. This won&#x27;t
-    apply to existing players though, please check the setting manually if you wish
-    to change it.
-merge-date: 2022-06-01
-prnumber: 1060
