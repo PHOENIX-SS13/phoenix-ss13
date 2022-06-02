@@ -1,0 +1,10 @@
+author: Emilitia Ennehrt (EmilitiaEnnehrt)
+changes:
+- rscadd: Ported and added 6 new jackets and coats
+- qol: added new clothings to loadout and vendors
+- bugfix: corrected loadout pathfinding
+- bugfix: touched up on the bomber&#x27;s jacket to be more puffy and less plain.
+- imageadd: added 6 new sets of sprites for clothing including item version
+- spellcheck: corrected a typo in the loadout code
+merge-date: 2022-06-02
+prnumber: 1040
