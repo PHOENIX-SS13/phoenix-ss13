@@ -12,7 +12,6 @@
 	custom_price = PAYCHECK_MEDIUM * 10
 	custom_premium_price = PAYCHECK_COMMAND * 6
 	cut_type = /obj/item/clothing/gloves/cut
-	clothing_traits = list(TRAIT_CHUNKYFINGERS)
 	worn_template_greyscale_color = "#FFF200"
 
 /obj/item/toy/sprayoncan
