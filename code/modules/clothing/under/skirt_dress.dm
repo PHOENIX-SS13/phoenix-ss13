@@ -173,6 +173,7 @@
 	icon_state = "blackdress_bra"
 	body_parts_covered = CHEST|GROIN
 	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = TRUE
 
 /obj/item/clothing/under/dress/black/onepiece
 	name = "black fashionable dress"
