@@ -72,8 +72,11 @@
 						///Check if it's a uniform and add its casual state to the check if it can be adjusted
 						if(istype(clothing_type_path, /obj/item/clothing/under))
 							var/obj/item/clothing/under/uniform_cast = clothing_type_path
+							var/adjusted_string = "[worn_string]_d"
 							if(initial(uniform_cast.can_adjust))
-								states_to_check += "[worn_string]_d"
+								states_to_check += adjusted_string
+							else if (used_lookup_list && (adjusted_string in used_lookup_list))
+								Fail("[clothing_type_path] has an adjusted state that will not be used: [states_to_check]. Set `can_adjust` to TRUE, or remove the state.")
 
 						for(var/state_to_check in states_to_check)
 							if(clothing_fitted_bodytypes & bodytype)
