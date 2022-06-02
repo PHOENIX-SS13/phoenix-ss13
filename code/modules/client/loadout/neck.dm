@@ -83,7 +83,7 @@
 /datum/loadout_item/neck/scarf/stripedgreenscarf
 	path = /obj/item/clothing/neck/stripedgreenscarf
 
-/datum/loadout_item/neck/scraft/zebra
+/datum/loadout_item/neck/scarf/zebra
 	path = /obj/item/clothing/neck/scarf/zebra
 
 //TIES

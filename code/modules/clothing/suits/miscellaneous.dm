@@ -453,6 +453,55 @@
 	fitted_bodytypes = BODYTYPE_DIGITIGRADE
 	worn_template_greyscale_color = "#2B2B2B"
 
+/obj/item/clothing/suit/browntrenchcoat
+	name = "brown trench coat"
+	desc = "It makes you stand out. Just the opposite of why it's typically worn. Nice try trying to blend in while wearing it."
+	icon_state = "brtrenchcoat"
+	inhand_icon_state = "brtrenchcoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/suit/blacktrenchcoat
+	name = "black trench coat"
+	desc = "That shade of black just makes you look a bit more evil. Good for those mafia types."
+	icon_state = "bltrenchcoat"
+	inhand_icon_state = "bltrenchcoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/suit/jacket/dutchjacket
+	name = "western coat"
+	desc = "When I'm gone, they'll just find another coat. They have to. Because they have to justify their wages."
+	icon_state = "dutchjacket"
+	inhand_icon_state = "dutchjacket"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/radio)
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted_bodytypes = NONE
+
+/obj/item/clothing/suit/jacket/greatcoat
+	name = "gentleman's great coat"
+	desc = "Something seems posh."
+	icon_state = "gentlecoat"
+	inhand_icon_state = "gentlecoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	fitted_bodytypes = NONE
+
+/obj/item/clothing/suit/jacket/ladiesvictoriancoat
+	name = "ladies victorian coat"
+	desc = "A masterfully crafted slim-fit coat in the style of old Sol fashion."
+	icon_state = "ladiesvictoriancoat"
+	inhand_icon_state = "ladiesvictoriancoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	fitted_bodytypes = NONE
+
+/obj/item/clothing/suit/jacket/ladiescoat
+	name = "ladies coat"
+	desc = "A slim-fit coat made of synthetic leather, almost tight!"
+	icon_state = "ladiescoat"
+	inhand_icon_state = "ladiescoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	fitted_bodytypes = NONE
+
 /obj/item/clothing/suit/jacket/puffer
 	name = "puffer jacket"
 	desc = "A thick jacket with a rubbery, water-resistant shell."

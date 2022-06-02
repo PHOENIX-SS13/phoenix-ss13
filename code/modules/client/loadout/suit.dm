@@ -43,6 +43,21 @@
 /datum/loadout_item/suit/coat/aformal
 	path = /obj/item/clothing/suit/hooded/wintercoat/aformal
 
+/datum/loadout_item/suit/coat/blacktrenchcoat
+	path = /obj/item/clothing/suit/blacktrenchcoat
+
+/datum/loadout_item/suit/coat/browntrenchcoat
+	path = /obj/item/clothing/suit/browntrenchcoat
+
+/datum/loadout_item/suit/coat/gentlecoat
+	path = /obj/item/clothing/suit/jacket/greatcoat
+
+/datum/loadout_item/suit/coat/ladiesvictoriancoat
+	path = /obj/item/clothing/suit/jacket/ladiesvictoriancoat
+
+/datum/loadout_item/suit/coat/ladiescoat
+	path = /obj/item/clothing/suit/jacket/ladiescoat
+
 /datum/loadout_item/suit/coat/runed
 	path = /obj/item/clothing/suit/hooded/wintercoat/narsie/fake
 
@@ -63,6 +78,9 @@
 
 /datum/loadout_item/suit/jacket/jacketbomber
 	path = /obj/item/clothing/suit/jacket
+
+/datum/loadout_item/suit/jacket/westerncoat
+	path = /obj/item/clothing/suit/jacket/dutchjacket
 
 /datum/loadout_item/suit/jacket/jacketleather
 	path = /obj/item/clothing/suit/jacket/leather
