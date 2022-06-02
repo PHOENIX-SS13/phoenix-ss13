@@ -441,6 +441,12 @@
 	build_path = /obj/item/circuitboard/machine/holopad
 	category = list ("Misc. Machinery")
 
+/datum/design/board/holopad/holopad_long_range
+	name = "Machine Design (Long Range Holopad)"
+	desc = "The circuit board for a long range holopad."
+	id = "long_range"
+	build_path = /obj/item/circuitboard/machine/holopad_long_range
+	category = list ("Misc. Machinery")
 
 /datum/design/board/autolathe
 	name = "Machine Design (Autolathe Board)"
