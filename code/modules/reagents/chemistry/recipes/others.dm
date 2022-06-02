@@ -812,6 +812,7 @@
 	purity_min = 0
 	mix_message = "The ice melts back into water!"
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_CHEMICAL | REACTION_TAG_DRINK
+	mix_sound = null
 
 ////////////////////////////////////
 
