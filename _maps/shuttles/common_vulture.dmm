@@ -662,6 +662,16 @@
 	},
 /turf/open/floor/iron/freezer,
 /area/shuttle/vulture)
+"VY" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/holopad/long_range,
+/turf/open/floor/iron,
+/area/shuttle/vulture)
 "Wx" = (
 /obj/machinery/door/airlock,
 /obj/effect/decal/cleanable/dirt,
@@ -806,7 +816,7 @@ eN
 Vg
 fG
 rI
-MG
+VY
 MG
 MG
 oz

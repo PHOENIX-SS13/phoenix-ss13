@@ -89,6 +89,7 @@
 /area/shuttle/petrel)
 "C" = (
 /obj/machinery/light_switch/directional/north,
+/obj/machinery/holopad/long_range,
 /turf/open/floor/pod,
 /area/shuttle/petrel)
 "E" = (
