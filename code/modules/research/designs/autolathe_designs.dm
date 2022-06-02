@@ -701,6 +701,14 @@
 	build_path = /obj/item/wallframe/intercom
 	category = list("initial", "T-Comm")
 
+/datum/design/wideband_intercom_frame
+	name = "Wideband Intercom Frame"
+	id = "wideband relay"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+	build_path = /obj/item/wallframe/intercom/wideband
+	category = list("initial", "T-Comm")
+
 /datum/design/infrared_emitter
 	name = "Infrared Emitter"
 	id = "infrared_emitter"
