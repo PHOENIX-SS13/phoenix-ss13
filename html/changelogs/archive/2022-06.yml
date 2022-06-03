@@ -13,3 +13,29 @@
   - rscadd: Three new fashionable dresses in the loadout menu!
   drizzlemutt:
   - rscadd: adds three tiers of non-deconstructible RTGs for mapping use
+2022-06-02:
+  Azarak:
+  - balance: Insulated gloves no longer give you chunky fingers
+  Emilitia Ennehrt (EmilitiaEnnehrt):
+  - rscadd: Ported and added 6 new jackets and coats
+  - qol: added new clothings to loadout and vendors
+  - bugfix: corrected loadout pathfinding
+  - bugfix: touched up on the bomber&#x27;s jacket to be more puffy and less plain.
+  - imageadd: added 6 new sets of sprites for clothing including item version
+  - spellcheck: corrected a typo in the loadout code
+  KathrinBailey:
+  - bugfix: New loadout dresses can be adjusted for their alt appearances.
+  drizzlemutt:
+  - rscadd: adds a cargo shutter to the ESS Crow
+  - rscadd: adds signage to parts of the ESS Crow
+  - rscadd: adds cyborg recharger to ESS Crow Engineering
+  - qol: changes some airlocks to glass and some to thematic paint schemes
+  - qol: rearranges and add some items that help with immersion
+  - balance: adds three first aid kits to ESS Crow
+  - bugfix: changes pipenet to subscribe to mapping standards
+  - code_imp: changed name and description of ESS Crow on the sold shuttles console
+  - rscadd: adds the wideband intercom to the autolathe
+  - rscadd: adds long range holopads to the circuit imprinter
+  - rscadd: adds long range holopads to two shuttles
+  mamakoshka:
+  - bugfix: Ice no longer makes a noise when melting.
