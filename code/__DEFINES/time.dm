@@ -23,7 +23,7 @@
 #define FESTIVE_SEASON "Festive Season"
 #define GARBAGEDAY "Garbage Day"
 #define MONKEYDAY "Monkey Day"
-#define PRIDE_WEEK "Pride Week"
+#define PRIDE_MONTH "Pride Month"
 /*
 
 Days of the week to make it easier to reference them.

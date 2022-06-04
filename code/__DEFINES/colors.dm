@@ -191,7 +191,7 @@
 #define CIRCUIT_COLOR_ENGINEERING "#F8D700"
 #define CIRCUIT_COLOR_SUPPLY "#C47749"
 
-/// Colors for pride week
+/// Colors for pride month
 #define COLOR_PRIDE_RED "#FF6666"
 #define COLOR_PRIDE_ORANGE "#FC9F3C"
 #define COLOR_PRIDE_YELLOW "#EAFF51"

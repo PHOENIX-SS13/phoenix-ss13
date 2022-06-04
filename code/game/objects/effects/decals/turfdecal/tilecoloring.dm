@@ -10,9 +10,9 @@
 	if(SSgamemode.holidays)
 		if (SSgamemode.holidays[APRIL_FOOLS])
 			color = "#[random_short_color()]"
-		else if (SSgamemode.holidays[PRIDE_WEEK])
-			var/datum/holiday/pride_week/pride_week = SSgamemode.holidays[PRIDE_WEEK]
-			color = pride_week.get_floor_tile_color(src)
+		else if (SSgamemode.holidays[PRIDE_MONTH])
+			var/datum/holiday/pride_month/pride_month = SSgamemode.holidays[PRIDE_MONTH]
+			color = pride_month.get_floor_tile_color(src)
 
 			// It looks garish at different alphas, and it's not possible to get a
 			// consistent color palette without this.

@@ -641,12 +641,11 @@
 /datum/holiday/hebrew/passover/getStationPrefix()
 	return pick("Matzah", "Moses", "Red Sea")
 
-/datum/holiday/pride_week
-	name = PRIDE_WEEK
+/datum/holiday/pride_month
+	name = PRIDE_MONTH
 	begin_month = JUNE
-	// Stonewall was June 28th, this captures its week.
-	begin_day = 23
-	end_day = 29
+	begin_day = 1
+	end_day = 30
 
 	var/static/list/rainbow_colors = list(
 		COLOR_PRIDE_PURPLE,
@@ -658,7 +657,7 @@
 	)
 
 /// Given an atom, will return what color it should be to match the pride flag.
-/datum/holiday/pride_week/proc/get_floor_tile_color(atom/atom)
+/datum/holiday/pride_month/proc/get_floor_tile_color(atom/atom)
 	var/turf/turf = get_turf(atom)
 	return rainbow_colors[(turf.y % rainbow_colors.len) + 1]
 
