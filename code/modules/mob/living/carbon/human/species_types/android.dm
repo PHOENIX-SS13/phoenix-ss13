@@ -2,7 +2,9 @@
 	name = "Android"
 	id = "android"
 	say_mod = "states"
-	species_traits = list(NOBLOOD)
+	species_traits = list(
+		NOBLOOD,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -27,10 +29,12 @@
 	mutanttongue = /obj/item/organ/tongue/robot
 	species_language_holder = /datum/language_holder/synthetic
 	limbs_id = "synth"
-	wings_icons = list("Robotic")
+	wings_icons = list(
+		"Robotic",
+	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_silicon.ogg'
+		NEUTER = 'sound/voice/scream_silicon.ogg',
 	)
 
 /datum/species/android/on_species_gain(mob/living/carbon/C)

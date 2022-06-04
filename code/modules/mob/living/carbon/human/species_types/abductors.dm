@@ -3,7 +3,10 @@
 	id = "abductor"
 	say_mod = "gibbers"
 	sexes = FALSE
-	species_traits = list(NOBLOOD,NOEYESPRITES)
+	species_traits = list(
+		NOBLOOD,
+		NOEYESPRITES,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,

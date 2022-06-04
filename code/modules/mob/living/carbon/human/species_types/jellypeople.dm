@@ -29,13 +29,22 @@
 	burnmod = 0.5 // = 1/2x generic burn damage
 	payday_modifier = 0.75
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
-	inherent_factions = list("slime")
+	inherent_factions = list(
+		"slime",
+	)
 	species_language_holder = /datum/language_holder/jelly
 	ass_image = 'icons/ass/assslime.png'
-	default_mutant_bodyparts = list("tail" = "None", "snout" = "None", "ears" = "None", "taur" = "None", "wings" = "None", "legs" = "Normal Legs")
+	default_mutant_bodyparts = list(
+		"tail" = ACC_NONE,
+		"snout" = ACC_NONE,
+		"ears" = ACC_NONE,
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"legs" = "Normal Legs",
+	)
 	hair_alpha = 160 //a notch brighter so it blends better.
 	scream_sounds = list(
-		NEUTER = 'sound/voice/jelly_scream.ogg'
+		NEUTER = 'sound/voice/jelly_scream.ogg',
 	)
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
@@ -139,7 +148,13 @@
 	name = "Slimeperson"
 	id = "slime"
 	default_color = "0FF"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		HAIR,
+		FACEHAIR,
+		NOBLOOD,
+	)
 	say_mod = "says"
 	hair_color = "mutcolor"
 	hair_alpha = 150

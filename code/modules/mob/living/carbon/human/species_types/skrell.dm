@@ -2,10 +2,17 @@
 	name = "Skrell"
 	id = "skrell"
 	default_color = "444"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,HAS_FLESH,HAS_BONE)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mutant_bodyparts = list()
-	default_mutant_bodyparts = list("skrell_hair" = ACC_RANDOM)
+	default_mutant_bodyparts = list(
+		"skrell_hair" = ACC_RANDOM,
+	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/skrell_parts_greyscale.dmi'
 	eyes_icon = 'icons/mob/species/skrell_eyes.dmi'

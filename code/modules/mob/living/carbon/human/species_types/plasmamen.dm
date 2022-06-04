@@ -5,7 +5,11 @@
 	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
-	species_traits = list(NOBLOOD,NOTRANSSTING, HAS_BONE)
+	species_traits = list(
+		NOBLOOD,
+		NOTRANSSTING,
+		HAS_BONE,
+	)
 	// plasmemes get hard to wound since they only need a severe bone wound to dismember, but unlike skellies, they can't pop their bones back into place
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -48,7 +52,7 @@
 	can_have_genitals = FALSE
 	can_augment = FALSE
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_skeleton.ogg'
+		NEUTER = 'sound/voice/scream_skeleton.ogg',
 	)
 
 /datum/species/plasmaman/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)

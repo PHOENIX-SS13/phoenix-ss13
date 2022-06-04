@@ -4,14 +4,22 @@
 	id = "pod"
 	flavor_text = "A plant-based lifeform that does well in suitably-lit environments. Feeds off of light and plants, but shies away from meat and dairy. Over-exposure to light may cause issues with their metabolism."
 	default_color = "5C0"
-	species_traits = list(MUTCOLORS,EYECOLOR, HAS_FLESH, HAS_BONE)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		HAS_FLESH,
+		HAS_BONE,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
 		TRAIT_PLANT_SAFE,
 	)
 	inherent_biotypes = MOB_ORGANIC | MOB_HUMANOID | MOB_PLANT
-	inherent_factions = list("plants", "vines")
+	inherent_factions = list(
+		"plants",
+		"vines",
+	)
 	attack_verb = "slash"
 	attack_effect = ATTACK_EFFECT_CLAW
 	attack_sound = 'sound/weapons/slice.ogg'
@@ -60,17 +68,33 @@
 	id = "podweak"
 	flavor_text = "A plant-based lifeform that does well in suitably-lit environments. Feeds off of light and plants, but shies away from meat and dairy. Over-exposure to light may cause issues with their metabolism."
 	limbs_id = "pod"
-	species_traits = list(MUTCOLORS,EYECOLOR, HAS_FLESH, HAS_BONE, HAIR, FACEHAIR)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		HAS_FLESH,
+		HAS_BONE,
+		HAIR,
+		FACEHAIR,
+	)
 	default_mutant_bodyparts = list(
-		"tail" = "None",
-		"snout" = "None",
-		"horns" = "None",
-		"ears" = "None",
-		"taur" = "None",
-		"wings" = "None",
-		"neck" = "None"
+		"tail" = ACC_NONE,
+		"snout" = ACC_NONE,
+		"horns" = ACC_NONE,
+		"ears" = ACC_NONE,
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
 		)
 
-	cultures = list(CULTURES_EXOTIC, CULTURES_HUMAN)
-	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN)
-	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN)
+	cultures = list(
+		CULTURES_EXOTIC,
+		CULTURES_HUMAN,
+	)
+	locations = list(
+		LOCATIONS_GENERIC,
+		LOCATIONS_HUMAN,
+	)
+	factions = list(
+		FACTIONS_GENERIC,
+		FACTIONS_HUMAN,
+	)

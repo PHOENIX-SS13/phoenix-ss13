@@ -7,7 +7,15 @@
 	limbs_icon = 'icons/mob/species/vox_parts_greyscale.dmi'
 	say_mod = "shrieks"
 	default_color = "0F0"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,HAS_FLESH,HAS_BONE,HAIR,FACEHAIR)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+		HAIR,
+		FACEHAIR,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -18,8 +26,12 @@
 	mutantbrain = /obj/item/organ/brain/vox
 	mutanttongue = /obj/item/organ/tongue/avian
 	breathid = "n2"
-	mutant_bodyparts = list()
-	default_mutant_bodyparts = list("tail" = "Vox Tail", "legs" = "Digitigrade Legs", "snout" = "Vox Snout", "spines" = ACC_RANDOM)
+	default_mutant_bodyparts = list(
+		"tail" = "Vox Tail",
+		"legs" = "Digitigrade Legs",
+		"snout" = "Vox Snout",
+		"spines" = ACC_RANDOM,
+	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -29,9 +41,12 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	bodytype = BODYTYPE_VOX
 	snout_bodytype = BODYTYPE_VOX
-	learnable_languages = list(/datum/language/common, /datum/language/vox)
+	learnable_languages = list(
+		/datum/language/common,
+		/datum/language/vox,
+	)
 	scream_sounds = list(
-		NEUTER = 'sound/voice/voxscream.ogg'
+		NEUTER = 'sound/voice/voxscream.ogg',
 	)
 
 /datum/species/vox/pre_equip_species_outfit(datum/job/J, mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -59,7 +74,13 @@
 	return returned
 
 /datum/species/vox/get_random_body_markings(list/passed_features)
-	var/name = pick(list("Vox", "Vox Hive", "Vox Nightling", "Vox Heart", "Vox Tiger"))
+	var/name = pick(list(
+		"Vox",
+		"Vox Hive",
+		"Vox Nightling",
+		"Vox Heart",
+		"Vox Tiger",
+	))
 	var/datum/body_marking_set/BMS = GLOB.body_marking_sets[name]
 	var/list/markings = list()
 	if(BMS)

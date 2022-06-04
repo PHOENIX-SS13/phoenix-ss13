@@ -2,7 +2,14 @@
 	name = "Dullahan"
 	id = "dullahan"
 	default_color = "FFF"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS, HAS_FLESH, HAS_BONE)
+	species_traits = list(
+		EYECOLOR,
+		HAIR,
+		FACEHAIR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,

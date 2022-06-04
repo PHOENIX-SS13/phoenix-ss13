@@ -3,7 +3,9 @@
 	id = "synth"
 	say_mod = "beep boops" //inherited from a user's real species
 	sexes = 0
-	species_traits = list(NOTRANSSTING) //all of these + whatever we inherit from the real species
+	species_traits = list(
+		NOTRANSSTING,
+	) //all of these + whatever we inherit from the real species
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -25,7 +27,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	species_language_holder = /datum/language_holder/synthetic
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_silicon.ogg'
+		NEUTER = 'sound/voice/scream_silicon.ogg',
 	)
 
 /datum/species/synth/New()

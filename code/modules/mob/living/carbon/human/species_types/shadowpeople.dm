@@ -4,7 +4,10 @@
 	id = "shadow"
 	sexes = 0
 	meat = /obj/item/food/meat/slab/human/mutant/shadow
-	species_traits = list(NOBLOOD,NOEYESPRITES)
+	species_traits = list(
+		NOBLOOD,
+		NOEYESPRITES,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,

@@ -13,7 +13,11 @@
 		MUTCOLORS,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	default_mutant_bodyparts = list("wings" = ACC_RANDOM, "moth_antennae" = ACC_RANDOM, "neck" = ACC_RANDOM)
+	default_mutant_bodyparts = list(
+		"wings" = ACC_RANDOM,
+		"moth_antennae" = ACC_RANDOM,
+		"neck" = ACC_RANDOM,
+	)
 	attack_verb = "slash"
 	attack_effect = ATTACK_EFFECT_CLAW
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -25,13 +29,16 @@
 	mutanteyes = /obj/item/organ/eyes/moth
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth
-	wings_icons = list("Megamoth", "Mothra")
+	wings_icons = list(
+		"Megamoth",
+		"Mothra",
+	)
 	has_innate_wings = TRUE
 	payday_modifier = 0.75
 	family_heirlooms = list(/obj/item/flashlight/lantern/heirloom_moth)
 	limbs_icon = 'icons/mob/species/moth_parts_greyscale.dmi'
 	scream_sounds = list(
-		NEUTER = 'sound/voice/moth/scream_moth.ogg'
+		NEUTER = 'sound/voice/moth/scream_moth.ogg',
 	)
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)

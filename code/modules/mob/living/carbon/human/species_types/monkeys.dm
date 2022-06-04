@@ -6,11 +6,25 @@
 	attack_effect = ATTACK_EFFECT_BITE
 	attack_sound = 'sound/weapons/bite.ogg'
 	miss_sound = 'sound/weapons/bite.ogg'
-	default_mutant_bodyparts = list("tail" = "Monkey")
+	default_mutant_bodyparts = list(
+		"tail" = "Monkey",
+	)
 	skinned_type = /obj/item/stack/sheet/animalhide/monkey
 	meat = /obj/item/food/meat/slab/monkey
-	knife_butcher_results = list(/obj/item/food/meat/slab/monkey = 5, /obj/item/stack/sheet/animalhide/monkey = 1)
-	species_traits = list(HAS_FLESH,HAS_BONE,NO_UNDERWEAR,LIPS,NOEYESPRITES,NOBLOODOVERLAY,NOTRANSSTING, NOAUGMENTS)
+	knife_butcher_results = list(
+		/obj/item/food/meat/slab/monkey = 5,
+		/obj/item/stack/sheet/animalhide/monkey = 1,
+	)
+	species_traits = list(
+		HAS_FLESH,
+		HAS_BONE,
+		NO_UNDERWEAR,
+		LIPS,
+		NOEYESPRITES,
+		NOBLOODOVERLAY,
+		NOTRANSSTING,
+		NOAUGMENTS,
+	)
 	inherent_traits = list(
 		TRAIT_CAN_STRIP,
 		TRAIT_VENTCRAWLER_NUDE,
@@ -18,7 +32,15 @@
 		TRAIT_WEAK_SOUL,
 		TRAIT_GUN_NATURAL,
 	)
-	no_equip = list(ITEM_SLOT_EARS, ITEM_SLOT_EYES, ITEM_SLOT_OCLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING, ITEM_SLOT_SUITSTORE)
+	no_equip = list(
+		ITEM_SLOT_EARS,
+		ITEM_SLOT_EYES,
+		ITEM_SLOT_OCLOTHING,
+		ITEM_SLOT_GLOVES,
+		ITEM_SLOT_FEET,
+		ITEM_SLOT_ICLOTHING,
+		ITEM_SLOT_SUITSTORE,
+	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | ERT_SPAWN | SLIME_EXTRACT
 	liked_food = MEAT | FRUIT
 	disliked_food = CLOTH
@@ -30,12 +52,13 @@
 	punchstunthreshold = 4 // no stun punches
 	species_language_holder = /datum/language_holder/monkey
 	bodypart_overides = list(
-	BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/monkey,\
-	BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/monkey,\
-	BODY_ZONE_HEAD = /obj/item/bodypart/head/monkey,\
-	BODY_ZONE_L_LEG = /obj/item/bodypart/l_leg/monkey,\
-	BODY_ZONE_R_LEG = /obj/item/bodypart/r_leg/monkey,\
-	BODY_ZONE_CHEST = /obj/item/bodypart/chest/monkey)
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/monkey,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/monkey,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/monkey,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/l_leg/monkey,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/r_leg/monkey,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/monkey,
+	)
 	dust_anim = "dust-m"
 	gib_anim = "gibbed-m"
 

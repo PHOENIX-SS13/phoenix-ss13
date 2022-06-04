@@ -1,7 +1,9 @@
 /datum/species/mush //mush mush codecuck
 	name = "Mushroomperson"
 	id = "mush"
-	default_mutant_bodyparts = list("caps" = "Round")
+	default_mutant_bodyparts = list(
+		"caps" = "Round",
+	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 
 	fixed_mut_color = "DBBF92"
@@ -9,21 +11,35 @@
 	nojumpsuit = TRUE
 
 	say_mod = "poofs" //what does a mushroom sound like
-	species_traits = list(MUTCOLORS, NOEYESPRITES, NO_UNDERWEAR, HAS_FLESH, HAS_BONE)
+	species_traits = list(
+		MUTCOLORS,
+		NOEYESPRITES,
+		NO_UNDERWEAR,
+		HAS_FLESH,
+		HAS_BONE,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
 		TRAIT_NOBREATH,
 		TRAIT_NOFLASH,
 	)
-	inherent_factions = list("mushroom")
+	inherent_factions = list(
+		"mushroom",
+	)
 	speedmod = 1.5 //faster than golems but not by much
 
 	punchdamagelow = 6
 	punchdamagehigh = 14
 	punchstunthreshold = 14 //about 44% chance to stun
 
-	no_equip = list(ITEM_SLOT_MASK, ITEM_SLOT_OCLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING)
+	no_equip = list(
+		ITEM_SLOT_MASK,
+		ITEM_SLOT_OCLOTHING,
+		ITEM_SLOT_GLOVES,
+		ITEM_SLOT_FEET,
+		ITEM_SLOT_ICLOTHING,
+	)
 
 	burnmod = 1.25
 	heatmod = 1.5

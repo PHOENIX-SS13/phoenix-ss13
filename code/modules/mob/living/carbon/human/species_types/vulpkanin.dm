@@ -3,10 +3,21 @@
 	id = "vulpkanin"
 	flavor_text = "A fully-furred bipedal fox. Most enjoy meats, and fried foods, but will eat just about anything."
 	default_color = "444"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,HAS_FLESH,HAS_BONE,HAIR)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+		HAIR,
+	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mutant_bodyparts = list()
-	default_mutant_bodyparts = list("tail" = ACC_RANDOM, "snout" = ACC_RANDOM, "ears" = ACC_RANDOM, "legs" = "Normal Legs")
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"ears" = ACC_RANDOM,
+		"legs" = "Normal Legs",
+	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -43,7 +54,11 @@
 	return returned
 
 /datum/species/vulpkanin/get_random_body_markings(list/passed_features)
-	var/name = pick("Fox", "Floof", "Floofer")
+	var/name = pick(
+		"Fox",
+		"Floof",
+		"Floofer",
+	)
 	var/datum/body_marking_set/BMS = GLOB.body_marking_sets[name]
 	var/list/markings = list()
 	if(BMS)

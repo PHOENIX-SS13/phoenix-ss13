@@ -3,10 +3,24 @@
 	id = "unathi"
 	flavor_text = "A reptilian species."
 	default_color = "444"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,HAS_FLESH,HAS_BONE,HAIR)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+		HAIR,
+	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mutant_bodyparts = list()
-	default_mutant_bodyparts = list("tail" = ACC_RANDOM, "snout" = ACC_RANDOM, "spines" = "None", "frills" = "None", "horns" = ACC_RANDOM, "body_markings" = ACC_RANDOM, "legs" = "Normal Legs")
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"spines" = ACC_NONE,
+		"frills" = ACC_NONE,
+		"horns" = ACC_RANDOM,
+		"body_markings" = ACC_RANDOM,
+		"legs" = "Normal Legs",
+	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'

@@ -5,7 +5,12 @@
 	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/food/meat/slab/human/mutant/skeleton
-	species_traits = list(NOBLOOD, HAS_BONE, NOTRANSSTING, NOEYESPRITES)
+	species_traits = list(
+		NOBLOOD,
+		HAS_BONE,
+		NOTRANSSTING,
+		NOEYESPRITES,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -32,12 +37,14 @@
 	damage_overlay_type = ""//let's not show bloody wounds or burns over bones.
 	disliked_food = NONE
 	liked_food = GROSS | MEAT | RAW
-	wings_icons = list("Skeleton")
+	wings_icons = list(
+		"Skeleton",
+	)
 	//They can technically be in an ERT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 	species_language_holder = /datum/language_holder/skeleton
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_skeleton.ogg'
+		NEUTER = 'sound/voice/scream_skeleton.ogg',
 	)
 
 /datum/species/skeleton/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)

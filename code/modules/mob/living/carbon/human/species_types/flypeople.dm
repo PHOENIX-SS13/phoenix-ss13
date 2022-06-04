@@ -2,7 +2,11 @@
 	name = "Flyperson"
 	id = "fly"
 	say_mod = "buzzes"
-	species_traits = list(HAS_FLESH, HAS_BONE, TRAIT_ANTENNAE)
+	species_traits = list(
+		HAS_FLESH,
+		HAS_BONE,
+		TRAIT_ANTENNAE
+	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	meat = /obj/item/food/meat/slab/human/mutant/fly
 	mutanteyes = /obj/item/organ/eyes/fly
@@ -21,7 +25,7 @@
 	mutantappendix = /obj/item/organ/appendix/fly
 	mutant_organs = list(/obj/item/organ/fly, /obj/item/organ/fly/groin)
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_moth.ogg'
+		NEUTER = 'sound/voice/scream_moth.ogg',
 	)
 
 /datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, delta_time, times_fired)

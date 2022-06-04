@@ -10,14 +10,14 @@
 		HAS_FLESH,
 		HAS_BONE,
 		HAS_MARKINGS,
-		)
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
-		TRAIT_CAN_STRIP
+		TRAIT_CAN_STRIP,
 	)
 	default_mutant_bodyparts = list(
 		"tail" = ACC_RANDOM,
-		"ears" = ACC_RANDOM
+		"ears" = ACC_RANDOM,
 	)
 	mutanttongue = /obj/item/organ/tongue/avian
 	disliked_food = GROSS | GRAIN
@@ -40,8 +40,8 @@
 		OFFSET_S_STORE = list(0,-2),
 		OFFSET_GLASSES = list(0,-5),
 		OFFSET_ID = list(0,-4),
-		OFFSET_ACCESSORY = list(0,-4)
-		)
+		OFFSET_ACCESSORY = list(0,-4),
+	)
 	coldmod = 0.3 // Except cold.
 	heatmod = 1.5
 	brutemod = 1.5
@@ -52,13 +52,13 @@
 	bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT - 50
 	bodytemp_cold_damage_limit = BODYTEMP_COLD_DAMAGE_LIMIT - 50
 	species_language_holder = /datum/language_holder/teshari
-	learnable_languages = list(/datum/language/common, /datum/language/schechi)
+	learnable_languages = list(
+		/datum/language/common,
+		/datum/language/schechi,
+	)
 	body_size_restricted = TRUE
 	bodytype = BODYTYPE_TESHARI
-	flavor_text = "A race of feathered raptors who developed alongside the Skrell, inhabiting \
-	the polar tundral regions outside of Skrell territory. Extremely fragile, they developed \
-	hunting skills that emphasized taking out their prey without themselves getting hit. They \
-	are only recently becoming known on human stations after reaching space with Skrell assistance."
+	flavor_text = "A race of feathered raptors who developed alongside the Skrell, inhabiting the polar tundral regions outside of Skrell territory. Extremely fragile, they developed hunting skills that emphasized taking out their prey without themselves getting hit. They are only recently becoming known on human stations after reaching space with Skrell assistance."
 
 /datum/species/teshari/get_bodytype(item_slot = NONE, obj/item/checked_item_for)
 	///Always return a Teshari bodytype if the item accounts for it

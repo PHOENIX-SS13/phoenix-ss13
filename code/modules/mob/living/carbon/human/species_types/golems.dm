@@ -2,7 +2,11 @@
 	// Animated beings of stone. They have increased defenses, and do not need to breathe. They're also slow as fuuuck.
 	name = "Golem"
 	id = "iron golem"
-	species_traits = list(NOBLOOD,MUTCOLORS,NO_UNDERWEAR)
+	species_traits = list(
+		NOBLOOD,
+		MUTCOLORS,
+		NO_UNDERWEAR,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -27,7 +31,14 @@
 	punchdamagelow = 5
 	punchdamagehigh = 14
 	punchstunthreshold = 11 //about 40% chance to stun
-	no_equip = list(ITEM_SLOT_MASK, ITEM_SLOT_OCLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING, ITEM_SLOT_SUITSTORE)
+	no_equip = list(
+		ITEM_SLOT_MASK,
+		ITEM_SLOT_OCLOTHING,
+		ITEM_SLOT_GLOVES,
+		ITEM_SLOT_FEET,
+		ITEM_SLOT_ICLOTHING,
+		ITEM_SLOT_SUITSTORE,
+	)
 	nojumpsuit = 1
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	sexes = 1
@@ -324,10 +335,55 @@
 	heatmod = 1.5
 	info_text = "As a <span class='danger'>Wooden Golem</span>, you have plant-like traits: you take damage from extreme temperatures, can be set on fire, and have lower armor than a normal golem. You regenerate when in the light and wither in the darkness."
 	prefix = "Wooden"
-	special_names = list("Bark", "Willow", "Catalpa", "Woody", "Oak", "Sap", "Twig", "Branch", "Maple", "Birch", "Elm", "Basswood", "Cottonwood", "Larch", "Aspen", "Ash", "Beech", "Buckeye", "Cedar", "Chestnut", "Cypress", "Fir", "Hawthorn", "Hazel", "Hickory", "Ironwood", "Juniper", "Leaf", "Mangrove", "Palm", "Pawpaw", "Pine", "Poplar", "Redwood", "Redbud", "Sassafras", "Spruce", "Sumac", "Trunk", "Walnut", "Yew")
+	special_names = list(
+		"Bark",
+		"Willow",
+		"Catalpa",
+		"Woody",
+		"Oak",
+		"Sap",
+		"Twig",
+		"Branch",
+		"Maple",
+		"Birch",
+		"Elm",
+		"Basswood",
+		"Cottonwood",
+		"Larch",
+		"Aspen",
+		"Ash",
+		"Beech",
+		"Buckeye",
+		"Cedar",
+		"Chestnut",
+		"Cypress",
+		"Fir",
+		"Hawthorn",
+		"Hazel",
+		"Hickory",
+		"Ironwood",
+		"Juniper",
+		"Leaf",
+		"Mangrove",
+		"Palm",
+		"Pawpaw",
+		"Pine",
+		"Poplar",
+		"Redwood",
+		"Redbud",
+		"Sassafras",
+		"Spruce",
+		"Sumac",
+		"Trunk",
+		"Walnut",
+		"Yew",
+	)
 	human_surname_chance = 0
 	special_name_chance = 100
-	inherent_factions = list("plants", "vines")
+	inherent_factions = list(
+		"plants",
+		"vines",
+	)
 
 /datum/species/golem/wood/spec_life(mob/living/carbon/human/H, delta_time, times_fired)
 	if(H.stat == DEAD)
@@ -371,7 +427,12 @@
 	punchdamagehigh = 10
 	punchstunthreshold = 9
 	prefix = "Uranium"
-	special_names = list("Oxide", "Rod", "Meltdown", "235")
+	special_names = list(
+		"Oxide",
+		"Rod",
+		"Meltdown",
+		"235",
+	)
 	COOLDOWN_DECLARE(radiation_emission_cooldown)
 
 /datum/species/golem/uranium/proc/radiation_emission(mob/living/carbon/human/H)
@@ -416,7 +477,13 @@
 	info_text = "As a <span class='danger'>Sand Golem</span>, you are immune to physical bullets and take very little brute damage, but are extremely vulnerable to burn damage and energy weapons. You will also turn to sand when dying, preventing any form of recovery."
 	attack_sound = 'sound/effects/shovel_dig.ogg'
 	prefix = "Sand"
-	special_names = list("Castle", "Bag", "Dune", "Worm", "Storm")
+	special_names = list(
+		"Castle",
+		"Bag",
+		"Dune",
+		"Worm",
+		"Storm",
+	)
 
 /datum/species/golem/sand/spec_death(gibbed, mob/living/carbon/human/H)
 	H.visible_message(SPAN_DANGER("[H] turns into a pile of sand!"))
@@ -447,7 +514,12 @@
 	info_text = "As a <span class='danger'>Glass Golem</span>, you reflect lasers and energy weapons, and are very resistant to burn damage. However, you are extremely vulnerable to brute damage. On death, you'll shatter beyond any hope of recovery."
 	attack_sound = 'sound/effects/glassbr2.ogg'
 	prefix = "Glass"
-	special_names = list("Lens", "Prism", "Fiber", "Bead")
+	special_names = list(
+		"Lens",
+		"Prism",
+		"Fiber",
+		"Bead",
+	)
 
 /datum/species/golem/glass/spec_death(gibbed, mob/living/carbon/human/H)
 	playsound(H, "shatter", 70, TRUE)
@@ -673,7 +745,11 @@
 	limbs_id = "cultgolem"
 	sexes = FALSE
 	info_text = "As a <span class='danger'>Runic Golem</span>, you possess eldritch powers granted by the Elder Goddess Nar'Sie."
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYESPRITES) //no mutcolors
+	species_traits = list(
+		NOBLOOD,
+		NO_UNDERWEAR,
+		NOEYESPRITES,
+	) //no mutcolors
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -743,7 +819,10 @@
 	sexes = FALSE
 	info_text = "As a <span class='danger'>Cloth Golem</span>, you are able to reform yourself after death, provided your remains aren't burned or destroyed. You are, of course, very flammable. \
 	Being made of cloth, your body is magic resistant and faster than that of other golems, but weaker and less resilient."
-	species_traits = list(NOBLOOD,NO_UNDERWEAR) //no mutcolors, and can burn
+	species_traits = list(
+		NOBLOOD,
+		NO_UNDERWEAR,
+	) //no mutcolors, and can burn
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -807,7 +886,16 @@
 	name = "pile of bandages"
 	desc = "It emits a strange aura, as if there was still life within it..."
 	max_integrity = 50
-	armor = list(MELEE = 90, BULLET = 90, LASER = 25, ENERGY = 80, BOMB = 50, BIO = 100, FIRE = -50, ACID = -50)
+	armor = list(
+		MELEE = 90,
+		BULLET = 90,
+		LASER = 25,
+		ENERGY = 80,
+		BOMB = 50,
+		BIO = 100,
+		FIRE = -50,
+		ACID = -50,
+	)
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "pile_bandages"
 	resistance_flags = FLAMMABLE
@@ -883,7 +971,11 @@
 		TRAIT_VENTCRAWLER_NUDE,
 	)
 	prefix = "Plastic"
-	special_names = list("Sheet", "Bag", "Bottle")
+	special_names = list(
+		"Sheet",
+		"Bag",
+		"Bottle",
+	)
 	fixed_mut_color = "fffa"
 	info_text = "As a <span class='danger'>Plastic Golem</span>, you are capable of ventcrawling and passing through plastic flaps as long as you are naked."
 
@@ -894,7 +986,10 @@
 	special_names = list("Bell")
 	fixed_mut_color = "cd7f32"
 	info_text = "As a <span class='danger'>Bronze Golem</span>, you are very resistant to loud noises, and make loud noises if something hard hits you, however this ability does hurt your hearing."
-	special_step_sounds = list('sound/machines/clockcult/integration_cog_install.ogg', 'sound/magic/clockwork/fellowship_armory.ogg' )
+	special_step_sounds = list(
+		'sound/machines/clockcult/integration_cog_install.ogg',
+		'sound/magic/clockwork/fellowship_armory.ogg',
+	)
 	mutantears = /obj/item/organ/ears/bronze
 	var/last_gong_time = 0
 	var/gong_cooldown = 150
@@ -962,7 +1057,11 @@
 	prefix = "Cardboard"
 	special_names = list("Box")
 	info_text = "As a <span class='danger'>Cardboard Golem</span>, you aren't very strong, but you are a bit quicker and can easily create more brethren by using cardboard on yourself."
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYESPRITES)
+	species_traits = list(
+		NOBLOOD,
+		NO_UNDERWEAR,
+		NOEYESPRITES,
+	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -1020,7 +1119,11 @@
 /datum/species/golem/leather
 	name = "Leather Golem"
 	id = "leather golem"
-	special_names = list("Face", "Man", "Belt") //Ah dude 4 strength 4 stam leather belt AHHH
+	special_names = list(
+		"Face",
+		"Man",
+		"Belt"
+	) //Ah dude 4 strength 4 stam leather belt AHHH
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -1046,8 +1149,15 @@
 	id = "durathread golem"
 	prefix = "Durathread"
 	limbs_id = "d_golem"
-	special_names = list("Boll","Weave")
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYESPRITES)
+	special_names = list(
+		"Boll",
+		"Weave",
+	)
+	species_traits = list(
+		NOBLOOD,
+		NO_UNDERWEAR,
+		NOEYESPRITES,
+	)
 	fixed_mut_color = null
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -1075,10 +1185,21 @@
 	say_mod = "rattles"
 	prefix = "Bone"
 	limbs_id = "b_golem"
-	special_names = list("Head", "Broth", "Fracture", "Rattler", "Appetit")
+	special_names = list(
+		"Head",
+		"Broth",
+		"Fracture",
+		"Rattler",
+		"Appetit",
+	)
 	liked_food = GROSS | MEAT | RAW
 	toxic_food = null
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYESPRITES,HAS_BONE)
+	species_traits = list(
+		NOBLOOD,
+		NO_UNDERWEAR,
+		NOEYESPRITES,
+		HAS_BONE,
+	)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/tongue/bone
 	mutantstomach = /obj/item/organ/stomach/bone
@@ -1188,8 +1309,16 @@
 	burnmod = 3 //melts easily
 	info_text = "As a <span class='danger'>Snow Golem</span>, you are extremely vulnerable to burn damage, but you can generate snowballs and shoot cryokinetic beams. You will also turn to snow when dying, preventing any form of recovery."
 	prefix = "Snow"
-	special_names = list("Flake", "Blizzard", "Storm")
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYESPRITES) //no mutcolors, no eye sprites
+	special_names = list(
+		"Flake",
+		"Blizzard",
+		"Storm",
+	)
+	species_traits = list(
+		NOBLOOD,
+		NO_UNDERWEAR,
+		NOEYESPRITES,
+	) //no mutcolors, no eye sprites
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,

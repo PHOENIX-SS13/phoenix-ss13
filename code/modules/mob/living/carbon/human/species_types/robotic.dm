@@ -35,7 +35,7 @@
 	mutantliver = /obj/item/organ/liver/robot_ipc
 	exotic_blood = /datum/reagent/fuel/oil
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_silicon.ogg'
+		NEUTER = 'sound/voice/scream_silicon.ogg',
 	)
 	species_descriptors = list(
 		/datum/descriptor/age/robot
@@ -69,9 +69,23 @@
 	name = "I.P.C."
 	id = "ipc"
 	flavor_text = "A robotic lifeform. Most sport a screen, instead of a humanoid face. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
-	species_traits = list(ROBOTIC_DNA_ORGANS,MUTCOLORS_PARTSONLY,EYECOLOR,LIPS,HAIR,NOEYESPRITES,ROBOTIC_LIMBS,NOTRANSSTING,REVIVES_BY_HEALING)
+	species_traits = list(
+		ROBOTIC_DNA_ORGANS,
+		MUTCOLORS_PARTSONLY,
+		EYECOLOR,
+		LIPS,
+		HAIR,
+		NOEYESPRITES,
+		ROBOTIC_LIMBS,
+		NOTRANSSTING,
+		REVIVES_BY_HEALING,
+	)
 	mutant_bodyparts = list()
-	default_mutant_bodyparts = list("ipc_antenna" = ACC_RANDOM, "ipc_screen" = ACC_RANDOM, "ipc_chassis" = ACC_RANDOM)
+	default_mutant_bodyparts = list(
+		"ipc_antenna" = ACC_RANDOM,
+		"ipc_screen" = ACC_RANDOM,
+		"ipc_chassis" = ACC_RANDOM,
+	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/ipc_parts.dmi'
 	hair_alpha = 210
@@ -133,9 +147,22 @@
 	name = "Synthetic Lizardperson"
 	id = "synthliz"
 	flavor_text = "A robotic lifeform. This model looks similar to reptiles. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
-	species_traits = list(ROBOTIC_DNA_ORGANS,MUTCOLORS,EYECOLOR,LIPS,HAIR,ROBOTIC_LIMBS,NOTRANSSTING,REVIVES_BY_HEALING)
-	mutant_bodyparts = list()
-	default_mutant_bodyparts = list("ipc_antenna" = ACC_RANDOM, "tail" = ACC_RANDOM, "snout" = ACC_RANDOM, "legs" = "Digitigrade Legs", "taur" = "None")
+	species_traits = list(
+		ROBOTIC_DNA_ORGANS,
+		MUTCOLORS,EYECOLOR,
+		LIPS,
+		HAIR,
+		ROBOTIC_LIMBS,
+		NOTRANSSTING,
+		REVIVES_BY_HEALING,
+	)
+	default_mutant_bodyparts = list(
+		"ipc_antenna" = ACC_RANDOM,
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"legs" = "Digitigrade Legs",
+		"taur" = ACC_NONE,
+	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
 
@@ -159,18 +186,18 @@
 		HAIR,
 		ROBOTIC_LIMBS,
 		NOTRANSSTING,
-		REVIVES_BY_HEALING
-		)
+		REVIVES_BY_HEALING,
+	)
 	default_mutant_bodyparts = list(
 		"tail" = ACC_RANDOM,
 		"snout" = ACC_RANDOM,
-		"horns" = "None",
+		"horns" = ACC_NONE,
 		"ears" = ACC_RANDOM,
 		"legs" = ACC_RANDOM,
-		"taur" = "None",
-		"wings" = "None",
-		"neck" = "None"
-		)
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
 	limbs_id = "mammal"
 
