@@ -184,6 +184,14 @@
 		/obj/item/clothing/mask/breath,
 	)
 
+/datum/supply_pack/goody/boombox
+	name = "Boombox"
+	desc = "A classic-style boombox! A large set of speakers, your own portable jukebox!"
+	cost = PAYCHECK_HARD * 21
+	contains = list(
+		/obj/item/boombox
+	)
+
 // Misc Stuff
 /datum/supply_pack/goody/crayons
 	name = "Box of Crayons"

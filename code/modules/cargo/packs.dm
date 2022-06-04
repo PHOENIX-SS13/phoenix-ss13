@@ -691,6 +691,17 @@
 	group = "Engineering"
 	crate_type = /obj/structure/closet/crate/engineering
 
+/datum/supply_pack/engineering/rcd_crate
+	name = "Rapid Construction Device"
+	desc = "One fully-loaded RCD! Capable of patching breaches and constructing simple rooms."
+	cost = CARGO_CRATE_VALUE * 12.5
+	access = ACCESS_ENGINE
+	contains = list(
+		/obj/item/construction/rcd/loaded
+		)
+	crate_name = "RCD crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
 /datum/supply_pack/engineering/engi_hardsuit
 	name = "Engineering Hardsuit"
 	desc = "Poly 'Who stole all the hardsuits!' Well now you can get more hardsuits if needed! NOTE ONE HARDSUIT IS IN THIS CRATE, as well as one oxygen tank and mask!"
@@ -1922,17 +1933,12 @@
 /datum/supply_pack/organic/randomized/chef
 	name = "Excellent Meat Crate"
 	desc = "The best cuts in the whole galaxy."
-	cost = CARGO_CRATE_VALUE * 4
-	contains = list(/obj/item/food/meat/slab/human/mutant/slime,
+	cost = CARGO_CRATE_VALUE * 3.75
+	contains = list(/obj/item/food/meat/slab,
 					/obj/item/food/meat/slab/killertomato,
 					/obj/item/food/meat/slab/bear,
-					/obj/item/food/meat/slab/xeno,
-					/obj/item/food/meat/slab/spider,
 					/obj/item/food/meat/rawbacon,
-					/obj/item/food/meat/slab/penguin,
-					/obj/item/food/spiderleg,
-					/obj/item/food/fishmeat/carp,
-					/obj/item/food/meat/slab/human)
+					/obj/item/food/fishmeat/)
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/randomized/chef/fill(obj/structure/closet/crate/C)
@@ -2043,7 +2049,7 @@
 	///The percentage chance (per pizza) of this supply pack to spawn an anomalous pizza box.
 	var/anna_molly_box_chance = 1
 	///Total tickets in our figurative lottery (per pizza) to decide if we create a bomb box, and if so what type. 1 to 3 create a bomb. The rest do nothing.
-	var/boombox_tickets = 100
+	var/boombox_tickets = 200
 	///Whether we've provided a bomb pizza box already this shift or not.
 	var/boombox_provided = FALSE
 
