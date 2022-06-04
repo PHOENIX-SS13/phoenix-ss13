@@ -1,0 +1,6 @@
+author: Azarak
+changes:
+- bugfix: Fixes foodtypes and removes some GROSS flags. Yes this will fix cooked meat
+    seem not cooked.
+merge-date: 2022-06-04
+prnumber: 1070
