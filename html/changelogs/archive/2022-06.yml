@@ -39,3 +39,6 @@
   - rscadd: adds long range holopads to two shuttles
   mamakoshka:
   - bugfix: Ice no longer makes a noise when melting.
+2022-06-03:
+  Deek-Za (Deek-Za):
+  - rscadd: Storyteller now added to Statpanel
