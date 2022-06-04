@@ -1,0 +1,10 @@
+author: KathrinBailey
+changes:
+- balance: Pizza bombs are now much less frequent (3 in 200 chance, down from 3 in
+    100).
+- qol: Boomboxes can now be ordered as a cargo goodie!
+- balance: Meat crates from cargo now contain only useable quality meat that won&#x27;t
+    kill you.
+- qol: RCDs can now be ordered from cargo!
+merge-date: 2022-06-04
+prnumber: 1076
