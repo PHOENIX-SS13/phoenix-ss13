@@ -545,7 +545,7 @@
 	desc = "A human meat, on a stick."
 	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 16, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("tender meat" = 3, "metal" = 1)
-	foodtypes = MEAT | GROSS
+	foodtypes = MEAT
 
 /obj/item/food/kebab/monkey
 	name = "meat-kebab"
@@ -621,7 +621,7 @@
 /obj/item/food/meat/slab/human
 	name = "meat"
 	tastes = list("tender meat" = 1)
-	foodtypes = MEAT | RAW | GROSS
+	foodtypes = MEAT | RAW
 
 /obj/item/food/meat/slab/human/MakeGrillable()
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/plain/human, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE, /datum/pollutant/food/fried_meat) //Add medium rare later maybe?
@@ -744,7 +744,7 @@
 	name = "corgi meat"
 	desc = "Tastes like... well you know..."
 	tastes = list("meat" = 4, "a fondness for wearing hats" = 1)
-	foodtypes = RAW | MEAT | GROSS
+	foodtypes = RAW | MEAT
 
 /obj/item/food/meat/slab/corgi/Initialize()
 	. = ..()
@@ -753,7 +753,7 @@
 /obj/item/food/meat/slab/pug
 	name = "pug meat"
 	desc = "Tastes like... well you know..."
-	foodtypes = RAW | MEAT | GROSS
+	foodtypes = RAW | MEAT
 
 /obj/item/food/meat/slab/pug/Initialize()
 	. = ..()
@@ -960,7 +960,7 @@
 
 /obj/item/food/meat/steak/plain/human
 	tastes = list("tender meat" = 1)
-	foodtypes = MEAT | GROSS
+	foodtypes = MEAT
 
 ///Make sure the steak has the correct name
 /obj/item/food/meat/steak/plain/human/OnMicrowaveCooked(datum/source, obj/item/source_item, cooking_efficiency = 1)
@@ -1066,7 +1066,7 @@
 
 /obj/item/food/meat/rawcutlet/plain/human
 	tastes = list("tender meat" = 1)
-	foodtypes = MEAT | RAW | GROSS
+	foodtypes = MEAT | RAW
 
 /obj/item/food/meat/rawcutlet/plain/human/MakeGrillable()
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/cutlet/plain/human, rand(35 SECONDS, 50 SECONDS), TRUE, TRUE, /datum/pollutant/food/fried_meat)
@@ -1164,7 +1164,7 @@
 
 /obj/item/food/meat/cutlet/plain/human
 	tastes = list("tender meat" = 1)
-	foodtypes = MEAT | GROSS
+	foodtypes = MEAT
 
 /obj/item/food/meat/cutlet/plain/human/OnMicrowaveCooked(datum/source, atom/source_item, cooking_efficiency)
 	. = ..()

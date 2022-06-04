@@ -25,7 +25,7 @@
 	icon_state = "map_flower"
 	slot_flags = ITEM_SLOT_HEAD
 	bite_consumption_mod = 2
-	foodtypes = VEGETABLES | GROSS
+	foodtypes = VEGETABLES
 	distill_reagent = /datum/reagent/consumable/ethanol/vermouth
 	greyscale_config = /datum/greyscale_config/flower_simple
 	greyscale_config_worn = /datum/greyscale_config/flower_simple_worn
@@ -274,7 +274,7 @@
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	bite_consumption_mod = 2
-	foodtypes = VEGETABLES | GROSS
+	foodtypes = VEGETABLES
 
 // Carbon Rose
 /obj/item/seeds/carbon_rose

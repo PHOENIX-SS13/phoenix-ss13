@@ -48,7 +48,7 @@
 	name = "corgi burger"
 	desc = "You monster."
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 6, /datum/reagent/consumable/nutriment/vitamin = 6)
-	foodtypes = GRAIN | MEAT | GROSS
+	foodtypes = GRAIN | MEAT
 
 
 /obj/item/food/burger/appendix
@@ -301,7 +301,7 @@
 	desc = "It's still warm. The steam coming off of it looks like baseball."
 	icon_state = "baseball"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/protein = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
-	foodtypes = GRAIN | GROSS
+	foodtypes = GRAIN
 	custom_price = PAYCHECK_ASSISTANT * 0.8
 
 /obj/item/food/burger/baconburger
