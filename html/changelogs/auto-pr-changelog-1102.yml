@@ -1,0 +1,8 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- balance: Changed phantom stalker brain trauma to be cured via lobotomy
+- balance: Changed foiled hat paranoia to be cured by lobotomy
+- rscdel: Removed magical brain trauma resilience
+- balance: Successful lobotomies&#x27; trauma chance reduced from 75% to 45%
+merge-date: 2022-06-05
+prnumber: 1102
