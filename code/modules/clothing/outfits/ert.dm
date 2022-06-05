@@ -110,15 +110,18 @@
 	suit_store = /obj/item/gun/energy/e_gun
 	back = /obj/item/storage/backpack/ert/medical
 	backpack_contents = list(
-		/obj/item/gun/medbeam = 1,
+		/obj/item/storage/box/survival/engineer = 1,
+		/obj/item/storage/box/hug/plushes = 1,
+		/obj/item/storage/firstaid/advanced = 1,
 		/obj/item/melee/baton/loaded = 1,
 		/obj/item/reagent_containers/hypospray/combat = 1,
-		/obj/item/storage/box/hug/plushes = 1,
-		/obj/item/storage/box/survival/engineer = 1,
+		/obj/item/pinpointer/crew = 1,
+		/obj/item/healthanalyzer/advanced = 1,
 )
-	belt = /obj/item/storage/belt/medical
+	belt = /obj/item/defibrillator/compact/loaded
 	glasses = /obj/item/clothing/glasses/hud/health
-	l_hand = /obj/item/storage/firstaid/regular
+	l_hand = /obj/item/storage/belt/medical/paramedic
+	r_hand = /obj/item/storage/backpack/duffelbag/med/surgery
 
 /datum/outfit/centcom/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -134,14 +137,19 @@
 	name = "ERT Medic - High Alert"
 
 	backpack_contents = list(
+		/obj/item/storage/box/survival/engineer = 1,
+		/obj/item/storage/box/hug/plushes = 1,
+		/obj/item/storage/firstaid/advanced = 1,
 		/obj/item/gun/energy/pulse/pistol/loyalpin = 1,
 		/obj/item/gun/medbeam = 1,
 		/obj/item/melee/baton/loaded = 1,
 		/obj/item/reagent_containers/hypospray/combat/nanites = 1,
-		/obj/item/storage/box/hug/plushes = 1,
-		/obj/item/storage/box/survival/engineer = 1,
+		/obj/item/pinpointer/crew = 1,
+		/obj/item/healthanalyzer/advanced = 1,
 )
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/health/night
+	belt = /obj/item/defibrillator/compact/combat/loaded/nanotrasen
 
 /datum/outfit/centcom/ert/engineer
 	name = "ERT Engineer"
