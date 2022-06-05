@@ -993,7 +993,7 @@
 		SEND_SIGNAL(src, COMSIG_REAGENTS_REACTION_STEP, num_reactions, delta_time)
 
 	if(length(mix_message)) //This is only at the end
-		my_atom.audible_message(SPAN_NOTICE("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [mix_message.Join()]"))
+		my_atom.audible_message(SPAN_NOTICE("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [mix_message.Join(" ")]"))
 
 	if(!LAZYLEN(reaction_list))
 		finish_reacting()
@@ -1059,7 +1059,7 @@
 	for(var/datum/equilibrium/equilibrium as anything in reaction_list)
 		mix_message += end_reaction(equilibrium)
 	if(length(mix_message))
-		my_atom.audible_message(SPAN_NOTICE("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [mix_message.Join()]"))
+		my_atom.audible_message(SPAN_NOTICE("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [mix_message.Join(" ")]"))
 	finish_reacting()
 
 /*
@@ -1080,7 +1080,7 @@
 				mix_message += end_reaction(equilibrium)
 				any_stopped = TRUE
 	if(length(mix_message))
-		my_atom.audible_message(SPAN_NOTICE("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))][mix_message.Join()]"))
+		my_atom.audible_message(SPAN_NOTICE("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [mix_message.Join(" ")]"))
 	return any_stopped
 
 /*
@@ -1185,7 +1185,7 @@
 	if(selected_reaction.pollutant_type && my_atom)
 		var/turf/my_turf = get_turf(my_atom)
 		my_turf.pollute_turf(selected_reaction.pollutant_type, selected_reaction.pollutant_amount * multiplier)
-	
+
 	selected_reaction.on_reaction(src, null, multiplier)
 
 ///Possibly remove - see if multiple instant reactions is okay (Though, this "sorts" reactions by temp decending)
