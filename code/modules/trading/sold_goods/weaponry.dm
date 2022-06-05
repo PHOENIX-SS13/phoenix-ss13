@@ -21,7 +21,7 @@
 /datum/sold_goods/aegun
 	stock = 1
 	cost = 3000
-	path = /obj/item/gun/energy/e_gun/nuclear
+	path = /obj/item/gun/energy/e_gun/adv
 
 /datum/sold_goods/makarov
 	stock = 1

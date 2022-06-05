@@ -994,7 +994,7 @@
 		/obj/item/gun/energy/e_gun = 1,
 		/obj/item/gun/energy/e_gun/mini = 1,
 		/obj/item/gun/energy/laser/hellgun = 1,
-		/obj/item/gun/energy/e_gun/nuclear = 1,
+		/obj/item/gun/energy/e_gun/adv = 1,
 		/obj/item/gun/energy/taser = 1
 	)
 

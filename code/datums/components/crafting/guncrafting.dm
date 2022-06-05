@@ -25,7 +25,7 @@
 	icon = 'icons/obj/improvised.dmi'
 	icon_state = "kitsuitcase"
 
-/obj/item/weaponcrafting/gunkit/nuclear
+/obj/item/weaponcrafting/gunkit/advenergy
 	name = "advanced energy gun parts kit"
 	desc = "A suitcase containing the necessary gun parts to tranform a standard energy gun into an advaned energy gun."
 

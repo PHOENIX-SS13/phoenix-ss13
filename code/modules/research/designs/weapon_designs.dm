@@ -102,13 +102,13 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/nuclear_gun
+/datum/design/advenergy
 	name = "Advanced Energy Gun Part Kit"
 	desc = "The kit for an energy gun with an experimental miniaturized reactor."
-	id = "nuclear_gun"
+	id = "advenergy"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 1000)
-	build_path = /obj/item/weaponcrafting/gunkit/nuclear
+	build_path = /obj/item/weaponcrafting/gunkit/advenergy
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 

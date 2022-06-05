@@ -2,12 +2,12 @@
 	name = "energy gun"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
 	icon_state = "energy"
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	inhand_icon_state = null //so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	modifystate = TRUE
 	can_flashlight = TRUE
-	ammo_x_offset = 3
+	ammo_x_offset = 2
 	flight_x_offset = 15
 	flight_y_offset = 10
 	dual_wield_spread = 60
@@ -19,7 +19,6 @@
 	inhand_icon_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
 	cell_type = /obj/item/stock_parts/cell/mini_egun
-	ammo_x_offset = 2
 	charge_sections = 3
 	can_flashlight = FALSE // Can't attach or detach the flashlight, and override it's icon update
 	gunlight_state = "mini-light"
@@ -35,14 +34,14 @@
 	name = "tactical energy gun"
 	desc = "Military issue energy gun, is able to fire stun rounds."
 	icon_state = "energytac"
-	ammo_x_offset = 2
+	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 
 /obj/item/gun/energy/e_gun/old
 	name = "prototype energy gun"
 	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command."
 	icon_state = "protolaser"
-	ammo_x_offset = 2
+	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/electrode/old)
 
 /obj/item/gun/energy/e_gun/mini/practice_phaser
@@ -93,33 +92,31 @@
 	weapon_weight = WEAPON_HEAVY
 	can_flashlight = FALSE
 	trigger_guard = TRIGGER_GUARD_NONE
-	ammo_x_offset = 2
 
-/obj/item/gun/energy/e_gun/nuclear
+/obj/item/gun/energy/e_gun/adv
 	name = "advanced energy gun"
 	desc = "An energy gun with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
-	icon_state = "nucgun"
-	inhand_icon_state = "nucgun"
+	icon_state = "advenergy"
+	inhand_icon_state = "advenergy"
 	charge_delay = 10
 	can_charge = FALSE
-	ammo_x_offset = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/disabler)
 	selfcharge = 1
 	var/reactor_overloaded
 	var/fail_tick = 0
 	var/fail_chance = 0
 
-/obj/item/gun/energy/e_gun/nuclear/process(delta_time)
+/obj/item/gun/energy/e_gun/adv/process(delta_time)
 	if(fail_tick > 0)
 		fail_tick -= delta_time * 0.5
 	..()
 
-/obj/item/gun/energy/e_gun/nuclear/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
+/obj/item/gun/energy/e_gun/adv/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
 	failcheck()
 	update_appearance()
 	..()
 
-/obj/item/gun/energy/e_gun/nuclear/proc/failcheck()
+/obj/item/gun/energy/e_gun/adv/proc/failcheck()
 	if(prob(fail_chance) && isliving(loc))
 		var/mob/living/M = loc
 		switch(fail_tick)
@@ -133,13 +130,13 @@
 				reactor_overloaded = TRUE
 				to_chat(M, SPAN_USERDANGER("Your [name]'s reactor overloads!"))
 
-/obj/item/gun/energy/e_gun/nuclear/emp_act(severity)
+/obj/item/gun/energy/e_gun/adv/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
 	fail_chance = min(fail_chance + round(15/severity), 100)
 
-/obj/item/gun/energy/e_gun/nuclear/update_overlays()
+/obj/item/gun/energy/e_gun/adv/update_overlays()
 	. = ..()
 	if(reactor_overloaded)
 		. += "[icon_state]_fail_3"

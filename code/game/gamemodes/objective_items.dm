@@ -193,7 +193,7 @@
 
 /datum/objective_item/special/aegun
 	name = "an advanced energy gun."
-	targetitem = /obj/item/gun/energy/e_gun/nuclear
+	targetitem = /obj/item/gun/energy/e_gun/adv
 	difficulty = 10
 
 /datum/objective_item/special/ddrill

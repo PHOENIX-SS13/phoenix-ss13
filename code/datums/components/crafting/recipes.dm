@@ -187,10 +187,10 @@
 /datum/crafting_recipe/advancedegun
 	name = "Advanced Energy Gun"
 	tool_behaviors = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	result = /obj/item/gun/energy/e_gun/nuclear
+	result = /obj/item/gun/energy/e_gun/adv
 	reqs = list(/obj/item/gun/energy/e_gun = 1,
 				/obj/item/stack/cable_coil = 5,
-				/obj/item/weaponcrafting/gunkit/nuclear = 1)
+				/obj/item/weaponcrafting/gunkit/advenergy = 1)
 	time = 200
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
