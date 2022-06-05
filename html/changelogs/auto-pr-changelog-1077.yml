@@ -1,0 +1,6 @@
+author: KathrinBailey
+changes:
+- balance: ERT medics are now equipped for purpose upon spawning. Normal ones lose
+    their medigun, but gain other supplies. Both gain defibs and some other goodies.
+merge-date: 2022-06-05
+prnumber: 1077
