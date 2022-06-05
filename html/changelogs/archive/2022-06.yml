@@ -42,3 +42,18 @@
 2022-06-03:
   Deek-Za (Deek-Za):
   - rscadd: Storyteller now added to Statpanel
+2022-06-04:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscdel: Removed pride week
+  - rscadd: Added pride month
+  - rscdel: Removed temperature pumps
+  Azarak:
+  - bugfix: Fixes foodtypes and removes some GROSS flags. Yes this will fix cooked
+      meat seem not cooked.
+  KathrinBailey:
+  - balance: Pizza bombs are now much less frequent (3 in 200 chance, down from 3
+      in 100).
+  - qol: Boomboxes can now be ordered as a cargo goodie!
+  - balance: Meat crates from cargo now contain only useable quality meat that won&#x27;t
+      kill you.
+  - qol: RCDs can now be ordered from cargo!
