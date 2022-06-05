@@ -241,7 +241,7 @@
 					trauma_desc += "severe "
 				if(TRAUMA_RESILIENCE_LOBOTOMY)
 					trauma_desc += "deep-rooted "
-				if(TRAUMA_RESILIENCE_MAGIC, TRAUMA_RESILIENCE_ABSOLUTE)
+				if(TRAUMA_RESILIENCE_ABSOLUTE)
 					trauma_desc += "permanent "
 			trauma_desc += trauma.scan_desc
 			trauma_text += trauma_desc

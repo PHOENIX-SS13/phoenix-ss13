@@ -618,7 +618,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	var/datum/brain_trauma/temp_trauma
 
 /datum/reagent/inverse/neurine/on_mob_life(mob/living/carbon/owner, delta_time, times_fired)
-	.=..()
+	. =..()
 	if(temp_trauma)
 		return
 	if(!(DT_PROB(creation_purity*10, delta_time)))
@@ -629,17 +629,17 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 	traumalist = shuffle(traumalist)
 	for(var/trauma in traumalist)
-		if(brain.brain_gain_trauma(trauma, TRAUMA_RESILIENCE_MAGIC))
+		if(brain.brain_gain_trauma(trauma, TRAUMA_RESILIENCE_LOBOTOMY))
 			temp_trauma = trauma
 			return
 
 /datum/reagent/inverse/neurine/on_mob_delete(mob/living/carbon/owner)
-	.=..()
+	. =..()
 	if(!temp_trauma)
 		return
 	if(istype(temp_trauma, /datum/brain_trauma/special/imaginary_friend))//Good friends stay by you, no matter what
 		return
-	owner.cure_trauma_type(temp_trauma, resilience = TRAUMA_RESILIENCE_MAGIC)
+	owner.cure_trauma_type(temp_trauma, resilience = TRAUMA_RESILIENCE_LOBOTOMY)
 
 /datum/reagent/inverse/corazargh
 	name = "Corazargh" //It's what you yell! Though, if you've a better name feel free. Also an omage to an older chem
