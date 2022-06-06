@@ -57,3 +57,20 @@
   - balance: Meat crates from cargo now contain only useable quality meat that won&#x27;t
       kill you.
   - qol: RCDs can now be ordered from cargo!
+2022-06-05:
+  Alex 'Avunia' Takiya (atakiya):
+  - balance: Changed phantom stalker brain trauma to be cured via lobotomy
+  - balance: Changed foiled hat paranoia to be cured by lobotomy
+  - rscdel: Removed magical brain trauma resilience
+  - balance: Successful lobotomies&#x27; trauma chance reduced from 75% to 45%
+  AtoriBirb:
+  - imageadd: added alt pulse laser pistol sprites to use as the energy pistol
+  - balance: energy guns are now classified as pistols and fit into bags
+  Dakota (mamakoshka):
+  - bugfix: Making multiple reagents will now actually space the messages properly.
+  KathrinBailey:
+  - rscadd: New dresses are now part of the Clothesmate vendor!
+  - bugfix: The new black one-piece dress will no longer expose the chest once adjusted,
+      as it doesn&#x27;t on the sprite.
+  - balance: ERT medics are now equipped for purpose upon spawning. Normal ones lose
+      their medigun, but gain other supplies. Both gain defibs and some other goodies.

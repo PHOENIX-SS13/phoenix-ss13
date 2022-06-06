@@ -1,7 +1,0 @@
-author: KathrinBailey
-changes:
-- rscadd: New dresses are now part of the Clothesmate vendor!
-- bugfix: The new black one-piece dress will no longer expose the chest once adjusted,
-    as it doesn&#x27;t on the sprite.
-merge-date: 2022-06-05
-prnumber: 1073
