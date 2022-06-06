@@ -313,7 +313,7 @@
 				to_chat(usr, SPAN_WARNING("ERROR: Unable to locate data core entry for target."))
 				return
 			if(href_list["status"])
-				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.fields["criminal"]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
+				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.fields["criminal"]) in list("None", "*Arrest*", "Suspected", "Incarcerated", "Paroled", "Discharged", "Cancel")
 				if(setcriminal != "Cancel")
 					if(!R)
 						return
@@ -511,6 +511,8 @@
 			switch(R.fields["criminal"])
 				if("*Arrest*")
 					threatcount += 5
+				if("Suspected")
+					threatcount += 2
 				if("Incarcerated")
 					threatcount += 2
 				if("Paroled")
