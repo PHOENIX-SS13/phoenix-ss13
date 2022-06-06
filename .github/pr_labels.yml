@@ -7,9 +7,6 @@ labels:
   - label: "Area : Administration"
     matcher:
       body: ":cl:.*\\\\nadmin:.*\\\\n\\/:cl:"
-  - label: "Area : Balance"
-    matcher:
-      body: ":cl:.*\\\\n(?:re)?balance:.*\\\\n\\/:cl:"
   - label: "Area : Configuration"
     matcher:
       body: ":cl:.*\\\\nconfig:.*\\\\n\\/:cl:"
@@ -40,6 +37,9 @@ labels:
           - "code/tgui_panel/**/*"
           - "tgui/**/*"
   # Type Labels
+  - label: "Type : Balance"
+    matcher:
+      body: ":cl:.*\\\\n(?:re)?balance:.*\\\\n\\/:cl:"
   - label: "Type : Mirror"
     matcher:
       branch: "^mirror/.*"
@@ -58,7 +58,7 @@ labels:
     matcher:
       body: ":cl:.*\\\\n(?:sound|image|rsc)?dels?:.*\\\\n\\/:cl:"
   # Warn Labels
-  - label: "Warn : Config Update"
+  - label: "⚠️ Warn : Config Update"
     matcher:
       files:
         any:
