@@ -3,4 +3,6 @@
 	map_path = "map_files/debug"
 	map_file = "runtimestation.dmm"
 
-	shuttles = list("cargo" = "cargo_delta")
+	shuttles = list(
+		"cargo" = "cargo_delta"
+	)

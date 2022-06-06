@@ -13,9 +13,16 @@
 		"cargo" = "cargo_kilo",
 		"ferry" = "ferry_kilo",
 		"whiteship" = "whiteship_kilo",
-		"emergency" = "emergency_kilo")
+		"emergency" = "emergency_kilo",
+	)
 
-	job_changes = list("cook" = list("additional_cqc_areas" = list("/area/service/bar/atrium")),
-						"captain" = list("special_charter" = "asteroid"))
+	job_changes = list(
+		"cook" = list(
+			"additional_cqc_areas" = list("/area/service/bar/atrium"),
+		),
+		"captain" = list(
+			"special_charter" = "asteroid",
+		),
+	)
 
 	overmap_object_type = /datum/overmap_object/shuttle/station

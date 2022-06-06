@@ -13,7 +13,8 @@
 		"cargo" = "cargo_box",
 		"ferry" = "ferry_fancy",
 		"whiteship" = "whiteship_box",
-		"emergency" = "emergency_box")
+		"emergency" = "emergency_box",
+	)
 
 	job_changes = list()
 

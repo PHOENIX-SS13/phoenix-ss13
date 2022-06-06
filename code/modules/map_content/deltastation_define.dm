@@ -13,8 +13,13 @@
 		"cargo" = "cargo_delta",
 		"ferry" = "ferry_fancy",
 		"whiteship" = "whiteship_delta",
-		"emergency" = "emergency_delta")
+		"emergency" = "emergency_delta",
+	)
 
-	job_changes = list("cook" = list("additional_cqc_areas" = list("/area/service/bar/atrium")))
+	job_changes = list(
+		"cook" = list(
+			"additional_cqc_areas" = list("/area/service/bar/atrium"),
+		),
+	)
 
 	overmap_object_type = /datum/overmap_object/shuttle/station
