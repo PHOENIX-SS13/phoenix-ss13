@@ -1,6 +1,6 @@
 name: Bug Report
 description: Report a bug or issue to help reproduce and fix it
-labels: ["Issue : Bug - Awaiting Triage"]
+labels: ["🔍 Issue : Bug - Awaiting Triage"]
 body:
   - type: input
     attributes:
