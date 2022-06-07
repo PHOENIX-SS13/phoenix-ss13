@@ -74,3 +74,9 @@
       as it doesn&#x27;t on the sprite.
   - balance: ERT medics are now equipped for purpose upon spawning. Normal ones lose
       their medigun, but gain other supplies. Both gain defibs and some other goodies.
+2022-06-06:
+  Alex 'Avunia' Takiya (atakiya):
+  - balance: Three planets spawn now per map by default
+  - code_imp: map content config lists aren&#x27;t spaghetti anymore
+  AtoriBirb:
+  - imageadd: added the suspected sprite
