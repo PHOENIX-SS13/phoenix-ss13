@@ -110,10 +110,8 @@
 			if(!client && ranged && ranged_cooldown <= world.time)
 				OpenFire()
 
-			if(L.health <= HEALTH_THRESHOLD_DEAD && HAS_TRAIT(L, TRAIT_NODEATH)) //Nope, it still gibs yall
-				devour(L)
-		else
-			devour(L)
+			else
+				LoseTarget(L)
 
 /// Devours a target and restores health to the megafauna
 /mob/living/simple_animal/hostile/megafauna/proc/devour(mob/living/L)
