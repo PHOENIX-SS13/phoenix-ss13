@@ -1,0 +1,8 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- soundadd: The arcade game sounds don&#x27;t deafen everyone in a radius of 12 miles
+    anymore
+- soundadd: The modular consoles are starting to take on dust, and are therefore a
+    bit louder
+merge-date: 2022-06-10
+prnumber: 1122
