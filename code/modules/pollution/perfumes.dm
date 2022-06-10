@@ -58,7 +58,7 @@
 	user.visible_message(SPAN_NOTICE("[user] sprays [attacked] with \the [src]."), SPAN_NOTICE("You spray [attacked] with \the [src]."))
 	user.changeNext_move(CLICK_CD_RANGE*2)
 	playsound(my_turf, 'sound/effects/spray2.ogg', 50, TRUE, -6)
-	attacked.AddComponent(/datum/component/temporary_pollution_emission, fragrance_type, 5, 10 MINUTES)
+	attacked.AddComponent(/datum/component/temporary_pollution_emission, fragrance_type, 5, 30 MINUTES)
 
 /obj/item/perfume/cologne
 	name = "cologne bottle"
