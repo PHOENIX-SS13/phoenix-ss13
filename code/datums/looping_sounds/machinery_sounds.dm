@@ -92,12 +92,12 @@
 /datum/looping_sound/computer
 	start_sound = 'sound/machines/computer/computer_start.ogg'
 	start_length = 7.2 SECONDS
-	start_volume = 10
+	start_volume = 50
 	mid_sounds = list('sound/machines/computer/computer_mid1.ogg'=1, 'sound/machines/computer/computer_mid2.ogg'=1)
 	mid_length = 1.8 SECONDS
 	end_sound = 'sound/machines/computer/computer_end.ogg'
-	end_volume = 10
-	volume = 2
+	end_volume = 50
+	volume = 8
 	falloff_exponent = 5 //Ultra quiet very fast
 	extra_range = -12
 	falloff_distance = 1 //Instant falloff after initial tile
@@ -133,7 +133,7 @@
 		'sound/machines/fire_alarm/FireAlarm1.ogg'=1,
 		'sound/machines/fire_alarm/FireAlarm2.ogg'=1,
 		'sound/machines/fire_alarm/FireAlarm3.ogg'=1,
-		'sound/machines/fire_alarm/FireAlarm4.ogg'=1 
-		)
+		'sound/machines/fire_alarm/FireAlarm4.ogg'=1,
+	)
 	mid_length = 2.4 SECONDS
 	volume = 70
