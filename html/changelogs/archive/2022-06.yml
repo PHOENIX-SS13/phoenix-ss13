@@ -80,3 +80,19 @@
   - code_imp: map content config lists aren&#x27;t spaghetti anymore
   AtoriBirb:
   - imageadd: added the suspected sprite
+2022-06-10:
+  Alex 'Avunia' Takiya (atakiya):
+  - qol: Made perfumes last 30 minutes, up from 10 minutes
+  - soundadd: The arcade game sounds don&#x27;t deafen everyone in a radius of 12
+      miles anymore
+  - soundadd: The modular consoles are starting to take on dust, and are therefore
+      a bit louder
+  KathrinBailey:
+  - balance: computer-controlled Megafaunas no longer gib their active targets.
+  drizzlemutt:
+  - rscadd: adds an umbilic bridge from starboard maintenance to the abandoned freight
+      dock
+  - rscdel: removes a fire alarm from the genetics monkey pen
+  - rscdel: removes a duplicate air alarm from inside of xenobiology containment
+  - qol: unlocked the toxins burn chamber air alarm
+  - balance: moves xenobiology escape pod from the NE to NW
