@@ -1523,6 +1523,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "gp" = (
@@ -1796,6 +1797,7 @@
 "iA" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/service/hydroponics)
 "iC" = (
@@ -2000,7 +2002,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/green/filled/corner,
-/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "kh" = (
@@ -2730,7 +2731,6 @@
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "rj" = (
@@ -2992,11 +2992,11 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
 	},
-/obj/structure/cable,
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "ub" = (
@@ -3318,6 +3318,7 @@
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "wV" = (
@@ -3432,6 +3433,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "yk" = (
@@ -3673,6 +3675,7 @@
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "Aw" = (
@@ -4020,8 +4023,6 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable,
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/iron/dark,
@@ -4078,7 +4079,6 @@
 /area/icemoon/underground/explored)
 "Eu" = (
 /obj/effect/turf_decal/trimline/green/filled/corner,
-/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "Ez" = (
@@ -4234,6 +4234,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/green/filled/corner,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "FP" = (
@@ -4420,6 +4421,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "Hd" = (
@@ -4433,6 +4435,7 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "Hn" = (
@@ -4530,7 +4533,6 @@
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "Io" = (
@@ -5461,9 +5463,9 @@
 /turf/open/floor/grass,
 /area/service/hydroponics)
 "Ql" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/service/hydroponics)
+/obj/structure/grille,
+/turf/closed/wall/ice,
+/area/icemoon/underground/explored)
 "Qq" = (
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/tile/purple{
@@ -5840,7 +5842,6 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
 "TP" = (
@@ -6511,6 +6512,9 @@
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "Ze" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 8
+	},
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/service/hydroponics)
@@ -47670,7 +47674,7 @@ tZ
 kg
 TN
 ri
-Ze
+Tq
 Eu
 TN
 Im
@@ -48437,7 +48441,7 @@ Fp
 AF
 AF
 nJ
-wP
+Ze
 wU
 go
 FI
@@ -48695,13 +48699,13 @@ Fp
 Fp
 nJ
 nJ
-Ql
+Hn
 nJ
-Ql
+Hn
 nJ
-Ql
+Hn
 nJ
-Ql
+Hn
 nJ
 nJ
 Et
@@ -49205,21 +49209,21 @@ ak
 ak
 ak
 ak
-Et
-Et
-Fp
-Fp
-Fp
-HQ
-Fp
-Fp
-Fp
-HQ
-Fp
-Fp
-Fp
+Ql
 Et
 Fp
+Fp
+Fp
+PG
+Fp
+Fp
+Fp
+Fp
+Fp
+Fp
+Fp
+Et
+Ql
 Et
 ak
 ak
@@ -49462,21 +49466,21 @@ ak
 ak
 ak
 Et
-Et
-Et
-Fp
-Fp
-Fp
-PG
-Fp
-Fp
-Fp
-Fp
-Fp
-Fp
-Et
-Et
-Et
+Ql
+Ql
+Ql
+Ql
+Ql
+HQ
+Ql
+Ql
+Ql
+HQ
+Ql
+Ql
+Ql
+Ql
+Ql
 Et
 Fp
 ak
@@ -49719,7 +49723,7 @@ ak
 ak
 ak
 Fp
-Et
+Ql
 Fp
 Et
 Fp
@@ -49733,7 +49737,7 @@ PG
 Fp
 PG
 Fp
-HQ
+Ql
 Et
 Fp
 Fp
