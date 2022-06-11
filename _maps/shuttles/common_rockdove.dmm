@@ -1,0 +1,692 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"be" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/airalarm/directional/north{
+	locked = 0
+	},
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"cm" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters{
+	id = "rockdove_cargo_shutter"
+	},
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/sign/warning/movingparts/small{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"cV" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"de" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/rack,
+/obj/item/clothing/suit/space/fragile,
+/obj/item/clothing/head/helmet/space/fragile,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"eT" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"fJ" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/obj/machinery/meter,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"gF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/lights/tubes,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "fuel pump";
+	color = "#FF7B00";
+	pipe_color = "#FF7B00"
+	},
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"gO" = (
+/obj/machinery/light/directional/north,
+/obj/structure/bed,
+/obj/structure/curtain,
+/obj/structure/window/reinforced/tinted,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"iU" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"jG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper_bin{
+	pixel_x = -4
+	},
+/obj/structure/table,
+/obj/item/pen{
+	pixel_x = 4
+	},
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"jO" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rockdove_shutter"
+	},
+/turf/open/floor/plating,
+/area/shuttle/rockdove/helm)
+"ki" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer2{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/rockdove)
+"kk" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"kA" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/rockdove/helm)
+"li" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rockdove_shutter"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/shuttle/rockdove/helm)
+"lQ" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"ml" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"nj" = (
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	name = "air supply pump";
+	color = "#0000FF";
+	pipe_color = "#0000FF"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/toolbox/mechanical,
+/obj/structure/cable,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/power/apc/auto_name/west{
+	locked = 0
+	},
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"nl" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rockdove_shutter"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/sign/departments/medbay/alt{
+	pixel_x = -32
+	},
+/turf/open/floor/plating,
+/area/shuttle/rockdove/helm)
+"nS" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"qy" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/light/directional/north,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	pipe_color = "#0000FF"
+	},
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"qA" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/command/glass{
+	name = "Rockdove Helm"
+	},
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"se" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed,
+/obj/structure/curtain,
+/obj/structure/window/reinforced/tinted,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"sw" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = "rockdove_shutter";
+	name = "safety shutters button"
+	},
+/obj/item/radio/intercom/wideband/directional/south,
+/obj/machinery/light/directional/south,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"tf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/machinery/stasis,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"vu" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"wU" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"xC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"zl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/machinery/stasis,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/mob_spawn/human/skeleton,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"zE" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/firstaid/toxin{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/brute{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"zX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/toy/plush/snakeplushie{
+	name = "Aesculapian snake plushie";
+	desc = "A tag reads: 'I swear by Apollo the Healer and by Asclepius and by Hygieia and Panacea and by all the gods...'"
+	},
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"Dd" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"EW" = (
+/obj/machinery/computer/shuttle/common_docks{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/west,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"GQ" = (
+/turf/template_noop,
+/area/template_noop)
+"GX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf,
+/obj/machinery/airalarm/directional/west{
+	locked = 0
+	},
+/obj/item/clothing/under/misc/pj/blue,
+/obj/item/clothing/under/misc/pj/red,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"HU" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "rockdove_cargo_shutter"
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/button/door/directional/west{
+	name = "cargo bay shutters";
+	id = "rockdove_cargo_shutter"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"In" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"Je" = (
+/obj/machinery/door/window/eastleft{
+	dir = 2
+	},
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"Ji" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/rockdove)
+"LG" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable,
+/obj/structure/lattice/catwalk/plated,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"LJ" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/stripes/corner,
+/obj/structure/closet/crate/freezer/blood,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/machinery/iv_drip,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"LX" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch/directional/north,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"Nd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"NV" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rockdove_shutter"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"Oa" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/rockdove)
+"Pp" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/long_range,
+/obj/machinery/power/apc/auto_name/west{
+	locked = 0
+	},
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"QV" = (
+/obj/structure/rack/shelf,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/belt/medical,
+/obj/item/healthanalyzer,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"QW" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	dwidth = 6;
+	height = 9;
+	id = "rockdove";
+	launch_status = 0;
+	name = "EMS Rockdove";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 11
+	},
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"UO" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/north,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"Vb" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/soft/paramedic{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/toggle/labcoat/paramedic,
+/obj/item/clothing/neck/stethoscope,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"Vt" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"VH" = (
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	pipe_color = "#FF7B00"
+	},
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+"VQ" = (
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/chem_pack{
+	pixel_x = 10;
+	pixel_y = 10
+	},
+/obj/item/stack/medical/gauze{
+	pixel_x = 8
+	},
+/obj/item/stack/medical/mesh{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"Wc" = (
+/obj/machinery/atmospherics/components/unary/engine{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/rockdove)
+"Yb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/pod,
+/area/shuttle/rockdove/helm)
+"Yz" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/airalarm/directional/west{
+	locked = 0
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/bot,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/rockdove)
+"ZS" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/structure/lattice/catwalk/plated,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/plating,
+/area/shuttle/rockdove)
+
+(1,1,1) = {"
+Ji
+Wc
+Ji
+GQ
+GQ
+GQ
+Ji
+Wc
+Ji
+"}
+(2,1,1) = {"
+Ji
+Vt
+Oa
+NV
+ki
+NV
+Oa
+Vt
+Ji
+"}
+(3,1,1) = {"
+Ji
+qy
+nj
+LG
+Yz
+QV
+zE
+LJ
+Ji
+"}
+(4,1,1) = {"
+Ji
+VH
+gF
+Je
+fJ
+xC
+ml
+In
+HU
+"}
+(5,1,1) = {"
+Ji
+Ji
+Ji
+Ji
+UO
+cV
+cV
+wU
+cm
+"}
+(6,1,1) = {"
+QW
+ZS
+iU
+lQ
+vu
+zl
+VQ
+tf
+Ji
+"}
+(7,1,1) = {"
+Ji
+be
+de
+kA
+qA
+kA
+li
+li
+kA
+"}
+(8,1,1) = {"
+kA
+kA
+li
+kA
+LX
+Pp
+Nd
+nS
+nl
+"}
+(9,1,1) = {"
+nl
+GX
+zX
+Yb
+Dd
+Vb
+kk
+eT
+li
+"}
+(10,1,1) = {"
+kA
+kA
+gO
+se
+jG
+EW
+sw
+kA
+kA
+"}
+(11,1,1) = {"
+GQ
+kA
+kA
+kA
+jO
+jO
+li
+kA
+GQ
+"}

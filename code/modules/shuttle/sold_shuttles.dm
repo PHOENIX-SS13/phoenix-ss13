@@ -25,6 +25,24 @@
 	allowed_docks = list(DOCKS_MEDIUM_UPWARDS)
 	shuttle_type = SHUTTLE_MINING
 
+/datum/sold_shuttle/pigeon
+	name = "CTS Pigeon"
+	desc = "A small sized civilian transport shuttle."
+	detailed_desc = "It's a small sized transport shuttle that is normally utilized by colonies, this model featuring a small cargo bay. This shuttle is normally considered the workhorse of the frontier."
+	shuttle_id = "common_pigeon"
+	cost = 3000
+	allowed_docks = list(DOCKS_MEDIUM_UPWARDS)
+	shuttle_type = SHUTTLE_CIV
+
+/datum/sold_shuttle/rockdove
+	name = "EMS Rockdove"
+	desc = "A small sized emergency medical shuttle."
+	detailed_desc = "A medical shuttle conversion of the CTS Pigeon by Frontier Practical Solutions, in which the cargo bay has been converted into a triage zone. While sometimes utilized by colony hospitals, it is often a rare sight on the frontier."
+	shuttle_id = "common_rockdove"
+	cost = 4500 //upcharge on the conversion, debatable if actually worth it
+	allowed_docks = list(DOCKS_MEDIUM_UPWARDS)
+	shuttle_type = SHUTTLE_CIV
+
 /datum/sold_shuttle/vulture
 	name = "MS Vulture"
 	desc = "A medium sized mining shuttle, equipped with a living quarter."

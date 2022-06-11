@@ -317,6 +317,22 @@
 	requires_power = TRUE
 	area_limited_icon_smoothing = /area/shuttle/petrel
 
+/area/shuttle/pigeon
+	name = "CTS Pigeon"
+	requires_power = TRUE
+	area_limited_icon_smoothing = /area/shuttle/pigeon
+
+/area/shuttle/pigeon/helm
+	name = "CTS Pigeon Helm"
+
+/area/shuttle/rockdove
+	name = "EMS Rockdove"
+	requires_power = TRUE
+	area_limited_icon_smoothing = /area/shuttle/rockdove
+
+/area/shuttle/rockdove/helm
+	name = "EMS Rockdove Helm"
+
 /area/shuttle/barrow
 	name = "The Barrows"
 	requires_power = FALSE

@@ -1,0 +1,634 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"be" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/airalarm/directional/north{
+	locked = 0
+	},
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"cm" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shutters{
+	id = "pigeon cargo shutter"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"cV" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/bot,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/space/syndiecosmetic,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"de" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/rack,
+/obj/item/clothing/suit/space/fragile,
+/obj/item/clothing/head/helmet/space/fragile,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"eT" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"fJ" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/obj/machinery/meter,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"gF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/lights/tubes,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "fuel pump";
+	color = "#FF7B00";
+	pipe_color = "#FF7B00"
+	},
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"gO" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"iU" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"jG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper_bin{
+	pixel_x = -4
+	},
+/obj/structure/table,
+/obj/item/pen{
+	pixel_x = 4
+	},
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"ki" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer2{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/pigeon)
+"kk" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"kA" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/pigeon/helm)
+"li" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pigeon_shutter"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/pigeon/helm)
+"lQ" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"ml" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"nj" = (
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	name = "air supply pump";
+	color = "#0000FF";
+	pipe_color = "#0000FF"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/toolbox/mechanical,
+/obj/machinery/power/apc/auto_name/west{
+	locked = 0
+	},
+/obj/structure/cable,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"nS" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"qy" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	pipe_color = "#0000FF"
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/light/directional/north,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"qA" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/command/glass{
+	name = "Pigeon Helm"
+	},
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"se" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/east{
+	locked = 0
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"sw" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = "pigeon_shutter";
+	name = "safety shutters button"
+	},
+/obj/item/radio/intercom/wideband/directional/south,
+/obj/machinery/light/directional/south,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"tf" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"vu" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"wU" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"xC" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"zl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"zE" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"zX" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/pigeon)
+"Dd" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"EW" = (
+/obj/machinery/computer/shuttle/common_docks{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"GQ" = (
+/turf/template_noop,
+/area/template_noop)
+"GX" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"HU" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "pigeon cargo shutter"
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/button/door/directional/west{
+	name = "cargo bay shutters";
+	id = "pigeon cargo shutter"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"In" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/bot,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/ore_scarce,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"Je" = (
+/obj/machinery/door/window/eastleft{
+	dir = 2
+	},
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"Ji" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shutters{
+	id = "pigeon cargo shutter"
+	},
+/obj/effect/decal/cleanable/blood/old,
+/obj/machinery/door/firedoor,
+/obj/structure/sign/warning/movingparts/small{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"LG" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable,
+/obj/structure/lattice/catwalk/plated,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"LJ" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/firecloset,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"LX" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch/directional/north,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"Nd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"NV" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pigeon_shutter"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"Oa" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/pigeon)
+"Pp" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/long_range,
+/obj/machinery/power/apc/auto_name/west{
+	locked = 0
+	},
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"QV" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/large/air_can,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"QW" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	dwidth = 6;
+	height = 9;
+	id = "pigeon";
+	launch_status = 0;
+	name = "CTS Pigeon";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 11
+	},
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"UO" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"Vb" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/toy/plush/borbplushie{
+	name = "Garuda";
+	desc = "Garuda is portrayed as a protector with the power to swiftly travel anywhere, ever vigilant and an enemy of every serpent."
+	},
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"Vt" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"VH" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	pipe_color = "#FF7B00"
+	},
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+"VQ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"Wc" = (
+/obj/machinery/atmospherics/components/unary/engine{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/pigeon)
+"Yb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/pod,
+/area/shuttle/pigeon/helm)
+"Yz" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/airalarm/directional/west{
+	locked = 0
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/bot,
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/iron,
+/area/shuttle/pigeon)
+"ZS" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/structure/lattice/catwalk/plated,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/plating,
+/area/shuttle/pigeon)
+
+(1,1,1) = {"
+zX
+Wc
+zX
+GQ
+GQ
+GQ
+zX
+Wc
+zX
+"}
+(2,1,1) = {"
+zX
+Vt
+Oa
+NV
+ki
+NV
+Oa
+Vt
+zX
+"}
+(3,1,1) = {"
+zX
+qy
+nj
+LG
+Yz
+QV
+zE
+LJ
+zX
+"}
+(4,1,1) = {"
+zX
+VH
+gF
+Je
+fJ
+xC
+ml
+wU
+HU
+"}
+(5,1,1) = {"
+zX
+zX
+zX
+zX
+UO
+In
+cV
+wU
+cm
+"}
+(6,1,1) = {"
+QW
+ZS
+iU
+lQ
+vu
+zl
+VQ
+tf
+Ji
+"}
+(7,1,1) = {"
+zX
+be
+de
+kA
+qA
+kA
+li
+li
+kA
+"}
+(8,1,1) = {"
+kA
+kA
+li
+kA
+LX
+Pp
+Nd
+nS
+li
+"}
+(9,1,1) = {"
+li
+GX
+Nd
+Yb
+Dd
+Vb
+kk
+eT
+li
+"}
+(10,1,1) = {"
+kA
+kA
+gO
+se
+jG
+EW
+sw
+kA
+kA
+"}
+(11,1,1) = {"
+GQ
+kA
+kA
+kA
+li
+li
+li
+kA
+GQ
+"}
