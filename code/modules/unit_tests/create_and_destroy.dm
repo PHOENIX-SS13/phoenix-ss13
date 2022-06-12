@@ -120,6 +120,8 @@
 	var/baseturf_count = length(spawn_at.baseturfs)
 
 	for(var/type_path in typesof(/atom/movable, /turf) - ignore) //No areas please
+		if(is_abstract(type_path))
+			continue
 		if(ispath(type_path, /turf))
 			spawn_at.ChangeTurf(type_path, /turf/baseturf_skipover)
 			//We change it back to prevent pain, please don't ask

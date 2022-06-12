@@ -83,9 +83,9 @@
 	entries_by_type = _entries_by_type
 
 	for(var/I in typesof(/datum/config_entry)) //typesof is faster in this case
-		var/datum/config_entry/E = I
-		if(initial(E.abstract_type) == I)
+		if(is_abstract(I))
 			continue
+		var/datum/config_entry/E = I
 		E = new I
 		var/esname = E.name
 		var/datum/config_entry/test = _entries[esname]
@@ -196,7 +196,7 @@
 
 /datum/controller/configuration/proc/Get(entry_type)
 	var/datum/config_entry/E = entry_type
-	var/entry_is_abstract = initial(E.abstract_type) == entry_type
+	var/entry_is_abstract = is_abstract(E)
 	if(entry_is_abstract)
 		CRASH("Tried to retrieve an abstract config_entry: [entry_type]")
 	E = entries_by_type[entry_type]
@@ -209,7 +209,7 @@
 
 /datum/controller/configuration/proc/Set(entry_type, new_val)
 	var/datum/config_entry/E = entry_type
-	var/entry_is_abstract = initial(E.abstract_type) == entry_type
+	var/entry_is_abstract = is_abstract(E)
 	if(entry_is_abstract)
 		CRASH("Tried to set an abstract config_entry: [entry_type]")
 	E = entries_by_type[entry_type]

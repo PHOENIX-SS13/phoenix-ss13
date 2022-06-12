@@ -51,6 +51,9 @@
 	*/
 	var/list/cooldowns
 
+	/// Meta property of a type. If this equals to .type it means the type is abstract, and should not be instantiated.
+	var/abstract_type
+
 #ifdef REFERENCE_TRACKING
 	var/running_find_references
 	var/last_find_references = 0
@@ -263,3 +266,7 @@
 		return
 	SEND_SIGNAL(source, COMSIG_CD_RESET(index), S_TIMER_COOLDOWN_TIMELEFT(source, index))
 	TIMER_COOLDOWN_END(source, index)
+
+/// Returns whether a type is an abstract type.
+/proc/is_abstract(datum/datum_type)
+	return (initial(datum_type.abstract_type) == datum_type)

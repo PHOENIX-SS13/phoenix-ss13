@@ -1,4 +1,5 @@
 /obj/structure/statue
+	abstract_type = /obj/structure/statue
 	name = "statue"
 	desc = "Placeholder. Yell at Firecage if you SOMEHOW see this."
 	icon = 'icons/obj/statue.dmi'
@@ -14,8 +15,6 @@
 	var/impressiveness = 15
 	/// Art component subtype added to this statue
 	var/art_type = /datum/element/art
-	/// Abstract root type
-	var/abstract_type = /obj/structure/statue
 
 /obj/structure/statue/Initialize()
 	. = ..()
@@ -533,8 +532,10 @@ Moving interrupts
 /obj/structure/carving_block/proc/build_statue_cost_table()
 	. = list()
 	for(var/statue_type in subtypesof(/obj/structure/statue) - /obj/structure/statue/custom)
+		if(is_abstract(statue_type))
+			continue
 		var/obj/structure/statue/S = new statue_type()
-		if(!S.icon_state || S.abstract_type == S.type || !S.custom_materials)
+		if(!S.icon_state || !S.custom_materials)
 			continue
 		.[S.type] = S.custom_materials
 		qdel(S)

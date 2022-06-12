@@ -208,6 +208,12 @@
 /atom/proc/Initialize(mapload, ...)
 	SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)
+
+	// This isn't on /datum level because datums don't have Initialize() and their New() doesn't enforce calling parent.
+	if(is_abstract(type))
+		stack_trace("Warning: [src]([type]) initialized as an abstract type!")
+		// Return an INITIALIZE_HINT_QDEL here? I think it's fine with just a warning.
+
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1

@@ -4632,16 +4632,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron/dark,
 /area/mine/laborcamp)
-"SJ" = (
-/obj/structure/statue{
-	desc = "A lifelike statue of a horrifying monster.";
-	dir = 8;
-	icon = 'icons/mob/lavaland/lavaland_monsters.dmi';
-	icon_state = "goliath";
-	name = "goliath"
-	},
-/turf/open/floor/iron,
-/area/mine/living_quarters)
 "Tb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/north{
@@ -12716,7 +12706,7 @@ dZ
 fy
 fy
 dZ
-SJ
+dZ
 cR
 aj
 aj

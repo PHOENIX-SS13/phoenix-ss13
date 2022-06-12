@@ -119,9 +119,9 @@ GLOBAL_LIST_EMPTY(exploration_sites)
 /datum/exploration_site/proc/build_exploration_event_requirements_cache()
 	. = list()
 	for(var/event_type in subtypesof(/datum/exploration_event))
-		var/datum/exploration_event/event = event_type
-		if(initial(event.root_abstract_type) == event_type)
+		if(is_abstract(event_type))
 			continue
+		var/datum/exploration_event/event = event_type
 		event = new event_type
 		.[event_type] = list("required" = event.required_site_traits,"blacklisted" = event.blacklisted_site_traits)
 		//Should be no event refs,GC'd naturally
