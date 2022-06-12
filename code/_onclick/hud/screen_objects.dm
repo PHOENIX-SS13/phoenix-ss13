@@ -78,6 +78,16 @@
 	icon_state = "craft"
 	screen_loc = ui_crafting
 
+/atom/movable/screen/slapcraft
+	name = "slap-crafting handbook"
+	icon = 'icons/hud/screen_midnight.dmi'
+	icon_state = "slapcraft"
+	screen_loc = ui_slapcraft
+
+/atom/movable/screen/slapcraft/Click()
+	var/mob/mob = usr
+	mob.client.slapcraft_book.show(mob)
+
 /atom/movable/screen/area_creator
 	name = "create new area"
 	icon = 'icons/hud/screen_midnight.dmi'

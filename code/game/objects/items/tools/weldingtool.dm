@@ -35,7 +35,6 @@
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=30)
 	///Whether the welding tool is on or off.
 	var/welding = FALSE
-	var/status = TRUE //Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
 	var/max_fuel = 20 //The max amount of fuel the welder can hold
 	var/change_icons = 1
 	var/can_off_process = 0
@@ -100,12 +99,7 @@
 
 
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		flamethrower_screwdriver(I, user)
-	else if(istype(I, /obj/item/stack/rods))
-		flamethrower_rods(I, user)
-	else
-		. = ..()
+	. = ..()
 	update_appearance()
 
 /obj/item/weldingtool/proc/explode()
@@ -144,7 +138,7 @@
 				message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(L)] on fire with [src] at [AREACOORD(user)]")
 				log_game("[key_name(user)] set [key_name(L)] on fire with [src] at [AREACOORD(user)]")
 
-	if(!status && O.is_refillable())
+	if(O.is_refillable())
 		reagents.trans_to(O, reagents.total_volume, transfered_by = user)
 		to_chat(user, SPAN_NOTICE("You empty [src]'s fuel tank into [O]."))
 		update_appearance()
@@ -220,9 +214,6 @@
 
 //Switches the welder on
 /obj/item/weldingtool/proc/switched_on(mob/user)
-	if(!status)
-		to_chat(user, SPAN_WARNING("[src] can't be turned on while unsecured!"))
-		return
 	set_welding(!welding)
 	if(welding)
 		if(get_fuel() >= 1)
@@ -274,34 +265,6 @@
 		to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task!"))
 		return FALSE
 
-
-/obj/item/weldingtool/proc/flamethrower_screwdriver(obj/item/I, mob/user)
-	if(welding)
-		to_chat(user, SPAN_WARNING("Turn it off first!"))
-		return
-	status = !status
-	if(status)
-		to_chat(user, SPAN_NOTICE("You resecure [src] and close the fuel tank."))
-		reagents.flags &= ~(OPENCONTAINER)
-	else
-		to_chat(user, SPAN_NOTICE("[src] can now be attached, modified, and refuelled."))
-		reagents.flags |= OPENCONTAINER
-	add_fingerprint(user)
-
-/obj/item/weldingtool/proc/flamethrower_rods(obj/item/I, mob/user)
-	if(!status)
-		var/obj/item/stack/rods/R = I
-		if (R.use(1))
-			var/obj/item/flamethrower/F = new /obj/item/flamethrower(user.loc)
-			if(!remove_item_from_storage(F))
-				user.transferItemToLoc(src, F, TRUE)
-			F.weldtool = src
-			add_fingerprint(user)
-			to_chat(user, SPAN_NOTICE("You add a rod to a welder, starting to build a flamethrower."))
-			user.put_in_hands(F)
-		else
-			to_chat(user, SPAN_WARNING("You need one rod to start building a flamethrower!"))
-
 /obj/item/weldingtool/ignition_effect(atom/A, mob/user)
 	if(use_tool(A, user, 0, amount=1))
 		return SPAN_NOTICE("[user] casually lights [A] with [src], what a badass.")
@@ -314,9 +277,6 @@
 	icon_state = "indwelder"
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
-
-/obj/item/weldingtool/largetank/flamethrower_screwdriver()
-	return
 
 /obj/item/weldingtool/largetank/cyborg
 	name = "integrated welding tool"
@@ -339,9 +299,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron=30, /datum/material/glass=10)
 	change_icons = FALSE
-
-/obj/item/weldingtool/mini/flamethrower_screwdriver()
-	return
 
 /obj/item/weldingtool/abductor
 	name = "alien welding tool"

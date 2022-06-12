@@ -213,3 +213,5 @@
 	var/datum/ambience_controller/ambience_controller
 	/// Jukebox controller which manages sounds played to the client from jukeboxes.
 	var/datum/jukebox_controller/jukebox_controller
+	/// Datum holding the UI states and logic for slapcraft handbook.
+	var/datum/slapcraft_handbook/slapcraft_book

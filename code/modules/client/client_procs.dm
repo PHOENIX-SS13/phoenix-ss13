@@ -455,6 +455,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	ambience_controller = new(src)
 	update_jukebox_pref()
 
+	slapcraft_book = new()
+
 	//This is down here because of the browse() calls in tooltip/New()
 	if(!tooltips)
 		tooltips = new /datum/tooltip(src)
@@ -510,6 +512,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_NULL(ambience_controller)
 	if(jukebox_controller)
 		QDEL_NULL(jukebox_controller)
+	slapcraft_book = null
 	QDEL_NULL(view_size)
 	QDEL_NULL(void)
 	QDEL_NULL(tooltips)

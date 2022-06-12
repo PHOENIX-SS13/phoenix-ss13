@@ -273,6 +273,19 @@
 		var/amt = list_reagents[r_id]
 		add_reagent(r_id, amt, data)
 
+/// Like remove_reagent but you can enter a list.
+/datum/reagents/proc/remove_reagent_list(list/list_reagents)
+	for(var/r_id in list_reagents)
+		var/amt = list_reagents[r_id]
+		remove_reagent(r_id, amt)
+
+/// Like has_reagent but you can enter a list.
+/datum/reagents/proc/has_reagent_list(list/list_reagents)
+	for(var/r_id in list_reagents)
+		var/amt = list_reagents[r_id]
+		if(!has_reagent(r_id, amt))
+			return FALSE
+	return TRUE
 
 /// Remove a specific reagent
 /datum/reagents/proc/remove_reagent(reagent, amount, safety = TRUE)//Added a safety check for the trans_id_to

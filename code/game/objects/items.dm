@@ -344,6 +344,12 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
 
+	/// Add slapcraft hints for the item if its eligible for any recipes.
+	var/list/slapcraft_hints = slapcraft_examine_hints_for_type(type)
+	if(slapcraft_hints)
+		for(var/hint in slapcraft_hints)
+			. += SPAN_NOTICE(hint)
+
 	if(!user.research_scanner)
 		return
 
@@ -447,6 +453,11 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		to_chat(usr, SPAN_NOTICE("[before_name] now has [picked_affix_name]!"))
 		log_admin("[key_name(usr)] has added [picked_affix_name] fantasy affix to [before_name]")
 		message_admins(SPAN_NOTICE("[key_name(usr)] has added [picked_affix_name] fantasy affix to [before_name]"))
+
+/obj/item/attackby(obj/item/item, mob/living/user, params)
+	if(user.try_slapcraft(src, item))
+		return TRUE
+	return ..()
 
 /obj/item/attack_hand(mob/user, list/modifiers)
 	. = ..()
