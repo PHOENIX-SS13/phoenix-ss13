@@ -1,0 +1,7 @@
+author: Azarak
+changes:
+- balance: Being overfed slows you down less
+- spellcheck: Overfed people now appear as &quot;stuffed&quot; instead of &quot;quite
+    chubby&quot;
+merge-date: 2022-06-12
+prnumber: 1130
