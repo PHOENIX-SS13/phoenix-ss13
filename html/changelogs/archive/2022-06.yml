@@ -96,3 +96,15 @@
   - rscdel: removes a duplicate air alarm from inside of xenobiology containment
   - qol: unlocked the toxins burn chamber air alarm
   - balance: moves xenobiology escape pod from the NE to NW
+2022-06-11:
+  AtoriBirb:
+  - imageadd: 5 new gun sprites
+  Cypress:
+  - rscadd: New redesigned engine room.
+  - qol: Heatpump radiators for science, medical and scrubbers.
+  - bugfix: Powernet and piping issues on Icebox.
+  Cypress (CypressBz):
+  - bugfix: Plumbing, Power, and Area check debug errors cleared.
+  drizzlemutt:
+  - rscadd: CTS Pigeon
+  - rscadd: EMS Rockdove
