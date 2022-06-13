@@ -108,3 +108,18 @@
   drizzlemutt:
   - rscadd: CTS Pigeon
   - rscadd: EMS Rockdove
+2022-06-12:
+  Azarak:
+  - rscadd: Adds a Slapcraft Framework, which is a system that easily allows implementation
+      of crafting recipes which rely on slapping items against one another. There
+      is a button next to a crafting menu that opens a handbook with recipes for it.
+  - rscdel: Removes crafting menu IED and Flamethrower recipes
+  - rscdel: Removes hardcoded Flamethrower slapcrafting.
+  - rscadd: Adds IED and Flamethrower slapcrafting recipes, which can be found in
+      the handbook.
+  - rscdel: It seems someone stole the lifelike Goliath statues.
+  - balance: Being overfed slows you down less
+  - spellcheck: Overfed people now appear as &quot;stuffed&quot; instead of &quot;quite
+      chubby&quot;
+  Cypress (CypressBz):
+  - qol: Add Sensors to the Tacticool Turtleneck and Skirtleneck
