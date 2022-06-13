@@ -27,6 +27,9 @@
 
 /datum/config_entry/string/servername // server name (the name of the game window)
 
+/// Server short description
+/datum/config_entry/string/serverdesc
+
 /datum/config_entry/string/serversqlname // short form server name used for the DB
 
 /datum/config_entry/string/stationname // station name (the name of the station in-game)
@@ -218,17 +221,15 @@
 
 /datum/config_entry/string/banappeals
 
+/datum/config_entry/string/websiteurl
+
 /datum/config_entry/string/wikiurl
-	config_entry_value = "http://www.tgstation13.org/wiki"
 
 /datum/config_entry/string/forumurl
-	config_entry_value = "http://tgstation13.org/phpBB/index.php"
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = "http://www.tgstation13.org/wiki/Rules"
 
-/datum/config_entry/string/githuburl
-	config_entry_value = "https://www.github.com/tgstation/tgstation"
+/datum/config_entry/string/sourcerepourl
 
 /datum/config_entry/string/discordbotcommandprefix
 	config_entry_value = "?"

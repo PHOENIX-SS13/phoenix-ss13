@@ -47,7 +47,7 @@
 		var/datum/tgs_revision_information/test_merge/tm = line
 		var/cm = tm.head_commit
 		var/details = ": '" + html_encode(tm.title) + "' by " + html_encode(tm.author) + " at commit " + html_encode(copytext_char(cm, 1, 11))
-		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][details]</a><br>"
+		. += "<a href=\"[CONFIG_GET(string/sourcerepourl)]/pull/[tm.number]\">#[tm.number][details]</a><br>"
 
 /client/verb/showrevinfo()
 	set category = "OOC"
@@ -68,7 +68,7 @@
 	msg += "<b>Server revision compiled on:</b> [revdata.date]"
 	var/pc = revdata.originmastercommit
 	if(pc)
-		msg += "Master commit: <a href=\"[CONFIG_GET(string/githuburl)]/commit/[pc]\">[pc]</a>"
+		msg += "Master commit: <a href=\"[CONFIG_GET(string/sourcerepourl)]/commit/[pc]\">[pc]</a>"
 	if(revdata.testmerge.len)
 		msg += revdata.GetTestMergeInfo()
 	if(revdata.commit && revdata.commit != revdata.originmastercommit)
