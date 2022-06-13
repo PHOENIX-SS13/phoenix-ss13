@@ -199,3 +199,10 @@
 	icon_state = "keyholesweater"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/misc/bathrobe
+	name = "bathrobe"
+	desc = "A fluffy robe to keep you from showing off to the world."
+	icon_state = "bathrobe"
+	can_adjust = FALSE
+	fitted_bodytypes = NONE
+	body_parts_covered = CHEST|GROIN|ARMS
