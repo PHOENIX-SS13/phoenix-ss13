@@ -643,6 +643,35 @@
 	to_chat(src, SPAN_NOTICE("Switched to the \"[uppertext(network)]\" camera network."))
 //End of code by Mord_Sith
 
+/datum/preferences/proc/update_ai_icon(mob/living/carbon/human/dummy/mannequin)
+	// Determine what job is marked as 'High' priority, and dress them up as such.
+	var/datum/job/previewJob
+	var/highest_pref = 0
+	for(var/job in job_preferences)
+		if(job_preferences[job] > highest_pref)
+			previewJob = SSjob.GetJob(job)
+			highest_pref = job_preferences[job]
+
+		// Set up the dummy for its photoshoot
+	apply_prefs_to(mannequin, TRUE, TRUE)
+
+	switch(preview_pref)
+		if(PREVIEW_PREF_JOB)
+			if(previewJob)
+				mannequin.job = previewJob.title
+				mannequin.dress_up_as_job(previewJob, TRUE)
+			mannequin.underwear_visibility = NONE
+		if(PREVIEW_PREF_LOADOUT)
+			mannequin.underwear_visibility = NONE
+			equip_preference_loadout(mannequin, TRUE, previewJob)
+			mannequin.underwear_visibility = NONE
+		if(PREVIEW_PREF_NAKED)
+			mannequin.underwear_visibility = UNDERWEAR_HIDE_UNDIES | UNDERWEAR_HIDE_SHIRT | UNDERWEAR_HIDE_SOCKS
+	mannequin.update_body() //Unfortunately, due to a certain case we need to update this just in case
+
+	COMPILE_OVERLAYS(mannequin)
+	return mannequin.appearance
+
 //I am the icon meister. Bow fefore me. //>fefore
 /mob/living/silicon/ai/proc/ai_hologram_change()
 	set name = "Change Hologram"
@@ -652,21 +681,35 @@
 	if(incapacitated())
 		return
 	var/input
-	switch(tgui_alert(usr,"Would you like to select a hologram based on a crew member, an animal, or switch to a unique avatar?",,list("Crew Member","Unique","Animal")))
-		if("Crew Member")
-			var/list/personnel_list = list()
+	switch(tgui_alert(usr,"Would you like to select a hologram based on a custom character, an animal, or switch to a unique avatar?",,list("Custom Character","Unique","Animal")))
+		if("Custom Character")
+			switch(tgui_alert(usr,"Would you like to base it off of your current character loadout, or a member on station?",,list("My Character","Station Member")))
+				if("Station Member")
+					var/list/personnel_list = list()
 
-			for(var/datum/data/record/t in GLOB.data_core.locked)//Look in data core locked.
-				personnel_list["[t.fields["name"]]: [t.fields["rank"]]"] = t.fields["image"]//Pull names, rank, and image.
+					for(var/datum/data/record/record_datum in GLOB.data_core.locked)//Look in data core locked.
+						personnel_list["[record_datum.fields["name"]]: [record_datum.fields["rank"]]"] = record_datum.fields["image"]//Pull names, rank, and image.
 
-			if(personnel_list.len)
-				input = input("Select a crew member:") as null|anything in sortList(personnel_list)
-				var/icon/character_icon = personnel_list[input]
-				if(character_icon)
-					qdel(holo_icon)//Clear old icon so we're not storing it in memory.
-					holo_icon = getHologramIcon(icon(character_icon))
-			else
-				tgui_alert(usr,"No suitable records found. Aborting.")
+					if(personnel_list.len)
+						input = input("Select a crew member:") as null|anything in sortList(personnel_list)
+						var/icon/character_icon = personnel_list[input]
+						if(character_icon)
+							qdel(holo_icon)//Clear old icon so we're not storing it in memory.
+							holo_icon = getHologramIcon(icon(character_icon))
+					else
+						tgui_alert(usr,"No suitable records found. Aborting.")
+				if("My Character")
+					switch(tgui_alert(usr,"WARNING: Your AI hologram will take the appearance of your currently selected character ([client.prefs.real_name]). Are you sure you want to proceed?",,list("Yes","No")))
+						if("Yes")
+							var/mob/living/carbon/human/dummy/ai_dummy = new
+							var/mutable_appearance/appearance = usr.client.prefs.update_ai_icon(ai_dummy)
+							var/icon/character_icon = getHologramIcon(getFlatIcon(appearance))
+							qdel(ai_dummy)
+							if(character_icon)
+								qdel(holo_icon)
+								holo_icon = character_icon
+						if("No")
+							return FALSE
 
 		if("Animal")
 			var/list/icon_list = list(
