@@ -1,0 +1,6 @@
+author: Deek-Za (Deek-Za)
+changes:
+- rscadd: Added &#x27;My Character&#x27; to available AI hologram options.
+- code_imp: Altered AI code. Added proc for updating custom holograms.
+merge-date: 2022-06-14
+prnumber: 1050
