@@ -1,0 +1,9 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- rscadd: Added character preference options to choose a hair gradient style and color
+- rscadd: The first hairdye slot can now be a non-dye, meaning it can&#x27;t be removed
+    - useful for natural hair gradients or effects
+- rscadd: Added ability to remove hairdye with the hairdye spray with rightclick
+- rscadd: Added another hair gradient slot, mix and match!
+merge-date: 2022-06-14
+prnumber: 1125
