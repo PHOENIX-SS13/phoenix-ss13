@@ -21,6 +21,8 @@
 
 /datum/slapcraft_step/reagent/can_perform(mob/living/user, obj/item/item, obj/item/slapcraft_assembly/assembly)
 	var/obj/item/reagent_containers/container = item
+	if(!container.reagents)
+		return FALSE
 	if(needs_open_container && !container.is_open_container())
 		return FALSE
 	if(!isnull(temperature_min) && container.reagents.chem_temp < temperature_min)
