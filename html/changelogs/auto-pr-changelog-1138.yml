@@ -1,0 +1,5 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- bugfix: Ghosts float once more. And more reliably as well.
+merge-date: 2022-06-14
+prnumber: 1138
