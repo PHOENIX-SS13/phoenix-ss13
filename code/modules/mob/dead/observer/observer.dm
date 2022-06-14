@@ -133,7 +133,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		remove_verb(src, /mob/dead/observer/verb/boo)
 		remove_verb(src, /mob/dead/observer/verb/possess)
 
-	animate(src, pixel_y = 2, time = 10, loop = -1)
+	AddElement(/datum/element/movetype_handler)
 
 	add_to_dead_mob_list()
 
@@ -480,14 +480,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	orbit(target,orbitsize, FALSE, 20, rot_seg)
 
 /mob/dead/observer/orbit()
-	setDir(2)//reset dir so the right directional sprites show up
+	setDir(2) //reset dir so the right directional sprites show up
 	return ..()
-
-/mob/dead/observer/stop_orbit(datum/component/orbiter/orbits)
-	. = ..()
-	//restart our floating animation after orbit is done.
-	pixel_y = base_pixel_y
-	animate(src, pixel_y = base_pixel_y + 2, time = 1 SECONDS, loop = -1)
 
 /mob/dead/observer/verb/jumptomob() //Moves the ghost instead of just changing the ghosts's eye -Nodrak
 	set category = "Ghost"
