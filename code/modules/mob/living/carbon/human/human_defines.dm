@@ -17,10 +17,17 @@
 	var/hair_color = "000"
 	var/hairstyle = "Bald"
 
-	///Colour used for the hair gradient.
-	var/grad_color = "000"
-	///Style used for the hair gradient.
-	var/grad_style
+	// These could be a list but I don't think it's worth the overhead for two of these.
+	///Colour used for the primary hair gradient.
+	var/hair_gradient_color_primary = "000"
+	///Style used for the primary hair gradient.
+	var/hair_gradient_style_primary
+	///Is the primary hair gradient a dye or natural? This is used to determine if it's overwriteable, or removable.
+	var/hair_gradient_is_dye = FALSE
+	///Colour used for the secondary hair gradient.
+	var/hair_gradient_color_secondary = "000"
+	///Style used for the secondary hair gradient.
+	var/hair_gradient_style_secondary
 
 	//Facial hair colour and style
 	var/facial_hair_color = "000"
