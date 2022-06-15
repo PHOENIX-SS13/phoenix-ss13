@@ -1,0 +1,6 @@
+author: Azarak
+changes:
+- bugfix: Fixes bad points comparison on loadout validation, this may fix some loadout
+    reset issues although I&#x27;m not sure.
+merge-date: 2022-06-15
+prnumber: 1142
