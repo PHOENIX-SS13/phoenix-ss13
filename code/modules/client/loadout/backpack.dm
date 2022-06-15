@@ -61,7 +61,7 @@
 
 /datum/loadout_item/backpack/ttsdevice
 	path = /obj/item/ttsdevice
-	cost = 7
+	cost = 5
 
 /datum/loadout_item/backpack/paicard
 	description = "A device, that let you browse and download various AIs."
