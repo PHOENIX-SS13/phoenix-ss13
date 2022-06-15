@@ -210,7 +210,7 @@
 			if(!loadout_item)
 				slot_list -= entry
 		var/points_in_slot = get_loadout_points_for_slot(slot_index)
-		if(points_in_slot <= 0)
+		if(points_in_slot < 0)
 			reset_loadout_slot(slot_index)
 
 /datum/preferences/proc/customize_loadout_entry(loadout_item_path, customization_type, mob/user, gags_index)
