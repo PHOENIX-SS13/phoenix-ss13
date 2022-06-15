@@ -399,7 +399,7 @@
 	for(var/obj/item/paper/could_writ in get_turf(religious_tool))
 		if(istype(could_writ, /obj/item/paper/holy_writ))
 			continue
-		if(could_writ.info) //blank paper pls
+		if(could_writ.get_info_length()) //blank paper pls
 			continue
 		writ_target = could_writ //PLEASE SIGN MY AUTOGRAPH
 		return ..()

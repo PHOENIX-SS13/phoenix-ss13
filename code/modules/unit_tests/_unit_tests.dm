@@ -49,6 +49,7 @@
 #include "bloody_footprints.dm"
 #include "breath.dm"
 #include "card_mismatch.dm"
+#include "circuit_component_category.dm"
 #include "combat.dm"
 #include "component_tests.dm"
 #include "connect_loc.dm"

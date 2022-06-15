@@ -422,6 +422,17 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 ///Trait applied to turfs when an atmos holosign is placed on them. It will stop firedoors from closing.
 #define TRAIT_FIREDOOR_STOP "firedoor_stop"
 
+/// Trait applied when the MMI component is added to an [/obj/item/integrated_circuit]
+#define TRAIT_COMPONENT_MMI "component_mmi"
+/// Trait applied when the MMI component is added to an [/obj/item/integrated_circuit]
+#define TRAIT_COMPONENT_PRINTER "component_printer"
+
+/// Trait applied when an integrated circuit/module becomes undupable
+#define TRAIT_CIRCUIT_UNDUPABLE "circuit_undupable"
+
+/// Hearing trait that is from the hearing component
+#define CIRCUIT_HEAR_TRAIT "circuit_hear"
+
 //Medical Categories for quirks
 #define CAT_QUIRK_ALL 0
 #define CAT_QUIRK_NOTES 1

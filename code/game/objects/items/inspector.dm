@@ -56,7 +56,7 @@
 		. += SPAN_NOTICE("\The [src] contains data on [scanned_area.name].")
 	else if(scanned_area)
 		. += SPAN_NOTICE("\The [src] contains data on a vague area on station, you should throw it away.")
-	else if(info)
+	else if(get_info_length())
 		icon_state = "slipfull"
 		. += SPAN_NOTICE("Wait a minute, this isn't an encrypted inspection report! You should throw it away.")
 	else

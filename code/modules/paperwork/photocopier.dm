@@ -93,7 +93,7 @@
 				to_chat(usr, SPAN_WARNING("[src] is currently busy copying something. Please wait until it is finished."))
 				return FALSE
 			if(paper_copy)
-				if(!length(paper_copy.info))
+				if(!paper_copy.get_info_length())
 					to_chat(usr, SPAN_WARNING("An error message flashes across [src]'s screen: \"The supplied paper is blank. Aborting.\""))
 					return FALSE
 				// Basic paper
@@ -237,11 +237,11 @@
 	else // No toner? shitty copies for you!
 		copied_paper.info = "<font color = #808080>"
 
-	var/copied_info = paper_copy.info
-	copied_info = replacetext(copied_info, "<font face=\"[PEN_FONT]\" color=", "<font face=\"[PEN_FONT]\" nocolor=") //state of the art techniques in action
-	copied_info = replacetext(copied_info, "<font face=\"[CRAYON_FONT]\" color=", "<font face=\"[CRAYON_FONT]\" nocolor=") //This basically just breaks the existing color tag, which we need to do because the innermost tag takes priority.
-	copied_paper.info += copied_info
-	copied_paper.info += "</font>"
+	//the font color dependant on the amount of toner left.
+	var/chosen_color = toner_cartridge.charges > 10 ? "#101010" : "#808080"
+	copied_paper.info = "<font color = [chosen_color]>[copied_paper.info]</font>"
+	for(var/list/style as anything in copied_paper.add_info_style)
+		style[ADD_INFO_COLOR] = chosen_color
 	copied_paper.name = paper_copy.name
 	copied_paper.update_appearance()
 	copied_paper.stamps = paper_copy.stamps

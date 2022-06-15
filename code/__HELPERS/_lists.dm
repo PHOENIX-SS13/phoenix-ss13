@@ -541,7 +541,7 @@
 		else
 			L1[key] = other_value
 
-/proc/assoc_list_strip_value(list/input)
+/proc/assoc_to_keys(list/input)
 	var/list/ret = list()
 	for(var/key in input)
 		ret += key
@@ -576,3 +576,26 @@
 	. = ""
 	for(var/color in color_list)
 		. += color
+
+///Returns a list with all weakrefs resolved
+/proc/recursive_list_resolve(list/list_to_resolve)
+	. = list()
+	for(var/element in list_to_resolve)
+		if(istext(element))
+			. += element
+			var/possible_assoc_value = list_to_resolve[element]
+			if(possible_assoc_value)
+				.[element] = recursive_list_resolve_element(possible_assoc_value)
+		else
+			. += list(recursive_list_resolve_element(element))
+
+///Helper for /proc/recursive_list_resolve
+/proc/recursive_list_resolve_element(element)
+	if(islist(element))
+		var/list/inner_list = element
+		return recursive_list_resolve(inner_list)
+	else if(isweakref(element))
+		var/datum/weakref/ref = element
+		return ref.resolve()
+	else
+		return element
