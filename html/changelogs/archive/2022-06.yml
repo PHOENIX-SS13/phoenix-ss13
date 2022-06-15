@@ -127,6 +127,20 @@
   Alex 'Avunia' Takiya (atakiya):
   - imageadd: Added bathrobe
 2022-06-14:
+  Alex 'Avunia' Takiya (atakiya):
+  - bugfix: Ghosts float once more. And more reliably as well.
+  - rscadd: Added character preference options to choose a hair gradient style and
+      color
+  - rscadd: The first hairdye slot can now be a non-dye, meaning it can&#x27;t be
+      removed - useful for natural hair gradients or effects
+  - rscadd: Added ability to remove hairdye with the hairdye spray with rightclick
+  - rscadd: Added another hair gradient slot, mix and match!
   Deek-Za (Deek-Za):
   - rscadd: Added &#x27;My Character&#x27; to available AI hologram options.
   - code_imp: Altered AI code. Added proc for updating custom holograms.
+  - qol: Holograms can now emote.
+  - qol: Holograms now have runechat support.
+2022-06-15:
+  Emilitia Ennehrt (EmilitiaEnnehrt):
+  - qol: Added suspenders to the loadout menu
+  - balance: Make TTS device costs lower
