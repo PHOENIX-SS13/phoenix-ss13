@@ -141,6 +141,12 @@
   - qol: Holograms can now emote.
   - qol: Holograms now have runechat support.
 2022-06-15:
+  /tg/station, Avunia Takiya:
+  - rscadd: Ported lots of updates for Circuits/Wiremod from /tg/station
+  Azarak:
+  - bugfix: Fixes Storytellers often not running any events.
+  - bugfix: Fixes bad points comparison on loadout validation, this may fix some loadout
+      reset issues although I&#x27;m not sure.
   Emilitia Ennehrt (EmilitiaEnnehrt):
   - qol: Added suspenders to the loadout menu
   - balance: Make TTS device costs lower
