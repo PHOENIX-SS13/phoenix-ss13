@@ -4,6 +4,12 @@
 	abstract_type = /datum/slapcraft_step/reagent
 	insert_item = FALSE
 	item_types = list(/obj/item/reagent_containers)
+	finish_msg = "%USER% finishes adding some reagents to %TARGET%."
+	start_msg = "%USER% starts adding some reagents to %TARGET%."
+	finish_msg_self = "You add some reagents to %TARGET%."
+	start_msg_self = "You begin adding some reagents to %TARGET%."
+	/// Readable string describing reagentst that we auto generate. such as "fuel, acid and milk". Used as a helper in auto desc generations
+	var/readable_reagent_string
 	/// Type of the reagent to use.
 	var/reagent_type
 	/// Volume of the reagent to use.
@@ -18,6 +24,10 @@
 	var/temperature_min
 	/// If defined it's the maximum required temperature for the step to work.
 	var/temperature_max
+
+/datum/slapcraft_step/reagent/New()
+	make_readable_reagent_string()
+	return ..()
 
 /datum/slapcraft_step/reagent/can_perform(mob/living/user, obj/item/item, obj/item/slapcraft_assembly/assembly)
 	var/obj/item/reagent_containers/container = item
@@ -83,3 +93,34 @@
 	else
 		var/datum/reagent/reagent_cast = reagent_type
 		return "[reagent_volume]u. [lowertext(initial(reagent_cast.name))]"
+
+/datum/slapcraft_step/reagent/proc/make_readable_reagent_string()
+	var/list/reagent_types_to_describe = list()
+	if(reagent_list)
+		for(var/reagent_type in reagent_list)
+			reagent_types_to_describe += reagent_type
+	else
+		reagent_types_to_describe += reagent_type
+	var/string_so_far = ""
+	var/i = 0
+	var/first = TRUE
+	for(var/reagent_type in reagent_types_to_describe)
+		i++
+		if(!first)
+			if(i == reagent_types_to_describe.len)
+				string_so_far += " and "
+			else
+				string_so_far += ", "
+		var/datum/reagent/cast = reagent_type
+		string_so_far += lowertext(initial(cast.name))
+		first = FALSE
+	readable_reagent_string = string_so_far
+
+/datum/slapcraft_step/reagent/make_desc()
+	return "Add some [readable_reagent_string] to the assembly"
+
+/datum/slapcraft_step/reagent/make_finished_desc()
+	return "Some [readable_reagent_string] has been added."
+
+/datum/slapcraft_step/reagent/make_todo_desc()
+	return "You could add some [readable_reagent_string] to the assembly"

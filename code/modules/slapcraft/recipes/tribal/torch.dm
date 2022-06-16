@@ -18,10 +18,14 @@
 	/obj/item/grown/log/bamboo
 	)
 
-
 /datum/slapcraft_step/dried_leaf
 	desc = "Add a dried leaf to a log."
 	finished_desc = "A dried leaf has been added."
+
+	start_msg = "%USER% begins wrapping the log with some dried leaf."
+	start_msg_self = "You begin wrapping the log with some dried leaf."
+	finish_msg = "%USER% wraps the log with some dried leaf."
+	finish_msg_self = "You wrap the log with some dried leaf."
 	item_types = list(
 	/obj/item/food/grown/tobacco,
 	/obj/item/food/grown/tea,
@@ -39,4 +43,8 @@
 /datum/slapcraft_step/tool/knife/carve_torch
 	desc = "Carve the torch from a log."
 	todo_desc = "You could carve out the torch and piece it together..."
-	finish_msg = "You finish cobbling the torch parts together."
+
+	start_msg = "%USER% begins to cobble the torch together."
+	start_msg_self = "You begin to cobble the torch together."
+	finish_msg = "%USER% finishes cobbling the torch together."
+	finish_msg_self = "You finish cobbling the torch together."

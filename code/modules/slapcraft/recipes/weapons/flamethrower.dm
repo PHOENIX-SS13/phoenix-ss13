@@ -21,19 +21,31 @@
 	desc = "Attach an igniter to the welder."
 	finished_desc = "An igniter has been added to welder."
 	todo_desc = "You could add an igniter to the welder..."
-	finish_msg = "You attach the igniter to the welder."
 	item_types = list(/obj/item/assembly/igniter)
 	insert_item_into_result = TRUE
+
+	start_msg = "%USER% begins attaching an igniter to the %TARGET%."
+	start_msg_self = "You begin attaching an igniter to the %TARGET%."
+	finish_msg = "%USER% attaches the igniter to the %TARGET%."
+	finish_msg_self = "You attach the igniter to the %TARGET%."
 
 /datum/slapcraft_step/stack/flamethrower_rod
 	desc = "Add a rod to the assembly."
 	finished_desc = "A rod is added."
 	todo_desc = "You could add a rod..."
-	finish_msg = "You insert a rod to the assembly."
 	item_types = list(/obj/item/stack/rods)
 	amount = 1
+
+	start_msg = "%USER% begins inserts a rod to the %TARGET%."
+	start_msg_self = "You begin inserting a rod to the %TARGET%."
+	finish_msg = "%USER% inserts a rod to the %TARGET%."
+	finish_msg_self = "You insert a rod to the %TARGET%."
 
 /datum/slapcraft_step/tool/screwdriver/flamethrower
 	desc = "Secure the parts with a screwdriver."
 	todo_desc = "You could secure the parts with a screwdriver..."
-	finish_msg = "You secure the parts with a screwdriver."
+
+	start_msg = "%USER% begins to secure the %TARGET%."
+	start_msg_self = "You begin to secure the %TARGET%."
+	finish_msg = "%USER% secures the %TARGET%."
+	finish_msg_self = "You secure the %TARGET%."

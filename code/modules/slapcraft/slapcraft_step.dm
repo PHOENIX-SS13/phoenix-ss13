@@ -1,15 +1,25 @@
 /datum/slapcraft_step
 	abstract_type = /datum/slapcraft_step
 	/// The description of the step, it shows in the slapcraft handbook
-	var/desc = "THIS IS HOW YOU DO THIS STEP"
+	var/desc
 	/// The description of the finished step when you examine the assembly.
-	var/finished_desc = "SLAPCRAFT STEP FINISHED"
+	var/finished_desc
 	/// The description of the step when it's the next one to perform in the assembly.
-	var/todo_desc = "HOW TO DO NEXT STEP"
-	/// Message sent to user when they finish this step.
-	var/finish_msg = "YOU FINISH THIS STEP"
+	var/todo_desc
+
 	/// Quantified description of the required element of this step. "screwdriver" or "15 cable", or "can with 50u. fuel" etc.
 	var/list_desc
+
+	/// Visible message when you finish the step.
+	var/finish_msg
+	/// Visible message when you start the step.
+	var/start_msg
+	/// Personalized visible message when you finish the step.
+	var/finish_msg_self
+	/// Personalized visible message when you start the step.
+	var/start_msg_self
+
+
 	/// Whether we insert the valid item in the assembly.
 	var/insert_item = TRUE
 	/// Whether we insert the item into the resulting item's contents
@@ -41,6 +51,21 @@
 			blacklist_typecache = typecacheof(blacklist_item_types)
 	if(!list_desc)
 		list_desc = make_list_desc()
+	if(!desc)
+		desc = make_desc()
+	if(!todo_desc)
+		todo_desc = make_todo_desc()
+	if(!finished_desc)
+		finished_desc = make_finished_desc()
+
+	if(!finish_msg)
+		finish_msg = make_finish_msg()
+	if(!start_msg && perform_time)
+		start_msg = make_start_msg()
+	if(!finish_msg_self)
+		finish_msg_self = make_finish_msg_self()
+	if(!start_msg_self && perform_time)
+		start_msg_self = make_start_msg_self()
 
 /// Checks whether a type is in the typecache of the step.
 /datum/slapcraft_step/proc/check_type(checked_type)
@@ -70,13 +95,21 @@
 	if(!perform_check(user, item, assembly) || !assembly.recipe.check_correct_step(type, assembly.step_states))
 		return FALSE
 	if(perform_time && !instant)
+		if(!silent)
+			user.visible_message(
+				SPAN_NOTICE(step_replace_text(start_msg, user, item, assembly)),
+				SPAN_NOTICE(step_replace_text(start_msg_self, user, item, assembly))
+				)
 		if(!perform_do_after(user, item, assembly, perform_time * get_speed_multiplier(user, item, assembly)))
 			return FALSE
 		// Do checks again because we spent time in a do_after(), this time also check deletions.
 		if(QDELETED(assembly) || QDELETED(item) || !perform_check(user, item, assembly) || !assembly.recipe.check_correct_step(type, assembly.step_states))
 			return FALSE
-	if(!silent && finish_msg)
-		to_chat(user, SPAN_NOTICE(finish_msg))
+	if(!silent)
+		user.visible_message(
+			SPAN_NOTICE(step_replace_text(finish_msg, user, item, assembly)),
+			SPAN_NOTICE(step_replace_text(finish_msg_self, user, item, assembly))
+			)
 	if(!silent)
 		play_perform_sound(user, item, assembly)
 	on_perform(user, item, assembly)
@@ -85,6 +118,13 @@
 	if(progress_crafting(user, item, assembly))
 		assembly.finished_step(user, src)
 	return TRUE
+
+/// Text replacing for sending visibile messages when the steps are happening.
+/datum/slapcraft_step/proc/step_replace_text(msg, mob/living/user, obj/item/item, obj/item/slapcraft_assembly/assembly)
+	msg = replacetext(msg,"%USER%","[user]")
+	msg = replacetext(msg,"%ITEM%","\improper [item]")
+	msg = replacetext(msg,"%TARGET%","\improper [assembly]")
+	return msg
 
 /// Below are virtual procs I allow steps to override for their specific behaviours.
 
@@ -124,9 +164,59 @@
 		return
 	playsound(assembly, item.drop_sound, DROP_SOUND_VOLUME, ignore_walls = FALSE)
 
+// Procs to generate strings for description steps.
+/// Makes a description for the step.
+/datum/slapcraft_step/proc/make_desc()
+	if(insert_item)
+		return "Insert a [list_desc] into the assembly."
+	else
+		return "Use a [list_desc] on the assembly"
+
+/// Makes a finished description for the step.
+/datum/slapcraft_step/proc/make_finished_desc()
+	if(insert_item)
+		return "\The [list_desc] has been inserted."
+	else
+		return "\The [list_desc] has been applied."
+
+/// Makes a todo description for the step.
+/datum/slapcraft_step/proc/make_todo_desc()
+	if(insert_item)
+		return "You could insert a [list_desc] into the assembly."
+	else
+		return "You could use a [list_desc] on the assembly"
+
 /// Makes a list description for the item.
 /datum/slapcraft_step/proc/make_list_desc()
 	// By default if we check types just grab the first type in the list and use that to describe the step.
 	if(check_types)
 		var/obj/item/first_path_cast = item_types[1]
 		return initial(first_path_cast.name)
+
+/// Makes a description for the visible message of finishing a step.
+/datum/slapcraft_step/proc/make_finish_msg()
+	if(insert_item)
+		return "%USER% inserts %ITEM% into the %TARGET%."
+	else
+		return "%USER% uses %ITEM% on the %TARGET%."
+
+/// Makes a description for the visible message of starting a step that requires some time to perform.
+/datum/slapcraft_step/proc/make_start_msg()
+	if(insert_item)
+		return "%USER% begins inserting %ITEM% into the %TARGET%."
+	else
+		return "%USER% begins using %ITEM% on the %TARGET%."
+
+/// Makes a personalized description for the visible message of finishing a step.
+/datum/slapcraft_step/proc/make_finish_msg_self()
+	if(insert_item)
+		return "You insert %ITEM% into the %TARGET%."
+	else
+		return "You use %ITEM% on the %TARGET%."
+
+/// Makes a personalized description for the visible message of starting a step that requires some time to perform.
+/datum/slapcraft_step/proc/make_start_msg_self()
+	if(insert_item)
+		return "You begin inserting %ITEM% into the %TARGET%."
+	else
+		return "You begin using %ITEM% on the %TARGET%."

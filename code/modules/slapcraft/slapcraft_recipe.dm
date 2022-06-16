@@ -203,27 +203,27 @@
 /datum/slapcraft_recipe/proc/finish_recipe(mob/living/user, obj/item/slapcraft_assembly/assembly)
 	to_chat(user, SPAN_NOTICE("You finish \the [name]."))
 	assembly.being_finished = TRUE
-	var/list/items_list  = create_items(assembly)
+	var/list/results = list()
+	create_items(assembly, results)
 	// Move items which wanted to go to the resulted item into it. Only supports for the first created item.
-	var/atom/movable/first_item = items_list[1]
+	var/atom/movable/first_item = results[1]
 	for(var/obj/item/item as anything in assembly.items_to_place_in_result)
 		item.forceMove(first_item)
 
-	after_create_items(items_list, assembly)
+	after_create_items(results, assembly)
 	dispose_assembly(assembly)
 
 	//Finally, CheckParts on the resulting items.
-	for(var/atom/movable/result_item as anything in items_list)
+	for(var/atom/movable/result_item as anything in results)
 		result_item.CheckParts()
 
 /// Runs when the last step tries to be performed and cancels the step if it returns FALSE. Could be used to validate location in structure construction via slap crafting.
 /datum/slapcraft_recipe/proc/can_finish(mob/living/user, obj/item/slapcraft_assembly/assembly)
 	return TRUE
 
-/// The proc that creates the resulted item and passes it as a return.
-/datum/slapcraft_recipe/proc/create_items(obj/item/slapcraft_assembly/assembly)
+/// The proc that creates the resulted item(s). Make sure to add them to the passed `results` list.
+/datum/slapcraft_recipe/proc/create_items(obj/item/slapcraft_assembly/assembly, list/results)
 	/// Check if we want to craft multiple items, if yes then populate the list passed by the argument with them.
-	var/list/contents_list = list()
 	var/list/multi_to_craft
 	if(result_list)
 		multi_to_craft = result_list
@@ -235,12 +235,15 @@
 			var/amount = multi_to_craft[path]
 			var/shift_pixels = amount > 1 ? TRUE : FALSE
 			for(var/i in 1 to amount)
-				var/atom/movable/new_thing = new path(assembly.loc)
+				var/atom/movable/new_thing = create_item(path, assembly)
 				if(shift_pixels)
 					new_thing.pixel_x += rand(-4,4)
 					new_thing.pixel_y += rand(-4,4)
-				contents_list += new_thing
-	return contents_list
+				results += new_thing
+
+/// Creates and returns a new item. This gets called for every item that is supposed to be created in the recipe.
+/datum/slapcraft_recipe/proc/create_item(item_path, obj/item/slapcraft_assembly/assembly)
+	return new item_path(assembly.loc)
 
 /// Behaviour after the item is created, and before the slapcrafting assembly is disposed.
 /// Here you can move the components into the item if you wish, or do other stuff with them.
