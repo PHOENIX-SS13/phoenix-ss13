@@ -137,6 +137,9 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 /proc/cmp_ambience_dist_asc(datum/ambience_sort/a, datum/ambience_sort/b)
 	return cmp_numeric_asc(a.dist, b.dist)
 
+/proc/cmp_recipe_priority(datum/recipe/a, datum/recipe/b)
+	return cmp_numeric_dsc(a.priority, b.priority)
+
 /// Orders by integrated circuit weight
 /proc/cmp_port_order_asc(datum/port/compare1, datum/port/compare2)
 	return compare1.order - compare2.order
