@@ -47,12 +47,6 @@
 	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
 	var/plank_type = /obj/item/stack/sheet/mineral/wood
 	var/plank_name = "wooden planks"
-	var/static/list/accepted = typecacheof(list(/obj/item/food/grown/tobacco,
-	/obj/item/food/grown/tea,
-	/obj/item/food/grown/ash_flora/mushroom_leaf,
-	/obj/item/food/grown/ambrosia/vulgaris,
-	/obj/item/food/grown/ambrosia/deus,
-	/obj/item/food/grown/wheat))
 
 /obj/item/grown/log/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
@@ -66,30 +60,14 @@
 			to_chat(user, SPAN_NOTICE("You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name]."))
 		qdel(src)
 
-	if(CheckAccepted(W))
-		var/obj/item/food/grown/leaf = W
-		if(HAS_TRAIT(leaf, TRAIT_DRIED))
-			user.show_message(SPAN_NOTICE("You wrap \the [W] around the log, turning it into a torch!"))
-			var/obj/item/flashlight/flare/torch/T = new /obj/item/flashlight/flare/torch(user.loc)
-			usr.dropItemToGround(W)
-			usr.put_in_active_hand(T)
-			qdel(leaf)
-			qdel(src)
-			return
-		else
-			to_chat(usr, SPAN_WARNING("You must dry this first!"))
-	else
-		return ..()
+	return ..()
 
 /// Returns an amount of planks that the log will yield
 /obj/item/grown/log/proc/get_plank_amount()
 	var/plank_amount = 1
 	if(seed)
 		plank_amount += round(seed.potency / 25)
-	return plank_amount 
-
-/obj/item/grown/log/proc/CheckAccepted(obj/item/I)
-	return is_type_in_typecache(I, accepted)
+	return plank_amount
 
 /obj/item/grown/log/tree
 	seed = null
@@ -103,9 +81,6 @@
 	icon_state = "steellogs"
 	plank_type = /obj/item/stack/rods
 	plank_name = "rods"
-
-/obj/item/grown/log/steel/CheckAccepted(obj/item/I)
-	return FALSE
 
 /obj/item/seeds/bamboo
 	name = "pack of bamboo seeds"
@@ -132,9 +107,6 @@
 	icon_state = "bamboo"
 	plank_type = /obj/item/stack/sheet/mineral/bamboo
 	plank_name = "bamboo sticks"
-
-/obj/item/grown/log/bamboo/CheckAccepted(obj/item/I)
-	return FALSE
 
 /obj/structure/punji_sticks
 	name = "punji sticks"

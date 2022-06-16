@@ -29,3 +29,8 @@
 	abstract_type = /datum/slapcraft_step/tool/screwdriver
 	list_desc = "screwdriver"
 	tool_behaviour = TOOL_SCREWDRIVER
+
+/datum/slapcraft_step/tool/knife
+	abstract_type = /datum/slapcraft_step/tool/knife
+	list_desc = "knife"
+	tool_behaviour = TOOL_KNIFE
