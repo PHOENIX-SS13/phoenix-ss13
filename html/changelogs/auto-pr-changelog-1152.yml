@@ -1,0 +1,6 @@
+author: Azarak
+changes:
+- rscadd: Slapcrafting now has more feedback
+- rscadd: Knives now make a cutting noise when used as a tool.
+merge-date: 2022-06-16
+prnumber: 1152
