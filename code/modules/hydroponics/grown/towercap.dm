@@ -157,6 +157,13 @@
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
 
+/obj/structure/bonfire/update_overlays()
+	. = ..()
+	if(grill)
+		. += "bonfire_grill"
+	if(burning)
+		. += bloom_appearance(BLOOM_SIZE_LARGE, BLOOM_STRONG_ALPHA, LIGHT_COLOR_FIRE)
+
 /obj/structure/bonfire/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)
 		var/obj/item/stack/rods/R = W
@@ -174,7 +181,7 @@
 				R.use(1)
 				grill = TRUE
 				to_chat(user, SPAN_NOTICE("You add a grill to \the [src]."))
-				add_overlay("bonfire_grill")
+				update_appearance()
 			else
 				return ..()
 	if(W.get_temperature())

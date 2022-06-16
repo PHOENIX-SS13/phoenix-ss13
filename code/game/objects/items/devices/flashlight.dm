@@ -34,6 +34,7 @@
 	set_light_on(on)
 	if(light_system == STATIC_LIGHT)
 		update_light()
+	update_appearance()
 
 
 /obj/item/flashlight/attack_self(mob/user)
@@ -239,6 +240,11 @@
 	custom_materials = null
 	on = TRUE
 
+/obj/item/flashlight/lamp/update_overlays()
+	. = ..()
+	if(!on)
+		return
+	. += bloom_appearance(BLOOM_SIZE_LARGE, 30, light_color)
 
 // green-shaded desk lamp
 /obj/item/flashlight/lamp/green
@@ -282,6 +288,12 @@
 	light_color = LIGHT_COLOR_FLARE
 	light_system = MOVABLE_LIGHT
 	grind_results = list(/datum/reagent/sulfur = 15)
+
+/obj/item/flashlight/flare/update_overlays()
+	. = ..()
+	if(!on)
+		return
+	. += bloom_appearance(BLOOM_SIZE_LARGE, 30, light_color)
 
 /obj/item/flashlight/flare/Initialize()
 	. = ..()

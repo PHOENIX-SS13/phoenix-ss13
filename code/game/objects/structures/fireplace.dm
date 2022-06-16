@@ -91,18 +91,25 @@
 	if(!lit)
 		return
 
+	var/bloom_alpha
 	switch(burn_time_remaining())
 		if(0 to 500)
 			. += "fireplace_fire0"
+			bloom_alpha = BLOOM_VERY_WEAK_ALPHA
 		if(500 to 1000)
 			. += "fireplace_fire1"
+			bloom_alpha = BLOOM_VERY_WEAK_ALPHA
 		if(1000 to 1500)
 			. += "fireplace_fire2"
+			bloom_alpha = BLOOM_WEAK_ALPHA
 		if(1500 to 2000)
 			. += "fireplace_fire3"
+			bloom_alpha = BLOOM_WEAK_ALPHA
 		if(2000 to MAXIMUM_BURN_TIMER)
 			. += "fireplace_fire4"
+			bloom_alpha = BLOOM_WEAK_ALPHA
 	. += "fireplace_glow"
+	. += bloom_appearance(BLOOM_DEFAULT_SIZE, bloom_alpha, LIGHT_COLOR_FIRE, -pixel_x, -pixel_y)
 
 /obj/structure/fireplace/proc/adjust_light()
 	if(!lit)

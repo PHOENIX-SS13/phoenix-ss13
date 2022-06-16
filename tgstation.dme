@@ -244,6 +244,7 @@
 #include "code\_globalvars\ambitions.dm"
 #include "code\_globalvars\attribute.dm"
 #include "code\_globalvars\bitfields.dm"
+#include "code\_globalvars\bloom.dm"
 #include "code\_globalvars\configuration.dm"
 #include "code\_globalvars\descriptor.dm"
 #include "code\_globalvars\game_modes.dm"

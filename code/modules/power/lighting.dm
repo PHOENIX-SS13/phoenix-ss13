@@ -295,6 +295,8 @@
 		if(SOUTH)
 			pixel_y = 0
 			pixel_x = 0
+	// Pixel offsets affect the bloom overlay.
+	update_appearance()
 
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
@@ -445,21 +447,25 @@
 
 /obj/machinery/light/update_overlays()
 	. = ..()
-	if(!on || status != LIGHT_OK)
+	if(!on || status != LIGHT_OK || turning_on)
 		return
 
 	var/lightbulb_power = bulb_power
 	var/area/A = get_area(src)
 	if(emergency_mode || (A?.fire))
-		. += mutable_appearance(overlayicon, "[base_state]_emergency")
+		. += mutable_appearance(overlayicon, "[base_state]_emergency", plane = MOUSE_TRANSPARENT_PLANE)
 		lightbulb_power *= bulb_emergency_pow_mul
 	else if(nightshift_enabled)
-		. += mutable_appearance(overlayicon, "[base_state]_nightshift")
+		. += mutable_appearance(overlayicon, "[base_state]_nightshift", plane = MOUSE_TRANSPARENT_PLANE)
 		lightbulb_power = nightshift_light_power
 	else
-		. += mutable_appearance(overlayicon, base_state)
+		. += mutable_appearance(overlayicon, base_state, plane = MOUSE_TRANSPARENT_PLANE)
 
 	. += emissive_appearance(overlayicon, "[base_state]_emissive", alpha = (255 * lightbulb_power))
+
+	// Yes we pass negative pixel offsets to reverse this overlay offset so its centered on the tile instead.
+	var/bloom_alpha = clamp(brightness * lightbulb_power * 5.5, 20, 35)
+	. += bloom_appearance(BLOOM_SIZE_LARGE, bloom_alpha, light_color, -pixel_x, -pixel_y)
 
 #define LIGHT_ON_DELAY_UPPER 3 SECONDS
 #define LIGHT_ON_DELAY_LOWER 1 SECONDS
@@ -549,6 +555,7 @@
 		set_light(arg_brightness, arg_power, arg_color)
 		if(!instant)
 			playsound(src, 'sound/effects/light/light_on.ogg', 65, 1)
+	update_appearance()
 
 /obj/machinery/light/update_atom_colour()
 	..()

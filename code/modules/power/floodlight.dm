@@ -69,6 +69,12 @@
 	var/light_power_coefficient = 200
 	var/setting = FLOODLIGHT_OFF
 
+/obj/machinery/power/floodlight/update_overlays()
+	. = ..()
+	if(setting == FLOODLIGHT_OFF)
+		return
+	. += bloom_appearance(BLOOM_SIZE_LARGE)
+
 /obj/machinery/power/floodlight/process()
 	var/turf/T = get_turf(src)
 	var/obj/structure/cable/C = locate() in T
@@ -106,6 +112,7 @@
 			setting_text = "high power"
 	if(user)
 		to_chat(user, SPAN_NOTICE("You set [src] to [setting_text]."))
+	update_appearance()
 
 /obj/machinery/power/floodlight/attackby(obj/item/O, mob/user, params)
 	if(O.tool_behaviour == TOOL_WRENCH)
