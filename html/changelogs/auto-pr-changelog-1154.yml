@@ -1,0 +1,5 @@
+author: Deek-Za (Deek-Za)
+changes:
+- bugfix: Can no longer attempt to cryo while someone is buckled to you.
+merge-date: 2022-06-17
+prnumber: 1154
