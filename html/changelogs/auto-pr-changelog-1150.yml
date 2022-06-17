@@ -1,6 +1,0 @@
-author: Delnth
-changes:
-- rscadd: Added a torch recipe to the slapcraft system
-- rscdel: Removed the original craft recipe for the torch
-merge-date: 2022-06-16
-prnumber: 1150

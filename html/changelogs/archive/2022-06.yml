@@ -150,3 +150,15 @@
   Emilitia Ennehrt (EmilitiaEnnehrt):
   - qol: Added suspenders to the loadout menu
   - balance: Make TTS device costs lower
+2022-06-16:
+  Azarak:
+  - rscadd: Adds a powerful framework for all sorts of recipes, but is currently unused.
+  - rscadd: Adds bloom overlays. Those are added to light fixtures, floodlight, desk
+      lamps, flares, bonfires and fireplaces
+  - rscadd: Slapcrafting now has more feedback
+  - rscadd: Knives now make a cutting noise when used as a tool.
+  Delnth:
+  - rscadd: Added a torch recipe to the slapcraft system
+  - rscdel: Removed the original craft recipe for the torch
+  drizzlemutt:
+  - balance: changed techweb program clearance from RD to Research
