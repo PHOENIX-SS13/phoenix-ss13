@@ -252,7 +252,7 @@
 	desc = "A wooden contraption, used to dry plant products, food and hide."
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "drying_rack"
-	use_power = IDLE_POWER_USE
+	use_power = NO_POWER_USE
 	idle_power_usage = 5
 	active_power_usage = 200
 	visible_contents = FALSE
