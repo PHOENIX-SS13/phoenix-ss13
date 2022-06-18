@@ -42,9 +42,9 @@
 #define GAMEMODE_PANEL_MAIN "Main"
 #define GAMEMODE_PANEL_VARIABLES "Variables"
 
-#define MUNDANE_POINT_THRESHOLD 32
-#define MODERATE_POINT_THRESHOLD 65
-#define MAJOR_POINT_THRESHOLD 120
+#define MUNDANE_POINT_THRESHOLD 40
+#define MODERATE_POINT_THRESHOLD 70
+#define MAJOR_POINT_THRESHOLD 130
 #define ROLESET_POINT_THRESHOLD 150
 #define OBJECTIVES_POINT_THRESHOLD 170
 
@@ -55,11 +55,11 @@
 #define OBJECTIVES_MIN_POP 20
 
 /// Defines for how much pop do we need to stop applying a pop scalling penalty to event frequency.
-#define MUNDANE_POP_SCALE_THRESHOLD 12
-#define MODERATE_POP_SCALE_THRESHOLD 18
-#define MAJOR_POP_SCALE_THRESHOLD 40
+#define MUNDANE_POP_SCALE_THRESHOLD 25
+#define MODERATE_POP_SCALE_THRESHOLD 32
+#define MAJOR_POP_SCALE_THRESHOLD 45
 #define ROLESET_POP_SCALE_THRESHOLD 45
-#define OBJECTIVES_POP_SCALE_THRESHOLD 40
+#define OBJECTIVES_POP_SCALE_THRESHOLD 45
 
 /// The maximum penalty coming from pop scalling, when we're at the most minimum point, easing into 0 as we reach the SCALE_THRESHOLD. This is treated as a percentage.
 #define MUNDANE_POP_SCALE_PENALTY 35
