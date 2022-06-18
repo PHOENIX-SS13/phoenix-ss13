@@ -1,0 +1,7 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- soundadd: Made adjustments to existing ambience sounds (general, vending machines,
+    AI areas)
+- soundadd: Added ambient intercom chatter to arrivals and departures
+merge-date: 2022-06-18
+prnumber: 1159
