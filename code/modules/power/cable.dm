@@ -122,7 +122,10 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(/obj/structure/gri
 
 /obj/structure/cable/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/stack/cable_coil(drop_location(), 1)
+		var/obj/item/stack/cable_coil/coil = new /obj/item/stack/cable_coil(drop_location(), 1)
+		coil.color = color
+		coil.cable_color = color
+		coil.target_layer = cable_layer
 	qdel(src)
 
 ///////////////////////////////////
