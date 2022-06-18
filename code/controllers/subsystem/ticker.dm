@@ -681,23 +681,17 @@ SUBSYSTEM_DEF(ticker)
 	gather_newscaster() //called here so we ensure the log is created even upon admin reboot
 	save_admin_data()
 	update_everything_flag_in_db()
+	play_round_end_sound()
+	text2file(login_music, "data/last_round_lobby_music.txt")
+
+/datum/controller/subsystem/ticker/proc/play_round_end_sound()
+	var/list/round_end_sounds = flist("sound/roundend/")
+	if(!round_end_sounds.len)
+		return
 	if(!round_end_sound)
-		round_end_sound = pick(\
-		'sound/roundend/newroundsexy.ogg',
-		'sound/roundend/apcdestroyed.ogg',
-		'sound/roundend/bangindonk.ogg',
-		'sound/roundend/leavingtg.ogg',
-		'sound/roundend/its_only_game.ogg',
-		'sound/roundend/yeehaw.ogg',
-		'sound/roundend/disappointed.ogg',
-		'sound/roundend/scrunglartiy.ogg',
-		'sound/roundend/petersondisappointed.ogg',
-		'sound/roundend/bully2.ogg'\
-		)
+		round_end_sound = "sound/roundend/[pick(round_end_sounds)]"
 	///The reference to the end of round sound that we have chosen.
 	var/sound/end_of_round_sound_ref = sound(round_end_sound, volume = LOG_AUDIOVOLUME(50))
-	for(var/mob/M in GLOB.player_list)
-		if(M.client.prefs?.toggles & SOUND_ENDOFROUND)
-			SEND_SOUND(M.client, end_of_round_sound_ref)
-
-	text2file(login_music, "data/last_round_lobby_music.txt")
+	for(var/mob/player_mob in GLOB.player_list)
+		if(player_mob.client.prefs?.toggles & SOUND_ENDOFROUND)
+			SEND_SOUND(player_mob.client, end_of_round_sound_ref)
