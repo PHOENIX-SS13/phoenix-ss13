@@ -1185,6 +1185,7 @@
 	. = ..()
 	VV_DROPDOWN_OPTION("", "---------")
 	VV_DROPDOWN_OPTION(VV_HK_MODIFY_SKILLS, "Modify Skills")
+	VV_DROPDOWN_OPTION(VV_HK_REAPPLY_PREFS, "Reapply Prefs")
 	VV_DROPDOWN_OPTION(VV_HK_GIB, "Gib")
 	VV_DROPDOWN_OPTION(VV_HK_GIVE_SPELL, "Give Spell")
 	VV_DROPDOWN_OPTION(VV_HK_REMOVE_SPELL, "Remove Spell")
@@ -1257,6 +1258,13 @@
 		if(!check_rights(NONE))
 			return
 		usr.client.modify_skills(src)
+	if(href_list[VV_HK_REAPPLY_PREFS])
+		if(!check_rights(NONE))
+			return
+		if(!src.client)
+			return
+		// They could still null at any time, so we'll just be optionally sure.
+		src?.client.prefs.apply_prefs_to(src, icon_updates = TRUE)
 /**
  * extra var handling for the logging var
  */

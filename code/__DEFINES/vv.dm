@@ -112,6 +112,7 @@
 #define VV_HK_OFFER_GHOSTS "offer_ghosts"
 #define VV_HK_SDQL_SPELL "sdql_spell"
 #define VV_HK_MODIFY_SKILLS "modify_skills"
+#define VV_HK_REAPPLY_PREFS "reapply_prefs"
 
 
 // /mob/living/carbon
