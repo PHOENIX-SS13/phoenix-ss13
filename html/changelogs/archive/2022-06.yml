@@ -162,3 +162,6 @@
   - rscdel: Removed the original craft recipe for the torch
   drizzlemutt:
   - balance: changed techweb program clearance from RD to Research
+2022-06-17:
+  Deek-Za (Deek-Za):
+  - bugfix: Can no longer attempt to cryo while someone is buckled to you.
