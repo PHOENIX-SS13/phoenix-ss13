@@ -3585,6 +3585,7 @@
 #include "code\modules\slapcraft\base_steps\slapcraft_step_stack.dm"
 #include "code\modules\slapcraft\base_steps\slapcraft_step_tool.dm"
 #include "code\modules\slapcraft\base_steps\slapcraft_step_weapon.dm"
+#include "code\modules\slapcraft\recipes\misc\chop_log.dm"
 #include "code\modules\slapcraft\recipes\tribal\torch.dm"
 #include "code\modules\slapcraft\recipes\weapons\flamethrower.dm"
 #include "code\modules\slapcraft\recipes\weapons\ied.dm"

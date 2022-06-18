@@ -30,9 +30,6 @@
 	reagents_add = list(/datum/reagent/cellulose = 0.05, /datum/reagent/iron = 0.05)
 	rarity = 20
 
-
-
-
 /obj/item/grown/log
 	seed = /obj/item/seeds/tower
 	name = "tower-cap log"
@@ -47,20 +44,6 @@
 	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
 	var/plank_type = /obj/item/stack/sheet/mineral/wood
 	var/plank_name = "wooden planks"
-
-/obj/item/grown/log/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness())
-		user.show_message(SPAN_NOTICE("You make [plank_name] out of \the [src]!"), MSG_VISUAL)
-		var/obj/item/stack/plank = new plank_type(user.loc, get_plank_amount())
-		var/old_plank_amount = plank.amount
-		for(var/obj/item/stack/ST in user.loc)
-			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
-				ST.attackby(plank, user) //we try to transfer all old unfinished stacks to the new stack we created.
-		if(plank.amount > old_plank_amount)
-			to_chat(user, SPAN_NOTICE("You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name]."))
-		qdel(src)
-
-	return ..()
 
 /// Returns an amount of planks that the log will yield
 /obj/item/grown/log/proc/get_plank_amount()
