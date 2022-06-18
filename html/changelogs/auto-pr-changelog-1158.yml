@@ -1,0 +1,5 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- bugfix: Fixed big and small things becoming normal sized when dropped from hands
+merge-date: 2022-06-18
+prnumber: 1158
