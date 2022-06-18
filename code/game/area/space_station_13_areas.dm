@@ -19,6 +19,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ai_monitored/turret_protected
 	main_ambience = AMBIENCE_AI_CORE
+	ambient_noises = list(
+		AMBIENCE_AI_SPACEJAM,
+	)
 
 /area/space
 	icon_state = "space"
@@ -441,6 +444,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/hallway/secondary/exit
 	name = "Escape Shuttle Hallway"
 	icon_state = "escape"
+	ambient_noises = list(
+		AMBIENCE_DEEP_INTERCOM,
+	)
 
 /area/hallway/secondary/exit/departure_lounge
 	name = "Departure Lounge"
@@ -449,6 +455,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/hallway/secondary/entry
 	name = "Arrival Shuttle Hallway"
 	icon_state = "entry"
+	ambient_noises = list(
+		AMBIENCE_DEEP_INTERCOM,
+	)
 
 /area/hallway/secondary/service
 	name = "Service Hallway"

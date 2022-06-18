@@ -59,7 +59,7 @@
 /area/ruin/space/has_grav/hotel/guestroom
 	name = "Hotel Guest Room"
 	icon_state = "dorms"
-	
+
 /area/ruin/space/has_grav/hotel/guestroom/room_1
 	name = "Hotel Guest Room 1"
 
@@ -159,7 +159,7 @@
 /area/ruin/space/has_grav/hotel/workroom
 	name = "Hotel Staff Room"
 	icon_state = "crew_quarters"
-	
+
 /area/ruin/space/has_grav/hotel/maintenance
 	name = "Hotel Maintenence"
 	icon_state = "maintcentral"
@@ -168,7 +168,7 @@
 	name = "Hotel First Aid"
 	icon_state = "medbay1"
 	main_ambience = AMBIENCE_MEDICAL
-	
+
 /area/ruin/space/has_grav/hotel/hall_aft
 	name = "Hotel Arrivals Hallway"
 	icon_state = "hallA"
@@ -176,7 +176,7 @@
 /area/ruin/space/has_grav/hotel/hall_fore
 	name = "Hotel Rooms Hallway"
 	icon_state = "hallF"
-	
+
 /area/ruin/space/has_grav/hotel/docking_hall
 	name = "Hotel Docking Ports"
 	icon_state = "entry"
@@ -344,6 +344,9 @@
 	name = "Delta Station AI Core"
 	icon_state = "ai"
 	main_ambience = AMBIENCE_AI_CORE
+	ambient_noises = list(
+		AMBIENCE_AI_SPACEJAM,
+	)
 
 /area/ruin/space/has_grav/ancientstation/mining
 	name = "Beta Station Mining Equipment"
