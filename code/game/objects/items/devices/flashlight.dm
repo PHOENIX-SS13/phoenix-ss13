@@ -244,7 +244,7 @@
 	. = ..()
 	if(!on)
 		return
-	. += bloom_appearance(BLOOM_SIZE_LARGE, 30, light_color)
+	. += bloom_appearance(BLOOM_SIZE_MEDIUM, BLOOM_WEAK_ALPHA, light_color)
 
 // green-shaded desk lamp
 /obj/item/flashlight/lamp/green
@@ -293,7 +293,7 @@
 	. = ..()
 	if(!on)
 		return
-	. += bloom_appearance(BLOOM_SIZE_LARGE, 30, light_color)
+	. += bloom_appearance(BLOOM_SIZE_LARGE, BLOOM_WEAK_ALPHA, light_color)
 
 /obj/item/flashlight/flare/Initialize()
 	. = ..()

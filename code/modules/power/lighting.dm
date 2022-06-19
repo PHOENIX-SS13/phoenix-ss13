@@ -464,7 +464,7 @@
 	. += emissive_appearance(overlayicon, "[base_state]_emissive", alpha = (255 * lightbulb_power))
 
 	// Yes we pass negative pixel offsets to reverse this overlay offset so its centered on the tile instead.
-	var/bloom_alpha = clamp(brightness * lightbulb_power * 5.5, 20, 35)
+	var/bloom_alpha = clamp(brightness * lightbulb_power * 5.5, BLOOM_VERY_WEAK_ALPHA, BLOOM_WEAK_ALPHA)
 	. += bloom_appearance(BLOOM_SIZE_LARGE, bloom_alpha, light_color, -pixel_x, -pixel_y)
 
 #define LIGHT_ON_DELAY_UPPER 3 SECONDS
