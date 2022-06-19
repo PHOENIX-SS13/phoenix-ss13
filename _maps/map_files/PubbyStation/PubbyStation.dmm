@@ -24476,6 +24476,7 @@
 /area/science/explab)
 "bof" = (
 /obj/structure/disposalpipe/segment,
+/obj/machinery/module_duplicator,
 /turf/open/floor/engine{
 	name = "Holodeck Projector Floor"
 	},
