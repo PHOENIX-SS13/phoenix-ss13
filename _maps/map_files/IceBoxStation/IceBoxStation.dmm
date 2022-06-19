@@ -3697,10 +3697,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/hallway/primary/fore)
-"aoz" = (
-/obj/effect/turf_decal/tile/red,
-/turf/open/floor/iron,
-/area/hallway/primary/fore)
 "aoC" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/tile/red,
@@ -6493,9 +6489,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron/dark,
 /area/medical/morgue)
-"aGk" = (
-/turf/open/floor/iron,
-/area/hallway/primary/central)
 "aGt" = (
 /obj/structure/bed,
 /obj/effect/spawner/lootdrop/prison_contraband,
@@ -8086,15 +8079,6 @@
 	},
 /turf/open/floor/iron,
 /area/cargo/office)
-"aRd" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/hallway/secondary/entry)
 "aRo" = (
 /obj/item/paper/crumpled,
 /turf/open/floor/iron/icemoon{
@@ -8901,9 +8885,6 @@
 /obj/machinery/holopad{
 	name = "botany requests holopad"
 	},
-/turf/open/floor/iron,
-/area/hallway/primary/starboard)
-"aYV" = (
 /turf/open/floor/iron,
 /area/hallway/primary/starboard)
 "aZi" = (
@@ -22601,9 +22582,6 @@
 	},
 /turf/open/floor/glass,
 /area/service/hydroponics)
-"dOw" = (
-/turf/open/floor/iron,
-/area/commons/locker)
 "dOB" = (
 /obj/structure/chair/wood,
 /turf/open/floor/carpet,
@@ -32855,9 +32833,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"jPq" = (
-/turf/open/floor/iron,
-/area/hallway/primary/starboard)
 "jPt" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/turf_decal/bot,
@@ -47357,9 +47332,6 @@
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/iron/cafeteria,
 /area/service/kitchen)
-"rLU" = (
-/turf/open/floor/iron,
-/area/engineering/atmos)
 "rMb" = (
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
@@ -54494,6 +54466,7 @@
 /turf/open/floor/iron,
 /area/security/brig)
 "vHt" = (
+/obj/machinery/module_duplicator,
 /turf/open/floor/iron,
 /area/science/misc_lab)
 "vHw" = (
@@ -73186,7 +73159,7 @@ aLj
 aNe
 aNe
 aPx
-aRd
+fbK
 ayl
 fbY
 bVW
@@ -73443,7 +73416,7 @@ aLA
 aNf
 aNf
 aLA
-aRd
+fbK
 pNH
 fbY
 qLA
@@ -73957,7 +73930,7 @@ aLC
 aNg
 aOk
 aPy
-aRd
+fbK
 ayl
 fbY
 lyk
@@ -76274,7 +76247,7 @@ iZI
 lYu
 lYu
 lYu
-dOw
+lYu
 xPS
 xmL
 jjv
@@ -86032,7 +86005,7 @@ tjm
 xcv
 bLy
 sgN
-aGk
+aJq
 bBi
 aOE
 aJn
@@ -88325,7 +88298,7 @@ agj
 aiX
 anx
 anT
-aoz
+klP
 apm
 knu
 anA
@@ -88582,7 +88555,7 @@ xqF
 amT
 anw
 anT
-aoz
+klP
 ahn
 ahn
 ahn
@@ -88839,7 +88812,7 @@ amn
 amV
 anw
 anT
-aoz
+klP
 ahn
 aqf
 wLh
@@ -89415,9 +89388,9 @@ bRa
 gEM
 gEM
 mWL
-rLU
-rLU
-rLU
+vMa
+vMa
+vMa
 dnV
 xjx
 vnV
@@ -89673,9 +89646,9 @@ jPt
 jPt
 mWL
 xct
-rLU
-rLU
-rLU
+vMa
+vMa
+vMa
 suQ
 sxN
 hnq
@@ -90124,7 +90097,7 @@ agj
 aiX
 jcR
 agO
-aoz
+klP
 ahn
 aqh
 hTM
@@ -90961,7 +90934,7 @@ huM
 vnD
 eqa
 oQl
-rLU
+vMa
 qnj
 tqC
 bWQ
@@ -91215,10 +91188,10 @@ ojf
 cLN
 tLg
 vUh
-rLU
+vMa
 qnI
 idb
-rLU
+vMa
 sHv
 pbB
 eCB
@@ -91470,8 +91443,8 @@ hxs
 bAw
 ojf
 kpS
-rLU
-rLU
+vMa
+vMa
 fjM
 gkF
 ici
@@ -91485,9 +91458,9 @@ ici
 osU
 uHm
 dgY
-rLU
-rLU
-rLU
+vMa
+vMa
+vMa
 epN
 emg
 oBc
@@ -91731,7 +91704,7 @@ fjM
 fjM
 fjM
 hnq
-rLU
+vMa
 tQD
 xFV
 ydN
@@ -91742,9 +91715,9 @@ dZC
 xjx
 gKu
 hnq
-rLU
-rLU
-rLU
+vMa
+vMa
+vMa
 nmi
 lAl
 vqw
@@ -91984,13 +91957,13 @@ lLw
 bKG
 ojf
 vMa
-rLU
-rLU
-rLU
+vMa
+vMa
+vMa
 hnq
-rLU
+vMa
 qnj
-rLU
+vMa
 nBZ
 xjx
 xjx
@@ -91999,7 +91972,7 @@ xjx
 xjx
 vtG
 hnq
-rLU
+vMa
 rGD
 ciH
 qbd
@@ -92256,7 +92229,7 @@ nND
 xjx
 mJs
 hnq
-rLU
+vMa
 oKF
 tQD
 hYi
@@ -92513,7 +92486,7 @@ kQd
 hfD
 jay
 tHN
-rLU
+vMa
 oKF
 qnj
 nOx
@@ -92756,21 +92729,21 @@ bcV
 ojf
 iuL
 hLm
-rLU
+vMa
 kaT
 faj
 fRW
 lfc
 sTP
 vxA
-rLU
-rLU
-rLU
-rLU
-rLU
+vMa
+vMa
+vMa
+vMa
+vMa
 cNc
-rLU
-rLU
+vMa
+vMa
 oKF
 qnj
 nmi
@@ -92983,9 +92956,9 @@ nIm
 dLp
 oqA
 wXj
-jPq
+shF
 iKz
-aYV
+shF
 bfF
 nQI
 orn
@@ -93242,7 +93215,7 @@ kLH
 wXj
 mFc
 iKz
-aYV
+shF
 bfF
 wDJ
 bin
@@ -93275,7 +93248,7 @@ wRq
 oLZ
 iuV
 sIv
-rLU
+vMa
 oQb
 mIX
 mmB
@@ -93283,7 +93256,7 @@ mmB
 mmB
 udj
 mxZ
-rLU
+vMa
 bDr
 oKF
 dvz
@@ -93497,9 +93470,9 @@ oXh
 hKl
 qhw
 wXj
-aYV
+shF
 iKz
-aYV
+shF
 bfF
 acZ
 mWw
@@ -93526,7 +93499,7 @@ hTU
 bcV
 ojf
 rkV
-rLU
+vMa
 vAd
 jYa
 qvh
@@ -94011,9 +93984,9 @@ dLp
 dLp
 ttP
 bHm
-aYV
+shF
 iKz
-aYV
+shF
 bfF
 tdC
 bis
@@ -94039,7 +94012,7 @@ cCp
 hTU
 bcV
 ojf
-rLU
+vMa
 uFA
 prW
 mBW
@@ -94052,7 +94025,7 @@ rTv
 ttF
 vtJ
 aGN
-rLU
+vMa
 gsC
 jhK
 wNJ
@@ -95553,7 +95526,7 @@ tMa
 btd
 wCg
 wXj
-aYV
+shF
 cTQ
 sSX
 bvk
@@ -96067,7 +96040,7 @@ cpT
 dLp
 nVY
 wXj
-aYV
+shF
 iKz
 bet
 bfH
@@ -99151,7 +99124,7 @@ dXh
 xOV
 pfT
 gCd
-aYV
+shF
 iKz
 rmv
 bfL
@@ -99410,7 +99383,7 @@ xZt
 pCp
 aDe
 oOF
-aYV
+shF
 bfL
 bfL
 rtX
@@ -99665,9 +99638,9 @@ qLw
 cAl
 cAl
 hQB
-aYV
+shF
 pEE
-aYV
+shF
 bfO
 bfL
 jIe
@@ -99922,9 +99895,9 @@ qLw
 vzB
 gCd
 gCd
-aYV
+shF
 iKz
-aYV
+shF
 plW
 bhr
 biC
@@ -100178,10 +100151,10 @@ sbG
 qLw
 vzB
 gCd
-aYV
-aYV
+shF
+shF
 pEE
-aYV
+shF
 qGV
 bfL
 biE
@@ -100436,7 +100409,7 @@ qLw
 nmP
 dOe
 aYO
-aYV
+shF
 iKz
 bez
 mkV
@@ -100949,7 +100922,7 @@ dmX
 dXh
 vzh
 gCd
-aYV
+shF
 rmv
 bcb
 bdl
@@ -101719,8 +101692,8 @@ pXx
 pXx
 gJV
 rmv
-aYV
-aYV
+shF
+shF
 cdq
 ykz
 bfU
@@ -102492,7 +102465,7 @@ ucd
 hKw
 dGK
 pXx
-aYV
+shF
 cOV
 rmv
 bht
@@ -102749,9 +102722,9 @@ jot
 nhQ
 tVI
 pXx
-aYV
+shF
 cOV
-aYV
+shF
 bfV
 cHK
 blA
@@ -103006,7 +102979,7 @@ hNn
 nhQ
 eMg
 hyo
-aYV
+shF
 cOV
 jxN
 bfV
@@ -103263,7 +103236,7 @@ hNn
 nhQ
 csr
 pXx
-aYV
+shF
 cOV
 bds
 bfV
@@ -103522,7 +103495,7 @@ mXU
 hyo
 rmv
 cOV
-aYV
+shF
 bfV
 hKu
 cHM
@@ -103777,9 +103750,9 @@ nhQ
 iMW
 len
 pXx
-aYV
+shF
 cOV
-aYV
+shF
 bfV
 bfV
 sks
@@ -104034,9 +104007,9 @@ hKw
 iMW
 dRT
 hyo
-aYV
+shF
 exo
-aYV
+shF
 bfW
 bhy
 biN
@@ -104293,7 +104266,7 @@ csr
 pXx
 bga
 cOV
-aYV
+shF
 bfX
 bhz
 etg
@@ -104548,9 +104521,9 @@ nhQ
 iMW
 hpg
 pXx
-aYV
+shF
 cOV
-aYV
+shF
 bfX
 bhy
 biP
@@ -104807,7 +104780,7 @@ dpL
 dpL
 wrh
 cOV
-aYV
+shF
 nwJ
 bfV
 bfV
@@ -105064,7 +105037,7 @@ fUr
 dpL
 bcx
 cOV
-aYV
+shF
 nIS
 bhA
 biR
@@ -105319,7 +105292,7 @@ qyP
 xKP
 sNB
 vVm
-aYV
+shF
 isY
 duo
 aFp
@@ -105576,9 +105549,9 @@ iwd
 xKP
 pdK
 vVm
-aYV
+shF
 cOV
-aYV
+shF
 kld
 bhA
 biS
@@ -105833,7 +105806,7 @@ iwd
 xKP
 iwd
 vVm
-aYV
+shF
 cOV
 gdd
 bfX
@@ -106090,9 +106063,9 @@ qyP
 xKP
 iwd
 vVm
-aYV
+shF
 cOV
-aYV
+shF
 xXm
 bhC
 skD
@@ -106349,7 +106322,7 @@ iwd
 vVm
 rmv
 cOV
-aYV
+shF
 bfX
 bhD
 rRc
@@ -106604,9 +106577,9 @@ iwd
 xKP
 pdK
 vVm
-aYV
+shF
 sqp
-aYV
+shF
 bgb
 bhC
 biU
@@ -106861,7 +106834,7 @@ iwd
 cne
 sNB
 vVm
-aYV
+shF
 cOV
 shF
 bgc

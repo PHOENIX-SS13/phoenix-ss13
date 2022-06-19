@@ -341,8 +341,8 @@
 /area/security/prison)
 "abi" = (
 /obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "12;47";
-	name = "Freight Dock Umbilical"
+	name = "Freight Dock Umbilical";
+	req_one_access_txt = "12;47"
 	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
@@ -1808,8 +1808,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "12;47";
-	name = "Freight Dock Umbilical"
+	name = "Freight Dock Umbilical";
+	req_one_access_txt = "12;47"
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
@@ -17631,6 +17631,7 @@
 /obj/structure/sign/warning/explosives/alt{
 	pixel_x = -32
 	},
+/obj/machinery/module_duplicator,
 /turf/open/floor/iron/dark,
 /area/science/test_area)
 "bcW" = (
@@ -17879,8 +17880,8 @@
 	pixel_y = 5
 	},
 /obj/item/storage/fancy/cigarettes{
-	pixel_y = -3;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -3
 	},
 /obj/item/lighter{
 	pixel_x = -8;
@@ -30438,14 +30439,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/showroomfloor,
 /area/ai_monitored/security/armory)
-"cbq" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral,
-/turf/open/floor/iron,
-/area/hallway/primary/central)
 "cbr" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -41910,9 +41903,9 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/asteroid/basilisk{
+	desc = "Once a domesticated Basilisk, tamed by a legendary Quatermaster, but now is masterless and watches over the office it once called home.";
 	environment_smash = 0;
-	name = "Big Kahuna";
-	desc = "Once a domesticated Basilisk, tamed by a legendary Quatermaster, but now is masterless and watches over the office it once called home."
+	name = "Big Kahuna"
 	},
 /turf/open/floor/carpet/green,
 /area/cargo/warehouse)
@@ -47649,8 +47642,8 @@
 /area/engineering/atmos)
 "fKs" = (
 /obj/item/paper/crumpled/bloody{
-	name = "bloody paper scrap";
-	info = "oh fuck i should of listened to the advisery why is dying so slow"
+	info = "oh fuck i should of listened to the advisery why is dying so slow";
+	name = "bloody paper scrap"
 	},
 /obj/item/pen{
 	pixel_x = 8;
@@ -55266,8 +55259,8 @@
 "jkj" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	name = "Freight Office Shutters";
-	id = "freight_office"
+	id = "freight_office";
+	name = "Freight Office Shutters"
 	},
 /turf/open/floor/plating,
 /area/cargo/warehouse)
@@ -61086,18 +61079,18 @@
 /area/command/teleporter)
 "lFf" = (
 /obj/item/paper{
-	pixel_y = -5;
-	name = "CREW ADVISERY - DECOMMISSION NOTICE";
-	info = "As of further notice, this frieght dock is to be decommissioned due to repeated breaches by xenofauna.";
 	color = "orange";
-	pixel_x = -7
+	info = "As of further notice, this frieght dock is to be decommissioned due to repeated breaches by xenofauna.";
+	name = "CREW ADVISERY - DECOMMISSION NOTICE";
+	pixel_x = -7;
+	pixel_y = -5
 	},
 /obj/item/paper{
-	pixel_y = -5;
-	name = "CREW ADVISERY - DANGER";
-	info = "Due to an incident involving the death of several crewmembers, this is an advisery to STAY AWAY from this decommissioned dock. It is infested with hostile xenofauna that have made it a nest.";
 	color = "red";
-	pixel_x = 7
+	info = "Due to an incident involving the death of several crewmembers, this is an advisery to STAY AWAY from this decommissioned dock. It is infested with hostile xenofauna that have made it a nest.";
+	name = "CREW ADVISERY - DANGER";
+	pixel_x = 7;
+	pixel_y = -5
 	},
 /turf/closed/wall,
 /area/maintenance/starboard)
@@ -67408,8 +67401,8 @@
 /obj/structure/cable,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "12;47";
-	name = "Freight Dock Umbilical"
+	name = "Freight Dock Umbilical";
+	req_one_access_txt = "12;47"
 	},
 /turf/open/floor/iron/dark,
 /area/cargo/warehouse)
@@ -76020,8 +76013,8 @@
 "sen" = (
 /obj/item/shard,
 /obj/machinery/door/poddoor/shutters{
-	name = "Freight Office Shutters";
-	id = "freight_office"
+	id = "freight_office";
+	name = "Freight Office Shutters"
 	},
 /obj/item/stack/rods,
 /turf/open/floor/plating,
@@ -77348,20 +77341,20 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/clothing/head/flakhelm{
-	pixel_y = 10;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 10
 	},
 /obj/item/plate{
-	pixel_y = -5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /obj/item/toy/crayon/green{
-	pixel_y = -5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /obj/item/toy/crayon/orange{
-	pixel_y = -5;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -5
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
@@ -80324,8 +80317,8 @@
 "tZK" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	name = "Freight Office Shutters";
-	id = "freight_office"
+	id = "freight_office";
+	name = "Freight Office Shutters"
 	},
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating,
@@ -85793,8 +85786,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "12;47";
-	name = "Freight Dock Umbilical"
+	name = "Freight Dock Umbilical";
+	req_one_access_txt = "12;47"
 	},
 /turf/open/floor/plating,
 /area/cargo/warehouse)
@@ -87428,8 +87421,8 @@
 	dir = 8
 	},
 /obj/item/food/chips{
-	pixel_y = -3;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = -3
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
@@ -88406,8 +88399,8 @@
 	},
 /obj/structure/table/wood,
 /obj/item/paper/pamphlet/ruin/spacehotel{
-	name = "Take a Vacation - Today!";
-	info = "<center><b>Banhanmas!</center></b><br><center><i>The PLACE to Vacation!</i></center><br><br><center>"
+	info = "<center><b>Banhanmas!</center></b><br><center><i>The PLACE to Vacation!</i></center><br><br><center>";
+	name = "Take a Vacation - Today!"
 	},
 /turf/open/floor/carpet/green,
 /area/cargo/warehouse)
@@ -89869,8 +89862,8 @@
 	pixel_x = -32
 	},
 /obj/machinery/button/door/directional/south{
-	name = "Freight Office Shutters";
-	id = "freight_office"
+	id = "freight_office";
+	name = "Freight Office Shutters"
 	},
 /turf/open/floor/carpet/green,
 /area/cargo/warehouse)
@@ -119060,7 +119053,7 @@ imV
 rqY
 bjP
 bZG
-cbq
+maW
 fwx
 hie
 nRg
@@ -119317,7 +119310,7 @@ xbm
 mzi
 bfy
 oTs
-cbq
+maW
 fwx
 wvz
 gvk
@@ -119831,7 +119824,7 @@ prS
 prS
 pPh
 bZG
-cbq
+maW
 xeC
 jiV
 fJZ
