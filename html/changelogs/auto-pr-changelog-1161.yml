@@ -1,0 +1,6 @@
+author: /tg/station
+changes:
+- rscadd: Ported airlock cycling ID setup. You can now repair cycling airlocks ingame
+    within the airlock circuit.
+merge-date: 2022-06-19
+prnumber: 1161
