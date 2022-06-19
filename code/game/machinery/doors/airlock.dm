@@ -133,7 +133,7 @@
 	var/boltDown = 'sound/machines/boltsdown.ogg'
 	var/noPower = 'sound/machines/doorclick.ogg'
 	var/previous_airlock = /obj/structure/door_assembly //what airlock assembly mineral plating was applied to
-	
+
 	var/stripe_overlays = 'icons/obj/doors/airlocks/station/airlock_stripe.dmi'
 	var/color_overlays = 'icons/obj/doors/airlocks/station/airlock_color.dmi'
 	var/glass_fill_overlays = 'icons/obj/doors/airlocks/station/glass_overlays.dmi'
@@ -225,7 +225,8 @@
 /obj/machinery/door/airlock/proc/update_other_id()
 	for(var/obj/machinery/door/airlock/Airlock in GLOB.airlocks)
 		if(Airlock.closeOtherId == closeOtherId && Airlock != src)
-			close_others += Airlock
+			close_others |= Airlock
+			Airlock.close_others |= src
 
 /obj/machinery/door/airlock/proc/cyclelinkairlock()
 	if (cyclelinkedairlock)
@@ -317,7 +318,7 @@
 	if(locked == should_bolt)
 		return
 	SEND_SIGNAL(src, COMSIG_AIRLOCK_SET_BOLT, should_bolt)
-	. = locked 
+	. = locked
 	locked = should_bolt
 
 /obj/machinery/door/airlock/unlock()
@@ -615,6 +616,10 @@
 
 /obj/machinery/door/airlock/examine(mob/user)
 	. = ..()
+	if(closeOtherId)
+		. += SPAN_WARNING("This airlock cycles on ID: [sanitize(closeOtherId)].")
+	else if(!closeOtherId)
+		. += SPAN_WARNING("This airlock does not cycle.")
 	if(obj_flags & EMAGGED)
 		. += SPAN_WARNING("Its access panel is smoking slightly.")
 	if(note)
