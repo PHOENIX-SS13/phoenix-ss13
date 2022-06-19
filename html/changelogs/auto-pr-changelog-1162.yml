@@ -1,0 +1,6 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- rscdel: Removed bluespace gas senders
+- rscdel: Removed bluespace gas vendors
+merge-date: 2022-06-19
+prnumber: 1162
