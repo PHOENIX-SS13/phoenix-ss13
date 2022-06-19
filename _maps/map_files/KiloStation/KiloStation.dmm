@@ -45138,7 +45138,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron,
 /area/hallway/secondary/entry)
 "eLX" = (
@@ -58320,7 +58319,6 @@
 	dir = 4;
 	name = "port camera"
 	},
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron/dark/corner{
 	dir = 8
 	},
@@ -62102,7 +62100,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
 "maY" = (
@@ -67753,7 +67750,6 @@
 	c_tag = "Fore Hallway Diner";
 	name = "fore camera"
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/fore)
 "oAH" = (
@@ -82455,7 +82451,6 @@
 /area/maintenance/port)
 "uVC" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
 /turf/open/floor/iron/dark,
 /area/engineering/atmos)
 "uVV" = (

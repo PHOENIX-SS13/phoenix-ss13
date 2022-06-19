@@ -47824,7 +47824,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron{
 	heat_capacity = 1e+006
 	},
@@ -52829,7 +52828,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/commons/dorms)
 "iFA" = (
@@ -57670,7 +57668,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/central/aft)
 "jZK" = (
@@ -69027,7 +69024,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/east,
 /turf/open/floor/iron,
 /area/hallway/primary/central/fore)
 "mXX" = (
@@ -75255,7 +75251,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron,
 /area/hallway/primary/fore)
 "oxN" = (
@@ -76437,7 +76432,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4,
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
@@ -77574,7 +77568,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/starboard)
 "paR" = (
@@ -80494,7 +80487,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
@@ -86580,7 +86572,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron,
 /area/hallway/primary/aft)
 "rtI" = (
@@ -87988,7 +87979,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
@@ -89281,7 +89271,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/central/aft)
 "sfh" = (
@@ -96081,7 +96070,6 @@
 /area/maintenance/aft)
 "tRE" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron,
 /area/hallway/secondary/exit/departure_lounge)
 "tRN" = (
@@ -98073,7 +98061,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/port)
 "utT" = (
@@ -108529,7 +108516,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "xqz" = (

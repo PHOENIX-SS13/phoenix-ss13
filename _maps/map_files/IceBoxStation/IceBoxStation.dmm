@@ -6494,7 +6494,6 @@
 /turf/open/floor/iron/dark,
 /area/medical/morgue)
 "aGk" = (
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
 "aGt" = (
@@ -22603,7 +22602,6 @@
 /turf/open/floor/glass,
 /area/service/hydroponics)
 "dOw" = (
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron,
 /area/commons/locker)
 "dOB" = (
@@ -24664,7 +24662,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/secondary/entry)
 "fbO" = (
@@ -32859,7 +32856,6 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "jPq" = (
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/starboard)
 "jPt" = (
@@ -33649,7 +33645,6 @@
 /area/engineering/supermatter/room)
 "klP" = (
 /obj/effect/turf_decal/tile/red,
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron,
 /area/hallway/primary/fore)
 "klS" = (
@@ -48034,7 +48029,6 @@
 /turf/open/floor/iron,
 /area/engineering/main)
 "shF" = (
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron,
 /area/hallway/primary/starboard)
 "sir" = (
@@ -49115,7 +49109,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/commons/dorms)
 "sMr" = (
@@ -54483,7 +54476,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery,
-/obj/machinery/bluespace_vendor/north,
 /obj/effect/mapping_helpers/trapdoor_placer,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
@@ -54699,7 +54691,6 @@
 /turf/closed/wall/r_wall,
 /area/engineering/atmos)
 "vMa" = (
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "vMh" = (

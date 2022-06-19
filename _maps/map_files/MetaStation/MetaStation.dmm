@@ -10289,7 +10289,6 @@
 "bWb" = (
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/tile/neutral,
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron,
 /area/commons/locker)
 "bWq" = (
@@ -18380,7 +18379,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron,
 /area/hallway/primary/fore)
 "dHE" = (
@@ -31258,7 +31256,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "ieq" = (
@@ -31875,7 +31872,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
 "ioR" = (
@@ -35663,7 +35659,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron,
 /area/hallway/secondary/exit/departure_lounge)
 "jIZ" = (
@@ -35988,7 +35983,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron,
 /area/commons/dorms)
 "jOr" = (
@@ -46579,7 +46573,6 @@
 	},
 /obj/item/pen,
 /obj/effect/turf_decal/delivery,
-/obj/machinery/bluespace_vendor/east,
 /turf/open/floor/iron,
 /area/hallway/secondary/command)
 "nnS" = (
@@ -51102,7 +51095,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/bluespace_vendor/west,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 5
 	},
@@ -56887,7 +56879,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/port)
 "qID" = (
@@ -70899,7 +70890,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/port)
 "vlQ" = (
@@ -73246,7 +73236,6 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/hangover,
-/obj/machinery/bluespace_vendor/west,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
 "waq" = (

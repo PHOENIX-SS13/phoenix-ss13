@@ -21861,7 +21861,6 @@
 /area/hallway/secondary/exit)
 "eos" = (
 /obj/effect/turf_decal/bot,
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/secondary/command)
 "eoL" = (
@@ -33561,7 +33560,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/commons/dorms)
 "iSG" = (
@@ -34410,7 +34408,6 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
-/obj/machinery/bluespace_vendor/east,
 /turf/open/floor/iron,
 /area/hallway/secondary/entry)
 "jlN" = (
@@ -36878,7 +36875,6 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron/dark,
 /area/hallway/secondary/exit/departure_lounge)
 "khB" = (
@@ -37286,7 +37282,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/commons/dorms)
 "kpe" = (
@@ -40071,7 +40066,6 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "lpr" = (
@@ -41269,7 +41263,6 @@
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 1
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/secondary/exit)
 "lOJ" = (
@@ -43635,7 +43628,6 @@
 /obj/effect/turf_decal/trimline/neutral/corner{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/north,
 /turf/open/floor/iron,
 /area/hallway/primary/tram/left)
 "mOW" = (
@@ -43931,7 +43923,6 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/bluespace_vendor/east,
 /turf/open/floor/iron,
 /area/hallway/secondary/entry)
 "mWg" = (
@@ -63038,7 +63029,6 @@
 /area/commons/dorms)
 "uvw" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line,
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron/dark,
 /area/service/bar)
 "uvA" = (
@@ -69163,7 +69153,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/bluespace_vendor/south,
 /turf/open/floor/iron,
 /area/cargo/miningdock)
 "wMj" = (
