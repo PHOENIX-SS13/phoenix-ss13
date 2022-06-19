@@ -439,12 +439,10 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			if(masters[master] && speaker != master)
 				master.relay_speech(message, speaker, message_language, raw_message, radio_freq, spans, message_mods)
 
-	for(var/datum/holocall/holocall_to_update as anything in holo_calls)
-		if(holocall_to_update.connected_holopad == src)//if we answered this call originating from another holopad
-			if(speaker == holocall_to_update.hologram && holocall_to_update.user.client?.prefs.chat_on_map)
-				holocall_to_update.user.create_chat_message(speaker, message_language, raw_message, spans)
-			else
-				holocall_to_update.user.Hear(message, speaker, message_language, raw_message, radio_freq, spans, message_mods)
+	for(var/I in holo_calls)
+		var/datum/holocall/HC = I
+		if(HC.connected_holopad == src && speaker != HC.hologram)
+			HC.user.Hear(message, speaker, message_language, raw_message, radio_freq, spans, message_mods)
 
 	if(outgoing_call?.hologram && speaker == outgoing_call.user)
 		outgoing_call.hologram.say(raw_message)
@@ -478,13 +476,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		AI.current = src
 	SetLightsAndPower()
 	update_holoray(user, get_turf(loc))
-	RegisterSignal(user, COMSIG_MOB_EMOTE, .proc/handle_hologram_emote)
 	return TRUE
-
-/obj/machinery/holopad/proc/handle_hologram_emote(atom/movable/source, datum/emote/emote, action, type_override, message, intentional)
-	SIGNAL_HANDLER
-	for(var/mob/mob_viewer in viewers(world.view, src))
-		to_chat(mob_viewer, SPAN_EMOTE("<b>[source]</b> [message]"))
 
 /obj/machinery/holopad/proc/clear_holo(mob/living/user)
 	qdel(masters[user]) // Get rid of user's hologram
@@ -499,7 +491,6 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	qdel(holorays[user])
 	LAZYREMOVE(holorays, user)
 	SetLightsAndPower()
-	UnregisterSignal(user, COMSIG_MOB_EMOTE)
 	return TRUE
 
 //Try to transfer hologram to another pad that can project on T
