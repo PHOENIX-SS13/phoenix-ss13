@@ -1,7 +1,0 @@
-author: Delnth
-changes:
-- rscadd: Added slapcraft wood chopping. Method is the same as before, but better
-    and with more potential.
-- rscdel: Removed the old method of turning wood logs into planks.
-merge-date: 2022-06-18
-prnumber: 1153

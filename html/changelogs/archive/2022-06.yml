@@ -165,3 +165,20 @@
 2022-06-17:
   Deek-Za (Deek-Za):
   - bugfix: Can no longer attempt to cryo while someone is buckled to you.
+2022-06-18:
+  Alex 'Avunia' Takiya (atakiya):
+  - bugfix: Fixed big and small things becoming normal sized when dropped from hands
+  - soundadd: Made adjustments to existing ambience sounds (general, vending machines,
+      AI areas)
+  - soundadd: Added ambient intercom chatter to arrivals and departures
+  - admin: Added an option in the VV dropdown of mobs to reapply the client&#x27;s
+      character preferences
+  Azarak:
+  - balance: Storyteller will now play events slightly less frequently.
+  Deek-Za (Deek-Za):
+  - bugfix: Cutting cable drops the appropriate cable type.
+  Delnth:
+  - rscadd: Added slapcraft wood chopping. Method is the same as before, but better
+      and with more potential.
+  - rscdel: Removed the old method of turning wood logs into planks.
+  - qol: Removed the drying rack power requirement
