@@ -17,3 +17,7 @@
 	base_icon_state = "block"
 	smoothing_flags = NONE
 	canSmoothWith = null
+
+/area/ruin/powered/hermit
+	name = "Hermit Hovel"
+	icon_state = "dk_yellow"
