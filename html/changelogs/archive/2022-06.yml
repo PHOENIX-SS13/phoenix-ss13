@@ -182,3 +182,19 @@
       and with more potential.
   - rscdel: Removed the old method of turning wood logs into planks.
   - qol: Removed the drying rack power requirement
+2022-06-19:
+  /tg/station:
+  - rscadd: Ported airlock cycling ID setup. You can now repair cycling airlocks ingame
+      within the airlock circuit.
+  Alex 'Avunia' Takiya (atakiya):
+  - rscdel: Removed bluespace gas senders
+  - rscdel: Removed bluespace gas vendors
+  Azarak:
+  - qol: Lowers bloom intensity by roughly 10% and roughly 30% for light fixtures.
+      Lowered bloom radius for lamps and flares.
+  KathrinBailey:
+  - balance: Avians have been hired at the sorting office to ensure mail is now delivered
+      every day of the week, including Sunday.
+  Miss Fox (MissFox0810):
+  - rscadd: Added Circuit Module Duplicator to circuits lab on Pubby Station
+  - rscadd: Added Circuit Module Duplicator to Icebox, Kilo and Tram stations
