@@ -96,8 +96,9 @@
 	)
 	frequency_time = 2 SECONDS
 	sound_length = 2.8 SECONDS
-	range = 2
-	volume = 20
+	range = 3
+	falloff_distance = 1
+	volume = 18
 
 /datum/ambient_sound/generic
 	id = AMBIENCE_GENERIC
