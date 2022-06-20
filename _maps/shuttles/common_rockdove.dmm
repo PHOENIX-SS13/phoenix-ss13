@@ -308,7 +308,6 @@
 /obj/machinery/computer/shuttle/common_docks{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/pod,
 /area/shuttle/rockdove/helm)
 "GQ" = (
