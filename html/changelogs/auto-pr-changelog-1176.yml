@@ -1,5 +1,0 @@
-author: drizzlemutt
-changes:
-- bugfix: removes a duplicate apc from the Rockdove
-merge-date: 2022-06-20
-prnumber: 1176

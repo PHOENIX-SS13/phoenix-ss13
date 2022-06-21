@@ -198,3 +198,8 @@
   Miss Fox (MissFox0810):
   - rscadd: Added Circuit Module Duplicator to circuits lab on Pubby Station
   - rscadd: Added Circuit Module Duplicator to Icebox, Kilo and Tram stations
+2022-06-20:
+  drizzlemutt:
+  - bugfix: removes a duplicate apc from the Rockdove
+  - rscadd: adds a Hermit Ruin area
+  - qol: moves elements to more sane positions
