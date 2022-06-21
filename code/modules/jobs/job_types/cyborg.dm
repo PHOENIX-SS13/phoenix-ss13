@@ -19,7 +19,7 @@
 		)
 	random_spawns_possible = FALSE
 	loadout = FALSE
-	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK
+	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK | JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST
 
 
 /datum/job/cyborg/after_spawn(mob/living/spawned, client/player_client)

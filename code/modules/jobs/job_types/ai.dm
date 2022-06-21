@@ -20,7 +20,7 @@
 		)
 	random_spawns_possible = FALSE
 	loadout = FALSE
-	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK | JOB_BOLD_SELECT_TEXT
+	job_flags = JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK | JOB_BOLD_SELECT_TEXT | JOB_CREW_MANIFEST
 
 	var/do_special_check = TRUE
 

@@ -210,7 +210,27 @@
 	dat = replacetext(dat, "\n", "")
 	dat = replacetext(dat, "\t", "")
 	return dat
+/datum/datacore/proc/manifest_inject_silicon(mob/living/silicon/silicon, client/C)
+	set waitfor = FALSE
+	if(silicon.mind?.assigned_role.job_flags & JOB_CREW_MANIFEST)
+		var/assignment = silicon.mind.assigned_role.title
+		var/static/record_id_num = 2001
+		var/id = num2hex(record_id_num++,6)
+		if(!C)
+			C = silicon.client
 
+		var/datum/data/record/G = new()
+		G.fields["id"] = id
+		G.fields["name"] = silicon.name
+		G.fields["rank"] = assignment
+		G.fields["age"] = "N/A"
+		G.fields["species"] = "Silicon"
+		G.fields["fingerprint"] = "N/A"
+		G.fields["p_stat"] = "Active"
+		G.fields["m_stat"] = "Stable"
+		G.fields["gender"] = "N/A"
+		general += G
+	return
 
 /datum/datacore/proc/manifest_inject(mob/living/carbon/human/H, client/C)
 	set waitfor = FALSE

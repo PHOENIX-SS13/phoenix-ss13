@@ -180,6 +180,7 @@
 	if(R.hud_used)
 		R.hud_used.update_robot_modules_display()
 	SSblackbox.record_feedback("tally", "cyborg_modules", 1, R.model)
+	GLOB.data_core.manifest_modify(R.name, "[R.model.name] Cyborg")
 
 /**
  * Checks if we are allowed to interact with a radial menu

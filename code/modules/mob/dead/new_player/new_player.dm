@@ -371,6 +371,15 @@
 	if(ishuman(character))
 		humanc = character //Let's retypecast the var to be human,
 
+	if(issilicon(character))
+		GLOB.data_core.manifest_inject_silicon(character)
+		if(SSshuttle.arrivals)
+			SSshuttle.arrivals.QueueAnnounce(character, rank)
+		else
+			AnnounceArrival(character, rank)
+		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CREWMEMBER_JOINED, character, rank)
+
+
 	if(humanc) //These procs all expect humans
 		GLOB.data_core.manifest_inject(humanc)
 		if(SSshuttle.arrivals)
