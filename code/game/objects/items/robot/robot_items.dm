@@ -56,9 +56,9 @@
 			mode = 0
 	switch(mode)
 		if(0)
-			to_chat(user, "<span class='infoplain'>Power reset. Hugs!</span>")
+			to_chat(user, SPAN_INFOPLAIN("Power reset. Hugs!"))
 		if(1)
-			to_chat(user, "<span class='infoplain'>Power increased!</span>")
+			to_chat(user, SPAN_INFOPLAIN("Power increased!"))
 		if(2)
 			to_chat(user, "<span class='warningplain'>BZZT. Electrifying arms...</span>")
 		if(3)

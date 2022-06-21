@@ -16,17 +16,17 @@
 
 /obj/item/camera/siliconcam/proc/camera_mode_off(mob/user)
 	in_camera_mode = FALSE
-	to_chat(user, "<span class='infoplain'><B>Camera Mode deactivated</B></span>")
+	to_chat(user, SPAN_INFOPLAIN("<B>Camera Mode deactivated</B>"))
 
 /obj/item/camera/siliconcam/proc/camera_mode_on(mob/user)
 	in_camera_mode = TRUE
-	to_chat(user, "<span class='infoplain'><B>Camera Mode activated</B></span>")
+	to_chat(user, SPAN_INFOPLAIN("<B>Camera Mode activated</B>"))
 
 /obj/item/camera/siliconcam/proc/selectpicture(mob/user)
 	var/list/nametemp = list()
 	var/find
 	if(!stored.len)
-		to_chat(usr, "<span class='infoplain'><font color=red><b>No images saved</b></font></span>")
+		to_chat(usr, SPAN_INFOPLAIN("<font color=red><b>No images saved</b></font>"))
 		return
 	var/list/temp = list()
 	for(var/i in stored)
@@ -47,7 +47,7 @@
 	var/number = stored.len
 	picture.picture_name = "Image [number] (taken by [loc.name])"
 	stored[picture] = TRUE
-	to_chat(usr, "<span class='infoplain'>[SPAN_UNCONSCIOUS("Image recorded")]</span>")
+	to_chat(usr, SPAN_INFOPLAIN(SPAN_UNCONSCIOUS("Image recorded")))
 
 /obj/item/camera/siliconcam/robot_camera
 	name = "Cyborg photo camera"
@@ -59,12 +59,12 @@
 		var/number = C.connected_ai.aicamera.stored.len
 		picture.picture_name = "Image [number] (taken by [loc.name])"
 		C.connected_ai.aicamera.stored[picture] = TRUE
-		to_chat(usr, "<span class='infoplain'>[SPAN_UNCONSCIOUS("Image recorded and saved to remote database")]</span>")
+		to_chat(usr, SPAN_INFOPLAIN(SPAN_UNCONSCIOUS("Image recorded and saved to remote database")))
 	else
 		var/number = stored.len
 		picture.picture_name = "Image [number] (taken by [loc.name])"
 		stored[picture] = TRUE
-		to_chat(usr, "<span class='infoplain'>[SPAN_UNCONSCIOUS("Image recorded and saved to local storage. Upload will happen automatically if unit is lawsynced.")]</span>")
+		to_chat(usr, SPAN_INFOPLAIN(SPAN_UNCONSCIOUS("Image recorded and saved to local storage. Upload will happen automatically if unit is lawsynced.")))
 
 /obj/item/camera/siliconcam/robot_camera/selectpicture(mob/user)
 	var/mob/living/silicon/robot/R = loc

@@ -413,7 +413,7 @@
 		return FALSE
 	if(!..())
 		return FALSE
-	visible_message("<span class='infoplain'>[SPAN_NAME("[src]")] points at [A].</span>", SPAN_NOTICE("You point at [A]."))
+	visible_message(SPAN_INFOPLAIN("[SPAN_NAME("[src]")] points at [A]."), SPAN_NOTICE("You point at [A]."))
 	return TRUE
 
 

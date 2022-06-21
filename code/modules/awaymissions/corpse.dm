@@ -136,9 +136,9 @@
 	if(ckey)
 		M.ckey = ckey
 		if(show_flavour)
-			var/output_message = "<span class='infoplain'><span class='big bold'>[short_desc]</span></span>"
+			var/output_message = SPAN_INFOPLAIN("<span class='big bold'>[short_desc]</span>")
 			if(flavour_text != "")
-				output_message += "\n<span class='infoplain'><b>[flavour_text]</b></span>"
+				output_message += "\n[SPAN_INFOPLAIN("<b>[flavour_text]</b>")]"
 			if(important_info != "")
 				output_message += "\n[SPAN_USERDANGER("[important_info]")]"
 			to_chat(M, output_message)

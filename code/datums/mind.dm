@@ -414,7 +414,7 @@
 	if(window)
 		recipient << browse(output,"window=memory")
 	else if(all_objectives.len || memory)
-		to_chat(recipient, SPAN("infoplain", "<i>[output]</i>"))
+		to_chat(recipient, SPAN_INFOPLAIN("<i>[output]</i>"))
 
 /datum/mind/Topic(href, href_list)
 	if(!check_rights(R_ADMIN))

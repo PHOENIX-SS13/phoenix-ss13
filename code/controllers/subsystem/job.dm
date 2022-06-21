@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(job)
 	flags = SS_NO_FIRE
 
 	/// List of all jobs.
-	var/list/datum/job/all_occupations = list() 
+	var/list/datum/job/all_occupations = list()
 	/// List of jobs that can be joined through the starting menu.
 	var/list/datum/job/joinable_occupations = list()
 	/// Dictionary of all jobs, keys are titles.
@@ -505,7 +505,7 @@ SUBSYSTEM_DEF(job)
 	equipping.mind?.set_assigned_role(job)
 
 	if(player_client)
-		to_chat(player_client, "<span class='infoplain'><b>You are the [job.title].</b></span>")
+		to_chat(player_client, SPAN_INFOPLAIN("<b>You are the [job.title].</b>"))
 
 	equipping.on_job_equipping(job, TRUE, player_client)
 
@@ -518,13 +518,13 @@ SUBSYSTEM_DEF(job)
 			handle_auto_deadmin_roles(player_client, job.title)
 
 	if(player_client)
-		to_chat(player_client, "<span class='infoplain'><b>As the [job.title] you answer directly to [job.supervisors]. Special circumstances may change this.</b></span>")
+		to_chat(player_client, SPAN_INFOPLAIN("<b>As the [job.title] you answer directly to [job.supervisors]. Special circumstances may change this.</b>"))
 
 	job.radio_help_message(equipping)
 
 	if(player_client)
 		if(job.req_admin_notify)
-			to_chat(player_client, "<span class='infoplain'><b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b></span>")
+			to_chat(player_client, SPAN_INFOPLAIN("<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>"))
 		if(CONFIG_GET(number/minimal_access_threshold))
 			to_chat(player_client, SPAN_NOTICE("<B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B>"))
 
@@ -645,7 +645,7 @@ SUBSYSTEM_DEF(job)
 	if(PopcapReached())
 		JobDebug("Popcap overflow Check observer located, Player: [player]")
 	JobDebug("Player rejected :[player]")
-	to_chat(player, "<span class='infoplain'><b>You have failed to qualify for any job you desired.</b></span>")
+	to_chat(player, SPAN_INFOPLAIN("<b>You have failed to qualify for any job you desired.</b>"))
 	unassigned -= player
 	player.ready = PLAYER_NOT_READY
 

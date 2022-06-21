@@ -188,7 +188,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	var/motd = global.config.motd
 	if(motd)
-		to_chat(src, "<span class='infoplain'><div class=\"motd\">[motd]</div></span>", handle_whitespace=FALSE)
+		to_chat(src, SPAN_INFOPLAIN("<div class=\"motd\">[motd]</div>"), handle_whitespace=FALSE)
 	else
 		to_chat(src, SPAN_NOTICE("The Message of the Day has not been set."))
 
@@ -261,7 +261,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	// Check if the list is empty
 	if(!players.len)
 		// Express that there are no players we can ignore in chat
-		to_chat(src, "<span class='infoplain'>There are no other players you can ignore!</span>")
+		to_chat(src, SPAN_INFOPLAIN("There are no other players you can ignore!"))
 
 		// Stop running
 		return
@@ -282,7 +282,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	// Check if the selected player is on our ignore list
 	if(selection in prefs.ignoring)
 		// Express that the selected player is already on our ignore list in chat
-		to_chat(src, "<span class='infoplain'>You are already ignoring [selection]!</span>")
+		to_chat(src, SPAN_INFOPLAIN("You are already ignoring [selection]!"))
 
 		// Stop running
 		return
@@ -294,7 +294,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	prefs.save_preferences()
 
 	// Express that we've ignored the selected player in chat
-	to_chat(src, "<span class='infoplain'>You are now ignoring [selection] on the OOC channel.</span>")
+	to_chat(src, SPAN_INFOPLAIN("You are now ignoring [selection] on the OOC channel."))
 
 // Unignore verb
 /client/verb/select_unignore()
@@ -305,7 +305,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	// Check if we've ignored any players
 	if(!prefs.ignoring.len)
 		// Express that we haven't ignored any players in chat
-		to_chat(src, "<span class='infoplain'>You haven't ignored any players!</span>")
+		to_chat(src, SPAN_INFOPLAIN("You haven't ignored any players!"))
 
 		// Stop running
 		return
@@ -320,7 +320,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	// Check if the selected player is not on our ignore list
 	if(!(selection in prefs.ignoring))
 		// Express that the selected player is not on our ignore list in chat
-		to_chat(src, "<span class='infoplain'>You are not ignoring [selection]!</span>")
+		to_chat(src, SPAN_INFOPLAIN("You are not ignoring [selection]!"))
 
 		// Stop running
 		return
@@ -332,7 +332,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	prefs.save_preferences()
 
 	// Express that we've unignored the selected player in chat
-	to_chat(src, "<span class='infoplain'>You are no longer ignoring [selection] on the OOC channel.</span>")
+	to_chat(src, SPAN_INFOPLAIN("You are no longer ignoring [selection] on the OOC channel."))
 
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"

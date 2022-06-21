@@ -567,7 +567,7 @@
 			return TRUE
 		SSticker.start_immediately = FALSE
 		SSticker.SetTimeLeft(1800)
-		to_chat(world, "<span class='infoplain'><b>The game will start in 180 seconds.</b></span>")
+		to_chat(world, SPAN_INFOPLAIN("<b>The game will start in 180 seconds.</b>"))
 		SEND_SOUND(world, sound('sound/ai/default/attention.ogg'))
 		message_admins("<font color='blue'>[usr.key] has cancelled immediate game start. Game will start in 180 seconds.</font>")
 		log_admin("[usr.key] has cancelled immediate game start.")
@@ -631,10 +631,10 @@
 		SSticker.SetTimeLeft(newtime)
 		SSticker.start_immediately = FALSE
 		if(newtime < 0)
-			to_chat(world, "<span class='infoplain'><b>The game start has been delayed.</b></span>", confidential = TRUE)
+			to_chat(world, SPAN_INFOPLAIN("<b>The game start has been delayed.</b>"), confidential = TRUE)
 			log_admin("[key_name(usr)] delayed the round start.")
 		else
-			to_chat(world, "<span class='infoplain'><b>The game will start in [DisplayTimeText(newtime)].</b></span>", confidential = TRUE)
+			to_chat(world, SPAN_INFOPLAIN("<b>The game will start in [DisplayTimeText(newtime)].</b>"), confidential = TRUE)
 			SEND_SOUND(world, sound('sound/ai/default/attention.ogg'))
 			log_admin("[key_name(usr)] set the pre-game delay to [DisplayTimeText(newtime)].")
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Delay Game Start") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

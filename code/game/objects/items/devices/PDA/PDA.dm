@@ -781,7 +781,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			playsound(src, pick('sound/machines/twobeep_voice1.ogg', 'sound/machines/twobeep_voice2.ogg'), 50, TRUE)
 		else
 			playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-		audible_message("<span class='infoplain'>[icon2html(src, hearers(src))] *[ttone]*</span>", null, 3)
+		audible_message(SPAN_INFOPLAIN("[icon2html(src, hearers(src))] *[ttone]*"), null, 3)
 	//Search for holder of the PDA.
 	var/mob/living/L = null
 	if(loc && isliving(loc))
@@ -805,7 +805,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		if(signal.data["emojis"] == TRUE)//so will not parse emojis as such from pdas that don't send emojis
 			inbound_message = emoji_parse(inbound_message)
 
-		to_chat(L, "<span class='infoplain'>[icon2html(src)] <b>PDA message from [hrefstart][signal.data["name"]] ([signal.data["job"]])[hrefend], </b>[inbound_message] [reply]</span>")
+		to_chat(L, SPAN_INFOPLAIN("[icon2html(src)] <b>PDA message from [hrefstart][signal.data["name"]] ([signal.data["job"]])[hrefend], </b>[inbound_message] [reply]"))
 
 	update_appearance()
 	if(istext(icon_alert))

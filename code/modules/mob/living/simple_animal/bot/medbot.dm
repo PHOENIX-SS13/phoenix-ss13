@@ -565,8 +565,10 @@
 					else
 						patient.apply_damage_type((healies*-1),treatment_method) //don't need to check treatment_method since we know by this point that they were actually damaged.
 						log_combat(src, patient, "tended the wounds of", "internal tools", "([uppertext(treatment_method)])")
-					C.visible_message(SPAN_NOTICE("[src] tends the wounds of [patient]!"), \
-						"<span class='infoplain'>[SPAN_GREEN("[src] tends your wounds!")]</span>")
+					C.visible_message(
+						SPAN_NOTICE("[src] tends the wounds of [patient]!"),
+						SPAN_INFOPLAIN(SPAN_GREEN("[src] tends your wounds!"))
+					)
 					ADD_TRAIT(patient,TRAIT_MEDIBOTCOMINGTHROUGH,tag)
 					addtimer(TRAIT_CALLBACK_REMOVE(patient, TRAIT_MEDIBOTCOMINGTHROUGH, tag), (30 SECONDS))
 				else
@@ -576,7 +578,7 @@
 
 			update_appearance()
 			if(!tending)
-				visible_message("<span class='infoplain'>[src] places its tools back into itself.</span>")
+				visible_message(SPAN_INFOPLAIN("[src] places its tools back into itself."))
 				soft_reset()
 		else
 			tending = FALSE

@@ -86,4 +86,4 @@
 	msg += "Protect Authority Roles From Traitor: [CONFIG_GET(flag/protect_roles_from_antagonist)]"
 	msg += "Protect Assistant Role From Traitor: [CONFIG_GET(flag/protect_assistant_from_antagonist)]"
 	msg += "Allow Latejoin Antagonists: [CONFIG_GET(flag/allow_latejoin_antagonists)]"
-	to_chat(src, "<span class='infoplain'>[msg.Join("<br>")]</span>")
+	to_chat(src, SPAN_INFOPLAIN(msg.Join("<br>")))
