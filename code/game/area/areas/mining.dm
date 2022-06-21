@@ -52,12 +52,33 @@
 	name = "Mining Station Port Wing"
 	icon_state = "mining_living"
 
+/area/mine/living_quarters/room_one
+	name = "Mining Station Port Wing"
+	icon_state = "mining_living"
+
+/area/mine/living_quarters/room_two
+	name = "Mining Station Port Wing"
+	icon_state = "mining_living"
+
 /area/mine/eva
 	name = "Mining Station EVA"
 	icon_state = "mining_eva"
 
+/area/mine/eva/lower
+	name = "Mining Station Lower EVA"
+	icon_state = "mining_eva"
+
 /area/mine/maintenance
-	name = "Mining Station Communications"
+	name = "Mining Station Maintenance"
+
+/area/mine/maintenance/lower
+	name = "Mining Station Lower Maintenance"
+
+/area/mine/maintenance/telecomms
+	name = "Mining Station Telecommunications"
+
+/area/mine/maintenance/telecomms/lower
+	name = "Mining Station Lower Telecommunications"
 
 /area/mine/cafeteria
 	name = "Mining Station Cafeteria"
@@ -73,6 +94,10 @@
 /area/mine/mechbay
 	name = "Mining Station Mech Bay"
 	icon_state = "mechbay"
+
+/area/mine/medical
+	name = "Mining Station Infirmary"
+	icon_state = "patients"
 
 /area/mine/laborcamp
 	name = "Labor Camp"
