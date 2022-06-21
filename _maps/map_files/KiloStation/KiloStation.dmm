@@ -1921,7 +1921,6 @@
 /area/maintenance/starboard)
 "agg" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
 /turf/closed/wall,
 /area/maintenance/starboard)
 "agh" = (
@@ -15521,7 +15520,7 @@
 "aXN" = (
 /obj/machinery/igniter/incinerator_toxmix,
 /mob/living/simple_animal/chicken{
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	atmos_requirements = list("min_oxy"=0,"max_oxy"=0,"min_tox"=0,"max_tox"=1,"min_co2"=0,"max_co2"=0,"min_n2"=0,"max_n2"=0);
 	desc = "A timeless classic.";
 	name = "Kentucky"
 	},
@@ -41492,12 +41491,11 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/mining/glass{
-	name = "Mining Dock";
-	req_access_txt = "48"
-	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/airlock/mining/glass{
+	name = "Freight Mining Airlock"
 	},
 /turf/open/floor/iron/dark,
 /area/cargo/warehouse)
@@ -55561,6 +55559,7 @@
 	id = "freight_port";
 	name = "Freight Bay Control"
 	},
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/iron/dark,
 /area/cargo/warehouse)
 "jsI" = (
@@ -57870,6 +57869,7 @@
 	id = "emmd";
 	name = "Medical Lockdown Toggle"
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/showroomfloor,
 /area/medical/surgery)
 "kqL" = (
@@ -64555,6 +64555,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -65652,6 +65653,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/landmark/xeno_spawn,
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/iron/dark,
 /area/cargo/warehouse)
 "nKW" = (
@@ -74702,7 +74704,7 @@
 	},
 /obj/item/reagent_containers/food/drinks/beer{
 	desc = "A station exclusive. Consumption may result in seizures, blindness, drunkenness, or even death.";
-	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko = 30);
+	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko=30);
 	name = "Kilo-Kocktail";
 	pixel_x = 5;
 	pixel_y = 5
@@ -81570,7 +81572,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/airalarm/server{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/engine/telecomms,
 /area/tcommsat/server)
 "uAo" = (
@@ -85064,11 +85069,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 4;
-	piping_layer = 1
-	},
 /obj/machinery/portable_atmospherics/canister,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/cargo/warehouse)
 "vXv" = (
