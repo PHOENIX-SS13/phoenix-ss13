@@ -21,6 +21,8 @@
 
 	immunity_type = RAD
 	multiply_blend_on_main_stage = TRUE
+	affects_underground = FALSE
+	protect_indoors = TRUE
 
 /datum/weather/rad_storm/telegraph()
 	..()
