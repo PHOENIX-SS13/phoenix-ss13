@@ -363,12 +363,32 @@
 	reaction_tags = REACTION_TAG_DRINK | REACTION_TAG_EASY | REACTION_TAG_OTHER
 
 /datum/chemical_reaction/drink/cherryshake
-	results = list(/datum/reagent/consumable/cherryshake = 3)
-	required_reagents = list(/datum/reagent/consumable/cherryjelly = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
+	results = list(/datum/reagent/consumable/cherryshake = 5)
+	required_reagents = list(/datum/reagent/consumable/cherryjelly = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
 
 /datum/chemical_reaction/drink/bluecherryshake
-	results = list(/datum/reagent/consumable/bluecherryshake = 3)
-	required_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
+	results = list(/datum/reagent/consumable/bluecherryshake = 5)
+	required_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/milkshake_chocolate
+	results = list(/datum/reagent/consumable/milkshake_chocolate = 5)
+	required_reagents = list(/datum/reagent/consumable/coco = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/milkshake_chocolate_premixed	//Allows upgrading chocolate milk to milkshakes
+	results = list(/datum/reagent/consumable/milkshake_chocolate = 5)
+	required_reagents = list(/datum/reagent/consumable/milk/chocolate_milk = 4, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/milkshake_strawberry
+	results = list(/datum/reagent/consumable/milkshake_strawberry = 5)
+	required_reagents = list(/datum/reagent/consumable/pinkmilk = 4, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/milkshake_banana
+	results = list(/datum/reagent/consumable/milkshake_banana = 5)
+	required_reagents = list(/datum/reagent/consumable/banana = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/milkshake_vanilla
+	results = list(/datum/reagent/consumable/milkshake_vanilla = 5)
+	required_reagents = list(/datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
 
 /datum/chemical_reaction/drink/drunkenblumpkin
 	results = list(/datum/reagent/consumable/ethanol/drunkenblumpkin = 4)
@@ -728,8 +748,8 @@
 	required_reagents = list(/datum/reagent/medicine/ephedrine = 1, /datum/reagent/consumable/ethanol/pina_colada = 1)
 
 /datum/chemical_reaction/pinkmilk
-	results = list(/datum/reagent/consumable/pinkmilk = 2)
-	required_reagents = list(/datum/reagent/consumable/berryjuice = 1, /datum/reagent/consumable/milk = 1)
+	results = list(/datum/reagent/consumable/pinkmilk = 4)
+	required_reagents = list(/datum/reagent/consumable/berryjuice = 1, /datum/reagent/consumable/milk = 3)
 
 /datum/chemical_reaction/pinktea
 	results = list(/datum/reagent/consumable/pinktea = 5)

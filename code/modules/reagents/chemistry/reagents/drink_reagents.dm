@@ -736,10 +736,10 @@
 	color = "#FFB6C1"
 	quality = DRINK_VERYGOOD
 	nutriment_factor = 4 * REAGENTS_METABOLISM
-	taste_description = "creamy cherry"
+	taste_description = "cherry milkshake"
 	glass_icon_state = "cherryshake"
-	glass_name = "cherry shake"
-	glass_desc = "A cherry flavored milkshake."
+	glass_name = "Cherry Milkshake"
+	glass_desc = "A cherry flavored milkshake with cream on top."
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/bluecherryshake
@@ -748,10 +748,58 @@
 	color = "#00F1FF"
 	quality = DRINK_VERYGOOD
 	nutriment_factor = 4 * REAGENTS_METABOLISM
-	taste_description = "creamy blue cherry"
+	taste_description = "blueberry milkshake"
 	glass_icon_state = "bluecherryshake"
-	glass_name = "blue cherry shake"
-	glass_desc = "An exotic blue milkshake."
+	glass_name = "Blue-Cherry Milkshake"
+	glass_desc = "A blue-cherry milkshake topped with cream on top and a blueberry sauce drizzle."
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/milkshake_chocolate
+	name = "Chocolate Milkshake"
+	description = "A chocolate flavored milkshake."
+	color = "#B8AB75"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "CHOCCY MILKSHAKE!"
+	glass_icon_state = "milkshake_chocolate"
+	glass_name = "Chocolate Milkshake"
+	glass_desc = "A chocolate milkshake with cream on top and a chocolate sauce drizzle."
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/milkshake_strawberry
+	name = "Strawberry Milkshake"
+	description = "A strawberry flavored milkshake."
+	color = "#E6B3AA"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "sweet strawberries"
+	glass_icon_state = "milkshake_strawberry"
+	glass_name = "Strawberry Milkshake"
+	glass_desc = "A strawberry milkshake with cream on top and a raspberry sauce drizzle."
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/milkshake_banana
+	name = "Banana Milkshake"
+	description = "A banana flavored milkshake."
+	color = "#EBD04E"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "banana"
+	glass_icon_state = "milkshake_banana"
+	glass_name = "Banana Milkshake"
+	glass_desc = "A banana milkshake with cream on top."
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/milkshake_vanilla
+	name = "Vanilla Milkshake"
+	description = "A vanilla flavored milkshake."
+	color = "#D2C8AA"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "vanilla"
+	glass_icon_state = "milkshake_vanilla"
+	glass_name = "Vanilla Milkshake"
+	glass_desc = "A vanilla milkshake with cream on top."
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/pumpkin_latte
@@ -822,7 +870,9 @@
 	color = "#7D4E29"
 	quality = DRINK_NICE
 	taste_description = "chocolate milk"
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	glass_icon_state = "chocolateglass"
+	glass_name = "glass of chocolate milk"
+	glass_desc = "It's chocolate-flavoured milk!"
 
 /datum/reagent/consumable/hot_coco
 	name = "Hot Coco"
