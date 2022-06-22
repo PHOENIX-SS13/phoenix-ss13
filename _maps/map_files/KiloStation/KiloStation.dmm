@@ -15446,12 +15446,16 @@
 /turf/open/floor/iron/dark,
 /area/science/mixing)
 "aXE" = (
-/obj/machinery/nanite_chamber,
-/obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 5
+	},
+/obj/structure/window/spawner/west,
+/obj/structure/window/spawner/north,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aXH" = (
@@ -15617,6 +15621,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/effect/landmark/start/scientist,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aXY" = (
@@ -15877,7 +15882,6 @@
 	},
 /area/maintenance/central)
 "aYN" = (
-/obj/machinery/nanite_program_hub,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -15889,6 +15893,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
+/obj/machinery/component_printer,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aYO" = (
@@ -15915,12 +15920,15 @@
 /turf/open/floor/iron/showroomfloor,
 /area/science/research)
 "aYR" = (
-/obj/machinery/computer/nanite_cloud_controller,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/rack,
+/obj/item/integrated_circuit/loaded/hello_world,
+/obj/item/integrated_circuit/loaded/speech_relay,
+/obj/structure/window/spawner/west,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aYS" = (
@@ -15937,7 +15945,6 @@
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aYT" = (
-/obj/machinery/nanite_programmer,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -15949,10 +15956,17 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/item/multitool/circuit{
+	pixel_x = -8
+	},
+/obj/item/multitool/circuit{
+	pixel_x = -4
+	},
+/obj/item/multitool/circuit,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aYU" = (
-/obj/machinery/nanite_program_hub,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -15964,6 +15978,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/module_duplicator,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aYY" = (
@@ -16188,7 +16203,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/bot,
 /obj/machinery/holopad,
 /turf/open/floor/iron/dark,
 /area/science/research)
@@ -16492,10 +16506,6 @@
 /turf/open/floor/iron/showroomfloor,
 /area/medical/medbay/central)
 "aZX" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/computer/nanite_chamber_control{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -16506,6 +16516,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "aZZ" = (
@@ -16747,8 +16758,6 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple,
-/obj/item/integrated_circuit/loaded/speech_relay,
-/obj/item/integrated_circuit/loaded/hello_world,
 /obj/machinery/light_switch/directional/south,
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -17015,10 +17024,18 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/item/storage/box/disks_nanite{
-	pixel_y = 4
+/obj/machinery/cell_charger{
+	pixel_y = 5
 	},
-/obj/item/hand_labeler,
+/obj/item/stock_parts/cell/high{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/stock_parts/cell/high{
+	pixel_x = 8;
+	pixel_y = 9
+	},
+/obj/item/stock_parts/cell/high,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "bbk" = (
@@ -17183,33 +17200,11 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/hallway/primary/starboard)
-"bbJ" = (
-/obj/machinery/computer/nanite_cloud_controller,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/turf/open/floor/iron/dark,
-/area/science/research)
 "bbK" = (
 /obj/machinery/door/airlock/research/glass/incinerator/toxmix_interior,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/engine,
 /area/science/mixing/chamber)
-"bbL" = (
-/obj/machinery/nanite_chamber,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/turf/open/floor/iron/dark,
-/area/science/research)
 "bbN" = (
 /turf/closed/wall,
 /area/science/mixing)
@@ -17630,7 +17625,6 @@
 /obj/structure/sign/warning/explosives/alt{
 	pixel_x = -32
 	},
-/obj/machinery/module_duplicator,
 /turf/open/floor/iron/dark,
 /area/science/test_area)
 "bcW" = (
@@ -18308,20 +18302,16 @@
 /turf/open/floor/iron/showroomfloor,
 /area/medical/pharmacy)
 "beE" = (
-/obj/structure/chair/office/light{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/landmark/start/scientist,
+/obj/structure/rack,
+/obj/item/controller,
+/obj/item/compact_remote,
+/obj/item/compact_remote,
+/obj/effect/turf_decal/bot,
+/obj/structure/window/spawner/west,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "beH" = (
@@ -50980,19 +50970,13 @@
 	dir = 4
 	},
 /obj/item/clipboard,
-/obj/item/nanite_remote{
-	pixel_x = -4;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
-	},
-/obj/item/nanite_scanner{
-	pixel_x = 4
 	},
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/stripes/corner,
+/obj/item/hand_labeler,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "hoE" = (
@@ -51257,7 +51241,6 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/machinery/component_printer,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
@@ -58340,8 +58323,6 @@
 /turf/open/floor/engine,
 /area/engineering/supermatter/room)
 "kzj" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/computer/nanite_chamber_control,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -58358,6 +58339,7 @@
 	network = list("ss13","rd")
 	},
 /obj/machinery/status_display/evac/directional/north,
+/obj/structure/table,
 /turf/open/floor/iron/dark,
 /area/science/research)
 "kzI" = (
@@ -78285,13 +78267,6 @@
 /area/command/heads_quarters/captain)
 "tno" = (
 /obj/structure/table,
-/obj/item/multitool/circuit{
-	pixel_x = -8
-	},
-/obj/item/multitool/circuit{
-	pixel_x = -4
-	},
-/obj/item/multitool/circuit,
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple,
 /obj/machinery/firealarm/directional/south,
@@ -83661,11 +83636,6 @@
 	dir = 4
 	},
 /obj/item/folder,
-/obj/item/nanite_scanner{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/nanite_remote,
 /obj/machinery/light/directional/east,
 /obj/machinery/bounty_board/directional/north,
 /turf/open/floor/iron/dark,
@@ -87709,10 +87679,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/item/controller,
 /obj/machinery/light/directional/west,
-/obj/item/compact_remote,
-/obj/item/compact_remote,
 /turf/open/floor/iron/showroomfloor,
 /area/science/test_area)
 "xfz" = (
@@ -128272,7 +128239,7 @@ vse
 aXE
 aXI
 aYR
-aXI
+beE
 bbj
 aOi
 bep
@@ -128787,7 +128754,7 @@ vlS
 aYN
 aYT
 aYS
-bbJ
+bbl
 aOo
 bgj
 aYe
@@ -129043,7 +129010,7 @@ nOe
 vlS
 vlS
 aYU
-beE
+aYS
 bbl
 aOi
 aRp
@@ -129301,7 +129268,7 @@ tWx
 vlS
 vlS
 aZX
-bbL
+bbl
 aOi
 bep
 baU
