@@ -118,45 +118,13 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/iron/dark,
 /area/science/mixing)
-"aaj" = (
-/turf/closed/wall/r_wall,
-/area/science/nanite)
-"aak" = (
-/obj/machinery/nanite_program_hub,
-/obj/structure/cable,
-/turf/open/floor/engine,
-/area/science/nanite)
 "aal" = (
 /obj/machinery/airalarm,
 /turf/closed/wall/r_wall,
-/area/science/nanite)
-"aam" = (
-/obj/machinery/computer/nanite_cloud_controller,
-/obj/structure/cable,
-/turf/open/floor/engine,
-/area/science/nanite)
-"aan" = (
-/turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aao" = (
-/obj/machinery/nanite_chamber,
 /turf/open/floor/engine,
-/area/science/nanite)
-"aap" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/engine,
-/area/science/nanite)
-"aaq" = (
-/obj/machinery/nanite_programmer,
-/obj/structure/cable,
-/turf/open/floor/engine,
-/area/science/nanite)
-"aar" = (
-/obj/machinery/computer/nanite_chamber_control{
-	dir = 8
-	},
-/turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aas" = (
 /obj/machinery/door/airlock/research{
 	name = "Nanite Lab";
@@ -167,52 +135,32 @@
 "aat" = (
 /obj/structure/sign/warning,
 /turf/closed/wall/r_wall,
-/area/science/nanite)
+/area/science/circuits)
 "aau" = (
-/obj/machinery/power/apc{
-	areastring = "/area/science/nanite";
-	dir = 1;
-	name = "Nanite Lab APC";
-	pixel_y = 23
-	},
 /obj/structure/cable,
 /turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aav" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aaw" = (
 /obj/machinery/light{
 	dir = 1;
 	light_color = "#d1dfff"
 	},
 /obj/structure/table,
-/obj/item/nanite_remote,
 /turf/open/floor/engine,
-/area/science/nanite)
-"aax" = (
-/obj/structure/chair/office/light{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
-/turf/open/floor/engine,
-/area/science/nanite)
-"aay" = (
-/obj/structure/table,
-/obj/item/nanite_scanner,
-/turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aaz" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
 /turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aaA" = (
 /obj/structure/table,
-/obj/item/storage/box/disks_nanite,
 /turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aaB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -227,7 +175,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aaD" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -263,13 +211,13 @@
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aaG" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/engine,
-/area/science/nanite)
+/area/science/circuits)
 "aaH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -30468,10 +30416,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/science/lab)
-"bEZ" = (
-/obj/effect/spawner/xeno_egg_delivery,
-/turf/open/floor/engine,
-/area/science/xenobiology)
 "bFa" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -45771,10 +45715,6 @@
 	},
 /turf/open/floor/iron,
 /area/engineering/main)
-"eQR" = (
-/obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner,
-/turf/open/floor/engine,
-/area/science/xenobiology)
 "eQZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -57541,11 +57481,7 @@
 /area/science/xenobiology)
 "tim" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
-/obj/machinery/light_switch/directional/west{
-	pixel_y = -10
-	},
 /turf/open/floor/engine,
 /area/science/circuits)
 "tix" = (
@@ -102268,10 +102204,10 @@ bhs
 bbI
 asG
 bjw
-aaj
-aaj
-aaj
-aaj
+nvi
+nvi
+nvi
+nvi
 bjw
 eYr
 bqs
@@ -102525,11 +102461,11 @@ bht
 bbI
 biC
 biz
-aaj
-aak
-aam
-aaq
-aap
+nvi
+aau
+aau
+aau
+tSW
 edl
 bqs
 aaN
@@ -102782,7 +102718,7 @@ bhu
 bbI
 aFi
 asG
-aaj
+nvi
 aau
 aaC
 aaF
@@ -103041,8 +102977,8 @@ aEj
 asG
 aal
 aaw
-aan
-aan
+aao
+aao
 aas
 bqt
 bqs
@@ -103297,9 +103233,9 @@ bbI
 aGP
 asG
 aat
-aay
+aaA
 aav
-aax
+nJI
 aaz
 aaB
 brH
@@ -103553,11 +103489,11 @@ aaa
 aEj
 pKd
 asG
-aaj
+nvi
 aaA
 aao
-aar
-aap
+aao
+tSW
 nBL
 bqs
 xgG
@@ -103810,11 +103746,11 @@ oex
 aEj
 aEj
 asG
-aaj
-aaj
-aap
-aap
-aaj
+nvi
+aao
+aao
+aao
+nvi
 bqv
 bqs
 aaM
@@ -113583,7 +113519,7 @@ bkF
 blX
 blX
 blX
-bEZ
+blX
 blX
 blX
 blX
@@ -114100,7 +114036,7 @@ blX
 tuy
 blX
 blX
-eQR
+blX
 bkF
 aaa
 aed
