@@ -1,0 +1,11 @@
+author: Emilitia Ennehrt (EmilitiaEnnehrt)
+changes:
+- rscadd: Added medical beret to clothing vender
+- qol: Syringes sprites are easier to click on
+- bugfix: Fixed coat sprites on non-human body types
+- bugfix: Reshade for nitrile gloves and nitrile mask
+- imageadd: New syringe, paddle, folded bodybag sprites, and new reagent filling to
+    go with new syringe sprites
+- imageadd: added digitigrade versions for some of the new coats
+merge-date: 2022-06-25
+prnumber: 1186
