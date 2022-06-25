@@ -284,6 +284,14 @@
 	desc = "A special beret with the security insignia emblazoned on it. For officers with class."
 	icon_state = "officerberet"
 
+//Medical
+/obj/item/clothing/head/beret/medical
+	name = "medical beret"
+	desc = "A sterile medical beret with a medical cross on it, this one has hair netting build in the back."
+	icon_state = "medberet"
+	dog_fashion = null
+	fitted_bodytypes = NONE
+
 //Science
 
 /obj/item/clothing/head/beret/science

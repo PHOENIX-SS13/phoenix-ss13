@@ -56,13 +56,13 @@
 	path = /obj/item/clothing/suit/browntrenchcoat
 
 /datum/loadout_item/suit/coat/gentlecoat
-	path = /obj/item/clothing/suit/jacket/greatcoat
+	path = /obj/item/clothing/suit/greatcoat
 
 /datum/loadout_item/suit/coat/ladiesvictoriancoat
-	path = /obj/item/clothing/suit/jacket/ladiesvictoriancoat
+	path = /obj/item/clothing/suit/ladiesvictoriancoat
 
 /datum/loadout_item/suit/coat/ladiescoat
-	path = /obj/item/clothing/suit/jacket/ladiescoat
+	path = /obj/item/clothing/suit/ladiescoat
 
 /datum/loadout_item/suit/coat/runed
 	path = /obj/item/clothing/suit/hooded/wintercoat/narsie/fake
