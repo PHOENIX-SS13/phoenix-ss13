@@ -132,6 +132,8 @@
 			log_manifest(N.ckey,N.new_character.mind,N.new_character)
 		if(ishuman(N.new_character))
 			manifest_inject(N.new_character, N.client)
+		if(issilicon(N.new_character))
+			manifest_inject_silicon(N.new_character, N.client)
 		CHECK_TICK
 
 /datum/datacore/proc/manifest_modify(name, assignment)
