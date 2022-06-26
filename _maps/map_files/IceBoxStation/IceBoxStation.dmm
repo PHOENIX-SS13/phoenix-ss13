@@ -13721,11 +13721,6 @@
 /area/security/checkpoint/science)
 "bAI" = (
 /obj/machinery/light/small/directional/south,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/glass,
 /area/cargo/storage)
 "bAJ" = (
@@ -24017,11 +24012,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/glass,
 /area/cargo/storage)
 "eHC" = (
@@ -24132,11 +24122,6 @@
 "eKZ" = (
 /obj/machinery/light/small/directional/south,
 /obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/camera{
@@ -25171,11 +25156,6 @@
 /area/engineering/main)
 "ftq" = (
 /obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/glass,
@@ -28742,6 +28722,10 @@
 /obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/hallway/primary/aft)
+"hxJ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/cargo/storage)
 "hym" = (
 /obj/machinery/computer/security/telescreen/entertainment/directional/south,
 /turf/open/floor/wood,
@@ -31364,11 +31348,6 @@
 	req_access_txt = "41"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/iron/dark/textured,
 /area/cargo/qm)
 "iYA" = (
@@ -32472,6 +32451,11 @@
 	dir = 1
 	},
 /obj/machinery/disposal/bin,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/cargo/qm)
 "jER" = (
@@ -46490,6 +46474,15 @@
 	icon_state = "panelscorched"
 	},
 /area/maintenance/port/aft)
+"rqn" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Mining Ladder Access";
+	req_access_txt = "48"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/cargo/storage)
 "rqA" = (
 /turf/open/floor/iron/freezer,
 /area/commons/toilet)
@@ -50841,11 +50834,6 @@
 	},
 /area/science/misc_lab)
 "tJJ" = (
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/glass,
 /area/cargo/storage)
 "tKl" = (
@@ -52958,6 +52946,21 @@
 	dir = 10
 	},
 /area/science/xenobiology)
+"uPu" = (
+/obj/effect/spawner/structure/window,
+/obj/structure/curtain/cloth/fancy/mechanical{
+	icon_state = "bounty-open";
+	icon_type = "bounty";
+	id = "QMprivacycurtain";
+	name = "curtain"
+	},
+/obj/structure/cable,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/cargo/qm)
 "uPx" = (
 /obj/structure/table,
 /obj/item/circular_saw,
@@ -78573,8 +78576,8 @@ pGx
 pGx
 xsZ
 tJJ
-itD
-nUL
+rqn
+hxJ
 tYS
 nUL
 itD
@@ -78832,7 +78835,7 @@ vzZ
 bAI
 qoJ
 qoJ
-kjD
+uPu
 qoJ
 qoJ
 rSn
@@ -79858,7 +79861,7 @@ hdZ
 hdZ
 wco
 fuV
-kjD
+uPu
 qXD
 vAa
 xzu

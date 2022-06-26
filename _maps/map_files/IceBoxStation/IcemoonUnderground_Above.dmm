@@ -767,9 +767,9 @@
 "ik" = (
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/bot,
-/obj/vehicle/sealed/mecha/working/clarke,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable,
+/obj/vehicle/sealed/mecha/working/ripley/mining,
 /turf/open/floor/iron/dark/textured_large,
 /area/mine/mechbay)
 "io" = (
@@ -1769,7 +1769,6 @@
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high,
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
 /obj/item/mecha_parts/mecha_equipment/drill,
 /obj/machinery/button/door/directional/south{
 	id = "Mining_launch";

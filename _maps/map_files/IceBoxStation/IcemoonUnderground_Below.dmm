@@ -353,9 +353,6 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/mine/eva/lower)
-"yC" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors/unexplored/rivers/no_monsters)
 "zx" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 8
@@ -391,7 +388,7 @@
 /area/mine/eva/lower)
 "Ae" = (
 /turf/open/genturf,
-/area/icemoon/surface/outdoors/unexplored/rivers/no_monsters)
+/area/icemoon/underground/unexplored/rivers/deep/no_monsters)
 "EK" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 8
@@ -540,7 +537,7 @@
 /area/mine/eva/lower)
 "Sa" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored/rivers/deep)
+/area/icemoon/underground/unexplored/rivers/deep/no_monsters)
 "SU" = (
 /obj/effect/mapping_helpers/smart_pipe/simple/general/visible{
 	dir = 9
@@ -20146,7 +20143,7 @@ Ae
 Ae
 Ae
 Ae
-yC
+Sa
 Ae
 Ae
 Ae
@@ -24001,7 +23998,7 @@ Ae
 Ae
 Ae
 Ae
-yC
+Sa
 Ae
 Ae
 Ae
