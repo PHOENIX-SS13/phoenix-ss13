@@ -81,7 +81,6 @@
 		if(!reagents.total_volume)
 			to_chat(user, SPAN_WARNING("[src] is empty."))
 			return
-
 		if(target.reagents.holder_full())
 			to_chat(user, SPAN_WARNING("[target] is full."))
 			return
@@ -139,6 +138,7 @@
 	if(!.) //if the bottle wasn't caught
 		smash(hit_atom, throwingdatum?.thrower, TRUE)
 
+
 /obj/item/reagent_containers/food/drinks/proc/smash(atom/target, mob/thrower, ranged = FALSE)
 	if(!isGlass)
 		return
@@ -146,6 +146,7 @@
 		return
 	if(bartender_check(target) && ranged)
 		return
+	SplashReagents(target, ranged, override_spillable = TRUE)
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
 	var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
@@ -248,15 +249,18 @@
 	name = "ice cup"
 	desc = "Careful, cold ice, do not chew."
 	custom_price = PAYCHECK_PRISONER * 0.6
-	icon_state = "coffee"
+	icon_state = "icecup"
 	list_reagents = list(/datum/reagent/consumable/ice = 30)
 	spillable = TRUE
 	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/ice/prison
 	name = "dirty ice cup"
-	desc = "Either Nanotrasen's water supply is contaminated, or this machine actually vends lemon, chocolate, and cherry snow cones."
-	list_reagents  = list(/datum/reagent/consumable/ice = 25, /datum/reagent/liquidgibs = 5)
+	desc = "Either the water supply is contaminated, or this machine actually vends lemon, chocolate, and cherry snow cones."
+	list_reagents = list(
+		/datum/reagent/consumable/ice = 25,
+		/datum/reagent/liquidgibs = 5,
+	)
 
 /obj/item/reagent_containers/food/drinks/mug // parent type is literally just so empty mug sprites are a thing
 	name = "mug"
@@ -319,7 +323,7 @@
 	var/flip_chance = 10
 	custom_price = PAYCHECK_PRISONER * 0.8
 
-/obj/item/reagent_containers/food/drinks/waterbottle/Initialize()
+/obj/item/reagent_containers/food/drinks/waterbottle/Initialize(mapload)
 	. = ..()
 	cap_overlay = mutable_appearance(icon, cap_icon_state)
 	if(cap_on)
@@ -432,12 +436,12 @@
 	desc = "A bottle quite similar to a water bottle, but with some words scribbled on with a marker. It seems to be radiating some kind of energy."
 	flip_chance = 100 // FLIPP
 
-/obj/item/reagent_containers/food/drinks/waterbottle/relic/Initialize()
+/obj/item/reagent_containers/food/drinks/waterbottle/relic/Initialize(mapload)
 	var/reagent_id = get_random_reagent_id()
 	var/datum/reagent/random_reagent = new reagent_id
 	list_reagents = list(random_reagent.type = 50)
 	. = ..()
-	desc +=  SPAN_NOTICE("The writing reads '[random_reagent.name]'.")
+	desc += SPAN_NOTICE("The writing reads '[random_reagent.name]'.")
 	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
@@ -445,6 +449,14 @@
 	desc = "Beer. In space."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
+	foodtype = GRAIN | ALCOHOL
+	custom_price = PAYCHECK_EASY
+
+/obj/item/reagent_containers/food/drinks/ale
+	name = "space ale"
+	desc = "Ale. In space."
+	icon_state = "beer"
+	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
 	custom_price = PAYCHECK_EASY
 
@@ -579,6 +591,7 @@
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton/smash(atom/target, mob/thrower, ranged = FALSE)
 	if(bartender_check(target) && ranged)
 		return
+	SplashReagents(target, ranged, override_spillable = TRUE)
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
 	var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
@@ -609,7 +622,7 @@
 	/// Allows the lean sprite to display upon crafting
 	var/random_sprite = TRUE
 
-/obj/item/reagent_containers/food/drinks/colocup/Initialize()
+/obj/item/reagent_containers/food/drinks/colocup/Initialize(mapload)
 	.=..()
 	pixel_x = rand(-4,4)
 	pixel_y = rand(-4,4)
@@ -671,7 +684,7 @@
 	custom_price = PAYCHECK_ASSISTANT * 0.9
 	obj_flags = CAN_BE_HIT
 
-/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize()
+/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize(mapload)
 	..()
 	var/T = pick(subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans) - /obj/item/reagent_containers/food/drinks/soda_cans/random)
 	new T(loc)
@@ -766,7 +779,7 @@
 	list_reagents = list(/datum/reagent/consumable/lemon_lime = 30)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime/Initialize()
+/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime/Initialize(mapload)
 	. = ..()
 	name = "lemon-lime soda"
 
@@ -845,6 +858,7 @@
 	desc = "There is no air shortage. Do not drink."
 	icon_state = "air"
 	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
+
 
 /obj/item/reagent_containers/food/drinks/soda_cans/lubricola
 	name = "LubriCola"
