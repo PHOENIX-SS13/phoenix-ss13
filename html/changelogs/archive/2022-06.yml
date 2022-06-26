@@ -222,3 +222,18 @@
   Alex 'Avunia' Takiya (atakiya):
   - rscdel: Removed Nanites
   - rscadd: The now defunct Nanite Lab&#x27;s are closed for renovation!
+2022-06-25:
+  Alex 'Avunia' Takiya (atakiya):
+  - rscdel: Removed xenoegg spawns from Pubby
+  Emilitia Ennehrt (EmilitiaEnnehrt):
+  - imageadd: Added welding effect overlay on the object being welded
+  - rscadd: Added medical beret to clothing vender
+  - qol: Syringes sprites are easier to click on
+  - bugfix: Fixed coat sprites on non-human body types
+  - bugfix: Reshade for nitrile gloves and nitrile mask
+  - imageadd: New syringe, paddle, folded bodybag sprites, and new reagent filling
+      to go with new syringe sprites
+  - imageadd: added digitigrade versions for some of the new coats
+2022-06-26:
+  AtoriBirb:
+  - balance: Adds Low-pop Pharma access to Virologist
