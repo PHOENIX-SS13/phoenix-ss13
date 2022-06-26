@@ -1,0 +1,9 @@
+author: KathrinBailey
+changes:
+- qol: Pubby kitchen re-organised to be less frustrating to work in.
+- qol: Pubby botany has their biogenerator moved between the kitchen and botany.
+- balance: Pubby kitchen has a few more roundstart food items.
+- balance: Pubby bartender has their own condimaster for drink mixing.
+- bugfix: Missing wallmounts and firelocks for Pubby service.
+merge-date: 2022-06-26
+prnumber: 1185
