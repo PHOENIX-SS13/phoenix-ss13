@@ -1,0 +1,6 @@
+author: Alex 'Avunia' Takiya (atakiya)
+changes:
+- balance: Teleporters have been updated to not turn crew into flies anymore. However,
+    uncalibrated teleportation is still dangerous and voids your warranty.
+merge-date: 2022-07-14
+prnumber: 913
