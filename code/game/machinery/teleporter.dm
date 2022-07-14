@@ -64,29 +64,102 @@
 		return
 	return ..()
 
-/obj/machinery/teleport/hub/proc/teleport(atom/movable/M as mob|obj, turf/T)
-	var/obj/machinery/computer/teleporter/com = power_station.teleporter_console
-	if (QDELETED(com))
+/// Teleport failure results in burn damage on limbs
+#define TELEPORT_FAILURE_RESULT_BURN 1
+/// Teleport failure results in internal organ damage
+#define TELEPORT_FAILURE_RESULT_ORGANDAMAGE 2
+/// Teleport failure results in limb dismemberment
+#define TELEPORT_FAILURE_RESULT_DISMEMBER 3
+/// Teleport failure results in target being a random TP beacon
+#define TELEPORT_FAILURE_RESULT_RANDOMBEACON 4
+
+/obj/machinery/teleport/hub/proc/teleport(atom/movable/movable_atom as mob|obj, turf/target_turf)
+	var/obj/machinery/computer/teleporter/teleport_console = power_station.teleporter_console
+	if (QDELETED(teleport_console))
 		return
-	if (QDELETED(com.target))
-		com.target = null
+	if (QDELETED(teleport_console.target))
+		teleport_console.target = null
 		visible_message(SPAN_ALERT("Cannot authenticate locked on coordinates. Please reinstate coordinate matrix."))
 		return
-	if (ismovable(M))
-		if(do_teleport(M, com.target, channel = TELEPORT_CHANNEL_BLUESPACE))
+	if (ismovable(movable_atom))
+		if(do_teleport(movable_atom, teleport_console.target, channel = TELEPORT_CHANNEL_BLUESPACE))
 			use_power(5000)
 			if(!calibrated && prob(30 - ((accuracy) * 10))) //oh dear a problem
-				if(ishuman(M))//don't remove people from the round randomly you jerks
-					var/mob/living/carbon/human/human = M
+				if(ishuman(movable_atom))//don't remove people from the round randomly you jerks
+					var/mob/living/carbon/human/human = movable_atom
 					if(!(human.mob_biotypes & (MOB_ROBOTIC|MOB_MINERAL|MOB_UNDEAD|MOB_SPIRIT)))
-						if(human.dna && human.dna.species.id != "fly")
-							to_chat(M, SPAN_HEAR("You hear a buzzing in your ears."))
-							human.set_species(/datum/species/fly)
-							log_game("[human] ([key_name(human)]) was turned into a fly person")
+						switch(pick(
+							TELEPORT_FAILURE_RESULT_BURN,
+							50; TELEPORT_FAILURE_RESULT_ORGANDAMAGE,
+							25; TELEPORT_FAILURE_RESULT_DISMEMBER,
+							1; TELEPORT_FAILURE_RESULT_RANDOMBEACON,
+						))
+							if(TELEPORT_FAILURE_RESULT_BURN)
+								var/list/targetable_bodyparts = list()
+
+								for(var/obj/item/bodypart/bodypart as anything in human.bodyparts)
+									if(bodypart.body_part != HEAD && bodypart.body_part != CHEST)
+										targetable_bodyparts += bodypart
+
+								if(targetable_bodyparts.len)
+									var/obj/item/bodypart/bodypart_to_target= pick(targetable_bodyparts)
+									bodypart_to_target.receive_damage(burn = rand(50, 100))
+							if(TELEPORT_FAILURE_RESULT_ORGANDAMAGE)
+								var/list/damageable_organs = list()
+
+								for(var/obj/item/organ/organ as anything in human.internal_organs)
+									if(!(organ.organ_flags & ORGAN_SYNTHETIC))
+										damageable_organs += organ
+
+								if(damageable_organs.len)
+									var/obj/item/organ/organ_to_damage = pick(damageable_organs)
+									organ_to_damage.applyOrganDamage(rand(50, 100))
+							if(TELEPORT_FAILURE_RESULT_DISMEMBER)
+								var/list/targetable_bodyparts = list()
+
+								for(var/obj/item/bodypart/bodypart as anything in human.bodyparts)
+									if(bodypart.body_part != HEAD && bodypart.body_part != CHEST)
+										if(bodypart.dismemberable)
+											targetable_bodyparts += bodypart
+
+								if(targetable_bodyparts.len)
+									var/obj/item/bodypart/bodypart_to_target= pick(targetable_bodyparts)
+									bodypart_to_target.dismember()
+
+							if(TELEPORT_FAILURE_RESULT_RANDOMBEACON)
+								/* TODO: Make this less copy-pasta alfredo from teleporter computer. */
+								var/list/tp_locations = list()
+								var/list/areaindex = list()
+								if(teleport_console.regime_set == "Teleporter")
+									for(var/obj/item/beacon/tp_beacon in GLOB.teleportbeacons)
+										if(teleport_console.is_eligible(tp_beacon))
+											if(tp_beacon.renamed)
+												tp_locations[avoid_assoc_duplicate_keys("[tp_beacon.name] ([get_area(tp_beacon)])", areaindex)] = tp_beacon
+											else
+												var/area/tp_area = get_area(tp_beacon)
+												tp_locations[avoid_assoc_duplicate_keys(tp_area.name, areaindex)] = tp_beacon
+
+									for(var/obj/item/implant/tracking/tracked_implant in GLOB.tracked_implants)
+										if(!tracked_implant.imp_in || !isliving(tracked_implant.loc) || !tracked_implant.allow_teleport)
+											continue
+										else
+											var/mob/living/tracked_mob = tracked_implant.loc
+											if(tracked_mob.stat == DEAD)
+												if(tracked_mob.timeofdeath + tracked_implant.lifespan_postmortem < world.time)
+													continue
+											if(teleport_console.is_eligible(tracked_implant))
+												tp_locations[avoid_assoc_duplicate_keys("[tracked_mob.real_name] ([get_area(tracked_mob)])", areaindex)] = tracked_implant
+								teleport_console.say("Warning: Calibration error, could not cleanly lock onto beacon.")
+								teleport_console.set_teleport_target(tp_locations[desc])
 
 					human.apply_effect((rand(120 - accuracy * 40, 180 - accuracy * 60)), EFFECT_IRRADIATE, 0)
 			calibrated = FALSE
 	return
+
+#undef TELEPORT_FAILURE_RESULT_BURN
+#undef TELEPORT_FAILURE_RESULT_ORGANDAMAGE
+#undef TELEPORT_FAILURE_RESULT_DISMEMBER
+#undef TELEPORT_FAILURE_RESULT_RANDOMBEACON
 
 /obj/machinery/teleport/hub/update_icon_state()
 	icon_state = "[base_icon_state][panel_open ? "-o" : (is_ready() ? 1 : 0)]"
