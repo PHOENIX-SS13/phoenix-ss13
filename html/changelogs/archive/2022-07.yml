@@ -1,0 +1,7 @@
+2022-07-14:
+  Alex 'Avunia' Takiya (atakiya):
+  - balance: Teleporters have been updated to not turn crew into flies anymore. However,
+      uncalibrated teleportation is still dangerous and voids your warranty.
+  - rscadd: Added layershifting verbs for mobs
+  - config: Added a new config category (client_features)
+  - config: Added a setting to enable the layershifting feature (ENABLE_MOB_LAYERSHIFTING)

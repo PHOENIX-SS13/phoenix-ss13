@@ -1,7 +1,0 @@
-author: Alex 'Avunia' Takiya (atakiya)
-changes:
-- rscadd: Added layershifting verbs for mobs
-- config: Added a new config category (client_features)
-- config: Added a setting to enable the layershifting feature (ENABLE_MOB_LAYERSHIFTING)
-merge-date: 2022-07-14
-prnumber: 1202
