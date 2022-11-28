@@ -33,6 +33,10 @@ map tradership
 	votable
 endmap
 
+map skylineship
+	votable
+endmap
+
 map icebox
 	minplayers 25
 	votable

@@ -136,6 +136,13 @@
 	name = "Mining Shuttle"
 	requires_power = TRUE
 
+/area/shuttle/common/vista
+	name = "CPCV Vista"
+	requires_power = TRUE
+
+/area/shuttle/common/vista/helm
+	name = "CPCV Vista Helm"
+
 /area/shuttle/labor
 	name = "Labor Camp Shuttle"
 	area_flags = NONE //Set this so it doesn't inherit NO_ALERTS

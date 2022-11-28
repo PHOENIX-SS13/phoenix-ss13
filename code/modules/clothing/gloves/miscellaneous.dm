@@ -166,6 +166,10 @@
 	icon_state = "hopplasma"
 	inhand_icon_state = "hopplasma"
 
+/obj/item/clothing/gloves/color/plasmaman/head_of_personnel/bridge_officer
+	name = "bridge officer's envirogloves"
+	desc = "Covers up those scandalous, bony hands. Appears to be an attempt at making a replica of the captain's gloves."
+
 /obj/item/clothing/gloves/color/plasmaman/chief_engineer
 	name = "chief engineer's envirogloves"
 	icon_state = "ceplasma"

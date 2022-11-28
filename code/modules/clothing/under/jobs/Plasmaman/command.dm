@@ -7,11 +7,23 @@
 	random_sensor = FALSE
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 0, FIRE = 95, ACID = 95, WOUND = 15)
 
+/obj/item/clothing/under/plasmaman/captain/first_mate
+	name = "first mate's plasma envirosuit"
+	desc = "It's a blue envirosuit with some gold markings denoting the rank of \"First Mate\"."
+
 /obj/item/clothing/under/plasmaman/head_of_personnel
 	name = "head of personnel's plasma envirosuit"
 	desc = "It's an envirosuit worn by someone who works in the position of \"Head of Personnel\"."
 	icon_state = "hop_envirosuit"
 	inhand_icon_state = "hop_envirosuit"
+
+/obj/item/clothing/under/plasmaman/head_of_personnel/bridge_officer
+	name = "bridge officer's plasma envirosuit"
+	desc = "It's an envirosuit worn by someone who works in the position of \"Bridge Officer\"."
+
+/obj/item/clothing/under/plasmaman/head_of_personnel/pilot
+	name = "pilot's plasma envirosuit"
+	desc = "It's an envirosuit worn by someone who works in the position of \"Pilot\"."
 
 /obj/item/clothing/under/plasmaman/security/head_of_security
 	name = "head of security's envirosuit"

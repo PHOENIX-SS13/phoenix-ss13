@@ -273,6 +273,10 @@
 	desc = "A special beret with the Head of Security's insignia emblazoned on it. A symbol of excellence, a badge of courage, a mark of distinction."
 	icon_state = "hosberet"
 
+/obj/item/clothing/head/beret/sec/navyhos/security_team_lead
+	name = "security team lead's beret"
+	desc = "A special beret worn commonly worn by security team leaders, marked with a fancy insignia of rank."
+
 /obj/item/clothing/head/beret/sec/navywarden
 	name = "warden's beret"
 	desc = "A special beret with the Warden's insignia emblazoned on it. For wardens with class."
@@ -284,6 +288,11 @@
 	desc = "A special beret with the security insignia emblazoned on it. For officers with class."
 	icon_state = "officerberet"
 
+/obj/item/clothing/head/beret/sec/navyofficer/cpcofficer
+	name = "CPC navy beret"
+	desc = "A special beret with the Commonwealth of Periphery Colonies insignia emblazoned on it. For officers with class."
+	icon_state = "officerberet"
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 20, ACID = 50, WOUND = 4)
 //Medical
 /obj/item/clothing/head/beret/medical
 	name = "medical beret"

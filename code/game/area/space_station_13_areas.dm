@@ -1479,3 +1479,139 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/maintenance/external/port/bow
 	name = "Port Bow External Hull Access"
+
+//Skyline Ship Area Additions
+/area/command/heads_quarters/skylineship/first_mate
+	name = "First Mate's Quarters"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/command/heads_quarters/skylineship/pilot
+	name = "Pilot's Quarters"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/command/heads_quarters/skylineship/bridge_officer
+	name = "Bridge Officer's Quarters"
+
+/area/command/heads_quarters/skylineship/personnel_office
+	name = "Personnel Management Office"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/engineering/skylineship/thruster_maintenance
+	name = "Thruster Maintenance"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/service/skyline/kitchen/coldroom/underbelly
+	name = "Underbelly Kitchen Coldroom"
+
+/area/hallway/skylineship/underbelly/port
+	name = "Underbelly Port Hallway"
+	icon_state = "hallP"
+
+/area/hallway/skylineship/underbelly/starboard
+	name = "Underbelly Starboard Hallway"
+	icon_state = "hallS"
+
+/area/hallway/skylineship/deck_1_hallway
+	name = "Deck 1 Hallway"
+
+/area/hallway/skylineship/deck_2_hallway
+	name = "Deck 2 Hallway"
+
+/area/hallway/skylineship/deck_3_hallway
+	name = "Deck 3 Hallway"
+
+/area/hallway/skylineship/deck_4_hallway
+	name = "Deck 4 Hallway"
+
+/area/hallway/skylineship/deck_5_hallway
+	name = "Deck 5 Hallway"
+
+/area/hallway/skylineship/deck_6_hallway
+	name = "Deck 6 Hallway"
+
+// Skyline Maints
+/area/maintenance/skylineship/aft
+	name = "Aft Maintenance"
+	icon_state = "amaint"
+
+/area/maintenance/skylineship/aft/deck_1_aft_maintenance
+	name = "Deck 1 Aft Maintenance"
+
+/area/maintenance/skylineship/aft/deck_2_aft_maintenance
+	name = "Deck 2 Aft Maintenance"
+
+/area/maintenance/skylineship/aft/deck_3_aft_maintenance
+	name = "Deck 3 Aft Maintenance"
+
+/area/maintenance/skylineship/aft/deck_4_aft_maintenance
+	name = "Deck 4 Aft Maintenance"
+
+/area/maintenance/skylineship/aft/deck_5_aft_maintenance
+	name = "Deck 5 Aft Maintenance"
+
+/area/maintenance/skylineship/aft/deck_6_aft_maintenance
+	name = "Deck 6 Aft Maintenance"
+
+/area/maintenance/skylineship/underbelly/starboard
+	name = "Underbelly Starboard Maintenance"
+	icon_state = "smaint"
+
+/area/maintenance/skylineship/starboard
+	name = "Starboard Maintenance"
+	icon_state = "smaint"
+
+/area/maintenance/skylineship/starboard/deck_1_starboard_maintenance
+	name = "Deck 1 Starboard Maintenance"
+
+/area/maintenance/skylineship/starboard/deck_2_starboard_maintenance
+	name = "Deck 2 Starboard Maintenance"
+
+/area/maintenance/skylineship/starboard/deck_3_starboard_maintenance
+	name = "Deck 3 Starboard Maintenance"
+
+/area/maintenance/skylineship/starboard/deck_4_starboard_maintenance
+	name = "Deck 4 Starboard Maintenance"
+
+/area/maintenance/skylineship/starboard/deck_5_starboard_maintenance
+	name = "Deck 5 Starboard Maintenance"
+
+/area/maintenance/skylineship/starboard/deck_6_starboard_maintenance
+	name = "Deck 6 Starboard Maintenance"
+
+/area/maintenance/skylineship/underbelly/port
+	name = "Underbelly Port Maintenance"
+	icon_state = "pmaint"
+
+/area/maintenance/skylineship/underbelly/stowaway
+	name = "Stowaway Hideout"
+
+/area/maintenance/skylineship/port
+	name = "Port Maintenance"
+	icon_state = "pmaint"
+
+/area/maintenance/skylineship/port/deck_1_port_maintenance
+	name = "Deck 1 Port Maintenance"
+
+/area/maintenance/skylineship/port/deck_2_port_maintenance
+	name = "Deck 2 Port Maintenance"
+
+/area/maintenance/skylineship/port/deck_3_port_maintenance
+	name = "Deck 3 Port Maintenance"
+
+/area/maintenance/skylineship/port/deck_4_port_maintenance
+	name = "Deck 4 Port Maintenance"
+
+/area/maintenance/skylineship/port/deck_5_port_maintenance
+	name = "Deck 5 Port Maintenance"
+
+/area/maintenance/skylineship/port/deck_6_port_maintenance
+	name = "Deck 6 Port Maintenance"
+
+/area/engineering/skylineship/turbine1
+	name = "Turbine 1"
+
+/area/engineering/skylineship/turbine2
+	name = "Turbine 2"
+
+/area/engineering/skylineship/turbine3
+	name = "Turbine 3"

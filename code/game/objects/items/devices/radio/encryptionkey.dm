@@ -140,3 +140,22 @@
 	name = "wideband encryption key"
 	icon_state = "wideband_cypherkey"
 	channels = list(RADIO_CHANNEL_WIDEBAND = 1)
+
+// Skyline Additions //
+
+/obj/item/encryptionkey/headset_srvsci
+	name = "xenobotany radio encryption key"
+	icon_state = "sci_cypherkey"
+	channels = list(RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_SERVICE = 1)
+
+/obj/item/encryptionkey/headset_careng
+	name = "salvage radio encryption key"
+	icon_state = "cargo_cypherkey"
+	channels = list(RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_ENGINEERING = 1)
+
+/obj/item/encryptionkey/heads/lead_deckhand
+	name = "\proper lead deckhand's encryption key"
+	icon_state = "cargo_cypherkey"
+	channels = list(RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_COMMAND = 1)
+
+// End Additions //

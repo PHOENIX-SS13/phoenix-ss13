@@ -25,6 +25,9 @@
 	icon_state = "rsecurity"
 	inhand_icon_state = "r_suit"
 
+/obj/item/clothing/under/rank/security/officer/skylineship
+	desc = "A tactical jumpsuit for security personnel."
+
 /obj/item/clothing/under/rank/security/officer/grey
 	name = "grey security jumpsuit"
 	desc = "A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."
@@ -47,6 +50,10 @@
 	icon_state = "blueshift"
 	inhand_icon_state = "blueshift"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/security/officer/blueshirt/cpcofficer
+	name = "officer's formal shirt and tie"
+	desc = "A formal shirt and tie emblazen with the insignia of the Commonwealth of Periphery Colonies."
 
 /obj/item/clothing/under/rank/security/officer/formal
 	name = "security officer's formal uniform"
@@ -188,6 +195,10 @@
 	name = "head of security's formal uniform"
 	icon_state = "hosblueclothes"
 	inhand_icon_state = "hosblueclothes"
+
+/obj/item/clothing/under/rank/security/head_of_security/formal/security_team_lead
+	desc = "The insignia on this uniform tells you that this uniform belongs to the Security Team Lead."
+	name = "security team lead's uniform"
 
 /*
  *Spacepol

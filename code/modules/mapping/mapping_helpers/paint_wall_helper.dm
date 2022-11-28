@@ -60,3 +60,70 @@
 	name = "Hotel Wood Paint"
 	stripe_paint = "#54402D"
 	wall_paint = "#54402D"
+
+// Skyline Ship Additions //
+
+/obj/effect/mapping_helpers/paint_wall/skyline
+
+/obj/effect/mapping_helpers/paint_wall/skyline/outer_hull
+	name = "CPCV Skyline Outer Hull"
+	wall_paint = "#fcba03"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/outer_hull/stripe
+	name = "CPCV Skyline Outer Hull Stripe"
+	wall_paint = "#e3e3e3"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull
+	name = "CPCV Skyline Inner Hull"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/cook
+	name = "CPCV Skyline Inner Hull - Cook"
+	stripe_paint = "#DE3A3A"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/detective
+	name = "CPCV Skyline Inner Hull - Detective"
+	stripe_paint = "#54402D"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/janitor
+	name = "CPCV Skyline Inner Hull - Janitor"
+	stripe_paint = "#D381C9"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/cargo
+	name = "CPCV Skyline Inner Hull - Cargo"
+	stripe_paint = "#EFB341"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/command
+	name = "CPCV Skyline Inner Hull - Command"
+	stripe_paint = "#3a6abd"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering
+	name = "CPCV Skyline Inner Hull - Engineering"
+	stripe_paint = "#fcba03"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/medbay
+	name = "CPCV Skyline Inner Hull - Medbay"
+	stripe_paint = "#52B4E9"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/research
+	name = "CPCV Skyline Inner Hull - Research"
+	stripe_paint = "#D381C9"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/security
+	name = "CPCV Skyline Inner Hull Security"
+	stripe_paint = "#DE3A3A"
+	wall_paint = "#53565A"
+
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/silicon
+	name = "CPCV Skyline Inner Hull - Silicon"
+	stripe_paint = "#aaaaaa"
+	wall_paint = "#53565A"
+

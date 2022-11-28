@@ -255,7 +255,7 @@
 							iter++
 							virtual_levels |= vlevel
 							freeform_virtual_levels["[iter]. [vlevel.name] - Freeform"] = vlevel
-			
+
 				var/list/obj/docking_port/stationary/docks = list()
 				var/list/options = params2list(my_shuttle.possible_destinations)
 				var/iter = 0
@@ -270,11 +270,11 @@
 						continue
 					iter++
 					docks["[iter]. [iterated_dock.name]"] = iterated_dock
-	
+
 				dat += "<B>Designated docks:</B>"
 				for(var/key in docks)
 					dat += "<BR> - [key] - <a href='?src=[REF(src)];task=dock;dock_control=normal_dock;dock_id=[docks[key].id]'>Dock</a>"
-	
+
 				dat += "<BR><BR><B>Freeform docking spaces:</B>"
 				for(var/key in freeform_virtual_levels)
 					var/datum/virtual_level/vlevel = freeform_virtual_levels[key]
@@ -408,7 +408,7 @@
 				return
 			if(VECTOR_LENGTH(velocity_x, velocity_y) > SHUTTLE_MAXIMUM_DOCKING_SPEED)
 				return
-			
+
 			switch(href_list["dock_control"])
 				if("normal_dock")
 					if(shuttle_controller.busy)
@@ -449,7 +449,7 @@
 						return
 					shuttle_controller.SetController(usr)
 					shuttle_controller.freeform_docker = new /datum/shuttle_freeform_docker(shuttle_controller, usr, vlevel)
-			
+
 		if("target")
 			if(!(shuttle_capability & SHUTTLE_CAN_USE_TARGET))
 				return
@@ -655,6 +655,10 @@
 
 /datum/overmap_object/shuttle/ship/bearcat
 	name = "FTV Bearcat"
+	fixed_parallax_dir = NORTH
+
+/datum/overmap_object/shuttle/ship/skyline
+	name = "CPCV Skyline"
 	fixed_parallax_dir = NORTH
 
 /datum/overmap_object/shuttle/planet

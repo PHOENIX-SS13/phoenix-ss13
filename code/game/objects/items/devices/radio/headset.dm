@@ -352,3 +352,100 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	if (command)
 		use_command = !use_command
 		to_chat(user, SPAN_NOTICE("You toggle high-volume mode [use_command ? "on" : "off"]."))
+
+// Skyline Additions //
+
+/obj/item/radio/headset/heads/skyline/first_mate
+	name = "\proper the first mate's headset"
+	desc = "The headset of the dependable mate."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/heads/skyline/bridge_officer
+	name = "\proper the bridge officer's headset"
+	desc = "The headset of some overworked sap."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/heads/skyline/pilot
+	name = "\proper the pilot's headset"
+	desc = "The headset of a helmsperson. Has inbuilt hearing protection"
+	icon_state = "com_headset_alt"
+	inhand_icon_state = "com_headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_com
+
+/obj/item/radio/headset/heads/pilot/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+/obj/item/radio/headset/heads/skyline/lead_researcher
+	name = "\proper the lead researcher's headset"
+	desc = "Headset of a senior researcher."
+	icon_state = "sci_headset"
+	keyslot = new /obj/item/encryptionkey/heads/rd
+
+/obj/item/radio/headset/heads/skyline/lead_doctor
+	name = "\proper the lead doctor's headset"
+	desc = "The headset of the leading MD."
+	icon_state = "med_headset"
+	keyslot = new /obj/item/encryptionkey/heads/cmo
+
+/obj/item/radio/headset/heads/skyline/lead_engineer
+	name = "\proper the lead engineer's headset"
+	desc = "The headset of the guy in charge of keeping the ship powered and undamaged."
+	icon_state = "eng_headset"
+	keyslot = new /obj/item/encryptionkey/heads/ce
+
+/obj/item/radio/headset/heads/skyline/security_team_lead
+	name = "\proper the security team lead's bowman headset"
+	desc = "The headset of the person in charge of protecting the ship's crew. Protects ears from flashbangs."
+	icon_state = "sec_headset_alt"
+	inhand_icon_state = "sec_headset_alt"
+	keyslot = new /obj/item/encryptionkey/heads/hos
+
+/obj/item/radio/headset/heads/skyline/security_team_lead/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+/obj/item/radio/headset/heads/skyline/lead_deckhand
+	name = "\proper the lead deckhand's radio headset"
+	desc = "A headset used by the lead deckhand."
+	icon_state = "cargo_headset"
+	keyslot = new /obj/item/encryptionkey/heads/lead_deckhand
+
+/obj/item/radio/headset/skyline/deckhand
+	name = "deckhand radio headset"
+	desc = "A headset used by the lowly deckhand."
+	icon_state = "cargo_headset"
+	keyslot = new /obj/item/encryptionkey/headset_cargo
+
+/obj/item/radio/headset/skyline/salvage_worker
+	name = "salvaging radio headset"
+	desc = "A headset used by salvage workers."
+	icon_state = "mine_headset"
+	keyslot = new /obj/item/encryptionkey/headset_careng
+
+/obj/item/radio/headset/skyline/xenobotanist
+	name = "xenobotanist radio headset"
+	desc = "A headset used by xenobotanists to keep in tune with service and science needs."
+	icon_state = "srv_headset"
+	keyslot = new /obj/item/encryptionkey/headset_srvsci
+
+/obj/item/radio/headset/skyline/roboticist
+	name = "ship robotics radio headset"
+	desc = "Made specifically for the roboticists, who tend to the various silicon-based lifeforms on the ship."
+	icon_state = "rob_headset"
+	keyslot = new /obj/item/encryptionkey/headset_medsci
+
+/obj/item/radio/headset/skyline/private_investigator
+	name = "private investigator bowman headset"
+	desc = "In the criminal justice headset, the encryption key represents two separate but equally important groups. Security, who investigate crime, and Service, who provide services. These are their comms. Protects ears from flashbangs."
+	icon_state = "sec_headset_alt"
+	inhand_icon_state = "sec_headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_srvsec
+
+/obj/item/radio/headset/skyline/private_investigator/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+// End Addtions

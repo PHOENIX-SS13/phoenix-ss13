@@ -58,6 +58,10 @@
 	suffix = "rockdove"
 	name = "EMS Rockdove"
 
+/datum/map_template/shuttle/common/vista
+	suffix = "vista"
+	name = "CPCV Vista"
+
 /datum/map_template/shuttle/common/platform_small
 	suffix = "platform_small"
 	name = "Platform Shuttle"

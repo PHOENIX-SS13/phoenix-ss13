@@ -309,12 +309,24 @@
 	icon_state = "hop_envirohelm"
 	inhand_icon_state = "hop_envirohelm"
 
+/obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel/bridge_officer
+	name = "bridge officer's envirosuit helmet"
+	desc = "A special containment helmet designed for a Bridge Officer."
+
+/obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel/pilot
+	name = "pilot's envirosuit helmet"
+	desc = "A special containment helmet designed for a Pilot, containing a helmet-mounted flight display."
+
 /obj/item/clothing/head/helmet/space/plasmaman/captain
 	name = "captain's plasma envirosuit helmet"
 	desc = "A special containment helmet designed for the Captain. Embarrassingly enough, it looks way too much like the Head of Personnel's design save for the gold stripes. I mean, come on. Gold stripes can fix anything."
 	icon_state = "captain_envirohelm"
 	inhand_icon_state = "captain_envirohelm"
 	armor = list(MELEE = 20, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, RAD = 0, FIRE = 100, ACID = 75, WOUND = 10)
+
+/obj/item/clothing/head/helmet/space/plasmaman/captain/first_mate
+	name = "first mates's envirosuit helmet"
+	desc = "A special containment helmet designed for the First Mate."
 
 /obj/item/clothing/head/helmet/space/plasmaman/centcom_commander
 	name = "CentCom commander plasma envirosuit helmet"
