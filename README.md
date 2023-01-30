@@ -1,29 +1,34 @@
 # Horizon Station 13
 
-[![GitHub continuous integrations status](https://img.shields.io/github/workflow/status/hrzntal/horizon/CI%20Suite/main?style=for-the-badge)](https://github.com/hrzntal/horizon/actions?query=workflow%3A%22CI+Suite%22)
+[![GitHub continuous integrations status](https://img.shields.io/github/actions/workflow/status/hrzntal/horizon/ci_suite.yml?branch=main&style=for-the-badge)](https://github.com/hrzntal/horizon/actions?query=workflow%3A%22CI+Suite%22)
 [![Open GitHub pull requests](https://img.shields.io/github/issues-pr/hrzntal/horizon?color=blue&style=for-the-badge)](https://github.com/hrzntal/horizon/pulls)
-[![Open GitHub issues marked as tracked bugs](https://img.shields.io/github/issues/hrzntal/horizon/Issue%20:%20Bug%20-%20Tracked?label=Bug%20Reports&style=for-the-badge)](https://github.com/hrzntal/horizon/issues?q=is%3Aissue+is%3Aopen+label%3A%22Issue+%3A+Bug+-+Tracked%22)
+[![Open GitHub issues marked as tracked bugs](https://img.shields.io/github/issues/hrzntal/horizon/🐛%20Issue%20:%20Bug%20-%20Tracked?label=Bug%20Reports&style=for-the-badge)](https://github.com/hrzntal/horizon/issues?q=is%3Aissue+is%3Aopen+label%3A%22🐛+Issue+%3A+Bug+-+Tracked%22)
 [![Open GitHub issues marked as feature requests](https://img.shields.io/github/issues/hrzntal/horizon/Issue%20:%20Feature%20Request?label=Feature%20Requests&color=a180f2&style=for-the-badge)](https://github.com/hrzntal/horizon/issues?q=is%3Aissue+is%3Aopen+label%3A%22Issue%3AFeature+Request%22)
 
-![Built with Resentment](https://img.shields.io/static/v1?label=Built%20with&message=Resentment&labelColor=e36d25&color=d15d27&style=for-the-badge)
+![Built with Aerogel](https://img.shields.io/static/v1?label=Built%20with&message=Aerogel&labelColor=e36d25&color=d15d27&style=for-the-badge)
 ![Contains Tasty Spaghetti Code](https://img.shields.io/static/v1?label=Contains&message=Tasty%20Spaghetti%20Code&labelColor=31c4f3&color=389ad5&style=for-the-badge)
 ![Powered By Tailwags](https://img.shields.io/static/v1?label=Powered%20By&message=Tailwags&labelColor=c1d72f&color=5d9741&style=for-the-badge)
 
 ---
 
 ## About
-Welcome to the Horizon Station 13 codebase.  
-TBD
+Welcome to the Horizon Station 13 codebase.
 
-Code based on [/tg/station](https://github.com/tgstation/tgstation) among others.
+Horizon13 is a mainly roleplay-centric Space Station 13 codebase, running via the BYOND engine.  
+It features a relatively performant base, focus on maintaining performance and responsiveness for players, especially with UIs.
 
-| Helpful URLs |                               |
-|---------|------------------------------------|
-| Website | https://hrzn.fun                   |
-| Code    | https://github.com/hrzntal/horizon |
-| Discord | https://discord.hrzn.fun           |
-| Git/GitHub cheatsheet | https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833 |
-| BYOND   | https://byond.com                  |
+This codebase started as a fork from /tg/station in Q2 2021.  
+The majority of code and assets is based off works from contributors at [/tg/station](https://github.com/tgstation/tgstation)  
+Other code and assets come or are inspired from the rest of the SS13 community, or are made entirely in-house.
+
+
+Helpful URLs          |<nbsp/>
+----------------------|------------------------------------
+Website               | https://hrzn.fun                   
+Code                  | https://github.com/hrzntal/horizon 
+Discord               | https://discord.hrzn.fun           
+Git/GitHub cheatsheet | https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833 
+BYOND                 | https://byond.com                  
 ---
 
 ## DOWNLOADING
@@ -33,9 +38,7 @@ Code based on [/tg/station](https://github.com/tgstation/tgstation) among others
 
 [Maps and Away Missions](.github/MAPS_AND_AWAY_MISSIONS.md)
 
-## :exclamation: How to compile :exclamation:
-
-On **2021-01-04** tgstation has changed the way to compile the codebase.
+## ❗ How to compile ❗
 
 **The quick way**. Find `bin/server.cmd` in this folder and double click it to automatically build and host the server on port 1337.
 
@@ -47,10 +50,6 @@ On **2021-01-04** tgstation has changed the way to compile the codebase.
 
 ## Requirements for contributors
 [Guidelines for Contributors](.github/CONTRIBUTING.md)
-
-<!-- Hopefully soon.
-[/tg/station HACKMD account](https://hackmd.io/@tgstation) - Design documentation here
--->
 
 [Documenting your code](.github/AUTODOC_GUIDE.md)
 
