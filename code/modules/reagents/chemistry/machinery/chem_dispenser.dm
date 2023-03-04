@@ -214,6 +214,8 @@
 		data["beakerMaxVolume"] = beaker.volume
 		data["beakerTransferAmounts"] = beaker.possible_transfer_amounts
 		data["beakerCurrentpH"] = round(beaker.reagents.ph, 0.01)
+		if(istype(beaker, /obj/item/reagent_containers/spray))
+			data["beakerTransferAmounts"] = list(5,10,20,30,50,75,100,125,250)
 	else
 		data["beakerCurrentVolume"] = null
 		data["beakerMaxVolume"] = null
@@ -252,7 +254,7 @@
 			if(!is_operational || QDELETED(beaker))
 				return
 			var/target = text2num(params["target"])
-			if(target in beaker.possible_transfer_amounts)
+			if((target in beaker.possible_transfer_amounts) || istype(beaker, /obj/item/reagent_containers/spray))
 				amount = target
 				work_animation()
 				. = TRUE
@@ -279,7 +281,7 @@
 			if(!is_operational || recording_recipe)
 				return
 			var/amount = text2num(params["amount"])
-			if(beaker && (amount in beaker.possible_transfer_amounts))
+			if(beaker && ((amount in beaker.possible_transfer_amounts) || istype(beaker, /obj/item/reagent_containers/spray)))
 				beaker.reagents.remove_all(amount)
 				work_animation()
 				. = TRUE
