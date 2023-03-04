@@ -215,7 +215,12 @@
 		data["beakerTransferAmounts"] = beaker.possible_transfer_amounts
 		data["beakerCurrentpH"] = round(beaker.reagents.ph, 0.01)
 		if(istype(beaker, /obj/item/reagent_containers/spray))
-			data["beakerTransferAmounts"] = list(5,10,20,30,50,75,100,125,250)
+			var/spraytransferlist[0]
+			spraytransferlist.Add(list(5,10,25,30,50,75,100))
+			if(beaker.volume == 250)
+				spraytransferlist.Add(125)
+				spraytransferlist.Add(250)
+			data["beakerTransferAmounts"] = spraytransferlist
 	else
 		data["beakerCurrentVolume"] = null
 		data["beakerMaxVolume"] = null
