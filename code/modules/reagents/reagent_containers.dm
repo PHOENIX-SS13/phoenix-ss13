@@ -8,6 +8,7 @@
 	var/list/possible_transfer_amounts = list(5,10,15,20,25,30)
 	/// Where we are in the possible transfer amount list.
 	var/amount_list_position = 1
+	var/list/dispenser_transfer_amounts = null //when set, dispenser use these amounts. Otherwise, use normal amounts.
 	var/volume = 30
 	var/reagent_flags
 	var/list/list_reagents = null
