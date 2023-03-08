@@ -143,8 +143,7 @@
 		user.visible_message(SPAN_NOTICE("[user] begins to clean \the [target.name] with [src]..."), SPAN_NOTICE("You begin to clean \the [target.name] with [src]..."))
 		if(do_after(user, cleanspeed, target = target))
 			to_chat(user, SPAN_NOTICE("You clean \the [target.name]."))
-			target.wash(CLEAN_SCRUB)
-			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+			target.wash(CLEAN_SURFACE)
 			decreaseUses(user)
 	return
 

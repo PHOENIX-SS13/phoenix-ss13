@@ -1115,7 +1115,7 @@
 		. = TRUE
 
 	// Basically "if has washable coloration"
-	if(length(atom_colours) >= WASHABLE_COLOUR_PRIORITY && atom_colours[WASHABLE_COLOUR_PRIORITY])
+	if((clean_types & CLEAN_TYPE_PAINT) && length(atom_colours) >= WASHABLE_COLOUR_PRIORITY && atom_colours[WASHABLE_COLOUR_PRIORITY])
 		remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 		return TRUE
 

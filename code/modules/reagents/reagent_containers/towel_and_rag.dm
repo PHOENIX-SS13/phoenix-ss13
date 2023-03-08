@@ -73,7 +73,7 @@
 		user.visible_message(SPAN_NOTICE("[user] finishes wiping off [cleaned_atom]!"), SPAN_NOTICE("You finish wiping off [cleaned_atom]."))
 		if(wipe_sound)
 			playsound(cleaned_atom, wipe_sound, 25, 1)
-		cleaned_atom.wash(CLEAN_SCRUB)
+		cleaned_atom.wash(CLEAN_SURFACE)
 
 /obj/item/reagent_containers/rag/proc/pat_flames_out(mob/living/target, mob/living/user)
 	user.visible_message(SPAN_WARNING("\The [user] pats out [target == user ? "[user.p_their()]" : "\the [target]'s"] flames with \the [src]!"))
