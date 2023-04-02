@@ -313,7 +313,7 @@
 
 		var/turf/T = get_turf(A)
 		if(do_after(src, 1, target = T))
-			T.wash(CLEAN_SCRUB)
+			T.wash(CLEAN_SURFACE)
 			visible_message(SPAN_NOTICE("[src] cleans \the [T]."))
 			target = null
 
