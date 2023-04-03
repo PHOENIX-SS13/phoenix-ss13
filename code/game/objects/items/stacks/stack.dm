@@ -143,6 +143,8 @@
 		else
 			. += "There is enough energy for [get_amount()]."
 		return
+	if(material_flags & MATERIAL_CHEAP)
+		. += "The material looks cheaply made."
 	if(singular_name)
 		if(get_amount()>1)
 			. += "There are [get_amount()] [singular_name]\s in the stack."

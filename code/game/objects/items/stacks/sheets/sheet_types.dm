@@ -307,6 +307,10 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 /obj/item/stack/sheet/mineral/wood/fifty
 	amount = 50
 
+/obj/item/stack/sheet/mineral/wood/fifty/cheap
+	material_flags = MATERIAL_CHEAP
+	obj_flags = CHEAP_MATERIALS
+
 /*
  * Bamboo
  */

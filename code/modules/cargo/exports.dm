@@ -109,8 +109,16 @@ Then the player gets the profit from selling his own wasted time.
 		if(k_elasticity!=0)
 			return round((cost/k_elasticity) * (1 - NUM_E**(-1 * k_elasticity * amount))) //anti-derivative of the marginal cost function
 		else
+			if(isobj(O))
+				var/obj/obj = O
+				if(obj.obj_flags & CHEAP_MATERIALS)
+					return round(cost * amount / 2)
 			return round(cost * amount) //alternative form derived from L'Hopital to avoid division by 0
 	else
+		if(isobj(O))
+			var/obj/obj = O
+			if(obj.obj_flags & CHEAP_MATERIALS)
+				return round(init_cost * amount / 2)
 		return round(init_cost * amount)
 
 // Checks the amount of exportable in object. Credits in the bill, sheets in the stack, etc.

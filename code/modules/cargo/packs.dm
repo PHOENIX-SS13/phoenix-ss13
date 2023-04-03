@@ -1137,7 +1137,7 @@
 	name = "50 Wood Planks"
 	desc = "Turn cargo's boring metal groundwork into beautiful panelled flooring and much more with fifty wooden planks!"
 	cost = CARGO_CRATE_VALUE * 4
-	contains = list(/obj/item/stack/sheet/mineral/wood/fifty)
+	contains = list(/obj/item/stack/sheet/mineral/wood/fifty/cheap)
 	crate_name = "wood planks crate"
 
 /datum/supply_pack/materials/foamtank

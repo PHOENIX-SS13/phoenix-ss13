@@ -18,6 +18,7 @@
 #define BLOCK_ALLOW_TRANSPARENCY (1<<14)  // Whether a FULL_BLOCK_Z_BELOW still allows turf transparency to happen. Special flag for cases where you don't really want to update the transparency often so you just dont block it in the first place.
 #define FULL_BLOCK_Z_ABOVE (1<<15) // Should this object block all z interactions to the above turf? //DOES NOT BLOCK ATMOS (do your own atmos pass logic)
 #define NO_BUILD (1<<16) // Can we build on this object?
+#define CHEAP_MATERIALS (1<<17) //Object's export cost is lowered.
 
 // If you add new ones, be sure to add them to /obj/Initialize as well for complete mapping support
 

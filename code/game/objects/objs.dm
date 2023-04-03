@@ -323,6 +323,8 @@
 		. += SPAN_NOTICE("Use a pen on it to rename it or change its description.")
 	if(unique_reskin && !current_skin)
 		. += SPAN_NOTICE("Alt-click it to reskin it.")
+	if(obj_flags & CHEAP_MATERIALS)
+		. += SPAN_NOTICE("It appears to be made of cheap materials.")
 
 /obj/AltClick(mob/user)
 	. = ..()

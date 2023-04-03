@@ -133,6 +133,12 @@ Simple datum which is instanced once per type and is used for every object of sa
 			temp_armor_list[i] = current_armor[i] * armor_modifiers[i]
 		o.armor = getArmor(arglist(temp_armor_list))
 
+	if(!isobj(o))
+		return
+	var/obj/obj = o
+	if(material_flags & MATERIAL_CHEAP)
+		obj.obj_flags |= CHEAP_MATERIALS
+
 	if(!isitem(o))
 		return
 	var/obj/item/item = o
@@ -146,6 +152,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 			new_inhand_left = lefthand_path,
 			new_inhand_right = righthand_path
 		)
+
 
 	if(!item_sound_override)
 		return
@@ -213,6 +220,10 @@ Simple datum which is instanced once per type and is used for every object of sa
 			new_inhand_left = initial(item.greyscale_config_inhand_left),
 			new_inhand_right = initial(item.greyscale_config_inhand_right)
 		)
+
+	if(material_flags & MATERIAL_CHEAP)
+		var/obj/obj = o
+		obj.obj_flags &= ~CHEAP_MATERIALS
 
 /datum/material/proc/on_removed_turf(turf/T, amount, material_flags)
 	if(alpha < 255)
