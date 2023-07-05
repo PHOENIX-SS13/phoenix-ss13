@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "type_definitions.schema.json",
-	"title": "Horizon Changelog Type Definitions Schema",
+	"title": "Phoenix Changelog Type Definitions Schema",
 	"definitions": {
 		"changetype": {
 			"description": "Type of the changelog entry",

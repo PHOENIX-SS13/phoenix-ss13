@@ -2,13 +2,10 @@
 
 '''ingest_pr_changelog.py - Parse & compile changelog metadata for SS13 from PRs
 
-Copyright 2022, Alex 'Avunia' Takiya <takiya.eu>
-Copyright 2022, Horizon Project <hrzn.fun>
-
 Licensed under MIT - see adjacent LICENSE file for more information.
 '''
 
-__copyright__ = "Copyright 2022, Alex 'Avunia' Takiya <takiya.eu>"
+__copyright__ = ""
 __version__ = "1.0.0"
 
 import argparse, html, json, logging, re

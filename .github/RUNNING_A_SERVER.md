@@ -12,7 +12,7 @@ saving environment.dmb (DEBUG mode)
 environment.dmb - 0 errors, 0 warnings
 ```
 *⚠️ Note: "environment" will be the name of the codebase you're working on.*  
-*For example `tgstation.dmb` or `horizon.dmb`*  
+*For example `tgstation.dmb` or `phoenix.dmb`*  
 *This pattern will come up multiple times in this document.*
 
 If you see any errors or warnings, something has gone wrong - possibly a corrupt

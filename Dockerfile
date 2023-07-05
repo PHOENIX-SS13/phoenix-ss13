@@ -81,5 +81,5 @@ COPY --from=build /deploy ./
 COPY --from=rust_g /rust_g/target/i686-unknown-linux-gnu/release/librust_g.so ./librust_g.so
 
 VOLUME [ "/app/config", "/app/data" ]
-ENTRYPOINT [ "DreamDaemon", "horizon.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]
+ENTRYPOINT [ "DreamDaemon", "phoenix.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]
 EXPOSE 1337
