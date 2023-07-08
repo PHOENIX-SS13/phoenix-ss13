@@ -33,8 +33,8 @@ COMMENDATION_PERCENT_POLL 0.05
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-RUN_DELAY 1.5
-WALK_DELAY 4
+RUN_DELAY 3
+WALK_DELAY 5
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
@@ -131,7 +131,7 @@ REPEATED_MODE_ADJUST 45 30 10
 
 
 ## The amount of time it takes for the emergency shuttle to be called, from round start.
-SHUTTLE_REFUEL_DELAY 12000
+SHUTTLE_REFUEL_DELAY 1
 
 ## Variables calculate how number of antagonists will scale to population.
 ## Used as (Antagonists = Population / Coeff)
@@ -231,7 +231,7 @@ MINIMAL_ACCESS_THRESHOLD 20
 #SECURITY_HAS_MAINT_ACCESS
 
 ## Uncomment to give everyone maint access.
-#EVERYONE_HAS_MAINT_ACCESS
+EVERYONE_HAS_MAINT_ACCESS
 
 ## Comment this out this to make security officers spawn in departmental security posts
 #SEC_START_BRIG
@@ -366,12 +366,12 @@ ROUNDSTART_RACES ethereal
 #ROUNDSTART_RACES silver
 #ROUNDSTART_RACES uranium
 #ROUNDSTART_RACES abductor
-#ROUNDSTART_RACES synth
+ROUNDSTART_RACES synth
 
 ## Races that are straight upgrades. If these are on expect powergamers to always pick them
 #ROUNDSTART_RACES skeleton
 #ROUNDSTART_RACES zombie
-#ROUNDSTART_RACES slime
+ROUNDSTART_RACES slime
 #ROUNDSTART_RACES pod
 #ROUNDSTART_RACES military_synth
 #ROUNDSTART_RACES agent
@@ -409,7 +409,7 @@ OVERFLOW_CAP -1
 
 ## Starlight for exterior walls and breaches. Uncomment for starlight!
 ## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
-#STARLIGHT
+STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 #GREY_ASSISTANTS
@@ -559,4 +559,4 @@ AUTOTRANSFER_VOTE_INTERVAL 36000
 ## Maximum round extensions before force-ending the round
 ###  0 for automatic shuttle call on the first vote
 ### -1 to enable infinite extensions
-AUTOTRANSFER_VOTE_MAX_EXTENSIONS 4
+AUTOTRANSFER_VOTE_MAX_EXTENSIONS -1
