@@ -790,6 +790,7 @@
 	icon_state = "hugmodule"
 	var/obj/item/stored
 	var/list/storable = list()
+	var/itemcheckoverride
 
 /obj/item/borg/apparatus/Initialize()
 	. = ..()
@@ -1002,22 +1003,30 @@
 		to_chat(user, SPAN_NOTICE("[src] is empty."))
 	return
 
-////////////////////////////
-//engi circuitboard holder//
-////////////////////////////
+//////////////////
+//engi apparatus//
+/////////////////
 
-/obj/item/borg/apparatus/circuit
-	name = "circuit manipulation apparatus"
-	desc = "A special apparatus for carrying and manipulating circuit boards."
+/obj/item/borg/apparatus/engi
+	name = "engi apparatus"
+	desc = "A special apparatus for handling enginnering tasks"
 	icon_state = "borg_hardware_apparatus"
-	storable = list(/obj/item/circuitboard,
-				/obj/item/electronics)
+	storable = list(
+				/obj/item/circuitboard,
+				/obj/item/electronics,
+				/obj/item/stock_parts/cell,
+				/obj/item/tank/internals,
+				/obj/item/wallframe,
+				/obj/item/stack,
+				/obj/item/borg/upgrade,
+				/obj/item/light,
+				/obj/item/assembly)
 
-/obj/item/borg/apparatus/circuit/Initialize()
+/obj/item/borg/apparatus/engi/Initialize()
 	. = ..()
 	update_appearance()
 
-/obj/item/borg/apparatus/circuit/update_overlays()
+/obj/item/borg/apparatus/engi/update_overlays()
 	. = ..()
 	var/mutable_appearance/arm = mutable_appearance(icon, "borg_hardware_apparatus_arm1")
 	if(stored)
@@ -1032,13 +1041,13 @@
 		. += stored_copy
 	. += arm
 
-/obj/item/borg/apparatus/circuit/examine()
+/obj/item/borg/apparatus/engi/examine()
 	. = ..()
 	if(stored)
 		. += "The apparatus currently has [stored] secured."
 	. += SPAN_NOTICE(" <i>Alt-click</i> will drop the currently stored circuit. ")
 
-/obj/item/borg/apparatus/circuit/pre_attack(atom/A, mob/living/user, params)
+/obj/item/borg/apparatus/engi/pre_attack(atom/A, mob/living/user, params)
 	. = ..()
 	if(istype(A, /obj/item/ai_module) && !stored) //If an admin wants a borg to upload laws, who am I to stop them? Otherwise, we can hint that it fails
 		to_chat(user, SPAN_WARNING("This circuit board doesn't seem to have standard robot apparatus pin holes. You're unable to pick it up."))
