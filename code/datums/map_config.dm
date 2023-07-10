@@ -19,7 +19,7 @@
 	var/map_file = "MetaStation.dmm"
 
 	var/traits = null
-	var/space_ruin_levels = 3
+	var/space_ruin_levels = 6
 
 	var/minetype = "lavaland"
 

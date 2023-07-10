@@ -39,7 +39,7 @@
 
 	)
 
-	space_ruin_levels = 4
+	//space_ruin_levels = 4
 
 	minetype = "none"
 
