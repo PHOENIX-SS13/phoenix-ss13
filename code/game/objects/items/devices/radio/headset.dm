@@ -11,7 +11,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_SUPPLY = RADIO_TOKEN_SUPPLY,
 	RADIO_CHANNEL_SERVICE = RADIO_TOKEN_SERVICE,
 	MODE_BINARY = MODE_TOKEN_BINARY,
-	RADIO_CHANNEL_AI_PRIVATE = RADIO_TOKEN_AI_PRIVATE
+	RADIO_CHANNEL_AI_PRIVATE = RADIO_TOKEN_AI_PRIVATE,
+	RADIO_CHANNEL_BROADCAST = RADIO_TOKEN_BROADCAST
 ))
 
 /obj/item/radio/headset
@@ -352,6 +353,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	if (command)
 		use_command = !use_command
 		to_chat(user, SPAN_NOTICE("You toggle high-volume mode [use_command ? "on" : "off"]."))
+
+/obj/item/radio/headset/headset_broadcast
+	name = "Broadcast Headset"
+	desc = "Headset used by radio station staff."
+	icon_state = "srv_headset"
+	keyslot = new /obj/item/encryptionkey/broadcast
 
 // Skyline Additions //
 

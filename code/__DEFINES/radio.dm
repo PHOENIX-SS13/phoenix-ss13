@@ -46,6 +46,10 @@
 #define RADIO_KEY_CENTCOM "y"
 #define RADIO_TOKEN_CENTCOM ":y"
 
+#define RADIO_CHANNEL_BROADCAST "Broadcast"
+#define RADIO_KEY_BROADCAST "b"
+#define RADIO_TOKEN_BROADCAST ":b"
+
 #define RADIO_CHANNEL_WIDEBAND "Wideband"
 
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
@@ -81,6 +85,7 @@
 #define FREQ_LOCATOR_IMPLANT 1451
 #define FREQ_SIGNALER 1457  // the default for new signalers
 #define FREQ_COMMON 1459  // Common comms frequency, dark green
+#define FREQ_BROADCAST 1481 //Broadcast Station
 
 #define MAX_FREQ 1489 // ------------------------------------------------------
 

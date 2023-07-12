@@ -67,6 +67,11 @@
 	id = "Mining Relay"
 	autolinkers = list("m_relay")
 
+/obj/machinery/telecomms/relay/preset/broadcast
+	id = "Broadcast Relay"
+	autolinkers = list("broadcast")
+	freq_listening = list(FREQ_BROADCAST, FREQ_COMMON)
+
 /obj/machinery/telecomms/relay/preset/ruskie
 	id = "Ruskie Relay"
 	hide = 1

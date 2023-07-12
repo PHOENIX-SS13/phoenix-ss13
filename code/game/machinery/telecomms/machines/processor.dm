@@ -55,3 +55,9 @@
 
 /obj/machinery/telecomms/processor/preset_one/birdstation
 	name = "Processor"
+
+/obj/machinery/telecomms/processor/preset_broadcast
+	id = "Processor 3"
+	network = "tcommsat"
+	autolinkers = list("broadcast")
+	freq_listening = list(FREQ_BROADCAST, FREQ_COMMON)

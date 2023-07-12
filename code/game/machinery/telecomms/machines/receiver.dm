@@ -68,3 +68,9 @@
 /obj/machinery/telecomms/receiver/preset_left/birdstation
 	name = "Receiver"
 	freq_listening = list()
+
+/obj/machinery/telecomms/receiver/preset_broadcast
+	id = "Broadcast Receiver"
+	network = "tcommsat"
+	autolinkers = list("broadcast") // link to relay
+	freq_listening = list(FREQ_BROADCAST, FREQ_COMMON)

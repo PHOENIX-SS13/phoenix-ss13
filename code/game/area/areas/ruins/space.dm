@@ -522,3 +522,7 @@
 /area/ruin/space/has_grav/outpost_engineering/storage
 	name = "Service Outpost Control Room"
 	icon_state = "storage"
+
+/area/ruin/space/has_grav/broadcast_station
+	name = "Broadcast Station"
+	icon_state = "tcomsatcham"
