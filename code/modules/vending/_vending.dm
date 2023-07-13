@@ -745,7 +745,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
 			name = R.name,
-			price = onstation ? R.custom_price || default_price : default_price,
+			price = onstation ? R.custom_price || default_price : "0",
 			max_amount = R.max_amount,
 			ref = REF(R)
 		)
@@ -755,7 +755,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
 			name = R.name,
-			price = onstation ? R.custom_premium_price || extra_price : default_price,
+			price = onstation ? R.custom_premium_price || extra_price : "0",
 			max_amount = R.max_amount,
 			ref = REF(R),
 			premium = TRUE
@@ -766,7 +766,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
 			name = R.name,
-			price = onstation ? R.custom_premium_price || extra_price : default_price,
+			price = onstation ? R.custom_premium_price || extra_price : "0",
 			max_amount = R.max_amount,
 			ref = REF(R),
 			premium = TRUE
