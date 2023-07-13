@@ -2,7 +2,7 @@
 "b" = (/obj/machinery/telecomms/bus/preset_broadcast,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "c" = (/obj/structure/closet/crate/internals,/obj/item/clothing/head/helmet/space/eva,/obj/item/clothing/suit/space/eva,/obj/item/tank/internals/emergency_oxygen/double,/obj/item/tank/internals/emergency_oxygen/double,/obj/item/clothing/mask/breath,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "d" = (/obj/machinery/telecomms/processor/preset_broadcast,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"f" = (/obj/docking_port/stationary{dir = 2; name = "Broadcast Station Dock"; roundstart_template = /datum/map_template/shuttle/common/petrel},/turf/open/space/basic,/area/space)
+"f" = (/obj/docking_port/stationary/large{dir = 2; name = "Broadcast Station Dock"; roundstart_template = /datum/map_template/shuttle/common/petrel},/turf/open/space/basic,/area/space)
 "i" = (/turf/closed/indestructible/rock,/area/space)
 "l" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "m" = (/obj/machinery/light/directional/west,/obj/structure/table/reinforced,/obj/item/flashlight/lamp{pixel_x = -4; pixel_y = 11},/obj/item/pizzabox/margherita,/obj/item/pizzabox/meat{pixel_y = 4},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
