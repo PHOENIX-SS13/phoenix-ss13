@@ -1,145 +1,145 @@
-"at" = (/obj/machinery/light/directional/south,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"bp" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"bs" = (/obj/machinery/vending/clothing{default_price = 0},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"bB" = (/obj/machinery/light/directional/east,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"bH" = (/obj/machinery/light/directional/north,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"cq" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 4},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"cZ" = (/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer4,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"dA" = (/obj/machinery/telecomms/processor/preset_broadcast,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"ed" = (/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"eJ" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"gK" = (/obj/machinery/light/small/directional/west,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"hp" = (/obj/machinery/door/airlock/external,/obj/structure/fans/tiny,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"hC" = (/obj/structure/closet/crate/engineering,/obj/item/storage/toolbox/mechanical,/obj/item/stack/sheet/iron/fifty{layer = 2.9},/obj/item/storage/toolbox/electrical{layer = 2.99},/obj/item/multitool{layer = 2.95},/obj/item/stack/sheet/glass/fifty{layer = 2.9},/obj/item/clothing/gloves/color/yellow{layer = 2.95},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"jk" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"kQ" = (/obj/structure/table,/obj/machinery/microwave{pixel_x = -1; pixel_y = 8},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"lc" = (/obj/machinery/airalarm/directional/north,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"ma" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/structure/table,/obj/machinery/reagentgrinder{pixel_x = -5; pixel_y = 9},/obj/item/kitchen/knife{pixel_x = 10; pixel_y = 3},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"mF" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 6},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"ne" = (/obj/machinery/vending/hydronutrients{onstation = 0},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"np" = (/obj/structure/chair/office{dir = 8},/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
-"nS" = (/obj/machinery/biogenerator,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"on" = (/obj/structure/sign/poster/official/cohiba_robusto_ad,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"pT" = (/obj/machinery/telecomms/bus/preset_broadcast,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"qc" = (/obj/machinery/hydroponics/constructable,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"qB" = (/obj/machinery/power/apc/auto_name/north,/obj/machinery/power/terminal{dir = 1},/obj/structure/cable,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"rf" = (/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"rh" = (/obj/machinery/telecomms/relay/preset/broadcast,/obj/structure/cable,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"rL" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 1},/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"rQ" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"sP" = (/obj/machinery/hydroponics/constructable,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 6},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"sU" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"ta" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 1},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"to" = (/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on/layer2{dir = 8},/turf/open/floor/engine/o2,/area/ruin/space/has_grav/broadcast_station)
-"uU" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 8},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"wn" = (/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
-"wz" = (/obj/machinery/smartfridge,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"xz" = (/obj/docking_port/stationary/large{dir = 2; name = "Broadcast Station Dock"; roundstart_template = /datum/map_template/shuttle/common/petrel},/turf/open/space/basic,/area/space)
-"Ad" = (/obj/structure/sign/poster/official/enlist,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Ak" = (/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on/layer2,/turf/open/floor/engine/n2,/area/ruin/space/has_grav/broadcast_station)
-"AA" = (/obj/structure/closet/crate/internals,/obj/item/tank/internals/emergency_oxygen/double{layer = 2.9},/obj/item/clothing/head/helmet/space/eva{layer = 3.1},/obj/item/tank/internals/emergency_oxygen/double{layer = 2.9},/obj/item/clothing/suit/space/eva,/obj/item/clothing/mask/breath{layer = 3.5},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"AU" = (/obj/structure/sign/poster/contraband/lusty_xenomorph,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"BW" = (/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer2{dir = 1},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"CC" = (/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"CF" = (/obj/machinery/light/directional/north,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"CV" = (/obj/effect/mob_spawn/human/broadcast,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"DW" = (/obj/structure/table,/obj/machinery/processor{pixel_y = 6},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"Ec" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 5},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Ev" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 8},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"EE" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"EZ" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Ft" = (/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{dir = 1},/turf/open/floor/plating/lowpressure,/area/ruin/space/has_grav/broadcast_station)
-"Fy" = (/obj/machinery/vending/hydroseeds{onstation = 0},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"Go" = (/obj/machinery/light/directional/west,/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer4,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"Hf" = (/obj/structure/sign/poster/official/foam_force_ad,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"IY" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 8},/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"Jt" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/machinery/atmospherics/miner/oxygen,/obj/machinery/light/directional/north,/turf/open/floor/engine/o2,/area/ruin/space/has_grav/broadcast_station)
-"Jx" = (/obj/structure/table,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"Ka" = (/obj/machinery/griddle,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"KO" = (/obj/machinery/door/airlock/public/glass,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 10},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"KV" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,/obj/structure/cable,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"Lp" = (/obj/structure/sign/poster/contraband/starkist,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"LD" = (/obj/machinery/light/directional/east,/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
-"LK" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/obj/machinery/hydroponics/constructable,/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 6},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"LX" = (/obj/machinery/deepfryer,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"Md" = (/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{dir = 8; layer = 2; piping_layer = 2; target_pressure = 250},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Mq" = (/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer2{dir = 8},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"Nb" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/obj/structure/closet/crate/hydroponics,/obj/item/reagent_containers/glass/bucket/wooden{layer = 3.5},/obj/item/cultivator,/obj/item/shovel/spade,/obj/item/secateurs,/obj/item/plant_analyzer,/obj/item/reagent_containers/spray/plantbgone,/obj/item/storage/bag/plants,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"Nd" = (/turf/open/space/basic,/area/space)
-"Nt" = (/obj/structure/sign/poster/contraband/pwr_game,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Nu" = (/obj/machinery/telecomms/broadcaster/preset_broadcast,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"NV" = (/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"OX" = (/obj/structure/sign/poster/official/pda_ad,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Pn" = (/obj/structure/cable,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Pv" = (/obj/machinery/door/airlock/external,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"PZ" = (/obj/structure/sign/poster/contraband/have_a_puff,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"Ru" = (/obj/machinery/door/airlock/public/glass{dir = 4},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"RF" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/enzyme{layer = 5},/obj/item/reagent_containers/glass/beaker{pixel_x = 5},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"RW" = (/obj/machinery/power/smes/magical,/obj/structure/cable,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"UO" = (/obj/machinery/seed_extractor,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"Vm" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 8},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"VD" = (/obj/structure/sign/poster/contraband/donut_corp,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"WG" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/power/terminal{dir = 1},/obj/structure/cable,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"WQ" = (/turf/closed/indestructible/rock,/area/space)
-"WR" = (/obj/structure/sign/poster/contraband/random,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"YH" = (/obj/machinery/telecomms/receiver/preset_broadcast,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
-"YS" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer2,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"YZ" = (/obj/machinery/door/airlock/public/glass,/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"Zk" = (/obj/machinery/light/directional/west,/obj/structure/table/reinforced,/obj/item/flashlight/lamp{pixel_x = -4; pixel_y = 11},/obj/item/pizzabox/margherita,/obj/item/pizzabox/meat{pixel_y = 4},/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
-"Zt" = (/obj/structure/table/reinforced,/obj/item/radio/broadcast{pixel_x = 4; pixel_y = 9},/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
-"ZK" = (/obj/machinery/light/directional/east,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
-"ZW" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
-"ZZ" = (/obj/machinery/portable_atmospherics/canister/nitrogen,/obj/machinery/atmospherics/miner/nitrogen,/obj/machinery/light/directional/north,/turf/open/floor/engine/n2,/area/ruin/space/has_grav/broadcast_station)
+"aj" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer2,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"aO" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 8},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"bf" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/obj/structure/closet/crate/hydroponics,/obj/item/reagent_containers/glass/bucket/wooden{layer = 3.5},/obj/item/cultivator,/obj/item/shovel/spade,/obj/item/secateurs,/obj/item/plant_analyzer,/obj/item/reagent_containers/spray/plantbgone,/obj/item/storage/bag/plants,/obj/item/reagent_containers/glass/bucket/wooden{layer = 3.5},/obj/item/reagent_containers/glass/bucket/wooden{layer = 3.5},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"cG" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/structure/table,/obj/machinery/reagentgrinder{pixel_x = -5; pixel_y = 9},/obj/item/kitchen/knife{pixel_x = 10; pixel_y = 3},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"cI" = (/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{dir = 1},/turf/open/floor/plating/lowpressure,/area/ruin/space/has_grav/broadcast_station)
+"cR" = (/obj/machinery/light/directional/north,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"ds" = (/obj/machinery/telecomms/broadcaster/preset_broadcast,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"eJ" = (/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"eR" = (/obj/structure/sign/poster/official/pda_ad,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"fF" = (/obj/structure/table,/obj/machinery/processor{pixel_y = 6},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"fS" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 6},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"fU" = (/obj/structure/sign/poster/official/foam_force_ad,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"gH" = (/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on/layer2,/turf/open/floor/engine/n2,/area/ruin/space/has_grav/broadcast_station)
+"hz" = (/obj/structure/sign/poster/contraband/starkist,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"hV" = (/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer2{dir = 8},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"hZ" = (/obj/machinery/light/small/directional/west,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"iC" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 1},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"iX" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,/obj/structure/cable,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"jn" = (/obj/docking_port/stationary/large{dir = 2; name = "Broadcast Station Dock"; roundstart_template = /datum/map_template/shuttle/common/petrel},/turf/open/space/basic,/area/space)
+"jB" = (/obj/structure/sign/poster/contraband/lusty_xenomorph,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"jL" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/machinery/atmospherics/miner/oxygen,/obj/machinery/light/directional/north,/turf/open/floor/engine/o2,/area/ruin/space/has_grav/broadcast_station)
+"jZ" = (/obj/machinery/door/airlock/public/glass,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 10},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"kq" = (/obj/effect/mapping_helpers/smart_pipe/manifold/supply/hidden/layer2{dir = 1},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"ll" = (/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on/layer2{dir = 8},/turf/open/floor/engine/o2,/area/ruin/space/has_grav/broadcast_station)
+"lt" = (/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"mv" = (/obj/machinery/telecomms/processor/preset_broadcast,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"mz" = (/obj/structure/closet/crate/internals,/obj/item/tank/internals/emergency_oxygen/double{layer = 2.9},/obj/item/clothing/head/helmet/space/eva{layer = 3.1},/obj/item/tank/internals/emergency_oxygen/double{layer = 2.9},/obj/item/clothing/suit/space/eva,/obj/item/clothing/mask/breath{layer = 3.5},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"mG" = (/obj/machinery/light/directional/east,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"nR" = (/obj/structure/table/reinforced,/obj/item/radio/broadcast{pixel_x = 4; pixel_y = 9},/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
+"oe" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 8},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"oI" = (/obj/structure/cable,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"oX" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"qj" = (/turf/open/space/basic,/area/space)
+"qw" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"qL" = (/obj/effect/mob_spawn/human/broadcast,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"qS" = (/obj/machinery/vending/hydroseeds{onstation = 0},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"rc" = (/obj/structure/table,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"rg" = (/obj/machinery/seed_extractor,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"sG" = (/obj/machinery/smartfridge,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"sR" = (/obj/machinery/telecomms/receiver/preset_broadcast,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"tz" = (/obj/structure/sign/poster/contraband/pwr_game,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"ud" = (/obj/machinery/light/directional/north,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"uj" = (/obj/machinery/light/directional/west,/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer4,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"ux" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 8},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"uX" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"uY" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"vc" = (/obj/machinery/door/airlock/public/glass,/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"vi" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 1},/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"vw" = (/obj/machinery/light/directional/east,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"wa" = (/obj/machinery/light/directional/west,/obj/structure/table/reinforced,/obj/item/flashlight/lamp{pixel_x = -4; pixel_y = 11},/obj/item/pizzabox/margherita,/obj/item/pizzabox/meat{pixel_y = 4},/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
+"wm" = (/obj/machinery/griddle,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"wP" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/obj/machinery/hydroponics/constructable,/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 6},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"xP" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"yF" = (/obj/structure/sign/poster/official/enlist,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"Ah" = (/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"AS" = (/obj/structure/sign/poster/contraband/have_a_puff,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"BG" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 5},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"BZ" = (/obj/structure/sign/poster/official/cohiba_robusto_ad,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"Dg" = (/obj/machinery/door/airlock/public/glass{dir = 4},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"Dz" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"DY" = (/obj/structure/chair/office{dir = 8},/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
+"DZ" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 4},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"Ei" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 8},/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"Em" = (/obj/machinery/vending/clothing{default_price = 0},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"Fl" = (/obj/machinery/hydroponics/constructable,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 6},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"GW" = (/obj/machinery/door/airlock/external,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"If" = (/obj/machinery/vending/hydronutrients{onstation = 0},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"Il" = (/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"Io" = (/obj/machinery/power/smes/magical{input_level = 200000; output_level = 200000},/obj/structure/cable,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"ID" = (/obj/machinery/hydroponics/constructable,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"KW" = (/obj/machinery/door/airlock/external,/obj/structure/fans/tiny,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"KZ" = (/obj/machinery/portable_atmospherics/canister/nitrogen,/obj/machinery/atmospherics/miner/nitrogen,/obj/machinery/light/directional/north,/turf/open/floor/engine/n2,/area/ruin/space/has_grav/broadcast_station)
+"LB" = (/obj/machinery/telecomms/relay/preset/broadcast,/obj/structure/cable,/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"ML" = (/obj/machinery/power/apc/auto_name/north,/obj/machinery/power/terminal{dir = 1},/obj/structure/cable,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"Nz" = (/turf/open/floor/carpet/neon/simple/white/nodots,/area/ruin/space/has_grav/broadcast_station)
+"NW" = (/obj/machinery/light/directional/south,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"Ok" = (/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{dir = 8; layer = 2; piping_layer = 2; target_pressure = 250},/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"Om" = (/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"QB" = (/obj/structure/sign/poster/contraband/donut_corp,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"QH" = (/obj/structure/table,/obj/machinery/microwave{pixel_x = -1; pixel_y = 8},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"QW" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/enzyme{layer = 5},/obj/item/reagent_containers/glass/beaker{pixel_x = 5},/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"Rk" = (/obj/machinery/telecomms/bus/preset_broadcast,/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/engine,/area/ruin/space/has_grav/broadcast_station)
+"Rn" = (/turf/closed/indestructible/rock,/area/space)
+"Sp" = (/obj/effect/mapping_helpers/smart_pipe/manifold/scrubbers/hidden/layer4,/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"Vj" = (/obj/structure/sign/poster/contraband/random,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
+"Wu" = (/obj/machinery/deepfryer,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"Xe" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2,/turf/open/floor/iron/cafeteria,/area/ruin/space/has_grav/broadcast_station)
+"Xp" = (/obj/machinery/biogenerator,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"XL" = (/obj/machinery/airalarm/directional/north,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"XU" = (/obj/structure/closet/crate/engineering,/obj/item/storage/toolbox/mechanical,/obj/item/stack/sheet/iron/fifty{layer = 2.9},/obj/item/storage/toolbox/electrical{layer = 2.99},/obj/item/multitool{layer = 2.95},/obj/item/stack/sheet/glass/fifty{layer = 2.9},/obj/item/clothing/gloves/color/yellow{layer = 2.95},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"Yb" = (/obj/machinery/light/directional/east,/obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer4{dir = 4},/turf/open/floor/carpet,/area/ruin/space/has_grav/broadcast_station)
+"Yy" = (/obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/power/terminal{dir = 1},/obj/structure/cable,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/broadcast_station)
 
 (1,1,1) = {"
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQWQWQWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQWQWQWQWQWQWQWQWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQWQWQWQWQWQWQWQWQWQWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQWQWQWQWQWQWQWQWQNVNVNVNVNVWQWQWQWQNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQNVNVNVNVNVWQWQWQNVqcbHFyNVWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQNVZZNVJtNVNVNVNVNVqcedneNVWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQNVAkmFtoNVdACFYHNVsPuUUONVWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQNVEcMdBWEZpTIYNuNVLKEvnSNVWQWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQNVedlcqBPnrhKVRWNVNbedbBNVWQWQWQWQWQWQNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQWQNVededMqEZEZYZWGEZYSKOwzNVNVNVWQWQWQWQNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQNVZkwnsUCVbseJrfRurQbpCCDWKaNVWQWQWQNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQWQNVZtnptacqjkcZLDEEGorLVmCCZKNVWQWQWQNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWQNVwnwnedatrfAArfNVmakQRFJxLXNVWQNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdWRededhCNVPvNVOXAdZWNVNVNVNVNVWQNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdAUHfNtPZNVgKVDNdNdFtNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdonhpLpNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdxzNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
-NdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNdNd
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnRnRnRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnRnRnRnRnRnRnRnRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnRnRnRnRnRnRnRnRnRnRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnRnRnRnRnRnRnRnRnltltltltltRnRnRnRnqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnltltltltltRnRnRnltIDudqSltRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnltKZltjLltltltltltIDeJIfltRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnltgHfSllltmvcRsRltFloergltRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnltBGOkkqxPRkEidsltwPuxXpltRnRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnlteJXLMLoILBiXIoltbfeJmGltRnRnRnRnRnRnqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnRnlteJeJhVxPxPvcYyxPajjZsGltltltRnRnRnRnqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnltwaNzuXqLEmOmAhDguYXeIlfFwmltRnRnRnqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnRnltnRDYiCDZqwSpYbDzujviaOIlvwltRnRnRnqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjRnltNzNzeJNWAhmzAhltcGQHQWrcWultRnqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjVjeJeJXUltGWlteRyFoXltltltltltRnqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjjBfUtzASlthZQBqjqjcIqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjBZKWhzqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjjnqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
+qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj
 "}
