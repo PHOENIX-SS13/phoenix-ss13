@@ -16,7 +16,7 @@
 "z" = (/obj/machinery/light/directional/west,/obj/structure/table/reinforced,/obj/item/flashlight/lamp{pixel_x = -4; pixel_y = 11},/obj/item/pizzabox/margherita,/obj/item/pizzabox/meat{pixel_y = 4},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "A" = (/obj/effect/mob_spawn/human/broadcast,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "B" = (/obj/machinery/vending/clothing{default_price = 0},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
-"D" = (/obj/item/radio/intercom/directional/west{broadcasting = 1; frequency = 1481},/obj/structure/table/reinforced,/obj/item/radio/headset/headset_broadcast{pixel_x = 6; pixel_y = 5},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
+"D" = (/obj/item/radio/intercom/directional/west{broadcasting = 1; frequency = 1481},/obj/structure/table/reinforced,/obj/item/radio/headset/headset_broadcast{pixel_x = 6; pixel_y = 5},/obj/item/radio/broadcast{pixel_x = -7; pixel_y = -2},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "E" = (/obj/structure/chair/office{dir = 8},/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "F" = (/obj/machinery/light/directional/east,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)
 "G" = (/obj/machinery/light/directional/south,/turf/open/floor/iron,/area/ruin/space/has_grav/broadcast_station)

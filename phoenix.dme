@@ -1968,6 +1968,7 @@
 #include "code\modules\awaymissions\mission_code\wildwest.dm"
 #include "code\modules\balloon_alert\balloon_alert.dm"
 #include "code\modules\broadcast\broadcast.dm"
+#include "code\modules\broadcast\broadcast_radio.dm"
 #include "code\modules\buildmode\bm_mode.dm"
 #include "code\modules\buildmode\buildmode.dm"
 #include "code\modules\buildmode\buttons.dm"
