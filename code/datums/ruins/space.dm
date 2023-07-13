@@ -293,11 +293,4 @@
 	name = "Service Outpost"
 	description = "A small little outpost that's mostly self-sufficient. It's a good place to dock for repairs when in the middle of nowhere.\
 	Apart from the neeed for occassional maintenance, this structure acts as a telecommunications relay link to put those lost back into contact with civilisation."
-
-/datum/map_template/ruin/space/broadcast_station
-	id = "broadcast-station"
-	suffix = "broadcast_station.dmm"
-	name = "Broadcast Station"
-	description = "An asteroid with a small broadcasting station cut into its side. Must not be a very high-budget network."
-	always_place = TRUE
 	
