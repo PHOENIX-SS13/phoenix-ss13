@@ -933,7 +933,7 @@
 	death = FALSE
 	random = FALSE
 	mob_species = /datum/species/human
-	short_desc = "And now, more of my insane ramblings."
+	short_desc = "And now, more rambling."
 	flavour_text = "Stuck in a hollowed out rock, with only a microphone for entertainment."
 	any_station_species = TRUE
 

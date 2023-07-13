@@ -248,8 +248,6 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 				channel_to_add = RADIO_TOKEN_SUPPLY
 			if (RADIO_CHANNEL_SERVICE)
 				channel_to_add = RADIO_TOKEN_SERVICE
-			if (RADIO_CHANNEL_BROADCAST)
-				channel_to_add = RADIO_TOKEN_BROADCAST
 
 		if (channel_to_add)
 			parrot_source.available_channels += channel_to_add

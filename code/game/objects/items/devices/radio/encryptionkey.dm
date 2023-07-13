@@ -140,11 +140,6 @@
 	name = "wideband encryption key"
 	icon_state = "wideband_cypherkey"
 	channels = list(RADIO_CHANNEL_WIDEBAND = 1)
-
-/obj/item/encryptionkey/broadcast
-	name = "broadcast encryption key"
-	icon_state = "srv_cypherkey"
-	channels = list(RADIO_CHANNEL_BROADCAST = 1)
 	
 
 // Skyline Additions //
