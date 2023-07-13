@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(broadcast)
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Broadcast Station", linked_overmap_object)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level("Broadcast Station", ZTRAITS_SPACE, mapzone, world.maxx, world.maxy, ALLOCATION_FULL, reservation_margin = 2)
 	var/datum/parsed_map/pm = new(file("_maps/RandomRuins/SpaceRuins/broadcast_station.dmm"))
-	pm.load((vlevel.low_x + vlevel.high_x) / 2, (vlevel.low_y + vlevel.high_y) / 2, vlevel.z_value, no_changeturf = TRUE)
+	pm.load((vlevel.high_x - vlevel.low_x) / 2 + vlevel.low_x, (vlevel.high_y - vlevel.low_y) / 2 + vlevel.low_y, vlevel.z_value, no_changeturf = TRUE)
 	flags |= SS_NO_FIRE
 	return ..()
 	
