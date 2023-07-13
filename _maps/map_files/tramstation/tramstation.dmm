@@ -40781,6 +40781,18 @@
 	},
 /turf/open/floor/iron,
 /area/hallway/secondary/entry)
+"lFl" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/radio/broadcast/receiver{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/iron,
+/area/service/bar)
 "lFn" = (
 /obj/machinery/door/window/southleft{
 	dir = 1;
@@ -94896,7 +94908,7 @@ aej
 tdQ
 ahV
 ahV
-ayI
+lFl
 uMt
 ulk
 ahV
