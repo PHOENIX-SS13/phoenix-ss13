@@ -1,7 +1,7 @@
 # Phoenix SS13
 
 ## About
-Phoenix SS13 is a new fork heavily based on a defunct one. Mostly meant for private use.
+Phoenix SS13 is a /tg/station codebase christened in July 2023 and heavily based on a defunct fork. Mostly meant for private use.
 
 ## LICENSE
 
