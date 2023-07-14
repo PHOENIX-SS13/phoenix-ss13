@@ -132,7 +132,7 @@ export const BroadcastRadio = (props, context) => {
           )}>
           <LabeledList>
             <LabeledList.Item label="Track Selected">
-              <Dropdown
+              {!!canBroadcast && (<Dropdown
                 overflow-y="scroll"
                 width="240px"
                 options={songs.map(song => song.name)}
@@ -140,7 +140,8 @@ export const BroadcastRadio = (props, context) => {
                 selected={trackSelected || "Select a Track"}
                 onSelected={value => act('select_track', {
                   track: value,
-                })} />
+                })} /> )}
+              {!canBroadcast && ( "No Track Selected")}
             </LabeledList.Item>
             <LabeledList.Item label="Track Length">
               {trackSelected ? trackLength : "No Track Selected"}
