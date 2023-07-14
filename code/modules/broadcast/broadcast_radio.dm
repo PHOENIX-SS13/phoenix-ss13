@@ -99,7 +99,7 @@
             if(played_track)
                 return
             selection = available[song_input]
-    if(!receive_only)
+    if(can_broadcast)
         show_boombox_ui(user)
     else
         show_receiver_ui(user)
