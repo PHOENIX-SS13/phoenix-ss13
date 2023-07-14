@@ -6,7 +6,7 @@
     freqlock = TRUE
     broadcasting = TRUE
     command = TRUE
-    var/datum/receive_only = FALSE
+    var/datum/can_broadcast = TRUE
     /// Reference to the song list from the jukebox subsystem.
     var/static/list/songs
     /// Currently selected track.
@@ -25,6 +25,7 @@
 
 /obj/item/radio/broadcast/Initialize()
     . = ..()
+    add_atom_colour("#f12272", ADMIN_COLOUR_PRIORITY)
     broadcast_radio_list.Add(src)
     if(!songs)
         songs = SSjukebox.tracks
@@ -103,15 +104,45 @@
     else
         show_receiver_ui(user)
 
+/obj/item/radio/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
+    ui = SStgui.try_update_ui(user, src, ui)
+    if(!ui)
+        ui = new(user, src, "BroadcastRadio", name)
+        if(state)
+            ui.set_state(state)
+        ui.open()
 
+/obj/item/radio/broadcast/receiver/ui_data(mob/user)
+    var/list/data = list()
+
+    data["canBroadcast"] = can_broadcast
+    data["broadcasting"] = broadcasting
+    data["listening"] = listening
+    data["frequency"] = frequency
+    data["minFrequency"] = freerange ? MIN_FREE_FREQ : MIN_FREQ
+    data["maxFrequency"] = freerange ? MAX_FREE_FREQ : MAX_FREQ
+    data["freqlock"] = freqlock
+    data["channels"] = list()
+    for(var/channel in channels)
+        data["channels"][channel] = channels[channel] & FREQ_LISTENING
+    data["command"] = command
+    data["useCommand"] = use_command
+    data["subspace"] = subspace_transmission
+    data["subspaceSwitchable"] = subspace_switchable
+    data["headset"] = FALSE
+
+    return data
+        
 
 //RADIO FOR RECEIVING
 
 /obj/item/radio/broadcast/receiver
     name = "Broadcast Radio Listener"
     desc = "A special radio designed for listening to commercial broadcasts. Interact for radio UI. Right click for music UI."
-    receive_only = TRUE
+    can_broadcast = FALSE
     broadcasting = FALSE
+    command = FALSE
+    custom_price = PAYCHECK_EASY
 
 /obj/item/radio/broadcast/receiver/RightClick(mob/user)
     show_receiver_ui(user)
@@ -128,23 +159,3 @@
     var/datum/browser/popup = new(user, "broadcast receiver", "Broadcast Receiver", 380, 170)
     popup.set_content(dat.Join())
     popup.open()
-
-/obj/item/radio/broadcast/receiver/ui_data(mob/user)
-	var/list/data = list()
-
-	//data["broadcasting"] = broadcasting
-	data["listening"] = listening
-	data["frequency"] = frequency
-	data["minFrequency"] = freerange ? MIN_FREE_FREQ : MIN_FREQ
-	data["maxFrequency"] = freerange ? MAX_FREE_FREQ : MAX_FREQ
-	data["freqlock"] = freqlock
-	data["channels"] = list()
-	for(var/channel in channels)
-		data["channels"][channel] = channels[channel] & FREQ_LISTENING
-	data["command"] = command
-	data["useCommand"] = use_command
-	data["subspace"] = subspace_transmission
-	data["subspaceSwitchable"] = subspace_switchable
-	data["headset"] = FALSE
-
-	return data

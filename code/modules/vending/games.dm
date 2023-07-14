@@ -18,7 +18,8 @@
 					/obj/item/cardpack/series_one = 10,
 					/obj/item/cardpack/resin = 10,
 					/obj/item/storage/card_binder = 10,
-					/obj/item/dyespray=3,
+					/obj/item/dyespray = 3,
+					/obj/item/radio/broadcast/receiver = 20,
 					)
 	contraband = list(/obj/item/dice/fudge = 9,
 					/obj/item/clothing/shoes/wheelys/skishoes=4,
