@@ -1,9 +1,11 @@
 import { map } from 'common/collections';
 import { toFixed } from 'common/math';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NumberInput, Section } from '../components';
+import { Box, Button, LabeledList, NumberInput, Section, Dropdown, LabeledControls, Knob } from '../components';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
+import { sortBy } from 'common/collections';
+import { flow } from 'common/fp';
 
 export const BroadcastRadio = (props, context) => {
   const { act, data } = useBackend(context);
@@ -19,29 +21,27 @@ export const BroadcastRadio = (props, context) => {
     useCommand,
     subspace,
     subspaceSwitchable,
+    musicActive,
+    trackSelected,
+    trackLength,
+    volume,
   } = data;
+  const songs = flow([
+    sortBy(
+      song => song.name),
+  ])(data.songs || []);
   const tunedChannel = RADIO_CHANNELS
     .find(channel => channel.freq === frequency);
   const channels = map((value, key) => ({
     name: key,
     status: !!value,
   }))(data.channels);
-  // Calculate window height
-  let height = 106;
-  if (subspace) {
-    if (channels.length > 0) {
-      height += channels.length * 21 + 6;
-    }
-    else {
-      height += 24;
-    }
-  }
   return (
     <Window
-      width={360}
-      height={height}>
+      width={400}
+      height={450}>
       <Window.Content>
-        <Section>
+        <Section title="Voice Settings">
           <LabeledList>
             <LabeledList.Item label="Frequency">
               {freqlock && (
@@ -120,6 +120,83 @@ export const BroadcastRadio = (props, context) => {
               </LabeledList.Item>
             )}
           </LabeledList>
+        </Section>
+        <Section
+          title="Song Player"
+          buttons={!!canBroadcast && (
+            <Button
+              icon={musicActive ? 'pause' : 'play'}
+              content={musicActive ? 'Stop' : 'Play'}
+              selected={musicActive}
+              onClick={() => act('toggle')} />
+          )}>
+          <LabeledList>
+            <LabeledList.Item label="Track Selected">
+              <Dropdown
+                overflow-y="scroll"
+                width="240px"
+                options={songs.map(song => song.name)}
+                disabled={musicActive}
+                selected={trackSelected || "Select a Track"}
+                onSelected={value => act('select_track', {
+                  track: value,
+                })} />
+            </LabeledList.Item>
+            <LabeledList.Item label="Track Length">
+              {trackSelected ? trackLength : "No Track Selected"}
+            </LabeledList.Item>
+          </LabeledList>
+        </Section>
+        <Section title="Machine Settings">
+          <LabeledControls justify="center">
+            <LabeledControls.Item label="Volume">
+              <Box position="relative">
+                <Knob
+                  size={3.2}
+                  color={volume >= 50 ? 'red' : 'green'}
+                  value={volume}
+                  unit="%"
+                  minValue={0}
+                  maxValue={100}
+                  step={1}
+                  stepPixelSize={1}
+                  disabled={musicActive}
+                  onDrag={(e, value) => act('set_volume', {
+                    volume: value,
+                  })} />
+                <Button
+                  fluid
+                  position="absolute"
+                  top="-2px"
+                  right="-22px"
+                  color="transparent"
+                  icon="fast-backward"
+                  onClick={() => act('set_volume', {
+                    volume: "min",
+                  })} />
+                <Button
+                  fluid
+                  position="absolute"
+                  top="16px"
+                  right="-22px"
+                  color="transparent"
+                  icon="fast-forward"
+                  onClick={() => act('set_volume', {
+                    volume: "max",
+                  })} />
+                <Button
+                  fluid
+                  position="absolute"
+                  top="34px"
+                  right="-22px"
+                  color="transparent"
+                  icon="undo"
+                  onClick={() => act('set_volume', {
+                    volume: "reset",
+                  })} />
+              </Box>
+            </LabeledControls.Item>
+          </LabeledControls>
         </Section>
       </Window.Content>
     </Window>

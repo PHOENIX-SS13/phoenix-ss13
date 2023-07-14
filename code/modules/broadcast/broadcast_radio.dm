@@ -20,7 +20,8 @@
 
 
 /obj/item/radio/broadcast/RightClick(mob/user)
-    show_boombox_ui(user)
+    ui_interact(user)
+    //show_boombox_ui(user)
     return TRUE
 
 /obj/item/radio/broadcast/Initialize()
@@ -48,7 +49,7 @@
 /obj/item/radio/broadcast/proc/song_ended()
     played_track = null
     update_appearance()
-
+/*
 /obj/item/radio/broadcast/proc/show_boombox_ui(mob/user)
     if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
         return
@@ -82,7 +83,7 @@
             volume = min(volume + 10, 100)
         if("set_volume")
             var/volume_input = input(user, "Input volume (0-100)", volume) as num|null
-            if(!volume_input)
+            if(!isnum(volume_input))
                 return
             volume = clamp(volume_input, 0, 100)
         if("selection")
@@ -103,6 +104,7 @@
         show_boombox_ui(user)
     else
         show_receiver_ui(user)
+*/
 
 /obj/item/radio/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
     ui = SStgui.try_update_ui(user, src, ui)
@@ -131,8 +133,99 @@
     data["subspaceSwitchable"] = subspace_switchable
     data["headset"] = FALSE
 
+    data["musicActive"] = played_track ? TRUE : FALSE
+    data["trackSelected"] = null
+    data["trackLength"] = null
+    if(selection)
+        data["trackSelected"] = "[selection.song_artist] - [selection.song_title]"
+        data["trackLength"] = DisplayTimeText(selection.song_length)
+    data["volume"] = volume
+    data["songs"] = list()
+    for(var/datum/jukebox_track/S in songs)
+        var/list/track_data = list(
+            name = "[S.song_artist] - [S.song_title]"
+        )
+        data["songs"] += list(track_data)
     return data
         
+/obj/item/radio/broadcast/ui_act(action, list/params)
+    . = ..()
+    if(.)
+        return
+    switch(action)
+        if("frequency")
+            if(freqlock)
+                return
+            var/tune = params["tune"]
+            var/adjust = text2num(params["adjust"])
+            if(adjust)
+                tune = frequency + adjust * 10
+                . = TRUE
+            else if(text2num(tune) != null)
+                tune = tune * 10
+                . = TRUE
+            if(.)
+                set_frequency(sanitize_frequency(tune, freerange))
+        if("listen")
+            listening = !listening
+            . = TRUE
+        if("broadcast")
+            broadcasting = !broadcasting
+            . = TRUE
+        if("channel")
+            var/channel = params["channel"]
+            if(!(channel in channels))
+                return
+            if(channels[channel] & FREQ_LISTENING)
+                channels[channel] &= ~FREQ_LISTENING
+            else
+                channels[channel] |= FREQ_LISTENING
+            . = TRUE
+        if("command")
+            use_command = !use_command
+            . = TRUE
+        if("subspace")
+            if(subspace_switchable)
+                subspace_transmission = !subspace_transmission
+                if(!subspace_transmission)
+                    channels = list()
+                else
+                    recalculateChannels()
+                . = TRUE
+        if("toggle")
+            if(QDELETED(src))
+                return
+            if(!played_track)
+                play_song()
+                START_PROCESSING(SSobj, src)
+                return TRUE
+            else
+                /// Deleting the track stops the song.
+                qdel(played_track)
+                return TRUE
+        if("select_track")
+            var/list/available = list()
+            for(var/datum/jukebox_track/S in songs)
+                available["[S.song_artist] - [S.song_title]"] = S
+            var/selected = params["track"]
+            if(QDELETED(src) || !selected || !istype(available[selected], /datum/jukebox_track))
+                return
+            selection = available[selected]
+            return TRUE
+        if("set_volume")
+            var/new_volume = params["volume"]
+            if(new_volume  == "reset")
+                volume = initial(volume)
+                return TRUE
+            else if(new_volume == "min")
+                volume = max(volume - 10, 0)
+                return TRUE
+            else if(new_volume == "max")
+                volume = min(volume + 10, 100)
+                return TRUE
+            else if(text2num(new_volume) != null)
+                volume = text2num(new_volume)
+                return TRUE
 
 //RADIO FOR RECEIVING
 
@@ -145,9 +238,10 @@
     custom_price = PAYCHECK_EASY
 
 /obj/item/radio/broadcast/receiver/RightClick(mob/user)
-    show_receiver_ui(user)
+    ui_interact(user)
+    //show_receiver_ui(user)
     return FALSE
-
+/*
 /obj/item/radio/broadcast/proc/show_receiver_ui(mob/user)
     if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
         return
@@ -159,3 +253,4 @@
     var/datum/browser/popup = new(user, "broadcast receiver", "Broadcast Receiver", 380, 170)
     popup.set_content(dat.Join())
     popup.open()
+*/

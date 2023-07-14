@@ -2,7 +2,7 @@
 
 SUBSYSTEM_DEF(broadcast)
 	name = "Broadcast"
-	init_order = INIT_ORDER_NETWORKS - 1
+	init_order = INIT_ORDER_DEFAULT - 1
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 	var/station
 
@@ -19,11 +19,11 @@ SUBSYSTEM_DEF(broadcast)
 
 /datum/overmap_object/broadcast_station
 	name = "Broadcast Station"
-	visual_type = /obj/effect/abstract/overmap/trade_hub
+	visual_type = /obj/effect/abstract/overmap/broadcast_station
 	clears_hazards_on_spawn = TRUE
 
 /obj/effect/abstract/overmap/broadcast_station
-	icon_state = "trade"
+	icon_state = "broadcast_station"
 	color = COLOR_MOSTLY_PURE_PINK
 	layer = OVERMAP_LAYER_STATION
 
@@ -32,6 +32,7 @@ SUBSYSTEM_DEF(broadcast)
 /obj/item/encryptionkey/broadcast
 	name = "broadcast encryption key"
 	icon_state = "srv_cypherkey"
+	color = COLOR_MOSTLY_PURE_PINK
 	channels = list(RADIO_CHANNEL_BROADCAST = 1)
 
 /obj/item/radio/headset/headset_broadcast
