@@ -1,6 +1,6 @@
 /obj/item/radio/broadcast
     name = "Broadcast Station Radio"
-    desc = "A special radio designed for commercial broadcast. Activate for radio UI and right click for boombox UI."
+    desc = "A special radio designed for commercial broadcast."
     keyslot = new /obj/item/encryptionkey/broadcast
     frequency = FREQ_BROADCAST
     freqlock = TRUE
@@ -114,7 +114,7 @@
             ui.set_state(state)
         ui.open()
 
-/obj/item/radio/broadcast/receiver/ui_data(mob/user)
+/obj/item/radio/broadcast/ui_data(mob/user)
     var/list/data = list()
 
     data["canBroadcast"] = can_broadcast
@@ -231,7 +231,7 @@
 
 /obj/item/radio/broadcast/receiver
     name = "Broadcast Radio Listener"
-    desc = "A special radio designed for listening to commercial broadcasts. Interact for radio UI. Right click for music UI."
+    desc = "A special radio designed for listening to commercial broadcasts."
     can_broadcast = FALSE
     broadcasting = FALSE
     command = FALSE
