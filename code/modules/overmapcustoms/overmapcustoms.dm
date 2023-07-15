@@ -20,6 +20,18 @@ SUBSYSTEM_DEF(overmapcustoms)
 		var/datum/parsed_map/pm = new(file("_maps/overmap/[linked_overmap_object.map_path]"))
 		pm.load(vlevel.low_x, vlevel.low_y, vlevel.z_value, no_changeturf = FALSE)
 
+
+//THINGS TO DEFINE IF YOU WANT TO MAKE A NEW ONE
 /datum/overmap_object/custom
-	var/map_path = null
-	var/instances = 1
+	name = "Custom Overmap Object"
+	var/map_path = null			//relative to _maps/overmap/
+	var/instances = 1			//how many to put on the overmap
+	visual_type = /obj/effect/abstract/overmap/hazard
+	clears_hazards_on_spawn = TRUE
+	can_be_docked = FALSE		//can this be docked from the overmap through Shuttle Controls?
+
+/obj/effect/abstract/overmap/custom
+	icon_state = "event"
+	color = COLOR_GREEN
+	layer = OVERMAP_LAYER_STATION
+//end THINGS TO DEFINE IF YOU WANT TO MAKE A NEW ONE
