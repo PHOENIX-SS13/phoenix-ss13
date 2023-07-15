@@ -21,7 +21,6 @@
 
 /obj/item/radio/broadcast/RightClick(mob/user)
     ui_interact(user)
-    //show_boombox_ui(user)
     return TRUE
 
 /obj/item/radio/broadcast/Initialize()
@@ -49,62 +48,6 @@
 /obj/item/radio/broadcast/proc/song_ended()
     played_track = null
     update_appearance()
-/*
-/obj/item/radio/broadcast/proc/show_boombox_ui(mob/user)
-    if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-        return
-    var/list/dat = list()
-
-    dat += "Selected track: <a href='?src=[REF(src)];action=selection'>[selection ? "[selection.song_artist] - [selection.song_title]" : "None"]</a>"
-    dat += "<a href='?src=[REF(src)];action=toggle_play' [played_track ? "class='linkOn'" : ""]>[played_track ? "Stop" : "Start"]</a>"
-    dat += "<BR>Volume:<a href='?src=[REF(src)];action=minus_volume'>-</a> <a href='?src=[REF(src)];action=set_volume'>[volume]</a> <a href='?src=[REF(src)];action=plus_volume'>+</a>"
-
-    var/datum/browser/popup = new(user, "broadcast radio", "Broadcast Radio", 380, 170)
-    popup.set_content(dat.Join())
-    popup.open()
-
-/obj/item/radio/broadcast/Topic(href, href_list)
-    var/mob/user = usr
-    if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-        return
-    if(!href_list["action"])
-        return
-    switch(href_list["action"])
-        if("toggle_play")
-            if(played_track)
-                for(var/obj/item/radio/broadcast/instance in broadcast_radio_list)
-                    instance.stop_song()
-            else
-                for(var/obj/item/radio/broadcast/instance in broadcast_radio_list)
-                    instance.play_song()
-        if("minus_volume")
-            volume = max(volume - 10, 0)
-        if("plus_volume")
-            volume = min(volume + 10, 100)
-        if("set_volume")
-            var/volume_input = input(user, "Input volume (0-100)", volume) as num|null
-            if(!isnum(volume_input))
-                return
-            volume = clamp(volume_input, 0, 100)
-        if("selection")
-            if(played_track)
-                to_chat(user, SPAN_WARNING("Stop the track first!"))
-                return
-            var/list/available = list()
-            for(var/datum/jukebox_track/song in songs)
-                available["[song.song_artist] - [song.song_title]"] = song
-            sortList(available)
-            var/song_input = input(user, "Select track:") as anything in available
-            if(!song_input)
-                return
-            if(played_track)
-                return
-            selection = available[song_input]
-    if(can_broadcast)
-        show_boombox_ui(user)
-    else
-        show_receiver_ui(user)
-*/
 
 /obj/item/radio/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
     ui = SStgui.try_update_ui(user, src, ui)
@@ -196,8 +139,10 @@
             if(QDELETED(src))
                 return
             if(!played_track)
-                play_song()
-                START_PROCESSING(SSobj, src)
+                for(var/x in broadcast_radio_list)
+                    var/obj/item/radio/broadcast/objcast = x
+                    objcast.play_song()
+                //START_PROCESSING(SSobj, src)
                 return TRUE
             else
                 /// Deleting the track stops the song.
@@ -239,18 +184,4 @@
 
 /obj/item/radio/broadcast/receiver/RightClick(mob/user)
     ui_interact(user)
-    //show_receiver_ui(user)
     return FALSE
-/*
-/obj/item/radio/broadcast/proc/show_receiver_ui(mob/user)
-    if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-        return
-    var/list/dat = list()
-
-    dat += "Current track: [selection ? "[selection.song_artist] - [selection.song_title]" : "None"]"
-    dat += "<BR>Volume:<a href='?src=[REF(src)];action=minus_volume'>-</a> <a href='?src=[REF(src)];action=set_volume'>[volume]</a> <a href='?src=[REF(src)];action=plus_volume'>+</a>"
-
-    var/datum/browser/popup = new(user, "broadcast receiver", "Broadcast Receiver", 380, 170)
-    popup.set_content(dat.Join())
-    popup.open()
-*/
