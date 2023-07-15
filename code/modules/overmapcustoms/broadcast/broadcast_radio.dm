@@ -49,7 +49,7 @@
     played_track = null
     update_appearance()
 
-/obj/item/radio/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
+/obj/item/radio/broadcast/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
     ui = SStgui.try_update_ui(user, src, ui)
     if(!ui)
         ui = new(user, src, "BroadcastRadio", name)
