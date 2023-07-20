@@ -46,6 +46,7 @@ SUBSYSTEM_DEF(overmapcustoms)
 		can_ghost = admin_ghost()
 
 	if(!can_ghost)
+		to_chat(src, SPAN_INTERFACE("You can only do this as an admin or a ghost!"), confidential = TRUE)
 		return FALSE
 
 	var/mob/dead/observer/observer = usr
