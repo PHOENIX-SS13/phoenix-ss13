@@ -50,5 +50,8 @@ SUBSYSTEM_DEF(overmapcustoms)
 
 	var/mob/dead/observer/observer = usr
 	to_chat(src, SPAN_INTERFACE("Ghosting to overmap."), confidential = TRUE)
-	observer.ManualFollow(locate(/obj/effect/abstract/overmap/shuttle/station))
+	var/obj/effect/abstract/overmap/ovmobj = locate(/obj/effect/abstract/overmap/shuttle/station)
+	if(!ovmobj)
+		ovmobj = locate(/obj/effect/abstract/overmap/shuttle)
+	observer.ManualFollow(ovmobj)
 	return
