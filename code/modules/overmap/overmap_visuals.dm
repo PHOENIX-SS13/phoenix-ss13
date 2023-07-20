@@ -78,3 +78,9 @@
 	shuttle_idle_state = "globe"
 	shuttle_forward_state = "globe"
 	shuttle_backward_state = "globe"
+
+/obj/effect/abstract/overmap/Click()
+	if(isobserver(usr) && my_overmap_object.related_map_zone)
+		var/datum/virtual_level/vlevel = my_overmap_object.related_map_zone.virtual_levels[1]
+		usr.abstract_move(vlevel.get_center())
+	return
