@@ -62314,6 +62314,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/item/radio/broadcast/receiver{
+	pixel_x = -5;
+	pixel_y = 7
+	},
 /turf/open/floor/iron/dark,
 /area/service/bar)
 "mim" = (

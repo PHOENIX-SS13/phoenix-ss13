@@ -2553,9 +2553,7 @@
 /turf/open/floor/iron,
 /area/security/brig)
 "asv" = (
-/obj/structure/chair/stool/directional/south{
-	pixel_y = 6
-	},
+/obj/structure/chair/stool/directional/south,
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
@@ -29030,6 +29028,18 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
+"hpY" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/item/radio/broadcast/receiver{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/iron,
+/area/service/bar)
 "hqf" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/duct,
@@ -113093,7 +113103,7 @@ uTM
 eqv
 iEa
 kfj
-lde
+hpY
 hmF
 rVh
 kPe
