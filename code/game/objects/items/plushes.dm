@@ -24,6 +24,8 @@
 	var/heartbroken = FALSE
 	var/vowbroken = FALSE
 	var/young = FALSE
+	//exit out of plushie "love" code immediately.
+	var/nolove = FALSE
 ///Prevents players from cutting stuffing out of a plushie if true
 	var/divine = FALSE
 	var/mood_message
@@ -172,6 +174,8 @@
 	var/loyalty = 30 //why should another get between us?
 	var/duty = 50 //conquering another's is what I live for
 
+	if(nolove == TRUE || kisser.nolove == TRUE)
+		return
 	//we are not catholic
 	if(young == TRUE || Kisser.young == TRUE)
 		user.show_message(SPAN_NOTICE("[src] plays tag with [Kisser]."), MSG_VISUAL,
@@ -653,3 +657,25 @@
 	attack_verb_continuous = list("slashes", "bites", "charges")
 	attack_verb_simple = list("slash", "bite", "charge")
 	squeak_override = list('sound/items/intents/Help.ogg' = 1)
+
+/obj/item/toy/plush/peregrine
+	name = "large moth plush"
+	desc = "A plush resembling a large moth. A tag at its side notes that they are an accomplished and friendly atmospheric technician."
+	icon_state = "peregrine"
+	//inhand_icon_state = "peregrine"
+	gender = FEMALE
+	attack_verb_continuous = list("fixes", "flutter", "flaps", "analyzes")
+	attack_verb_simple = list("fix", "flutter", "flap", "analyze")
+	squeak_override = list('sound/voice/mothlaugh.ogg'=1)
+	nolove = TRUE
+
+/obj/item/toy/plush/veer
+	name = "cargo enthusiast plush"
+	desc = "A plush resembling a big guy that just really enjoys his job."
+	icon_state = "veer"
+	//inhand_icon_state = "veer"
+	gender = MALE
+	attack_verb_continuous = list("stares at")
+	attack_verb_simple = list("stare at")
+	squeak_override = list('sound/weapons/kenetic_reload.ogg' = 1, 'sound/weapons/kenetic_accel.ogg' = 1)
+	nolove = TRUE
