@@ -158,3 +158,11 @@
 	cost = 5
 	suffix = "heyheypeople.dmm"
 	planet_requirements = PLANET_WRECKAGES
+
+/datum/map_template/ruin/planetary/alien_nest
+	name = "Alien Nest"
+	id = "aliennest"
+	description = "Seems dangerous."
+	cost = 5
+	suffix = "alien_nest_calv1.dmm"
+	planet_requirements = PLANET_HABITABLE
