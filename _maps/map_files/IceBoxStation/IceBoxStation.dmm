@@ -19768,6 +19768,7 @@
 	pixel_x = 5;
 	pixel_y = -24
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "cwG" = (
@@ -23501,6 +23502,7 @@
 	id = "AI";
 	pixel_x = -10
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "enN" = (

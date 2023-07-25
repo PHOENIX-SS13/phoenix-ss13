@@ -279,6 +279,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/iron/dark,
 /area/ai_monitored/turret_protected/ai)
 "abz" = (
@@ -326,6 +327,7 @@
 	departmentType = 5;
 	name = "AI Requests Console"
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/iron/dark,
 /area/ai_monitored/turret_protected/ai)
 "abC" = (

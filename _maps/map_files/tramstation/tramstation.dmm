@@ -31781,6 +31781,7 @@
 	pixel_x = 3;
 	pixel_y = -23
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "inU" = (
@@ -61777,6 +61778,7 @@
 	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "tYJ" = (

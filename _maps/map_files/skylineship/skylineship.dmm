@@ -22981,6 +22981,7 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/camera/emp_proof,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "mBm" = (
@@ -36653,6 +36654,7 @@
 	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/holopad,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "tRo" = (

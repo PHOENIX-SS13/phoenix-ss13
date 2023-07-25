@@ -10087,6 +10087,7 @@
 	departmentType = 5;
 	name = "AI Requests Console"
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/engine,
 /area/ai_monitored/turret_protected/ai)
 "aGm" = (
@@ -31291,6 +31292,7 @@
 	name = "AI Core Shutter"
 	},
 /obj/effect/turf_decal/delivery,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/engine,
 /area/ai_monitored/turret_protected/ai)
 "cdX" = (

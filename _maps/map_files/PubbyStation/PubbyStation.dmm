@@ -622,6 +622,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/holopad/secure,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/iron/white,
 /area/ai_monitored/turret_protected/ai)
 "acr" = (
@@ -642,6 +643,7 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/layer1,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/iron/white,
 /area/ai_monitored/turret_protected/ai)
 "act" = (
