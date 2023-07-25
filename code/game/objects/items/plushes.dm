@@ -174,7 +174,7 @@
 	var/loyalty = 30 //why should another get between us?
 	var/duty = 50 //conquering another's is what I live for
 
-	if(nolove == TRUE || kisser.nolove == TRUE)
+	if(nolove == TRUE || Kisser.nolove == TRUE)
 		return
 	//we are not catholic
 	if(young == TRUE || Kisser.young == TRUE)
