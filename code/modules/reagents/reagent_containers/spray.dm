@@ -24,6 +24,7 @@
 	amount_per_transfer_from_this = 5
 	volume = 250
 	possible_transfer_amounts = list(5,10)
+	dispenser_transfer_amounts = list(5,10,15,20,25,30,50,75,100,125,250)
 
 /obj/item/reagent_containers/spray/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -215,6 +216,7 @@
 	list_reagents = list(/datum/reagent/space_cleaner = 100)
 	amount_per_transfer_from_this = 2
 	possible_transfer_amounts = list(2,5)
+	dispenser_transfer_amounts = list(5,10,15,20,25,30,50,75,100)
 
 /obj/item/reagent_containers/spray/cleaner/suicide_act(mob/user)
 	user.visible_message(SPAN_SUICIDE("[user] is putting the nozzle of \the [src] in [user.p_their()] mouth. It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -236,6 +238,7 @@
 	volume = 50
 	desc = "Gyaro brand spray tan. Do not spray near eyes or other orifices."
 	list_reagents = list(/datum/reagent/spraytan = 50)
+	dispenser_transfer_amounts = list(5,10,15,20,25,30,50)
 
 
 //pepperspray
@@ -250,6 +253,7 @@
 	volume = 50
 	stream_range = 4
 	amount_per_transfer_from_this = 5
+	dispenser_transfer_amounts = list(5,10,15,20,25,30,50)
 	list_reagents = list(/datum/reagent/consumable/condensedcapsaicin = 50)
 
 /obj/item/reagent_containers/spray/pepper/empty //for protolathe printing
@@ -274,6 +278,7 @@
 	inhand_icon_state = "sunflower"
 	amount_per_transfer_from_this = 1
 	possible_transfer_amounts = list(1)
+	dispenser_transfer_amounts = list(1,5,10)
 	can_toggle_range = FALSE
 	current_range = 1
 	volume = 10
@@ -408,6 +413,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
 	volume = 100
+	dispenser_transfer_amounts = list(5,10,15,20,25,30,50,75,100)
 	list_reagents = list(/datum/reagent/toxin/plantbgone = 100)
 
 /obj/item/reagent_containers/spray/syndicate
@@ -421,6 +427,7 @@
 	spray_range = 4
 	stream_range = 2
 	volume = 100
+	dispenser_transfer_amounts = list(5,10,15,20,25,30,50,75,100)
 	custom_premium_price = PAYCHECK_HARD * 2
 
 /obj/item/reagent_containers/spray/syndicate/Initialize()
@@ -435,6 +442,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	volume = 100
+	dispenser_transfer_amounts = list(5,10,15,20,25,30,50,75,100)
 	unique_reskin = list("Red" = "sprayer_med_red",
 						"Yellow" = "sprayer_med_yellow",
 						"Blue" = "sprayer_med_blue")
