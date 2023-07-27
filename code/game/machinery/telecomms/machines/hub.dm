@@ -40,4 +40,3 @@
 	autolinkers = list("hub", "relay", "s_relay", "m_relay", "r_relay", "h_relay", "science", "medical",
 	"supply", "service", "common", "command", "engineering", "security",
 	"receiverA", "receiverB", "broadcasterA", "broadcasterB", "autorelay", "messaging")
-

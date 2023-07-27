@@ -1014,6 +1014,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/item/radio/broadcast/receiver{
+	pixel_y = 6
+	},
 /turf/open/floor/iron/cafeteria,
 /area/service/kitchen/diner)
 "nE" = (

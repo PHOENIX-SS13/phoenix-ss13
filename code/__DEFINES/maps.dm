@@ -99,7 +99,7 @@ require only minor tweaks.
 #define BIOME_HIGH_HUMIDITY "high_humidity"
 
 #define ALLOCATION_FREE 1
-#define ALLOCATION_QUADRANT 2
+#define ALLOCATION_QUADRANT 4
 #define ALLOCATION_FULL 3
 
 #define QUADRANT_MAP_SIZE 127

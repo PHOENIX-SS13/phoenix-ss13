@@ -922,6 +922,21 @@
 		var/obj/item/unwanted_item = locate(del_type) in doctor
 		qdel(unwanted_item)
 
+//BROADCAST STATION
+/obj/effect/mob_spawn/human/broadcast
+	name = "Radio Station Host"
+	desc = "Cryo bed of a radio station host, locked away in a tiny asteroid to broadcast their ramblings across space."
+	mob_name = "Radio Station Host"
+	icon = 'icons/obj/lavaland/spawners.dmi'
+	icon_state = "cryostasis_sleeper"
+	roundstart = FALSE
+	death = FALSE
+	random = FALSE
+	mob_species = /datum/species/human
+	short_desc = "And now, more rambling."
+	flavour_text = "Stuck in a hollowed out rock, with only a microphone for entertainment."
+	any_station_species = TRUE
+
 /obj/effect/mob_spawn/mouse
 	name = "sleeper"
 	mob_type = /mob/living/simple_animal/mouse

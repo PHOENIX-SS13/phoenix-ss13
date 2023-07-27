@@ -4,7 +4,7 @@
 	map_file = "DeltaStation2.dmm"
 
 	traits = null
-	space_ruin_levels = 3
+	//space_ruin_levels = 3
 
 	minetype = "lavaland"
 

@@ -745,7 +745,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
 			name = R.name,
-			price = R.custom_price || default_price,
+			price = onstation ? R.custom_price || default_price : "0",
 			max_amount = R.max_amount,
 			ref = REF(R)
 		)
@@ -755,7 +755,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
 			name = R.name,
-			price = R.custom_premium_price || extra_price,
+			price = onstation ? R.custom_premium_price || extra_price : "0",
 			max_amount = R.max_amount,
 			ref = REF(R),
 			premium = TRUE
@@ -766,7 +766,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
 			name = R.name,
-			price = R.custom_premium_price || extra_price,
+			price = onstation ? R.custom_premium_price || extra_price : "0",
 			max_amount = R.max_amount,
 			ref = REF(R),
 			premium = TRUE
@@ -873,6 +873,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 			vend_ready = TRUE
 			return
 		var/datum/bank_account/account = C.registered_account
+		if(R.custom_price)
+			price_to_use = R.custom_price
 		if(account.account_job && account.account_job.paycheck_department == payment_department)
 			price_to_use = max(round(price_to_use * VENDING_DISCOUNT), 1) //No longer free, but signifigantly cheaper.
 		if(coin_records.Find(R) || hidden_records.Find(R))

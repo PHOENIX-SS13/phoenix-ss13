@@ -693,6 +693,7 @@
 	icon_state = "cyborg_upgrade3"
 	new_model = /obj/item/robot_model/clown
 
+/*
 /obj/item/borg/upgrade/circuit_app
 	name = "circuit manipulation apparatus"
 	desc = "An engineering cyborg upgrade allowing for manipulation of circuit boards."
@@ -719,6 +720,7 @@
 		var/obj/item/borg/apparatus/circuit/C = locate() in R.model.modules
 		if (C)
 			R.model.remove_module(C, TRUE)
+*/
 
 /obj/item/borg/upgrade/beaker_app
 	name = "beaker storage apparatus"

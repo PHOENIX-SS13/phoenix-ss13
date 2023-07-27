@@ -228,6 +228,26 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	material_flags = MATERIAL_NO_EFFECTS
 	matter_amount = 12
 
+/obj/item/stack/sheet/plasteel/cyborg
+	mats_per_unit = null
+	cost = 500
+	source = /datum/robot_energy_storage/iron
+	var/datum/robot_energy_storage/plasteelsource = /datum/robot_energy_storage/plasma
+	var/plasteelcost = 500
+
+/obj/item/stack/sheet/plasteel/cyborg/get_amount()
+	return min(round(source.energy / cost),
+		round(plasteelsource.energy / plasteelcost))
+	
+/obj/item/stack/sheet/plasteel/cyborg/use(used, transfer = FALSE)
+	if(get_amount(used))
+		source.use_charge(used * cost)
+		plasteelsource.use_charge(used * plasteelcost)
+
+/obj/item/stack/sheet/plasteel/cyborg/add(amount)
+	source.add_charge(amount * cost)
+	plasteelsource.add_charge(amount * plasteelcost)
+
 /obj/item/stack/sheet/plasteel/get_main_recipes()
 	. = ..()
 	. += GLOB.plasteel_recipes

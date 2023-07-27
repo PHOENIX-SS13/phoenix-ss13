@@ -140,6 +140,7 @@
 	name = "wideband encryption key"
 	icon_state = "wideband_cypherkey"
 	channels = list(RADIO_CHANNEL_WIDEBAND = 1)
+	
 
 // Skyline Additions //
 

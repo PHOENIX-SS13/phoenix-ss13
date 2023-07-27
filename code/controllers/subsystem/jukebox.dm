@@ -56,12 +56,17 @@ SUBSYSTEM_DEF(jukebox)
 		var/datum/jukebox_track/track = new()
 		track.song_path = file("[global.config.directory]/jukebox_music/sounds/[some_file]")
 		var/list/param_list = splittext(some_file,"+")
-		if(param_list.len != 4)
+		if(param_list.len == 3)
+			track.song_title = param_list[1]
+			track.song_length = ((text2num(param_list[2]) / 10) SECONDS)
+			track.song_beat = ((text2num(param_list[3]) / 60) SECONDS)
+		else if(param_list.len == 4)
+			track.song_artist = param_list[1]
+			track.song_title = param_list[2]
+			track.song_length = (text2num(param_list[3]) SECONDS)
+			track.song_beat = ((text2num(param_list[4]) / 60) SECONDS)
+		else
 			continue
-		track.song_artist = param_list[1]
-		track.song_title = param_list[2]
-		track.song_length = (text2num(param_list[3]) SECONDS)
-		track.song_beat = ((text2num(param_list[4]) / 60) SECONDS)
 		tracks += track
 
 /datum/controller/subsystem/jukebox/proc/get_free_channel()

@@ -19768,6 +19768,7 @@
 	pixel_x = 5;
 	pixel_y = -24
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "cwG" = (
@@ -20736,6 +20737,18 @@
 	},
 /turf/open/floor/iron,
 /area/cargo/storage)
+"cLj" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/item/radio/broadcast/receiver{
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/turf/open/floor/iron,
+/area/service/bar)
 "cLk" = (
 /obj/effect/landmark/secequipment,
 /obj/effect/turf_decal/bot,
@@ -23489,6 +23502,7 @@
 	id = "AI";
 	pixel_x = -10
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "enN" = (
@@ -95513,7 +95527,7 @@ wXj
 uEn
 sWC
 lbT
-sWC
+cLj
 tMa
 btd
 wCg

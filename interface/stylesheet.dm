@@ -55,6 +55,7 @@ em						{font-style: normal;	font-weight: bold;}
 .blueteamradio			{color: #0000ff;}
 .greenteamradio			{color: #00ff00;}
 .yellowteamradio		{color: #d1ba22;}
+.broadcastradio			{color: #de2a5a;}
 
 .yell					{					font-weight: bold;}
 
