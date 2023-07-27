@@ -27,6 +27,7 @@
 
 /datum/job/ai/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
+	make_autoshells()
 	//we may have been created after our borg
 	if(SSticker.current_state == GAME_STATE_SETTING_UP)
 		for(var/mob/living/silicon/robot/R in GLOB.silicon_mobs)

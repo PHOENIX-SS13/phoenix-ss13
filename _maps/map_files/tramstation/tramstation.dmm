@@ -31781,6 +31781,7 @@
 	pixel_x = 3;
 	pixel_y = -23
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "inU" = (
@@ -40781,6 +40782,18 @@
 	},
 /turf/open/floor/iron,
 /area/hallway/secondary/entry)
+"lFl" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/radio/broadcast/receiver{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/iron,
+/area/service/bar)
 "lFn" = (
 /obj/machinery/door/window/southleft{
 	dir = 1;
@@ -61765,6 +61778,7 @@
 	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "tYJ" = (
@@ -94896,7 +94910,7 @@ aej
 tdQ
 ahV
 ahV
-ayI
+lFl
 uMt
 ulk
 ahV

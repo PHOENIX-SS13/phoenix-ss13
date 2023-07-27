@@ -46,6 +46,16 @@
 			if(ispath(rglass_module.glasource, /datum/robot_energy_storage))
 				rglass_module.glasource = get_or_create_estorage(rglass_module.glasource)
 
+		if(istype(sheet_module, /obj/item/stack/sheet/plasmarglass/cyborg))
+			var/obj/item/stack/sheet/plasmarglass/cyborg/plasmarglass_module = sheet_module
+			if(ispath(plasmarglass_module.pglasource, /datum/robot_energy_storage))
+				plasmarglass_module.pglasource = get_or_create_estorage(plasmarglass_module.pglasource)
+
+		if(istype(sheet_module, /obj/item/stack/sheet/plasteel/cyborg))
+			var/obj/item/stack/sheet/plasteel/cyborg/plasteel_module = sheet_module
+			if(ispath(plasteel_module.plasteelsource, /datum/robot_energy_storage))
+				plasteel_module.plasteelsource = get_or_create_estorage(plasteel_module.plasteelsource)
+
 		if(istype(sheet_module.source))
 			sheet_module.cost = max(sheet_module.cost, 1) // Must not cost 0 to prevent div/0 errors.
 			sheet_module.is_cyborg = TRUE
@@ -135,7 +145,11 @@
 	R.update_module_innate()
 	RM.rebuild_modules()
 	R.radio.recalculateChannels()
-
+	//ALTBORGS
+	if(RM.dogborg)
+		R.dogborg = TRUE
+		RM.dogborg_equip()
+	//end
 	INVOKE_ASYNC(RM, .proc/do_transform_animation)
 	qdel(src)
 	return RM
@@ -251,9 +265,14 @@
 		/obj/item/stack/sheet/iron,
 		/obj/item/stack/sheet/glass,
 		/obj/item/stack/sheet/rglass/cyborg,
+		/obj/item/stack/sheet/plasmaglass,
+		/obj/item/stack/sheet/plasmarglass/cyborg,
+		/obj/item/stack/sheet/plasteel/cyborg,
 		/obj/item/stack/rods/cyborg,
 		/obj/item/stack/tile/iron/base/cyborg,
-		/obj/item/stack/cable_coil)
+		/obj/item/borg/apparatus/engi,
+		/obj/item/stack/cable_coil,
+		/obj/item/lightreplacer/cyborg)
 	radio_channels = list(RADIO_CHANNEL_ENGINEERING)
 	emag_modules = list(/obj/item/borg/stun)
 	cyborg_base_icon = "engineer"
@@ -365,7 +384,7 @@
 	model_select_icon = "miner"
 	hat_offset = 0
 	var/obj/item/t_scanner/adv_mining_scanner/cyborg/mining_scanner //built in memes.
-
+/*
 /obj/item/robot_model/miner/be_transformed_to(obj/item/robot_model/old_model)
 	var/mob/living/silicon/robot/cyborg = loc
 	var/list/miner_icons = list(
@@ -385,7 +404,7 @@
 		else
 			return FALSE
 	return ..()
-
+*/
 /obj/item/robot_model/miner/rebuild_modules()
 	. = ..()
 	if(!mining_scanner)
@@ -485,7 +504,7 @@
 	var/obj/item/reagent_containers/O = locate(/obj/item/reagent_containers/food/condiment/enzyme) in basic_modules
 	if(O)
 		O.reagents.add_reagent(/datum/reagent/consumable/enzyme, 2 * coeff)
-
+/*
 /obj/item/robot_model/service/be_transformed_to(obj/item/robot_model/old_model)
 	var/mob/living/silicon/robot/cyborg = loc
 	var/list/service_icons = list(
@@ -514,7 +533,7 @@
 		else
 			return FALSE
 	return ..()
-
+*/
 // ------------------------------------------ Syndicate
 // --------------------- Syndicate Assault
 /obj/item/robot_model/syndicate
@@ -592,6 +611,8 @@
 		/obj/item/stack/sheet/iron,
 		/obj/item/stack/sheet/glass,
 		/obj/item/stack/sheet/rglass/cyborg,
+		/obj/item/stack/sheet/plasmaglass,
+		/obj/item/stack/sheet/plasmarglass/cyborg,
 		/obj/item/stack/rods/cyborg,
 		/obj/item/stack/tile/iron/base/cyborg,
 		/obj/item/dest_tagger/borg,
@@ -668,6 +689,11 @@
 
 /datum/robot_energy_storage/glass
 	name = "Glass Synthesizer"
+
+/datum/robot_energy_storage/plasma
+	name = "Plasma Synthesizer"
+	max_energy = 15000
+	recharge_rate = 100
 
 /datum/robot_energy_storage/wire
 	max_energy = 50

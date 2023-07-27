@@ -66,3 +66,12 @@
 #define BORG_CHOOSE_MODULE_ONE    1
 #define BORG_CHOOSE_MODULE_TWO    2
 #define BORG_CHOOSE_MODULE_THREE   3
+
+//Module - altborgs
+//Defines for dogborgs and stuff
+#define ROBOT_REST_NORMAL		1
+#define ROBOT_REST_SITTING		2
+#define ROBOT_REST_BELLY_UP		3
+
+/// cooldown to prevent reset abuse
+#define ROBOT_RESET_DELAY  900 SECONDS

@@ -279,6 +279,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/iron/dark,
 /area/ai_monitored/turret_protected/ai)
 "abz" = (
@@ -326,6 +327,7 @@
 	departmentType = 5;
 	name = "AI Requests Console"
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/iron/dark,
 /area/ai_monitored/turret_protected/ai)
 "abC" = (
@@ -79890,6 +79892,24 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/security/brig)
+"pOH" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/item/radio/broadcast/receiver{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/iron/dark,
+/area/service/bar/atrium)
 "pOI" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4
@@ -148311,7 +148331,7 @@ ncV
 wrg
 euO
 vsR
-wEH
+pOH
 jOV
 bDy
 gJj

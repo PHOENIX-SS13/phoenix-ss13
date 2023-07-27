@@ -88,6 +88,6 @@ def rewrite_sources(resources):
                 os.remove(path)
                 os.rename(path + ".tmp", path)
 
-dirs = read_filedirs("horizon.dme");
+dirs = read_filedirs("phoenix.dme");
 resources = index_files(dirs)
 rewrite_sources(resources)

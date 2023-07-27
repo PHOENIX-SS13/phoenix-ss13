@@ -6,6 +6,7 @@ $include dbconfig.txt
 $include comms.txt
 $include resources.txt
 $include interviews.txt
+$include phoenix.txt
 
 # You can use the @ character at the beginning of a config option to lock it from being edited in-game
 # Example usage:
@@ -16,7 +17,7 @@ $include interviews.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub.
-# SERVERNAME Unnamed Server
+SERVERNAME PHOENIX
 
 ## Short description of the server, appears below the server name in the BYOND hub
 # SERVERDESC This server's description has not been set up yet.
@@ -65,7 +66,7 @@ ENABLE_LOCALHOST_RANK
 #USE_ACCOUNT_AGE_FOR_JOBS
 
 ## Unhash this to track player playtime in the database. Requires database to be enabled.
-#USE_EXP_TRACKING
+USE_EXP_TRACKING
 ## Unhash this to enable playtime requirements for head jobs.
 #USE_EXP_RESTRICTIONS_HEADS
 ## Unhash this to override head jobs' playtime requirements with this number of hours.
@@ -144,7 +145,7 @@ LOG_MANIFEST
 # LOG_TWITTER
 
 ## Enable logging pictures
-# LOG_PICTURES
+LOG_PICTURES
 
 ## log mecha actions
 # LOG_MECHA
@@ -183,13 +184,13 @@ ALLOW_ADMIN_ASAYCOLOR
 ID_CONSOLE_JOBSLOT_DELAY 30
 
 ## allow players to initiate a restart vote
-#ALLOW_VOTE_RESTART
+ALLOW_VOTE_RESTART
 
 ## allow players to initiate a mode-change vote
-#ALLOW_VOTE_MODE
+ALLOW_VOTE_MODE
 
 ## allow players to initiate a map-change vote
-#ALLOW_VOTE_MAP
+ALLOW_VOTE_MAP
 
 ## min delay (deciseconds) between voting sessions (default 10 minutes)
 VOTE_DELAY 6000
@@ -201,13 +202,13 @@ VOTE_PERIOD 600
 # NO_DEAD_VOTE
 
 ## players' votes default to "No vote" (otherwise,  default to "No change")
-# DEFAULT_NO_VOTE
+DEFAULT_NO_VOTE
 
 ## disable abandon mob
-NORESPAWN
+# NORESPAWN
 
 ## set a hosted by name for unix platforms
-HOSTEDBY Yournamehere
+HOSTEDBY CASEYGUNGEON
 
 ## Uncomment this to stop people connecting to your server without a registered ckey. (i.e. guest-* are all blocked from connecting)
 GUEST_BAN
@@ -446,9 +447,9 @@ CLIENT_ERROR_BUILD 1538
 ## Admins are exempt from these limits.
 ## Hitting the minute limit notifies admins.
 ## Set to 0 or comment out to disable.
-SECOND_TOPIC_LIMIT 10
+SECOND_TOPIC_LIMIT 0
 
-MINUTE_TOPIC_LIMIT 100
+MINUTE_TOPIC_LIMIT 0
 
 
 ## CLICK RATE LIMITING
@@ -457,9 +458,9 @@ MINUTE_TOPIC_LIMIT 100
 ## Admins are exempt from these limits.
 ## Hitting the minute limit notifies admins.
 ## Set to 0 to disable.
-SECOND_CLICK_LIMIT 15
+SECOND_CLICK_LIMIT 0
 
-MINUTE_CLICK_LIMIT 400
+MINUTE_CLICK_LIMIT 0
 
 ##Error handling related options
 ## The "cooldown" time for each occurence of a unique error
