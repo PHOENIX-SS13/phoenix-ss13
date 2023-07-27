@@ -1,7 +1,0 @@
-```yml
-author: CASEYGUNGEON
-changes:
-  - rscadd: "Added landmarks that can spawn shells for the AI on lowpop. Configurable."
-merge-date: 2023-07-25
-# prnumber: 1337
-```
