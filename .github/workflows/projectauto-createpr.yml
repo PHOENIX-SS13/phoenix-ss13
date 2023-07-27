@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create card in Open Column
-        uses: alex-page/github-project-automation-plus@v0.7.1
+        uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Phoenix Pulls
           column: Open
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create card in Draft Column
-        uses: alex-page/github-project-automation-plus@v0.7.1
+        uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Phoenix Pulls
           column: Draft
