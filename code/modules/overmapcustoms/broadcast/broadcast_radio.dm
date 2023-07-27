@@ -172,7 +172,7 @@
 				volume = text2num(new_volume)
 				return TRUE
 
-/obj/item/radio/Destroy()
+/obj/item/radio/broadcast/Destroy()
 	broadcast_radio_list.Remove(src)
 	return ..()
 
