@@ -1,0 +1,659 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"be" = (
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/airalarm/directional/north{
+	locked = 0
+	},
+/obj/structure/tank_dispenser/oxygen,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"cV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"de" = (
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"eT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/ore_box,
+/obj/item/storage/bag/ore,
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"fJ" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/obj/machinery/meter,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"gF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "fuel pump";
+	color = "#FF7B00";
+	pipe_color = "#FF7B00"
+	},
+/obj/item/storage/box/lights/mixed,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"gO" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/east{
+	locked = 0
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable,
+/obj/machinery/light/directional/east,
+/turf/open/floor/pod,
+/area/shuttle/common/vista/helm)
+"iU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light/directional/south,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"jG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/shuttle/common_docks{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/shuttle/common/vista/helm)
+"jL" = (
+/obj/structure/sign/warning/movingparts/small{
+	pixel_x = 32
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "vista cargo shutter"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"ki" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer2{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/common/vista)
+"kk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/lattice/catwalk/plated,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"kA" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/common/vista/helm)
+"li" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light_switch/directional/east,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"lQ" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"ml" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"nj" = (
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	name = "air supply pump";
+	color = "#0000FF";
+	pipe_color = "#0000FF"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/toolbox/mechanical,
+/obj/machinery/power/apc/auto_name/west{
+	locked = 0
+	},
+/obj/structure/cable,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"qy" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	pipe_color = "#0000FF"
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/light/directional/north,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"qA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"se" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = "vista_shutter";
+	name = "safety shutters button"
+	},
+/obj/structure/cable,
+/turf/open/floor/pod,
+/area/shuttle/common/vista/helm)
+"sw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/window/reinforced/spawner/east,
+/obj/machinery/transporter,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "vista_shutter"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"tf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"vu" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"wU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"xC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"yl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"zl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/pod,
+/area/shuttle/common/vista/helm)
+"zE" = (
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/machinery/recharge_station,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"zX" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/common/vista)
+"Dd" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/item/toy/plush/borbplushie{
+	name = "Garuda";
+	desc = "Garuda is portrayed as a protector with the power to swiftly travel anywhere, ever vigilant and an enemy of every serpent."
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/pod,
+/area/shuttle/common/vista/helm)
+"EW" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/airlock/command/glass{
+	name = "Vista Helm"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron,
+/area/shuttle/common/vista/helm)
+"GF" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"GQ" = (
+/turf/template_noop,
+/area/template_noop)
+"GX" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/wideband/directional/east,
+/turf/open/floor/pod,
+/area/shuttle/common/vista/helm)
+"HU" = (
+/obj/machinery/button/door/directional/west{
+	name = "cargo bay shutters";
+	id = "vista cargo shutter"
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shutters{
+	id = "vista cargo shutter"
+	},
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"Je" = (
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"Ji" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/mining_laser{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"LG" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable,
+/obj/structure/lattice/catwalk/plated,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"LJ" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/stripes/corner,
+/obj/structure/ore_box,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"LX" = (
+/obj/docking_port/mobile{
+	dwidth = 6;
+	height = 9;
+	id = "vista";
+	launch_status = 0;
+	name = "CPCV Vista";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 11
+	},
+/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"Nd" = (
+/obj/structure/lattice/catwalk/plated,
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"NV" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "vista_shutter"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"Oa" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/common/vista)
+"Pp" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/common/vista)
+"QV" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/large/air_can,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"QW" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"UO" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/north,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"Vb" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "vista_shutter"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/common/vista/helm)
+"Vt" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/visible,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"VH" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	pipe_color = "#FF7B00"
+	},
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"VQ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "vista_shutter"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+"Wc" = (
+/obj/machinery/atmospherics/components/unary/engine{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/common/vista)
+"Yb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/long_range,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/pod,
+/area/shuttle/common/vista/helm)
+"Yz" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/airalarm/directional/west{
+	locked = 0
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/bot,
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/iron,
+/area/shuttle/common/vista)
+"ZS" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/structure/lattice/catwalk/plated,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/plating,
+/area/shuttle/common/vista)
+
+(1,1,1) = {"
+zX
+Wc
+zX
+GQ
+GQ
+GQ
+zX
+Wc
+zX
+"}
+(2,1,1) = {"
+zX
+Vt
+Oa
+NV
+ki
+NV
+Oa
+Vt
+zX
+"}
+(3,1,1) = {"
+zX
+qy
+nj
+LG
+Yz
+QV
+zE
+LJ
+zX
+"}
+(4,1,1) = {"
+zX
+VH
+gF
+Je
+fJ
+ml
+ml
+wU
+HU
+"}
+(5,1,1) = {"
+zX
+zX
+zX
+zX
+UO
+ml
+cV
+wU
+jL
+"}
+(6,1,1) = {"
+QW
+ZS
+lQ
+xC
+vu
+tf
+tf
+iU
+zX
+"}
+(7,1,1) = {"
+zX
+be
+zX
+GF
+qA
+yl
+de
+li
+LX
+"}
+(8,1,1) = {"
+kA
+Vb
+kA
+EW
+Vb
+Pp
+Nd
+zX
+zX
+"}
+(9,1,1) = {"
+Vb
+GX
+zl
+Yb
+Dd
+zX
+kk
+eT
+VQ
+"}
+(10,1,1) = {"
+kA
+kA
+gO
+se
+jG
+VQ
+sw
+zX
+zX
+"}
+(11,1,1) = {"
+GQ
+kA
+kA
+Vb
+Vb
+VQ
+Ji
+zX
+GQ
+"}

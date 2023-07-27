@@ -52,7 +52,7 @@
 
 	if(!reagents.total_volume)
 		return
-	var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "glassoverlay")
+	var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "glass_overlay")
 	reagent_overlay.color = mix_color_from_reagents(reagents.reagent_list)
 	. += reagent_overlay
 
@@ -106,7 +106,7 @@
 
 	if(!reagents.total_volume)
 		return
-	var/mutable_appearance/shot_overlay = mutable_appearance(icon, "shotglassoverlay")
+	var/mutable_appearance/shot_overlay = mutable_appearance(icon, "[base_icon_state]_overlay")
 	shot_overlay.color = mix_color_from_reagents(reagents.reagent_list)
 	. += shot_overlay
 

@@ -5,13 +5,10 @@
 This is loosely based on `ss13_genchangelog.py` by Rob "N3X15" Nelson,
     all credits to them for the original idea.
 
-Copyright, 2022 Alex 'Avunia' Takiya <takiya.eu>
-Copyright, 2022 Horizon Project <hrzn.fun>
-
 Licensed under MIT - see adjacent LICENSE file for more information.
 '''
 
-__copyright__ = "Copyright 2022, Alex 'Avunia' Takiya <takiya.eu>"
+__copyright__ = ""
 __version__ = "1.0.0"
 
 import argparse, html, json, logging, sys, re

@@ -77,13 +77,6 @@
 	icon_state = "xenobio"
 	is_editable = TRUE
 
-/obj/structure/sign/departments/nanites
-	name = "\improper Nanite Lab sign"
-	sign_change_name = "Department - Science: Nanites"
-	desc = "A sign labelling an area where testing and development of nanites is performed."
-	icon_state = "nanites"
-	is_editable = TRUE
-
 ///////SERVICE
 
 /obj/structure/sign/departments/botany
@@ -213,6 +206,13 @@
 	icon_state = "deck-5"
 	is_editable = TRUE
 
+/obj/structure/sign/departments/deck6
+	name = "\improper Deck 6 sign"
+	sign_change_name = "Location - Deck 6"
+	desc = "A sign labelling the deck."
+	icon_state = "deck-6"
+	is_editable = TRUE
+
 ///////SMALL SIGNS
 
 /obj/structure/sign/departments/deck1/small
@@ -234,6 +234,10 @@
 /obj/structure/sign/departments/deck5/small
 	sign_change_name = "Location - Deck 5 (small)"
 	icon_state = "deck-5-small"
+
+/obj/structure/sign/departments/deck6/small
+	sign_change_name = "Location - Deck 6 (small)"
+	icon_state = "deck-6-small"
 
 /obj/structure/sign/departments/examroom/small
 	sign_change_name = "Department - Medbay: Exam Room (small)"

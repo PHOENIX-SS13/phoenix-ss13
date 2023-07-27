@@ -109,7 +109,6 @@
 	if(SSshuttle.arrivals?.mode == SHUTTLE_CALL)
 		var/atom/movable/screen/splash/Spl = new(boarder.client, TRUE)
 		Spl.Fade(TRUE)
-		boarder.playsound_local(get_turf(boarder), 'sound/voice/ApproachingTG.ogg', 25)
 	boarder.update_parallax_teleport()
 
 
@@ -136,6 +135,13 @@
 /area/shuttle/mining/large
 	name = "Mining Shuttle"
 	requires_power = TRUE
+
+/area/shuttle/common/vista
+	name = "CPCV Vista"
+	requires_power = TRUE
+
+/area/shuttle/common/vista/helm
+	name = "CPCV Vista Helm"
 
 /area/shuttle/labor
 	name = "Labor Camp Shuttle"

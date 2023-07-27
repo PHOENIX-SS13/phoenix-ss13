@@ -326,6 +326,12 @@
 	credit_cost = CARGO_CRATE_VALUE * 10
 	description = "A fully functional shuttle including a complete infirmary, storage facilties and regular amenities."
 
+/datum/map_template/shuttle/emergency/skyline
+	suffix = "skyline"
+	name = "CPCV Skyline Emergency Shuttle"
+	credit_cost = CARGO_CRATE_VALUE * 4
+	description = "A small sized shuttle used as a ferry for the CPCV Skyline."
+
 /datum/map_template/shuttle/emergency/mini
 	suffix = "mini"
 	name = "Ministation emergency shuttle"
@@ -588,6 +594,14 @@
 /datum/map_template/shuttle/mining/kilo
 	suffix = "kilo"
 	name = "mining shuttle (Kilo)"
+
+/datum/map_template/shuttle/mining/skyline
+	suffix = "skyline"
+	name = "mining shuttle (Skyline)"
+
+/datum/map_template/shuttle/cargo/skyline
+	suffix = "skyline"
+	name = "cargo ferry (Skyline)"
 
 /datum/map_template/shuttle/mining/large
 	suffix = "large"

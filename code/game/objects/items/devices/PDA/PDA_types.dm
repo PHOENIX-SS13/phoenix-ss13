@@ -253,3 +253,130 @@
 	default_cartridge = /obj/item/cartridge/medical
 	greyscale_config = /datum/greyscale_config/pda/stripe_split
 	greyscale_colors = "#e2e2e2#000099#0097ca"
+
+// Skyline Ship Additions //
+
+/obj/item/pda/heads/skyline/first_mate
+	name = "first mate PDA"
+	default_cartridge = /obj/item/cartridge/hop
+	greyscale_colors = "#aa9100#0060b8"
+
+/obj/item/pda/heads/skyline/bridge_officer
+	name = "bridge officer PDA"
+	default_cartridge = /obj/item/cartridge/head
+	greyscale_colors = "#aa9100#0060b8"
+
+/obj/item/pda/heads/skyline/pilot
+	name = "skyline pilot PDA"
+	default_cartridge = /obj/item/cartridge/head
+	greyscale_colors = "#aa9100#0060b8"
+
+/obj/item/pda/heads/skyline/lead_researcher
+	name = "lead researcher PDA"
+	default_cartridge = /obj/item/cartridge/rd
+	inserted_item = /obj/item/pen/fountain
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick/head
+	greyscale_colors = "#e2e2e2#000099#9e00ea"
+
+/obj/item/pda/heads/skyline/lead_doctor
+	name = "lead medical doctor PDA"
+	default_cartridge = /obj/item/cartridge/cmo
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick/head
+	greyscale_colors = "#e2e2e2#000099#5d99be"
+
+/obj/item/pda/heads/skyline/lead_engineer
+	name = "lead engineer PDA"
+	default_cartridge = /obj/item/cartridge/ce
+	greyscale_colors = "#ceca2b#339900"
+
+/obj/item/pda/heads/skyline/security_team_lead
+	name = "security team lead PDA"
+	default_cartridge = /obj/item/cartridge/hos
+	greyscale_config = /datum/greyscale_config/pda/head
+	greyscale_colors = "#cc4242#339900"
+
+/obj/item/pda/heads/skyline/lead_deckhand
+	name = "lead deckhand PDA"
+	default_cartridge = /obj/item/cartridge/quartermaster
+	inserted_item = /obj/item/pen/fountain
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick
+	greyscale_colors = "#e39751#a92323#a23e3e"
+
+/obj/item/pda/skyline/deckhand
+	name = "deckhand PDA"
+	default_cartridge = /obj/item/cartridge/quartermaster
+	greyscale_colors = "#e39751#a92323"
+
+/obj/item/pda/skyline/salvage_worker
+	name = "salvage worker PDA"
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick
+	greyscale_colors = "#af9366#8f36c6#8f36c6"
+
+/obj/item/pda/skyline/private_investigator
+	name = "private investigator PDA"
+	default_cartridge = /obj/item/cartridge/detective
+	greyscale_colors = "#97670e#990202"
+
+/obj/item/pda/skyline/xenobotanist
+	name = "xenobotanist PDA"
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick
+	greyscale_colors = "#44843c#e29652#00cc35"
+
+/obj/item/pda/skyline/janitor
+	name = "ship janitor PDA"
+	default_cartridge = /obj/item/cartridge/janitor
+	greyscale_colors = "#933ea8#a92323"
+	ttone = "slip"
+
+/obj/item/pda/skyline/roboticist
+	name = "ship roboticist PDA"
+	greyscale_config = /datum/greyscale_config/pda/stripe_split
+	greyscale_colors = "#484848#8b2400#d33725"
+	default_cartridge = /obj/item/cartridge/roboticist
+
+/obj/item/pda/skyline/researcher
+	name = "ship researcher PDA"
+	default_cartridge = /obj/item/cartridge/signal/toxins
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick
+	greyscale_colors = "#e2e2e2#000099#9e00ea"
+	ttone = "boom"
+
+/obj/item/pda/skyline/geneticist
+	name = "ship geneticist PDA"
+	default_cartridge = /obj/item/cartridge/medical
+	greyscale_config = /datum/greyscale_config/pda/stripe_split
+	greyscale_colors = "#e2e2e2#000099#0097ca"
+
+/obj/item/pda/skyline/virology
+	name = "ship virology PDA"
+	default_cartridge = /obj/item/cartridge/medical
+	greyscale_config = /datum/greyscale_config/pda/stripe_split
+	greyscale_colors = "#e2e2e2#00cc00#789876"
+
+/obj/item/pda/skyline/doctor
+	name = "ship medical doctor PDA"
+	default_cartridge = /obj/item/cartridge/medical
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick
+	greyscale_colors = "#e2e2e2#000099#5d99be"
+
+/obj/item/pda/skyline/nurse
+	name = "nurse PDA"
+	default_cartridge = /obj/item/cartridge/medical
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick
+	greyscale_colors = "#e2e2e2#000099#5d99be"
+
+/obj/item/pda/skyline/chemist
+	name = "ship chemist PDA"
+	default_cartridge = /obj/item/cartridge/chemistry
+	greyscale_config = /datum/greyscale_config/pda/stripe_thick
+	greyscale_colors = "#e2e2e2#a92323#ea6400"
+
+/obj/item/pda/skyline/security_officer
+	name = "security PDA"
+	default_cartridge = /obj/item/cartridge/security
+	greyscale_colors = "#cc4242#339900"
+
+/obj/item/pda/skyline/customs_officer
+	name = "customs officer PDA"
+	default_cartridge = /obj/item/cartridge/security
+	greyscale_colors = "#cc4242#339900"

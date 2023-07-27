@@ -478,29 +478,26 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted_bodytypes = NONE
 
-/obj/item/clothing/suit/jacket/greatcoat
+/obj/item/clothing/suit/greatcoat
 	name = "gentleman's great coat"
 	desc = "Something seems posh."
 	icon_state = "gentlecoat"
 	inhand_icon_state = "gentlecoat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	fitted_bodytypes = NONE
 
-/obj/item/clothing/suit/jacket/ladiesvictoriancoat
+/obj/item/clothing/suit/ladiesvictoriancoat
 	name = "ladies victorian coat"
 	desc = "A masterfully crafted slim-fit coat in the style of old Sol fashion."
 	icon_state = "ladiesvictoriancoat"
 	inhand_icon_state = "ladiesvictoriancoat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	fitted_bodytypes = NONE
 
-/obj/item/clothing/suit/jacket/ladiescoat
+/obj/item/clothing/suit/ladiescoat
 	name = "ladies coat"
 	desc = "A slim-fit coat made of synthetic leather, almost tight!"
 	icon_state = "ladiescoat"
 	inhand_icon_state = "ladiescoat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	fitted_bodytypes = NONE
 
 /obj/item/clothing/suit/jacket/puffer
 	name = "puffer jacket"

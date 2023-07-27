@@ -19,7 +19,7 @@
 	var/map_file = "MetaStation.dmm"
 
 	var/traits = null
-	var/space_ruin_levels = 3
+	var/space_ruin_levels = 6
 
 	var/minetype = "lavaland"
 
@@ -59,7 +59,7 @@
 	/// Possible water colors of the loaded map
 	var/list/water_color
 
-	var/amount_of_planets_spawned = 2
+	var/amount_of_planets_spawned = 6
 
 	var/ore_node_seeder_type
 

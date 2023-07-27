@@ -786,7 +786,7 @@
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
-
+/*
 /datum/design/borg_upgrade_circuit_app
 	name = "Cyborg Upgrade (Circuit Manipulator)"
 	id = "borg_upgrade_circuitapp"
@@ -795,7 +795,7 @@
 	materials = list(/datum/material/iron = 2000, /datum/material/titanium = 500)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
-
+*/
 /datum/design/borg_upgrade_beaker_app
 	name = "Cyborg Upgrade (Beaker Storage)"
 	id = "borg_upgrade_beakerapp"

@@ -73,5 +73,10 @@
 	max_traders = 6
 	guaranteed_trader_types = list(/datum/trader/mining, /datum/trader/medical, /datum/trader/archeology)
 
+/datum/trade_hub/worldwide/skyline
+	name = "CPC Lifeline Network"
+	max_traders = 3
+	guaranteed_trader_types = list(/datum/trader/mining, /datum/trader/medical)
+
 /datum/trade_hub/randomname
 	possible_names = list("SCG Emporium", "Spacedust Cleaners Co.", "Northwind Traders", "Space Coast Trading", "Plasma Enterprises", "Off-branch Trasen Co.")

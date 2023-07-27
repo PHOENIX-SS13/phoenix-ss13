@@ -1,0 +1,293 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/supply)
+"c" = (
+/obj/item/paper/fluff/stations/skylineship/cargo_shuttle_notice{
+	pixel_y = 27
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/shuttle/supply)
+"d" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/computer{
+	name = "Gilbert's Autopilot Console"
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/supply)
+"f" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Supply Shuttle Airlock";
+	req_access_txt = "31"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 4
+	},
+/obj/docking_port/mobile/supply{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/supply)
+"g" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 8
+	},
+/area/shuttle/supply)
+"j" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/supply)
+"k" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper/fluff/stations/skylineship/cargo_shuttle_notice{
+	pixel_y = 27
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/shuttle/supply)
+"m" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/glass/reinforced,
+/area/shuttle/supply)
+"q" = (
+/obj/structure/window/reinforced,
+/obj/item/radio/intercom/wideband/directional/west,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/shuttle/supply)
+"r" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/supply)
+"s" = (
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 4
+	},
+/area/shuttle/supply)
+"t" = (
+/obj/machinery/button/door/directional/west{
+	id = "cargounload";
+	name = "Loading Doors"
+	},
+/obj/machinery/conveyor_switch/oneway{
+	dir = 8;
+	id = "ShuttleUnload";
+	name = "off ramp";
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/shuttle/supply)
+"u" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_edge,
+/area/shuttle/supply)
+"v" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating/airless,
+/area/shuttle/supply)
+"w" = (
+/turf/open/floor/iron/dark,
+/area/shuttle/supply)
+"x" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "ShuttleUnload"
+	},
+/turf/open/floor/iron,
+/area/shuttle/supply)
+"y" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "ShuttleUnload"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/shuttle/supply)
+"z" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/shuttle/engine/heater,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/shuttle/supply)
+"A" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/shuttle/engine/heater,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/shuttle/supply)
+"C" = (
+/obj/structure/shuttle/engine/propulsion/burst/left,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/shuttle/supply)
+"D" = (
+/obj/structure/shuttle/engine/propulsion,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/shuttle/supply)
+"E" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/shuttle/supply)
+"I" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 4
+	},
+/area/shuttle/supply)
+"J" = (
+/obj/machinery/door/poddoor{
+	id = "cargounload";
+	name = "supply dock loading door"
+	},
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "ShuttleUnload"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/supply)
+"K" = (
+/turf/template_noop,
+/area/space)
+"N" = (
+/obj/effect/turf_decal/stripes/red{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 8
+	},
+/area/shuttle/supply)
+"P" = (
+/turf/open/floor/iron/dark/smooth_edge,
+/area/shuttle/supply)
+"T" = (
+/obj/structure/window/reinforced,
+/obj/structure/bed/dogbed,
+/obj/item/toy/plush/space_lizard_plushie{
+	name = "Gilbert"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/supply)
+"U" = (
+/turf/open/floor/glass/reinforced,
+/area/shuttle/supply)
+"V" = (
+/obj/structure/window/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/long_range,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/shuttle/supply)
+"X" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 8
+	},
+/area/shuttle/supply)
+
+(1,1,1) = {"
+K
+a
+r
+r
+f
+a
+a
+J
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+c
+g
+N
+X
+t
+x
+z
+C
+"}
+(3,1,1) = {"
+v
+q
+j
+m
+m
+U
+P
+x
+z
+D
+"}
+(4,1,1) = {"
+d
+T
+j
+j
+w
+j
+u
+y
+A
+D
+"}
+(5,1,1) = {"
+v
+V
+w
+U
+m
+m
+u
+y
+z
+D
+"}
+(6,1,1) = {"
+a
+a
+k
+s
+I
+s
+E
+a
+A
+D
+"}
+(7,1,1) = {"
+K
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}

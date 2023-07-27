@@ -63,12 +63,14 @@
 	desc = "A rusted metal wall."
 	hardness = 45
 	rusted = TRUE
+	color = "#544f3c" //removed on initialize; helps mappers differentiate the wall types
 
 /turf/closed/wall/r_wall/rust
 	name = "rusted reinforced wall"
 	desc = "A huge chunk of rusted reinforced metal."
 	hardness = 15
 	rusted = TRUE
+	color = "#544f3c"
 
 /turf/closed/wall/mineral/bronze
 	name = "clockwork wall"

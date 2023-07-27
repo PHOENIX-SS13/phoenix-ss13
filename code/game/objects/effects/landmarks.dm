@@ -491,3 +491,141 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 		M.forceMove(closet)
 		return
 	..() //Call parent as fallback
+
+// Skyline Ship Additions //
+
+/obj/effect/landmark/start/skyline/stowaway
+	name = "Stowaway"
+	icon_state = "Prisoner"
+
+/obj/effect/landmark/start/skyline/off_duty_crewmember
+	name = "Off-Duty Crewmember"
+	icon_state = "Assistant"
+
+/obj/effect/landmark/start/skyline/captain
+	name = "Ship Captain"
+	icon_state = "Captain"
+
+/obj/effect/landmark/start/skyline/first_mate
+	name = "First Mate"
+	icon_state = "Head of Personnel"
+
+/obj/effect/landmark/start/skyline/bridge_officer
+	name = "Bridge Officer"
+	icon_state = "Head of Personnel"
+
+/obj/effect/landmark/start/skyline/pilot
+	name = "Skyline Pilot"
+	icon_state = "Head of Personnel"
+
+/obj/effect/landmark/start/skyline/lead_engineer
+	name = "Lead Engineer"
+	icon_state = "Chief Engineer"
+
+/obj/effect/landmark/start/skyline/engineer
+	name = "Ship Engineer"
+	icon_state = "Station Engineer"
+
+/obj/effect/landmark/start/skyline/lead_doctor
+	name = "Lead Doctor"
+	icon_state = "Chief Medical Officer"
+
+/obj/effect/landmark/start/skyline/doctor
+	name = "Ship Medical Doctor"
+	icon_state = "Medical Doctor"
+
+/obj/effect/landmark/start/skyline/nurse
+	name = "Ship Nurse"
+	icon_state = "Medical Doctor"
+
+/obj/effect/landmark/start/skyline/roboticist
+	name = "Ship Roboticist"
+	icon_state = "Roboticist"
+
+/obj/effect/landmark/start/skyline/chemist
+	name = "Ship Chemist"
+	icon_state = "Chemist"
+
+/obj/effect/landmark/start/skyline/virologist
+	name = "Ship Virologist"
+	icon_state = "Virologist"
+
+/obj/effect/landmark/start/skyline/lead_researcher
+	name = "Lead Researcher"
+	icon_state = "Research Director"
+
+/obj/effect/landmark/start/skyline/researcher
+	name = "Ship Researcher"
+	icon_state = "Scientist"
+
+/obj/effect/landmark/start/skyline/geneticist
+	name = "Ship Geneticist"
+	icon_state = "Geneticist"
+
+/obj/effect/landmark/start/skyline/xenobotanist
+	name = "Ship Xenobotanist"
+	icon_state = "Botanist"
+
+/obj/effect/landmark/start/skyline/security_team_lead
+	name = "Security Team Lead"
+	icon_state = "Head of Security"
+
+/obj/effect/landmark/start/skyline/security_officer
+	name = "Security Officer"
+	icon_state = "Security Officer"
+
+/obj/effect/landmark/start/skyline/customs_officer
+	name = "Customs Officer"
+	icon_state = "Security Officer"
+
+/obj/effect/landmark/start/skyline/lead_deckhand
+	name = "Lead Deckhand"
+	icon_state = "Quartermaster"
+
+/obj/effect/landmark/start/skyline/deckhand
+	name = "Deckhand"
+	icon_state = "Cargo Technician"
+
+/obj/effect/landmark/start/skyline/salvage_worker
+	name = "Salvage Worker"
+	icon_state = "Shaft Miner"
+
+/obj/effect/landmark/start/skyline/cook
+	name = "Ship Cook"
+	icon_state = "Cook"
+
+/obj/effect/landmark/start/skyline/private_investigator
+	name = "Private Investigator"
+	icon_state = "Detective"
+
+/obj/effect/landmark/start/skyline/janitor
+	name = "Ship Janitor"
+	icon_state = "Janitor"
+
+/obj/effect/landmark/start/skyline/curator
+	name = "Ship Curator"
+	icon_state = "Curator"
+
+/obj/effect/landmark/start/skyline/bartender
+	name = "Ship Bartender"
+	icon_state = "Bartender"
+
+/obj/effect/landmark/start/skyline/chaplain
+	name = "Ship Chaplain"
+	icon_state = "Chaplain"
+
+/obj/effect/landmark/start/skyline/cyborg
+	name = "Skyline Cyborg"
+	icon_state = "Cyborg"
+
+/obj/effect/landmark/start/skyline/ai
+	name = "AI"
+	icon_state = "AI"
+	delete_after_roundstart = FALSE
+	var/primary_ai = TRUE
+	var/latejoin_active = TRUE
+
+/obj/effect/landmark/start/skyline/ai/after_round_start()
+	if(latejoin_active && !used)
+		new /obj/structure/ai_core/latejoin_inactive(loc)
+	return ..()

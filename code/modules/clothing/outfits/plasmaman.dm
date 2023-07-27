@@ -270,3 +270,28 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/clown
 	head = /obj/item/clothing/head/helmet/space/plasmaman/clown
 	mask = /obj/item/clothing/mask/gas/clown_hat
+
+// Skyline Ship Additions //
+
+/datum/outfit/plasmaman/first_mate
+	name = "First Mate Plasmaman"
+
+	uniform = /obj/item/clothing/under/plasmaman/captain/first_mate
+	gloves = /obj/item/clothing/gloves/color/plasmaman/head_of_personnel/bridge_officer
+	head = /obj/item/clothing/head/helmet/space/plasmaman/captain/first_mate
+
+/datum/outfit/plasmaman/bridge_officer
+	name = "Bridge Officer Plasmaman"
+
+	uniform = /obj/item/clothing/under/plasmaman/head_of_personnel/bridge_officer
+	gloves = /obj/item/clothing/gloves/color/plasmaman/head_of_personnel/bridge_officer
+	head = /obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel/bridge_officer
+
+/datum/outfit/plasmaman/pilot
+	name = "Pilot Plasmaman"
+
+	uniform = /obj/item/clothing/under/plasmaman/head_of_personnel/pilot
+	gloves = /obj/item/clothing/gloves/color/plasmaman/head_of_personnel/bridge_officer
+	head = /obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel/pilot
+
+// End Additions

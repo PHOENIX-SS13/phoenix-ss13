@@ -116,3 +116,41 @@
 	name = "URGENT!"
 	info = "A hastily written note has been scribbled here... <br><br> Please use the ore redemption machine in the cargo office for smelting. PLEASE! <br><br>--The Research Staff"
 
+/////////// Skylineship
+
+/obj/item/paper/fluff/stations/skylineship/cargo_shuttle_notice
+	name = "Notice - DO NOT REMOVE"
+	info = "NOTICE - DO NOT REMOVE <br><br> Please do not remove Gilbert from their post, as their job is very important to keeping the cargo shuttle in operation! Thank you."
+
+/obj/item/paper/fluff/stations/skylineship/salvage_asteroid
+	name = "Notice for Salvage Team"
+	info = {"Notice to the Salvage Team <br><br>
+	The Skyline intercepted an unknown escape pod signal lodged in a free-floating asteroid during the previous shift.
+	<br>
+	Upon further scans, the asteroid turned out to be quite rich in most resources.
+	<br><br>
+	So after extracting the passenger from the pod, the Captain decided to capture the asteroid.
+	<br>
+	The bastard took several hours to get aligned, and we ran out of time before getting to mine it.
+	<br><br>
+	So, feel free to crack it open.
+	<br>
+	- Last shift's Salvage Team"}
+
+/obj/item/paper/fluff/stations/skylineship/captainsorders
+	name = "Orders from CentCom"
+	info = {"MISSION STATEMENT
+	<br>
+	Captain, you have been delegated some additional tasks alongside your peacekeeping mission.<br>
+	While these objectives are not critical they would assist us in furthering our hold in the sector.<br>
+	Look through your current manifest and make a plan to complete atleast two of these objectives.<br>
+	<br>
+	Best of luck, Captain.
+	<br><br><i>
+	OBJ1. Perform a general survey of the local planets, record their sector coordinates and store for later use.<br><br>
+	OBJ2. Make contact with all civilian trading hubs in the sector, record what companies are established in them and what they sell. Store this information for later use.<br><br>
+	OBJ3. Send a surveying team to any habitable worlds within the sector. Collect samples for further study.<br><br>
+	OBJ4. Establish a forward operating post upon a local habitable planet, with a facility to refuel shuttles.<br><br>
+	OBJ5. Establish a listening post in an asteroid cluster, in the midst of any available ruins.<br><br>
+	OBJ6. Establish a small and functional spaceport, with teleport beacons and gigabeacons. Location must be in space.<br><br>
+	</i>"}

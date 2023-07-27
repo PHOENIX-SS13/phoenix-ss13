@@ -364,31 +364,70 @@
 
 /datum/chemical_reaction/drink/cherryshake
 	results = list(/datum/reagent/consumable/cherryshake = 5)
-	required_reagents = list(/datum/reagent/consumable/cherryjelly = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(
+		/datum/reagent/consumable/cherryjelly = 1,
+		/datum/reagent/consumable/milk = 2,
+		/datum/reagent/consumable/ice = 1,
+		/datum/reagent/consumable/cream = 1,
+	)
 
 /datum/chemical_reaction/drink/bluecherryshake
 	results = list(/datum/reagent/consumable/bluecherryshake = 5)
-	required_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(
+		/datum/reagent/consumable/bluecherryjelly = 1,
+		/datum/reagent/consumable/milk = 2,
+		/datum/reagent/consumable/ice = 1,
+		/datum/reagent/consumable/cream = 1,
+	)
 
 /datum/chemical_reaction/drink/milkshake_chocolate
 	results = list(/datum/reagent/consumable/milkshake_chocolate = 5)
-	required_reagents = list(/datum/reagent/consumable/coco = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(
+		/datum/reagent/consumable/coco = 1,
+		/datum/reagent/consumable/milk = 2,
+		/datum/reagent/consumable/ice = 1,
+		/datum/reagent/consumable/cream = 1,
+	)
 
 /datum/chemical_reaction/drink/milkshake_chocolate_premixed	//Allows upgrading chocolate milk to milkshakes
 	results = list(/datum/reagent/consumable/milkshake_chocolate = 5)
-	required_reagents = list(/datum/reagent/consumable/milk/chocolate_milk = 4, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(
+		/datum/reagent/consumable/milk/chocolate_milk = 3,
+		/datum/reagent/consumable/ice = 1,
+		/datum/reagent/consumable/cream = 1,
+	)
 
 /datum/chemical_reaction/drink/milkshake_strawberry
 	results = list(/datum/reagent/consumable/milkshake_strawberry = 5)
-	required_reagents = list(/datum/reagent/consumable/pinkmilk = 4, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(
+		/datum/reagent/consumable/berry_blast = 4,
+		/datum/reagent/consumable/ice = 1,
+	)
 
 /datum/chemical_reaction/drink/milkshake_banana
 	results = list(/datum/reagent/consumable/milkshake_banana = 5)
-	required_reagents = list(/datum/reagent/consumable/banana = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(
+		/datum/reagent/consumable/banana = 1,
+		/datum/reagent/consumable/milk = 2,
+		/datum/reagent/consumable/ice = 1,
+		/datum/reagent/consumable/cream = 1,
+	)
 
 /datum/chemical_reaction/drink/milkshake_vanilla
 	results = list(/datum/reagent/consumable/milkshake_vanilla = 5)
-	required_reagents = list(/datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/milk = 3, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(
+		/datum/reagent/consumable/vanilla_dream = 4,
+		/datum/reagent/consumable/ice = 1,
+	)
+
+/datum/chemical_reaction/drink/milkshake_caramel
+	results = list(/datum/reagent/consumable/milkshake_caramel = 5)
+	required_reagents = list(
+		/datum/reagent/consumable/caramel = 1,
+		/datum/reagent/consumable/milk = 2,
+		/datum/reagent/consumable/ice = 1,
+		/datum/reagent/consumable/cream = 1,
+	)
 
 /datum/chemical_reaction/drink/drunkenblumpkin
 	results = list(/datum/reagent/consumable/ethanol/drunkenblumpkin = 4)
@@ -785,3 +824,57 @@
 	results = list(/datum/reagent/consumable/ethanol/triumphal_arch = 10)
 	required_reagents = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 5, /datum/reagent/consumable/ethanol/grappa = 2, /datum/reagent/consumable/lemonjuice = 2, /datum/reagent/gold = 1)
 	mix_message = "The mixture turns a deep golden hue."
+
+/datum/chemical_reaction/drink/roy_rogers
+	results = list(/datum/reagent/consumable/roy_rogers = 3)
+	required_reagents = list(/datum/reagent/consumable/space_cola = 2, /datum/reagent/consumable/grenadine = 1)
+
+/datum/chemical_reaction/drink/shirley_temple
+	results = list(/datum/reagent/consumable/shirley_temple = 3)
+	required_reagents = list(/datum/reagent/consumable/sol_dry = 2, /datum/reagent/consumable/grenadine = 1)
+
+/datum/chemical_reaction/drink/agua_fresca
+	results = list(/datum/reagent/consumable/agua_fresca = 10)
+	required_reagents = list(/datum/reagent/consumable/watermelonjuice = 4, /datum/reagent/consumable/ice = 1, /datum/reagent/water = 2, /datum/reagent/consumable/limejuice = 2, /datum/reagent/consumable/menthol = 1)
+
+/datum/chemical_reaction/drink/cinderella
+	results = list(/datum/reagent/consumable/cinderella = 50)
+	required_reagents = list(/datum/reagent/consumable/pineapplejuice = 10, /datum/reagent/consumable/orangejuice = 10, /datum/reagent/consumable/lemonjuice = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/sol_dry = 20)
+
+/datum/chemical_reaction/drink/italian_coco
+	results = list(/datum/reagent/consumable/italian_coco = 10)
+	required_reagents = list(/datum/reagent/consumable/hot_coco  = 5, /datum/reagent/consumable/corn_starch = 1, /datum/reagent/consumable/cream = 4)
+
+/datum/chemical_reaction/drink/strawberry_banana
+	results = list(/datum/reagent/consumable/strawberry_banana = 3)
+	required_reagents = list(
+		/datum/reagent/consumable/pinkmilk = 2,
+		/datum/reagent/consumable/banana = 1,
+	)
+
+/datum/chemical_reaction/drink/berry_blast
+	results = list(/datum/reagent/consumable/berry_blast = 3)
+	required_reagents = list(
+		/datum/reagent/consumable/pinkmilk = 2,
+		/datum/reagent/consumable/cream = 1,
+	)
+
+/datum/chemical_reaction/drink/funky_monkey
+	results = list(/datum/reagent/consumable/funky_monkey = 3)
+	required_reagents = list(/datum/reagent/consumable/coco = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/banana = 1)
+
+/datum/chemical_reaction/drink/green_giant
+	results = list(/datum/reagent/consumable/green_giant = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/limejuice = 1)
+
+/datum/chemical_reaction/drink/melon_baller
+	results = list(/datum/reagent/consumable/melon_baller = 3)
+	required_reagents = list(/datum/reagent/consumable/watermelonjuice = 1, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/milk = 1)
+
+/datum/chemical_reaction/drink/vanilla_dream
+	results = list(/datum/reagent/consumable/vanilla_dream = 3)
+	required_reagents = list(
+		/datum/reagent/consumable/vanilla = 1,
+		/datum/reagent/consumable/milk = 1,
+		/datum/reagent/consumable/cream = 1,
+	)

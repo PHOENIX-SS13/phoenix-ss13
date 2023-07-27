@@ -3299,16 +3299,12 @@
 /turf/open/floor/iron,
 /area/maintenance/tram/mid)
 "alu" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "alx" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/stripes/line{
@@ -3736,17 +3732,6 @@
 	dir = 8
 	},
 /area/service/chapel)
-"anf" = (
-/obj/machinery/computer/nanite_chamber_control,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
-	},
-/obj/machinery/requests_console/directional/north{
-	department = "Nanite Lab";
-	name = "Nanite Lab Requests Console"
-	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "anj" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -5771,13 +5756,10 @@
 /turf/open/floor/iron/dark,
 /area/service/bar)
 "asL" = (
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
-	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "asM" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -6242,21 +6224,9 @@
 /turf/open/floor/iron/dark,
 /area/command/gateway)
 "auc" = (
-/obj/structure/table,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 8
-	},
-/obj/item/storage/box/disks_nanite{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/storage/box/disks_nanite{
-	pixel_x = 6;
-	pixel_y = 3
-	},
 /obj/item/radio/intercom/directional/west,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "auf" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -7702,7 +7672,7 @@
 /area/service/kitchen)
 "ayQ" = (
 /turf/closed/wall/r_wall,
-/area/science/nanite)
+/area/science/circuits)
 "ayR" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
@@ -10634,13 +10604,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 2
 	},
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 5
-	},
 /obj/machinery/light_switch/directional/east,
 /obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "aIu" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -10771,13 +10738,9 @@
 	},
 /area/holodeck/rec_center)
 "aIT" = (
-/obj/structure/filingcabinet,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 6
-	},
 /obj/machinery/firealarm/directional/east,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "aIU" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 10
@@ -13286,28 +13249,8 @@
 /turf/open/floor/plating/airless,
 /area/mine/explored)
 "bap" = (
-/obj/structure/table,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 9
-	},
-/obj/item/nanite_scanner{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/item/nanite_scanner{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/nanite_remote{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/nanite_remote{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "baB" = (
 /obj/structure/girder,
 /obj/effect/decal/cleanable/dirt,
@@ -13357,13 +13300,10 @@
 /turf/open/floor/iron,
 /area/hallway/primary/tram/right)
 "baY" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "bbb" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_one_access_txt = "12"
@@ -14298,8 +14238,8 @@
 /area/hallway/secondary/exit/departure_lounge)
 "bsR" = (
 /obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "bsW" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 4
@@ -14330,7 +14270,7 @@
 	name = "research lab shutters"
 	},
 /turf/open/floor/plating,
-/area/science/nanite)
+/area/science/circuits)
 "btP" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 1
@@ -14911,14 +14851,11 @@
 /turf/open/floor/iron,
 /area/commons/storage/art)
 "bFL" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "bFS" = (
 /obj/structure/grille,
 /obj/effect/decal/cleanable/dirt,
@@ -15323,13 +15260,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/science/research)
-"bMz" = (
-/obj/machinery/nanite_programmer,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/circuit/green,
-/area/science/nanite)
 "bMC" = (
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -17265,12 +17195,11 @@
 /turf/open/floor/plating,
 /area/maintenance/central/secondary)
 "cAT" = (
-/obj/effect/turf_decal/stripes/line,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "cAU" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
@@ -18506,17 +18435,13 @@
 /turf/open/floor/iron/dark,
 /area/science/xenobiology)
 "dbl" = (
-/obj/machinery/nanite_chamber,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
-	},
 /obj/machinery/camera{
-	c_tag = "Science - Nanite Lab";
+	c_tag = "Science - Circuits Testing Lab";
 	dir = 6;
 	network = list("ss13","science")
 	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "dbr" = (
 /obj/machinery/door/airlock/medical/glass{
 	name = "Treatment Center";
@@ -19997,13 +19922,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/medical/medbay/central)
-"dFo" = (
-/obj/structure/chair/office/light{
-	dir = 1
-	},
-/obj/effect/landmark/start/scientist,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "dFv" = (
 /obj/effect/spawner/lootdrop/food_packaging,
 /obj/effect/decal/cleanable/dirt,
@@ -26383,9 +26301,6 @@
 /obj/machinery/status_display/evac/directional/north,
 /turf/open/floor/iron/white,
 /area/science/research)
-"gfd" = (
-/turf/open/floor/circuit/green,
-/area/science/nanite)
 "gfe" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/green/visible,
 /obj/effect/turf_decal/trimline/red/filled/corner{
@@ -29642,15 +29557,12 @@
 /area/maintenance/disposal/incinerator)
 "hqq" = (
 /obj/machinery/door/airlock/research{
-	name = "Nanite Laboratory";
-	req_one_access_txt = "7"
+	name = "Circuits Testing Lab";
+	req_access_txt = "47"
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
 	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
@@ -29658,8 +29570,8 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "hqr" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/trimline/neutral/filled/line{
@@ -30851,9 +30763,6 @@
 /turf/open/floor/iron,
 /area/cargo/office)
 "hPF" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 6
@@ -30861,8 +30770,8 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "hPX" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -31872,6 +31781,7 @@
 	pixel_x = 3;
 	pixel_y = -23
 	},
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "inU" = (
@@ -34627,13 +34537,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/science/explab)
-"jqL" = (
-/obj/machinery/nanite_program_hub,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/circuit/green,
-/area/science/nanite)
 "jqY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -37892,11 +37795,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/command/teleporter)
-"kzT" = (
-/obj/machinery/holopad,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "kzW" = (
 /obj/effect/spawner/lootdrop/garbage_spawner,
 /obj/effect/decal/cleanable/dirt,
@@ -40884,6 +40782,18 @@
 	},
 /turf/open/floor/iron,
 /area/hallway/secondary/entry)
+"lFl" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/radio/broadcast/receiver{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/iron,
+/area/service/bar)
 "lFn" = (
 /obj/machinery/door/window/southleft{
 	dir = 1;
@@ -44515,17 +44425,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/effect/turf_decal/trimline/purple/filled/corner{
-	dir = 4
-	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "nkC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -49351,11 +49258,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/engineering/atmospherics_engine)
-"pfi" = (
-/obj/effect/turf_decal/trimline/purple/filled/corner,
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "pfo" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 1
@@ -51447,10 +51349,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/security/brig)
-"pUB" = (
-/obj/machinery/computer/nanite_cloud_controller,
-/turf/open/floor/circuit/green,
-/area/science/nanite)
 "pUM" = (
 /obj/effect/turf_decal/trimline/red/filled/line,
 /turf/open/floor/iron,
@@ -52380,7 +52278,7 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/lift_waypoint{
-	connects_to = list("tram_right" = 1, "tram_left" = 1);
+	connects_to = list("tram_right"=1,"tram_left"=1);
 	id = "tram";
 	name = "Central Wing";
 	waypoint_id = "tram_middle"
@@ -54093,11 +53991,8 @@
 /area/science/mixing)
 "rbD" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 4
-	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "rbI" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
@@ -55125,26 +55020,6 @@
 	},
 /turf/open/floor/iron,
 /area/security/office)
-"rwO" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "rwY" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 10
@@ -60977,12 +60852,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/maintenance/disposal)
-"tJq" = (
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 4
-	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "tJC" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -61312,14 +61181,13 @@
 /area/engineering/atmos)
 "tOO" = (
 /obj/machinery/door/airlock/research{
-	name = "Nanite Laboratory";
-	req_one_access_txt = "7"
+	name = "Circuits Testing Lab";
+	req_access_txt = "47"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/turf_decal/trimline/purple/filled/line,
 /obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
+/turf/open/floor/plating,
+/area/science/circuits)
 "tOS" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4{
 	dir = 4
@@ -61910,6 +61778,7 @@
 	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/effect/landmark/start/autoshell_spawner,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "tYJ" = (
@@ -63882,19 +63751,6 @@
 "uQe" = (
 /turf/open/floor/plating,
 /area/science/mixing)
-"uQm" = (
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "uQq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -63979,14 +63835,6 @@
 	icon_state = "wood-broken3"
 	},
 /area/maintenance/central)
-"uRy" = (
-/obj/structure/filingcabinet,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/purple/filled/line,
-/turf/open/floor/iron/dark,
-/area/science/nanite)
 "uRU" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
@@ -64603,10 +64451,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/maintenance/starboard/central)
-"vfl" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/circuit/green,
-/area/science/nanite)
 "vfo" = (
 /obj/effect/turf_decal/trimline/brown/filled/corner{
 	dir = 4
@@ -95066,7 +94910,7 @@ aej
 tdQ
 ahV
 ahV
-ayI
+lFl
 uMt
 ulk
 ahV
@@ -177605,9 +177449,9 @@ ayQ
 bap
 auc
 alu
-bMz
-vfl
-pUB
+bap
+bap
+bap
 ayQ
 aae
 aae
@@ -177859,12 +177703,12 @@ aae
 aae
 aae
 ayQ
-anf
-dFo
+bap
+bap
 cAT
-uQm
-uQm
-gfd
+bap
+bap
+bap
 ayQ
 aae
 aae
@@ -178117,11 +177961,11 @@ der
 der
 ayQ
 dbl
-kzT
+bap
 cAT
-rwO
-uQm
-jqL
+bap
+bap
+bap
 ayQ
 aae
 aae
@@ -178378,7 +178222,7 @@ bsR
 hPF
 baY
 bFL
-uRy
+bap
 ayQ
 aae
 aae
@@ -178633,8 +178477,8 @@ ayQ
 aIs
 rbD
 nkz
-pfi
-tJq
+bsR
+bap
 aIT
 lQG
 lQG

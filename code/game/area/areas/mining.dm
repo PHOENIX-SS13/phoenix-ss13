@@ -224,6 +224,9 @@
 /area/icemoon/underground/unexplored/rivers/deep
 	map_generator = /datum/map_generator/cave_generator/icemoon/deep
 
+/area/icemoon/underground/unexplored/rivers/deep/no_monsters
+	area_flags = CAVES_ALLOWED | FLORA_ALLOWED | NO_ALERTS
+
 /area/icemoon/underground/explored // ruins can't spawn here
 	name = "Icemoon Underground"
 	area_flags = UNIQUE_AREA | NO_ALERTS

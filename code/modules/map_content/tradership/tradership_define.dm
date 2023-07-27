@@ -27,7 +27,7 @@
 			"Baseturf" = "/turf/open/openspace",
 		),
 	)
-	space_ruin_levels = 3
+	//space_ruin_levels = 3
 
 	minetype = "none"
 

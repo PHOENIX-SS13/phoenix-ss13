@@ -84,6 +84,11 @@
 #define ACCESS_TOXINS_STORAGE 71
 /// Room and launching.
 #define ACCESS_AUX_BASE 72
+// Skyline Ship Additions
+#define ACCESS_FIRST_MATE_QUARTERS 73
+#define ACCESS_PILOT_QUARTERS 74
+#define ACCESS_BRIDGE_OFFICER_QUARTERS 75
+#define ACCESS_CUSTOMS_CHECKPOINT 76
 
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
@@ -380,6 +385,7 @@
 	ACCESS_COURT, \
 	ACCESS_MECH_SECURITY, \
 	ACCESS_HOS, \
+	ACCESS_CUSTOMS_CHECKPOINT, \
 )
 /// Name for the Medbay region.
 #define REGION_MEDBAY "Medbay"
@@ -457,6 +463,9 @@
 	ACCESS_HOP, \
 	ACCESS_CAPTAIN, \
 	ACCESS_VAULT, \
+	ACCESS_FIRST_MATE_QUARTERS, \
+	ACCESS_PILOT_QUARTERS, \
+	ACCESS_BRIDGE_OFFICER_QUARTERS, \
 )
 /// Name for the Centcom region.
 #define REGION_CENTCOM "Central Command"
