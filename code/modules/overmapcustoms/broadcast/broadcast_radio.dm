@@ -172,6 +172,10 @@
 				volume = text2num(new_volume)
 				return TRUE
 
+/obj/item/radio/Destroy()
+	broadcast_radio_list.Remove(src)
+	return ..()
+
 //RADIO FOR RECEIVING
 
 /obj/item/radio/broadcast/receiver
