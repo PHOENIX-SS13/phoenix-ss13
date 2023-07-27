@@ -75,6 +75,7 @@ const RecipeList = (props, context) => {
     const recipe = recipes[title];
     if (recipe.ref === undefined) {
       return (
+        // eslint-disable-next-line react/jsx-key
         <Collapsible
           ml={1}
           color="label"
@@ -86,6 +87,7 @@ const RecipeList = (props, context) => {
       );
     } else {
       return (
+        // eslint-disable-next-line react/jsx-key
         <Recipe
           title={title}
           recipe={recipe} />
