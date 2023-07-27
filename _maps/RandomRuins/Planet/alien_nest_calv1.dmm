@@ -154,9 +154,7 @@
 "nk" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/footprints{
-	dir = 4;
-	step_x = 6;
-	step_y = 6
+	dir = 4
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -308,9 +306,7 @@
 /area/template_noop)
 "zo" = (
 /obj/effect/decal/cleanable/blood/footprints{
-	dir = 4;
-	step_x = 6;
-	step_y = 6
+	dir = 4
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -375,9 +371,7 @@
 "Cr" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/footprints{
-	dir = 4;
-	step_x = 6;
-	step_y = 6
+	dir = 4
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
