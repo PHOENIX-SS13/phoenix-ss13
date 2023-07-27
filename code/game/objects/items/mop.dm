@@ -27,7 +27,7 @@
 /obj/item/mop/proc/clean(turf/A, mob/living/cleaner)
 	if(reagents.has_reagent(/datum/reagent/water, 1) || reagents.has_reagent(/datum/reagent/water/holywater, 1) || reagents.has_reagent(/datum/reagent/consumable/ethanol/vodka, 1) || reagents.has_reagent(/datum/reagent/space_cleaner, 1))
 		// If there's a cleaner with a mind, let's gain some experience!
-		A.wash(CLEAN_SCRUB)
+		A.wash(CLEAN_SURFACE)
 
 	reagents.expose(A, TOUCH, 10) //Needed for proper floor wetting.
 	reagents.remove_any(1) //reaction() doesn't use up the reagents

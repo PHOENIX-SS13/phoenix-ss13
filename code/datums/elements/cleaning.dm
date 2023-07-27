@@ -16,17 +16,17 @@
 	if(!isturf(tile))
 		return
 
-	tile.wash(CLEAN_SCRUB)
+	tile.wash(CLEAN_SURFACE)
 	for(var/A in tile)
 		// Clean small items that are lying on the ground
 		if(isitem(A))
 			var/obj/item/I = A
 			if(I.w_class <= WEIGHT_CLASS_SMALL && !ismob(I.loc))
-				I.wash(CLEAN_SCRUB)
+				I.wash(CLEAN_SURFACE)
 		// Clean humans that are lying down
 		else if(ishuman(A))
 			var/mob/living/carbon/human/cleaned_human = A
 			if(cleaned_human.body_position == LYING_DOWN)
-				cleaned_human.wash(CLEAN_SCRUB)
+				cleaned_human.wash(CLEAN_SURFACE)
 				cleaned_human.regenerate_icons()
 				to_chat(cleaned_human, SPAN_DANGER("[AM] cleans your face!"))
