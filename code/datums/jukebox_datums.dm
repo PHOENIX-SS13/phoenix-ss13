@@ -54,8 +54,8 @@
 
 /// Loaded tracks that jukeboxes can pick and play
 /datum/jukebox_track
-	var/song_artist = ""
-	var/song_title = ""
+	var/song_artist = "uncredited"
+	var/song_title = "untitled"
 	var/song_path = null
 	var/song_length = 0
 	var/song_beat = 0

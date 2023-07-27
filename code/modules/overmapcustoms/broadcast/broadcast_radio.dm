@@ -88,8 +88,6 @@
         var/list/track_data = list(
             name = "[S.song_artist] - [S.song_title]"
         )
-        if(S.song_artist == "")
-            track_data["name"] = S.song_title
         data["songs"] += list(track_data)
     return data
         

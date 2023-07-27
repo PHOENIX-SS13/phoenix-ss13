@@ -58,13 +58,15 @@ SUBSYSTEM_DEF(jukebox)
 		var/list/param_list = splittext(some_file,"+")
 		if(param_list.len == 3)
 			track.song_title = param_list[1]
-			track.song_length = (text2num(param_list[2] / 10) SECONDS)
+			track.song_length = ((text2num(param_list[2]) / 10) SECONDS)
 			track.song_beat = ((text2num(param_list[3]) / 60) SECONDS)
 		else if(param_list.len == 4)
 			track.song_artist = param_list[1]
 			track.song_title = param_list[2]
 			track.song_length = (text2num(param_list[3]) SECONDS)
 			track.song_beat = ((text2num(param_list[4]) / 60) SECONDS)
+		else
+			continue
 		tracks += track
 
 /datum/controller/subsystem/jukebox/proc/get_free_channel()
