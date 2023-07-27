@@ -6,9 +6,9 @@ import { Popper } from "./Popper";
 const DEFAULT_PLACEMENT = "top";
 
 type TooltipProps = {
-  children?: InfernoNode;
-  content: string;
-  position?: Placement,
+  readonly children?: InfernoNode;
+  readonly content: string;
+  readonly position?: Placement,
 };
 
 type TooltipState = {
