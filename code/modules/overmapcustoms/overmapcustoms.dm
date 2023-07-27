@@ -56,4 +56,3 @@ SUBSYSTEM_DEF(overmapcustoms)
 		ovmobj = locate(/obj/effect/abstract/overmap/shuttle)
 	observer.ManualFollow(ovmobj)
 	return
-	

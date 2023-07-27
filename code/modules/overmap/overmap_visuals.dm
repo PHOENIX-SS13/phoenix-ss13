@@ -84,4 +84,3 @@
 		var/datum/virtual_level/vlevel = my_overmap_object.related_map_zone.virtual_levels[1]
 		usr.abstract_move(vlevel.get_center())
 	return
-	
