@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(overmapcustoms)
 		pm.load(vlevel.low_x, vlevel.low_y, vlevel.z_value, no_changeturf = FALSE)
 
 
-//THINGS TO DEFINE IF YOU WANT TO MAKE A NEW ONE
+//start THINGS TO DEFINE IF YOU WANT TO MAKE A NEW ONE
 /datum/overmap_object/custom
 	name = "Custom Overmap Object"
 	var/map_path = null			//relative to _maps/overmap/

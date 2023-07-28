@@ -735,6 +735,7 @@ const TechNode = (props, context) => {
             const thisExp = experiments[k];
             if (thisExp === null || thisExp === undefined) {
               return (
+                // eslint-disable-next-line react/jsx-key
                 <LockedExperiment />
               );
             }
@@ -752,6 +753,7 @@ const TechNode = (props, context) => {
             const thisExp = experiments[k];
             if (thisExp === null || thisExp === undefined) {
               return (
+                // eslint-disable-next-line react/jsx-key
                 <LockedExperiment />
               );
             }
