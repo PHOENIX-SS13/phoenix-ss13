@@ -1,0 +1,6 @@
+author: CASEYGUNGEON
+changes:
+  - bugfix: shotglasses shouldn't turn invisible when drinks are added.
+  - bugfix: github actions should work.
+merge-date: 2023-07-29
+prnumber: 4
