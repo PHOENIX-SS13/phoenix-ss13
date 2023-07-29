@@ -1,9 +1,10 @@
-name: Changelogs - Daily Compile
+name: Changelogs - Compile
 
 on:
-  schedule:
-  - cron: "0 0 * * *"
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Changelogs - Ingest Pull Request"]
+    types:
+      - completed
 
 jobs:
   compile:
