@@ -11,6 +11,7 @@
 	traits = list(
 		list(
 			"Up" = 1,
+			"Baseturf" = "/turf/open/openspace",
 		),
 		list(
 			"Up" = 1,
