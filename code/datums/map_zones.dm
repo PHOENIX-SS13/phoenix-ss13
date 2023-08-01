@@ -35,7 +35,7 @@
 	if(related_overmap_object)
 		related_overmap_object.related_map_zone = src
 	SSmapping.map_zones += src
-	next_id++ 
+	next_id++
 	id = next_id
 	. = ..()
 
@@ -347,7 +347,7 @@
 		nb_transition_len = other_zone.x_distance - (other_zone.reserved_margin * 2)
 	else
 		nb_transition_len = other_zone.y_distance - (other_zone.reserved_margin * 2)
-	
+
 	var/min_transition = min(transition_len, nb_transition_len)
 	var/min_margin = min(reserved_margin, other_zone.reserved_margin)
 
@@ -425,7 +425,7 @@
 
 			cur_turf.vis_contents += nb_cur_mirage_turf
 			nb_cur_turf.vis_contents += cur_mirage_turf
-			
+
 			//If it isn't the last height iteration, make the transition turfs not dense and not opaque (just to be safe we skip the last height)
 			if(height_i != min_margin)
 				cur_turf.density = FALSE
@@ -433,14 +433,14 @@
 
 				nb_cur_turf.density = FALSE
 				nb_cur_turf.opacity = FALSE
-	
-			cur_turf.destination_x = nb_cur_mirage_turf.x
-			cur_turf.destination_y = nb_cur_mirage_turf.y
-			cur_turf.destination_z = nb_cur_mirage_turf.z
-
-			nb_cur_turf.destination_x = cur_mirage_turf.x
-			nb_cur_turf.destination_y = cur_mirage_turf.y
-			nb_cur_turf.destination_z = cur_mirage_turf.z
+			if(istype(cur_turf, /turf/closed))
+				cur_turf.destination_x = nb_cur_mirage_turf.x
+				cur_turf.destination_y = nb_cur_mirage_turf.y
+				cur_turf.destination_z = nb_cur_mirage_turf.z
+			if(istype(nb_cur_turf, /turf/closed))
+				nb_cur_turf.destination_x = cur_mirage_turf.x
+				nb_cur_turf.destination_y = cur_mirage_turf.y
+				nb_cur_turf.destination_z = cur_mirage_turf.z
 
 /datum/virtual_level/New(passed_name, list/passed_traits, datum/map_zone/passed_map, lx, ly, hx, hy, passed_z)
 	next_id++
