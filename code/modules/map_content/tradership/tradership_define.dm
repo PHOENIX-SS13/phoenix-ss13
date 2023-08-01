@@ -2,10 +2,7 @@
 	map_name = "FTV Bearcat"
 	map_path = "map_files/tradership"
 	map_file = list(
-		"tradership1.dmm",
-		"tradership2.dmm",
-		"tradership3.dmm",
-		"tradership4.dmm",
+		"tradership.dmm",
 	)
 
 	traits = list(
