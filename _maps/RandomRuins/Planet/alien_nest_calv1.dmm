@@ -18,15 +18,15 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
-"eY" = (
-/obj/structure/alien/weeds,
-/obj/structure/bed/nest,
-/obj/effect/mapping_helpers/dead_body_placer,
-/turf/open/floor/planetary/dirt/jungle,
-/area/ruin/unpowered)
 "fp" = (
 /turf/template_noop,
 /area/template_noop)
+"fv" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/syndicatecommando,
+/turf/open/floor/planetary/dirt/jungle/dark,
+/area/ruin/unpowered)
 "fw" = (
 /obj/structure/alien/weeds,
 /mob/living/simple_animal/hostile/alien/drone,
@@ -77,7 +77,6 @@
 "ik" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/mapping_helpers/dead_body_placer,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
 "it" = (
@@ -99,6 +98,7 @@
 /obj/structure/bed/nest,
 /obj/item/ammo_box/magazine/m75,
 /obj/item/ammo_box/magazine/m75,
+/obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "kj" = (
@@ -117,8 +117,8 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/item/clothing/mask/facehugger/impregnated,
-/obj/effect/mapping_helpers/dead_body_placer,
 /obj/effect/spawner/lootdrop/space/cashmoney,
+/obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
 "lj" = (
@@ -137,13 +137,6 @@
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/planetary/dirt/dark,
 /area/ruin/unpowered)
-"lR" = (
-/obj/structure/alien/weeds,
-/obj/structure/bed/nest,
-/obj/item/clothing/mask/facehugger/impregnated,
-/obj/effect/mapping_helpers/dead_body_placer,
-/turf/open/floor/planetary/dirt/jungle,
-/area/ruin/unpowered)
 "mm" = (
 /obj/structure/alien/resin/wall,
 /obj/structure/alien/weeds,
@@ -154,7 +147,9 @@
 "nk" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/footprints{
-	dir = 4
+	dir = 4;
+	step_x = 6;
+	step_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -219,7 +214,6 @@
 "sK" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -231,6 +225,12 @@
 /area/ruin/unpowered)
 "tF" = (
 /obj/structure/flora/grass/jungle/b,
+/turf/open/floor/planetary/dirt/jungle,
+/area/ruin/unpowered)
+"tI" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "tO" = (
@@ -306,7 +306,9 @@
 /area/template_noop)
 "zo" = (
 /obj/effect/decal/cleanable/blood/footprints{
-	dir = 4
+	dir = 4;
+	step_x = 6;
+	step_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -328,7 +330,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/item/clothing/mask/facehugger/impregnated,
-/obj/effect/gibspawner/human/bodypartless,
+/obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "Ag" = (
@@ -347,8 +349,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/item/clothing/mask/facehugger/impregnated,
-/obj/effect/gibspawner/human/bodypartless,
-/obj/effect/mapping_helpers/dead_body_placer,
+/obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "AO" = (
@@ -371,7 +372,9 @@
 "Cr" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/footprints{
-	dir = 4
+	dir = 4;
+	step_x = 6;
+	step_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -379,7 +382,6 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/mapping_helpers/dead_body_placer,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
 "CB" = (
@@ -399,7 +401,6 @@
 "Eh" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/planetary/dirt/jungle,
@@ -419,6 +420,12 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds/node,
 /mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/planetary/dirt/jungle,
+/area/ruin/unpowered)
+"Gh" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "Hp" = (
@@ -446,11 +453,18 @@
 /obj/structure/alien/resin/wall,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
+"Jh" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/egg/burst,
+/obj/item/clothing/mask/facehugger/impregnated,
+/obj/effect/mob_spawn/human/corpse/damaged/legioninfested,
+/turf/open/floor/planetary/dirt/jungle,
+/area/ruin/unpowered)
 "Js" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/mapping_helpers/dead_body_placer,
 /obj/effect/spawner/lootdrop/space/cashmoney,
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "JU" = (
@@ -470,16 +484,15 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/item/clothing/mask/facehugger,
-/obj/effect/mapping_helpers/dead_body_placer,
 /obj/effect/spawner/lootdrop/space/cashmoney,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "Lq" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/mapping_helpers/dead_body_placer,
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle,
 /obj/effect/spawner/lootdrop/space/cashmoney,
+/obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
 "LS" = (
@@ -508,7 +521,6 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/item/clothing/mask/facehugger/impregnated,
-/obj/effect/mapping_helpers/dead_body_placer,
 /obj/item/storage/bag/money,
 /obj/effect/spawner/lootdrop/space/cashmoney,
 /turf/open/floor/planetary/dirt/jungle/dark,
@@ -595,12 +607,6 @@
 /obj/structure/alien/weeds/node,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
-"Vk" = (
-/obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien/drone,
-/obj/effect/mapping_helpers/dead_body_placer,
-/turf/open/floor/planetary/dirt/jungle,
-/area/ruin/unpowered)
 "Vq" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/egg/burst,
@@ -650,14 +656,13 @@
 "ZB" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/gibspawner/human/bodypartless,
+/obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "ZS" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds/node,
 /obj/structure/bed/nest,
-/obj/effect/mapping_helpers/dead_body_placer,
 /obj/effect/spawner/lootdrop/space/cashmoney,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
@@ -852,7 +857,7 @@ it
 jT
 it
 Vq
-eY
+xn
 gN
 gN
 zQ
@@ -879,10 +884,10 @@ tO
 QZ
 QZ
 IP
-eY
+xn
 CB
 AR
-eY
+xn
 ZB
 ga
 gN
@@ -971,7 +976,7 @@ gN
 gN
 gN
 it
-xn
+tI
 LW
 it
 CL
@@ -1052,7 +1057,7 @@ CB
 CB
 it
 it
-eY
+xn
 gN
 gN
 gN
@@ -1151,7 +1156,7 @@ CL
 CB
 LW
 Vq
-ZB
+xn
 gN
 it
 gN
@@ -1226,7 +1231,7 @@ CB
 gN
 rx
 WF
-xn
+Gh
 it
 gN
 gN
@@ -1322,7 +1327,7 @@ gN
 it
 it
 it
-lR
+sy
 rt
 yt
 lr
@@ -1348,7 +1353,7 @@ gN
 gN
 gN
 Mg
-ik
+fv
 lk
 Ua
 jT
@@ -1385,13 +1390,13 @@ gN
 it
 gN
 xn
-ga
+Jh
 it
 gN
 gN
 qp
 Mg
-eY
+Gh
 kG
 CB
 CB
@@ -1471,7 +1476,7 @@ it
 it
 gN
 it
-eY
+xn
 gN
 vm
 gN
@@ -1524,11 +1529,11 @@ Lq
 CL
 gN
 gN
+Ay
 sy
-lR
 gN
 LW
-eY
+xn
 CB
 CL
 rB
@@ -1635,7 +1640,7 @@ tO
 QZ
 jT
 it
-Vk
+rB
 gN
 tP
 sK
@@ -1738,7 +1743,7 @@ Cu
 EG
 Ua
 Ua
-eY
+xn
 BV
 gN
 QZ
