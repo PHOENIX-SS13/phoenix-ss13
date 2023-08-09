@@ -79,6 +79,12 @@
 	uses_skintones = TRUE
 	can_have_sheath = FALSE
 
+/datum/sprite_accessory/genital/penis/nondescript
+	icon_state = "nondescript"
+	color_src = USE_ONE_COLOR
+	default_color = DEFAULT_SKIN_OR_PRIMARY
+	name = "Nondescript"
+
 /datum/sprite_accessory/genital/penis/knotted
 	icon_state = "knotted"
 	name = "Knotted"
