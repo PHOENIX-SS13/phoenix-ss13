@@ -65,7 +65,7 @@
 
 /obj/item/organ/genital/penis/get_description_string(datum/sprite_accessory/genital/gas)
 	var/returned_string = ""
-	var/pname = lowertext(genital_name)
+	var/pname = lowertext(genital_name) == "nondescript" ? "" : lowertext(genital_name) + " "
 	if(sheath != SHEATH_NONE && aroused != AROUSAL_FULL) //Hidden in sheath
 		switch(sheath)
 			if(SHEATH_NORMAL)
