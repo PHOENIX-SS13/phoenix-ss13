@@ -615,7 +615,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<br><b>Length: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_size;task=change_genitals'>[features["penis_size"]]</a> inches."
 							dat += "<br><b>Girth: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_girth;task=change_genitals'>[features["penis_girth"]]</a> inches circumference"
 							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"
-							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=penis'><b>Set Examine Text</b></a><br>"
+							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=penis'><b>Set Examine Text</b></a>"
+							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=aroused_penis'><b>Set Aroused Examine Text</b></a>"
+							dat += "<br>"
 						dat += "<h3>Testicles</h3>"
 						var/balls_name = mutant_bodyparts["testicles"][MUTANT_INDEX_NAME]
 						dat += print_bodypart_change_line("testicles")
@@ -1797,7 +1799,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["balls_size"] = balls_description_to_size(new_size)
 		if("genitals_flavor_text")
 			var/part = href_list["preference"]
-			var/msg = input(usr, "Set the text that appears when someone performs 'look closer' while they can see your [part].", "[part] Description Text", features["[part]_flavor_text"]) as message|null
+			var/msg = input(usr, "Set the text that appears when someone performs 'look closer' while they can see your [part]. If this is cleared then a short generated message will be used instead.", "[part] Description Text", features["[part]_flavor_text"]) as message|null
 			if(!isnull(msg))
 				features["[part]_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 		if("change_bodypart")

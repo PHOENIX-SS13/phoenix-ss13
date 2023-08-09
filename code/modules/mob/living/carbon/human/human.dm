@@ -123,6 +123,8 @@
 					if(!ORG)
 						continue
 					var/new_line = dna.features["[genital]_flavor_text"]
+					if(genital == "penis" && ORG.aroused)
+						new_line = dna.features["aroused_penis_flavor_text"]
 					if(length(new_line) < 2)
 						new_line = ORG.get_description_string(G)
 					if(new_line)
