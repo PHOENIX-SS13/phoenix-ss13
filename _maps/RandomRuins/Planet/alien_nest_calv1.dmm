@@ -148,8 +148,8 @@
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
-	step_x = 6;
-	step_y = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -307,8 +307,8 @@
 "zo" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
-	step_x = 6;
-	step_y = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -373,8 +373,8 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
-	step_x = 6;
-	step_y = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
