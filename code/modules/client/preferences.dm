@@ -615,13 +615,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<br><b>Length: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_size;task=change_genitals'>[features["penis_size"]]</a> inches."
 							dat += "<br><b>Girth: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_girth;task=change_genitals'>[features["penis_girth"]]</a> inches circumference"
 							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"
-
+							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=penis'><b>Set Examine Text</b></a><br>"
 						dat += "<h3>Testicles</h3>"
 						var/balls_name = mutant_bodyparts["testicles"][MUTANT_INDEX_NAME]
 						dat += print_bodypart_change_line("testicles")
 						if(balls_name != "None")
 							var/named_size = balls_size_to_description(features["balls_size"])
 							dat += "<br><b>Size: </b> <a href='?_src_=prefs;key=["testicles"];preference=balls_size;task=change_genitals'>[named_size]</a>"
+							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=testicles'><b>Set Examine Text</b></a><br>"
 
 						if(mutant_bodyparts["taur"])
 							var/datum/sprite_accessory/taur/TSP = GLOB.sprite_accessories["taur"][mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
@@ -635,6 +636,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<b>Uses skintones: </b> <a href='?_src_=prefs;preference=uses_skintones;task=input'>[(features["uses_skintones"]) ? "Yes" : "No"]</a>"
 						dat += "<h3>Vagina</h3>"
 						dat += print_bodypart_change_line("vagina")
+						if(mutant_bodyparts["vagina"])
+							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=vagina'><b>Set Examine Text</b></a><br>"
 						dat += "</td>"
 
 						dat += APPEARANCE_CATEGORY_COLUMN
@@ -647,6 +650,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							var/named_lactation = (features["breasts_lactation"]) ? "Yes" : "No"
 							dat += "<br><b>Size: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_size;task=change_genitals'>[named_size]</a>"
 							dat += "<br><b>Can Lactate: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_lactation;task=change_genitals'>[named_lactation]</a>"
+							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=breasts'><b>Set Examine Text</b></a><br>"
 						dat += "</td>"
 
 					dat += "</tr></table>"
@@ -1791,6 +1795,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_size = input(user, "Choose your character's balls size:", "Character Preference") as null|anything in GLOB.preference_balls_sizes
 					if(new_size)
 						features["balls_size"] = balls_description_to_size(new_size)
+		if("genitals_flavor_text")
+			var/part = href_list["preference"]
+			var/msg = input(usr, "Set the text that appears when someone performs 'look closer' while they can see your [part].", "[part] Description Text", features["[part]_flavor_text"]) as message|null
+			if(!isnull(msg))
+				features["[part]_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 		if("change_bodypart")
 			needs_update = TRUE
 			switch(href_list["preference"])

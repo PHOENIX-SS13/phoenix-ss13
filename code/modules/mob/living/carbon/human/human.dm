@@ -122,7 +122,9 @@
 					var/obj/item/organ/genital/ORG = getorganslot(G.associated_organ_slot)
 					if(!ORG)
 						continue
-					var/new_line = ORG.get_description_string(G)
+					var/new_line = dna.features["[genital]_flavor_text"]
+					if(length(new_line) < 2)
+						new_line = ORG.get_description_string(G)
 					if(new_line)
 						line += new_line
 				if(length(line))
