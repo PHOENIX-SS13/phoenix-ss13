@@ -149,9 +149,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
 	pixel_x = 6;
-	pixel_y = 6;
-	step_x = null;
-	step_y = null
+	pixel_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -310,9 +308,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
 	pixel_x = 6;
-	pixel_y = 6;
-	step_x = null;
-	step_y = null
+	pixel_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
@@ -378,9 +374,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
 	pixel_x = 6;
-	pixel_y = 6;
-	step_x = null;
-	step_y = null
+	pixel_y = 6
 	},
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
