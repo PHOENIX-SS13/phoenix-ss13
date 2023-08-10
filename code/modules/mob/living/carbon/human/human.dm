@@ -123,14 +123,14 @@
 					if(!ORG)
 						continue
 					var/new_line = dna.features["[genital]_flavor_text"]
-					if(genital == "penis" && ORG.aroused)
+					if(genital == "penis" && ORG.aroused == AROUSAL_FULL)
 						new_line = dna.features["aroused_penis_flavor_text"]
 					if(length(new_line) < 2)
 						new_line = ORG.get_description_string(G)
 					if(new_line)
 						line += new_line
 				if(length(line))
-					to_chat(usr, SPAN_NOTICE("[jointext(line, "\n")]"))
+					to_chat(usr, SPAN_NOTICE("[jointext(line, "\n\n")]"))
 			if("flavor_text")
 				if(length(dna.features["flavor_text"]))
 					var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text", 500, 200)

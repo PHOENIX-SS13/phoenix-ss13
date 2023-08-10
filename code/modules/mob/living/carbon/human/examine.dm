@@ -447,7 +447,7 @@
 			var/datum/sprite_accessory/genital/G = GLOB.sprite_accessories[genital][dna.species.mutant_bodyparts[genital][MUTANT_INDEX_NAME]]
 			if(G)
 				if(!(G.is_hidden(src)))
-					. += SPAN_NOTICE("[t_He] has exposed genitals... <a href='?src=[REF(src)];lookup_info=genitals'>Look closer...</a>")
+					. += SPAN_NOTICE("[t_He] [t_has] exposed genitals... <a href='?src=[REF(src)];lookup_info=genitals'>Look closer...</a>")
 					break
 	if(!skipface)
 		var/line
