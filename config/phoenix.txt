@@ -1,3 +1,6 @@
 ## number of active players below which an AI may spawn with prebuilt shells if mapped.
 #  set to -1 to always spawn autoshells.
 AUTOSHELL_POP 8
+
+## multiplier for simple_animal/hostile maxhealth.
+HOSTILE_HEALTH_MULT 1.5

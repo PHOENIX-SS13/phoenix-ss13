@@ -70,6 +70,9 @@
 /mob/living/simple_animal/hostile/Initialize(mapload)
 	. = ..()
 	wanted_objects = typecacheof(wanted_objects)
+	var/healthmult = CONFIG_GET(number/hostile_health_mult)
+	health = health * healthmult
+	maxHealth = maxHealth * healthmult
 
 /mob/living/simple_animal/hostile/Destroy()
 	//We can't use losetarget here because fucking cursed blobs override it to do nothing the motherfuckers
