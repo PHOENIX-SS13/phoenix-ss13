@@ -87,6 +87,11 @@
 	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
 		. += vlevel.get_mind_mobs()
 
+/datum/map_zone/proc/get_alive_mobs()
+	. = list()
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		. += vlevel.get_alive_mobs()
+
 /datum/map_zone/proc/is_in_bounds(atom/Atom)
 	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
 		if(vlevel.is_in_bounds(Atom))
@@ -538,6 +543,12 @@
 	for(var/mob/living/living_mob as anything in GLOB.mob_living_list)
 		if(!living_mob.mind)
 			continue
+		if(is_in_bounds(living_mob))
+			. += living_mob
+
+/datum/virtual_level/proc/get_alive_mobs()
+	. = list()
+	for(var/mob/living/living_mob as anything in GLOB.mob_living_list)
 		if(is_in_bounds(living_mob))
 			. += living_mob
 

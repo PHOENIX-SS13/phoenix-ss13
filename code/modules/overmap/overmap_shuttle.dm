@@ -42,6 +42,8 @@
 
 	var/target_command = TARGET_IDLE
 
+	var/scan_text = ""
+
 	var/datum/overmap_shuttle_controller/shuttle_controller
 	var/uses_rotation = TRUE
 	var/fixed_parallax_dir
@@ -236,6 +238,7 @@
 			dat += "<BR> - <a href='?src=[REF(src)];task=target;target_control=command_keep_firing' [locked_and_calibrated ? "" : "class='linkOff'"]>Keep Firing!</a>"
 			dat += "<BR> - <a href='?src=[REF(src)];task=target;target_control=command_scan' [locked_and_calibrated ? "" : "class='linkOff'"]>Scan</a>"
 			dat += "<BR> - <a href='?src=[REF(src)];task=target;target_control=command_beam_on_board' [locked_and_calibrated ? "" : "class='linkOff'"]>Beam on Board</a>"
+			dat += "<BR><B>Scan Info: </B><BR>[scan_text]"
 
 		if(SHUTTLE_TAB_DOCKING)
 			if(!my_shuttle || is_seperate_z_level)
@@ -284,6 +287,11 @@
 	var/datum/browser/popup = new(user, "overmap_shuttle_control", "Shuttle Control", 400, 440)
 	popup.set_content(dat.Join())
 	popup.open()
+
+/datum/overmap_object/shuttle/proc/Scan()
+	var/txt = ""
+	txt += lock.target.GetScanText()
+	scan_text = txt
 
 /datum/overmap_object/shuttle/proc/DisplayHelmPad(mob/user)
 	var/list/dat = list("<center>")
@@ -466,6 +474,8 @@
 					target_command = TARGET_KEEP_FIRING
 				if("command_scan")
 					target_command = TARGET_SCAN
+					scan_text = "Scanning..."
+					addtimer(CALLBACK(src, .proc/Scan), 3 SECONDS)
 				if("command_beam_on_board")
 					target_command = TARGET_BEAM_ON_BOARD
 		if("sensor")

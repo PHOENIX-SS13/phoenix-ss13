@@ -3,6 +3,8 @@
 	var/id
 	/// The name of the overmpa object
 	var/name = "Overmap object"
+	/// Description of the object, for scans
+	var/description = "An object floating in space."
 	/// It's x coordinate
 	var/x = 0
 	/// It's y coordinate
@@ -71,6 +73,34 @@
 /datum/overmap_object/proc/GetAllClientMobs()
 	if(related_map_zone)
 		return related_map_zone.get_client_mobs()
+
+/datum/overmap_object/proc/GetAliveMobs()
+	if(related_map_zone)
+		return related_map_zone.get_alive_mobs()
+
+/datum/overmap_object/proc/GetAliveMobTypes()
+	var/list/moblist = GetAliveMobs()
+	var/list/namelist = list()
+	for(var/mob/living/living_mob as anything in moblist)
+		var/mobname = initial(living_mob.name)
+		if(!namelist.Find(mobname))
+			namelist += mobname
+	return namelist
+
+/datum/overmap_object/proc/GetScanText()
+	var/txt = description
+	var/list/namelist = GetAliveMobTypes()
+	if(namelist.len > 0)
+		txt += " Biological signatures include "
+		for(var/name in namelist)
+			txt += "[name]s"
+			var/index = namelist.Find(name)
+			if(index < namelist.len)
+				txt += ", "
+			if(index == namelist.len - 1)
+				txt += "and "
+		txt += "."
+	return txt
 
 //When something enters this object. Also called when the objects are created
 /datum/overmap_object/proc/Entered(datum/overmap_object/entering, spawned = FALSE)

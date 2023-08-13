@@ -23,6 +23,7 @@
 					var/datum/shuttle_extension/transporter/transp_in_use = GetTransporter()
 					transp_in_use.ProcessTransport()
 
+
 	else if (target_command != TARGET_IDLE)
 		//No lock and not an idle command
 		target_command = TARGET_IDLE
