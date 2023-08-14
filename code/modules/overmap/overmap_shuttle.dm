@@ -91,6 +91,25 @@
 		draw_thrust += ext.DrawThrust(impulse_power)
 	return draw_thrust / speed_divisor_from_mass
 
+/datum/overmap_object/shuttle/ui_data(mob/user)
+	var/list/data = list()
+
+	data["overmapView"] = shuttle_controller.mob_controller != null
+	data["status"] = my_shuttle.mode
+
+/datum/overmap_object/shuttle/proc/make_ui(mob/user)
+	var/datum/tgui/ui = SStgui.get_open_ui(user, src)
+	if(!ui)
+		ui = new(user, src, "OvermapShuttle", name)
+		ui.open()
+
+/datum/overmap_object/shuttle/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OvermapShuttle", name)
+		ui.open()
+
+
 /datum/overmap_object/shuttle/proc/DisplayUI(mob/user, turf/usage_turf)
 	if(usage_turf)
 		control_turf = usage_turf

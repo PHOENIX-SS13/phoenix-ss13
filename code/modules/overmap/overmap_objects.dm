@@ -83,7 +83,7 @@
 	var/list/namelist = list()
 	for(var/mob/living/living_mob as anything in moblist)
 		var/mobname = initial(living_mob.name)
-		if(!namelist.Find(mobname))
+		if(!namelist.Find(mobname) && !living_mob.mind)
 			namelist += mobname
 	return namelist
 
