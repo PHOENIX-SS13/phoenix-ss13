@@ -45,7 +45,7 @@ export const OvermapShuttle = (props, context) => {
       width={800}
       height={600}>
       <Window.Content scrollable>
-        <b>TRANSIT STATUS: [{status}]</b>
+        <b>TRANSIT STATUS: {status}</b>
         <Tabs>
           <Tabs.Tab
             select={tab === 1}
@@ -79,7 +79,9 @@ export const OvermapShuttle = (props, context) => {
           </Tabs.Tab>
         </Tabs>
         {tab === 1 && (
-          <OvermapShuttleGeneral />
+          <OvermapShuttleGeneral
+            position_x={position_x}
+            position_y={position_y} />
         )}
       </Window.Content>
     </Window>
@@ -95,7 +97,7 @@ export const OvermapShuttleGeneral = (props, context) => {
   return (
     <Section>
       <Box>
-        <b>POSITION: </b> X [{position_x}], Y [{position_y}]
+        <b>POSITION: ( {position_x}, {position_y} ) </b>
       </Box>
     </Section>
   );

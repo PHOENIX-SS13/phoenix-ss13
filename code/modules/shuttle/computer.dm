@@ -26,7 +26,8 @@
 	if(!mapload)
 		connect_to_shuttle(SSshuttle.get_containing_shuttle(src))
 
-
+/obj/machinery/computer/shuttle/ui_state(mob/user)
+	return GLOB.not_incapacitated_state
 
 /obj/machinery/computer/shuttle/ui_interact(mob/user, datum/tgui/ui)
 	if(uses_overmap)
@@ -43,48 +44,6 @@
 			ui = new(user, src, "ShuttleConsole", name)
 			ui.open()
 	return
-	//OLD CODE
-	if(uses_overmap)
-		var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
-		if(!M)
-			return
-		M.possible_destinations = possible_destinations //Because shuttles being dumb with their data structure not making a speck of sense, something to fix another day
-		var/list/dat = list("<center>")
-		var/status_info
-		if(admin_controlled)
-			status_info = "Unauthorized Access"
-		else if(locked)
-			status_info = "Locked"
-		else
-			switch(M.mode)
-				if(SHUTTLE_IGNITING)
-					status_info = "Igniting"
-				if(SHUTTLE_IDLE)
-					status_info = "Idle"
-				if(SHUTTLE_RECHARGING)
-					status_info = "Recharging"
-				else
-					status_info = "In Transit"
-		dat += "STATUS: <b>[status_info]</b>"
-		var/link
-		if(M.mode == SHUTTLE_IDLE)
-			link = "href='?src=[REF(src)];task=overmap_launch'"
-		else
-			link = "class='linkOff'"
-		dat += "<BR><BR><a [link]>Depart to Overmap</a><BR>"
-
-		dat += "<a href='?src=[REF(src)];task=engines_on']>Engines On</a> <a href='?src=[REF(src)];task=engines_off']>Engines Off</a>"
-
-		dat += "<BR><BR><a [M.my_overmap_object ? "href='?src=[REF(src)];task=overmap_view'" : "class='linkOff'"]>Overmap View</a>"
-		dat += "<BR><a [M.my_overmap_object ? "href='?src=[REF(src)];task=overmap_ship_controls'" : "class='linkOff'"]>Ship Controls</a></center>"
-		var/datum/browser/popup = new(user, "shuttle_computer", name, 300, 200)
-		popup.set_content(dat.Join())
-		popup.open()
-	else
-		ui = SStgui.try_update_ui(user, src, ui)
-		if(!ui)
-			ui = new(user, src, "ShuttleConsole", name)
-			ui.open()
 
 /obj/machinery/computer/shuttle/Topic(href, href_list)
 	var/mob/user = usr
@@ -104,7 +63,7 @@
 				return
 		if("overmap_ship_controls")
 			if(M.my_overmap_object)
-				M.my_overmap_object.make_ui(usr)
+				M.my_overmap_object.ui_interact(usr)
 				return
 		if("overmap_launch")
 			if(!uses_overmap)
@@ -215,7 +174,7 @@
 					return
 			if("overmap_ship_controls")
 				if(M.my_overmap_object)
-					M.my_overmap_object.make_ui(usr)
+					M.my_overmap_object.ui_interact(usr)
 					return
 			if("overmap_launch")
 				if(!uses_overmap)

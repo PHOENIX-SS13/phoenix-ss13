@@ -91,22 +91,44 @@
 		draw_thrust += ext.DrawThrust(impulse_power)
 	return draw_thrust / speed_divisor_from_mass
 
+/datum/overmap_object/shuttle/ui_state(mob/user)
+	return GLOB.not_incapacitated_state
+
 /datum/overmap_object/shuttle/ui_data(mob/user)
 	var/list/data = list()
-
+	// GENERAL
 	data["overmapView"] = shuttle_controller.mob_controller != null
 	data["status"] = my_shuttle.mode
+	data["position_x"] = x
+	data["position_y"] = y
+	data["commsListen"] = open_comms_channel
+	data["commsBroadcast"] = microphone_muted
+	// ENGINES
+	data["engines"]
+	// HELM
+	data["destination_x"] = destination_x
+	data["destination_y"] = destination_y
+	data["speed"] = VECTOR_LENGTH(velocity_x, velocity_y)
+	data["impulse"] = impulse_power
+	data["topSpeed"] = GetCapSpeed()
+	data["currentCommand"] = helm_command
+	data["padControl"] = FALSE
+	// SENSORS
+	data["sensorTargets"]
+	// TARGET
+	data["lockedTarget"]
+	data["lockStatus"]
+	data["scanInfo"] = scan_text
+	// DOCK
+	data["docks"]
+	data["freeformDocks"]
 
-/datum/overmap_object/shuttle/proc/make_ui(mob/user)
-	var/datum/tgui/ui = SStgui.get_open_ui(user, src)
-	if(!ui)
-		ui = new(user, src, "OvermapShuttle", name)
-		ui.open()
+	return data
 
 /datum/overmap_object/shuttle/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "OvermapShuttle", name)
+		ui = new(user, src, "OvermapShuttle")
 		ui.open()
 
 
