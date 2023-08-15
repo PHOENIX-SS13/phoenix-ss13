@@ -11,7 +11,7 @@ export const OvermapShuttleConsole = (props, context) => {
   } = data;
 
   return (
-    <Window width={300} height={180} title="Shuttle Controls">
+    <Window width={300} height={180} title="Shuttle Console">
       <Window.Content scrollable align="center">
         <br /> <Button
           ml={1}
