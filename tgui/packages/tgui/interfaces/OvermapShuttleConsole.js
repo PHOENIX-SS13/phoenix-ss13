@@ -11,32 +11,37 @@ export const OvermapShuttleConsole = (props, context) => {
   } = data;
 
   return (
-    <Window width={400} height={450} title="Shuttle Controls">
-      <Window.Content scrollable>
-        <Button
+    <Window width={300} height={180} title="Shuttle Controls">
+      <Window.Content scrollable align="center">
+        <br /> <Button
           ml={1}
-          icon="plane-up"
+          icon="plane"
+          color="green"
           content="Depart To Overmap"
-          onClick={() => act('overmap_launch')} /><br />
+          onClick={() => act('overmap_launch')} /><br /><br />
         <Button
           ml={1}
           icon="battery-full"
+          color="yellow"
           content="Engines On"
           onClick={() => act('engines_on')} />
         <Button
           ml={1}
           icon="battery-empty"
+          color="red"
           content="Engines Off"
-          onClick={() => act('engines_off')} />
+          onClick={() => act('engines_off')} /> <br /><br />
         <Button
           ml={1}
-          icon="map-location"
+          icon="map"
+          color="blue"
           content="Overmap View"
           onClick={() => act('overmap_view')} />
         <Button
           ml={1}
           icon="gamepad"
           content="Shuttle Controls"
+          color="white"
           onClick={() => act('overmap_ship_controls')} />
       </Window.Content>
     </Window>
