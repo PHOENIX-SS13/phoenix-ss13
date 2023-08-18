@@ -125,6 +125,28 @@
 
 	return data
 
+/datum/overmap_object/shuttle/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		// GENERAL
+		if("overmap")
+			GrantOvermapView(usr)
+			return TRUE
+		if("comms_input")
+			microphone_muted = !microphone_muted
+			return TRUE
+		if("comms_output")
+			open_comms_channel = !open_comms_channel
+			my_visual.update_appearance()
+			return TRUE
+		if("hail")
+			var/hail_msg = input(usr, "Compose a hail message:", "Hail Message")  as text|null
+			if(hail_msg)
+				hail_msg = strip_html_simple(hail_msg, MAX_BROADCAST_LEN, TRUE)
+			return TRUE
+
 /datum/overmap_object/shuttle/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
