@@ -109,7 +109,19 @@
 	data["commsListen"] = open_comms_channel
 	data["commsBroadcast"] = microphone_muted
 	// ENGINES
-	data["engines"]
+	data["engines"] = list()
+	var/engineindex = 1
+	for(var/datum/shuttle_extension/engine/engine in engine_extensions)
+		var/list/enginedata = list(
+			functioning = engine.CanOperate(),
+			online = engine.turned_on,
+			name = engine.name,
+			index = engineindex,
+			fuel_percent = (engine.current_fuel / engine.maximum_fuel),
+			efficiency = (engine.current_efficiency * 100),
+		)
+		data["engines"] += list(enginedata)
+		engineindex += 1
 	// HELM
 	data["destination_x"] = destination_x
 	data["destination_y"] = destination_y
@@ -160,6 +172,12 @@
 			my_shuttle.TurnEnginesOn()
 			my_console?.say("Engines online.")
 			return TRUE
+		if("toggle_engine")
+			var/index = params["index"]
+			if(length(engine_extensions) < index)
+				return
+			var/datum/shuttle_extension/engine/ext = engine_extensions[index]
+			ext.turned_on = !ext.turned_on
 		if("overmap_view")
 			GrantOvermapView(usr, get_turf(src))
 			return TRUE

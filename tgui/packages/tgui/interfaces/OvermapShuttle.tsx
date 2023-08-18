@@ -1,6 +1,6 @@
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import { Tabs, Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
+import { Table, Tabs, Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
 import { Window } from '../layouts';
 
 // act('action', { param1: 'value', })
@@ -36,7 +36,12 @@ type ShuttleData = {
 }
 
 type Engine = {
-
+  functioning: boolean;
+  online: boolean;
+  name: string;
+  index: number;
+  fuel_percent: number;
+  efficiency: number;
 }
 
 type Target = {
@@ -155,15 +160,73 @@ export const OvermapShuttleGeneral = (props, context) => {
   );
 };
 
-export const OvermapShuttleEngines = (props, context) => {
-  const { act, data } = useBackend(context);
+export const EngineDisplay = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const {
+    engine,
+  } = props;
   return (
-    <Section>
+    <Table.Row>
+      <Table.Cell bold>
+        {engine.name}
+      </Table.Cell>
+      <Table.Cell>
+        <Button
+          content={engine.online ? "ONLINE" : "OFFLINE"}
+          selected={engine.online}
+          onClick={() => act('toggle_engine', { index: engine.index })}
+        />
+      </Table.Cell>
+      <Table.Cell>
+        {engine.fuel_percent * 100}%
+      </Table.Cell>
+      <Table.Cell>
+        {engine.efficiency}%
+      </Table.Cell>
+    </Table.Row>
+  );
+};
+
+export const OvermapShuttleEngines = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const {
+    engines,
+  } = data;
+  return (
+    <div align="center">
       <Button
         ml={1}
         color="yellow"
-        Content="Engines On"
+        content="All Engines On"
         onClick={() => act("engines_on")} />
-    </Section>
+      <Button
+        ml={1}
+        color="red"
+        content="All Engines Off"
+        onClick={() => act("engines_off")} />
+      <Section>
+        <Table>
+          <Table.Row>
+            <Table.Cell bold>
+              <h3>ENGINE</h3>
+            </Table.Cell>
+            <Table.Cell bold>
+              <h3>STATUS</h3>
+            </Table.Cell>
+            <Table.Cell bold>
+              <h3>FUEL</h3>
+            </Table.Cell>
+            <Table.Cell bold>
+              <h3>EFFICIENCY</h3>
+            </Table.Cell>
+          </Table.Row>
+          {engines.map(engine => (
+            <EngineDisplay
+              key={engine.name}
+              engine={engine} />
+          ))}
+        </Table>
+      </Section>
+    </div>
   );
 };
