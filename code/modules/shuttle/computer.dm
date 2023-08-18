@@ -174,7 +174,10 @@
 					return
 			if("overmap_ship_controls")
 				if(M.my_overmap_object)
+					M.my_overmap_object.set_my_console(src)
 					M.my_overmap_object.ui_interact(usr)
+					var/datum/tgui/thisui = SStgui.get_open_ui(usr, src)
+					thisui.close()
 					return
 			if("overmap_launch")
 				if(!uses_overmap)

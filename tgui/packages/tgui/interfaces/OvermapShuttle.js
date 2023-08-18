@@ -2,6 +2,8 @@ import { useBackend, useLocalState } from '../backend';
 import { Tabs, Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
 import { Window } from '../layouts';
 
+// act('action', { param1: 'value', })
+
 export const OvermapShuttle = (props, context) => {
   const { act, data } = useBackend(context);
   const lockStates = {

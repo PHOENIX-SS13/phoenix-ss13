@@ -5,6 +5,7 @@
 	is_overmap_controllable = TRUE
 
 	var/obj/docking_port/mobile/my_shuttle
+	var/obj/machinery/computer/shuttle/my_console
 	var/datum/transit_instance/transit_instance
 	var/angle = 0
 
@@ -94,6 +95,10 @@
 /datum/overmap_object/shuttle/ui_state(mob/user)
 	return GLOB.not_incapacitated_state
 
+/datum/overmap_object/shuttle/proc/set_my_console(obj/console)
+	var/obj/machinery/computer/shuttle/cons = console
+	my_console = cons
+
 /datum/overmap_object/shuttle/ui_data(mob/user)
 	var/list/data = list()
 	// GENERAL
@@ -145,6 +150,140 @@
 			var/hail_msg = input(usr, "Compose a hail message:", "Hail Message")  as text|null
 			if(hail_msg)
 				hail_msg = strip_html_simple(hail_msg, MAX_BROADCAST_LEN, TRUE)
+			return TRUE
+		// ENGINES
+		if("engines_off")
+			my_shuttle.TurnEnginesOff()
+			my_console?.say("Engines offline.")
+			return TRUE
+		if("engines_on")
+			my_shuttle.TurnEnginesOn()
+			my_console?.say("Engines online.")
+			return TRUE
+		if("overmap_view")
+			GrantOvermapView(usr, get_turf(src))
+			return TRUE
+		// HELM
+		if("command_stop")
+			helm_command = HELM_FULL_STOP
+			return TRUE
+		if("command_move_dest")
+			helm_command = HELM_MOVE_TO_DESTINATION
+			return TRUE
+		if("command_turn_dest")
+			helm_command = HELM_TURN_TO_DESTINATION
+			return TRUE
+		if("command_follow_sensor")
+			helm_command = HELM_FOLLOW_SENSOR_LOCK
+			return TRUE
+		if("command_turn_sensor")
+			helm_command = HELM_TURN_TO_SENSOR_LOCK
+			return TRUE
+		if("command_idle")
+			helm_command = HELM_IDLE
+			return TRUE
+		if("change_x")
+			var/new_x = input(usr, "Choose new X destination", "Helm Control", destination_x) as num|null
+			if(new_x)
+				destination_x = clamp(new_x, 1, current_system.maxx)
+				return TRUE
+		if("change_y")
+			var/new_y = input(usr, "Choose new Y destination", "Helm Control", destination_y) as num|null
+			if(new_y)
+				destination_y = clamp(new_y, 1, current_system.maxy)
+				return TRUE
+		if("change_impulse_power")
+			var/new_speed = input(usr, "Choose new impulse power (0% - 100%)", "Helm Control", (impulse_power*100)) as num|null
+			if(new_speed)
+				impulse_power = clamp((new_speed/100), 0, 1)
+				return TRUE
+		// SENSORS
+		if("sensor")
+			if(!(shuttle_capability & SHUTTLE_CAN_USE_SENSORS))
+				return
+			var/id = text2num(params["target_id"])
+			if(!id)
+				return
+			var/datum/overmap_object/ov_obj = SSovermap.GetObjectByID(id)
+			if(!ov_obj)
+				return
+			if(params["sensor_action"] == "target")
+				SetLockTo(ov_obj)
+				return TRUE
+			else
+				if(params["sensor_action"] == "destination")
+					destination_x = ov_obj.x
+					destination_y = ov_obj.y
+					return TRUE
+		// TARGET
+		if("target")
+			if(!(shuttle_capability & SHUTTLE_CAN_USE_TARGET))
+				return
+			if(!lock)
+				return
+			var/targetaction = params["target_action"]
+			switch(targetaction)
+				if("disengage_lock")
+					SetLockTo(null)
+					return TRUE
+				if("command_idle")
+					target_command = TARGET_IDLE
+					return TRUE
+				if("command_fire_once")
+					target_command = TARGET_FIRE_ONCE
+					return TRUE
+				if("command_keep_firing")
+					target_command = TARGET_KEEP_FIRING
+					return TRUE
+				if("command_scan")
+					target_command = TARGET_SCAN
+					scan_text = "Scanning..."
+					addtimer(CALLBACK(src, .proc/Scan), 3 SECONDS)
+					return TRUE
+				if("command_beam_on_board")
+					target_command = TARGET_BEAM_ON_BOARD
+					return TRUE
+		// DOCK
+		if("designated_dock")
+			if(shuttle_controller.busy)
+				return
+			var/dock_id = params["dock_id"]
+			var/obj/docking_port/stationary/target_dock = SSshuttle.getDock(dock_id)
+			if(!target_dock)
+				return
+			var/datum/map_zone/mapzone = target_dock.get_map_zone()
+			var/datum/overmap_object/dock_overmap_object = mapzone.related_overmap_object
+			if(!dock_overmap_object)
+				return
+			if(!current_system.ObjectsAdjacent(src, dock_overmap_object))
+				return
+			switch(SSshuttle.moveShuttle(my_shuttle.id, dock_id, 1))
+				if(0)
+					shuttle_controller.busy = TRUE
+					shuttle_controller.RemoveCurrentControl()
+			return TRUE
+		if("freeform_dock")
+			if(shuttle_controller.busy)
+				return
+			if(shuttle_controller.freeform_docker)
+				return
+			var/sub_id = text2num(params["sub_id"])
+			var/map_id = text2num(params["map_id"])
+			if(!sub_id || !map_id)
+				return
+			var/datum/map_zone/mapzone = SSmapping.get_map_zone_id(map_id)
+			if(!mapzone)
+				return
+			var/datum/virtual_level/vlevel = SSmapping.get_virtual_level_id(sub_id)
+			if(!vlevel)
+				return
+			var/datum/overmap_object/mapzone_overmap_object = mapzone.related_overmap_object
+			if(!mapzone_overmap_object)
+				return
+			if(!current_system.ObjectsAdjacent(src, mapzone_overmap_object))
+				return
+			shuttle_controller.SetController(usr)
+			shuttle_controller.freeform_docker = new /datum/shuttle_freeform_docker(shuttle_controller, usr, vlevel)
 			return TRUE
 
 /datum/overmap_object/shuttle/ui_interact(mob/user, datum/tgui/ui)
