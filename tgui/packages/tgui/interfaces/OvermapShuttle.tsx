@@ -1,11 +1,12 @@
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import { Table, Tabs, Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
+import { NumberInput, Table, Tabs, Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
 import { Window } from '../layouts';
 
 // act('action', { param1: 'value', })
 
 type ShuttleData = {
+  name: string;
   overmapView: boolean;
   status: string;
   // GENERAL
@@ -64,6 +65,7 @@ export const OvermapShuttle = (props, context) => {
     Locked: Symbol('locked'),
   };
   const {
+    name,
     overmapView,
     status,
     // GENERAL
@@ -95,39 +97,38 @@ export const OvermapShuttle = (props, context) => {
   const [tab, setTab] = useLocalState(context, 'tab', 1);
   return (
     <Window
-      title=""
-      width={800}
-      height={600}>
+      title={name}
+      width={600}
+      height={400}>
       <Window.Content scrollable>
-        <b>TRANSIT STATUS: {status}</b>
         <Tabs>
           <Tabs.Tab
-            select={tab === 1}
+            selected={tab === 1}
             onClick={() => setTab(1)}>
             General
           </Tabs.Tab>
           <Tabs.Tab
-            select={tab === 2}
+            selected={tab === 2}
             onClick={() => setTab(2)}>
             Engines
           </Tabs.Tab>
           <Tabs.Tab
-            select={tab === 3}
+            selected={tab === 3}
             onClick={() => setTab(3)}>
             Helm
           </Tabs.Tab>
           <Tabs.Tab
-            select={tab === 4}
+            selected={tab === 4}
             onClick={() => setTab(4)}>
             Sensors
           </Tabs.Tab>
           <Tabs.Tab
-            select={tab === 5}
+            selected={tab === 5}
             onClick={() => setTab(5)}>
             Target
           </Tabs.Tab>
           <Tabs.Tab
-            select={tab === 6}
+            selected={tab === 6}
             onClick={() => setTab(6)}>
             Dock
           </Tabs.Tab>
@@ -150,12 +151,33 @@ export const OvermapShuttleGeneral = (props, context) => {
   const {
     position_x,
     position_y,
+    commsListen,
+    commsBroadcast,
   } = data;
   return (
-    <Section>
+    <Section title="General">
+      <Button
+        content="Overmap View"
+        onClick={() => act('overmap_view')}
+      />
       <Box>
         <b>POSITION: ( {position_x}, {position_y} ) </b>
-      </Box>
+      </Box><br />
+      <b>Comms: </b>
+      <Button
+        textAlign="center"
+        width="37px"
+        icon={commsListen ? 'volume-up' : 'volume-mute'}
+        color={commsListen ? 'green' : 'red'}
+        onClick={() => act('comms_output')}
+      />
+      <Button
+        textAlign="center"
+        width="37px"
+        icon={commsBroadcast ? 'microphone' : 'microphone-slash'}
+        color={commsBroadcast ? 'green' : 'red'}
+        onClick={() => act('comms_input')}
+      />
     </Section>
   );
 };
@@ -181,7 +203,15 @@ export const EngineDisplay = (props, context) => {
         {engine.fuel_percent * 100}%
       </Table.Cell>
       <Table.Cell>
-        {engine.efficiency}%
+        <NumberInput
+          animate
+          unit="%"
+          step={1}
+          minValue={0}
+          maxValue={100}
+          value={engine.efficiency}
+          onDrag={(e, value) => act('set_efficiency', { index: engine.index, efficiency: value })}
+        />
       </Table.Cell>
     </Table.Row>
   );
@@ -193,40 +223,40 @@ export const OvermapShuttleEngines = (props, context) => {
     engines,
   } = data;
   return (
-    <div align="center">
-      <Button
-        ml={1}
-        color="yellow"
-        content="All Engines On"
-        onClick={() => act("engines_on")} />
-      <Button
-        ml={1}
-        color="red"
-        content="All Engines Off"
-        onClick={() => act("engines_off")} />
-      <Section>
-        <Table>
-          <Table.Row>
-            <Table.Cell bold>
-              <h3>ENGINE</h3>
-            </Table.Cell>
-            <Table.Cell bold>
-              <h3>STATUS</h3>
-            </Table.Cell>
-            <Table.Cell bold>
-              <h3>FUEL</h3>
-            </Table.Cell>
-            <Table.Cell bold>
-              <h3>EFFICIENCY</h3>
-            </Table.Cell>
-          </Table.Row>
-          {engines.map(engine => (
-            <EngineDisplay
-              key={engine.name}
-              engine={engine} />
-          ))}
-        </Table>
-      </Section>
-    </div>
+    <Section title="Engine Status">
+      <Table>
+        <Table.Row>
+          <Table.Cell bold>
+            <h3>ENGINE</h3>
+          </Table.Cell>
+          <Table.Cell bold>
+            <h3>STATUS</h3>
+          </Table.Cell>
+          <Table.Cell bold>
+            <h3>FUEL</h3>
+          </Table.Cell>
+          <Table.Cell bold>
+            <h3>EFFICIENCY</h3>
+          </Table.Cell>
+        </Table.Row>
+        {engines.map(engine => (
+          <EngineDisplay
+            key={engine.name}
+            engine={engine} />
+        ))}
+      </Table><br />
+      <div align="center">
+        <Button
+          ml={1}
+          color="yellow"
+          content="All Engines On"
+          onClick={() => act("engines_on")} />
+        <Button
+          ml={1}
+          color="red"
+          content="All Engines Off"
+          onClick={() => act("engines_off")} />
+      </div>
+    </Section>
   );
 };

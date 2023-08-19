@@ -172,6 +172,8 @@
 				if(M.my_overmap_object)
 					M.my_overmap_object.GrantOvermapView(usr, get_turf(src))
 					return
+				else
+					say("Launch before attempting operation.")
 			if("overmap_ship_controls")
 				if(M.my_overmap_object)
 					M.my_overmap_object.set_my_console(src)
@@ -179,6 +181,8 @@
 					var/datum/tgui/thisui = SStgui.get_open_ui(usr, src)
 					thisui.close()
 					return
+				else
+					say("Launch before attempting operation.")
 			if("overmap_launch")
 				if(!uses_overmap)
 					return

@@ -102,6 +102,7 @@
 /datum/overmap_object/shuttle/ui_data(mob/user)
 	var/list/data = list()
 	// GENERAL
+	data["name"] = name
 	data["overmapView"] = shuttle_controller.mob_controller != null
 	data["status"] = my_shuttle.mode
 	data["position_x"] = x
@@ -178,6 +179,12 @@
 				return
 			var/datum/shuttle_extension/engine/ext = engine_extensions[index]
 			ext.turned_on = !ext.turned_on
+		if("set_efficiency")
+			var/index = params["index"]
+			if(length(engine_extensions) < index)
+				return
+			var/datum/shuttle_extension/engine/ext = engine_extensions[index]
+			ext.current_efficiency = clamp((params["efficiency"]/100), 0, 1)
 		if("overmap_view")
 			GrantOvermapView(usr, get_turf(src))
 			return TRUE
