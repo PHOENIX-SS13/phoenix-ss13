@@ -1,6 +1,6 @@
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import { NumberInput, Table, Tabs, Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
+import { TextArea, Input, NumberInput, Table, Tabs, Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
 import { Window } from '../layouts';
 
 // act('action', { param1: 'value', })
@@ -154,30 +154,58 @@ export const OvermapShuttleGeneral = (props, context) => {
     commsListen,
     commsBroadcast,
   } = data;
+  const [writingHail, setWritingHail] = useLocalState(context, "writingHail", false);
   return (
-    <Section title="General">
-      <Button
-        content="Overmap View"
-        onClick={() => act('overmap_view')}
-      />
-      <Box>
-        <b>POSITION: ( {position_x}, {position_y} ) </b>
-      </Box><br />
-      <b>Comms: </b>
-      <Button
-        textAlign="center"
-        width="37px"
-        icon={commsListen ? 'volume-up' : 'volume-mute'}
-        color={commsListen ? 'green' : 'red'}
-        onClick={() => act('comms_output')}
-      />
-      <Button
-        textAlign="center"
-        width="37px"
-        icon={commsBroadcast ? 'microphone' : 'microphone-slash'}
-        color={commsBroadcast ? 'green' : 'red'}
-        onClick={() => act('comms_input')}
-      />
+    <>
+      <Section align="center">
+        <Button
+          content="Overmap View"
+          onClick={() => act('overmap_view')}
+        /><br />
+        <b> POSITION: ( {position_x}, {position_y} ) </b>
+      </Section>
+      <Section title="Comms">
+        <Button
+          textAlign="center"
+          width="37px"
+          icon={commsListen ? 'volume-up' : 'volume-mute'}
+          color={commsListen ? 'green' : 'red'}
+          onClick={() => act('comms_output')}
+        />
+        <Button
+          textAlign="center"
+          width="37px"
+          icon={commsBroadcast ? 'microphone' : 'microphone-slash'}
+          color={commsBroadcast ? 'green' : 'red'}
+          onClick={() => act('comms_input')}
+        />
+        {commsBroadcast ? <Button
+          textAlign="center"
+          content="Hail"
+          selected={writingHail}
+          onClick={() => setWritingHail(!writingHail)} /> : ''}
+      </Section>
+      {(writingHail && commsBroadcast) ? <HailWindow /> : ""}
+    </>
+  );
+};
+
+export const HailWindow = (props, context) => {
+  const [hail, setHail] = useLocalState(context, "hail", "");
+  return (
+    <Section title="Compose Hail">
+      <div align="center">
+        <TextArea
+          width="80%"
+          height="100px"
+          type="text"
+          value={hail}
+          placeholder="hail message here."
+          onInput={(e, value) => setHail(value)}
+        /><br />
+        <Button
+          content="sex" />
+      </div>
     </Section>
   );
 };
