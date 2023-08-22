@@ -46,7 +46,10 @@ type Engine = {
 }
 
 type Target = {
-
+  id: number;
+  name: string;
+  position_x: number;
+  position_y: number;
 }
 
 type Dock = {
@@ -141,6 +144,12 @@ export const OvermapShuttle = (props, context) => {
         {tab === 2 && (
           <OvermapShuttleEngines />
         )}
+        {tab === 3 && (
+          <OvermapShuttleHelm />
+        )}
+        {tab === 4 && (
+          <OvermapShuttleSensors />
+        )}
       </Window.Content>
     </Window>
   );
@@ -185,13 +194,15 @@ export const OvermapShuttleGeneral = (props, context) => {
           selected={writingHail}
           onClick={() => setWritingHail(!writingHail)} /> : ''}
       </Section>
-      {(writingHail && commsBroadcast) ? <HailWindow /> : ""}
+      {(writingHail && commsBroadcast) ? <HailWindow setWritingHail={setWritingHail} /> : ""}
     </>
   );
 };
 
 export const HailWindow = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
   const [hail, setHail] = useLocalState(context, "hail", "");
+  const { setWritingHail } = props;
   return (
     <Section title="Compose Hail">
       <div align="center">
@@ -204,7 +215,8 @@ export const HailWindow = (props, context) => {
           onInput={(e, value) => setHail(value)}
         /><br />
         <Button
-          content="sex" />
+          content="Send Hail"
+          onClick={(e, value) => { act('hail', { hail: hail }); setWritingHail(false); }} />
       </div>
     </Section>
   );
@@ -286,5 +298,103 @@ export const OvermapShuttleEngines = (props, context) => {
           onClick={() => act("engines_off")} />
       </div>
     </Section>
+  );
+};
+
+export const OvermapShuttleHelm = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const {
+    destination_x,
+    destination_y,
+    speed,
+    impulse,
+    topSpeed,
+    currentCommand,
+    padControl,
+  } = data;
+  return (
+    <>
+      <Section>
+        <b>Current Command: </b>{currentCommand}<br /><br />
+        <b>Destination: </b><br />
+        X:
+        <NumberInput
+          animate
+          step={1}
+          minValue={0}
+          maxValue={30}
+          value={destination_x}
+          onDrag={(e, value) => act('change_x', { new_x: value })} />
+        &nbsp;Y:<NumberInput
+          animate
+          step={1}
+          minValue={0}
+          maxValue={30}
+          value={destination_y}
+          onDrag={(e, value) => act('change_y', { new_y: value })} />
+      </Section>
+      <Section title="Commands">
+        <Button
+          content="Idle"
+          onClick={() => act("command_stop")} /><br />
+        <Button
+          content="Move to destination"
+          onClick={() => act("command_move_dest")} /><br />
+        <Button
+          content="Turn to destination"
+          onClick={() => act("command_turn_dest")} /><br />
+        <Button
+          content="Follow Target"
+          onClick={() => act("command_follow_sensor")} /><br />
+        <Button
+          content="Turn to Target"
+          onClick={() => act("command_turn_sensor")} /><br />
+      </Section>
+    </>
+  );
+};
+
+export const OvermapShuttleSensors = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const { sensorTargets } = data;
+  return (
+    <Table>
+      {sensorTargets.map(target =>
+        (<SensorDisplay
+          key={target.name}
+          target={target} />))}
+    </Table>
+  );
+};
+
+export const SensorDisplay = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const { target } = props;
+  const {
+    lockedTarget,
+    lockStatus,
+    destination_x,
+    destination_y,
+  } = data;
+  return (
+    <Table.Row>
+      <Table.Cell>
+        <b>{target.name}</b>
+      </Table.Cell>
+      <Table.Cell>
+        ( {target.position_x}, {target.position_y} )
+      </Table.Cell>
+      <Table.Cell>
+        <Button
+          content="Target"
+          selected={target.id === lockedTarget}
+          onClick={() => act("sensor", { target_id: target.id, sensor_action: "target" })} />
+        <Button
+          content="Set as Destination"
+          selected={target.position_x === destination_x
+            && target.position_y === destination_y}
+          onClick={() => act("destination", { target_id: target.id, sensor_action: "destination" })} />
+      </Table.Cell>
+    </Table.Row>
   );
 };

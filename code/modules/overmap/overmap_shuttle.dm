@@ -99,6 +99,10 @@
 	var/obj/machinery/computer/shuttle/cons = console
 	my_console = cons
 
+/datum/overmap_object/shuttle/ui_static_data(mob/user)
+	// SENSORS
+	data["sensorTargets"] = GetSensorTargets()
+
 /datum/overmap_object/shuttle/ui_data(mob/user)
 	var/list/data = list()
 	// GENERAL
@@ -107,6 +111,7 @@
 	data["status"] = my_shuttle.mode
 	data["position_x"] = x
 	data["position_y"] = y
+	data["max_x"] = SSovermap.
 	data["commsListen"] = open_comms_channel
 	data["commsBroadcast"] = microphone_muted
 	// ENGINES
@@ -129,13 +134,11 @@
 	data["speed"] = VECTOR_LENGTH(velocity_x, velocity_y)
 	data["impulse"] = impulse_power
 	data["topSpeed"] = GetCapSpeed()
-	data["currentCommand"] = helm_command
+	data["currentCommand"] = get_command_string()
 	data["padControl"] = FALSE
-	// SENSORS
-	data["sensorTargets"]
 	// TARGET
-	data["lockedTarget"]
-	data["lockStatus"]
+	data["lockedTarget"] = lock?.target
+	data["lockStatus"] = (lock ? (lock.is_calibrated ? "Locked" : "Calibrating...") : "None")
 	data["scanInfo"] = scan_text
 	// DOCK
 	data["docks"]
@@ -143,11 +146,29 @@
 
 	return data
 
+/datum/overmap_object/shuttle/proc/get_command_string()
+	switch(helm_command)
+		if(HELM_IDLE)
+			return "Idle"
+		if(HELM_FULL_STOP)
+			return "Full Stop"
+		if(HELM_MOVE_TO_DESTINATION)
+			return "Moving to destination..."
+		if(HELM_TURN_TO_DESTINATION)
+			return "Turning to face destination..."
+		if(HELM_FOLLOW_SENSOR_LOCK)
+			return "Following target..."
+		if(HELM_TURN_TO_SENSOR_LOCK)
+			return "Turning to target..."
+	return "ERROR. Please contact system administrator."
+
 /datum/overmap_object/shuttle/ui_act(action, params)
 	. = ..()
 	if(.)
 		return
 	switch(action)
+		if("update_static_data")
+			update_static_data(usr)
 		// GENERAL
 		if("overmap")
 			GrantOvermapView(usr)
@@ -160,9 +181,10 @@
 			my_visual.update_appearance()
 			return TRUE
 		if("hail")
-			var/hail_msg = input(usr, "Compose a hail message:", "Hail Message")  as text|null
+			var/hail_msg = params["hail"]
 			if(hail_msg)
 				hail_msg = strip_html_simple(hail_msg, MAX_BROADCAST_LEN, TRUE)
+				my_console?.say("Sent.")
 			return TRUE
 		// ENGINES
 		if("engines_off")
@@ -208,15 +230,11 @@
 			helm_command = HELM_IDLE
 			return TRUE
 		if("change_x")
-			var/new_x = input(usr, "Choose new X destination", "Helm Control", destination_x) as num|null
-			if(new_x)
-				destination_x = clamp(new_x, 1, current_system.maxx)
-				return TRUE
+			destination_x = clamp(params["new_x"], 1, current_system.maxx)
+			return TRUE
 		if("change_y")
-			var/new_y = input(usr, "Choose new Y destination", "Helm Control", destination_y) as num|null
-			if(new_y)
-				destination_y = clamp(new_y, 1, current_system.maxy)
-				return TRUE
+			destination_y = clamp(params["new_y"], 1, current_system.maxy)
+			return TRUE
 		if("change_impulse_power")
 			var/new_speed = input(usr, "Choose new impulse power (0% - 100%)", "Helm Control", (impulse_power*100)) as num|null
 			if(new_speed)
