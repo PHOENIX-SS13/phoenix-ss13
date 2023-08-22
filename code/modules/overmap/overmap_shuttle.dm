@@ -18,6 +18,10 @@
 	var/destination_x = 0
 	var/destination_y = 0
 
+	var/last_checked_vlevels = list()
+	var/last_check_x = 0
+	var/last_check_y = 0
+
 	/// Otherwise it's abstract and it doesnt have a physical shuttle in transit, or people in it. Maintain this for the purposes of AI raid ships
 	var/is_physical = TRUE
 
@@ -44,6 +48,7 @@
 	var/target_command = TARGET_IDLE
 
 	var/scan_text = ""
+	var/scan_id = 0
 
 	var/datum/overmap_shuttle_controller/shuttle_controller
 	var/uses_rotation = TRUE
@@ -99,9 +104,57 @@
 	var/obj/machinery/computer/shuttle/cons = console
 	my_console = cons
 
+/datum/overmap_object/shuttle/proc/GetNearbyLevels()
+	if(x == last_check_x && y == last_check_y)
+		return last_checked_vlevels
+	var/list/virtual_levels = list()
+	var/list/nearby_objects = current_system.GetObjectsOnCoords(x,y)
+	for(var/datum/overmap_object/IO as anything in nearby_objects)
+		if(!IO.can_be_docked)
+			continue
+		if(IO.related_map_zone)
+			for(var/datum/virtual_level/vlevel in IO.related_map_zone.virtual_levels)
+				virtual_levels |= vlevel
+	last_check_x = x
+	last_check_y = y
+	last_checked_vlevels = virtual_levels
+	return virtual_levels
+
+/datum/overmap_object/shuttle/proc/GetDocksInLevels()
+	var/list/vlevels = GetNearbyLevels()
+	var/list/obj/docking_port/stationary/docks = list()
+	var/list/options = params2list(my_shuttle.possible_destinations)
+	for(var/i in SSshuttle.stationary)
+		var/obj/docking_port/stationary/iterated_dock = i
+		var/datum/virtual_level/level = iterated_dock.get_virtual_level()
+		if(!(level in vlevels))
+			continue
+		if(!options.Find(iterated_dock.port_destinations))
+			continue
+		if(!my_shuttle.check_dock(iterated_dock, silent = TRUE))
+			continue
+		docks["[iterated_dock.name]"] = iterated_dock
+	return docks
+
 /datum/overmap_object/shuttle/ui_static_data(mob/user)
+	var/list/data = list()
 	// SENSORS
-	data["sensorTargets"] = GetSensorTargets()
+	data["sensorTargets"] = list()
+	var/list/targets = GetSensorTargets()
+	for(var/ov_obj in targets)
+		var/datum/overmap_object/cast = ov_obj
+		var/list/objdata = list(
+			name = cast.name,
+			x = cast.x,
+			y = cast.y,
+			dist = FLOOR(TWO_POINT_DISTANCE(x,y,cast.x,cast.y),1),
+			id = cast.id
+		)
+		data["sensorTargets"] += list(objdata)
+	// DOCK
+	data["freeformDocks"] = GetNearbyLevels()
+	data["docks"] = GetDocksInLevels()
+	return data
 
 /datum/overmap_object/shuttle/ui_data(mob/user)
 	var/list/data = list()
@@ -111,7 +164,6 @@
 	data["status"] = my_shuttle.mode
 	data["position_x"] = x
 	data["position_y"] = y
-	data["max_x"] = SSovermap.
 	data["commsListen"] = open_comms_channel
 	data["commsBroadcast"] = microphone_muted
 	// ENGINES
@@ -137,12 +189,21 @@
 	data["currentCommand"] = get_command_string()
 	data["padControl"] = FALSE
 	// TARGET
-	data["lockedTarget"] = lock?.target
+	data["hasTarget"] = FALSE
+	if(lock)
+		data["hasTarget"] = TRUE
+		var/lockedTarget = list(
+			name = lock.target.name,
+			id = lock.target.id,
+			x = lock.target.x,
+			y = lock.target.y,
+			dist = 0
+		)
+		data["lockedTarget"] = lockedTarget
 	data["lockStatus"] = (lock ? (lock.is_calibrated ? "Locked" : "Calibrating...") : "None")
+	data["targetCommand"] = target_command
 	data["scanInfo"] = scan_text
-	// DOCK
-	data["docks"]
-	data["freeformDocks"]
+	data["scanId"] = scan_id
 
 	return data
 
@@ -253,11 +314,10 @@
 			if(params["sensor_action"] == "target")
 				SetLockTo(ov_obj)
 				return TRUE
-			else
-				if(params["sensor_action"] == "destination")
-					destination_x = ov_obj.x
-					destination_y = ov_obj.y
-					return TRUE
+			if(params["sensor_action"] == "destination")
+				destination_x = ov_obj.x
+				destination_y = ov_obj.y
+				return TRUE
 		// TARGET
 		if("target")
 			if(!(shuttle_capability & SHUTTLE_CAN_USE_TARGET))
@@ -281,6 +341,7 @@
 				if("command_scan")
 					target_command = TARGET_SCAN
 					scan_text = "Scanning..."
+					scan_id = lock.target.id
 					addtimer(CALLBACK(src, .proc/Scan), 3 SECONDS)
 					return TRUE
 				if("command_beam_on_board")
@@ -537,6 +598,9 @@
 	var/txt = ""
 	txt += lock.target.GetScanText()
 	scan_text = txt
+	scan_id = lock.target.id
+	target_command = TARGET_IDLE
+	return scan_text
 
 /datum/overmap_object/shuttle/proc/DisplayHelmPad(mob/user)
 	var/list/dat = list("<center>")

@@ -126,7 +126,7 @@
 	//As we are created we enter other objects
 	for(var/other_obj in current_system.GetObjectsOnCoords(x, y))
 		var/datum/overmap_object/other_overmap_obj = other_obj
-		other_overmap_obj.Entered(src, TRUE)
+		other_overmap_obj?.Entered(src, TRUE)
 
 	if(clears_hazards_on_spawn)
 		current_system.CoordsClearHazard(x, y)
