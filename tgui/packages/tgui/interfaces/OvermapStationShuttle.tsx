@@ -76,7 +76,7 @@ type FreeDock = {
   vlevelId:number;
 }
 
-export const OvermapShuttle = (props, context) => {
+export const OvermapStationShuttle = (props, context) => {
   const { act, data } = useBackend<ShuttleData>(context);
   const lockStates = {
     None: Symbol('none'),
@@ -121,11 +121,6 @@ export const OvermapShuttle = (props, context) => {
             onClick={() => setTab(5)}>
             Target
           </Tabs.Tab>
-          <Tabs.Tab
-            selected={tab===6}
-            onClick={() => setTab(6)}>
-            Dock
-          </Tabs.Tab>
         </Tabs>
         {tab === 1 && (
           <OvermapShuttleGeneral
@@ -143,9 +138,6 @@ export const OvermapShuttle = (props, context) => {
         )}
         {tab === 5 && (
           <OvermapShuttleTarget />
-        )}
-        {tab === 6 && (
-          <OvermapShuttleDocks />
         )}
       </Window.Content>
     </Window>
@@ -261,6 +253,18 @@ export const OvermapShuttleEngines = (props, context) => {
   } = data;
   return (
     <Section title="Engine Status">
+      <div align="center">
+        <Button
+          ml={1}
+          color="yellow"
+          content="All Engines On"
+          onClick={() => act("station_engines_on")} />
+        <Button
+          ml={1}
+          color="red"
+          content="All Engines Off"
+          onClick={() => act("station_engines_off")} />
+      </div><br />
       <Table>
         <Table.Row>
           <Table.Cell bold>
@@ -282,18 +286,6 @@ export const OvermapShuttleEngines = (props, context) => {
             engine={engine} />
         ))}
       </Table><br />
-      <div align="center">
-        <Button
-          ml={1}
-          color="yellow"
-          content="All Engines On"
-          onClick={() => act("engines_on")} />
-        <Button
-          ml={1}
-          color="red"
-          content="All Engines Off"
-          onClick={() => act("engines_off")} />
-      </div>
     </Section>
   );
 };
@@ -511,72 +503,5 @@ export const OvermapShuttleTarget = (props, context) => {
       ? <><TargetButtons /><ScanInfoDisplay /></>
       : <p>No target found.</p>}
     </div>
-  );
-};
-
-export const OvermapShuttleDocks = (props, context) => {
-  const { act, data } = useBackend<ShuttleData>(context);
-  const {
-    docks,
-    freeformDocks,
-  } = data;
-  return (
-    <>
-      <Button content="Scan" onClick={() => act('update_static_data')} /><br />
-      <Section title="Docks">
-        <Table>
-          {docks.map(dock =>
-            (<DockDisplay
-              key={dock.name}
-              dock={dock} />))}
-        </Table>
-      </Section>
-      <Section title="Freeform Docks">
-        <Table>
-          {freeformDocks.map(dock =>
-            (<FreeformDockDisplay
-              key={dock.name}
-              dock={dock} />))}
-        </Table>
-      </Section>
-    </>
-  );
-};
-
-export const DockDisplay = (props, context) => {
-  const { act, data } = useBackend<ShuttleData>(context);
-  const {
-    dock,
-  } = props;
-  return (
-    <Table.Row>
-      <Table.Cell>
-        <b>{dock.name}</b>
-      </Table.Cell>
-      <Table.Cell>
-        <Button
-          content="Dock"
-          onClick={() => act('designated_dock', { dock_id: dock.id })} />
-      </Table.Cell>
-    </Table.Row>
-  );
-};
-
-export const FreeformDockDisplay = (props, context) => {
-  const { act, data } = useBackend<ShuttleData>(context);
-  const {
-    dock,
-  } = props;
-  return (
-    <Table.Row>
-      <Table.Cell>
-        <b>{dock.name}</b>
-      </Table.Cell>
-      <Table.Cell>
-        <Button
-          content="Dock"
-          onClick={() => act('freeform_dock', { map_id: dock.mapId, sub_id: dock.vlevelId })} />
-      </Table.Cell>
-    </Table.Row>
   );
 };

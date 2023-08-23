@@ -69,6 +69,10 @@
 	if(related_map_zone)
 		return related_map_zone.get_alive_client_mobs()
 
+/datum/overmap_object/proc/GetAllDeadClientMobs()
+	if(related_map_zone)
+		return related_map_zone.get_dead_client_mobs()
+
 //Gets all alive and dead(observers) client mobs in the contained overmap object
 /datum/overmap_object/proc/GetAllClientMobs()
 	if(related_map_zone)
@@ -80,27 +84,63 @@
 
 /datum/overmap_object/proc/GetAliveMobTypes()
 	var/list/moblist = GetAliveMobs()
-	var/list/namelist = list()
+	var/list/typelist = list( hostile = 0, nonhostile = 0)
 	for(var/mob/living/living_mob as anything in moblist)
-		var/mobname = initial(living_mob.name)
-		if(!namelist.Find(mobname) && !living_mob.mind)
-			namelist += mobname
-	return namelist
+		if(living_mob.mind)
+			continue
+		//var/mobname = initial(living_mob.name)
+		if(istype(living_mob,/mob/living/simple_animal/hostile))
+			typelist["hostile"] += 1
+		else
+			typelist["nonhostile"] += 1
+	return typelist
 
 /datum/overmap_object/proc/GetScanText()
 	var/txt = description
-	var/list/namelist = GetAliveMobTypes()
-	if(namelist.len > 0)
-		txt += " Biological signatures include "
-		for(var/name in namelist)
-			txt += "[name]s"
-			var/index = namelist.Find(name)
-			if(index < namelist.len)
-				txt += ", "
-			if(index == namelist.len - 1)
-				txt += "and "
+	var/list/typelist = GetAliveMobTypes()
+	var/hostiles = typelist["hostile"]
+	var/nonhostiles = typelist["nonhostile"]
+	if(hostiles > 0 || nonhostiles > 0)
+		txt += " Biological signatures indicate the presence of "
+		if(hostiles > 0)
+			txt += "[hostiles] large creatures"
+			if(nonhostiles > 0)
+				txt += " and "
+		if(nonhostiles > 0)
+			txt += "[nonhostiles] small creatures"
 		txt += "."
+
 	return txt
+
+/datum/overmap_object/proc/GetAllAliveClientStatus()
+	. = list()
+	if(!related_map_zone)
+		return
+	var/list/mob/clients = GetAllAliveClientMobs()
+	for(var/mob/living/mob in clients)
+		var/mobstats = list( name = mob.name, alive = TRUE)
+		if(mob.health > MAX_LIVING_HEALTH * 0.75)
+			mobstats["status"] = 3
+		else if(mob.health > MAX_LIVING_HEALTH * 0.25)
+			mobstats["status"] = 2
+		else
+			mobstats["status"] = 1
+		. += list(mobstats)
+	return
+
+/datum/overmap_object/proc/GetAllDeadClientStatus()
+	. = list()
+	if(!related_map_zone)
+		return
+	var/list/mob/clients = GetAllDeadClientMobs()
+	for(var/mob/mob in clients)
+		var/mobstats = list(
+			name = mob.name,
+			alive = FALSE,
+			status = 0
+		)
+		. += mobstats
+	return
 
 //When something enters this object. Also called when the objects are created
 /datum/overmap_object/proc/Entered(datum/overmap_object/entering, spawned = FALSE)
