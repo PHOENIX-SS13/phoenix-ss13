@@ -5,6 +5,7 @@
 	is_overmap_controllable = TRUE
 
 	var/obj/docking_port/mobile/my_shuttle
+	var/obj/machinery/computer/shuttle/my_console
 	var/datum/transit_instance/transit_instance
 	var/angle = 0
 
@@ -16,6 +17,10 @@
 	var/helm_command = HELM_IDLE
 	var/destination_x = 0
 	var/destination_y = 0
+
+	var/last_checked_vlevels = list()
+	var/last_check_x = 0
+	var/last_check_y = 0
 
 	/// Otherwise it's abstract and it doesnt have a physical shuttle in transit, or people in it. Maintain this for the purposes of AI raid ships
 	var/is_physical = TRUE
@@ -41,6 +46,9 @@
 	var/datum/overmap_lock/lock
 
 	var/target_command = TARGET_IDLE
+
+	var/scan_text = ""
+	var/scan_id = 0
 
 	var/datum/overmap_shuttle_controller/shuttle_controller
 	var/uses_rotation = TRUE
@@ -88,6 +96,339 @@
 			continue
 		draw_thrust += ext.DrawThrust(impulse_power)
 	return draw_thrust / speed_divisor_from_mass
+
+/datum/overmap_object/shuttle/ui_state(mob/user)
+	return GLOB.not_incapacitated_state
+
+/datum/overmap_object/shuttle/proc/set_my_console(obj/console)
+	var/obj/machinery/computer/shuttle/cons = console
+	my_console = cons
+
+/datum/overmap_object/shuttle/proc/GetNearbyLevels()
+	if(x == last_check_x && y == last_check_y)
+		return last_checked_vlevels
+	var/list/virtual_levels = list()
+	var/list/nearby_objects = current_system.GetObjectsOnCoords(x,y)
+	for(var/datum/overmap_object/IO as anything in nearby_objects)
+		if(!IO.can_be_docked)
+			continue
+		if(IO.related_map_zone)
+			for(var/datum/virtual_level/vlevel in IO.related_map_zone.virtual_levels)
+				virtual_levels |= vlevel
+	last_check_x = x
+	last_check_y = y
+	last_checked_vlevels = virtual_levels
+	return virtual_levels
+
+/datum/overmap_object/shuttle/proc/GetDocksInLevels()
+	var/list/vlevels = GetNearbyLevels()
+	var/list/obj/docking_port/stationary/docks = list()
+	//var/list/options = params2list(my_shuttle.possible_destinations)
+	for(var/i in SSshuttle.stationary)
+		var/obj/docking_port/stationary/iterated_dock = i
+		var/datum/virtual_level/level = iterated_dock.get_virtual_level()
+		if(!(level in vlevels))
+			continue
+		//if(!options.Find(iterated_dock.port_destinations))
+		//	continue
+		if(!my_shuttle.check_dock(iterated_dock, silent = TRUE))
+			continue
+		docks += iterated_dock
+	return docks
+
+/datum/overmap_object/shuttle/ui_static_data(mob/user)
+	var/list/data = list()
+	// SENSORS
+	data["sensorTargets"] = list()
+	var/list/targets = GetSensorTargets()
+	for(var/ov_obj in targets)
+		var/datum/overmap_object/cast = ov_obj
+		var/list/objdata = list(
+			name = cast.name,
+			x = cast.x,
+			y = cast.y,
+			dist = FLOOR(TWO_POINT_DISTANCE(x,y,cast.x,cast.y),1),
+			id = cast.id
+		)
+		data["sensorTargets"] += list(objdata)
+	// DOCK
+	data["freeformDocks"] = list()
+	var/list/vlevels = GetNearbyLevels()
+	for(var/lvl in vlevels)
+		var/datum/virtual_level/vlevel = lvl
+		var/list/vleveldata = list(
+			name = vlevel.name,
+			mapId = vlevel.parent_map_zone.id,
+			vlevelId = vlevel.id
+		)
+		data["freeformDocks"] += list(vleveldata)
+
+	data["docks"] = list()
+	var/list/docks = GetDocksInLevels()
+	for(var/dockvar in docks)
+		var/obj/docking_port/stationary/dock = dockvar
+		var/list/dockdata = list(
+			name = dock.name,
+			id = dock.id,
+			mapname = dock.get_map_zone()
+		)
+		data["docks"] += list(dockdata)
+	return data
+
+/datum/overmap_object/shuttle/ui_data(mob/user)
+	var/list/data = list()
+	// GENERAL
+	data["name"] = name
+	data["overmapView"] = shuttle_controller.mob_controller != null
+	data["status"] = my_shuttle.mode
+	data["position_x"] = x
+	data["position_y"] = y
+	data["commsListen"] = open_comms_channel
+	data["commsBroadcast"] = microphone_muted
+	// ENGINES
+	data["engines"] = list()
+	var/engineindex = 1
+	for(var/datum/shuttle_extension/engine/engine in engine_extensions)
+		var/list/enginedata = list(
+			functioning = engine.CanOperate(),
+			online = engine.turned_on,
+			name = engine.name,
+			index = engineindex,
+			fuel_percent = (engine.current_fuel / engine.maximum_fuel),
+			efficiency = (engine.current_efficiency * 100),
+		)
+		data["engines"] += list(enginedata)
+		engineindex += 1
+	// HELM
+	data["destination_x"] = destination_x
+	data["destination_y"] = destination_y
+	data["speed"] = VECTOR_LENGTH(velocity_x, velocity_y)
+	data["impulse"] = impulse_power
+	data["topSpeed"] = GetCapSpeed()
+	data["currentCommand"] = get_command_string()
+	data["padControl"] = FALSE
+	// TARGET
+	data["hasTarget"] = FALSE
+	if(lock)
+		data["hasTarget"] = TRUE
+		var/lockedTarget = list(
+			name = lock.target.name,
+			id = lock.target.id,
+			x = lock.target.x,
+			y = lock.target.y,
+			dist = 0
+		)
+		data["lockedTarget"] = lockedTarget
+	data["lockStatus"] = (lock ? (lock.is_calibrated ? "Locked" : "Calibrating...") : "None")
+	data["targetCommand"] = target_command
+	data["scanInfo"] = scan_text
+	data["scanId"] = scan_id
+
+	return data
+
+/datum/overmap_object/shuttle/proc/get_command_string()
+	switch(helm_command)
+		if(HELM_IDLE)
+			return "Idle"
+		if(HELM_FULL_STOP)
+			return "Full Stop"
+		if(HELM_MOVE_TO_DESTINATION)
+			return "Moving to destination..."
+		if(HELM_TURN_TO_DESTINATION)
+			return "Turning to face destination..."
+		if(HELM_FOLLOW_SENSOR_LOCK)
+			return "Following target..."
+		if(HELM_TURN_TO_SENSOR_LOCK)
+			return "Turning to target..."
+	return "ERROR. Please contact system administrator."
+
+/datum/overmap_object/shuttle/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("update_static_data")
+			update_static_data(usr)
+		// GENERAL
+		if("overmap")
+			GrantOvermapView(usr)
+			return TRUE
+		if("comms_input")
+			microphone_muted = !microphone_muted
+			return TRUE
+		if("comms_output")
+			open_comms_channel = !open_comms_channel
+			my_visual.update_appearance()
+			return TRUE
+		if("hail")
+			var/hail_msg = params["hail"]
+			if(hail_msg)
+				hail_msg = strip_html_simple(hail_msg, MAX_BROADCAST_LEN, TRUE)
+				my_console?.say("Sent.")
+			return TRUE
+		// ENGINES
+		if("engines_off")
+			my_shuttle.TurnEnginesOff()
+			my_console?.say("Engines offline.")
+			return TRUE
+		if("engines_on")
+			my_shuttle.TurnEnginesOn()
+			my_console?.say("Engines online.")
+			return TRUE
+		if("toggle_engine")
+			var/index = params["index"]
+			if(length(engine_extensions) < index)
+				return
+			var/datum/shuttle_extension/engine/ext = engine_extensions[index]
+			ext.turned_on = !ext.turned_on
+		if("set_efficiency")
+			var/index = params["index"]
+			if(length(engine_extensions) < index)
+				return
+			var/datum/shuttle_extension/engine/ext = engine_extensions[index]
+			ext.current_efficiency = clamp((params["efficiency"]/100), 0, 1)
+		if("overmap_view")
+			GrantOvermapView(usr, get_turf(src))
+			return TRUE
+		// HELM
+		if("command_stop")
+			helm_command = HELM_FULL_STOP
+			return TRUE
+		if("command_move_dest")
+			helm_command = HELM_MOVE_TO_DESTINATION
+			return TRUE
+		if("command_turn_dest")
+			helm_command = HELM_TURN_TO_DESTINATION
+			return TRUE
+		if("command_follow_sensor")
+			helm_command = HELM_FOLLOW_SENSOR_LOCK
+			return TRUE
+		if("command_turn_sensor")
+			helm_command = HELM_TURN_TO_SENSOR_LOCK
+			return TRUE
+		if("command_idle")
+			helm_command = HELM_IDLE
+			return TRUE
+		if("change_x")
+			destination_x = clamp(params["new_x"], 1, current_system.maxx)
+			return TRUE
+		if("change_y")
+			destination_y = clamp(params["new_y"], 1, current_system.maxy)
+			return TRUE
+		if("show_helm_pad")
+			DisplayHelmPad(usr)
+			return TRUE
+		if("change_impulse_power")
+			var/new_speed = input(usr, "Choose new impulse power (0% - 100%)", "Helm Control", (impulse_power*100)) as num|null
+			if(new_speed)
+				impulse_power = clamp((new_speed/100), 0, 1)
+				return TRUE
+		// SENSORS
+		if("sensor")
+			if(!(shuttle_capability & SHUTTLE_CAN_USE_SENSORS))
+				return
+			var/id = text2num(params["target_id"])
+			if(!id)
+				return
+			var/datum/overmap_object/ov_obj = SSovermap.GetObjectByID(id)
+			if(!ov_obj)
+				return
+			if(params["sensor_action"] == "target")
+				SetLockTo(ov_obj)
+				return TRUE
+			if(params["sensor_action"] == "destination")
+				destination_x = ov_obj.x
+				destination_y = ov_obj.y
+				return TRUE
+		// TARGET
+		if("target")
+			if(!(shuttle_capability & SHUTTLE_CAN_USE_TARGET))
+				return
+			if(!lock)
+				return
+			var/targetaction = params["target_action"]
+			switch(targetaction)
+				if("disengage_lock")
+					SetLockTo(null)
+					return TRUE
+				if("command_idle")
+					target_command = TARGET_IDLE
+					return TRUE
+				if("command_fire_once")
+					target_command = TARGET_FIRE_ONCE
+					return TRUE
+				if("command_keep_firing")
+					target_command = TARGET_KEEP_FIRING
+					return TRUE
+				if("command_scan")
+					target_command = TARGET_SCAN
+					scan_text = "Scanning..."
+					scan_id = lock.target.id
+					addtimer(CALLBACK(src, .proc/Scan), 3 SECONDS)
+					return TRUE
+				if("command_beam_on_board")
+					target_command = TARGET_BEAM_ON_BOARD
+					return TRUE
+		// DOCK
+		if("designated_dock")
+			if(shuttle_controller.busy)
+				return
+			if(velocity_x + velocity_y > 0)
+				my_console?.say("Halt shuttle before attempting to dock.")
+				return
+			var/dock_id = params["dock_id"]
+			var/obj/docking_port/stationary/target_dock = SSshuttle.getDock(dock_id)
+			if(!target_dock)
+				return
+			var/datum/map_zone/mapzone = target_dock.get_map_zone()
+			var/datum/overmap_object/dock_overmap_object = mapzone.related_overmap_object
+			if(!dock_overmap_object)
+				return
+			if(!current_system.ObjectsAdjacent(src, dock_overmap_object))
+				return
+			switch(SSshuttle.moveShuttle(my_shuttle.id, dock_id, 1))
+				if(0)
+					shuttle_controller.busy = TRUE
+					shuttle_controller.RemoveCurrentControl()
+					var/datum/tgui/ui = SStgui.get_open_ui(usr, src)
+					ui.close()
+					my_console.say("Initiating docking procedure.")
+			return TRUE
+		if("freeform_dock")
+			if(shuttle_controller.busy)
+				return
+			if(velocity_x + velocity_y > 0)
+				my_console?.say("Halt shuttle before attempting to dock.")
+				return
+			if(shuttle_controller.freeform_docker)
+				return
+			var/sub_id = text2num(params["sub_id"])
+			var/map_id = text2num(params["map_id"])
+			if(!sub_id || !map_id)
+				return
+			var/datum/map_zone/mapzone = SSmapping.get_map_zone_id(map_id)
+			if(!mapzone)
+				return
+			var/datum/virtual_level/vlevel = SSmapping.get_virtual_level_id(sub_id)
+			if(!vlevel)
+				return
+			var/datum/overmap_object/mapzone_overmap_object = mapzone.related_overmap_object
+			if(!mapzone_overmap_object)
+				return
+			if(!current_system.ObjectsAdjacent(src, mapzone_overmap_object))
+				return
+			shuttle_controller.SetController(usr)
+			shuttle_controller.freeform_docker = new /datum/shuttle_freeform_docker(shuttle_controller, usr, vlevel)
+			var/datum/tgui/ui = SStgui.get_open_ui(usr, src)
+			ui.close()
+			return TRUE
+
+/datum/overmap_object/shuttle/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OvermapShuttle")
+		ui.open()
+
 
 /datum/overmap_object/shuttle/proc/DisplayUI(mob/user, turf/usage_turf)
 	if(usage_turf)
@@ -236,6 +577,7 @@
 			dat += "<BR> - <a href='?src=[REF(src)];task=target;target_control=command_keep_firing' [locked_and_calibrated ? "" : "class='linkOff'"]>Keep Firing!</a>"
 			dat += "<BR> - <a href='?src=[REF(src)];task=target;target_control=command_scan' [locked_and_calibrated ? "" : "class='linkOff'"]>Scan</a>"
 			dat += "<BR> - <a href='?src=[REF(src)];task=target;target_control=command_beam_on_board' [locked_and_calibrated ? "" : "class='linkOff'"]>Beam on Board</a>"
+			dat += "<BR><B>Scan Info: </B><BR>[scan_text]"
 
 		if(SHUTTLE_TAB_DOCKING)
 			if(!my_shuttle || is_seperate_z_level)
@@ -285,6 +627,14 @@
 	popup.set_content(dat.Join())
 	popup.open()
 
+/datum/overmap_object/shuttle/proc/Scan()
+	var/txt = ""
+	txt += lock.target.GetScanText()
+	scan_text = txt
+	scan_id = lock.target.id
+	target_command = TARGET_IDLE
+	return scan_text
+
 /datum/overmap_object/shuttle/proc/DisplayHelmPad(mob/user)
 	var/list/dat = list("<center>")
 	dat += "<a href='?src=[REF(src)];pad_topic=nw'>O</a><a href='?src=[REF(src)];pad_topic=n'>O</a><a href='?src=[REF(src)];pad_topic=ne'>O</a>"
@@ -298,6 +648,7 @@
 	dat += "<BR><center><a href='?src=[REF(src)];pad_topic=engage'>Engage</a></center>"
 	var/datum/browser/popup = new(user, "overmap_helm_pad", "Helm Pad Control", 250, 250)
 	popup.set_content(dat.Join())
+	control_turf = get_turf(user)
 	popup.open()
 
 /datum/overmap_object/shuttle/proc/InputHelmPadDirection(input_x = 0, input_y = 0)
@@ -466,6 +817,8 @@
 					target_command = TARGET_KEEP_FIRING
 				if("command_scan")
 					target_command = TARGET_SCAN
+					scan_text = "Scanning..."
+					addtimer(CALLBACK(src, .proc/Scan), 3 SECONDS)
 				if("command_beam_on_board")
 					target_command = TARGET_BEAM_ON_BOARD
 		if("sensor")
