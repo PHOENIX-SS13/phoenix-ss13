@@ -425,38 +425,48 @@ export const OvermapShuttleSensors = (props, context) => {
   );
 };
 
+export const TargetButtons = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const {
+    lockedTarget,
+    targetCommand,
+    scanInfo,
+    scanId,
+  } = data;
+  return (
+    <>
+      <b>Target: </b> {lockedTarget.name}<br />
+      <Button content="Disengage Lock"
+        onClick={() => act('target', { target_action: 'disengage_lock' })} /><br />
+      <Button content="Idle" selected={targetCommand === 0}
+        onClick={() => act('target', { target_action: 'command_idle' })} /><br />
+      <Button content="Fire Once" selected={targetCommand === 1}
+        onClick={() => act('target', { target_action: 'command_fire_once' })} /><br />
+      <Button content="Continuous Fire" selected={targetCommand === 2}
+        onClick={() => act('target', { target_action: 'command_keep_firing' })} /><br />
+      <Button content="Scan" selected={targetCommand === 3}
+        onClick={() => act('target', { target_action: 'command_scan' })} /><br />
+      <Button content="Beam On board" selected={targetCommand === 4}
+        onClick={() => act('target', { target_action: 'command_beam_on_board' })} /><br />
+      <br />
+      <b>Scan Info:</b> <br />
+      {lockedTarget.id === scanId ? scanInfo : "Not yet scanned."}
+    </>
+  );
+};
+
 export const OvermapShuttleTarget = (props, context) => {
   const { act, data } = useBackend<ShuttleData>(context);
   const {
     hasTarget,
     lockedTarget,
-    lockStatus,
     targetCommand,
     scanInfo,
     scanId,
   } = data;
   return (
     <Section>
-      {!hasTarget && "No target found."}
-      {hasTarget
-        ? <>
-          <b>Target: </b> {lockedTarget.name}<br />
-          <Button content="Disengage Lock"
-            onClick={() => act('target', { target_action: 'disengage_lock' })} /><br />
-          <Button content="Idle" selected={targetCommand === 0}
-            onClick={() => act('target', { target_action: 'command_idle' })} /><br />
-          <Button content="Fire Once" selected={targetCommand === 1}
-            onClick={() => act('target', { target_action: 'command_fire_once' })} /><br />
-          <Button content="Continuous Fire" selected={targetCommand === 2}
-            onClick={() => act('target', { target_action: 'command_keep_firing' })} /><br />
-          <Button content="Scan" selected={targetCommand === 3}
-            onClick={() => act('target', { target_action: 'command_scan' })} /><br />
-          <Button content="Beam On board" selected={targetCommand === 4}
-            onClick={() => act('target', { target_action: 'command_beam_on_board' })} /><br />
-          <br />
-          <b>Scan Info:</b> <br />
-          {lockedTarget.id === scanId ? scanInfo : "Not yet scanned."}
-          </> : ""}
+      {hasTarget ? <TargetButtons /> : "No target found."}
     </Section>
   );
 };
