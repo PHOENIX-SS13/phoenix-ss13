@@ -123,17 +123,17 @@
 /datum/overmap_object/shuttle/proc/GetDocksInLevels()
 	var/list/vlevels = GetNearbyLevels()
 	var/list/obj/docking_port/stationary/docks = list()
-	var/list/options = params2list(my_shuttle.possible_destinations)
+	//var/list/options = params2list(my_shuttle.possible_destinations)
 	for(var/i in SSshuttle.stationary)
 		var/obj/docking_port/stationary/iterated_dock = i
 		var/datum/virtual_level/level = iterated_dock.get_virtual_level()
 		if(!(level in vlevels))
 			continue
-		if(!options.Find(iterated_dock.port_destinations))
-			continue
+		//if(!options.Find(iterated_dock.port_destinations))
+		//	continue
 		if(!my_shuttle.check_dock(iterated_dock, silent = TRUE))
 			continue
-		docks["[iterated_dock.name]"] = iterated_dock
+		docks += iterated_dock
 	return docks
 
 /datum/overmap_object/shuttle/ui_static_data(mob/user)
@@ -152,8 +152,27 @@
 		)
 		data["sensorTargets"] += list(objdata)
 	// DOCK
-	data["freeformDocks"] = GetNearbyLevels()
-	data["docks"] = GetDocksInLevels()
+	data["freeformDocks"] = list()
+	var/list/vlevels = GetNearbyLevels()
+	for(var/lvl in vlevels)
+		var/datum/virtual_level/vlevel = lvl
+		var/list/vleveldata = list(
+			name = vlevel.name,
+			mapId = vlevel.parent_map_zone.id,
+			vlevelId = vlevel.id
+		)
+		data["freeformDocks"] += list(vleveldata)
+
+	data["docks"] = list()
+	var/list/docks = GetDocksInLevels()
+	for(var/dockvar in docks)
+		var/obj/docking_port/stationary/dock = dockvar
+		var/list/dockdata = list(
+			name = dock.name,
+			id = dock.id,
+			mapname = dock.get_map_zone()
+		)
+		data["docks"] += list(dockdata)
 	return data
 
 /datum/overmap_object/shuttle/ui_data(mob/user)
@@ -296,6 +315,9 @@
 		if("change_y")
 			destination_y = clamp(params["new_y"], 1, current_system.maxy)
 			return TRUE
+		if("show_helm_pad")
+			DisplayHelmPad(usr)
+			return TRUE
 		if("change_impulse_power")
 			var/new_speed = input(usr, "Choose new impulse power (0% - 100%)", "Helm Control", (impulse_power*100)) as num|null
 			if(new_speed)
@@ -351,6 +373,8 @@
 		if("designated_dock")
 			if(shuttle_controller.busy)
 				return
+			if(velocity_x + velocity_y > 0)
+				my_console?.say("Halt shuttle before attempting to dock.")
 			var/dock_id = params["dock_id"]
 			var/obj/docking_port/stationary/target_dock = SSshuttle.getDock(dock_id)
 			if(!target_dock)
@@ -365,10 +389,15 @@
 				if(0)
 					shuttle_controller.busy = TRUE
 					shuttle_controller.RemoveCurrentControl()
+					var/datum/tgui/ui = SStgui.get_open_ui(usr, src)
+					ui.close()
+					my_console.say("Initiating docking procedure.")
 			return TRUE
 		if("freeform_dock")
 			if(shuttle_controller.busy)
 				return
+			if(velocity_x + velocity_y > 0)
+				my_console?.say("Halt shuttle before attempting to dock.")
 			if(shuttle_controller.freeform_docker)
 				return
 			var/sub_id = text2num(params["sub_id"])
@@ -388,6 +417,8 @@
 				return
 			shuttle_controller.SetController(usr)
 			shuttle_controller.freeform_docker = new /datum/shuttle_freeform_docker(shuttle_controller, usr, vlevel)
+			var/datum/tgui/ui = SStgui.get_open_ui(usr, src)
+			ui.close()
 			return TRUE
 
 /datum/overmap_object/shuttle/ui_interact(mob/user, datum/tgui/ui)
@@ -615,6 +646,7 @@
 	dat += "<BR><center><a href='?src=[REF(src)];pad_topic=engage'>Engage</a></center>"
 	var/datum/browser/popup = new(user, "overmap_helm_pad", "Helm Pad Control", 250, 250)
 	popup.set_content(dat.Join())
+	control_turf = get_turf(user)
 	popup.open()
 
 /datum/overmap_object/shuttle/proc/InputHelmPadDirection(input_x = 0, input_y = 0)

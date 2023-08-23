@@ -50,7 +50,7 @@
 	mob_controller.remote_control = overmap_obj.my_visual
 	mob_controller.update_parallax_contents()
 	quit_control_button.Grant(mob_controller)
-	stop_shuttle_button.Grant(mob_controller)
+	//stop_shuttle_button.Grant(mob_controller)
 	shuttle_control_button.Grant(mob_controller)
 
 
@@ -65,7 +65,7 @@
 		mob_controller.client.pixel_x = 0
 		mob_controller.client.pixel_y = 0
 		quit_control_button.Remove(mob_controller)
-		stop_shuttle_button.Remove(mob_controller)
+		//stop_shuttle_button.Remove(mob_controller)
 		shuttle_control_button.Remove(mob_controller)
 		playsound(mob_controller, 'sound/machines/terminal_off.ogg', 25, FALSE)
 		mob_controller.remote_control = null
@@ -101,7 +101,7 @@
 /datum/action/innate/quit_control
 	name = "Quit Control"
 	icon_icon = 'icons/mob/actions/actions_silicon.dmi'
-	button_icon_state = "slime_down"
+	button_icon_state = "camera_off"
 
 /datum/action/innate/quit_control/Trigger()
 	var/datum/overmap_shuttle_controller/OSC = target
@@ -119,8 +119,8 @@
 /datum/action/innate/open_shuttle_control
 	name = "Shuttle Controls"
 	icon_icon = 'icons/mob/actions/actions_silicon.dmi'
-	button_icon_state = "slime_down"
+	button_icon_state = "pai"
 
 /datum/action/innate/open_shuttle_control/Trigger()
 	var/datum/overmap_shuttle_controller/OSC = target
-	OSC.overmap_obj.DisplayUI(OSC.mob_controller, OSC.control_turf)
+	OSC.overmap_obj.ui_interact(OSC.mob_controller)

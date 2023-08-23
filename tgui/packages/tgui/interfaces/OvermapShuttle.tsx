@@ -57,11 +57,15 @@ type Target = {
 }
 
 type Dock = {
-
+  id: number;
+  name: string;
+  mapname: string;
 }
 
 type FreeDock = {
-
+  name: string;
+  mapId: number;
+  vlevelId:number;
 }
 
 export const OvermapShuttle = (props, context) => {
@@ -156,6 +160,9 @@ export const OvermapShuttle = (props, context) => {
         )}
         {tab === 5 && (
           <OvermapShuttleTarget />
+        )}
+        {tab === 6 && (
+          <OvermapShuttleDocks />
         )}
       </Window.Content>
     </Window>
@@ -356,6 +363,9 @@ export const OvermapShuttleHelm = (props, context) => {
         <Button
           content="Turn to Target"
           onClick={() => act("command_turn_sensor")} /><br />
+        <Button
+          content="Show Helm Pad"
+          onClick={() => act("show_helm_pad")} /><br />
       </Section>
     </>
   );
@@ -405,7 +415,7 @@ export const OvermapShuttleSensors = (props, context) => {
     <Section>
       <b>Current Target: </b> {hasTarget ? <>{lockedTarget.name} - {lockStatus}</> : "None"}
       <br /> <Button content="Scan" onClick={() => act('update_static_data')} />
-      <Table >
+      <Table>
         {sensorTargets.map(target =>
           (<SensorDisplay
             key={target.name}
@@ -448,5 +458,72 @@ export const OvermapShuttleTarget = (props, context) => {
           {lockedTarget.id === scanId ? scanInfo : "Not yet scanned."}
           </> : ""}
     </Section>
+  );
+};
+
+export const OvermapShuttleDocks = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const {
+    docks,
+    freeformDocks,
+  } = data;
+  return (
+    <>
+      <Button content="Scan" onClick={() => act('update_static_data')} /><br />
+      <Section title="Docks">
+        <Table>
+          {docks.map(dock =>
+            (<DockDisplay
+              key={dock.name}
+              dock={dock} />))}
+        </Table>
+      </Section>
+      <Section title="Freeform Docks">
+        <Table>
+          {freeformDocks.map(dock =>
+            (<FreeformDockDisplay
+              key={dock.name}
+              dock={dock} />))}
+        </Table>
+      </Section>
+    </>
+  );
+};
+
+export const DockDisplay = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const {
+    dock,
+  } = props;
+  return (
+    <Table.Row>
+      <Table.Cell>
+        <b>{dock.name}</b>
+      </Table.Cell>
+      <Table.Cell>
+        <Button
+          content="Dock"
+          onClick={() => act('designated_dock', { dock_id: dock.id })} />
+      </Table.Cell>
+    </Table.Row>
+  );
+};
+
+export const FreeformDockDisplay = (props, context) => {
+  const { act, data } = useBackend<ShuttleData>(context);
+  const {
+    dock,
+  } = props;
+  return (
+    <Table.Row>
+      <Table.Cell>
+        <b>{dock.name}</b>
+      </Table.Cell>
+      <Table.Cell>
+        <Button
+          content="Dock"
+          onClick={() => act('freeform_dock', { map_id: dock.mapId, sub_id: dock.vlevelId })} />
+      </Table.Cell>
+    </Table.Row>
   );
 };
