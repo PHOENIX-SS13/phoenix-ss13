@@ -375,6 +375,7 @@
 				return
 			if(velocity_x + velocity_y > 0)
 				my_console?.say("Halt shuttle before attempting to dock.")
+				return
 			var/dock_id = params["dock_id"]
 			var/obj/docking_port/stationary/target_dock = SSshuttle.getDock(dock_id)
 			if(!target_dock)
@@ -398,6 +399,7 @@
 				return
 			if(velocity_x + velocity_y > 0)
 				my_console?.say("Halt shuttle before attempting to dock.")
+				return
 			if(shuttle_controller.freeform_docker)
 				return
 			var/sub_id = text2num(params["sub_id"])
