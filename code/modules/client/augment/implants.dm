@@ -35,3 +35,13 @@
 	name = "Breathing Tube"
 	cost = 2
 	path = /obj/item/organ/cyberimp/mouth/breathing_tube
+
+/datum/augment_item/implant/l_arm/toolset
+	name = "Toolset Implant"
+	cost = 4
+	path = /obj/item/organ/cyberimp/arm/toolset/l
+
+/datum/augment_item/implant/r_arm/toolset
+	name = "Toolset Implant"
+	cost = 4
+	path = /obj/item/organ/cyberimp/arm/toolset
