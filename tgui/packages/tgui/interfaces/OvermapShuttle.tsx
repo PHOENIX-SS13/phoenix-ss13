@@ -27,6 +27,7 @@ type ShuttleData = {
   padControl: boolean;
   // SENSORS
   sensorTargets: Target[];
+  maxTargetDist: number;
   // TARGET
   hasTarget: boolean;
   lockedTarget: Target;
@@ -362,6 +363,7 @@ export const SensorDisplay = (props, context) => {
     lockedTarget,
     destination_x,
     destination_y,
+    maxTargetDist,
   } = data;
   return (
     <Table.Row>
@@ -374,6 +376,7 @@ export const SensorDisplay = (props, context) => {
       <Table.Cell>
         <Button
           content="Target"
+          disabled={target.dist > maxTargetDist}
           selected={hasTarget && (target.id === lockedTarget.id)}
           onClick={() => act("sensor", { target_id: target.id, sensor_action: "target" })} />
         <Button

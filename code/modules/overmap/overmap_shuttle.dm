@@ -1,5 +1,6 @@
 /datum/overmap_object/shuttle
 	name = "Shuttle"
+	description = "A shuttle."
 	visual_type = /obj/effect/abstract/overmap/shuttle
 	overmap_process = TRUE
 	is_overmap_controllable = TRUE
@@ -141,6 +142,7 @@
 /datum/overmap_object/shuttle/ui_static_data(mob/user)
 	var/list/data = list()
 	// SENSORS
+	data["maxTargetDist"] = OVERMAP_LOCK_RANGE
 	data["sensorTargets"] = list()
 	var/list/targets = GetSensorTargets()
 	for(var/ov_obj in targets)
@@ -149,7 +151,7 @@
 			name = cast.name,
 			x = cast.x,
 			y = cast.y,
-			dist = FLOOR(TWO_POINT_DISTANCE(x,y,cast.x,cast.y),1),
+			dist = TWO_POINT_DISTANCE(x,y,cast.x,cast.y),
 			id = cast.id
 		)
 		data["sensorTargets"] += list(objdata)
@@ -645,6 +647,7 @@
 
 /datum/overmap_object/shuttle/station
 	name = "Space Station"
+	description = "A large station."
 	visual_type = /obj/effect/abstract/overmap/shuttle/station
 	is_seperate_z_level = TRUE
 	uses_rotation = FALSE
@@ -654,6 +657,7 @@
 
 /datum/overmap_object/shuttle/ship
 	name = "Ship"
+	description = "A large, mobile station."
 	visual_type = /obj/effect/abstract/overmap/shuttle/ship
 	is_seperate_z_level = TRUE
 	shuttle_capability = STATION_SHUTTLE_CAPABILITY
@@ -662,14 +666,17 @@
 
 /datum/overmap_object/shuttle/ship/bearcat
 	name = "FTV Bearcat"
+	description = "A mid-sized cruiser. This class of vessel is commonly known for its central cargo lift and second deck mostly dedicated to storage and trading. As such, it mostly sees use in transportation, harvesting, and mining operations."
 	fixed_parallax_dir = NORTH
 
 /datum/overmap_object/shuttle/ship/skyline
 	name = "CPCV Skyline"
+	description = "A massive space liner. A feat of engineering to keep all the amenities of a standard station while giving the whole thing mobility."
 	fixed_parallax_dir = NORTH
 
 /datum/overmap_object/shuttle/planet
 	name = "Planet"
+	description = "A planet."
 	visual_type = /obj/effect/abstract/overmap/shuttle/planet
 	is_seperate_z_level = TRUE
 	uses_rotation = FALSE
@@ -684,12 +691,15 @@
 
 /datum/overmap_object/shuttle/planet/lavaland
 	name = "Lavaland"
+	description = "A planet covered in soot and molten rock."
 	planet_color = LIGHT_COLOR_BLOOD_MAGIC
 
 /datum/overmap_object/shuttle/planet/icebox
 	name = "Ice Planet"
+	description = "A planet covered in snow and ice."
 	planet_color = COLOR_TEAL
 
 /datum/overmap_object/shuttle/ess_crow
 	name = "ESS Crow"
+	description = "A mining vessel, designed to be used for excursions in conjunction with a larger ship that handles long-range exploration."
 	speed_divisor_from_mass = 4
