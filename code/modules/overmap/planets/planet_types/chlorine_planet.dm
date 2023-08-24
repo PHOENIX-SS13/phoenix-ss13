@@ -36,6 +36,7 @@
 
 /datum/overmap_object/shuttle/planet/chlorine
 	name = "Chlorine Planet"
+	description = "A planet with much higher than average chlorine content."
 	planet_color = COLOR_PALE_BTL_GREEN
 
 /area/planet/chlorine

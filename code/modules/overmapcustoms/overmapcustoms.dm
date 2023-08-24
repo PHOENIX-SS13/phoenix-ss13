@@ -24,6 +24,7 @@ SUBSYSTEM_DEF(overmapcustoms)
 //start THINGS TO DEFINE IF YOU WANT TO MAKE A NEW ONE
 /datum/overmap_object/custom
 	name = "Custom Overmap Object"
+	description = "A unique object, so delicately crafted that it has become indescribable."
 	var/map_path = null			//relative to _maps/overmap/
 	var/list/size = list("width" = 50, "height" = 50)
 	var/instances = 1			//how many to put on the overmap

@@ -1,5 +1,6 @@
 /datum/overmap_object/ore_rock
 	name = "ore asteroid"
+	description = "An asteroid that appears to be rich in minerals."
 	visual_type = /obj/effect/abstract/overmap/ore_rock
 	overmap_flags = OV_SHOWS_ON_SENSORS|OV_CAN_BE_TARGETED|OV_CAN_BE_SCANNED|OV_CAN_BE_ATTACKED
 	var/integrity_left = 25
@@ -31,6 +32,7 @@
 
 /datum/overmap_object/transportable/ore_loot
 	name = "ore chunks"
+	description = "An asteroid blown to bits. There seems to be valuable minerals inside."
 	visual_type = /obj/effect/abstract/overmap/ore_loot
 	transports_remaining_low = 1
 	transports_remaining_high = 1

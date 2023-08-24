@@ -14,6 +14,7 @@
 
 /datum/overmap_object/shuttle/planet/jungle
 	name = "Jungle Planet"
+	description = "A planet with dense forests and almost-constant rainfall."
 	planet_color = COLOR_PALE_BTL_GREEN
 
 /area/planet/jungle

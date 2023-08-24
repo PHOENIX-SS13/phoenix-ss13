@@ -23,6 +23,7 @@
 
 /datum/overmap_object/shuttle/planet/snow
 	name = "Snow Planet"
+	description = "A planet covered in ice and snow."
 	planet_color = COLOR_WHITE
 
 /area/planet/snow

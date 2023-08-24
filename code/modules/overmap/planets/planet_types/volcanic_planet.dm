@@ -16,6 +16,7 @@
 
 /datum/overmap_object/shuttle/planet/volcanic
 	name = "Volcanic Planet"
+	description = "A planet covered in molten rock and ash."
 	planet_color = COLOR_RED
 
 /area/planet/volcanic

@@ -12,6 +12,7 @@
 
 /datum/overmap_object/shuttle/planet/barren
 	name = "Barren Planet"
+	description = "A desolate, rocky planet."
 	planet_color = COLOR_BEIGE_GRAYISH
 
 /area/planet/barren

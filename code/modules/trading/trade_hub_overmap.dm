@@ -1,5 +1,6 @@
 /datum/overmap_object/trade_hub
 	name = "Trading Hub"
+	description = "A small station designed to facilitate trading and bartering."
 	visual_type = /obj/effect/abstract/overmap/trade_hub
 	clears_hazards_on_spawn = TRUE
 	var/datum/trade_hub/hub

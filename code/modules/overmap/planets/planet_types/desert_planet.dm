@@ -17,6 +17,7 @@
 
 /datum/overmap_object/shuttle/planet/desert
 	name = "Desert Planet"
+	description = "A hot planet. Barometric readings indicate frequent heavy sandstorms."
 	planet_color = COLOR_BEIGE
 
 /area/planet/desert

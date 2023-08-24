@@ -1,6 +1,7 @@
 //defining broadcast station on overmap
 /datum/overmap_object/custom/broadcast_station
 	name = "Broadcast Station"
+	description = "A commercial broadcast radio station, built into a carved-out asteroid."
 	visual_type = /obj/effect/abstract/overmap/broadcast_station
 	clears_hazards_on_spawn = TRUE
 	can_be_docked = TRUE
@@ -31,7 +32,7 @@
 	outdoors = TRUE
 	requires_power = FALSE
 	has_gravity = FALSE
-	
+
 //Tcomms item subtypes
 
 /obj/item/encryptionkey/broadcast

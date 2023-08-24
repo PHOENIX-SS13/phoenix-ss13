@@ -21,6 +21,7 @@
 
 /datum/overmap_object/shuttle/planet/lush
 	name = "Lush Planet"
+	description = "A planet overflowing with flora."
 	planet_color = COLOR_GREEN
 
 /area/planet/lush

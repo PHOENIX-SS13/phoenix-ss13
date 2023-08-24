@@ -39,6 +39,7 @@
 
 /datum/overmap_object/shuttle/planet/shrouded
 	name = "Shrouded Planet"
+	description = "A planet with a heavy atmosphere. Readouts indicate frequent electrical activity in the clouds."
 	planet_color = COLOR_BLUE
 
 /area/planet/shrouded

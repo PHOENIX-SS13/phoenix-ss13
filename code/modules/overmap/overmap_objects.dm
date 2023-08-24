@@ -229,5 +229,6 @@
 
 /datum/overmap_object/ruins
 	name = "Cluster of Ruins"
+	description = "A set of mostly abandoned and likely rundown structures."
 	visual_type = /obj/effect/abstract/overmap/ruins
 	clears_hazards_on_spawn = TRUE

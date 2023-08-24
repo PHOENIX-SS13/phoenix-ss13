@@ -1,5 +1,6 @@
 /datum/overmap_object/projectile
 	name = "projectile"
+	description = "An active projectile. How did you even manage to scan this?"
 	visual_type = /obj/effect/abstract/overmap/projectile
 	overmap_process = TRUE
 	overmap_flags = NONE

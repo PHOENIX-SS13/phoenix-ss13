@@ -2,6 +2,7 @@
 
 /datum/overmap_object/hazard
 	name = "badly coded hazard"
+	description = "A dangerous-looking but otherwise indescribable set of objects."
 	visual_type = /obj/effect/abstract/overmap/hazard
 	overmap_flags = NONE
 	/// Seperate tracker of whether we are processing or not. Used because we unregister us from processing when its not nessecary
@@ -60,6 +61,7 @@
 
 /datum/overmap_object/hazard/asteroid
 	name = "asteroid field"
+	description = "A dense cluster of large rocks. It'd be dangerous to try and fly through here."
 	hazard_color = COLOR_RED
 	visual_type = /obj/effect/abstract/overmap/hazard/opaque
 
@@ -108,6 +110,7 @@
 
 /datum/overmap_object/hazard/dust
 	name = "space dust"
+	name = "A dense cluster of large particles floating in a mass. Anyone flying through here is definitely in for a rough time."
 	hazard_color = COLOR_FLOORTILE_GRAY
 	visual_type = /obj/effect/abstract/overmap/hazard/opaque
 
@@ -152,6 +155,7 @@
 
 /datum/overmap_object/hazard/electrical_storm
 	name = "electrical storm"
+	description = "A wide field of electrical energy. It would mean havoc on any ship's systems, for sure."
 	hazard_color = COLOR_YELLOW
 
 #define ELECTRICAL_STORM_ACT_PROB 6
@@ -195,6 +199,7 @@
 
 /datum/overmap_object/hazard/ion_storm
 	name = "ion storm"
+	description = "A far-dispersed field of ions. A definite drain on any shield systems."
 	hazard_color = LIGHT_COLOR_ELECTRIC_CYAN
 
 #define ION_STORM_SHIELD_DRAIN_PER_PROCESS 0.75
@@ -212,6 +217,7 @@
 
 /datum/overmap_object/hazard/carp_school
 	name = "carp school"
+	description = "Carp country. Parking here is not recommended. Fly through only if you want to clean fish guts off your windshield later."
 	hazard_color = LIGHT_COLOR_PURPLE
 
 /datum/overmap_object/hazard/carp_school/process(delta_time)
