@@ -11,3 +11,7 @@
   - rscadd: Shuttles can scan overmap objects that contain zlevels in order to learn
       what living things are there.
   - code_imp: Overmap shuttle interface now uses TGUI.
+2023-08-25:
+  CASEY GUNGEON (CASEYGUNGEON):
+  - rscadd: Two new OOC preference toggles. If you&#x27;re an existing user, make
+      sure to check on them!
