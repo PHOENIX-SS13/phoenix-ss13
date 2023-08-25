@@ -107,7 +107,7 @@ GLOBAL_LIST(round_end_notifiees)
 	help_text = "Displays connected clients."
 
 /datum/tgs_chat_command/who/Run(datum/tgs_chat_user/sender, params)
-	. = "[length(GLOB.clients)] Active players:\n"
+	. = "[length(GLOB.clients)] Active players:"
 	for(var/client/C in GLOB.clients)
 		. += "\n"
 		if(C.holder && C.holder.fakekey)
