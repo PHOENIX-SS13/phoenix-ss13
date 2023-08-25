@@ -62,7 +62,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/toggles = TOGGLES_DEFAULT
 	var/db_flags
 	var/chat_toggles = TOGGLES_DEFAULT_CHAT
-	var/horizon_toggles = TOGGLES_DEFAULT_HORIZON
+	var/phoenix_toggles = TOGGLES_DEFAULT_PHOENIX
 	var/ghost_form = "ghost"
 	var/ghost_orbit = GHOST_ORBIT_CIRCLE
 	var/ghost_accs = GHOST_ACCS_DEFAULT_OPTION
@@ -469,19 +469,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[html_encode(features["silicon_flavor_text"])]"
 					else
 						dat += "[copytext(html_encode(features["silicon_flavor_text"]), 1, 40)]..."
-
-					dat +=	"<h2>OOC Preferences</h2>"
-					dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
-					dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
-					dat += 	"<b>Vore:</b><a href='?_src_=prefs;preference=vore_pref;task=input'>[vore_pref]</a><br>"
-					dat += "<a href='?_src_=prefs;preference=ooc_prefs;task=input'><b>Set OOC prefs</b></a><br>"
-					if(length(ooc_prefs) <= 40)
-						if(!length(ooc_prefs))
-							dat += "\[...\]"
+					if(phoenix_toggles & SHOW_ADULT_OPTIONS)
+						dat +=	"<h2>OOC Preferences</h2>"
+						dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
+						dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
+						dat += 	"<b>Vore:</b><a href='?_src_=prefs;preference=vore_pref;task=input'>[vore_pref]</a><br>"
+						dat += "<a href='?_src_=prefs;preference=ooc_prefs;task=input'><b>Set OOC prefs</b></a><br>"
+						if(length(ooc_prefs) <= 40)
+							if(!length(ooc_prefs))
+								dat += "\[...\]"
+							else
+								dat += "[html_encode(ooc_prefs)]"
 						else
-							dat += "[html_encode(ooc_prefs)]"
-					else
-						dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..."
+							dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..."
 					dat += "<br>"
 
 
@@ -605,9 +605,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<br><b>Don The Ultimate Gamer Cloak?:</b><BR><a href ='?_src_=prefs;preference=playtime_reward_cloak'>[(playtime_reward_cloak) ? "Enabled" : "Disabled"]</a><BR></td>"
 
 
-					if(pref_species.can_have_genitals)
+					if(pref_species.can_have_genitals && (phoenix_toggles & SHOW_ADULT_OPTIONS))
 						dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<a href='?_src_=prefs;preference=change_arousal_preview;task=input'>Change arousal preview</a>"
+						dat += "<br><a href='?_src_=prefs;task=input;preference=extra_flavor_text'>Set NSFW Extra Examine Text</a>"
 						dat += "<h3>Penis</h3>"
 						var/penis_name = mutant_bodyparts["penis"][MUTANT_INDEX_NAME]
 						dat += print_bodypart_change_line("penis")
@@ -638,7 +639,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<b>Uses skintones: </b> <a href='?_src_=prefs;preference=uses_skintones;task=input'>[(features["uses_skintones"]) ? "Yes" : "No"]</a>"
 						dat += "<h3>Vagina</h3>"
 						dat += print_bodypart_change_line("vagina")
-						if(mutant_bodyparts["vagina"])
+						if(mutant_bodyparts["vagina"][MUTANT_INDEX_NAME] != "None")
 							dat += "<br><a href='?_src_=prefs;task=genitals_flavor_text;preference=vagina'><b>Set Examine Text</b></a><br>"
 						dat += "</td>"
 
@@ -1094,15 +1095,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Play End of Round Sounds:</b> <a href='?_src_=prefs;preference=endofround_sounds'>[(toggles & SOUND_ENDOFROUND) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Combat Mode Sounds:</b> <a href='?_src_=prefs;preference=combat_mode_sound'>[(toggles & SOUND_COMBATMODE) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Show Adult Options:</b> <a href='?_src_=prefs;preference=adult_options'>[(phoenix_toggles & SHOW_ADULT_OPTIONS) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Show Adult Examine Text:</b> <a href='?_src_=prefs;preference=extra_flavor'>[(phoenix_toggles & SHOW_EXTRA_FLAVOR_TEXT) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 
 
 			if(user.client)
 				if(unlock_content)
 					dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
-
-				if(unlock_content || check_rights_for(user.client, R_ADMIN))
-					dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
+				dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
 				if(hearted_until)
 					dat += "<a href='?_src_=prefs;preference=clear_heart'>Clear OOC Commend Heart</a><br>"
 
@@ -2094,6 +2095,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						arousal_preview = gen_arous_trans[new_arousal]
 						needs_update = TRUE
 
+				if("extra_flavor_text")
+					var/msg = input(usr, "Set extra flavor text for any NSFW traits visible on your character under most circumstances. This is viewable through an extra button on examination.", "Extra Flavor Text", features["extra_flavor_text"]) as message|null
+					if(!isnull(msg))
+						features["extra_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
+
 				if("hair")
 					var/new_hair = input(user, "Choose your character's hair colour:", "Character Preference","#"+hair_color) as color|null
 					if(new_hair)
@@ -2650,6 +2656,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("ghost_ears")
 					chat_toggles ^= CHAT_GHOSTEARS
+
+				if("adult_options")
+					phoenix_toggles ^= SHOW_ADULT_OPTIONS
+
+				if("extra_flavor")
+					phoenix_toggles ^= SHOW_EXTRA_FLAVOR_TEXT
 
 				if("ghost_sight")
 					chat_toggles ^= CHAT_GHOSTSIGHT

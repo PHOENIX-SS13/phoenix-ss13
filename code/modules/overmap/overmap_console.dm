@@ -13,7 +13,7 @@
 	var/datum/overmap_object/shuttle/ov_obj = mapzone.related_overmap_object
 	ui = SStgui.try_update_ui(user, ov_obj, ui)
 	if(!ui)
-		ui = new(user, ov_obj, "OvermapStationShuttle", name)
+		ui = new(user, ov_obj, "OvermapShuttle", name)
 		ui.open()
 //  NEEDS FIRST THREE LINES OF OTHER CODE
 //	var/list/dat = list()

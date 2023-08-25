@@ -134,14 +134,24 @@
 			if("flavor_text")
 				if(length(dna.features["flavor_text"]))
 					var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text", 500, 200)
-					popup.set_content(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", "[name]'s flavor text", replacetext(dna.features["flavor_text"], "\n", "<BR>")))
+					var/dat = "<HTML><HEAD><TITLE>[name]'s flavor text</TITLE></HEAD>"
+					dat += "<BODY><TT>[dna.features["flavor_text"]]<BR></TT>"
+					if(href_list["show_extra_flavor"] == "TRUE" && length(dna.features["extra_flavor_text"]))
+						dat += "<h3>NSFW flavor text:</h3>"
+						dat +="[dna.features["extra_flavor_text"]]"
+					dat += "</BODY></HTML>"
+					popup.set_content(dat)
 					popup.open()
 					return
 
 			if("ooc_prefs")
 				if(client)
-					var/str = "[src]'s OOC Notes : <br> <b>ERP :</b> [client.prefs.erp_pref] <b>| Non-Con :</b> [client.prefs.noncon_pref] <b>| Vore :</b> [client.prefs.vore_pref]"
-					str += "<br>[html_encode(client.prefs.ooc_prefs)]"
+					var/str = ""
+					if(client.prefs.phoenix_toggles & SHOW_ADULT_OPTIONS)
+						str = "[src]'s OOC Notes : <br> <b>ERP :</b> [client.prefs.erp_pref] <b>| Non-Con :</b> [client.prefs.noncon_pref] <b>| Vore :</b> [client.prefs.vore_pref]"
+						str += "<br>[html_encode(client.prefs.ooc_prefs)]"
+					else
+						str = "Their NSFW preferences are toggled off."
 					var/datum/browser/popup = new(usr, "[name]'s ooc info", "[name]'s OOC Information", 500, 200)
 					popup.set_content(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", "[name]'s OOC information", replacetext(str, "\n", "<BR>")))
 					popup.open()

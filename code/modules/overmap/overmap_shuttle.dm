@@ -156,6 +156,7 @@
 		)
 		data["sensorTargets"] += list(objdata)
 	// DOCK
+	data["canDock"] = (my_shuttle != null)
 	data["freeformDocks"] = list()
 	var/list/vlevels = GetNearbyLevels()
 	for(var/lvl in vlevels)
@@ -272,21 +273,13 @@
 				my_console?.say("Sent.")
 			return TRUE
 		// ENGINES
-		if("engines_off")
-			my_shuttle.TurnEnginesOff()
-			my_console?.say("Engines offline.")
-			return TRUE
 		if("engines_on")
-			my_shuttle.TurnEnginesOn()
-			my_console?.say("Engines online.")
-			return TRUE
-		if("station_engines_on")
 			for(var/engine in engine_extensions)
 				var/datum/shuttle_extension/engine/ext = engine
 				ext.turned_on = TRUE
 			my_console?.say("Engines online.")
 			return TRUE
-		if("station_engines_off")
+		if("engines_off")
 			for(var/engine in engine_extensions)
 				var/datum/shuttle_extension/engine/ext = engine
 				ext.turned_on = FALSE

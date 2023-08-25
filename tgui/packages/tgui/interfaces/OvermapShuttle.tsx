@@ -38,6 +38,7 @@ type ShuttleData = {
   scanAliveClients: Client[];
   scanDeadClients: Client[];
   // DOCK
+  canDock: boolean;
   docks: Dock[];
   freeformDocks: FreeDock[];
 }
@@ -88,6 +89,7 @@ export const OvermapShuttle = (props, context) => {
     name,
     position_x,
     position_y,
+    canDock,
   } = data;
   const [tab, setTab] = useLocalState(context, 'tab', 1);
   return (
@@ -124,6 +126,7 @@ export const OvermapShuttle = (props, context) => {
           </Tabs.Tab>
           <Tabs.Tab
             selected={tab===6}
+            style={{ visibility: canDock ? "visible" : "hidden" }}
             onClick={() => setTab(6)}>
             Dock
           </Tabs.Tab>
@@ -203,7 +206,7 @@ export const HailWindow = (props, context) => {
   const { setWritingHail } = props;
   return (
     <Section title="Compose Hail">
-      <div align="center">
+      <Box align="center">
         <TextArea
           width="80%"
           height="100px"
@@ -215,7 +218,7 @@ export const HailWindow = (props, context) => {
         <Button
           content="Send Hail"
           onClick={(e, value) => { act('hail', { hail: hail }); setWritingHail(false); }} />
-      </div>
+      </Box>
     </Section>
   );
 };
@@ -262,6 +265,18 @@ export const OvermapShuttleEngines = (props, context) => {
   } = data;
   return (
     <Section title="Engine Status">
+      <Box align="center">
+        <Button
+          ml={1}
+          color="yellow"
+          content="All Engines On"
+          onClick={() => act("engines_on")} />
+        <Button
+          ml={1}
+          color="red"
+          content="All Engines Off"
+          onClick={() => act("engines_off")} />
+      </Box>
       <Table>
         <Table.Row>
           <Table.Cell bold>
@@ -282,19 +297,7 @@ export const OvermapShuttleEngines = (props, context) => {
             key={engine.name}
             engine={engine} />
         ))}
-      </Table><br />
-      <div align="center">
-        <Button
-          ml={1}
-          color="yellow"
-          content="All Engines On"
-          onClick={() => act("engines_on")} />
-        <Button
-          ml={1}
-          color="red"
-          content="All Engines Off"
-          onClick={() => act("engines_off")} />
-      </div>
+      </Table>
     </Section>
   );
 };
@@ -477,26 +480,23 @@ export const ScanClientDisplay = (props, context) => {
   } = props;
   return (
     <>
-      <b>{client.name}</b> -&nbsp;
-      <div color={GetStatusColor(client.status)}>
-        {client.status}
-      </div>
+      <b>{client.name}</b> - {GetStatusDiv(client.status)}
     </>
   );
 };
 
-const GetStatusColor = (status) => {
-  if (status === 3) {
-    return "green";
+const GetStatusDiv = (status) => {
+  if (status > 2) {
+    return (<div style={{ display: 'inline-block', color: 'green' }}>Nominal</div>);
   }
   if (status === 2) {
-    return "yellow";
+    return (<div style={{ display: 'inline-block', color: 'yellow' }}>Fluctuating</div>);
   }
   if (status === 1) {
-    return "orange";
+    return (<div style={{ display: 'inline-block', color: 'red' }}>Critical</div>);
   }
   else {
-    return "red";
+    return (<div style={{ display: 'inline-block', color: 'gray' }}>Deceased</div>);
   }
 };
 

@@ -442,22 +442,27 @@
 	else if(isobserver(user))
 		. += SPAN_INFO("<b>Traits:</b> [get_quirk_string(FALSE, CAT_QUIRK_ALL)]")
 
-	for(var/genital in list("penis", "testicles", "vagina", "breasts"))
-		if(dna.species.mutant_bodyparts[genital])
-			var/datum/sprite_accessory/genital/G = GLOB.sprite_accessories[genital][dna.species.mutant_bodyparts[genital][MUTANT_INDEX_NAME]]
-			if(G)
-				if(!(G.is_hidden(src)))
-					. += SPAN_NOTICE("[t_He] [t_has] exposed genitals... <a href='?src=[REF(src)];lookup_info=genitals'>Look closer...</a>")
-					break
+	var/adulttext = (user.client.prefs.phoenix_toggles & SHOW_EXTRA_FLAVOR_TEXT) ? "TRUE" : "FALSE"
+
+	if(adulttext == "TRUE")
+		for(var/genital in list("penis", "testicles", "vagina", "breasts"))
+			if(dna.species.mutant_bodyparts[genital])
+				var/datum/sprite_accessory/genital/G = GLOB.sprite_accessories[genital][dna.species.mutant_bodyparts[genital][MUTANT_INDEX_NAME]]
+				if(G)
+					if(!(G.is_hidden(src)))
+						. += SPAN_NOTICE("[t_He] [t_has] exposed genitals... <a href='?src=[REF(src)];lookup_info=genitals'>Look closer...</a>")
+						break
 	if(!skipface)
 		var/line
 		if(length(dna.features["flavor_text"]))
 			var/message = dna.features["flavor_text"]
 			if(length_char(message) <= 40)
 				line = SPAN_NOTICE("[message]")
+				if(length(dna.features["extra_flavor_text"] && adulttext == "TRUE"))
+					line += SPAN_NOTICE(" <a href='?src=[REF(src)];show_extra_flavor=[adulttext];lookup_info=flavor_text'>More...</a>")
 			else
-				line = SPAN_NOTICE("[copytext_char(message, 1, 37)]... <a href='?src=[REF(src)];lookup_info=flavor_text'>More...</a>")
-		if(client)
+				line = SPAN_NOTICE("[copytext_char(message, 1, 37)]... <a href='?src=[REF(src)];show_extra_flavor=[adulttext];lookup_info=flavor_text'>More...</a>")
+		if(adulttext == "TRUE")
 			line += SPAN_NOTICE(" <a href='?src=[REF(src)];lookup_info=ooc_prefs'>\[OOC\]</a>")
 		if(line)
 			. += line
