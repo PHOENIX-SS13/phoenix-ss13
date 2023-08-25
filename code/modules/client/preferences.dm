@@ -1096,6 +1096,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Play Combat Mode Sounds:</b> <a href='?_src_=prefs;preference=combat_mode_sound'>[(toggles & SOUND_COMBATMODE) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Show Adult Options:</b> <a href='?_src_=prefs;preference=adult_options'>[(phoenix_toggles & SHOW_ADULT_OPTIONS) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Show Adult Examine Text:</b> <a href='?_src_=prefs;preference=extra_flavor'>[(phoenix_toggles & SHOW_EXTRA_FLAVOR_TEXT) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 
 
@@ -2658,6 +2659,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("adult_options")
 					phoenix_toggles ^= SHOW_ADULT_OPTIONS
+
+				if("extra_flavor")
+					phoenix_toggles ^= SHOW_EXTRA_FLAVOR_TEXT
 
 				if("ghost_sight")
 					chat_toggles ^= CHAT_GHOSTSIGHT

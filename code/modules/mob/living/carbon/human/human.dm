@@ -136,7 +136,7 @@
 					var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text", 500, 200)
 					var/dat = "<HTML><HEAD><TITLE>[name]'s flavor text</TITLE></HEAD>"
 					dat += "<BODY><TT>[dna.features["flavor_text"]]<BR></TT>"
-					if(href_list["adult_options"] == "TRUE" && length(dna.features["extra_flavor_text"]))
+					if(href_list["show_extra_flavor"] == "TRUE" && length(dna.features["extra_flavor_text"]))
 						dat += "<h3>NSFW flavor text:</h3>"
 						dat +="[dna.features["extra_flavor_text"]]"
 					dat += "</BODY></HTML>"
@@ -151,7 +151,7 @@
 						str = "[src]'s OOC Notes : <br> <b>ERP :</b> [client.prefs.erp_pref] <b>| Non-Con :</b> [client.prefs.noncon_pref] <b>| Vore :</b> [client.prefs.vore_pref]"
 						str += "<br>[html_encode(client.prefs.ooc_prefs)]"
 					else
-						str = "They've toggled their NSFW preferences off."
+						str = "Their NSFW preferences are toggled off."
 					var/datum/browser/popup = new(usr, "[name]'s ooc info", "[name]'s OOC Information", 500, 200)
 					popup.set_content(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", "[name]'s OOC information", replacetext(str, "\n", "<BR>")))
 					popup.open()
