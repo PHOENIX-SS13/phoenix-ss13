@@ -109,8 +109,9 @@ GLOBAL_LIST(round_end_notifiees)
 /datum/tgs_chat_command/who/Run(datum/tgs_chat_user/sender, params)
 	. = "[length(GLOB.clients)] Active players:\n"
 	for(var/client/C in GLOB.clients)
+		. += "\n"
 		if(C.holder && C.holder.fakekey)
-			. += "[C.holder.fakekey]\n"
+			. += "[C.holder.fakekey]"
 		else
 			. += "[C.key]"
 	return
