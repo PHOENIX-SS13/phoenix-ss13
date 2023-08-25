@@ -147,7 +147,7 @@
 			if("ooc_prefs")
 				if(client)
 					var/str = ""
-					if(client.phoenix_toggles & SHOW_ADULT_OPTIONS)
+					if(client.prefs.phoenix_toggles & SHOW_ADULT_OPTIONS)
 						str = "[src]'s OOC Notes : <br> <b>ERP :</b> [client.prefs.erp_pref] <b>| Non-Con :</b> [client.prefs.noncon_pref] <b>| Vore :</b> [client.prefs.vore_pref]"
 						str += "<br>[html_encode(client.prefs.ooc_prefs)]"
 					else
