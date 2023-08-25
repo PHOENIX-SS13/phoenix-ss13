@@ -501,8 +501,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		adminGreet(TRUE)
 		holder.owner = null
 		GLOB.admins -= src
-		if(!GLOB.admins.len && SSticker.IsRoundInProgress()) //Only report this stuff if we are currently playing.
-			send2adminchat("Server", "Last admin disconnected.")
+		//if(!GLOB.admins.len && SSticker.IsRoundInProgress()) //Only report this stuff if we are currently playing.
+		//	send2adminchat("Server", "Last admin disconnected.")
 	QDEL_LIST_ASSOC_VAL(char_render_holders)
 	if(movingmob != null)
 		movingmob.client_mobs_in_contents -= mob
