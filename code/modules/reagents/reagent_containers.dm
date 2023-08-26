@@ -131,15 +131,12 @@
 	if(!iscarbon(eater))
 		return FALSE
 	var/mob/living/carbon/C = eater
-	var/covered = ""
+	var/who = (isnull(user) || eater == user) ? "your" : "[eater.p_their()]"
 	if(C.is_mouth_covered(head_only = 1))
-		covered = "headgear"
-	else if(C.is_mouth_covered(mask_only = 1))
-		covered = "mask"
-	if(covered)
-		var/who = (isnull(user) || eater == user) ? "your" : "[eater.p_their()]"
-		to_chat(user, SPAN_WARNING("You have to remove [who] [covered] first!"))
+		to_chat(user, SPAN_WARNING("You need to remove [who] headgear first!"))
 		return FALSE
+	else if(C.is_mouth_covered(mask_only = 1))
+		to_chat(user, SPAN_WARNING("You move [who] mask out of the way."))
 	return TRUE
 
 /*

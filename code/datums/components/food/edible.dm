@@ -166,12 +166,12 @@ Behavior that's still missing from this component that original food items had t
 /datum/component/edible/proc/UseFromHand(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER
 
-	return TryToEat(M, user)
+	return TryToEat(M, user, TRUE)
 
 /datum/component/edible/proc/TryToEatIt(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	return TryToEat(user, user)
+	return TryToEat(user, user, TRUE)
 
 /datum/component/edible/proc/OnFried(fry_object)
 	SIGNAL_HANDLER
@@ -253,7 +253,7 @@ Behavior that's still missing from this component that original food items had t
 	return TRUE
 
 ///All the checks for the act of eating itself and
-/datum/component/edible/proc/TryToEat(mob/living/eater, mob/living/feeder)
+/datum/component/edible/proc/TryToEat(mob/living/eater, mob/living/feeder, var/first_bite)
 
 	set waitfor = FALSE
 
@@ -265,7 +265,7 @@ Behavior that's still missing from this component that original food items had t
 	if(IsFoodGone(owner, feeder))
 		return
 
-	if(!CanConsume(eater, feeder))
+	if(!CanConsume(eater, feeder, first_bite))
 		return
 	var/fullness = eater.get_fullness() + 10 //The theoretical fullness of the person eating if they were to eat this
 
@@ -314,7 +314,7 @@ Behavior that's still missing from this component that original food items had t
 
 	//If we're not force-feeding and there's an eat delay, try take another bite
 	if(eater == feeder && eat_time)
-		INVOKE_ASYNC(src, .proc/TryToEat, eater, feeder)
+		INVOKE_ASYNC(src, .proc/TryToEat, eater, feeder, FALSE)
 
 
 ///This function lets the eater take a bite and transfers the reagents to the eater.
@@ -344,19 +344,18 @@ Behavior that's still missing from this component that original food items had t
 		return TRUE
 
 ///Checks whether or not the eater can actually consume the food
-/datum/component/edible/proc/CanConsume(mob/living/eater, mob/living/feeder)
+/datum/component/edible/proc/CanConsume(mob/living/eater, mob/living/feeder, var/first_bite)
 	if(!iscarbon(eater))
 		return FALSE
+	if(!first_bite)
+		return TRUE
 	var/mob/living/carbon/C = eater
-	var/covered = ""
+	var/who = (isnull(feeder) || eater == feeder) ? "your" : "[eater.p_their()]"
 	if(C.is_mouth_covered(head_only = 1))
-		covered = "headgear"
-	else if(C.is_mouth_covered(mask_only = 1))
-		covered = "mask"
-	if(covered)
-		var/who = (isnull(feeder) || eater == feeder) ? "your" : "[eater.p_their()]"
-		to_chat(feeder, SPAN_WARNING("You have to remove [who] [covered] first!"))
+		to_chat(feeder, SPAN_WARNING("You need to remove [who] headgear first!"))
 		return FALSE
+	else if(C.is_mouth_covered(mask_only = 1))
+		to_chat(feeder, SPAN_WARNING("You move [who] mask out of the way."))
 	return TRUE
 
 ///Check foodtypes to see if we should send a moodlet
