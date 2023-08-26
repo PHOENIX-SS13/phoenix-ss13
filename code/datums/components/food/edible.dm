@@ -253,7 +253,7 @@ Behavior that's still missing from this component that original food items had t
 	return TRUE
 
 ///All the checks for the act of eating itself and
-/datum/component/edible/proc/TryToEat(mob/living/eater, mob/living/feeder, var/first_bite)
+/datum/component/edible/proc/TryToEat(mob/living/eater, mob/living/feeder, first_bite)
 
 	set waitfor = FALSE
 
@@ -344,7 +344,7 @@ Behavior that's still missing from this component that original food items had t
 		return TRUE
 
 ///Checks whether or not the eater can actually consume the food
-/datum/component/edible/proc/CanConsume(mob/living/eater, mob/living/feeder, var/first_bite)
+/datum/component/edible/proc/CanConsume(mob/living/eater, mob/living/feeder, first_bite)
 	if(!iscarbon(eater))
 		return FALSE
 	if(!first_bite)
