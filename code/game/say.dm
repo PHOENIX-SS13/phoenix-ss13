@@ -75,16 +75,19 @@ GLOBAL_LIST_INIT(freqtospan, list(
 
 /atom/movable/proc/say_mod(input, list/message_mods = list())
 	var/ending = copytext_char(input, -1)
+	var/out = verb_say
 	if(copytext_char(input, -2) == "!!")
-		return verb_yell
+		out = verb_yell
 	else if(message_mods[MODE_SING])
-		. = verb_sing
+		out = verb_sing
 	else if(ending == "?")
-		return verb_ask
+		out = verb_ask
 	else if(ending == "!")
-		return verb_exclaim
-	else
-		return verb_say
+		out = verb_exclaim
+
+	if(islist(out))
+		return get_random(out)
+	return out
 
 /atom/movable/proc/say_quote(input, list/spans=list(speech_span), list/message_mods = list())
 	if(!input)

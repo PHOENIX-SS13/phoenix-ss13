@@ -599,3 +599,7 @@
 		return ref.resolve()
 	else
 		return element
+
+///Returns a random element in the list.
+/proc/get_random(list/input)
+	return input[rand(1,input.len)]

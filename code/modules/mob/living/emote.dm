@@ -615,12 +615,12 @@
 	if(is_banned_from(user.ckey, "Emote"))
 		to_chat(user, SPAN_BOLDWARNING("You cannot send custom emotes (banned)."))
 		return FALSE
-	else if(QDELETED(user))
+	if(QDELETED(user))
 		return FALSE
-	else if(user.client && user.client.prefs.muted & MUTE_IC)
+	if(user.client && user.client.prefs.muted & MUTE_IC)
 		to_chat(user, SPAN_BOLDWARNING("You cannot send IC messages (muted)."))
 		return FALSE
-	else if(!params)
+	if(!params)
 		custom_emote = copytext(sanitize(input("Choose an emote to display.") as text|null), 1, MAX_MESSAGE_LEN)
 		if(!custom_emote)
 			return FALSE

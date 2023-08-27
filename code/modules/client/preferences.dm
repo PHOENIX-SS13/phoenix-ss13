@@ -240,6 +240,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Skills that the character will end up with, accounting in for other factors
 	var/list/perceived_skills = list()
 
+	/// Custom verbs for when the character talks.
+	var/list/custom_say = list()
+	var/list/custom_exclaim = list()
+	var/list/custom_ask = list()
+	var/list/custom_yell = list()
+	var/list/custom_whisper = list()
+	var/list/custom_sing = list()
+
 /datum/preferences/New(client/C)
 	parent = C
 

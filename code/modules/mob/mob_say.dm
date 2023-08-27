@@ -53,7 +53,7 @@
 	usr.emote("subtle",1,message,TRUE)
 
 /mob/verb/subtler_verb(message as message)
-	set name = "Subtler Anti-Ghost"
+	set name = "Subtler"
 	set category = "IC"
 	if(GLOB.say_disabled) //This is here to try to identify lag problems
 		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
