@@ -270,7 +270,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "[SPAN_NAME("[speaker]")] [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "[SPAN_NAME("[speaker]")] [get_random_if_list(speaker.verb_say)] something but you cannot hear [speaker.p_them()]."
 			deaf_type = 1
 	else
 		deaf_message = SPAN_NOTICE("You can't hear yourself!")
