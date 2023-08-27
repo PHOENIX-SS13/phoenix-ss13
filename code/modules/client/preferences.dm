@@ -240,14 +240,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Skills that the character will end up with, accounting in for other factors
 	var/list/perceived_skills = list()
 
-	/// Custom verbs for when the character talks.
-	var/list/custom_say = list()
-	var/list/custom_exclaim = list()
-	var/list/custom_ask = list()
-	var/list/custom_yell = list()
-	var/list/custom_whisper = list()
-	var/list/custom_sing = list()
-
 /datum/preferences/New(client/C)
 	parent = C
 
@@ -789,6 +781,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/datum/language/lang_datum = language_path
 						dat += "<BR>[initial(lang_datum.name)] - [languages[language_path] == LANGUAGE_SPOKEN ? "Spoken" : "Understood" ]"
 					dat += "<BR><a href='?_src_=prefs;preference=language_button;task=input'>Change Languages...</a>"
+					dat += "<center><h2>Custom Say Verbs</h2></center>"
+					dat += "<a href='?_src_=prefs;preference=custom_say;verbtype=custom_say;task=input'>Custom Say Verbs</a>"
+					dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_whisper;task=input'>Custom Whisper Verbs</a>"
+					dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_ask;task=input'>Custom Ask Verbs</a>"
+					dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_exclaim;task=input'>Custom Exclaim Verbs</a>"
+					dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_yell;task=input'>Custom Yell Verbs</a>"
+					dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_sing;task=input'>Custom Sing Verbs</a>"
 					dat += "</td>"
 					dat += "<td valign='top' width=33%>"
 					dat += "<center><h2>Records</h2></center>"
@@ -2035,6 +2034,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					ShowLangMenu(user)
 					return TRUE
 
+				if("custom_say")
+					var/verb_type = href_list["verbtype"]
+					var/lastvalue = ""
+					if(length(features[verb_type]))
+						lastvalue = jointext(features[verb_type],",")
+					var/msg = input(usr, "Give a custom set of verbs for this character's [verb_type]. Separate them with a single comma and nothing else.", "Custom [verb_type]", lastvalue) as message|null
+					if(!isnull(msg))
+						features[verb_type] = splittext(msg,",")
+
 				if("language_button")
 					ShowLangMenu(user)
 					return TRUE
@@ -2918,6 +2926,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts()
+
+	if(length(character.dna.features["custom_say"]))
+		character.verb_say = character.dna.features["custom_say"]
+	if(length(character.dna.features["custom_whisper"]))
+		character.verb_whisper = character.dna.features["custom_whisper"]
+	if(length(character.dna.features["custom_ask"]))
+		character.verb_ask = character.dna.features["custom_ask"]
+	if(length(character.dna.features["custom_exclaim"]))
+		character.verb_exclaim = character.dna.features["custom_exclaim"]
+	if(length(character.dna.features["custom_yell"]))
+		character.verb_yell = character.dna.features["custom_yell"]
+	if(length(character.dna.features["custom_sing"]))
+		character.verb_sing = character.dna.features["custom_sing"]
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
