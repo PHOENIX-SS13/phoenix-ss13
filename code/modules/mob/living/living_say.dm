@@ -431,11 +431,11 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 
 /mob/living/say_mod(input, list/message_mods = list())
 	if(message_mods[WHISPER_MODE] == MODE_WHISPER)
-		. = verb_whisper
+		. = get_random_if_list(verb_whisper)
 	else if(message_mods[WHISPER_MODE] == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
+		. = "[get_random_if_list(verb_whisper)] in [p_their()] last breath"
 	else if(message_mods[MODE_SING])
-		. = verb_sing
+		. = get_random_if_list(verb_sing)
 	else if(stuttering)
 		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
 			. = "shakily signs"
