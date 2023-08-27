@@ -110,7 +110,7 @@
 
 /datum/overmap_object/hazard/dust
 	name = "space dust"
-	name = "A dense cluster of large particles floating in a mass. Anyone flying through here is definitely in for a rough time."
+	description = "A dense cluster of large particles floating in a mass. Anyone flying through here is definitely in for a rough time."
 	hazard_color = COLOR_FLOORTILE_GRAY
 	visual_type = /obj/effect/abstract/overmap/hazard/opaque
 
