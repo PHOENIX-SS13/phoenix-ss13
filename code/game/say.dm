@@ -179,6 +179,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		verb_ask = M.verb_ask
 		verb_exclaim = M.verb_exclaim
 		verb_yell = M.verb_yell
+		verb_sing = M.verb_sing
 
 	// The mob's job identity
 	if(ishuman(M))
