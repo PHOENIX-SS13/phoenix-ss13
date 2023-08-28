@@ -2164,6 +2164,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					needs_update = TRUE
 
 				if("underwear")
+					needs_update = TRUE
 					var/new_underwear = input(user, "Choose your character's underwear:", "Character Preference")  as null|anything in underwear_list_for_species(pref_species, null, mismatched_customization)
 					if(new_underwear)
 						underwear = new_underwear
