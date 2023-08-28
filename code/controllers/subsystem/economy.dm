@@ -49,6 +49,10 @@ SUBSYSTEM_DEF(economy)
 	var/mail_waiting = 0
 	/// Mail Holiday: AKA does mail arrive today? Always blocked on Sundays.
 	var/mail_blocked = FALSE
+	///Has a Veer been sent yet?
+	var/veer_sent = FALSE
+	///Has Peregrine been spawned yet?
+	var/peregrine_spawned = FALSE
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	var/budget_to_hand_out = round(budget_pool / department_accounts.len)

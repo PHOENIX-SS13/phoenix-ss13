@@ -23,6 +23,13 @@
 	air_contents.volume = volume
 	air_contents.temperature = T20C
 	SSair.start_processing_machine(src)
+	if(!SSeconomy.peregrine_spawned && prob(PERE_PROB))
+		spawn_peregrine()
+
+/obj/machinery/portable_atmospherics/proc/spawn_peregrine()
+	SSeconomy.peregrine_spawned = TRUE
+	var/obj/item/toy/plush/peregrine/she = new(get_turf(src))
+	she.layer = TABLE_LAYER
 
 /obj/machinery/portable_atmospherics/Destroy()
 	disconnect()

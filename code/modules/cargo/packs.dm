@@ -52,6 +52,15 @@
 	else
 		for(var/item in contains)
 			new item(C)
+		if(!SSeconomy.veer_sent && prob(VEER_PROB))
+			send_veer(C)
+
+/datum/supply_pack/proc/send_veer(obj/structure/closet/crate/C)
+	SSeconomy.veer_sent = TRUE
+	new /obj/item/toy/plush/veer(C)
+	var/obj/item/paper/note = new(C)
+	note.name = "Customer Appreciation Letter"
+	note.setText("Thanks for being such a dedicated customer!")
 
 /// For generating supply packs at runtime. Returns a list of supply packs to use instead of this one.
 /datum/supply_pack/proc/generate_supply_packs()

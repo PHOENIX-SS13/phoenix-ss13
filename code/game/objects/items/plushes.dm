@@ -669,6 +669,11 @@
 	squeak_override = list('sound/voice/mothlaugh.ogg'=1)
 	nolove = TRUE
 
+/obj/item/toy/plush/peregrine/pickup(mob/user)
+	. = ..()
+	if(layer == TABLE_LAYER)
+		layer = OBJ_LAYER
+
 /obj/item/toy/plush/veer
 	name = "cargo enthusiast plush"
 	desc = "A plush resembling a big guy that just really enjoys his job."

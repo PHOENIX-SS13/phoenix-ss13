@@ -262,8 +262,9 @@
 	. = ..()
 	if(.)
 		info = "[stars(info)]"
-		for(var/index in 1 to add_info)
-			add_info[index] = "[stars(add_info[index])]"
+		if(length(add_info))
+			for(var/index in 1 to add_info)
+				add_info[index] = "[stars(add_info[index])]"
 
 /obj/item/paper/ui_assets(mob/user)
 	return list(
