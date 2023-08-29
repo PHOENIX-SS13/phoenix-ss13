@@ -34,10 +34,10 @@
 		var/obj/docking_port/mobile/port = SSshuttle.getShuttle(shuttleId)
 		if(!port)
 			return
-		ui = SStgui.try_update_ui(user, src, ui)
-		if(!ui)
-			ui = new(user, src, "OvermapShuttleConsole", name)
-			ui.open()
+		if(port.my_overmap_object)
+			SStgui.try_update_open_ui(user, port.my_overmap_object, ui, "OvermapShuttle", port.my_overmap_object.name)
+			return
+		SStgui.try_update_open_ui(user, src, ui, "OvermapShuttleConsole", name)
 	else
 		ui = SStgui.try_update_ui(user, src, ui)
 		if(!ui)
