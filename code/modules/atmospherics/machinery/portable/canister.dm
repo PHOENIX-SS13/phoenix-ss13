@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(gas_id_to_canister, init_gas_id_to_canister())
 	///Player controlled var that set the release pressure of the canister
 	var/release_pressure = ONE_ATMOSPHERE
 	///Maximum pressure allowed for release_pressure var
-	var/can_max_release_pressure = (ONE_ATMOSPHERE * 10)
+	var/can_max_release_pressure = (ONE_ATMOSPHERE * 25)
 	///Minimum pressure allower for release_pressure var
 	var/can_min_release_pressure = (ONE_ATMOSPHERE * 0.1)
 	///Max amount of heat allowed inside of the canister before it starts to melt (different tiers have different limits)
