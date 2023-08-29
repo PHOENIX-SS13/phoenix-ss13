@@ -263,6 +263,7 @@
 	// N2O
 
 		var/SA_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/nitrous_oxide][MOLES])
+		breath_gases[/datum/gas/nitrous_oxide][MOLES] -= breath_gases[/datum/gas/nitrous_oxide][MOLES]
 		if(SA_pp > SA_para_min) // Enough to make us stunned for a bit
 			breather.throw_alert("too_much_n2o", /atom/movable/screen/alert/too_much_n2o)
 			breather.Unconscious(60) // 60 gives them one second to wake up and run away a bit!
