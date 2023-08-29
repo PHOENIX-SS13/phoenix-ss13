@@ -621,18 +621,19 @@
 		to_chat(user, SPAN_BOLDWARNING("You cannot send IC messages (muted)."))
 		return FALSE
 	if(!params)
-		custom_emote = copytext(sanitize(input("Choose an emote to display.") as text|null), 1, MAX_MESSAGE_LEN)
-		if(!custom_emote)
-			return FALSE
-		if(custom_emote && !check_invalid(user, custom_emote))
-			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
-			if(!type)
-				return FALSE
-			switch(type)
-				if("Visible")
-					custom_emote_type = EMOTE_VISIBLE
-				if("Hearable")
-					custom_emote_type = EMOTE_AUDIBLE
+		return FALSE
+	//	custom_emote = copytext(sanitize(input("Choose an emote to display.") as text|null), 1, MAX_MESSAGE_LEN)
+	//	if(!custom_emote)
+	//		return FALSE
+	//	if(custom_emote && !check_invalid(user, custom_emote))
+	//		var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
+	//		if(!type)
+	//			return FALSE
+	//		switch(type)
+	//			if("Visible")
+	//				custom_emote_type = EMOTE_VISIBLE
+	//			if("Hearable")
+	//				custom_emote_type = EMOTE_AUDIBLE
 	else
 		custom_emote = params
 		if(type_override)
