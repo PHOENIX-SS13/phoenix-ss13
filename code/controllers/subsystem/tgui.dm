@@ -354,3 +354,10 @@ SUBSYSTEM_DEF(tgui)
 	// Clear the old list.
 	source.tgui_open_uis.Cut()
 	return TRUE
+
+/// Shorthand for the four lines usually used to open a tgui window. uiname is the exported class, windowname is the title of the window.
+/datum/controller/subsystem/tgui/proc/try_update_open_ui(mob/user, datum/src_object, datum/tgui/ui, uiname, windowname)
+	ui = try_update_ui(user, src_object, ui)
+	if(!ui)
+		ui = new(user, src_object, uiname, windowname)
+		ui.open()
