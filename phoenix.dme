@@ -3564,6 +3564,7 @@
 #include "code\modules\shuttle\supply.dm"
 #include "code\modules\shuttle\syndicate.dm"
 #include "code\modules\shuttle\white_ship.dm"
+#include "code\modules\shuttle-comms\shuttle_comms.dm"
 #include "code\modules\slapcraft\living_slapcraft.dm"
 #include "code\modules\slapcraft\slapcraft_assembly.dm"
 #include "code\modules\slapcraft\slapcraft_handbook.dm"
