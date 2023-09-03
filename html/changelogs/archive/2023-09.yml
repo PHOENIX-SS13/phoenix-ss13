@@ -1,0 +1,8 @@
+2023-09-03:
+  CASEY GUNGEON (CASEYGUNGEON):
+  - rscadd: '&quot;Say&quot; verbs for atom/movable can be in a list, in which case
+      one is selected at random when needed.'
+  - rscadd: Players can define their own &quot;say&quot; verbs for their characters!
+      Check it out in the &quot;Background&quot; tab!
+  - bugfix: The new toggles save now. Go ahead and double-check them. They should
+      stick this time.
