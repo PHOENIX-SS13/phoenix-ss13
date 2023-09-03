@@ -2041,6 +2041,9 @@
 				if("Me")
 					set_typing_indicator(TRUE, TRUE)
 					break
+				if("Me2")
+					set_typing_indicator(TRUE, TRUE)
+					break
 	return ..()
 
 /// Used for setting typing indicator on/off. Checking the state should be done not on the proc to avoid overhead.

@@ -41,6 +41,19 @@
 
 	usr.emote("me",1,message,TRUE)
 
+/mob/verb/me2_verb(message as message)
+	set name = "Me2"
+	set category = "IC"
+	if(typing_indicator) //For async typing indicator
+		set_typing_indicator(FALSE)
+	if(GLOB.say_disabled) //This is here to try to identify lag problems
+		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
+		return
+
+	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+
+	usr.emote("me",1,message,TRUE)
+
 /mob/verb/subtle_verb(message as message)
 	set name = "Subtle"
 	set category = "IC"

@@ -19,6 +19,12 @@
 	full_name = "Custom Emote (/Me)"
 	keybind_signal = COMSIG_KB_CLIENT_ME_DOWN
 
+/datum/keybinding/client/communication/me2
+	hotkey_keys = list("Unbound")
+	name = "Me2"
+	full_name = "Custom Emote (Multiline)"
+	keybind_signal = COMSIG_KB_CLIENT_ME2_DOWN
+
 /datum/keybinding/client/communication/whisper
 	hotkey_keys = list("Y")
 	name = "Whisper"

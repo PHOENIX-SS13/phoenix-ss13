@@ -987,6 +987,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=ooc")
 				if("Me")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=me")
+				if("Me2")
+					winset(src, "default [REF(key)]", "parent=default;name=[key];command=me2")
 				if("Whisper")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=whisper")
 				if("LOOC")
