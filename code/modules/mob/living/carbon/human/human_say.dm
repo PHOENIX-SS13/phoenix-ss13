@@ -1,5 +1,6 @@
 /mob/living/carbon/human/say_mod(input, list/message_mods = list())
-	verb_say = dna.species.say_mod
+	if(!length(dna.features["custom_say"]))
+		verb_say = dna.species.say_mod
 	if(slurring)
 		if (HAS_TRAIT(src, TRAIT_SIGN_LANG))
 			return "loosely signs"

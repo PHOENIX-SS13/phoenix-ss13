@@ -85,9 +85,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	else if(ending == "!")
 		out = verb_exclaim
 
-	if(islist(out))
-		return get_random(out)
-	return out
+	return get_random_if_list(out)
 
 /atom/movable/proc/say_quote(input, list/spans=list(speech_span), list/message_mods = list())
 	if(!input)
@@ -181,6 +179,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		verb_ask = M.verb_ask
 		verb_exclaim = M.verb_exclaim
 		verb_yell = M.verb_yell
+		verb_sing = M.verb_sing
 
 	// The mob's job identity
 	if(ishuman(M))

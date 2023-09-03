@@ -270,7 +270,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "[SPAN_NAME("[speaker]")] [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "[SPAN_NAME("[speaker]")] [get_random_if_list(speaker.verb_say)] something but you cannot hear [speaker.p_them()]."
 			deaf_type = 1
 	else
 		deaf_message = SPAN_NOTICE("You can't hear yourself!")
@@ -431,11 +431,11 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 
 /mob/living/say_mod(input, list/message_mods = list())
 	if(message_mods[WHISPER_MODE] == MODE_WHISPER)
-		. = verb_whisper
+		. = get_random_if_list(verb_whisper)
 	else if(message_mods[WHISPER_MODE] == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
+		. = "[get_random_if_list(verb_whisper)] in [p_their()] last breath"
 	else if(message_mods[MODE_SING])
-		. = verb_sing
+		. = get_random_if_list(verb_sing)
 	else if(stuttering)
 		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
 			. = "shakily signs"

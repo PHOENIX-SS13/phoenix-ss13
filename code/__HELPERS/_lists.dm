@@ -603,3 +603,8 @@
 ///Returns a random element in the list.
 /proc/get_random(list/input)
 	return input[rand(1,input.len)]
+
+/proc/get_random_if_list(input)
+	if(islist(input))
+		return get_random(input)
+	return input
