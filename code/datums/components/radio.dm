@@ -2,6 +2,7 @@
 	var/frequency = FREQ_COMMON
 	var/broadcasting = FALSE
 	var/listening = TRUE
+	var/independent = TRUE
 	var/canhear_range = 3
 
 /datum/component/radio/RegisterWithParent()
@@ -20,13 +21,17 @@
 
 /datum/component/radio/Initialize(var/freq)
 	frequency = freq
+	//adds to global list
 	add_radio_component(src, frequency)
-	SSradio.add_object(src, frequency)
+	//adds to frequency's list of listeners
+	SSradio.add_object(parent, frequency)
 
 
 /datum/component/radio/Destroy()
+	//adds to global list
 	remove_radio_component(src, frequency)
-	SSradio.remove_object(src, frequency)
+	//adds to frequency's list of listeners
+	SSradio.remove_object(parent, frequency)
 	return ..()
 
 /datum/component/radio/proc/toggle_broadcasting(/mob/user)
@@ -50,6 +55,10 @@
 		return
 
 	talk_into(orig_args)
+
+/datum/component/radio/proc/talk_into(list/orig_args)
+	//TODO: Modify original speech and send radio signal
+	return
 
 /datum/component/radio/proc/receive_signal(datum/signal/signal)
 	SIGNAL_HANDLER
