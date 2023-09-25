@@ -61,4 +61,5 @@
 	return
 
 /datum/component/radio/proc/receive_signal(datum/signal/signal)
+	//TODO: determine whether to speak, and then speak
 	SIGNAL_HANDLER
