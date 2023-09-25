@@ -86,6 +86,24 @@ GLOBAL_LIST_EMPTY(all_radios)
 	for(var/freq in GLOB.all_radios)
 		GLOB.all_radios["[freq]"] -= radio
 
+//for radio components
+GLOBAL_LIST_EMPTY(radio_components)
+/proc/add_radio_component(/datum/component/radio/com, freq)
+	if(!freq || !com)
+		return
+	if(!GLOB.radio_components["[freq]"])
+		GLOB.radio_components["[freq]"] = list(com)
+		return FREQ_AI_PRIVATE
+	GLOB.radio_components["[freq]"] |= com
+	return freq
+
+/proc/remove_radio_component(/datum/component/radio/com, freq)
+	if(!freq || !com)
+		return
+	if(!GLOB.radio_components["[freq]"])
+		return
+	GLOB.radio_components["[freq]"] -= com
+
 // For information on what objects or departments use what frequencies,
 // see __DEFINES/radio.dm. Mappers may also select additional frequencies for
 // use in maps, such as in intercoms.
@@ -125,6 +143,7 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 /datum/radio_frequency
 	var/frequency as num
 	var/list/list/obj/devices = list()
+	var/list/datum/component/components = list()
 
 /datum/radio_frequency/New(freq)
 	frequency = freq
@@ -186,6 +205,7 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 
 
 /obj/proc/receive_signal(datum/signal/signal)
+	SEND_SIGNAL(src, COMSIG_RECEIVE_SIGNAL, signal)
 	return
 
 /datum/signal

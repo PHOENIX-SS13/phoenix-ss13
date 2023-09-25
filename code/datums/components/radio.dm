@@ -9,21 +9,33 @@
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_examine)
 	RegisterSignal(parent, COMSIG_CLICK_ALT, .proc/toggle_broadcasting)
 	RegisterSignal(parent, COMSIG_CLICK_ALT_SECONDARY, .proc/toggle_listening)
+	RegisterSignal(parent, COMSIG_OBJ_RECEIVE_SIGNAL, .proc/receive_signal)
 
 /datum/component/radio/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MOVABLE_HEAR)
 	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE)
 	UnregisterSignal(parent, COMSIG_CLICK_ALT)
 	UnregisterSignal(parent, COMSIG_CLICK_ALT_SECONDARY)
+	UnregisterSignal(parent, COMSIG_OBJ_RECEIVE_SIGNAL)
 
 /datum/component/radio/Initialize(var/freq)
 	frequency = freq
+	add_radio_component(src, frequency)
+	SSradio.add_object(src, frequency)
+
+
+/datum/component/radio/Destroy()
+	remove_radio_component(src, frequency)
+	SSradio.remove_object(src, frequency)
+	return ..()
 
 /datum/component/radio/proc/toggle_broadcasting(/mob/user)
+	SIGNAL_HANDLER
 	broadcasting = !broadcasting
 	source.balloon_alert(user, "Microphone turned [broadcasting ? "on" : "off"].")
 
 /datum/component/radio/proc/toggle_listening(/mob/user)
+	SIGNAL_HANDLER
 	listening = !listening
 	source.balloon_alert(user, "Speaker turned [listening ? "on" : "off"].")
 
@@ -38,3 +50,6 @@
 		return
 
 	talk_into(orig_args)
+
+/datum/component/radio/proc/receive_signal(datum/signal/signal)
+	SIGNAL_HANDLER

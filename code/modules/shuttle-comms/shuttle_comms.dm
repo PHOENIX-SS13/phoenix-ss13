@@ -21,13 +21,5 @@
 	var/build_step = 0
 
 /obj/machinery/shuttle_comms/Initialize()
-
-/obj/machinery/shuttle_comms/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
-
-
-// /obj/machinery/shuttle_comms/attackby_secondary(obj/item/weapon, mob/user, params)
-
-
-
-// /obj/machinery/shuttle_comms/examine(mob/user)
-//	. += SPAN_NOTICE("Extra text.")
+	. = ..()
+	AddComponent(/datum/component/radio, list(FREQ_WIDEBAND))

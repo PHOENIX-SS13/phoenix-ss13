@@ -712,6 +712,8 @@
 #define COMSIG_OBJ_BREAK "obj_break"
 /// from base of [/obj/proc/obj_fix]: ()
 #define COMSIG_OBJ_FIX "obj_fix"
+/// from /obj/proc/receive_signal: (datum/signal/signal)
+#define COMSIG_OBJ_RECEIVE_SIGNAL "obj_receive_signal"
 
 // /obj/machinery signals
 
