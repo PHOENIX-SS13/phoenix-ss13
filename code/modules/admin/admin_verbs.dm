@@ -81,6 +81,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/toggleadminhelpsound,
 	/client/proc/togglehearstoryteller,
 	/client/proc/respawn_character,
+	/client/proc/reapply_prefs,
 	/datum/admins/proc/open_borgopanel,
 	/datum/admins/proc/view_all_circuits,
 	)
