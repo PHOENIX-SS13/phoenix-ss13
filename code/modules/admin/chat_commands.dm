@@ -121,7 +121,7 @@ GLOBAL_LIST(round_end_notifiees)
 	help_text = "Restarts the server as long as nobody's on."
 
 /datum/tgs_chat_command/restart/Run(datum/tgs_chat_user/sender, params)
-	var/numclients = GLOB.clients.length
+	var/numclients = GLOB.clients.len
 	if(numclients > 0)
 		. = "Restart failed. [numclients] clients are connected."
 		return
