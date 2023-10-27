@@ -123,7 +123,7 @@ GLOBAL_LIST(round_end_notifiees)
 /datum/tgs_chat_command/restart/Run(datum/tgs_chat_user/sender, params)
 	var/numclients = GLOB.clients.len
 	if(numclients > 0)
-		. = "Restart failed. [numclients] clients are connected."
+		. = "Restart failed. Server is populated."
 		return
 	. = "Restarting..."
 	SSticker.Reboot("TGS command", "TGS command", 1)
