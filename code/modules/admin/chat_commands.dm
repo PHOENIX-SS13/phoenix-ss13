@@ -115,3 +115,15 @@ GLOBAL_LIST(round_end_notifiees)
 		else
 			. += "[C.key]"
 	return
+
+/datum/tgs_chat_command/restart
+	name= "restart"
+	help_text = "Restarts the server as long as nobody's on."
+
+/datum/tgs_chat_command/restart/Run(datum/tgs_chat_user/sender, params)
+	var/numclients = GLOB.clients.length
+	if(numclients > 0)
+		. = "Restart failed. [numclients] clients are connected."
+		return
+	. = "Restarting..."
+	SSticker.Reboot("TGS command", "TGS command", 1)
