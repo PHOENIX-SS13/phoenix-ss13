@@ -202,6 +202,9 @@
 						to_chat(usr, SPAN_WARNING("Shuttle already in transit."))
 						return
 				if(uses_overmap)
+					if(M.my_overmap_object)
+						say("Shuttle is already free!")
+						return
 					if(M.DrawDockingThrust())
 						M.possible_destinations = possible_destinations
 						M.destination = "overmap"
