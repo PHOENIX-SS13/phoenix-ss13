@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(autotransfer)
 	if(!vote_time)
 		can_fire = FALSE
 		return ..()
-	start_time = world.realtime
+	start_time = world.time
 	target_time = start_time + vote_time
 	vote_interval = CONFIG_GET(number/autotransfer_vote_interval)
 	max_extension_votes = CONFIG_GET(number/autotransfer_vote_max_extensions)
@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(autotransfer)
 	current_votes = SSautotransfer.current_votes
 
 /datum/controller/subsystem/autotransfer/fire()
-	if(world.realtime < target_time)
+	if(world.time < target_time)
 		return
 	if(max_extension_votes == NO_MAXVOTES_CAP || max_extension_votes > current_votes)
 		SSvote.initiate_vote("transfer", "server")
@@ -37,5 +37,11 @@ SUBSYSTEM_DEF(autotransfer)
 		current_votes++
 	else
 		SSshuttle.auto_transfer()
+
+/datum/controller/subsystem/autotransfer/proc/stop_firing()
+	flags |= SS_NO_FIRE
+
+/datum/controller/subsystem/autotransfer/proc/start_firing()
+	flags &= ~SS_NO_FIRE
 
 #undef NO_MAXVOTES_CAP
