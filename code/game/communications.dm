@@ -88,7 +88,7 @@ GLOBAL_LIST_EMPTY(all_radios)
 
 //for radio components
 GLOBAL_LIST_EMPTY(radio_components)
-/proc/add_radio_component(/datum/component/radio/com, freq)
+/proc/add_radio_component(datum/component/radio/com, freq)
 	if(!freq || !com)
 		return
 	if(!GLOB.radio_components["[freq]"])
@@ -97,7 +97,7 @@ GLOBAL_LIST_EMPTY(radio_components)
 	GLOB.radio_components["[freq]"] |= com
 	return freq
 
-/proc/remove_radio_component(/datum/component/radio/com, freq)
+/proc/remove_radio_component(datum/component/radio/com, freq)
 	if(!freq || !com)
 		return
 	if(!GLOB.radio_components["[freq]"])
@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 
 
 /obj/proc/receive_signal(datum/signal/signal)
-	SEND_SIGNAL(src, COMSIG_RECEIVE_SIGNAL, signal)
+	SEND_SIGNAL(src, COMSIG_OBJ_RECEIVE_SIGNAL, signal)
 	return
 
 /datum/signal

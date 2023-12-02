@@ -1,11 +1,11 @@
-/obj/item/circuitboard/shuttle_comms
+/obj/item/circuitboard/machine/shuttle_comms
 	name = "long-range communications circuitboard"
 	greyscale_colors = CIRCUIT_COLOR_ENGINEERING
 	build_path = /obj/machinery/shuttle_comms
 	req_components = list(
-		/obj/item/stock_parts/subspace/filter = 1
-		/obj/item/stock_parts/subspace/ansible = 1
-		/obj/item/stock_parts/subspace/transmitter = 1
+		/obj/item/stock_parts/subspace/filter = 1,
+		/obj/item/stock_parts/subspace/ansible = 1,
+		/obj/item/stock_parts/subspace/transmitter = 1,
 		/obj/item/stock_parts/subspace/crystal = 1)
 
 /obj/machinery/shuttle_comms

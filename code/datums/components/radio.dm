@@ -34,23 +34,27 @@
 	SSradio.remove_object(parent, frequency)
 	return ..()
 
-/datum/component/radio/proc/toggle_broadcasting(/mob/user)
+/datum/component/radio/proc/toggle_broadcasting(mob/user)
 	SIGNAL_HANDLER
+
 	broadcasting = !broadcasting
-	source.balloon_alert(user, "Microphone turned [broadcasting ? "on" : "off"].")
+	user.balloon_alert(user, "Microphone turned [broadcasting ? "on" : "off"].")
 
-/datum/component/radio/proc/toggle_listening(/mob/user)
+/datum/component/radio/proc/toggle_listening(mob/user)
 	SIGNAL_HANDLER
+
 	listening = !listening
-	source.balloon_alert(user, "Speaker turned [listening ? "on" : "off"].")
+	user.balloon_alert(user, "Speaker turned [listening ? "on" : "off"].")
 
-/datum/component/radio/proc/on_examine()
+/datum/component/radio/proc/on_examine(datum/source, mob/user, list/examine_text)
 	SIGNAL_HANDLER
-	. += SPAN_NOTICE("Its radio is tuned to the [frequency / 10] wavelength. The speaker is [listening ? "on" : "off"], and the microphone is [broadcasting ? "on" : "off"].")
-	. += SPAN_INFO("You can toggle the microphone with alt+click and the speaker with alt+rclick.")
+
+	examine_text += SPAN_NOTICE("Its radio is tuned to the [frequency / 10] wavelength. The speaker is [listening ? "on" : "off"], and the microphone is [broadcasting ? "on" : "off"].")
+	examine_text += SPAN_INFO("You can toggle the microphone with alt+click and the speaker with alt+rclick.")
 
 /datum/component/radio/proc/handle_hear(datum/source, list/orig_args)
 	SIGNAL_HANDLER
+
 	if(orig_args[HEARING_RADIO_FREQ] || !broadcasting || get_dist(src, orig_args[HEARING_SPEAKER]) > canhear_range)
 		return
 
