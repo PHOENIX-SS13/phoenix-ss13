@@ -20,6 +20,14 @@
 	verb_yell = ""
 	var/build_step = 0
 	var/obj/item/radio/intercom/wideband/internal_radio = null
+	///Is the distress signal being broadcasted?
+	var/distress = FALSE
+	///list of who we're monitoring for automatic distress signals
+	var/list/mob/living/monitoring = list()
+	///percentage of monitored mobs that must be in bad health before distress signal auto-starts
+	var/distress_threshold = 100
+	///percentage of health a mob must be below in order to count towards the threshold
+	var/health_threshold = 10
 
 /obj/machinery/shuttle_comms/Initialize()
 	. = ..()
