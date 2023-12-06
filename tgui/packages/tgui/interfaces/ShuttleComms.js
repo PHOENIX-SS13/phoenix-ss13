@@ -7,7 +7,7 @@ import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 
-export const BroadcastRadio = (props, context) => {
+export const ShuttleComms = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     listening,

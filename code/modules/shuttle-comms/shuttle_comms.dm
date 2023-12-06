@@ -18,6 +18,7 @@
 	armor = list(MELEE = 60, BULLET = 60, LASER = 60, ENERGY = 60, BOMB = 60, BIO = 60, RAD = 60, FIRE = 60, ACID = 60)
 	verb_say = "buzzes"
 	verb_yell = ""
+
 	var/obj/item/radio/intercom/wideband/internal_radio = null
 	///Is the distress signal being broadcasted?
 	var/distress = FALSE
