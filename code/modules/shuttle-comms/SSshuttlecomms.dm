@@ -7,7 +7,7 @@ SUBSYSTEM_DEF(shuttlecomms)
 	var/list/obj/machinery/shuttle_comms/comms
 
 /datum/controller/subsystem/shuttlecomms/Initialize(start_timeofday)
-	comm_arrays = list()
+	comms = list()
 	return
 
 /datum/controller/subsystem/shuttlecomms/fire(resumed)
@@ -15,8 +15,8 @@ SUBSYSTEM_DEF(shuttlecomms)
 		array.monitor()
 	return
 
-/datum/controller/subsystem/shuttlecomms/add_array(obj/machinery/shuttle_comms/array)
+/datum/controller/subsystem/shuttlecomms/proc/add_array(obj/machinery/shuttle_comms/array)
 	comms += array
 
-/datum/controller/subsystem/shuttlecomms/remove_array(obj/machinery/shuttle_comms/array)
+/datum/controller/subsystem/shuttlecomms/proc/remove_array(obj/machinery/shuttle_comms/array)
 	comms -= array
