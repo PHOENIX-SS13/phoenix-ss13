@@ -39,7 +39,7 @@ export const ShuttleComms = (props, context) => {
         </Section>
         <Section title="Distress Beacon Configuration">
           <LabeledList>
-            <LabeledList.Item label="Beacon Switch">
+            <LabeledList.Item label="Emergency Signal">
               <Button
                 icon="exclamation-triangle"
                 selected={distress}
@@ -81,6 +81,9 @@ export const ShuttleComms = (props, context) => {
                 onSelected={value => act('toggle_monitoring', {
                   target: value,
                 })} />
+            </LabeledList.Item>
+            <LabeledList.Item label="Monitored Signals">
+              {monitoring.map(mob => mob + <br />)}
             </LabeledList.Item>
           </LabeledList>
         </Section>

@@ -19,35 +19,82 @@
 	verb_say = "buzzes"
 	verb_yell = ""
 
+	var/obj/effect/overlay/distress_effect/overmap_effect = null
 	var/obj/item/radio/intercom/wideband/internal_radio = null
 	///Is the distress signal being broadcasted?
 	var/distress = FALSE
 	///list of who we're monitoring for automatic distress signals
 	var/list/mob/living/monitoring = list()
 	///percentage of monitored mobs that must be in bad health before distress signal auto-starts
-	var/distress_threshold = 100
+	var/distress_threshold = 1
 	///percentage of health a mob must be below in order to count towards the threshold
-	var/health_threshold = 10
+	var/health_threshold = 0.1
+	///whether the subsystem should process this array
+	var/should_process = TRUE
 
 /obj/machinery/shuttle_comms/Initialize()
 	. = ..()
 	//AddComponent(/datum/component/radio, list(FREQ_WIDEBAND))
 	internal_radio = new /obj/item/radio/intercom/wideband(src)
 
-/obj/machinery/shuttle_comms/AltClick(mob/user)
+	if(should_process)
+		SSshuttlecomms.add_array(src)
+
+/obj/machinery/shuttle_comms/Destroy()
+	. = ..()
+	Destroy(internal_radio)
+	Destroy(overmap_effect)
+	SSshuttlecomms.remove_array(src)
+
+/obj/machinery/shuttle_comms/proc/toggle_broadcasting()
 	var/mic = !(internal_radio.broadcasting)
 	internal_radio.broadcasting = mic
 	src.balloon_alert(user, "Microphone turned [mic ? "on" : "off"].")
 
-/obj/machinery/shuttle_comms/alt_click_secondary(mob/user)
+/obj/machinery/shuttle_comms/proc/toggle_listening()
 	var/speakers = !(internal_radio.listening)
 	internal_radio.listening = speakers
 	src.balloon_alert(user, "Speakers turned [speakers ? "on" : "off"].")
 
+/obj/machinery/shuttle_comms/proc/create_effect()
+	var/datum/map_zone/mapzone = get_map_zone()
+	overmap_effect = new /obj/effect/overlay/overmap_distress(mapzone.related_overmap_object)
+
+/obj/machinery/shuttle_comms/proc/destroy_effect()
+	Destroy(overmap_effect)
+
+/obj/machinery/shuttle_comms/proc/set_distress(value)
+	if(distress == value)
+		return
+
+	distress = value
+	if(value)
+		create_effect()
+	else
+		destroy_effect()
+
+/obj/machinery/shuttle_comms/proc/monitor()
+	var/hurt = 0
+	for(var/list/mob/living/L in monitoring)
+		if(L.health / L.maxHealth <= health_threshold)
+			hurt++
+	if(hurt / length(monitoring) >= distress_threshold)
+		if(!distress)
+			set_distress(TRUE)
+	else
+		if(distress)
+			set_distress(FALSE)
+
+// /obj/machinery/shuttle_comms/AltClick(mob/user)
+//	toggle_broadcasting()
+
+// /obj/machinery/shuttle_comms/alt_click_secondary(mob/user)
+//	toggle_listening()
+
 /obj/machinery/shuttle_comms/examine(mob/user)
 	. = ..()
 	. += SPAN_NOTICE("There's an inbuilt wideband radio. The speaker is [internal_radio.listening ? "on" : "off"], and the microphone is [internal_radio.broadcasting ? "on" : "off"].")
-	. += SPAN_INFO("You can toggle the microphone with alt+click and the speaker with alt+rclick.")
+	. += SPAN_INFO("The emergency broadcast is currently [distress ? "active" : "inactive"].")
 
 /obj/machinery/shuttle_comms/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -74,11 +121,14 @@
 
 	var/datum/map_zone/mapzone = get_map_zone()
 	var/list/mob/clients = mapzone.get_client_mobs()
+
 	data["clients"] = list()
 	for(var/mob/M in clients)
 		data["clients"] += M.name
 
-	data["monitoring"] += monitoring
+	data["monitoring"] = list()
+	for(var/mob/M in monitoring)
+		data["monitoring"] += M.name
 
 	return data
 
@@ -88,6 +138,7 @@
 		return
 	switch(action)
 		if("listen")
+
 			return
 		if("broadcast")
 			return
