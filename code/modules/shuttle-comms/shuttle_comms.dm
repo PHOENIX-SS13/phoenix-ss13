@@ -80,6 +80,8 @@
 		set_distress(TRUE)
 
 /obj/machinery/shuttle_comms/proc/monitor()
+	if(!length(monitoring))
+		return
 	var/hurt = 0
 	for(var/mob/living/L in monitoring)
 		if(L.health / L.maxHealth <= health_threshold)
@@ -145,33 +147,33 @@
 	switch(action)
 		if("listen")
 			toggle_listening()
-			return
+			return TRUE
 		if("broadcast")
 			toggle_broadcasting()
-			return
+			return TRUE
 		if("toggle_distress")
 			toggle_distress()
-			return
+			return TRUE
 		if("health_threshold")
 			health_threshold = params["adjust"]
-			return
+			return TRUE
 		if("distress_threshold")
 			distress_threshold = params["adjust"]
-			return
+			return TRUE
 		if("toggle_monitoring")
 			var/name = params["target"]
 			for(var/mob/living/L in monitoring)
 				if(L.name == name)
 					monitoring -= L
 					update_static_data(usr)
-					return
+					return TRUE
 			var/datum/map_zone/mapzone = get_map_zone()
 			var/list/mob/living/mobs = mapzone.get_client_mobs()
 			for(var/mob/living/L in mobs)
 				if(L.name == name)
 					monitoring += L
 					update_static_data(usr)
-					return
+					return TRUE
 			say("Could not find target.")
 			update_static_data(usr)
-			return
+			return TRUE

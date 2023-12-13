@@ -54,9 +54,9 @@ export const ShuttleComms = (props, context) => {
                 minValue={0}
                 maxValue={50}
                 value={health_threshold}
-                format={value => toFixed(value, 0)}
+                format={value => value * 100}
                 onDrag={(e, value) => act('health_threshold', {
-                  adjust: value,
+                  adjust: (value / 100),
                 })} />
             </LabeledList.Item>
             <LabeledList.Item label="Casualty Threshold">
@@ -68,9 +68,9 @@ export const ShuttleComms = (props, context) => {
                 minValue={0}
                 maxValue={50}
                 value={distress_threshold}
-                format={value => toFixed(value, 0)}
+                format={value => value * 100}
                 onDrag={(e, value) => act('distress_threshold', {
-                  adjust: value,
+                  adjust: (value / 100),
                 })} />
             </LabeledList.Item>
             <LabeledList.Item>
@@ -83,7 +83,7 @@ export const ShuttleComms = (props, context) => {
                 })} />
             </LabeledList.Item>
             <LabeledList.Item label="Monitored Signals">
-              {monitoring.map(mob => mob + <br />)}
+              {monitoring.map(mob => <p>{mob}</p>)}
             </LabeledList.Item>
           </LabeledList>
         </Section>
