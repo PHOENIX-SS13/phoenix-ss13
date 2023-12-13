@@ -19,7 +19,7 @@
 	verb_say = "buzzes"
 	verb_yell = ""
 
-	var/obj/effect/overlay/distress_effect/overmap_effect = null
+	var/datum/overmap_distress/overmap_effect = null
 	var/obj/item/radio/intercom/wideband/internal_radio = null
 	///Is the distress signal being broadcasted?
 	var/distress = FALSE
@@ -49,16 +49,16 @@
 /obj/machinery/shuttle_comms/proc/toggle_broadcasting()
 	var/mic = !(internal_radio.broadcasting)
 	internal_radio.broadcasting = mic
-	src.balloon_alert(user, "Microphone turned [mic ? "on" : "off"].")
+	src.balloon_alert(src, "Microphone turned [mic ? "on" : "off"].")
 
 /obj/machinery/shuttle_comms/proc/toggle_listening()
 	var/speakers = !(internal_radio.listening)
 	internal_radio.listening = speakers
-	src.balloon_alert(user, "Speakers turned [speakers ? "on" : "off"].")
+	src.balloon_alert(src, "Speakers turned [speakers ? "on" : "off"].")
 
 /obj/machinery/shuttle_comms/proc/create_effect()
 	var/datum/map_zone/mapzone = get_map_zone()
-	overmap_effect = new /obj/effect/overlay/overmap_distress(mapzone.related_overmap_object)
+	overmap_effect = new /datum/overmap_distress(mapzone.related_overmap_object)
 
 /obj/machinery/shuttle_comms/proc/destroy_effect()
 	Destroy(overmap_effect)
@@ -81,7 +81,7 @@
 
 /obj/machinery/shuttle_comms/proc/monitor()
 	var/hurt = 0
-	for(var/list/mob/living/L in monitoring)
+	for(var/mob/living/L in monitoring)
 		if(L.health / L.maxHealth <= health_threshold)
 			hurt++
 	if(hurt / length(monitoring) >= distress_threshold)
@@ -163,9 +163,10 @@
 			for(var/mob/living/L in monitoring)
 				if(L.name == name)
 					monitoring -= L
-					update_Static_data(usr)
+					update_static_data(usr)
 					return
-			var/list/mob/living/mobs = get_map_zone().get_client_mobs()
+			var/datum/map_zone/mapzone = get_map_zone()
+			var/list/mob/living/mobs = mapzone.get_client_mobs()
 			for(var/mob/living/L in mobs)
 				if(L.name == name)
 					monitoring += L
