@@ -73,6 +73,12 @@
 	else
 		destroy_effect()
 
+/obj/machinery/shuttle_comms/proc/toggle_distress()
+	if(distress)
+		set_distress(FALSE)
+	else
+		set_distress(TRUE)
+
 /obj/machinery/shuttle_comms/proc/monitor()
 	var/hurt = 0
 	for(var/list/mob/living/L in monitoring)
@@ -138,15 +144,33 @@
 		return
 	switch(action)
 		if("listen")
-
+			toggle_listening()
 			return
 		if("broadcast")
+			toggle_broadcasting()
 			return
 		if("toggle_distress")
+			toggle_distress()
 			return
 		if("health_threshold")
+			health_threshold = params["adjust"]
 			return
 		if("distress_threshold")
+			distress_threshold = params["adjust"]
 			return
 		if("toggle_monitoring")
+			var/name = params["target"]
+			for(var/mob/living/L in monitoring)
+				if(L.name == name)
+					monitoring -= L
+					update_Static_data(usr)
+					return
+			var/list/mob/living/mobs = get_map_zone().get_client_mobs()
+			for(var/mob/living/L in mobs)
+				if(L.name == name)
+					monitoring += L
+					update_static_data(usr)
+					return
+			say("Could not find target.")
+			update_static_data(usr)
 			return
