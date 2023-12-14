@@ -42,8 +42,8 @@
 
 /obj/machinery/shuttle_comms/Destroy()
 	. = ..()
-	Destroy(internal_radio)
-	Destroy(overmap_effect)
+	qdel(internal_radio)
+	qdel(overmap_effect)
 	SSshuttlecomms.remove_array(src)
 
 /obj/machinery/shuttle_comms/proc/toggle_broadcasting()
@@ -61,7 +61,7 @@
 	overmap_effect = new /datum/overmap_distress(mapzone.related_overmap_object)
 
 /obj/machinery/shuttle_comms/proc/destroy_effect()
-	Destroy(overmap_effect)
+	qdel(overmap_effect)
 
 /obj/machinery/shuttle_comms/proc/set_distress(value)
 	if(distress == value)
@@ -143,7 +143,7 @@
 /obj/machinery/shuttle_comms/ui_act(action, list/params)
 	. = ..()
 	if(.)
-		return
+		return TRUE
 	switch(action)
 		if("listen")
 			toggle_listening()
