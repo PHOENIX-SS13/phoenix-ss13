@@ -22,3 +22,11 @@
 	qdel(effect)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	return
+
+/datum/overmap_distress/Process(var/datum/overmap_object/ov_obj)
+	if(target != ov_obj)
+		target.my_visual.vis_contents -= effect
+		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		target = ov_obj
+		ov_obj.my_visual.vis_contents += effect
+		RegisterSignal(ov_obj, COMSIG_PARENT_QDELETING, .proc/Destroy)

@@ -14,6 +14,7 @@
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "radio"
 	use_power = NO_POWER_USE
+	circuit = /obj/item/circuitboard/machine/shuttle_comms
 	max_integrity = 200
 	armor = list(MELEE = 60, BULLET = 60, LASER = 60, ENERGY = 60, BOMB = 60, BIO = 60, RAD = 60, FIRE = 60, ACID = 60)
 	verb_say = "buzzes"
@@ -80,12 +81,20 @@
 		set_distress(TRUE)
 
 /obj/machinery/shuttle_comms/proc/monitor()
+	var/datum/map_zone/mapzone = get_map_zone()
+	if(distress)
+		overmap_effect.process(mapzone.related_overmap_object)
 	if(!length(monitoring))
 		return
 	var/hurt = 0
+
 	for(var/mob/living/L in monitoring)
+		if(L.get_map_zone != mapzone)
+			monitoring -= L
+			continue
 		if(L.health / L.maxHealth <= health_threshold)
 			hurt++
+
 	if(hurt / length(monitoring) >= distress_threshold)
 		if(!distress)
 			set_distress(TRUE)
@@ -177,3 +186,9 @@
 			say("Could not find target.")
 			update_static_data(usr)
 			return TRUE
+
+/obj/machinery/shuttle_comms/active
+
+/obj/machinery/shuttle_comms/active/Initialize()
+	. = ..()
+	set_distress(TRUE)
