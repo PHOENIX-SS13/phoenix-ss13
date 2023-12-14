@@ -89,7 +89,7 @@
 	var/hurt = 0
 
 	for(var/mob/living/L in monitoring)
-		if(L.get_map_zone != mapzone)
+		if(L.get_map_zone() != mapzone)
 			monitoring -= L
 			continue
 		if(L.health / L.maxHealth <= health_threshold)
