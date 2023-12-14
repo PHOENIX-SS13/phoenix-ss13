@@ -23,7 +23,7 @@
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	return
 
-/datum/overmap_distress/proc/process(var/datum/overmap_object/ov_obj)
+/datum/overmap_distress/proc/check_mapzone(var/datum/overmap_object/ov_obj)
 	if(target != ov_obj)
 		target.my_visual.vis_contents -= effect
 		UnregisterSignal(target, COMSIG_PARENT_QDELETING)

@@ -83,7 +83,7 @@
 /obj/machinery/shuttle_comms/proc/monitor()
 	var/datum/map_zone/mapzone = get_map_zone()
 	if(distress)
-		overmap_effect.process(mapzone.related_overmap_object)
+		overmap_effect.check_mapzone(mapzone.related_overmap_object)
 	if(!length(monitoring))
 		return
 	var/hurt = 0
