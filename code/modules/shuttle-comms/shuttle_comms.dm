@@ -24,6 +24,8 @@
 	var/obj/item/radio/intercom/wideband/internal_radio = null
 	///Is the distress signal being broadcasted?
 	var/distress = FALSE
+	///was the distress signal turned on manually?
+	var/manual_distress = FALSE
 	///list of who we're monitoring for automatic distress signals
 	var/list/mob/living/monitoring = list()
 	///percentage of monitored mobs that must be in bad health before distress signal auto-starts
@@ -59,7 +61,7 @@
 
 /obj/machinery/shuttle_comms/proc/create_effect()
 	var/datum/map_zone/mapzone = get_map_zone()
-	overmap_effect = new /datum/overmap_distress(mapzone.related_overmap_object)
+	overmap_effect = new /datum/overmap_distress(src, mapzone.related_overmap_object)
 
 /obj/machinery/shuttle_comms/proc/destroy_effect()
 	qdel(overmap_effect)
@@ -72,6 +74,7 @@
 	if(value)
 		create_effect()
 	else
+		manual_distress = FALSE
 		destroy_effect()
 
 /obj/machinery/shuttle_comms/proc/toggle_distress()
@@ -84,7 +87,7 @@
 	var/datum/map_zone/mapzone = get_map_zone()
 	if(distress)
 		overmap_effect.check_mapzone(mapzone.related_overmap_object)
-	if(!length(monitoring))
+	if(!length(monitoring) || manual_distress)
 		return
 	var/hurt = 0
 
@@ -162,6 +165,8 @@
 			return TRUE
 		if("toggle_distress")
 			toggle_distress()
+			if(distress)
+				manual_distress = TRUE
 			return TRUE
 		if("health_threshold")
 			health_threshold = params["adjust"]
@@ -188,6 +193,8 @@
 			return TRUE
 
 /obj/machinery/shuttle_comms/active
+	manual_distress = TRUE
+	desc = "A slightly banged up communications array. At least these things can take a beating."
 
 /obj/machinery/shuttle_comms/active/Initialize()
 	. = ..()

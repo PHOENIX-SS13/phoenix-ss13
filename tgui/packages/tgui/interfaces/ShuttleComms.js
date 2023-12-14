@@ -50,11 +50,10 @@ export const ShuttleComms = (props, context) => {
                 animate
                 unit="%"
                 step={1}
-                stepPixelSize={10}
+                stepPixelSize={20}
                 minValue={0}
                 maxValue={50}
-                value={health_threshold}
-                format={value => value * 100}
+                value={health_threshold * 100}
                 onDrag={(e, value) => act('health_threshold', {
                   adjust: (value / 100),
                 })} />
@@ -66,9 +65,8 @@ export const ShuttleComms = (props, context) => {
                 step={1}
                 stepPixelSize={10}
                 minValue={0}
-                maxValue={50}
-                value={distress_threshold}
-                format={value => value * 100}
+                maxValue={100}
+                value={distress_threshold * 100}
                 onDrag={(e, value) => act('distress_threshold', {
                   adjust: (value / 100),
                 })} />
