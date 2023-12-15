@@ -45,8 +45,8 @@
 
 /obj/machinery/shuttle_comms/Destroy()
 	. = ..()
-	qdel(internal_radio)
-	qdel(overmap_effect)
+	Destroy(internal_radio)
+	Destroy(overmap_effect)
 	SSshuttlecomms.remove_array(src)
 
 /obj/machinery/shuttle_comms/proc/toggle_broadcasting()
