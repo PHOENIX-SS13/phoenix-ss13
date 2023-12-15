@@ -117,30 +117,31 @@
 	. += SPAN_INFO("It is [anchored ? "" : "not "]anchored, and its maintenance panel is [panel_open ? "open" : "closed"].")
 
 /obj/machinery/shuttle_comms/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour != NONE)
-		tool_act(user, W, W.tool_behaviour, LAZYACCESS(params2list(params), RIGHT_CLICK))
-		return
-	. = ..()
-
-/obj/machinery/shuttle_comms/tool_act(mob/living/user, obj/item/tool, tool_type, is_right_clicking)
+	var/is_right_clicking = LAZYACCESS(params2list(params), RIGHT_CLICK)
 	if(is_right_clicking)
 		return
-	switch(tool_type)
+	if(W.tool_behaviour == NONE)
+		. = ..()
+		return
+	switch(W.tool_behaviour)
 		if(TOOL_WRENCH)
 			anchored = !anchored
-			tool.play_tool_sound(src)
+			W.play_tool_sound(src)
 			to_chat(user, "You [anchored ? "" : "un"]anchor [src].")
 		if(TOOL_SCREWDRIVER)
 			panel_open = !panel_open
-			tool.play_tool_sound(src)
+			W.play_tool_sound(src)
 			to_chat(user, "You [panel_open ? "open" : "close"] [src]'s maintenance panel.")
 		if(TOOL_CROWBAR)
 			if(!panel_open)
 				to_chat(user, "The [src]'s maintenance panel is closed.")
 				return
-			tool.play_tool_sound(src)
+			W.play_tool_sound(src)
 			to_chat(user, "You deconstruct the [src].")
 			deconstruct(TRUE)
+
+/obj/machinery/shuttle_comms/tool_act(mob/living/user, obj/item/tool, tool_type, is_right_clicking)
+
 
 /obj/machinery/shuttle_comms/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
 	ui = SStgui.try_update_ui(user, src, ui)
