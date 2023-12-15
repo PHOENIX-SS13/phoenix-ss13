@@ -1055,6 +1055,7 @@
 		"s-server",
 		"s-transmitter",
 		"s-treatment",
+		"shuttle_comms",
 	)
 
 /datum/techweb_node/integrated_hud
