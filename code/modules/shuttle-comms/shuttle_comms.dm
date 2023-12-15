@@ -62,8 +62,6 @@
 /obj/machinery/shuttle_comms/proc/create_effect()
 	var/datum/map_zone/mapzone = get_map_zone()
 	var/datum/overmap_object/ov_obj = mapzone.related_overmap_object
-	if(ov_obj == null)
-
 	overmap_effect = new /datum/overmap_distress(src, ov_obj)
 
 /obj/machinery/shuttle_comms/proc/destroy_effect()
