@@ -114,8 +114,33 @@
 
 /obj/machinery/shuttle_comms/examine(mob/user)
 	. = ..()
-	. += SPAN_NOTICE("There's an inbuilt wideband radio. The speaker is [internal_radio.listening ? "on" : "off"], and the microphone is [internal_radio.broadcasting ? "on" : "off"].")
-	. += SPAN_INFO("The emergency broadcast is currently [distress ? "active" : "inactive"].")
+	. += SPAN_INFO("It is [anchored ? "" : "not "]anchored, and its maintenance panel is [panel_open ? "open" : "closed"].")
+
+/obj/machinery/shuttle_comms/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour != NONE)
+		tool_act(user, W, W.tool_behaviour, LAZYACCESS(params2list(params), RIGHT_CLICK))
+		return
+	. = ..()
+
+/obj/machinery/shuttle_comms/tool_act(mob/living/user, obj/item/tool, tool_type, is_right_clicking)
+	if(is_right_clicking)
+		return
+	switch(tool_type)
+		if(TOOL_WRENCH)
+			anchored = !anchored
+			tool.play_tool_sound(src)
+			to_chat(user, "You [anchored ? "" : "un"]anchor [src].")
+		if(TOOL_SCREWDRIVER)
+			panel_open = !panel_open
+			tool.play_tool_sound(src)
+			to_chat(user, "You [panel_open ? "open" : "close"] [src]'s maintenance panel.")
+		if(TOOL_CROWBAR)
+			if(!panel_open)
+				to_chat(user, "The [src]'s maintenance panel is closed.")
+				return
+			tool.play_tool_sound(src)
+			to_chat(user, "You deconstruct the [src].")
+			deconstruct(TRUE)
 
 /obj/machinery/shuttle_comms/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -200,3 +225,12 @@
 /obj/machinery/shuttle_comms/active/Initialize()
 	. = ..()
 	set_distress(TRUE)
+
+/datum/design/board/shuttle_comms
+	name = "Machine Design (Comms Array)"
+	desc = "The circuit board for a comms array."
+	id = "shuttle_comms"
+	build_type = IMPRINTER
+	build_path = /obj/item/circuitboard/machine/shuttle_comms
+	category = list("Subspace Telecomms")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE
