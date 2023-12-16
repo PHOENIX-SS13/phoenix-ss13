@@ -19,7 +19,7 @@
 	UnregisterSignal(parent, COMSIG_CLICK_ALT_SECONDARY)
 	UnregisterSignal(parent, COMSIG_OBJ_RECEIVE_SIGNAL)
 
-/datum/component/radio/Initialize(var/freq)
+/datum/component/radio/Initialize(freq)
 	frequency = freq
 	//adds to global list
 	add_radio_component(src, frequency)
