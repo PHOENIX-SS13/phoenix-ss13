@@ -81,7 +81,7 @@ export const ShuttleComms = (props, context) => {
                 })} />
             </LabeledList.Item>
             <LabeledList.Item label="Monitored Signals">
-              {monitoring.map(mob => <p>{mob}</p>)}
+              {monitoring.map(mob => <p key={mob}>{mob}</p>)}
             </LabeledList.Item>
           </LabeledList>
         </Section>
