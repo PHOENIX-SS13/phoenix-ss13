@@ -160,7 +160,12 @@
 	pixel_x = -7
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/light/warm/directional/north,
+/obj/machinery/button/door{
+	id = "crow_shutter";
+	name = "safety shutters button";
+	pixel_x = 5;
+	pixel_y = 27
+	},
 /turf/open/floor/pod,
 /area/shuttle/crow/helm)
 "iP" = (
@@ -415,6 +420,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/wideband/directional/south,
+/obj/machinery/light/warm/directional/east,
 /turf/open/floor/pod,
 /area/shuttle/crow/helm)
 "AN" = (
@@ -595,15 +601,6 @@
 	dir = 4
 	},
 /turf/open/floor/pod,
-/area/shuttle/crow/helm)
-"Jj" = (
-/obj/machinery/button/door{
-	id = "crow_shutter";
-	name = "safety shutters button";
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/turf/closed/wall/mineral/titanium,
 /area/shuttle/crow/helm)
 "KC" = (
 /obj/structure/cable,
@@ -975,7 +972,7 @@ Rh
 Qy
 "}
 (12,1,1) = {"
-Jj
+OI
 hD
 og
 vj
