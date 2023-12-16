@@ -71,7 +71,7 @@ export const ShuttleComms = (props, context) => {
                   adjust: (value / 100),
                 })} />
             </LabeledList.Item>
-            <LabeledList.Item>
+            <LabeledList.Item label="Active life signs">
               <Dropdown
                 overflow-y="scroll"
                 width="120px"
