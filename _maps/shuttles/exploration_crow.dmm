@@ -156,7 +156,9 @@
 /obj/structure/table,
 /obj/machinery/firealarm/directional/west,
 /obj/item/storage/toolbox/emergency,
-/obj/machinery/light_switch/directional/north,
+/obj/machinery/light_switch/directional/north{
+	pixel_x = -7
+	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/light/warm/directional/north,
 /turf/open/floor/pod,
@@ -594,6 +596,15 @@
 	},
 /turf/open/floor/pod,
 /area/shuttle/crow/helm)
+"Jj" = (
+/obj/machinery/button/door{
+	id = "crow_shutter";
+	name = "safety shutters button";
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/crow/helm)
 "KC" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -667,9 +678,8 @@
 /area/shuttle/crow)
 "PR" = (
 /obj/structure/table,
-/obj/machinery/button/door{
-	id = "crow_shutter";
-	name = "safety shutters button"
+/obj/machinery/shuttle_comms{
+	pixel_y = 3
 	},
 /turf/open/floor/pod,
 /area/shuttle/crow/helm)
@@ -965,7 +975,7 @@ Rh
 Qy
 "}
 (12,1,1) = {"
-OI
+Jj
 hD
 og
 vj
