@@ -5,7 +5,7 @@
 	plane = GAME_PLANE
 	appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	mouse_opacity = 0
-	var/parent
+	var/datum/overmap_distress/parent
 
 /obj/effect/overlay/distress_effect/Destroy()
 	parent.effect = null
@@ -32,7 +32,7 @@
 /datum/overmap_distress/Destroy()
 	. = ..()
 	target.my_visual.vis_contents -= effect
-	parent.distress_effect = null
+	parent.overmap_effect = null
 	Destroy(effect)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 
