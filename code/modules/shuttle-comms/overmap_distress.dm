@@ -30,7 +30,8 @@
 
 /datum/overmap_distress/Destroy()
 	. = ..()
-	target.my_visual.vis_contents -= effect
+	if(!isnull(target?.my_visual))
+		target.my_visual.vis_contents -= effect
 	parent.overmap_effect = null
 	Destroy(effect)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
