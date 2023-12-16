@@ -9,7 +9,7 @@ SUBSYSTEM_DEF(shuttlecomms)
 
 /datum/controller/subsystem/shuttlecomms/Initialize(start_timeofday)
 	comms = list()
-	return
+	return ..()
 
 /datum/controller/subsystem/shuttlecomms/fire(resumed)
 	for(var/obj/machinery/shuttle_comms/array in comms)
