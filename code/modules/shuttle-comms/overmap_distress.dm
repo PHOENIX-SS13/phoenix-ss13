@@ -18,12 +18,11 @@
 	var/obj/effect/overlay/distress_effect/effect
 
 /datum/overmap_distress/New(pr, tg)
-	if(isnull(tg))
-		parent.overmap_effect = null
-		Destroy(src)
-		return
 	parent = pr
 	target = tg
+	if(isnull(target) || isnull(target.my_visual))
+		Destroy(src)
+		return
 	effect = new
 	effect.parent = src
 	target.my_visual.vis_contents += effect
