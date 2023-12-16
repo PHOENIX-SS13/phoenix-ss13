@@ -140,6 +140,11 @@
 			to_chat(user, "You deconstruct the [src].")
 			deconstruct(TRUE)
 
+/obj/machinery/shuttle_comms/deconstruct(disassembled)
+	Destroy(internal_radio)
+	Destroy(overmap_effect)
+	. = ..()
+
 /obj/machinery/shuttle_comms/tool_act(mob/living/user, obj/item/tool, tool_type, is_right_clicking)
 
 
