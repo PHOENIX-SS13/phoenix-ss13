@@ -62,8 +62,8 @@
 /obj/item/storage/box/lights/tubes,
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/atmospherics/components/binary/pump{
-	name = "fuel pump";
 	color = "#FF7B00";
+	name = "fuel pump";
 	pipe_color = "#FF7B00"
 	},
 /turf/open/floor/plating,
@@ -151,8 +151,8 @@
 /area/shuttle/rockdove)
 "nj" = (
 /obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "air supply pump";
 	color = "#0000FF";
+	name = "air supply pump";
 	pipe_color = "#0000FF"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -210,10 +210,14 @@
 /obj/structure/table,
 /obj/machinery/button/door{
 	id = "rockdove_shutter";
-	name = "safety shutters button"
+	name = "safety shutters button";
+	pixel_x = -6;
+	pixel_y = 7
 	},
-/obj/item/radio/intercom/wideband/directional/south,
 /obj/machinery/light/directional/south,
+/obj/machinery/shuttle_comms{
+	pixel_x = 2
+	},
 /turf/open/floor/pod,
 /area/shuttle/rockdove/helm)
 "tf" = (
@@ -293,8 +297,8 @@
 "zX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/plush/snakeplushie{
-	name = "Aesculapian snake plushie";
-	desc = "A tag reads: 'I swear by Apollo the Healer and by Asclepius and by Hygieia and Panacea and by all the gods...'"
+	desc = "A tag reads: 'I swear by Apollo the Healer and by Asclepius and by Hygieia and Panacea and by all the gods...'";
+	name = "Aesculapian snake plushie"
 	},
 /turf/open/floor/pod,
 /area/shuttle/rockdove/helm)
@@ -329,8 +333,8 @@
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/button/door/directional/west{
-	name = "cargo bay shutters";
-	id = "rockdove_cargo_shutter"
+	id = "rockdove_cargo_shutter";
+	name = "cargo bay shutters"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,

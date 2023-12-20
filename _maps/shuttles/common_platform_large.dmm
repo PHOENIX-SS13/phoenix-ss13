@@ -35,6 +35,16 @@
 /obj/structure/closet/crate/build_your_shuttle_extra,
 /turf/open/floor/plating,
 /area/shuttle/platform)
+"W" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/circuitboard/machine/shuttle_comms,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/ansible,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stack/cable_coil/five,
+/turf/open/floor/plating,
+/area/shuttle/platform)
 
 (1,1,1) = {"
 a
@@ -180,7 +190,7 @@ p
 p
 p
 a
-a
+W
 a
 p
 p

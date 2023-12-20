@@ -55,8 +55,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/atmospherics/components/binary/pump{
-	name = "fuel pump";
 	color = "#FF7B00";
+	name = "fuel pump";
 	pipe_color = "#FF7B00"
 	},
 /obj/item/storage/box/lights/mixed,
@@ -154,8 +154,8 @@
 /area/shuttle/common/vista)
 "nj" = (
 /obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "air supply pump";
 	color = "#0000FF";
+	name = "air supply pump";
 	pipe_color = "#0000FF"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -190,9 +190,14 @@
 /obj/structure/table,
 /obj/machinery/button/door{
 	id = "vista_shutter";
-	name = "safety shutters button"
+	name = "safety shutters button";
+	pixel_x = -6
 	},
 /obj/structure/cable,
+/obj/machinery/shuttle_comms{
+	pixel_x = 2;
+	pixel_y = 9
+	},
 /turf/open/floor/pod,
 /area/shuttle/common/vista/helm)
 "sw" = (
@@ -284,8 +289,8 @@
 	dir = 4
 	},
 /obj/item/toy/plush/borbplushie{
-	name = "Garuda";
-	desc = "Garuda is portrayed as a protector with the power to swiftly travel anywhere, ever vigilant and an enemy of every serpent."
+	desc = "Garuda is portrayed as a protector with the power to swiftly travel anywhere, ever vigilant and an enemy of every serpent.";
+	name = "Garuda"
 	},
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/pod,
@@ -321,13 +326,12 @@
 "GX" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom/wideband/directional/east,
 /turf/open/floor/pod,
 /area/shuttle/common/vista/helm)
 "HU" = (
 /obj/machinery/button/door/directional/west{
-	name = "cargo bay shutters";
-	id = "vista cargo shutter"
+	id = "vista cargo shutter";
+	name = "cargo bay shutters"
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
