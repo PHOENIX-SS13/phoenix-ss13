@@ -107,6 +107,10 @@
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "pwindow"
 
+/obj/structure/window/reinforced/survival_pod/tinted
+	name = "tinted pod window"
+	opacity = TRUE
+
 //Door
 /obj/machinery/door/airlock/survival_pod
 	name = "airlock"
