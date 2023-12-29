@@ -684,33 +684,3 @@
 	attack_verb_simple = list("stare at")
 	squeak_override = list('sound/weapons/kenetic_reload.ogg' = 1, 'sound/weapons/kenetic_accel.ogg' = 1)
 	nolove = TRUE
-
-/obj/item/toy/plush/fluffy
-	name = "Fluffy!"
-	desc = "It's a Pillow! He looks like he's been hugged through many a night."
-	icon_state = "PetPillow"
-	//inhand_icon_state = "PetPillow"
-	gender = MALE
-	attack_verb_continuous = list("paws","licks","boops")
-	attack_verb_simple = list("paws","licks","boops")
-	squeak_override = list('sound/effects/nose_boop.ogg' = 1, 'sound/voice/weh.ogg' = 0.1)
-	//base plush info
-
-/obj/item/toy/plush/fluffy/AltClick(mob/user)
-	. = ..()
-	if(.)
-		return
-	else
-		adjust_plush()
-//alt-click adjust
-
-/obj/item/toy/plush/proc/adjust_plush()
-	if(icon_state == "PetPillow")
-		icon_state = "PillowPet"
-		desc = "It's a Pet! He looks like he's been hugged through many a night."
-		to_chat(usr, SPAN_NOTICE("You turn your pillow into a Pet!"))
-		return
-	icon_state = "PetPillow"
-	desc = "It's a Pillow! He looks like he's been hugged through many a night."
-	to_chat(usr, SPAN_NOTICE("You turn your pet into a Pillow!"))
-// transform from Pet Pillow to Pillow Pet and vice versa
