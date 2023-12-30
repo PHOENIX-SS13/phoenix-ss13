@@ -1666,6 +1666,13 @@
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/cargo/warehouse)
+"Pe" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/structure/bed,
+/obj/item/toy/plush/fluffy,
+/obj/item/bedsheet/dorms,
+/turf/open/floor/wood,
+/area/commons/dorms)
 "Ph" = (
 /obj/machinery/light/directional/west,
 /obj/structure/cable,
@@ -37453,7 +37460,7 @@ KO
 yg
 bm
 Xs
-pW
+Pe
 wO
 jh
 ce
