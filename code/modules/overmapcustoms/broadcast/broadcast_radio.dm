@@ -1,9 +1,9 @@
 /obj/item/radio/broadcast
 	name = "Broadcast Station Radio"
-	desc = "A special radio designed for commercial broadcast."
+	desc = "A special radio designed for commercial broadcast. The standard frequency for commercial radio is 148.1kHz ."
 	keyslot = new /obj/item/encryptionkey/broadcast
 	frequency = FREQ_BROADCAST
-	freqlock = TRUE
+	freqlock = FALSE
 	broadcasting = TRUE
 	command = TRUE
 	var/datum/can_broadcast = TRUE
@@ -90,7 +90,7 @@
 		)
 		data["songs"] += list(track_data)
 	return data
-		
+
 /obj/item/radio/broadcast/ui_act(action, list/params)
 	. = ..()
 	if(.)

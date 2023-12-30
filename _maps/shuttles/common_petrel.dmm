@@ -20,9 +20,14 @@
 /turf/open/floor/pod,
 /area/shuttle/petrel)
 "k" = (
-/obj/item/radio/intercom/wideband/directional/east,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "petrel_shutter";
+	name = "safety shutters button";
+	pixel_x = 26;
+	pixel_y = -4
 	},
 /turf/open/floor/pod,
 /area/shuttle/petrel)
@@ -44,9 +49,9 @@
 /area/shuttle/petrel)
 "p" = (
 /obj/structure/table,
-/obj/machinery/button/door{
-	id = "petrel_shutter";
-	name = "safety shutters button"
+/obj/machinery/shuttle_comms{
+	pixel_x = 1;
+	pixel_y = 2
 	},
 /turf/open/floor/pod,
 /area/shuttle/petrel)
@@ -141,8 +146,8 @@
 	id = "petrel";
 	launch_status = 0;
 	name = "MS Petrel";
-	width = 9;
-	port_direction = 8
+	port_direction = 8;
+	width = 9
 	},
 /obj/machinery/door/airlock/external/glass,
 /obj/structure/fans/tiny,

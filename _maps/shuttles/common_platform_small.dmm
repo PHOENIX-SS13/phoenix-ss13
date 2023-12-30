@@ -28,6 +28,16 @@
 /obj/structure/closet/crate/large/air_can,
 /turf/open/floor/plating,
 /area/shuttle/platform)
+"S" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/circuitboard/machine/shuttle_comms,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/ansible,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stack/cable_coil/five,
+/turf/open/floor/plating,
+/area/shuttle/platform)
 "W" = (
 /obj/structure/closet/crate/build_your_shuttle,
 /turf/open/floor/plating,
@@ -82,7 +92,7 @@ u
 u
 u
 a
-a
+S
 a
 u
 u

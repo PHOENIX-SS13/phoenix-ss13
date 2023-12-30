@@ -239,8 +239,11 @@
 /area/shuttle/vulture)
 "mA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/firstaid/regular,
 /obj/structure/table,
+/obj/item/storage/toolbox/emergency{
+	pixel_y = 7
+	},
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/pod,
 /area/shuttle/vulture/helm)
 "mB" = (
@@ -707,18 +710,21 @@
 /obj/structure/table,
 /obj/machinery/button/door{
 	id = "vulture_shutter";
-	name = "safety shutters button"
+	name = "safety shutters button";
+	pixel_x = 5;
+	pixel_y = -1
 	},
-/obj/item/radio/intercom/wideband/directional/west,
 /turf/open/floor/pod,
 /area/shuttle/vulture/helm)
 "Yt" = (
-/obj/item/storage/toolbox/emergency,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/east,
 /obj/structure/table,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/shuttle_comms{
+	pixel_y = 4
+	},
 /turf/open/floor/pod,
 /area/shuttle/vulture/helm)
 

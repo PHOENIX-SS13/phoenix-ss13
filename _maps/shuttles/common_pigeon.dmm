@@ -61,8 +61,8 @@
 /obj/item/storage/box/lights/tubes,
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/atmospherics/components/binary/pump{
-	name = "fuel pump";
 	color = "#FF7B00";
+	name = "fuel pump";
 	pipe_color = "#FF7B00"
 	},
 /turf/open/floor/plating,
@@ -142,8 +142,8 @@
 /area/shuttle/pigeon)
 "nj" = (
 /obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "air supply pump";
 	color = "#0000FF";
+	name = "air supply pump";
 	pipe_color = "#0000FF"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -191,10 +191,14 @@
 /obj/structure/table,
 /obj/machinery/button/door{
 	id = "pigeon_shutter";
-	name = "safety shutters button"
+	name = "safety shutters button";
+	pixel_x = -6;
+	pixel_y = 8
 	},
-/obj/item/radio/intercom/wideband/directional/south,
 /obj/machinery/light/directional/south,
+/obj/machinery/shuttle_comms{
+	pixel_x = 3
+	},
 /turf/open/floor/pod,
 /area/shuttle/pigeon/helm)
 "tf" = (
@@ -287,8 +291,8 @@
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/button/door/directional/west{
-	name = "cargo bay shutters";
-	id = "pigeon cargo shutter"
+	id = "pigeon cargo shutter";
+	name = "cargo bay shutters"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
@@ -434,8 +438,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/plush/borbplushie{
-	name = "Garuda";
-	desc = "Garuda is portrayed as a protector with the power to swiftly travel anywhere, ever vigilant and an enemy of every serpent."
+	desc = "Garuda is portrayed as a protector with the power to swiftly travel anywhere, ever vigilant and an enemy of every serpent.";
+	name = "Garuda"
 	},
 /turf/open/floor/pod,
 /area/shuttle/pigeon/helm)

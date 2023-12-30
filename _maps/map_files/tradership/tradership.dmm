@@ -1691,6 +1691,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/wood,
 /area/commons/dorms)
+"li" = (
+/obj/structure/table/reinforced,
+/obj/machinery/shuttle_comms{
+	pixel_y = 5
+	},
+/turf/open/floor/iron/dark,
+/area/command/bridge)
 "lj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
 	dir = 1
@@ -171691,7 +171698,7 @@ gO
 Ss
 rJ
 Tx
-Eu
+li
 VC
 Gf
 gW
