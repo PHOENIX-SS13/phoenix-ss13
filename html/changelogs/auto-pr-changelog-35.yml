@@ -1,7 +1,0 @@
-author: CASEY GUNGEON (CASEYGUNGEON)
-changes:
-- rscadd: 'Added Comms Array for shuttles: a machine that contains both a wideband
-    radio and a configurable distress beacon that can be triggered manually or when
-    it detects flagging vitals.'
-merge-date: 2023-12-30
-prnumber: 35

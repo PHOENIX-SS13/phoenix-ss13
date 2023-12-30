@@ -1,4 +1,8 @@
 2023-12-30:
+  CASEY GUNGEON (CASEYGUNGEON):
+  - rscadd: 'Added Comms Array for shuttles: a machine that contains both a wideband
+      radio and a configurable distress beacon that can be triggered manually or when
+      it detects flagging vitals.'
   mikwisp:
   - rscadd: Added Fluffy the Plush
   - bugfix: fixed a few things
