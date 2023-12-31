@@ -1,228 +1,2064 @@
-"aa" = (/obj/item/stack/tile/iron/dark,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"ab" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_corner,/area/ruin/unpowered/no_grav)
-"ac" = (/obj/structure/lattice,/turf/template_noop,/area/space)
-"ad" = (/obj/machinery/computer/crew/syndie,/obj/structure/sign/poster/contraband/syndicate_pistol{dir = 1; pixel_y = 31},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ae" = (/obj/item/stack/tile/iron/dark,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"af" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_half,/area/ruin/unpowered/no_grav)
-"ag" = (/obj/effect/turf_decal/siding/wood{dir = 9},/obj/item/bedsheet/syndie/double{dir = 1},/obj/structure/bed/double{dir = 1},/turf/open/floor/carpet/airless,/area/ruin/unpowered/no_grav)
-"ah" = (/obj/effect/turf_decal/siding/wood{dir = 5},/obj/structure/bed/dogbed{pixel_y = 16},/turf/open/floor/carpet/airless,/area/ruin/unpowered/no_grav)
-"ai" = (/obj/effect/turf_decal/siding/wood{dir = 10},/turf/open/floor/carpet/airless,/area/ruin/unpowered/no_grav)
-"aj" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 8},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"ak" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/item/kirbyplants/dead{name = "spaced potted plant"; desc = "They say UV is healthy for plants.\n But vacuum isn't."; pixel_y = 16},/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"al" = (/obj/machinery/computer/security,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"am" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/vending/donksofttoyvendor,/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"an" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/vending/cola/black,/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"ao" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 6},/obj/structure/cable,/obj/machinery/power/apc/auto_name/east{name = "BC-4407 Common Room APC"; locked = 0; emergency_lights = 1; auto_name = 0},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ap" = (/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,/obj/structure/firelock_frame{anchored = 1},/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"aq" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating/airless{icon_state = "panelscorched"},/area/ruin/unpowered/no_grav)
-"ar" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/structure/cable,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"as" = (/obj/effect/turf_decal/trimline/red/filled/warning{dir = 8},/obj/effect/turf_decal/trimline/red/filled/corner{dir = 4},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"at" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/machinery/vending/snack{name = "\improper Donk Co. Snack Vendor"; icon_state = "sustenance"; products = list(/obj/item/food/syndicake=10, /obj/item/food/donkpocket=7, /obj/item/food/donkpocket/pizza=7, /obj/item/food/donkpocket/spicy=7, /obj/item/food/donkpocket/berry=7, /obj/item/food/donkpocket/honk=7, /obj/item/food/candy/bronx=1); contraband = list(/obj/item/food/donkpocket/gondola=6); scan_id = 0; premium = list(/obj/item/food/spacetwinkie=6, /obj/item/food/cheesiehonkers=6, /obj/item/food/candy=6, /obj/item/food/chips=6, /obj/item/food/sosjerky=6, /obj/item/food/no_raisin=6, /obj/item/food/peanuts=6, /obj/item/food/peanuts/random=3, /obj/item/food/cnds=6, /obj/item/food/cnds/random=3, /obj/item/reagent_containers/food/drinks/dry_ramen=3, /obj/item/storage/box/gum=3, /obj/item/food/energybar=6); default_price = 0; product_slogans = "Try our new banana flavored donks! Honk!;Discounts for the Syndicate!"; product_ads = "Taste the donk!;Donktastic!;Fresh syndicakes!;Have a donkpocket.;Treat yourself!;Have some more Syndicakes!;We love pizza!;Try our new teriyaki flavored pockets!"; extended_inventory = 1; extra_price = 10},/obj/structure/sign/warning/radiation/small{pixel_x = -23; pixel_y = 6},/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"au" = (/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,/obj/machinery/door/firedoor/closed,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"av" = (/obj/effect/turf_decal/trimline/red/filled/warning,/obj/structure/cable,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"aw" = (/obj/effect/turf_decal/delivery/red,/obj/structure/firelock_frame{anchored = 1},/obj/structure/cable,/obj/machinery/door/airlock/mining/glass{name = "cargo airlock"},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ax" = (/obj/effect/turf_decal/trimline/red/filled/warning{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ay" = (/obj/item/clothing/mask/chameleon/broken,/turf/template_noop,/area/space)
-"az" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/vending/cigarette/syndicate{extended_inventory = 1},/obj/structure/sign/warning/radiation/small{pixel_x = -23; pixel_y = 6},/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"aA" = (/obj/machinery/chem_dispenser/fullupgrade,/turf/open/floor/iron/dark/smooth_corner,/area/ruin/unpowered/no_grav)
-"aB" = (/obj/structure/table/reinforced/plastitaniumglass,/turf/open/floor/iron/dark/smooth_half,/area/ruin/unpowered/no_grav)
-"aC" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_corner{dir = 8},/area/ruin/unpowered/no_grav)
-"aD" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"aE" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/plaque/static_plaque/golden/commission/ks13/syndicatewreck01{pixel_x = 16},/turf/open/floor/iron/dark/smooth_large,/area/ruin/unpowered/no_grav)
-"aF" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 1},/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"aG" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 10},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/cell_charger,/obj/structure/table/reinforced,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"aH" = (/obj/machinery/light/small/directional/south,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"aI" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/tracks{dir = 8},/obj/effect/gibspawner/human/bodypartless,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"aJ" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/reagent_dispensers/water_cooler,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"aK" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"aL" = (/obj/structure/cable,/obj/effect/turf_decal/trimline/red/filled/warning{dir = 4},/obj/effect/turf_decal/trimline/red/filled/corner{dir = 1},/obj/structure/sign/poster/ripped{dir = 8; pixel_y = 31},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"aM" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 5},/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"aN" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/structure/cable,/obj/structure/table/reinforced,/obj/machinery/power/apc/auto_name/south{name = "BC-4407 Cargo APC"; emergency_lights = 1; auto_name = 0},/obj/effect/spawner/lootdrop/space/cashmoney,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"aO" = (/obj/structure/frame/machine,/obj/item/stack/cable_coil/cut,/turf/open/floor/iron/dark/smooth_corner{dir = 8},/area/ruin/unpowered/no_grav)
-"aP" = (/obj/structure/frame/machine,/obj/machinery/light/small/directional/west,/turf/open/floor/iron/dark/smooth_half{dir = 1},/area/ruin/unpowered/no_grav)
-"aQ" = (/obj/item/flashlight/lantern/syndicate,/obj/structure/cable,/obj/item/flashlight/lantern/syndicate,/obj/structure/rack/shelf,/obj/machinery/power/apc/auto_name/north{name = "BC-4407 Checkpoint APC"; emergency_lights = 1; auto_name = 0},/obj/item/flashlight/lantern/syndicate,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"aR" = (/obj/effect/turf_decal/trimline/blue/filled/line{dir = 5},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ruin/unpowered/no_grav)
-"aS" = (/obj/effect/turf_decal/trimline/blue/filled/line{dir = 4},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ruin/unpowered/no_grav)
-"aT" = (/obj/machinery/chem_master,/obj/machinery/light/small/broken/directional/east,/turf/open/floor/iron/dark/smooth_half{dir = 1},/area/ruin/unpowered/no_grav)
-"aU" = (/obj/structure/lattice,/obj/structure/girder,/turf/template_noop,/area/space)
-"aV" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 8},/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"aW" = (/obj/structure/closet/crate/freezer,/obj/structure/camera_assembly{dir = 8},/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"aX" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/door_assembly/door_assembly_com,/obj/machinery/door/firedoor/closed,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"aY" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/obj/effect/turf_decal/trimline/red/filled/corner{dir = 4},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"aZ" = (/obj/structure/window/reinforced/survival_pod/tinted{dir = 8},/obj/structure/closet/syndicate/personal{name = "captain's closet"},/obj/item/ammo_box/magazine/m9mm,/obj/item/card/id/advanced/chameleon/black,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"ba" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_half{dir = 1},/area/ruin/unpowered/no_grav)
-"bb" = (/obj/effect/turf_decal/delivery/red,/obj/effect/decal/cleanable/blood/tracks,/obj/machinery/door/firedoor/closed,/obj/machinery/door/airlock,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bc" = (/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"bd" = (/obj/effect/turf_decal/trimline/red/filled/warning{dir = 8},/obj/effect/turf_decal/trimline/red/filled/corner,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"be" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/space_heater,/turf/open/floor/iron/dark/smooth_half,/area/ruin/unpowered/no_grav)
-"bf" = (/obj/structure/table/wood,/obj/item/paper_bin/carbon,/obj/structure/fluff/paper/stack,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"bg" = (/obj/structure/chair/office,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"bh" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_large,/area/ruin/unpowered/no_grav)
-"bi" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/sign/poster/ripped{dir = 8; pixel_x = -31; pixel_y = 31},/obj/item/kirbyplants/dead{name = "spaced potted plant"; desc = "They say UV is healthy for plants.\n But vacuum isn't."},/turf/open/floor/wood,/area/ruin/unpowered/no_grav)
-"bj" = (/obj/effect/turf_decal/trimline/red/filled/warning{dir = 4},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/caution/white{dir = 8; pixel_x = -3; color = "#bf5757"},/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bk" = (/obj/machinery/door/airlock/security{name = "Security Checkpoint"; req_access_txt = "150"},/obj/effect/turf_decal/delivery/red,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/door/firedoor/closed,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bl" = (/obj/structure/dresser,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"bm" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"bn" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bo" = (/obj/structure/chair/office/light{color = "#984a4a"},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_large,/area/ruin/unpowered/no_grav)
-"bp" = (/obj/structure/window/reinforced/survival_pod,/obj/structure/frame/machine,/turf/open/floor/iron/dark/smooth_corner{dir = 4},/area/ruin/unpowered/no_grav)
-"bq" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 9},/obj/structure/camera_assembly{dir = 4},/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"br" = (/obj/machinery/light/small/directional/north,/obj/structure/guncase,/obj/item/gun/ballistic/automatic/pistol/no_mag,/obj/machinery/turretid{desc = "Used to control the battlecruiser's automated defenses."; pixel_y = 26; req_access = list("Syndicate"); lethal = 1; ailock = 1},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bs" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/small/directional/south,/obj/machinery/shuttle_comms/active{name = "suspicious comms array"; pixel_x = 3; pixel_y = 8},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bt" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 4},/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bu" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 4},/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bv" = (/obj/item/stack/tile/iron/dark/smooth_half,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"bw" = (/obj/item/folder/red,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"bx" = (/obj/item/pen,/obj/structure/table_frame/wood,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"by" = (/turf/open/floor/iron/dark/smooth_half{dir = 1},/area/ruin/unpowered/no_grav)
-"bz" = (/obj/structure/table,/turf/open/floor/iron/dark/smooth_corner{dir = 4},/area/ruin/unpowered/no_grav)
-"bA" = (/obj/structure/chair/plastic{dir = 8},/turf/open/floor/iron/dark/smooth_half,/area/ruin/unpowered/no_grav)
-"bB" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_corner{dir = 1},/area/ruin/unpowered/no_grav)
-"bC" = (/obj/structure/table,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bD" = (/obj/structure/window/reinforced/survival_pod/tinted{dir = 1},/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"bE" = (/obj/machinery/door/window/survival_pod{dir = 1},/obj/machinery/light/small/directional/west,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"bF" = (/obj/structure/fluff/empty_sleeper/syndicate{dir = 4},/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"bG" = (/obj/structure/frame/machine,/turf/open/floor/plating/airless{icon_state = "panelscorched"},/area/ruin/unpowered/no_grav)
-"bH" = (/turf/open/floor/iron/dark/smooth_half,/area/ruin/unpowered/no_grav)
-"bI" = (/obj/structure/window/reinforced/survival_pod,/obj/machinery/chem_heater,/turf/open/floor/iron/dark/smooth_corner{dir = 1},/area/ruin/unpowered/no_grav)
-"bJ" = (/obj/structure/chair/office/light{dir = 4; color = "#984a4a"},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/smooth_half,/area/ruin/unpowered/no_grav)
-"bK" = (/turf/open/floor/iron/dark/smooth_large,/area/ruin/unpowered/no_grav)
-"bL" = (/obj/structure/cable,/obj/effect/turf_decal/trimline/red/filled/corner,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bM" = (/obj/effect/turf_decal/delivery/red,/obj/machinery/door/firedoor/closed,/obj/machinery/door/airlock,/obj/structure/cable,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bN" = (/obj/effect/turf_decal/delivery/red,/obj/machinery/door/firedoor/closed,/obj/machinery/door/airlock,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bO" = (/obj/structure/cable,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"bP" = (/obj/structure/fluff/oldturret{dir = 4},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/obj/structure/fluff/oldturret{dir = 4},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bR" = (/obj/item/stack/tile/iron/dark,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"bS" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/trimline/red/filled/line{dir = 4},/obj/machinery/light/small/directional/east,/obj/structure/cable,/obj/structure/camera_assembly{dir = 8},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bT" = (/obj/structure/shuttle/engine/huge{dir = 8},/obj/structure/shuttle/engine/huge{dir = 8},/turf/template_noop,/area/ruin/unpowered/no_grav)
-"bU" = (/obj/structure/cable,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"bV" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bW" = (/obj/effect/turf_decal/trimline/red/filled/warning,/obj/effect/decal/cleanable/blood/tracks,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bX" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bY" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/trimline/red/filled/corner{dir = 1},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"bZ" = (/obj/effect/decal/cleanable/blood/tracks,/obj/effect/turf_decal/trimline/red/filled/warning{dir = 1},/obj/structure/cable,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"ca" = (/obj/structure/cable,/obj/effect/turf_decal/trimline/red/filled/line{dir = 4},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cb" = (/obj/effect/decal/cleanable/blood/tracks,/obj/structure/cable,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cc" = (/obj/item/stack/cable_coil/cut,/turf/open/floor/plating/airless{icon_state = "platingdmg3"},/area/ruin/unpowered/no_grav)
-"cd" = (/obj/machinery/light/small/directional/west,/turf/open/floor/plating/airless{icon_state = "platingdmg2"},/area/ruin/unpowered/no_grav)
-"ce" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 4},/obj/structure/cable,/obj/effect/decal/cleanable/glass,/obj/item/shard,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cf" = (/obj/machinery/door/firedoor/closed,/obj/structure/grille/broken,/obj/item/shard,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"cg" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/tracks{dir = 9},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ch" = (/obj/item/wallframe/apc,/turf/open/floor/plating/airless{icon_state = "platingdmg1"},/area/ruin/unpowered/no_grav)
-"ci" = (/obj/machinery/light/small/broken/directional/west,/obj/structure/lattice,/turf/template_noop,/area/space)
-"cj" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/obj/effect/turf_decal/trimline/red/filled/warning{dir = 4},/obj/effect/turf_decal/trimline/red/filled/corner{dir = 8},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ck" = (/obj/machinery/light/small/directional/west,/obj/structure/camera_assembly{dir = 4},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cl" = (/obj/structure/shuttle/engine/large{dir = 8},/turf/template_noop,/area/ruin/unpowered/no_grav)
-"cm" = (/obj/structure/shuttle/engine/router,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cn" = (/turf/template_noop,/area/ruin/unpowered/no_grav)
-"co" = (/obj/effect/turf_decal/trimline/red/filled/corner{dir = 8},/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cp" = (/obj/structure/cable,/obj/machinery/light/small/broken/directional/west,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/camera_assembly{dir = 4},/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cq" = (/obj/item/stack/tile/iron/dark,/obj/structure/cable,/obj/structure/chair/plastic{dir = 4},/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"cr" = (/obj/effect/turf_decal/siding/wood{dir = 6},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/carpet/airless,/area/ruin/unpowered/no_grav)
-"cs" = (/obj/structure/window/reinforced/survival_pod/tinted{dir = 8},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"ct" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"cu" = (/obj/machinery/light/small/broken/directional/east,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"cv" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/kirbyplants/dead{name = "spaced potted plant"; desc = "They say UV is healthy for plants.\n But vacuum isn't."; pixel_y = 16},/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"cw" = (/obj/structure/chair/office{dir = 4},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/wood/airless,/area/ruin/unpowered/no_grav)
-"cx" = (/obj/structure/sign/warning/enginesafety{dir = 4; pixel_x = 28},/obj/structure/cable,/obj/item/stack/tile/iron/dark,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"cy" = (/obj/structure/cable,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"cz" = (/obj/structure/sign/warning/chemdiamond{pixel_x = -32},/obj/structure/lattice,/turf/template_noop,/area/space)
-"cA" = (/obj/machinery/vending/wallmed/directional/north,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"cB" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/structure/transit_tube/station/reverse{dir = 1},/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cC" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/transit_tube/horizontal,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cD" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/structure/transit_tube/horizontal,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cE" = (/obj/structure/transit_tube/horizontal,/turf/open/floor/plating/airless{icon_state = "platingdmg3"},/area/ruin/unpowered/no_grav)
-"cF" = (/obj/structure/c_transit_tube{dir = 4},/turf/template_noop,/area/space)
-"cG" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/small/broken/directional/west,/obj/item/circuitboard/machine/rtg,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cH" = (/obj/structure/tank_holder/extinguisher,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cI" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 8},/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cJ" = (/obj/machinery/light/small/broken/directional/east,/obj/item/stack/cable_coil/cut,/turf/open/floor/plating/airless{icon_state = "platingdmg2"},/area/ruin/unpowered/no_grav)
-"cK" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cL" = (/obj/item/stack/cable_coil/cut,/turf/template_noop,/area/space)
-"cM" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 10},/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cN" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cP" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plating/airless{icon_state = "platingdmg2"},/area/ruin/unpowered/no_grav)
-"cQ" = (/obj/structure/chair/office{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/structure/camera_assembly{dir = 8},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cR" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 8},/obj/structure/cable,/obj/structure/chair/plastic{dir = 4},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cS" = (/obj/structure/chair/plastic{dir = 8},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"cT" = (/obj/machinery/portable_atmospherics/canister/toxins,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cU" = (/obj/structure/transit_tube/horizontal,/turf/template_noop,/area/space)
-"cV" = (/obj/structure/transit_tube/crossing/horizontal,/obj/structure/lattice,/turf/template_noop,/area/space)
-"cW" = (/obj/machinery/requests_console/directional/west{name = "BC-4407 Medical requests console"; desc = "A console intended to send requests to different departments on the battlecruiser."; department = "Medical"; hackState = 1},/obj/structure/lattice,/turf/template_noop,/area/space)
-"cX" = (/obj/structure/lattice,/obj/item/circuitboard/machine/propulsion_engine,/turf/template_noop,/area/space)
-"cY" = (/obj/structure/shuttle/engine/platform,/obj/structure/shuttle/engine/heater,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"cZ" = (/obj/structure/shuttle/engine/huge{dir = 8},/turf/template_noop,/area/ruin/unpowered/no_grav)
-"da" = (/obj/structure/shuttle/engine/platform,/obj/structure/shuttle/engine/heater,/turf/open/floor/plating/airless{icon_state = "platingdmg3"},/area/ruin/unpowered/no_grav)
-"db" = (/obj/structure/frame/machine,/turf/template_noop,/area/space)
-"dc" = (/obj/structure/frame/machine,/turf/open/floor/plating/airless{icon_state = "platingdmg3"},/area/ruin/unpowered/no_grav)
-"dd" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ruin/unpowered/no_grav)
-"de" = (/obj/structure/table/reinforced,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"df" = (/obj/structure/lattice,/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ruin/unpowered/no_grav)
-"dg" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/shuttle/engine/router,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"dh" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating/airless{icon_state = "platingdmg1"},/area/ruin/unpowered/no_grav)
-"di" = (/obj/machinery/light/small/broken/directional/east,/turf/open/floor/plating/airless{icon_state = "platingdmg2"},/area/ruin/unpowered/no_grav)
-"dj" = (/obj/item/circuitboard/machine/smes,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"dk" = (/obj/structure/closet/crate/secure/plasma,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"dl" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/machinery/light/small/directional/south,/obj/structure/cable,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"dm" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 8},/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"do" = (/obj/item/stack/rods,/turf/template_noop,/area/space)
-"dp" = (/obj/structure/lattice,/obj/item/stack/rods,/turf/template_noop,/area/space)
-"dq" = (/obj/machinery/light/small/broken/directional/east,/obj/structure/camera_assembly{dir = 8},/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"dr" = (/obj/machinery/portable_atmospherics/canister/toxins,/turf/template_noop,/area/space)
-"ds" = (/obj/structure/canister_frame/machine/frame_tier_0,/turf/template_noop,/area/space)
-"dt" = (/obj/structure/canister_frame/machine/frame_tier_1,/turf/template_noop,/area/space)
-"du" = (/obj/machinery/portable_atmospherics/canister/helium,/turf/template_noop,/area/space)
-"dv" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 1},/obj/structure/sign/poster/contraband/free_drone{dir = 1; pixel_y = 31},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"dw" = (/obj/item/food/canned/peaches,/obj/item/food/canned/peaches,/obj/item/food/canned/beans,/obj/item/food/canned,/obj/item/food/canned/peaches,/obj/structure/closet/crate,/turf/template_noop,/area/space)
-"dx" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"dy" = (/obj/item/stack/rods,/obj/structure/lattice,/turf/template_noop,/area/space)
-"dz" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/fireaxecabinet/directional/north,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"dB" = (/obj/structure/plasticflaps{anchored = 0},/turf/template_noop,/area/space)
-"dC" = (/obj/structure/shuttle/engine/router,/turf/open/floor/plating/airless{icon_state = "platingdmg1"},/area/ruin/unpowered/no_grav)
-"dN" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 1},/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ku" = (/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"rD" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"uO" = (/obj/effect/turf_decal/trimline/red/filled/line,/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"vl" = (/turf/open/floor/plating/airless{icon_state = "platingdmg2"},/area/ruin/unpowered/no_grav)
-"wm" = (/turf/template_noop,/area/space)
-"wP" = (/turf/open/floor/plating/airless{icon_state = "platingdmg1"},/area/ruin/unpowered/no_grav)
-"yj" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 9},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"Dj" = (/obj/effect/turf_decal/trimline/red/filled/line{dir = 8},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"KH" = (/turf/open/floor/iron/dark/airless,/area/ruin/unpowered/no_grav)
-"KX" = (/obj/structure/girder,/turf/open/floor/plating/airless{icon_state = "platingdmg1"},/area/ruin/unpowered/no_grav)
-"LL" = (/obj/structure/girder,/turf/open/floor/plating/airless{icon_state = "panelscorched"},/area/ruin/unpowered/no_grav)
-"Mw" = (/turf/open/floor/plating/airless{icon_state = "panelscorched"},/area/ruin/unpowered/no_grav)
-"MF" = (/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"Os" = (/turf/open/floor/plating/airless{icon_state = "platingdmg3"},/area/ruin/unpowered/no_grav)
-"PD" = (/obj/structure/girder,/turf/open/floor/plating/airless,/area/ruin/unpowered/no_grav)
-"PZ" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"QM" = (/obj/effect/turf_decal/trimline/red/filled/line,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/iron/dark,/area/ruin/unpowered/no_grav)
-"ZN" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ruin/unpowered/no_grav)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/item/stack/tile/iron/dark,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"ab" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/unpowered/no_grav)
+"ac" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"ad" = (
+/obj/machinery/computer/crew/syndie,
+/obj/structure/sign/poster/contraband/syndicate_pistol{
+	dir = 1;
+	pixel_y = 31
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ae" = (
+/obj/item/stack/tile/iron/dark,
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"af" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/unpowered/no_grav)
+"ag" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/item/bedsheet/syndie/double{
+	dir = 1
+	},
+/obj/structure/bed/double{
+	dir = 1
+	},
+/turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"ah" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/bed/dogbed{
+	pixel_y = 16
+	},
+/turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"ai" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"aj" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"ak" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/item/kirbyplants/dead{
+	name = "spaced potted plant";
+	desc = "They say UV is healthy for plants.\n But vacuum isn't.";
+	pixel_y = 16
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"al" = (
+/obj/machinery/computer/security,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"am" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/vending/donksofttoyvendor,
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"an" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/vending/cola/black,
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"ao" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 6
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/east{
+	name = "BC-4407 Common Room APC";
+	locked = 0;
+	emergency_lights = 1;
+	auto_name = 0
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ap" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/firelock_frame{
+	anchored = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"aq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless{
+	icon_state = "panelscorched"
+	},
+/area/ruin/unpowered/no_grav)
+"ar" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"as" = (
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/red/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"at" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/vending/snack{
+	name = "\improper Donk Co. Snack Vendor";
+	icon_state = "sustenance";
+	products = list(/obj/item/food/syndicake=10, /obj/item/food/donkpocket=7, /obj/item/food/donkpocket/pizza=7, /obj/item/food/donkpocket/spicy=7, /obj/item/food/donkpocket/berry=7, /obj/item/food/donkpocket/honk=7, /obj/item/food/candy/bronx=1);
+	contraband = list(/obj/item/food/donkpocket/gondola=6);
+	scan_id = 0;
+	premium = list(/obj/item/food/spacetwinkie=6, /obj/item/food/cheesiehonkers=6, /obj/item/food/candy=6, /obj/item/food/chips=6, /obj/item/food/sosjerky=6, /obj/item/food/no_raisin=6, /obj/item/food/peanuts=6, /obj/item/food/peanuts/random=3, /obj/item/food/cnds=6, /obj/item/food/cnds/random=3, /obj/item/reagent_containers/food/drinks/dry_ramen=3, /obj/item/storage/box/gum=3, /obj/item/food/energybar=6);
+	default_price = 0;
+	product_slogans = "Try our new banana flavored donks! Honk!;Discounts for the Syndicate!";
+	product_ads = "Taste the donk!;Donktastic!;Fresh syndicakes!;Have a donkpocket.;Treat yourself!;Have some more Syndicakes!;We love pizza!;Try our new teriyaki flavored pockets!";
+	extended_inventory = 1;
+	extra_price = 10
+	},
+/obj/structure/sign/warning/radiation/small{
+	pixel_x = -23;
+	pixel_y = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"au" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"av" = (
+/obj/effect/turf_decal/trimline/red/filled/warning,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"aw" = (
+/obj/effect/turf_decal/delivery/red,
+/obj/structure/firelock_frame{
+	anchored = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/airlock/mining/glass{
+	name = "cargo airlock"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ax" = (
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ay" = (
+/obj/item/clothing/mask/chameleon/broken,
+/turf/template_noop,
+/area/space)
+"az" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/vending/cigarette/syndicate{
+	extended_inventory = 1
+	},
+/obj/structure/sign/warning/radiation/small{
+	pixel_x = -23;
+	pixel_y = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"aA" = (
+/obj/machinery/chem_dispenser/fullupgrade,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/unpowered/no_grav)
+"aB" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/unpowered/no_grav)
+"aC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/unpowered/no_grav)
+"aD" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"aE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/plaque/static_plaque/golden/commission/ks13/syndicatewreck01{
+	pixel_x = 16
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/unpowered/no_grav)
+"aF" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"aG" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/cell_charger,
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"aH" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"aI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"aJ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"aK" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"aL" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/red/filled/corner{
+	dir = 1
+	},
+/obj/structure/sign/poster/ripped{
+	dir = 8;
+	pixel_y = 31
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"aM" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 5
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"aN" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/cable,
+/obj/structure/table/reinforced,
+/obj/machinery/power/apc/auto_name/south{
+	name = "BC-4407 Cargo APC";
+	emergency_lights = 1;
+	auto_name = 0
+	},
+/obj/effect/spawner/lootdrop/space/cashmoney,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"aO" = (
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/cut,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/unpowered/no_grav)
+"aP" = (
+/obj/structure/frame/machine,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/unpowered/no_grav)
+"aQ" = (
+/obj/item/flashlight/lantern/syndicate,
+/obj/structure/cable,
+/obj/item/flashlight/lantern/syndicate,
+/obj/structure/rack/shelf,
+/obj/machinery/power/apc/auto_name/north{
+	name = "BC-4407 Checkpoint APC";
+	emergency_lights = 1;
+	auto_name = 0
+	},
+/obj/item/flashlight/lantern/syndicate,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"aR" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/unpowered/no_grav)
+"aS" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/unpowered/no_grav)
+"aT" = (
+/obj/machinery/chem_master,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/unpowered/no_grav)
+"aU" = (
+/obj/structure/lattice,
+/obj/structure/girder,
+/turf/template_noop,
+/area/space)
+"aV" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"aW" = (
+/obj/structure/closet/crate/freezer,
+/obj/structure/camera_assembly{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"aX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/door_assembly/door_assembly_com,
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"aY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/red/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"aZ" = (
+/obj/structure/window/reinforced/survival_pod/tinted{
+	dir = 8
+	},
+/obj/structure/closet/syndicate/personal{
+	name = "captain's closet"
+	},
+/obj/item/ammo_box/magazine/m9mm,
+/obj/item/card/id/advanced/chameleon/black,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"ba" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/unpowered/no_grav)
+"bb" = (
+/obj/effect/turf_decal/delivery/red,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/machinery/door/firedoor/closed,
+/obj/machinery/door/airlock,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bc" = (
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"bd" = (
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/red/filled/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"be" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/space_heater,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/unpowered/no_grav)
+"bf" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin/carbon,
+/obj/structure/fluff/paper/stack,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"bg" = (
+/obj/structure/chair/office,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"bh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/unpowered/no_grav)
+"bi" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/sign/poster/ripped{
+	dir = 8;
+	pixel_x = -31;
+	pixel_y = 31
+	},
+/obj/item/kirbyplants/dead{
+	name = "spaced potted plant";
+	desc = "They say UV is healthy for plants.\n But vacuum isn't."
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/no_grav)
+"bj" = (
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/caution/white{
+	dir = 8;
+	pixel_x = -3;
+	color = "#bf5757"
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bk" = (
+/obj/machinery/door/airlock/security{
+	name = "Security Checkpoint";
+	req_access_txt = "150"
+	},
+/obj/effect/turf_decal/delivery/red,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/firedoor/closed,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bl" = (
+/obj/structure/dresser,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"bm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"bn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bo" = (
+/obj/structure/chair/office/light{
+	color = "#984a4a"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/unpowered/no_grav)
+"bp" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/frame/machine,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/ruin/unpowered/no_grav)
+"bq" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 9
+	},
+/obj/structure/camera_assembly{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"br" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/guncase,
+/obj/item/gun/ballistic/automatic/pistol/no_mag,
+/obj/machinery/turretid{
+	desc = "Used to control the battlecruiser's automated defenses.";
+	pixel_y = 26;
+	req_access = list("Syndicate");
+	lethal = 1;
+	ailock = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bs" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/south,
+/obj/machinery/shuttle_comms/active{
+	name = "suspicious comms array";
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bt" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bu" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bv" = (
+/obj/item/stack/tile/iron/dark/smooth_half,
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"bw" = (
+/obj/item/folder/red,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"bx" = (
+/obj/item/pen,
+/obj/structure/table_frame/wood,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"by" = (
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/unpowered/no_grav)
+"bz" = (
+/obj/structure/table,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/ruin/unpowered/no_grav)
+"bA" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/unpowered/no_grav)
+"bB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/ruin/unpowered/no_grav)
+"bC" = (
+/obj/structure/table,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bD" = (
+/obj/structure/window/reinforced/survival_pod/tinted{
+	dir = 1
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"bE" = (
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"bF" = (
+/obj/structure/fluff/empty_sleeper/syndicate{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"bG" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plating/airless{
+	icon_state = "panelscorched"
+	},
+/area/ruin/unpowered/no_grav)
+"bH" = (
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/unpowered/no_grav)
+"bI" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/machinery/chem_heater,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/ruin/unpowered/no_grav)
+"bJ" = (
+/obj/structure/chair/office/light{
+	dir = 4;
+	color = "#984a4a"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/unpowered/no_grav)
+"bK" = (
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/unpowered/no_grav)
+"bL" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/red/filled/corner,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bM" = (
+/obj/effect/turf_decal/delivery/red,
+/obj/machinery/door/firedoor/closed,
+/obj/machinery/door/airlock,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bN" = (
+/obj/effect/turf_decal/delivery/red,
+/obj/machinery/door/firedoor/closed,
+/obj/machinery/door/airlock,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bO" = (
+/obj/structure/cable,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"bP" = (
+/obj/structure/fluff/oldturret{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/obj/structure/fluff/oldturret{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bR" = (
+/obj/item/stack/tile/iron/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"bS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/east,
+/obj/structure/cable,
+/obj/structure/camera_assembly{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bT" = (
+/obj/structure/shuttle/engine/huge{
+	dir = 8
+	},
+/obj/structure/shuttle/engine/huge{
+	dir = 8
+	},
+/turf/template_noop,
+/area/ruin/unpowered/no_grav)
+"bU" = (
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"bV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bW" = (
+/obj/effect/turf_decal/trimline/red/filled/warning,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bX" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/red/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"bZ" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"ca" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cb" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cc" = (
+/obj/item/stack/cable_coil/cut,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered/no_grav)
+"cd" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/unpowered/no_grav)
+"ce" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cf" = (
+/obj/machinery/door/firedoor/closed,
+/obj/structure/grille/broken,
+/obj/item/shard,
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"cg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ch" = (
+/obj/item/wallframe/apc,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered/no_grav)
+"ci" = (
+/obj/machinery/light/small/broken/directional/west,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"cj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/red/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ck" = (
+/obj/machinery/light/small/directional/west,
+/obj/structure/camera_assembly{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cl" = (
+/obj/structure/shuttle/engine/large{
+	dir = 8
+	},
+/turf/template_noop,
+/area/ruin/unpowered/no_grav)
+"cm" = (
+/obj/structure/shuttle/engine/router,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cn" = (
+/turf/template_noop,
+/area/ruin/unpowered/no_grav)
+"co" = (
+/obj/effect/turf_decal/trimline/red/filled/corner{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cp" = (
+/obj/structure/cable,
+/obj/machinery/light/small/broken/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/camera_assembly{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cq" = (
+/obj/item/stack/tile/iron/dark,
+/obj/structure/cable,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"cr" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"cs" = (
+/obj/structure/window/reinforced/survival_pod/tinted{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"ct" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"cu" = (
+/obj/machinery/light/small/broken/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"cv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/kirbyplants/dead{
+	name = "spaced potted plant";
+	desc = "They say UV is healthy for plants.\n But vacuum isn't.";
+	pixel_y = 16
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"cw" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"cx" = (
+/obj/structure/sign/warning/enginesafety{
+	dir = 4;
+	pixel_x = 28
+	},
+/obj/structure/cable,
+/obj/item/stack/tile/iron/dark,
+/turf/open/floor/plating,
+/area/ruin/unpowered/no_grav)
+"cy" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"cz" = (
+/obj/structure/sign/warning/chemdiamond{
+	pixel_x = -32
+	},
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"cA" = (
+/obj/machinery/vending/wallmed/directional/north,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"cB" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/transit_tube/station/reverse{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cC" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/transit_tube/horizontal,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cD" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/transit_tube/horizontal,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cE" = (
+/obj/structure/transit_tube/horizontal,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered/no_grav)
+"cF" = (
+/obj/structure/c_transit_tube{
+	dir = 4
+	},
+/turf/template_noop,
+/area/space)
+"cG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/west,
+/obj/item/circuitboard/machine/rtg,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cH" = (
+/obj/structure/tank_holder/extinguisher,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cI" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cJ" = (
+/obj/machinery/light/small/broken/directional/east,
+/obj/item/stack/cable_coil/cut,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/unpowered/no_grav)
+"cK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cL" = (
+/obj/item/stack/cable_coil/cut,
+/turf/template_noop,
+/area/space)
+"cM" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 10
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cN" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/unpowered/no_grav)
+"cQ" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/camera_assembly{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cR" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cS" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"cT" = (
+/obj/machinery/portable_atmospherics/canister/toxins,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cU" = (
+/obj/structure/transit_tube/horizontal,
+/turf/template_noop,
+/area/space)
+"cV" = (
+/obj/structure/transit_tube/crossing/horizontal,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"cW" = (
+/obj/machinery/requests_console/directional/west{
+	name = "BC-4407 Medical requests console";
+	desc = "A console intended to send requests to different departments on the battlecruiser.";
+	department = "Medical";
+	hackState = 1
+	},
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"cX" = (
+/obj/structure/lattice,
+/obj/item/circuitboard/machine/propulsion_engine,
+/turf/template_noop,
+/area/space)
+"cY" = (
+/obj/structure/shuttle/engine/platform,
+/obj/structure/shuttle/engine/heater,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"cZ" = (
+/obj/structure/shuttle/engine/huge{
+	dir = 8
+	},
+/turf/template_noop,
+/area/ruin/unpowered/no_grav)
+"da" = (
+/obj/structure/shuttle/engine/platform,
+/obj/structure/shuttle/engine/heater,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered/no_grav)
+"db" = (
+/obj/structure/frame/machine,
+/turf/template_noop,
+/area/space)
+"dc" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered/no_grav)
+"dd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/unpowered/no_grav)
+"de" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"df" = (
+/obj/structure/lattice,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/unpowered/no_grav)
+"dg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/shuttle/engine/router,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"dh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered/no_grav)
+"di" = (
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/unpowered/no_grav)
+"dj" = (
+/obj/item/circuitboard/machine/smes,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"dk" = (
+/obj/structure/closet/crate/secure/plasma,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"dl" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/machinery/light/small/directional/south,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"dm" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"do" = (
+/obj/item/stack/rods,
+/turf/template_noop,
+/area/space)
+"dp" = (
+/obj/structure/lattice,
+/obj/item/stack/rods,
+/turf/template_noop,
+/area/space)
+"dq" = (
+/obj/machinery/light/small/broken/directional/east,
+/obj/structure/camera_assembly{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"dr" = (
+/obj/machinery/portable_atmospherics/canister/toxins,
+/turf/template_noop,
+/area/space)
+"ds" = (
+/obj/structure/canister_frame/machine/frame_tier_0,
+/turf/template_noop,
+/area/space)
+"dt" = (
+/obj/structure/canister_frame/machine/frame_tier_1,
+/turf/template_noop,
+/area/space)
+"du" = (
+/obj/machinery/portable_atmospherics/canister/helium,
+/turf/template_noop,
+/area/space)
+"dv" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/free_drone{
+	dir = 1;
+	pixel_y = 31
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"dw" = (
+/obj/item/food/canned/peaches,
+/obj/item/food/canned/peaches,
+/obj/item/food/canned/beans,
+/obj/item/food/canned,
+/obj/item/food/canned/peaches,
+/obj/structure/closet/crate,
+/turf/template_noop,
+/area/space)
+"dx" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"dy" = (
+/obj/item/stack/rods,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"dz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fireaxecabinet/directional/north,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"dB" = (
+/obj/structure/plasticflaps{
+	anchored = 0
+	},
+/turf/template_noop,
+/area/space)
+"dC" = (
+/obj/structure/shuttle/engine/router,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered/no_grav)
+"dN" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ku" = (
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"rD" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"uO" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"vl" = (
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/unpowered/no_grav)
+"wm" = (
+/turf/template_noop,
+/area/space)
+"wP" = (
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered/no_grav)
+"yj" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"Dj" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"KH" = (
+/turf/open/floor/iron/dark/airless,
+/area/ruin/unpowered/no_grav)
+"KX" = (
+/obj/structure/girder,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered/no_grav)
+"LL" = (
+/obj/structure/girder,
+/turf/open/floor/plating/airless{
+	icon_state = "panelscorched"
+	},
+/area/ruin/unpowered/no_grav)
+"Mw" = (
+/turf/open/floor/plating/airless{
+	icon_state = "panelscorched"
+	},
+/area/ruin/unpowered/no_grav)
+"MF" = (
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"Os" = (
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered/no_grav)
+"PD" = (
+/obj/structure/girder,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"PZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"QM" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/ruin/unpowered/no_grav)
+"ZN" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/unpowered/no_grav)
 
 (1,1,1) = {"
-wmwmwmwmwmwmZNZNMwkuwmacwmwmwmwmwmwmwmwmwmwmwmwmwmwmwmwmwm
-wmwmwmwmcncnbcbmKXajvlacwmwmwmwmdBwmdoacwmwmwmwmacacacwmwm
-wmwmwmwmcncnbccmZNaVOsacdwwmwmacwmwmwmacwmwmacwmwmwmwmwmwm
-wmwmwmwmbTcnbcdgZNdmaaMFaqkuvldkaawPwmackuwPMwacacaUwmwmwm
-wmwmwmwmwmcnbcacZNaGaNdlarararavuOdxMwaHcBcCcDcEcUcVaycFwm
-wmwmwmwmwmclbcacZNZNZNZNauauapawauauauZNZNZNZNZNPDaUdyacwm
-wmwmZNZNaqdfZNdpacdzcHZNakyjrDaxaDaFaMauaQbradalZNwmwmwmwm
-cncnbcacOswmwmwmdbacdiZNamDjMFaePZPZbjbkbnMFPZcQZNwmwmwmwm
-cncnbccmcYcmwmwmwmacwPZNanDjPZPZPZPZbtauPZPZbsdeZNwmwmwmwm
-cZcnbcddcGdcduwmwmwPdjZNatDjabafbeaCcecfauauZNZNZNZNZNZNwm
-cncnbcZNbmacacacacbmMFbNasbYbabhbKbvaYdNdNdNdvaLbNbOaqwmwm
-cncnbccmdaacwmacacbmdqZNckbPbaaEbhbabQbVbnbRbnbSZNcpbUacwm
-cZcnbcddwPacwmdbbmbmbnbMbdcobybhbhbabLQMQMQMQMcjbNbObmOswm
-wmwmwmacacacdowmvldhbnZNazcqbzbAbHbBcaZNauauauauZNZNvlacac
-wmwmwmdCwmacwmwmwmcTcxZNaJcIbCMFaePZbuZNaAaBaBaOZNwmwmwmwm
-wmwmwmwmdracacacacaccJZNaKcRcKcScgaIbuZNaPbobKaTZNwmwmwmwm
-wmwmwmwmwmwmwmcXcLcPbOZNbicMcNcNbWbXaoZNbpbHbJbIZNwmwmwmwm
-wmwmdodswmwmacaUaUZNZNZNZNZNZNapbbZNZNZNbmkuvlaWZNczacacac
-wmwmwmwmwmdbwmwmwmZNagahaZblZNbqbZaRbFcAaqacwPKHLLwmacwmwm
-wmwmwmwmwmwmwmwmwmZNaicrcsctZNaVcbaSbGkuacwmwmbUcyacacacwm
-wmwmwmwmwmwmdowmwmZNbEbDctcuZNcdcbaScichacacdpacOswmwmwmwm
-wmwmwmwmwmwmwmwmwmOscvcwbfbgPDacccaScWwmacOswmwmacwmwmwmwm
-wmwmwmwmwmdtwmwmwmacwPbwbxaqaXacwmZNwmwmacwmwmacacacacwmwm
-wmwmwmwmwmwmwmwmwmwmwmvlwmacwmwmwmwmwmwmwmwmwmwmwmwmwmwmwm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+cn
+cn
+cZ
+cn
+cn
+cZ
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+"}
+(2,1,1) = {"
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+cn
+cn
+cn
+cn
+cn
+cn
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+"}
+(3,1,1) = {"
+wm
+wm
+wm
+wm
+wm
+wm
+ZN
+bc
+bc
+bc
+bc
+bc
+bc
+wm
+wm
+wm
+wm
+do
+wm
+wm
+wm
+wm
+wm
+wm
+"}
+(4,1,1) = {"
+wm
+wm
+wm
+wm
+wm
+wm
+ZN
+ac
+cm
+dd
+ZN
+cm
+dd
+ac
+dC
+wm
+wm
+ds
+wm
+wm
+wm
+wm
+wm
+wm
+"}
+(5,1,1) = {"
+wm
+cn
+cn
+bT
+wm
+wm
+aq
+Os
+cY
+cG
+bm
+da
+wP
+ac
+wm
+dr
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+"}
+(6,1,1) = {"
+wm
+cn
+cn
+cn
+cn
+cl
+df
+wm
+cm
+dc
+ac
+ac
+ac
+ac
+ac
+ac
+wm
+wm
+db
+wm
+wm
+wm
+dt
+wm
+"}
+(7,1,1) = {"
+ZN
+bc
+bc
+bc
+bc
+bc
+ZN
+wm
+wm
+du
+ac
+wm
+wm
+do
+wm
+ac
+wm
+ac
+wm
+wm
+do
+wm
+wm
+wm
+"}
+(8,1,1) = {"
+ZN
+bm
+cm
+dg
+ac
+ac
+dp
+wm
+wm
+wm
+ac
+ac
+db
+wm
+wm
+ac
+cX
+aU
+wm
+wm
+wm
+wm
+wm
+wm
+"}
+(9,1,1) = {"
+Mw
+KX
+ZN
+ZN
+ZN
+ZN
+ac
+db
+wm
+wm
+ac
+ac
+bm
+vl
+wm
+ac
+cL
+aU
+wm
+wm
+wm
+wm
+wm
+wm
+"}
+(10,1,1) = {"
+ku
+aj
+aV
+dm
+aG
+ZN
+dz
+ac
+ac
+wP
+bm
+bm
+bm
+dh
+cT
+ac
+cP
+ZN
+ZN
+ZN
+ZN
+Os
+ac
+wm
+"}
+(11,1,1) = {"
+wm
+vl
+Os
+aa
+aN
+ZN
+cH
+di
+wP
+dj
+MF
+dq
+bn
+bn
+cx
+cJ
+bO
+ZN
+ag
+ai
+bE
+cv
+wP
+wm
+"}
+(12,1,1) = {"
+ac
+ac
+ac
+MF
+dl
+ZN
+ZN
+ZN
+ZN
+ZN
+bN
+ZN
+bM
+ZN
+ZN
+ZN
+ZN
+ZN
+ah
+cr
+bD
+cw
+bw
+vl
+"}
+(13,1,1) = {"
+wm
+wm
+dw
+aq
+ar
+au
+ak
+am
+an
+at
+as
+ck
+bd
+az
+aJ
+aK
+bi
+ZN
+aZ
+cs
+ct
+bf
+bx
+wm
+"}
+(14,1,1) = {"
+wm
+wm
+wm
+ku
+ar
+au
+yj
+Dj
+Dj
+Dj
+bY
+bP
+co
+cq
+cI
+cR
+cM
+ZN
+bl
+ct
+cu
+bg
+aq
+ac
+"}
+(15,1,1) = {"
+wm
+wm
+wm
+vl
+ar
+ap
+rD
+MF
+PZ
+ab
+ba
+ba
+by
+bz
+bC
+cK
+cN
+ZN
+ZN
+ZN
+ZN
+PD
+aX
+wm
+"}
+(16,1,1) = {"
+wm
+wm
+ac
+dk
+av
+aw
+ax
+ae
+PZ
+af
+bh
+aE
+bh
+bA
+MF
+cS
+cN
+ap
+bq
+aV
+cd
+ac
+ac
+wm
+"}
+(17,1,1) = {"
+wm
+dB
+wm
+aa
+uO
+au
+aD
+PZ
+PZ
+be
+bK
+bh
+bh
+bH
+ae
+cg
+bW
+bb
+bZ
+cb
+cb
+cc
+wm
+wm
+"}
+(18,1,1) = {"
+wm
+wm
+wm
+wP
+dx
+au
+aF
+PZ
+PZ
+aC
+bv
+ba
+ba
+bB
+PZ
+aI
+bX
+ZN
+aR
+aS
+aS
+aS
+ZN
+wm
+"}
+(19,1,1) = {"
+wm
+do
+wm
+wm
+Mw
+au
+aM
+bj
+bt
+ce
+aY
+bQ
+bL
+ca
+bu
+bu
+ao
+ZN
+bF
+bG
+ci
+cW
+wm
+wm
+"}
+(20,1,1) = {"
+wm
+ac
+ac
+ac
+aH
+ZN
+au
+bk
+au
+cf
+dN
+bV
+QM
+ZN
+ZN
+ZN
+ZN
+ZN
+cA
+ku
+ch
+wm
+wm
+wm
+"}
+(21,1,1) = {"
+wm
+wm
+wm
+ku
+cB
+ZN
+aQ
+bn
+PZ
+au
+dN
+bn
+QM
+au
+aA
+aP
+bp
+bm
+aq
+ac
+ac
+ac
+ac
+wm
+"}
+(22,1,1) = {"
+wm
+wm
+wm
+wP
+cC
+ZN
+br
+MF
+PZ
+au
+dN
+bR
+QM
+au
+aB
+bo
+bH
+ku
+ac
+wm
+ac
+Os
+wm
+wm
+"}
+(23,1,1) = {"
+wm
+wm
+ac
+Mw
+cD
+ZN
+ad
+PZ
+bs
+ZN
+dv
+bn
+QM
+au
+aB
+bK
+bJ
+vl
+wP
+wm
+dp
+wm
+wm
+wm
+"}
+(24,1,1) = {"
+wm
+wm
+wm
+ac
+cE
+ZN
+al
+cQ
+de
+ZN
+aL
+bS
+cj
+au
+aO
+aT
+bI
+aW
+KH
+bU
+ac
+wm
+ac
+wm
+"}
+(25,1,1) = {"
+wm
+ac
+wm
+ac
+cU
+PD
+ZN
+ZN
+ZN
+ZN
+bN
+ZN
+bN
+ZN
+ZN
+ZN
+ZN
+ZN
+LL
+cy
+Os
+ac
+ac
+wm
+"}
+(26,1,1) = {"
+wm
+ac
+wm
+aU
+cV
+aU
+wm
+wm
+wm
+ZN
+bO
+cp
+bO
+ZN
+wm
+wm
+wm
+cz
+wm
+ac
+wm
+wm
+ac
+wm
+"}
+(27,1,1) = {"
+wm
+ac
+wm
+wm
+ay
+dy
+wm
+wm
+wm
+ZN
+aq
+bU
+bm
+vl
+wm
+wm
+wm
+ac
+ac
+ac
+wm
+wm
+ac
+wm
+"}
+(28,1,1) = {"
+wm
+wm
+wm
+wm
+cF
+ac
+wm
+wm
+wm
+ZN
+wm
+ac
+Os
+ac
+wm
+wm
+wm
+ac
+wm
+ac
+wm
+wm
+wm
+wm
+"}
+(29,1,1) = {"
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+wm
+ac
+wm
+wm
+wm
+ac
+wm
+wm
+wm
+wm
+wm
+wm
 "}
