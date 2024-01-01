@@ -27,8 +27,10 @@
 	},
 /area/ruin/unpowered)
 "dN" = (
-/obj/structure/mineral_door/wood,
-/turf/template_noop,
+/obj/structure/mineral_door/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
 /area/ruin/unpowered)
 "dZ" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -350,10 +352,6 @@
 "Sx" = (
 /turf/template_noop,
 /area/template_noop)
-"TC" = (
-/obj/structure/mineral_door/wood,
-/turf/open/floor/wood,
-/area/ruin/unpowered)
 "VQ" = (
 /obj/machinery/grill,
 /turf/open/floor/iron,
@@ -514,7 +512,7 @@ uq
 uq
 uq
 uq
-TC
+dN
 uq
 HX
 HI

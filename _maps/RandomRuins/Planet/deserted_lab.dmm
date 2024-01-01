@@ -26,6 +26,9 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/structure/cable,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
 /turf/open/floor/carpet,
 /area/ruin/unpowered)
 "db" = (
@@ -66,7 +69,9 @@
 /turf/open/floor/iron/white,
 /area/ruin/unpowered)
 "iz" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 3.01
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman,
@@ -206,6 +211,9 @@
 /obj/structure/chair/office,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
 /turf/open/floor/carpet,
 /area/ruin/unpowered)
 "Ni" = (
@@ -217,7 +225,7 @@
 /turf/template_noop,
 /area/template_noop)
 "Ns" = (
-/obj/structure/window/reinforced/fulltile,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "Pm" = (
@@ -269,6 +277,9 @@
 "Uz" = (
 /obj/structure/bookcase/manuals/research_and_development,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
 /turf/open/floor/carpet,
 /area/ruin/unpowered)
 "VW" = (

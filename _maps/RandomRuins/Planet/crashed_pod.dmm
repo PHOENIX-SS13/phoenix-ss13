@@ -43,6 +43,7 @@
 "gB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table_frame,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "hb" = (
@@ -70,7 +71,12 @@
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/mineral/titanium,
+/area/ruin/unpowered/crashed_pod)
+"jp" = (
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "jP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -112,10 +118,12 @@
 /obj/structure/window/shuttle{
 	broken = 1
 	},
+/obj/structure/low_wall/titanium,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "nq" = (
 /obj/structure/girder,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "nN" = (
@@ -221,6 +229,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/cash,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "vp" = (
@@ -240,6 +249,7 @@
 /obj/effect/spawner/lootdrop/medicine,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/powercell,
+/obj/effect/turf_decal/sand/plating,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "wO" = (
@@ -260,6 +270,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/melee_weapon,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "xr" = (
@@ -270,7 +281,7 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "xA" = (
-/turf/closed/wall,
+/turf/open/floor/planetary/concrete,
 /area/ruin/unpowered/crashed_pod)
 "yS" = (
 /obj/machinery/door/airlock/shuttle/glass{
@@ -286,6 +297,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "zV" = (
@@ -410,7 +422,9 @@
 /area/ruin/unpowered/crashed_pod)
 "Mb" = (
 /obj/structure/cable,
-/obj/machinery/door/airlock/shuttle,
+/obj/machinery/door/airlock/shuttle{
+	dir = 4
+	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/brown/visible,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
@@ -420,7 +434,12 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden,
 /obj/structure/table_frame,
 /obj/item/bedsheet/medical,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/mineral/titanium/white,
+/area/ruin/unpowered/crashed_pod)
+"Ms" = (
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "NX" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -466,6 +485,7 @@
 /area/ruin/unpowered/crashed_pod)
 "Qn" = (
 /obj/structure/window/shuttle,
+/obj/structure/low_wall/titanium,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "Qu" = (
@@ -507,8 +527,12 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "SM" = (
-/obj/machinery/door/airlock/external,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "Ts" = (
@@ -520,14 +544,19 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "Ub" = (
-/obj/machinery/door/airlock/external,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "UM" = (
 /obj/structure/bed/pod,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_pod)
 "UN" = (
@@ -538,6 +567,7 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "UO" = (
+/obj/effect/turf_decal/sand,
 /turf/open/floor/plating/foam,
 /area/template_noop)
 "UX" = (
@@ -602,6 +632,7 @@
 /obj/effect/spawner/lootdrop/medkit,
 /obj/effect/spawner/lootdrop/medkit,
 /obj/machinery/light/small/broken/directional/north,
+/obj/effect/turf_decal/sand,
 /turf/open/floor/mineral/titanium/white,
 /area/template_noop)
 "XP" = (
@@ -770,7 +801,7 @@ jP
 yS
 jb
 zs
-JH
+jp
 "}
 (8,1,1) = {"
 RE
@@ -791,7 +822,7 @@ Vx
 Qu
 xj
 wC
-JH
+Ms
 "}
 (9,1,1) = {"
 YH

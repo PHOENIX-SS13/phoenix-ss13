@@ -58,9 +58,13 @@
 "cD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/barricade/wooden/crude,
 /obj/machinery/door/poddoor/shutters{
-	id = "abandoned_factory_window_shutters"
+	id = "abandoned_factory_window_shutters";
+	dir = 4
+	},
+/obj/structure/low_wall,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.2
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -424,7 +428,9 @@
 /turf/open/floor/iron/smooth_large,
 /area/ruin/unpowered)
 "qm" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "qn" = (
@@ -632,6 +638,7 @@
 /obj/structure/barricade/wooden/crude{
 	layer = 3.2
 	},
+/obj/structure/low_wall,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "zX" = (
@@ -943,6 +950,7 @@
 /obj/structure/barricade/wooden/crude{
 	layer = 3.2
 	},
+/obj/structure/low_wall,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "Qj" = (
@@ -988,12 +996,28 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth_half,
 /area/ruin/unpowered)
+"Sl" = (
+/obj/structure/grille/broken,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "abandoned_factory_window_shutters";
+	dir = 4
+	},
+/obj/structure/low_wall,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.2
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered)
 "St" = (
 /obj/structure/grille/broken,
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/barricade/wooden/crude,
 /obj/machinery/door/poddoor/shutters{
 	id = "abandoned_factory_window_shutters"
+	},
+/obj/structure/low_wall,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.2
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -1006,7 +1030,8 @@
 /area/ruin/unpowered)
 "SW" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "abandoned_factory_shutters_west"
+	id = "abandoned_factory_shutters_west";
+	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -1135,6 +1160,7 @@
 /obj/machinery/door/poddoor{
 	id = "abandoned_factory_window_shutters"
 	},
+/obj/structure/low_wall,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "VI" = (
@@ -1229,7 +1255,8 @@
 /area/template_noop)
 "ZU" = (
 /obj/machinery/door/airlock/maintenance/external{
-	locked = 1
+	locked = 1;
+	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -1712,7 +1739,7 @@ MB
 cD
 MB
 MB
-St
+Sl
 MB
 MB
 MB
