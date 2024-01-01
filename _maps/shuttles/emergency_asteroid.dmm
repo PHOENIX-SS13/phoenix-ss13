@@ -223,7 +223,7 @@
 "be" = (
 /obj/structure/table,
 /obj/item/folder/blue,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/recharger,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)

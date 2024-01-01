@@ -73,7 +73,7 @@
 "ap" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "aq" = (

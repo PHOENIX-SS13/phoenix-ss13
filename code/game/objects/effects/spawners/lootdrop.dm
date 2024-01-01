@@ -344,7 +344,34 @@
 		loot[path] = TRUE
 	. = ..()
 
+
+
 // Minor lootdrops follow
+
+/obj/effect/spawner/lootdrop/minor/pen
+	name = "pen spawner (low chance of gear)"
+	loot = list(
+		/obj/item/pen = 100,
+		/obj/item/pen/blue = 10,
+		/obj/item/pen/red = 10,
+		/obj/item/pen/fountain = 8,
+		/obj/item/flashlight/pen/paramedic = 9,
+		/obj/item/pen/fourcolor = 5,
+		/obj/item/pen/invisible = 4,
+		/obj/item/pen/edagger = 1,
+		/obj/item/pen/sleepy = 1,
+		/obj/item/pen/uplink = 1)
+
+/obj/effect/spawner/lootdrop/minor/pen/safe
+	name = "pen spawner (no chance of gear)"
+	loot = list(
+		/obj/item/pen = 100,
+		/obj/item/pen/blue = 10,
+		/obj/item/pen/red = 10,
+		/obj/item/pen/fountain = 8,
+		/obj/item/flashlight/pen/paramedic = 9,
+		/obj/item/pen/fourcolor = 5,
+		/obj/item/pen/invisible = 4)
 
 /obj/effect/spawner/lootdrop/minor/beret_or_rabbitears
 	name = "beret or rabbit ears spawner"

@@ -99,7 +99,7 @@
 "w" = (
 /obj/structure/table,
 /obj/item/folder,
-/obj/item/pen/blue,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -198,7 +198,7 @@
 	dir = 4
 	},
 /obj/item/folder,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -247,7 +247,7 @@
 "Z" = (
 /obj/structure/table,
 /obj/item/folder,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},

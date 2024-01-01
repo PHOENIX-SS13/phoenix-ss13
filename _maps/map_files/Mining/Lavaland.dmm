@@ -113,7 +113,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "aw" = (
@@ -767,7 +767,7 @@
 /obj/structure/table,
 /obj/effect/turf_decal/tile/red,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
 "cD" = (
@@ -3851,7 +3851,7 @@
 "yw" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera{
@@ -4022,7 +4022,7 @@
 "Dw" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera{
@@ -4409,7 +4409,7 @@
 "Oz" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera{

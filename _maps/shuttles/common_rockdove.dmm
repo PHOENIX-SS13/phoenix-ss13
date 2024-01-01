@@ -88,7 +88,7 @@
 	pixel_x = -4
 	},
 /obj/structure/table,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4
 	},
 /obj/item/storage/toolbox/emergency,

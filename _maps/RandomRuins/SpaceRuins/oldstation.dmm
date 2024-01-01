@@ -235,7 +235,7 @@
 /obj/structure/table,
 /obj/item/toy/cards/deck,
 /obj/item/folder/blue,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/comm)
@@ -2106,7 +2106,7 @@
 "fM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2{
 	dir = 8

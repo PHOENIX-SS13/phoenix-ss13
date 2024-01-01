@@ -305,7 +305,7 @@
 /area/ruin/space/has_grav/turretedoutpost)
 "aU" = (
 /obj/structure/table/reinforced,
-/obj/item/pen/blue,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/turretedoutpost)
 "aV" = (

@@ -93,7 +93,7 @@
 /obj/item/paper{
 	info = "We tried to use the power of this moon to bring him back, but we've failed... I've contained what remains of his power here... if you find this, make sure those Nar-Sian Dogs don't last a second."
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/bronze{
 	initial_gas_mix = "TEMP=2.7"
 	},

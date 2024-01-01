@@ -711,7 +711,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/clipboard,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/shuttle/abandoned/cargo)
 "ca" = (
@@ -1261,7 +1261,7 @@
 /obj/item/paper_bin{
 	pixel_x = -4
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,

@@ -1329,7 +1329,7 @@
 "gx" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/guestroom/room_1)
 "gy" = (
@@ -3129,7 +3129,7 @@
 "mM" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/newscaster/directional/east,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/guestroom/room_3)
@@ -4597,7 +4597,7 @@
 "uU" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/card/id/away/hotel/security,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 8
@@ -5210,7 +5210,7 @@
 "yP" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/guestroom/room_9)
 "yS" = (
@@ -8089,7 +8089,7 @@
 "Ou" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/guestroom/room_2)
 "Ow" = (
@@ -8760,7 +8760,7 @@
 "Sf" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood/tile,
 /area/ruin/space/has_grav/hotel/guestroom/room_10)
 "Sj" = (

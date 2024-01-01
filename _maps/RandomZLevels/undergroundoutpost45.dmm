@@ -2060,7 +2060,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/door/window/southleft{
 	base_state = "right";
 	dir = 8;
@@ -3225,7 +3225,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark{
 	heat_capacity = 1e+006
 	},
@@ -6327,7 +6327,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/newscaster/directional/west,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -6882,7 +6882,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/cafeteria{
 	dir = 5;
 	heat_capacity = 1e+006
@@ -8624,7 +8624,7 @@
 "qY" = (
 /obj/structure/table/wood,
 /obj/machinery/newscaster/directional/south,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet{
 	heat_capacity = 1e+006
 	},
@@ -8939,7 +8939,7 @@
 "rB" = (
 /obj/structure/table,
 /obj/item/folder/white,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark{
 	heat_capacity = 1e+006
 	},
@@ -9290,7 +9290,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron{
 	heat_capacity = 1e+006
 	},
@@ -11884,7 +11884,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1

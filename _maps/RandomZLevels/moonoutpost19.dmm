@@ -476,7 +476,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/paper/fluff/awaymissions/moonoutpost19/log/personal,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -1592,7 +1592,7 @@
 /area/awaymission/moonoutpost19/syndicate)
 "dq" = (
 /obj/structure/table/wood,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/paper/fluff/awaymissions/moonoutpost19/log/personal_2,
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = -32
@@ -3034,7 +3034,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/radio/off,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -3262,7 +3262,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -3849,7 +3849,7 @@
 "it" = (
 /obj/item/storage/secure/safe/directional/east,
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/paper/crumpled/awaymissions/moonoutpost19/hastey_note,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -5833,7 +5833,7 @@
 "mV" = (
 /obj/structure/table,
 /obj/item/clipboard,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/mineral/titanium/blue,
 /area/awaymission/moonoutpost19/arrivals)
 "mW" = (
@@ -6235,7 +6235,7 @@
 	},
 /area/awaymission/moonoutpost19/arrivals)
 "nP" = (
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/storage/pill_bottle{
 	pixel_y = 6
 	},

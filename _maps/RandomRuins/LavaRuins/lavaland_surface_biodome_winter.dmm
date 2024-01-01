@@ -284,7 +284,7 @@
 /area/ruin/powered/snow_biodome)
 "AM" = (
 /obj/structure/table,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/paper,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
@@ -340,7 +340,7 @@
 /area/ruin/powered/snow_biodome)
 "PK" = (
 /obj/structure/table,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/paper_bin,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)

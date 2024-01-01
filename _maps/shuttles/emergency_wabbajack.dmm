@@ -168,7 +168,7 @@
 "ay" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = -2;
 	pixel_y = 4
 	},

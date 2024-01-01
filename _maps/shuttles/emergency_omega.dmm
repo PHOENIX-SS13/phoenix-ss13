@@ -672,7 +672,7 @@
 /obj/structure/table,
 /obj/item/clipboard,
 /obj/item/folder/yellow,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/hand_labeler_refill,
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = -32

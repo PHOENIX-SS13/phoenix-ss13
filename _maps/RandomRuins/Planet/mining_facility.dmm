@@ -3,7 +3,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper,
-/obj/item/pen/fountain,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet,
 /area/ruin/unpowered)
 "aP" = (

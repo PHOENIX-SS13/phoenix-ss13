@@ -70,7 +70,7 @@
 /area/shuttle/mining/large)
 "l" = (
 /obj/item/folder/yellow,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium,

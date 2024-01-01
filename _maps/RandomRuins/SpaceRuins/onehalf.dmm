@@ -640,7 +640,7 @@
 "cb" = (
 /obj/structure/table/reinforced,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cc" = (

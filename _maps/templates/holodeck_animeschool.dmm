@@ -11,7 +11,7 @@
 "n" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/clothing/under/costume/schoolgirl,
 /obj/item/toy/katana,
 /turf/open/floor/holofloor,
@@ -24,7 +24,7 @@
 "x" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/clothing/under/costume/schoolgirl/orange,
 /turf/open/floor/holofloor,
 /area/template_noop)
@@ -36,7 +36,7 @@
 "H" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/clothing/under/costume/schoolgirl,
 /turf/open/floor/holofloor,
 /area/template_noop)
@@ -49,14 +49,14 @@
 "S" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/clothing/under/costume/schoolgirl/green,
 /turf/open/floor/holofloor,
 /area/template_noop)
 "T" = (
 /obj/structure/table,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/clothing/under/costume/schoolgirl/red,
 /turf/open/floor/holofloor,
 /area/template_noop)

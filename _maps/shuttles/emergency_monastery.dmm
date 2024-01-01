@@ -423,7 +423,7 @@
 "dY" = (
 /obj/structure/table/wood,
 /obj/item/folder/yellow,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/camera{
 	c_tag = "Monastery Library";
 	dir = 4;
@@ -974,7 +974,7 @@
 "kM" = (
 /obj/structure/table/wood/fancy,
 /obj/item/folder,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "kN" = (
@@ -1339,7 +1339,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet/black,
 /area/shuttle/escape)
 "qj" = (
@@ -3629,7 +3629,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Qm" = (
@@ -4145,7 +4145,7 @@
 "Vt" = (
 /obj/structure/table/wood,
 /obj/item/folder/yellow,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Vu" = (

@@ -66,7 +66,7 @@
 /area/ruin/unpowered)
 "q" = (
 /obj/structure/table/wood,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/broken/directional/west,
 /obj/item/paper/crumpled/bloody{
 	info = "help...";

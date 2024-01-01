@@ -821,7 +821,7 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 6;
 	pixel_y = 6
 	},

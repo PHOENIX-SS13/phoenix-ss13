@@ -489,7 +489,7 @@
 "ha" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/yellow,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 6;
 	pixel_y = 6
 	},
@@ -1083,7 +1083,7 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 6;
 	pixel_y = 6
 	},
