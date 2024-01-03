@@ -1,0 +1,938 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"bd" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 6
+	},
+/turf/open/space/basic,
+/area/space)
+"cc" = (
+/obj/effect/spawner/lootdrop/toolbox,
+/turf/open/space/basic,
+/area/space)
+"ci" = (
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"cI" = (
+/obj/item/rack_parts/shelf,
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"dk" = (
+/obj/structure/closet/crate/engineering,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/turf/open/space/basic,
+/area/space)
+"dx" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/machinery/power/rad_collector/anchored,
+/obj/structure/cable,
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"fB" = (
+/obj/structure/frame/machine,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"iq" = (
+/obj/machinery/door/poddoor/shutters/radiation,
+/turf/open/space/basic,
+/area/engineering/main)
+"iw" = (
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"km" = (
+/obj/machinery/light/small/broken/directional/west,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"ks" = (
+/obj/item/stack/sheet/mineral/titanium,
+/turf/open/space/basic,
+/area/space)
+"kX" = (
+/obj/machinery/computer/shuttle{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"lp" = (
+/obj/effect/spawner/lootdrop/powercell,
+/turf/open/space/basic,
+/area/space)
+"nf" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 5
+	},
+/turf/open/space/basic,
+/area/space)
+"nz" = (
+/obj/structure/cable,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"px" = (
+/obj/machinery/light/small/broken/directional/west,
+/turf/open/floor/mineral/titanium,
+/area/space)
+"pC" = (
+/obj/structure/rack/shelf,
+/turf/open/space/basic,
+/area/space)
+"pO" = (
+/obj/structure/rack/shelf,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"qO" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
+"sg" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/fireaxe/metal_h2_axe,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/turf/open/space/basic,
+/area/space)
+"tp" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/engineering/main)
+"vp" = (
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering,
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"vv" = (
+/obj/effect/mob_spawn/human/engineer,
+/turf/open/space/basic,
+/area/space)
+"wI" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space)
+"wL" = (
+/obj/item/crowbar/power,
+/turf/open/space/basic,
+/area/space)
+"wS" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 9
+	},
+/turf/open/space/basic,
+/area/space)
+"wX" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 10
+	},
+/turf/open/space/basic,
+/area/space)
+"xH" = (
+/obj/item/organ/cyberimp/arm/toolset,
+/turf/open/space/basic,
+/area/space)
+"yD" = (
+/obj/item/rack_parts/shelf,
+/turf/open/space/basic,
+/area/space)
+"Ap" = (
+/turf/open/space/basic,
+/area/space)
+"AL" = (
+/obj/item/screwdriver/power,
+/turf/open/space/basic,
+/area/space)
+"BW" = (
+/obj/item/stack/cable_coil/five,
+/turf/open/space/basic,
+/area/space)
+"CJ" = (
+/obj/effect/spawner/lootdrop/tool,
+/turf/open/space/basic,
+/area/space)
+"DX" = (
+/obj/structure/rack/shelf,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"Gi" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space)
+"GZ" = (
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"Hc" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w,
+/turf/open/space/basic,
+/area/space)
+"HA" = (
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"Ig" = (
+/obj/structure/frame/machine,
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"IB" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"IJ" = (
+/obj/structure/closet/crate/engineering,
+/obj/effect/spawner/lootdrop/material,
+/obj/effect/spawner/lootdrop/material,
+/obj/effect/spawner/lootdrop/material,
+/turf/open/space/basic,
+/area/space)
+"Kg" = (
+/obj/machinery/door/airlock/maintenance/external{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
+"Mt" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"PP" = (
+/obj/structure/table/reinforced,
+/obj/machinery/shuttle_comms/active{
+	pixel_y = 5
+	},
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"Rv" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"RJ" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/low_wall/titanium,
+/turf/open/floor/mineral/titanium,
+/area/space)
+"Sp" = (
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"St" = (
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+"Tn" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/junction{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering,
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"Uq" = (
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"Uz" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"UQ" = (
+/obj/structure/cable,
+/turf/open/floor/engine/airless,
+/area/engineering/supermatter)
+"Ve" = (
+/obj/effect/spawner/lootdrop/material_scarce,
+/turf/open/space/basic,
+/area/space)
+"Ws" = (
+/obj/structure/closet/crate/engineering,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly,
+/turf/open/space/basic,
+/area/space)
+"Zd" = (
+/obj/machinery/door/poddoor/shutters/radiation,
+/turf/open/floor/mineral/titanium,
+/area/engineering/main)
+
+(1,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+BW
+Ap
+Ap
+CJ
+Ap
+Ap
+ks
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
+(2,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+lp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+yD
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ve
+vp
+vp
+vp
+vp
+vp
+vp
+vp
+vp
+vp
+vp
+vp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
+(3,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+Ap
+wL
+Ap
+Ap
+Ap
+Ap
+Ap
+ks
+vv
+Ap
+BW
+Ap
+Ap
+ks
+dk
+Ap
+Ap
+Ap
+Ap
+Ap
+vp
+HA
+HA
+Mt
+GZ
+HA
+HA
+iq
+Sp
+ci
+vp
+vp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
+(4,1,1) = {"
+Ap
+Ap
+lp
+Ap
+cc
+Ap
+vv
+IJ
+ks
+Ap
+Ap
+Ap
+Ap
+cc
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+cc
+Ap
+Ap
+Ap
+vp
+cI
+HA
+UQ
+HA
+HA
+HA
+iq
+ci
+ci
+ci
+vp
+vp
+Kg
+Kg
+vp
+vp
+vp
+Ap
+Ap
+Ap
+Ap
+"}
+(5,1,1) = {"
+Ap
+Ap
+Ap
+ks
+Ap
+xH
+Ap
+Ap
+Ap
+CJ
+lp
+Ap
+ks
+Ap
+CJ
+Ap
+pC
+wL
+Ap
+Ap
+Ap
+ks
+Ap
+Ap
+wI
+HA
+HA
+dx
+dx
+UQ
+UQ
+Zd
+ci
+ci
+ci
+ci
+px
+ci
+ci
+km
+DX
+vp
+RJ
+RJ
+RJ
+RJ
+"}
+(6,1,1) = {"
+Ap
+lp
+Ap
+Ap
+lp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+cc
+Ap
+lp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+wI
+HA
+HA
+HA
+HA
+HA
+UQ
+tp
+tp
+fB
+ci
+ci
+ci
+ci
+ci
+ci
+ci
+Sp
+ci
+ci
+PP
+RJ
+"}
+(7,1,1) = {"
+Ap
+yD
+Ap
+AL
+Ap
+BW
+Ap
+ks
+Ap
+yD
+Ap
+Ap
+AL
+sg
+Ap
+Ap
+BW
+Ap
+Ap
+pC
+Ap
+Ap
+Ap
+Ap
+wI
+Ig
+HA
+HA
+HA
+HA
+UQ
+tp
+tp
+tp
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+IB
+ci
+Rv
+kX
+RJ
+"}
+(8,1,1) = {"
+Ap
+Ap
+IJ
+Ap
+ks
+Ap
+Ap
+Ap
+lp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+ks
+Ap
+vv
+Ap
+Ap
+Ap
+ks
+Ap
+wI
+HA
+HA
+Uz
+HA
+HA
+HA
+tp
+tp
+ci
+ci
+ci
+iw
+ci
+ci
+pO
+DX
+vp
+RJ
+RJ
+RJ
+RJ
+"}
+(9,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+CJ
+Ap
+cc
+Ap
+CJ
+Ap
+Ap
+ks
+xH
+Ap
+cc
+Ap
+Ap
+Ap
+Ap
+Ap
+cc
+Ap
+wI
+HA
+HA
+HA
+HA
+HA
+HA
+iq
+ci
+ci
+ci
+vp
+vp
+Kg
+Kg
+vp
+vp
+vp
+Ap
+Ap
+Ap
+Ap
+"}
+(10,1,1) = {"
+BW
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+vv
+Ap
+Ws
+Ap
+pC
+Ap
+Ap
+Ap
+CJ
+Ap
+Ap
+ks
+CJ
+Ap
+Ap
+Ap
+Ap
+vp
+HA
+HA
+HA
+Uq
+HA
+HA
+iq
+St
+ci
+vp
+vp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
+(11,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+lp
+Ap
+Ap
+ks
+Ap
+Ap
+Ap
+Ap
+wL
+Ap
+Ap
+Ap
+Ap
+Ap
+AL
+Ap
+Ap
+Ap
+vp
+vp
+vp
+Tn
+Tn
+vp
+vp
+vp
+vp
+vp
+vp
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
+(12,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+yD
+Ap
+Ap
+IJ
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+bd
+Gi
+Hc
+Hc
+Gi
+Gi
+nf
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
+(13,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+BW
+Ap
+ks
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+wX
+qO
+qO
+qO
+qO
+qO
+wS
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
+(14,1,1) = {"
+Ap
+Ap
+Ap
+Ap
+Ap
+BW
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+"}
