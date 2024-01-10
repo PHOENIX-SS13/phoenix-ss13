@@ -139,7 +139,7 @@
 "hU" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = -15
 	},
 /obj/machinery/light/small/directional,
@@ -158,6 +158,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/iron/dark/smooth_large,
+/area/ruin/unpowered)
+"iD" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "containment_4";
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "kn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -228,7 +236,9 @@
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "pO" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "qF" = (
@@ -412,7 +422,8 @@
 /area/ruin/unpowered)
 "Cw" = (
 /obj/machinery/door/airlock/grunge{
-	locked = 1
+	locked = 1;
+	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -439,7 +450,9 @@
 /area/ruin/unpowered)
 "DW" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sink/kitchen,
+/obj/structure/sink/kitchen{
+	pixel_y = 16
+	},
 /turf/open/floor/iron/freezer,
 /area/ruin/unpowered)
 "DY" = (
@@ -1070,8 +1083,8 @@ LY
 LY
 dk
 On
-Us
-Us
+iD
+iD
 On
 Yw
 iC

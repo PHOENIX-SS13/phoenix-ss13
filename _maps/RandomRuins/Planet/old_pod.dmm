@@ -37,6 +37,7 @@
 "g" = (
 /obj/structure/grille,
 /obj/item/shard,
+/obj/structure/low_wall/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "h" = (
@@ -221,6 +222,7 @@
 /area/ruin/unpowered)
 "N" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/low_wall/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "O" = (

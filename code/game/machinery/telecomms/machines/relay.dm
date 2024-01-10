@@ -73,6 +73,12 @@
 	toggled = FALSE
 	autolinkers = list("r_relay")
 
+/obj/machinery/telecomms/relay/preset/djstation
+	id = "DJ Station Relay"
+	hide = 0
+	toggled = FALSE
+	autolinkers = list("r_relay")
+
 //Generic preset relay
 /obj/machinery/telecomms/relay/preset/auto
 	hide = TRUE

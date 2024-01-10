@@ -2964,7 +2964,7 @@
 "gN" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},

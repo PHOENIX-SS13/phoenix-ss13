@@ -243,7 +243,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/ruin/unpowered/no_grav)
 "TV" = (

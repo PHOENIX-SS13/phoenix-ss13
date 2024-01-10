@@ -928,7 +928,7 @@
 "di" = (
 /obj/structure/table,
 /obj/item/paper/fluff/awaymissions/caves/magma,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/iron,
 /area/awaymission/caves/bmp_asteroid/level_two)
@@ -1148,7 +1148,7 @@
 "ei" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/plating,
 /area/awaymission/caves/bmp_asteroid)
 "ej" = (

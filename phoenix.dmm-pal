@@ -1,0 +1,5 @@
+[Palette]
+/obj/effect/turf_decal/trimline/red/filled/warning{dir=4}
+/turf/closed/wall/mineral/titanium/nodiagonal
+/area/template_noop
+/obj/effect/decal/cleanable/cobweb

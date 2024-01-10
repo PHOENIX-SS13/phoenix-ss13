@@ -123,9 +123,9 @@
 /area/ruin/unpowered/elephant_graveyard)
 "az" = (
 /obj/structure/table,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "aA" = (

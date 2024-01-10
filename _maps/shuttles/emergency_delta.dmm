@@ -681,7 +681,7 @@
 /obj/structure/table,
 /obj/item/clipboard,
 /obj/item/folder/yellow,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/hand_labeler_refill,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron,
@@ -883,7 +883,7 @@
 "bW" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
@@ -1078,7 +1078,7 @@
 "cn" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/blue,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1107,7 +1107,7 @@
 "cq" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},

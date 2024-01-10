@@ -470,7 +470,7 @@
 "bw" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/powered/cat_man)
 "bx" = (

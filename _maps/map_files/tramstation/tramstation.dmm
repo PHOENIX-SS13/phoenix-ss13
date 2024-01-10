@@ -1038,7 +1038,7 @@
 	pixel_x = 3;
 	pixel_y = 2
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
 	},
@@ -1916,7 +1916,7 @@
 /obj/item/folder/white{
 	pixel_y = 4
 	},
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
@@ -1987,10 +1987,10 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/item/clipboard,
 /obj/item/folder,
-/obj/item/pen/red{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = -5
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 5
 	},
 /obj/structure/window/reinforced{
@@ -2868,7 +2868,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/camera{
 	c_tag = "Civilian - Vacant Commissary";
 	dir = 8
@@ -3130,7 +3130,7 @@
 	dir = 1
 	},
 /obj/item/folder/red,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/security/checkpoint)
 "alc" = (
@@ -5441,7 +5441,7 @@
 /obj/item/paper_bin{
 	pixel_x = -3
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = -3
 	},
 /obj/item/folder/yellow{
@@ -5776,7 +5776,7 @@
 "asO" = (
 /obj/structure/table,
 /obj/item/storage/box/bodybags,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/small/directional/east,
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/iron/dark,
@@ -8782,7 +8782,7 @@
 	pixel_y = 7
 	},
 /obj/item/clipboard,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/iron,
 /area/cargo/office)
@@ -11727,7 +11727,7 @@
 "aPq" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/engine/cult,
 /area/service/library)
@@ -14473,7 +14473,7 @@
 "byf" = (
 /obj/structure/table,
 /obj/item/folder/red,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/security/office)
 "byg" = (
@@ -16253,7 +16253,7 @@
 /obj/item/folder/white{
 	pixel_y = 4
 	},
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/camera{
 	c_tag = "Medical - Virology Patient Room B";
 	dir = 1;
@@ -20026,7 +20026,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/security/checkpoint/supply)
 "dHb" = (
@@ -22258,7 +22258,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/security/checkpoint/escape)
 "exN" = (
@@ -23574,7 +23574,7 @@
 	dir = 1
 	},
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/white,
 /area/science/explab)
 "fce" = (
@@ -26042,7 +26042,7 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4
 	},
 /obj/item/radio/intercom/directional/west,
@@ -31642,7 +31642,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/security/checkpoint/engineering)
 "ikj" = (
@@ -31654,7 +31654,7 @@
 "ikk" = (
 /obj/structure/table,
 /obj/item/folder/yellow,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -36208,7 +36208,7 @@
 /obj/item/folder/blue{
 	pixel_y = 2
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "jZN" = (
@@ -38334,7 +38334,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet,
 /area/command/heads_quarters/hop)
 "kJH" = (
@@ -40022,7 +40022,7 @@
 "lrc" = (
 /obj/structure/table,
 /obj/item/instrument/harmonica,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/security/prison)
 "lrM" = (
@@ -41467,7 +41467,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain/private)
 "lVh" = (
@@ -42014,7 +42014,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/airlock_painter,
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 6
@@ -51768,7 +51768,7 @@
 "qdt" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen/fountain,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/plating,
 /area/maintenance/central)
 "qdz" = (
@@ -53058,7 +53058,7 @@
 	pixel_x = -2;
 	pixel_y = 8
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/folder/blue,
 /obj/item/folder/yellow{
 	pixel_x = 4;
@@ -54509,7 +54509,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -54773,7 +54773,7 @@
 	dir = 9
 	},
 /obj/item/folder/blue,
-/obj/item/pen/blue,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/tcommsat/computer)
 "rru" = (
@@ -54880,7 +54880,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/cargo/office)
 "rvA" = (
@@ -70440,7 +70440,7 @@
 "xrB" = (
 /obj/structure/table/glass,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/cafeteria{
 	dir = 5
 	},
@@ -72068,7 +72068,7 @@
 	pixel_y = 2
 	},
 /obj/item/paper_bin,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/commons/vacant_room/office)

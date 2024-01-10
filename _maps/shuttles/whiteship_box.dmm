@@ -844,7 +844,7 @@
 	pixel_y = 2
 	},
 /obj/item/folder/white,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4
 	},
 /obj/effect/turf_decal/tile/blue,
@@ -1453,7 +1453,7 @@
 	pixel_x = 3;
 	pixel_y = 5
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4
 	},
 /obj/machinery/airalarm/all_access{
@@ -1859,7 +1859,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/folder/white,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = -3;
 	pixel_y = -3
 	},

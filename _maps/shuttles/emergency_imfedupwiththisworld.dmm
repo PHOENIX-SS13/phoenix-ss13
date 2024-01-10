@@ -158,7 +158,7 @@
 /obj/machinery/light/directional/south,
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood,
 /area/shuttle/escape)
 "C" = (

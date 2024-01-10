@@ -3,7 +3,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper,
-/obj/item/pen/fountain,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet,
 /area/ruin/unpowered)
 "aP" = (
@@ -114,7 +114,9 @@
 /area/template_noop)
 "wa" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/ruin/unpowered)
 "xi" = (

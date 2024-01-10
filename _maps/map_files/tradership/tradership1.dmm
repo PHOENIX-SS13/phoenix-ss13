@@ -1169,7 +1169,7 @@
 /obj/item/paper_bin{
 	pixel_y = 4
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = -4
 	},
 /obj/item/folder/white{

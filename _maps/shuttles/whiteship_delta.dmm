@@ -943,7 +943,7 @@
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 5;
 	pixel_y = 3
 	},
@@ -1002,7 +1002,7 @@
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = -4
 	},
 /obj/structure/spider/stickyweb,

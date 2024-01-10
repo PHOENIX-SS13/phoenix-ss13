@@ -85,7 +85,7 @@
 /area/awaymission/snowdin/post/research)
 "aB" = (
 /obj/structure/table,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/research)
 "aC" = (
@@ -94,7 +94,7 @@
 "aD" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/research)
 "aE" = (
@@ -131,7 +131,7 @@
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/dorm)
 "aL" = (
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/research)
 "aM" = (
@@ -5800,7 +5800,7 @@
 	pixel_y = 5
 	},
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron/grimy,
 /area/awaymission/snowdin/post/cavern2)
 "pd" = (
@@ -9516,7 +9516,7 @@
 	},
 /area/awaymission/snowdin/outside)
 "AE" = (
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},

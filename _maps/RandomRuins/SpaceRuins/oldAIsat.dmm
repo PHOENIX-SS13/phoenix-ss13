@@ -173,7 +173,7 @@
 "aZ" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen/blue,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/tcommsat/oldaisat)

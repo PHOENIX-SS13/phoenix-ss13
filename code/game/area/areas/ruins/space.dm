@@ -440,13 +440,24 @@
 //DJSTATION
 
 /area/ruin/space/djstation
-	name = "Ruskie DJ Station"
+	name = "DJ Station"
 	icon_state = "DJ"
 	has_gravity = STANDARD_GRAVITY
+	main_ambience = AMBIENCE_VAPORWAVE
 
 /area/ruin/space/djstation/solars
 	name = "DJ Station Solars"
-	icon_state = "DJ"
+	icon_state = "DJ_solars"
+	has_gravity = STANDARD_GRAVITY
+
+/area/ruin/space/djstation/kitchenette
+	name = "DJ Station Kitchenette"
+	icon_state = "DJ_kitchenette"
+	has_gravity = STANDARD_GRAVITY
+
+/area/ruin/space/djstation/bedroom
+	name = "DJ Station Bedroom"
+	icon_state = "DJ_bedroom"
 	has_gravity = STANDARD_GRAVITY
 
 //ABANDONED TELEPORTER

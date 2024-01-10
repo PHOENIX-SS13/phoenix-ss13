@@ -849,7 +849,7 @@
 /obj/item/paper_bin{
 	pixel_x = -4
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4
 	},
 /obj/item/documents/syndicate,
@@ -1530,7 +1530,7 @@
 	pixel_y = -2
 	},
 /obj/item/paper_bin,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/item/clipboard,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/gun/ballistic/automatic/pistol/suppressed,

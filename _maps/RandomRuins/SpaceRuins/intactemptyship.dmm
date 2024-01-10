@@ -79,7 +79,7 @@
 "r" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/mineral/titanium/purple,
 /area/ruin/space/has_grav/powered/authorship)
 "s" = (
@@ -109,7 +109,7 @@
 "w" = (
 /obj/structure/table/wood,
 /obj/item/paper,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/mineral/titanium/purple,
 /area/ruin/space/has_grav/powered/authorship)
 "x" = (

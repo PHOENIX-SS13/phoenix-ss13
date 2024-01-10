@@ -23,7 +23,7 @@
 /area/awaymission/academy/headmaster)
 "af" = (
 /obj/structure/table/reinforced,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet,
 /area/awaymission/academy/headmaster)
 "ag" = (
@@ -192,7 +192,7 @@
 /area/awaymission/academy/headmaster)
 "ba" = (
 /obj/structure/table/wood,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/structure/cable,
 /turf/open/floor/carpet,
 /area/awaymission/academy/headmaster)
@@ -219,7 +219,7 @@
 /area/awaymission/academy/headmaster)
 "bf" = (
 /obj/structure/table/wood,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/carpet,
 /area/awaymission/academy/headmaster)
 "bg" = (
@@ -1386,7 +1386,7 @@
 /area/awaymission/academy/classrooms)
 "gb" = (
 /obj/structure/table,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/iron,
 /area/awaymission/academy/classrooms)
 "gc" = (
@@ -1429,7 +1429,7 @@
 /area/awaymission/academy/classrooms)
 "gl" = (
 /obj/structure/table/reinforced,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},

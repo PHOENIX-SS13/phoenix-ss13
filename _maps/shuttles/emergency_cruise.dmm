@@ -105,7 +105,7 @@
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /obj/item/folder/white,
-/obj/item/pen/blue,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
@@ -233,7 +233,7 @@
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /obj/item/folder/red,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)

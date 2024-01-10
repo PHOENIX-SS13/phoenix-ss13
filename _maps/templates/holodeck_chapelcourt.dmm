@@ -86,7 +86,7 @@
 	},
 /obj/structure/table/wood,
 /obj/item/folder/blue,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/holofloor/dark,
 /area/template_noop)
 "m" = (
@@ -132,7 +132,7 @@
 	},
 /obj/structure/table/wood,
 /obj/item/folder/red,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/holofloor/dark,
 /area/template_noop)
 "r" = (

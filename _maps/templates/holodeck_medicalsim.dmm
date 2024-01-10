@@ -442,7 +442,7 @@
 	},
 /obj/structure/table,
 /obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/holofloor{
 	icon_state = "white"
 	},

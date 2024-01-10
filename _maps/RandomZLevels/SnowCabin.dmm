@@ -3467,7 +3467,7 @@
 "jz" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen/red,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood,
 /area/awaymission/cabin)
 "jA" = (
@@ -3693,7 +3693,7 @@
 /obj/item/paper_bin/construction{
 	pixel_y = 3
 	},
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_y = 3
 	},
 /turf/open/floor/wood/cold,
@@ -3708,7 +3708,7 @@
 "kf" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/obj/item/pen/fountain,
+/obj/effect/spawner/lootdrop/minor/pen/safe,
 /turf/open/floor/wood/cold,
 /area/awaymission/cabin/lumbermill)
 "kg" = (

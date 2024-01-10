@@ -12,6 +12,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 "Indigo" = LIGHT_COLOR_DARK_BLUE,
 "Purple" = LIGHT_COLOR_PURPLE,
 "Violet" = LIGHT_COLOR_LAVENDER,
+"White" = LIGHT_COLOR_HALOGEN,
 "Fuchsia" = LIGHT_COLOR_PINK)))
 
 /obj/item/stack/marker_beacon
@@ -156,9 +157,20 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 		update_appearance()
 
 
-/* Preset marker beacon types, for mapping */
+/*
+ * Preset marker beacon types, for mapping
+ * Good for navigation lights!
+ */
 
-/obj/structure/marker_beacon/burgundy
+/obj/structure/marker_beacon/burgundy // one on port (left)
 	picked_color = "Burgundy"
 	// set icon_state to make it clear for mappers
 	icon_state = "markerburgundy-on"
+
+/obj/structure/marker_beacon/white // one on bow and stern (front and back)
+	picked_color = "White"
+	icon_state = "markerwhite-on"
+
+/obj/structure/marker_beacon/olive // one on starboard (right)
+	picked_color = "Olive"
+	icon_state = "markerolive-on"

@@ -714,7 +714,7 @@
 	pixel_y = 2
 	},
 /obj/item/folder/white,
-/obj/item/pen{
+/obj/effect/spawner/lootdrop/minor/pen/safe{
 	pixel_x = 4
 	},
 /obj/effect/turf_decal/tile/blue,

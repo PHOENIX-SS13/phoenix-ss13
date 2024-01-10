@@ -109,6 +109,9 @@
 	desc = "космическая-станция-13\nфорпост класса разработчика\nстанция сдана 30.12.2322\nво славу тружеников третьего советского союза"
 	icon_state = "commission_commie"
 
+/obj/structure/plaque/static_plaque/golden/commission/ks13/syndicatewreck01
+	desc = "Y.V. Kiloton, BC-4407\n'Walter' Class Syndicate Battlecruiser\nCommissioned 27/11/2548\n'We will never be destroyed!'"
+
 //These are plaques that aren't made of metal, so we'll just consider them signs. Those are made of plastic (default) or wood, not gold.
 //See: code>game>objects>structures>signs>_signs.dm
 
