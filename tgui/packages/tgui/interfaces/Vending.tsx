@@ -23,7 +23,6 @@ type Category = {
 };
 
 type ProductRecord = {
-  path: string;
   name: string;
   price: number;
   max_amount: number;
@@ -65,6 +64,7 @@ type StockItem = {
 
 type CustomInput = {
   name: string;
+  path: string;
   price: number;
   img: string;
 }
@@ -191,13 +191,7 @@ const ProductDisplay = (props: {
 }) => {
   const { data } = useBackend<VendingData>();
   const { custom, inventory, selectedCategory } = props;
-  const {
-    stock,
-    onstation,
-    user,
-    displayed_currency_icon,
-    displayed_currency_name,
-  } = data;
+  const { stock, onstation, user } = data;
 
   return (
     <Section
