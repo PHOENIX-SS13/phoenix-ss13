@@ -37,8 +37,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/age_restricted = FALSE
 	/// The category the product was in, if any.
 	var/category // Sourced directly from product_categories.
-	///List of items that have been returned to the vending machine.
-	var/list/returned_products
 
 /**
  * # vending machines
@@ -319,7 +317,7 @@ GLOBAL_LIST_EMPTY(vending_products)
  * * categories - A list in the format of product_categories to source category from
  * * startempty - should we set vending_product record amount from the product list (so it's prefilled at roundstart)
  */
-/obj/machinery/vending/proc/build_inventory(list/productlist, list/recordlist, start_empty = FALSE)
+/obj/machinery/vending/proc/build_inventory(list/productlist, list/recordlist, list/categories, start_empty = FALSE)
 	default_price = round(initial(default_price) * SSeconomy.inflation_value())
 	extra_price = round(initial(extra_price) * SSeconomy.inflation_value())
 
@@ -436,9 +434,9 @@ GLOBAL_LIST_EMPTY(vending_products)
 			for (var/product_key in products)
 				products_unwrapped[product_key] += products[product_key]
 
-		. += refill_inventory(products_unwrapped, product_records) // we want our categories thank you very much
+		. += refill_inventory(products_unwrapped, product_records) // we want our cats thank you very much
 	else
-		. += refill_inventory(canister.products, product_records) // no categories just products
+		. += refill_inventory(canister.products, product_records) // no cats just products
 
 	. += refill_inventory(canister.contraband, hidden_records)
 	. += refill_inventory(canister.premium, coin_records)
@@ -473,7 +471,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if (!R)
 		CRASH("Constructible vending machine did not have a refill canister")
 
-	R.products = unbuild_inventory(product_records)
+	unbuild_inventory_into(product_records, R.products, R.product_categories)
+
 	R.contraband = unbuild_inventory(hidden_records)
 	R.premium = unbuild_inventory(coin_records)
 
