@@ -1,0 +1,6 @@
+author: alos (whataboutism-alos)
+changes:
+- code_imp: Added capitalizeAll function.
+- code_imp: Added documentation for capitalize and toTitleCase functions.
+merge-date: 2024-01-11
+prnumber: 40
