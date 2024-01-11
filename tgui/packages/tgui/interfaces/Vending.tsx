@@ -23,6 +23,7 @@ type Category = {
 };
 
 type ProductRecord = {
+  path: string;
   name: string;
   price: number;
   max_amount: number;
@@ -203,8 +204,6 @@ const ProductDisplay = (props: {
         !!onstation && user && (
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
-            {displayed_currency_name}{' '}
-            <Icon name={displayed_currency_icon} color="gold" />
           </Box>
         )
       }
@@ -339,7 +338,7 @@ const ProductStock = (props) => {
 /** The main button to purchase an item. */
 const ProductButton = (props) => {
   const { act, data } = useBackend<VendingData>();
-  const { access, displayed_currency_name } = data;
+  const { access } = data;
   const { custom, discount, disabled, free, product, redPrice } = props;
   const customPrice = access ? 'FREE' : product.price;
   let standardPrice = product.price;
@@ -359,7 +358,7 @@ const ProductButton = (props) => {
       }
     >
       {customPrice}
-      {!access && displayed_currency_name}
+      {!access}
     </Button>
   ) : (
     <Button
@@ -372,7 +371,7 @@ const ProductButton = (props) => {
       }
     >
       {standardPrice}
-      {!free && displayed_currency_name}
+      {!free}
     </Button>
   );
 };
