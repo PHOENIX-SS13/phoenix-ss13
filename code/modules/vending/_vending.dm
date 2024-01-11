@@ -897,6 +897,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			premium = TRUE
 		)
 		.["hidden_records"] += list(data)
+
 	var/list/categories = list()
 
 	.["product_records"] = collect_records_for_static_data(product_records, categories)

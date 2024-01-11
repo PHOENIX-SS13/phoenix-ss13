@@ -34,8 +34,8 @@
 /obj/machinery/vending/cigarette/syndicate
 	name = "\improper Sus Cigs Deluxe"
 	desc = "A suspiciously well-stocked cigarette machine."
-	product_slogans = "Omnizine filter cigarettes! Certified healthy by 3 out of 7 Interdyne pharmacists!; Brigged for elegant taste.;Smoke!;Light with your esword today!"
-	product_ads = "Smoke!;Nicotine heaven.;Serious cigs for serious spacemen.;Don't buy that NT propaganda! Smoke today!;Certified healthy by 3 out of 7 Interdyne pharmacists!"
+	product_slogans = "Brigged for elegant taste.;Smoke!;Light with your esword today!"
+	product_ads = "Smoke!;Nicotine heaven.;Serious cigs for serious spacemen.;Don't buy that NT propaganda! Smoke today!;Omnizine filter cigarettes! Certified healthy by 3 out of 7 Interdyne pharmacists!"
 	icon_state = "syndicigs"
 	products = list(/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 7,
 					/obj/item/storage/fancy/cigarettes/cigpack_uplift = 3,

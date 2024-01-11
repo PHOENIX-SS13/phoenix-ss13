@@ -379,7 +379,8 @@
 	icon_state = "chapdrobe"
 	product_ads = "Are you being bothered by cultists or pesky revenants? Then come and dress like the holy man!;Clothes for men of the cloth!"
 	vend_reply = "Thank you for using the ChapDrobe!"
-	products = list(/obj/item/choice_beacon/holy = 1,
+	products = list(
+					/obj/item/choice_beacon/holy = 1,
 					/obj/item/storage/backpack/cultpack = 1,
 					/obj/item/clothing/accessory/pocketprotector/cosmetology = 1,
 					/obj/item/clothing/under/rank/civilian/chaplain = 1,
@@ -396,7 +397,8 @@
 					/obj/item/clothing/head/taqiyahred = 3,
 					/obj/item/clothing/suit/chaplainsuit/monkrobeeast = 1,
 					/obj/item/clothing/head/beanie/rasta = 1)
-	contraband = list(/obj/item/toy/plush/ratplush = 1,
+	contraband = list(
+					/obj/item/toy/plush/ratplush = 1,
 					/obj/item/toy/plush/narplush = 1,
 					/obj/item/clothing/head/medievaljewhat = 3,
 					/obj/item/clothing/suit/chaplainsuit/clownpriest = 1,
@@ -414,7 +416,8 @@
 	icon_state = "chemdrobe"
 	product_ads = "Our clothes are 0.5% more resistant to acid spills! Get yours now!"
 	vend_reply = "Thank you for using the ChemDrobe!"
-	products = list(/obj/item/clothing/under/rank/medical/chemist = 2,
+	products = list(
+					/obj/item/clothing/under/rank/medical/chemist = 2,
 					/obj/item/clothing/under/rank/medical/chemist/skirt = 2,
 					/obj/item/clothing/shoes/sneakers/white = 2,
 					/obj/item/clothing/suit/toggle/labcoat/chemist = 2,
@@ -436,7 +439,8 @@
 	icon_state = "genedrobe"
 	product_ads = "Perfect for the mad scientist in you!"
 	vend_reply = "Thank you for using the GeneDrobe!"
-	products = list(/obj/item/clothing/under/rank/rnd/geneticist = 2,
+	products = list(
+					/obj/item/clothing/under/rank/rnd/geneticist = 2,
 					/obj/item/clothing/under/rank/rnd/geneticist/skirt = 2,
 					/obj/item/clothing/shoes/sneakers/white = 2,
 					/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
@@ -455,7 +459,8 @@
 	icon_state = "virodrobe"
 	product_ads = " Viruses getting you down? Then upgrade to sterilized clothing today!"
 	vend_reply = "Thank you for using the ViroDrobe"
-	products = list(/obj/item/clothing/under/rank/medical/virologist = 2,
+	products = list(
+					/obj/item/clothing/under/rank/medical/virologist = 2,
 					/obj/item/clothing/under/rank/medical/virologist/skirt = 2,
 					/obj/item/clothing/shoes/sneakers/white = 2,
 					/obj/item/clothing/suit/toggle/labcoat/virologist = 2,
@@ -475,7 +480,8 @@
 	icon_state = "detdrobe"
 	product_ads = "Apply your brilliant deductive methods in style!"
 	vend_reply = "Thank you for using the DetDrobe!"
-	products = list(/obj/item/clothing/under/rank/security/detective = 2,
+	products = list(
+					/obj/item/clothing/under/rank/security/detective = 2,
 					/obj/item/clothing/under/rank/security/detective/skirt = 2,
 					/obj/item/clothing/shoes/sneakers/brown = 2,
 					/obj/item/clothing/suit/det_suit = 2,
@@ -502,39 +508,62 @@
 
 /obj/machinery/vending/wardrobe/syndicate_wardrobe
 	name = "\improper SynDrobe"
-	desc = "A vending machine for our boys in red, now in brand new crimson!"
+	desc = "A slightly eerie vending machine that casts a deep emerald light on its customers. It's either the creepiest or most treehugger-y vendor you've ever seen."
 	icon_state = "syndrobe"
 	icon_deny = "syndrobe-deny"
-	product_ads = "Put a Donk on it!;Aim, Style, Shoot!;Brigged for wearing the best!"
+	product_ads = "Put a Donk on it!;Aim, Style, Shoot!;Brigged for wearing the best!;Gorlex? I think you mean Gor-FLEX! ... Sorry, I was really proud of that one.;Donklicious!;Donktacular!;Donut Corp hopes you decide to enjoy a donut today!;Recruit your friends!;Contractor?! Where?!"
 	vend_reply = "Thank you for using the SynDrobe!"
 	product_categories = list(
 		list(
 			"name" = "Clothing",
 			"products" = list(
-				/obj/item/clothing/under/syndicate/nova/tactical = 3,
-				/obj/item/clothing/under/syndicate/nova/tactical/skirt = 3,
-				/obj/item/clothing/under/syndicate/nova/overalls = 3,
-				/obj/item/clothing/under/syndicate/nova/overalls/skirt = 3,
-				/obj/item/clothing/under/syndicate/bloodred/sleepytime = 3,
-				/obj/item/clothing/under/syndicate/sniper = 3,
+				/obj/item/clothing/under/syndicate = 3,
+				/obj/item/clothing/under/syndicate/skirt = 3,
 				/obj/item/clothing/under/syndicate/camo = 3,
 				/obj/item/clothing/under/syndicate/combat = 3,
-				/obj/item/clothing/shoes/combat = 3,
-				/obj/item/clothing/gloves/combat = 3,
-				/obj/item/clothing/mask/gas/syndicate = 3,
-				/obj/item/clothing/mask/gas/sechailer/syndicate = 3,
-//				/obj/item/clothing/suit/hooded/wintercoat/nova/syndicate = 5, // TODO: SYNDICATE WINTER COAT
-				/obj/item/clothing/head/soft/sec/syndicate = 3,
-				/obj/item/clothing/head/beret/sec/syndicate = 3,
+				/obj/item/clothing/under/syndicate/sniper = 3,
+				/obj/item/clothing/under/syndicate/soviet = 3,
+				/obj/item/clothing/under/syndicate/rus_army = 3,
+				/obj/item/clothing/under/syndicate/coldres = 1,
+				/obj/item/clothing/suit/space/syndicate = 0, // oops! all out!
+
 			),
+		),
+		list(
+			"name" = "Face & Headwear",
+			"products" = list(
+				/obj/item/clothing/mask/gas/syndicate = 3,
+//				/obj/item/clothing/mask/gas/sechailer/syndicate = 3, // TODO: SYNDICATE NECK GAITER
+//				/obj/item/clothing/suit/hooded/wintercoat/nova/syndicate = 5, // TODO: SYNDICATE WINTER COAT
+				/obj/item/clothing/head/hos/syndicate = 3,
+				/obj/item/clothing/head/hos/beret/syndicate = 3,
+				/obj/item/radio/headset/syndicate = 2,
+				/obj/item/clothing/head/helmet/space/syndicate = 0, // oops! all out!
+			),
+		),
+		list(
+			"name" = "Hand & Footwear",
+			"products" = list(
+				/obj/item/clothing/shoes/combat = 3,
+				/obj/item/clothing/shoes/jackboots = 3,
+				/obj/item/clothing/gloves/combat = 3,
+				/obj/item/clothing/gloves/color/black = 3,
+				/obj/item/clothing/shoes/combat/coldres = 1,
+			),
+		),
 		list(
 			"name" = "Utility",
 			"products" = list(
-			/obj/item/knife/combat/survival = 4,
-			/obj/item/flashlight/lantern/syndicate = 4,
+			/obj/item/storage/toolbox/syndicate = 0, // oops! all out!
+			/obj/item/kitchen/knife/combat/survival = 5,
+			/obj/item/flashlight/lantern/syndicate = 5,
+			/obj/item/modular_computer/tablet/integrated/syndicate = 1,
+			/obj/item/toy/cards/deck/syndicate = 1,
+			/obj/item/computer_hardware/hard_drive/small/syndicate = 3,
 			),
+		),
 		list(
-			"name" = "Snacks",
+			"name" = "Donk Co. Ready-Menu",
 			"products" = list(
 			/obj/item/storage/box/donkpockets = 2,
 			/obj/item/storage/box/donkpockets/donkpocketspicy = 2,
@@ -543,23 +572,36 @@
 			/obj/item/storage/box/donkpockets/donkpocketberry = 2,
 			/obj/item/storage/box/donkpockets/donkpockethonk = 2,
 			/obj/item/storage/box/donkpockets = 2,
+			/obj/item/plate = 9,
 			),
+		),
+		list(
+			"name" = "Donut Corp. Quikmart",
+			"products" = list(
+			/obj/item/food/syndicake = 6,
+			/obj/item/storage/fancy/donut_box = 2,
+			/obj/item/food/donut/berry = 2,
+			/obj/item/food/donut/jelly = 2,
+			/obj/item/food/donut/caramel = 2,
+			/obj/item/food/donut/matcha = 2,
+			/obj/item/food/donut/blumpkin = 2,
+			/obj/item/food/candy/bronx = 1,
+			/obj/item/plate = 8,
+			),
+		),
 	)
 
 	contraband = list(
-		/obj/item/knife/combat = 1,
-		/obj/item/clothing/under/syndicate/coldres = 6,
-		/obj/item/clothing/shoes/combat/coldres = 4,
+		/obj/item/kitchen/knife/combat = 1,
+		/obj/item/stamp/syndicate = 1,
 		/obj/item/storage/box/monkeycubes/syndicate = 1,
 	)
 
 	premium = list(
-		/obj/item/knife/combat/survival = 2,
-		/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 7,
 		/obj/item/food/pizza/donkpocket = 2,
 	)
 
-	refill_canister = /obj/item/vending_refill/wardrobe/syndie_wardrobe
+	refill_canister = /obj/item/vending_refill/wardrobe/syndicate_wardrobe
 	light_color = COLOR_MOSTLY_PURE_RED
 
 /obj/item/vending_refill/wardrobe/syndicate_wardrobe
