@@ -69,95 +69,6 @@ type CustomInput = {
   img: string;
 }
 
-const VendingRow = (props, context) => {
-  const { act, data } = useBackend<VendingData>(context);
-  const {
-    product,
-    productStock,
-    custom,
-  } = props;
-  const {
-    onstation,
-    department,
-    user,
-    jobDiscount,
-  } = data;
-  const free = (
-    !onstation
-    || product.price === 0
-    || (
-      !product.premium
-      && department
-      && user
-    )
-  );
-  const discount = department === user?.department;
-  const redPrice = Math.round(product.price * jobDiscount);
-  return (
-    <Table.Row>
-      <Table.Cell collapsing>
-        {product.base64 && (
-          <img
-            src={`data:image/jpeg;base64,${product.img}`}
-            style={{
-              'vertical-align': 'middle',
-              'horizontal-align': 'middle',
-            }} />
-        ) || (
-          <span
-            className={classes([
-              'vending32x32',
-              product.path,
-            ])}
-            style={{
-              'vertical-align': 'middle',
-              'horizontal-align': 'middle',
-            }} />
-        )}
-      </Table.Cell>
-      <Table.Cell bold>
-        {product.name}
-      </Table.Cell>
-      <Table.Cell collapsing textAlign="center">
-        <Box
-          color={(
-            custom && 'good'
-            || productStock.amount <= 0 && 'bad'
-            || productStock.amount <= (product.max_amount / 2) && 'average'
-            || 'good'
-          )}>
-          {productStock.amount} in stock
-        </Box>
-      </Table.Cell>
-      <Table.Cell collapsing textAlign="center">
-        {custom && (
-          <Button
-            fluid
-            content={data.access ? 'FREE' : product.price + ' cr'}
-            onClick={() => act('dispense', {
-              'item': product.name,
-            })} />
-        ) || (
-          <Button
-            fluid
-            disabled={(
-              productStock.amount === 0
-              || !free && (
-                !user
-                || product.price > user.cash
-              )
-            )}
-            content={(free && discount)
-              ? `${redPrice} cr` : `${product.price} cr`}
-            onClick={() => act('vend', {
-              'ref': product.ref,
-            })} />
-        )}
-      </Table.Cell>
-    </Table.Row>
-  );
-};
-
 export const Vending = (props, context) => {
   const { act, data } = useBackend<VendingData>(context);
   const {
@@ -343,13 +254,13 @@ const VendingRow = (props) => {
       !access &&
       (discount ? redPrice : product.price) > user?.cash);
 
-  /* POLYCHROME - DISABLED. TODO: GET WORKING.
-  ...<Table.Cell bold>{capitalizeAll(product.name)}</Table.Cell>
-      <Table.Cell>
-        {!!productStock?.colorable && (<ProductColorSelect disabled={disabled} product={product} />)}
-      </Table.Cell>
-      <Table.Cell collapsing textAlign="right">...
-  */
+      /* POLYCHROME - DISABLED. TODO: GET WORKING.
+      ...<Table.Cell bold>{capitalizeAll(product.name)}</Table.Cell>
+          <Table.Cell>
+            {!!productStock?.colorable && (<ProductColorSelect disabled={disabled} product={product} />)}
+          </Table.Cell>
+          <Table.Cell collapsing textAlign="right">...
+      */
   return (
     <Table.Row>
       <Table.Cell collapsing>
