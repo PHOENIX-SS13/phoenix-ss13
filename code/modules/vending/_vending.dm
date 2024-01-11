@@ -37,6 +37,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/age_restricted = FALSE
 	/// The category the product was in, if any.
 	var/category // Sourced directly from product_categories.
+	///List of items that have been returned to the vending machine.
+	var/list/returned_products
 
 /**
  * # vending machines
@@ -89,7 +91,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	 *
 	 * Form should be list(
 	 * 	"name" = "Category Name",
-	 * 	"icon" = "UI Icon (Font Awesome or tgfont)",
 	 * 	"products" = list(/type/path = amount, ...),
 	 * )
 	 */
@@ -918,7 +919,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 /obj/machinery/vending/proc/collect_records_for_static_data(list/records, list/categories, premium)
 	var/static/list/default_category = list(
 		"name" = "Products",
-		"icon" = "cart-shopping",
 	)
 
 	var/list/out_records = list()
@@ -936,7 +936,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 		if (!isnull(category))
 			if (!(category["name"] in categories))
 				categories[category["name"]] = list(
-					"icon" = category["icon"],
 				)
 
 			static_record["category"] = category["name"]
