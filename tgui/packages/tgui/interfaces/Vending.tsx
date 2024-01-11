@@ -79,7 +79,8 @@ export const Vending = (props, context) => {
     hidden_records = [],
     stock,
   } = data;
-  const [selectedCategory, setSelectedCategory] = useState(
+  const [selectedCategory, setSelectedCategory] = useLocalState<string>(
+    'selectedCategory',
     Object.keys(data.categories)[0],
   );
   
