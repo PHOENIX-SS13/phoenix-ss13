@@ -116,40 +116,40 @@ export const Vending = (props, context) => {
     }),
   );
   
- return (
+  return (
     <Window
-      title="Vending Machine"
-      width={450}
-      height={600}>
-      <Window.Content scrollable>
-        <Stack fill vertical>
-          {!!onstation && (
-            <Stack.Item>
-              <UserDetails />
-            </Stack.Item>
-          )}
-          <Stack.Item grow>
-            <ProductDisplay
-              custom={custom}
-              inventory={inventory}
-              selectedCategory={selectedCategory}
-            />
-          </Stack.Item>
-
-          {Object.keys(filteredCategories).length > 1 && (
-            <Stack.Item>
-              <CategorySelector
-                categories={filteredCategories}
-                selectedCategory={selectedCategory!}
-                onSelect={setSelectedCategory}
+        title="Vending Machine"
+        width={450}
+        height={600}>
+        <Window.Content scrollable>
+          <Stack fill vertical>
+            {!!onstation && (
+              <Stack.Item>
+                <UserDetails />
+              </Stack.Item>
+            )}
+            <Stack.Item grow>
+              <ProductDisplay
+                custom={custom}
+                inventory={inventory}
+                selectedCategory={selectedCategory}
               />
             </Stack.Item>
-          )}
-        </Stack>
-      </Window.Content>
-    </Window>
-  );
-};
+  
+            {Object.keys(filteredCategories).length > 1 && (
+              <Stack.Item>
+                <CategorySelector
+                  categories={filteredCategories}
+                  selectedCategory={selectedCategory!}
+                  onSelect={setSelectedCategory}
+                />
+              </Stack.Item>
+            )}
+          </Stack>
+        </Window.Content>
+      </Window>
+    );
+  };
 
 /** Displays user details if an ID is present and the user is on the station */
 export const UserDetails = (props) => {
@@ -158,7 +158,9 @@ export const UserDetails = (props) => {
 
   if (!user) {
     return (
-      <NoticeBox>No registered ID card! Please contact your local Personnel Office!</NoticeBox>
+      <NoticeBox>
+        No registered ID card! Please contact your local Personnel Office!
+      </NoticeBox>
     );
   } else {
     return (
