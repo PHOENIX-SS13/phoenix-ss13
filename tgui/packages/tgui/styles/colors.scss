@@ -1,33 +1,154 @@
 /**
  * Copyright (c) 2020 Aleksej Komarov
  * SPDX-License-Identifier: MIT
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+/**
+ * Modified 2024 for noncommercial use by Phoenix SS13.
  */
 
 @use 'sass:color';
 @use 'sass:map';
 @use 'sass:meta';
 
-// Base colors
-$black: #000000 !default;
-$white: #ffffff !default;
-$red: #db2828 !default;
-$orange: #f2711c !default;
-$yellow: #fbd608 !default;
-$olive: #b5cc18 !default;
-$green: #20b142 !default;
-$teal: #00b5ad !default;
-$blue: #2185d0 !default;
-$violet: #6435c9 !default;
-$purple: #a333c8 !default;
-$pink: #e03997 !default;
-$brown: #a5673f !default;
-$grey: #767676 !default;
+/// Base colors
 
-$primary: #4972a1 !default;
-$good: #5baa27 !default;
+// Abstract
 $average: #f08f11 !default;
 $bad: #db2828 !default;
+$good: #5baa27 !default;
 $label: #7e90a7 !default;
+$primary: #4972a1 !default;
+// White
+$white: #ffffff !default;
+// Grey
+$grey: #767676 !default;
+$grey-dark: #454545 !default;
+$grey-darker: #404040 !default;
+$grey-floortile: #8D8B8B !default;
+$grey-lighter: #808080 !default;
+$grey-light-very: #eeeeee !default;
+$silver: #C0C0C0 !default;
+// Grey Tinted
+$grey-beige: #776B5B !default;
+$grey-blue: #75A2BB !default;
+$grey-blue-dark: #3e4855 !default;
+$grey-blue-pale: #98C5DF !default;
+$grey-green: #99BB76 !default;
+$grey-green-pale: #B7D993 !default;
+$grey-green-pale-btl: #57967F !default;
+$grey-purple: #AE8CA8 !default;
+$grey-purple-pale: #CBB1CA !default;
+$grey-red: #B4696A !default;
+$grey-red-pale: #D59998 !default;
+$gunmetal: #545c68 !default;
+// Black
+$black: #000000 !default;
+$black-almost: #333333 !default;
+$black-half-transparent: #0000007A !default;
+// Red
+$maroon: #800000 !default;
+$red: #db2828 !default;
+$red-bubblegum: #950A0A !default;
+$red-dark: #A50824 !default;
+$red-light: #FF3333 !default;
+$red-light-greyish: #E4C7C5 !default;
+$red-mostly-pure: #FF3300 !default;
+$red-vibrant: #FF0000 !default;
+$red-vivid: #FF3232 !default;
+$red-soft: #FA8282 !default;
+// Orange
+$orange: #f2711c !default;
+$orange-bright: #E2853D !default;
+$orange-burnt: #FF7B00 !default;
+$orange-dark: #C3630C !default;
+$orange-dull: #8B633B !default;
+$orange-mostly-pure: #ff8000 !default;
+$peach: #FFBE9D !default;
+// Yellow
+$banana-cream: #FAE48E !default;
+$goldenrod: #FF9900 !default;
+$pumpkinseed: #ffc44d !default;
+$yellow: #fbd608 !default;
+$yellow-pale: #C1BB7A !default;
+$yellow-vibrant: #FFFF00 !default;
+$yellow-vivid: #FBFF23 !default;
+// Green
+$forest: #44964A !default;
+$green: #20b142 !default;
+$green-vibrant: #008000 !default;
+$green-very-dark: #003300 !default;
+$lime: #32CD32 !default;
+$lime-vibrant: #00FF00 !default;
+$lime-dark: #00aa00 !default;
+$mint: #DDFFD3 !default;
+$olive: #b5cc18 !default;
+$olive-vibrant: #808000 !default;
+// Blue
+$blue: #2185d0 !default;
+$blue-baby: #2CB2E8 !default;
+$blue-harsh: #1919c8 !default;
+$blue-light: #33CCFF !default;
+$blue-navy: #000080 !default;
+$blue-vibrant: #0000FF !default;
+$cyan: #00FFFF !default;
+$cyan-dark: #00A2FF !default;
+$teal: #00b5ad !default;
+$teal-vibrant: #008080 !default;
+$periwinkle: #9999FF !default;
+// Purple
+$amethyst: #822BFF !default;
+$indigo: #4b0082 !default;
+$indigo-light: #555CC2 !default;
+$magenta: #FF00FF !default;
+$magenta-strong: #B800B8 !default;
+$pink: #FFC0CB !default;
+$pink-vibrant: #e03997 !default;
+$pink-vibrant: #ff3cc8 !default;
+$pink-burnt: #E4005B !default;
+$purple: #a333c8 !default;
+$purple-vibrant: #800080 !default;
+$violet: #6435c9 !default;
+$violet-strong: #6927c5 !default;
+$violet-vibrant: #B900F7 !default;
+// Earthtone
+$brown: #a5673f !default;
+$brown-dark: #997C4F !default;
+$brown-faded: #BA9F6D !default;
+$brown-orange: #a9734f !default;
+$rock-asteroid: #555555 !default;
+$rock-asteroid-warm: #735555 !default;
+$beige: #CEB689 !default;
+// Assembly
+$assembly-beige: #AF9366 !default;
+$assembly-black: #545454 !default;
+$assembly-blue: #38559E !default;
+$assembly-blue-grey: #9497AB !default;
+$assembly-blue-light: #5D99BE !default;
+$assembly-brown: #97670E !default;
+$assembly-gold: #AA9100 !default;
+$assembly-green: #44843C !default;
+$assembly-green-light: #789876 !default;
+$assembly-gurkha: #999875 !default;
+$assembly-orange: #E39751 !default;
+$assembly-purple: #6F6192 !default;
+$assembly-red: #CC4242 !default;
+$assembly-white: #E2E2E2 !default;
+$assembly-yellow: #CECA2B !default;
+/// Xenobio Vat
+$xenobio-sample-brown: #91542d !default;
+$xenobio-sample-green: #98b944 !default;
+$xenobio-sample-grey: #5e5856 !default;
+$xenobio-sample-purple: #342941 !default;
+$xenobio-sample-yellow: #c0b823 !default;
+/// UI Theme Primary
+$theme-midnight: #6086A0 !default;
+$theme-plasmafire: #FFB200 !default;
+$theme-retro: #24CA00 !default;
+$theme-slimecore: #4FB259 !default;
+$theme-operative: #B8221F !default;
+$theme-glass: #75A4C4 !default;
+$theme-clockwork: #CFBA47 !default;
 
 // Background and foreground color lightness ratios
 $bg-lightness: -15% !default;
@@ -44,24 +165,142 @@ $fg-lightness: 10% !default;
 // Mappings of color names
 
 $_gen_map: (
-  'black': $black,
-  'white': $white,
-  'red': $red,
-  'orange': $orange,
-  'yellow': $yellow,
-  'olive': $olive,
-  'green': $green,
-  'teal': $teal,
-  'blue': $blue,
-  'violet': $violet,
-  'purple': $purple,
-  'pink': $pink,
-  'brown': $brown,
-  'grey': $grey,
-  'good': $good,
+  // Abstract
   'average': $average,
   'bad': $bad,
+  'good': $good,
   'label': $label,
+  'primary' : $primary,
+  // White
+  'white': $white,
+  // Grey
+  'grey': $grey,
+  'grey-dark' : $grey-dark,
+  'grey-darker' : $grey-darker,
+  'grey-floortile' : $grey-floortile,
+  'grey-lighter' : $grey-lighter,
+  'grey-light-very' : $grey-light-very,
+  'silver' : $silver,
+  // Grey Tinted
+  'grey-beige' : $grey-beige,
+  'grey-blue' : $grey-blue,
+  'grey-blue-dark' : $grey-blue-dark,
+  'grey-blue-pale' : $grey-blue-pale,
+  'grey-green' : $grey-green,
+  'grey-green-pale' : $grey-green-pale,
+  'grey-green-pale-btl' : $grey-green-pale-btl,
+  'grey-purple' : $grey-purple,
+  'grey-purple-pale' : $grey-purple-pale,
+  'grey-red' : $grey-red,
+  'grey-red-pale' : $grey-red-pale,
+  'gunmetal' : $gunmetal,
+  // Black
+  'black': $black,
+  'black-almost' : $black-almost,
+  'black-half-transparent' : $black-half-transparent,
+  // Red
+  'maroon' : $maroon,
+  'red': $red,
+  'red-bubblegum' : $red-bubblegum,
+  'red-dark' : $red-dark,
+  'red-light' : $red-light,
+  'red-light-greyish' : $red-light-greyish,
+  'red-mostly-pure' : $red-mostly-pure,
+  'red-vibrant' : $red-vibrant,
+  'red-vivid' : $red-vivid,
+  'red-soft' : $red-soft,
+  // Orange
+  'orange': $orange,
+  'orange-bright' : $orange-bright,
+  'orange-burnt' : $orange-burnt,
+  'orange-dark' : $orange-dark,
+  'orange-dull' : $orange-dull,
+  'orange-mostly-pure' : $orange-mostly-pure,
+  'peach' : $peach,
+  // Yellow
+  'banana-cream' : $banana-cream,
+  'goldenrod' : $goldenrod,
+  'pumpkinseed' : $pumpkinseed,
+  'yellow': $yellow,
+  'yellow-pale' : $yellow-pale,
+  'yellow-vibrant' : $yellow-vibrant,
+  'yellow-vivid' : $yellow-vivid,
+  // Green
+  'forest' : $forest,
+  'green': $green,
+  'green-vibrant' : $green-vibrant,
+  'green-very-dark' : $green-very-dark,
+  'lime' : $lime,
+  'lime-vibrant' : $lime-vibrant,
+  'lime-dark' : $lime-dark,
+  'mint' : $mint,
+  'olive': $olive,
+  'olive-vibrant' : $olive-vibrant,
+  // Blue
+  'blue': $blue,
+  'blue-baby' : $blue-baby,
+  'blue-harsh' : $blue-harsh,
+  'blue-light' : $blue-light,
+  'blue-navy' : $blue-navy,
+  'blue-vibrant' : $blue-vibrant,
+  'cyan' : $cyan,
+  'cyan-dark' : $cyan-dark,
+  'teal': $teal,
+  'teal-vibrant' : $teal-vibrant,
+  'periwinkle' : $periwinkle,
+  // Purple
+  'amethyst' : $amethyst,
+  'indigo' : $indigo,
+  'indigo-light' : $indigo-light,
+  'magenta' : $magenta,
+  'magenta-strong' : $magenta-strong,
+  'pink': $pink,
+  'pink-vibrant' : $pink-vibrant,
+  'pink-vibrant' : $pink-vibrant,
+  'pink-burnt' : $pink-burnt,
+  'purple': $purple,
+  'purple-vibrant' : $purple-vibrant,
+  'violet': $violet,
+  'violet-strong' : $violet-strong,
+  'violet-vibrant' : $violet-vibrant,
+  // Earthtone
+  'brown': $brown,
+  'brown-dark' : $brown-dark,
+  'brown-faded': $brown-faded,
+  'brown-orange' : $brown-orange,
+  'rock-asteroid' : $rock-asteroid,
+  'rock-asteroid-warm' : $rock-asteroid-warm,
+  'beige' : $beige,
+  // Assembly
+  'assembly-beige' : $assembly-beige,
+  'assembly-black' : $assembly-black,
+  'assembly-blue' : $assembly-blue,
+  'assembly-blue-grey' : $assembly-blue-grey,
+  'assembly-blue-light' : $assembly-blue-light,
+  'assembly-brown' : $assembly-brown,
+  'assembly-gold' : $assembly-gold,
+  'assembly-green' : $assembly-green,
+  'assembly-green-light' : $assembly-green-light,
+  'assembly-gurkha' : $assembly-gurkha,
+  'assembly-orange' : $assembly-orange,
+  'assembly-purple' : $assembly-purple,
+  'assembly-red' : $assembly-red,
+  'assembly-white' : $assembly-white,
+  'assembly-yellow' : $assembly-yellow,
+  /// Xenobio Vat
+  'xenobio-sample-brown' : $xenobio-sample-brown,
+  'xenobio-sample-green' : $xenobio-sample-green,
+  'xenobio-sample-grey' : $xenobio-sample-grey,
+  'xenobio-sample-purple' : $xenobio-sample-purple,
+  'xenobio-sample-yellow' : $xenobio-sample-yellow,
+  /// UI Theme Primary
+  'theme-midnight' : $theme-midnight,
+  'theme-plasmafire' : $theme-plasmafire,
+  'theme-retro' : $theme-retro,
+  'theme-slimecore' : $theme-slimecore,
+  'theme-operative' : $theme-operative,
+  'theme-glass' : $theme-glass,
+  'theme-clockwork' : $theme-clockwork,
 );
 
 // Foreground color names for which to generate a color map
