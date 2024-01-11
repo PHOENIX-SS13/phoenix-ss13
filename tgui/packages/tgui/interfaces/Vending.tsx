@@ -205,8 +205,7 @@ const ProductDisplay = (props: {
       scrollable
       title="Products"
       buttons={
-        !!onstation &&
-        user && (
+        !!onstation && user && (
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
             {displayed_currency_name}{' '}
@@ -250,11 +249,9 @@ const VendingRow = (props) => {
   const remaining = custom ? product.amount : productStock.amount;
   const redPrice = Math.round(product.price * jobDiscount);
   const disabled =
-    remaining === 0 ||
-    (onstation && !user) ||
-    (onstation &&
-      !access &&
-      (discount ? redPrice : product.price) > user?.cash);
+    remaining === 0 
+    || (onstation && !user) 
+    || (onstation && !access && (discount ? redPrice : product.price) > user?.cash);
 
       /* POLYCHROME - DISABLED. TODO: GET WORKING.
       ...<Table.Cell bold>{capitalizeAll(product.name)}</Table.Cell>
@@ -334,9 +331,9 @@ const ProductStock = (props) => {
   return (
     <Box
       color={
-        (remaining <= 0 && 'bad') ||
-        (!custom && remaining <= product.max_amount / 2 && 'average') ||
-        'good'
+        (remaining <= 0 && 'bad') 
+        || (!custom && remaining <= product.max_amount / 2 && 'average') 
+        || 'good'
       }
     >
       {remaining} left
