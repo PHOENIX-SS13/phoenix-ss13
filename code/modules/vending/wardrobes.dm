@@ -498,3 +498,69 @@
 
 /obj/item/vending_refill/wardrobe/det_wardrobe
 	machine_name = "DetDrobe"
+
+
+/obj/machinery/vending/wardrobe/syndicate_wardrobe
+	name = "\improper SynDrobe"
+	desc = "A vending machine for our boys in red, now in brand new crimson!"
+	icon_state = "syndrobe"
+	icon_deny = "syndrobe-deny"
+	product_ads = "Put a Donk on it!;Aim, Style, Shoot!;Brigged for wearing the best!"
+	vend_reply = "Thank you for using the SynDrobe!"
+	product_categories = list(
+		list(
+			"name" = "Clothing",
+			"products" = list(
+				/obj/item/clothing/under/syndicate/nova/tactical = 3,
+				/obj/item/clothing/under/syndicate/nova/tactical/skirt = 3,
+				/obj/item/clothing/under/syndicate/nova/overalls = 3,
+				/obj/item/clothing/under/syndicate/nova/overalls/skirt = 3,
+				/obj/item/clothing/under/syndicate/bloodred/sleepytime = 3,
+				/obj/item/clothing/under/syndicate/sniper = 3,
+				/obj/item/clothing/under/syndicate/camo = 3,
+				/obj/item/clothing/under/syndicate/combat = 3,
+				/obj/item/clothing/shoes/combat = 3,
+				/obj/item/clothing/gloves/combat = 3,
+				/obj/item/clothing/mask/gas/syndicate = 3,
+				/obj/item/clothing/mask/gas/sechailer/syndicate = 3,
+//				/obj/item/clothing/suit/hooded/wintercoat/nova/syndicate = 5, // TODO: SYNDICATE WINTER COAT
+				/obj/item/clothing/head/soft/sec/syndicate = 3,
+				/obj/item/clothing/head/beret/sec/syndicate = 3,
+			),
+		list(
+			"name" = "Utility",
+			"products" = list(
+			/obj/item/knife/combat/survival = 4,
+			/obj/item/flashlight/lantern/syndicate = 4,
+			),
+		list(
+			"name" = "Snacks",
+			"products" = list(
+			/obj/item/storage/box/donkpockets = 2,
+			/obj/item/storage/box/donkpockets/donkpocketspicy = 2,
+			/obj/item/storage/box/donkpockets/donkpocketteriyaki = 2,
+			/obj/item/storage/box/donkpockets/donkpocketpizza = 2,
+			/obj/item/storage/box/donkpockets/donkpocketberry = 2,
+			/obj/item/storage/box/donkpockets/donkpockethonk = 2,
+			/obj/item/storage/box/donkpockets = 2,
+			),
+	)
+
+	contraband = list(
+		/obj/item/knife/combat = 1,
+		/obj/item/clothing/under/syndicate/coldres = 6,
+		/obj/item/clothing/shoes/combat/coldres = 4,
+		/obj/item/storage/box/monkeycubes/syndicate = 1,
+	)
+
+	premium = list(
+		/obj/item/knife/combat/survival = 2,
+		/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 7,
+		/obj/item/food/pizza/donkpocket = 2,
+	)
+
+	refill_canister = /obj/item/vending_refill/wardrobe/syndie_wardrobe
+	light_color = COLOR_MOSTLY_PURE_RED
+
+/obj/item/vending_refill/wardrobe/syndicate_wardrobe
+	machine_name = "SynDrobe"

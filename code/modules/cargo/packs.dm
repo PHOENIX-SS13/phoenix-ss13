@@ -3203,6 +3203,13 @@
 					/obj/item/vending_refill/wardrobe/law_wardrobe)
 	crate_name = "security department supply crate"
 
+/datum/supply_pack/vending/wardrobes/syndicate
+	name = "Suspicious Supply Crate"
+	desc = "This crate contains refills for the Syndrobe."
+	cost = CARGO_CRATE_VALUE * 4
+	contains = list(/obj/item/vending_refill/wardrobe/syndie_wardrobe)
+	crate_name = "suspicious supply crate"
+
 
 /// Exploration drone unlockables ///
 

@@ -3,7 +3,6 @@
  */
 
 /*
-
 /obj/machinery/vending/[vendors name here]   // --vending machine template   :)
 	name = ""
 	desc = ""
@@ -24,23 +23,25 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
  */
 /datum/data/vending_product
 	name = "generic"
-	///Typepath of the product that is created when this record "sells"
+	/// Typepath of the product that is created when this record "sells"
 	var/product_path = null
-	///How many of this product we currently have
+	/// How many of this product we currently have
 	var/amount = 0
-	///How many we can store at maximum
+	/// How many we can store at maximum
 	var/max_amount = 0
-	///Does the item have a custom price override
+	/// Does the item have a custom price override
 	var/custom_price
-	///Does the item have a custom premium price override
+	/// Does the item have a custom premium price override
 	var/custom_premium_price
-	///Whether spessmen with an ID with an age below AGE_MINOR (20 by default) can buy this item
+	/// Whether spessmen with an ID with an age below AGE_MINOR (20 by default) can buy this item
 	var/age_restricted = FALSE
+	/// The category the product was in, if any.
+	var/category // Sourced directly from product_categories.
 
 /**
  * # vending machines
  *
- * Captalism in the year 2525, everything in a vending machine, even love
+ * Captalism 540 years from now, everything in a vending machine, even love!
  */
 /obj/machinery/vending
 	name = "\improper Vendomat"
@@ -81,6 +82,18 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	  * form should be list(/type/path = amount, /type/path2 = amount2)
 	  */
 	var/list/products = list()
+
+	/**
+	 * List of products this machine sells, categorized.
+	 * Can only be used as an alternative to `products`, not alongside it.
+	 *
+	 * Form should be list(
+	 * 	"name" = "Category Name",
+	 * 	"icon" = "UI Icon (Font Awesome or tgfont)",
+	 * 	"products" = list(/type/path = amount, ...),
+	 * )
+	 */
+	var/list/product_categories = null
 
 	/**
 	  * List of products this machine sells when you hack it
@@ -142,17 +155,15 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Whether our age check is currently functional
 	var/age_restrictions = TRUE
 	/**
-	  * Is this item on station or not
-	  *
-	  * if it doesn't originate from off-station during mapload, everything is free
-	  */
-	var/onstation = TRUE //if it doesn't originate from off-station during mapload, everything is free
+	 * Is this item on station or not
+	 * if it doesn't originate from off-station during mapload, everything is free
+	 */
+	var/onstation = TRUE
 	///A variable to change on a per instance basis on the map that allows the instance to force cost and ID requirements
 	var/onstation_override = FALSE //change this on the object on the map to override the onstation check. DO NOT APPLY THIS GLOBALLY.
 
 	///ID's that can load this vending machine wtih refills
 	var/list/canload_access_list
-
 
 	var/list/vending_machine_input = list()
 	///Display header on the input view
@@ -225,6 +236,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/RefreshParts()         //Better would be to make constructable child
 	if(!component_parts)
 		return
+
+	build_products_from_categories()
 
 	product_records = list()
 	hidden_records = list()
@@ -302,11 +315,19 @@ GLOBAL_LIST_EMPTY(vending_products)
  * Arguments:
  * * productlist - the list of products that need to be converted
  * * recordlist - the list containing /datum/data/vending_product datums
+ * * categories - A list in the format of product_categories to source category from
  * * startempty - should we set vending_product record amount from the product list (so it's prefilled at roundstart)
  */
 /obj/machinery/vending/proc/build_inventory(list/productlist, list/recordlist, start_empty = FALSE)
 	default_price = round(initial(default_price) * SSeconomy.inflation_value())
 	extra_price = round(initial(extra_price) * SSeconomy.inflation_value())
+
+	var/list/product_to_category = list()
+	for (var/list/category as anything in categories)
+		var/list/products = category["products"]
+		for (var/product_key in products)
+			product_to_category[product_key] = category
+
 	for(var/typepath in productlist)
 		var/amount = productlist[typepath]
 		if(isnull(amount))
@@ -324,7 +345,42 @@ GLOBAL_LIST_EMPTY(vending_products)
 		R.custom_price = round(initial(temp.custom_price) * SSeconomy.inflation_value())
 		R.custom_premium_price = round(initial(temp.custom_premium_price) * SSeconomy.inflation_value())
 		R.age_restricted = initial(temp.age_restricted)
+		R.category = product_to_category[typepath]
 		recordlist += R
+
+/**Builds all available inventories for the vendor - standard, contraband and premium
+ * Arguments:
+ * start_empty - bool to pass into build_inventory that determines whether a product entry starts with available stock or not
+*/
+/obj/machinery/vending/proc/build_inventories(start_empty)
+	build_inventory(products, product_records, product_categories, start_empty)
+	build_inventory(contraband, hidden_records, create_categories_from("Contraband", contraband), start_empty)
+	build_inventory(premium, coin_records, create_categories_from("Premium", premium), start_empty)
+
+/**
+ * Returns a list of data about the category
+ * Arguments:
+ * name - string for the name of the category
+ * icon - string for the fontawesome icon to use in the UI for the category
+ * products - list of products available in the category
+ */
+/obj/machinery/vending/proc/create_categories_from(name, products)
+	return list(list(
+		"name" = name,
+		"products" = products,
+	))
+
+///Populates list of products with categorized products
+/obj/machinery/vending/proc/build_products_from_categories()
+	if (isnull(product_categories))
+		return
+
+	products = list()
+
+	for (var/list/category in product_categories)
+		var/list/category_products = category["products"]
+		for (var/product_key in category_products)
+			products[product_key] += category_products[product_key]
 
 /**
  * Reassign the prices of the vending machine as a result of the inflation value, as provided by SSeconomy
@@ -366,10 +422,27 @@ GLOBAL_LIST_EMPTY(vending_products)
 		canister.contraband = contraband.Copy()
 	if (!canister.premium)
 		canister.premium = premium.Copy()
+
 	. = 0
-	. += refill_inventory(canister.products, product_records)
+
+	if (isnull(canister.product_categories) && !isnull(product_categories))
+		canister.product_categories = product_categories.Copy()
+
+	if (!isnull(canister.product_categories))
+		var/list/products_unwrapped = list()
+		for (var/list/category as anything in canister.product_categories)
+			var/list/products = category["products"]
+			for (var/product_key in products)
+				products_unwrapped[product_key] += products[product_key]
+
+		. += refill_inventory(products_unwrapped, product_records) // we want our categories thank you very much
+	else
+		. += refill_inventory(canister.products, product_records) // no categories just products
+
 	. += refill_inventory(canister.contraband, hidden_records)
 	. += refill_inventory(canister.premium, coin_records)
+	return ..()
+
 /**
  * Refill our inventory from the passed in product list into the record list
  *
@@ -411,6 +484,58 @@ GLOBAL_LIST_EMPTY(vending_products)
 	for(var/R in recordlist)
 		var/datum/data/vending_product/record = R
 		.[record.product_path] += record.amount
+
+/**
+ * Unbuild product_records into categorized product lists to the machine's refill canister.
+ * Does not handle contraband/premium products, only standard stock and any other categories used by the vendor(see: ClothesMate).
+ * If a product has no category, puts it into standard stock category.
+ * Arguments:
+ * product_records - list of products of the vendor
+ * products - list of products of the refill canister
+ * product_categories - list of product categories of the refill canister
+ */
+/obj/machinery/vending/proc/unbuild_inventory_into(list/product_records, list/products, list/product_categories)
+	products?.Cut()
+	product_categories?.Cut()
+
+	var/others_have_category = null
+
+	var/list/categories_to_index = list()
+
+	for (var/datum/data/vending_product/record as anything in product_records)
+		var/list/category = record.category
+		var/has_category = !isnull(category)
+		//check if there're any uncategorized products
+		if (isnull(others_have_category))
+			others_have_category = has_category
+		else if (others_have_category != has_category)
+			if (has_category)
+				WARNING("[record.product_path] in [type] has a category, but other products don't")
+			else
+				WARNING("[record.product_path] in [type] does not have a category, but other products do")
+
+			continue
+
+		if (has_category)
+			var/index = categories_to_index.Find(category)
+
+			if (index) //if we've already established a category, add the product there
+				var/list/category_in_list = product_categories[index]
+				var/list/products_in_category = category_in_list["products"]
+				products_in_category[record.product_path] += record.amount
+			else //create a category that the product is supposed to have and put it there
+				categories_to_index += list(category)
+				index = categories_to_index.len
+
+				var/list/category_clone = category.Copy()
+
+				var/list/initial_product_list = list()
+				initial_product_list[record.product_path] = record.amount
+				category_clone["products"] = initial_product_list
+
+				product_categories += list(category_clone)
+		else //no category found - dump it into standard stock
+			products[record.product_path] = record.amount
 
 /obj/machinery/vending/crowbar_act(mob/living/user, obj/item/I)
 	if(!component_parts)
@@ -772,6 +897,55 @@ GLOBAL_LIST_EMPTY(vending_products)
 			premium = TRUE
 		)
 		.["hidden_records"] += list(data)
+	var/list/categories = list()
+
+	.["product_records"] = collect_records_for_static_data(product_records, categories)
+	.["coin_records"] = collect_records_for_static_data(coin_records, categories, premium = TRUE)
+	.["hidden_records"] = collect_records_for_static_data(hidden_records, categories, premium = TRUE)
+
+	.["categories"] = categories
+
+	return ..()
+
+/**
+ * Returns a list of given product records of the vendor to be used in UI.
+ * arguments:
+ * records - list of records available
+ * categories - list of categories available
+ * premium - bool of whether a record should be priced by a custom/premium price or not
+ */
+/obj/machinery/vending/proc/collect_records_for_static_data(list/records, list/categories, premium)
+	var/static/list/default_category = list(
+		"name" = "Products",
+		"icon" = "cart-shopping",
+	)
+
+	var/list/out_records = list()
+
+	for (var/datum/data/vending_product/record as anything in records)
+		var/list/static_record = list(
+			path = replacetext(replacetext("[record.product_path]", "/obj/item/", ""), "/", "-"),
+			name = record.name,
+			price = premium ? (record.custom_premium_price || extra_price) : (record.custom_price || default_price),
+			max_amount = record.max_amount,
+			ref = REF(record),
+		)
+
+		var/list/category = record.category || default_category
+		if (!isnull(category))
+			if (!(category["name"] in categories))
+				categories[category["name"]] = list(
+					"icon" = category["icon"],
+				)
+
+			static_record["category"] = category["name"]
+
+		if (premium)
+			static_record["premium"] = TRUE
+
+		out_records += list(static_record)
+
+	return out_records
 
 /obj/machinery/vending/ui_data(mob/user)
 	. = list()

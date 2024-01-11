@@ -432,6 +432,28 @@
 	icon_state = "hood_miner"
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 
+/*
+// Syndicate
+/obj/item/clothing/suit/hooded/wintercoat/syndicate
+	name = "syndicate winter coat"
+	desc = "A sinister black coat with red accents and a fancy mantle, it feels like it can take a hit. The zipper tab looks like a triple headed snake in the shape of an S, spooky."
+	icon_state = "coatsyndie"
+	inhand_icon_state = "coatwinter"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/syndicate
+	armor = list(MELEE = 25, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 45)
+
+/obj/item/clothing/suit/hooded/wintercoat/nova/syndicate/Initialize(mapload)
+	. = ..()
+	allowed += GLOB.security_wintercoat_allowed
+
+/obj/item/clothing/head/hooded/winterhood/syndicate
+	desc = "A sinister black hood with armor padding."
+	icon_state = "hood_syndie"
+	armor = list(MELEE = 25, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 45)
+*/
+
+// Custom RGB
+
 /obj/item/clothing/suit/hooded/wintercoat/custom
 	name = "tailored winter coat"
 	desc = "A heavy jacket made from 'synthetic' animal furs, with custom colors."
