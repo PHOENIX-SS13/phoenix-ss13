@@ -1,4 +1,4 @@
-import { classes } from 'common/react';
+\\\\\\\\\\\\\\\\\\\\import { classes } from 'common/react';
 import { useBackend } from '../backend';
 import { Box, Button, Icon, LabeledList, NoticeBox, Section, Stack, Table } from '../components';
 import { Window } from '../layouts';
@@ -206,7 +206,7 @@ const ProductDisplay = (props: {
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
           </Box>
-      )
+        )
       }
     >
       <Table>
