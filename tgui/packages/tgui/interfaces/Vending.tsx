@@ -72,7 +72,7 @@ type CustomInput = {
 }
 
 export const Vending = (props, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<VendingData>(context);
   const {
     user,
     onstation,
@@ -236,7 +236,7 @@ const ProductDisplay = (props: {
  * but you cannot use item icons as labels currently.
  */
 const VendingRow = (props) => {
-  const { data } = useBackend(context);
+  const { act, data } = useBackend<VendingData>(context);
   const { custom, product, productStock } = props;
   const { access, department, jobDiscount, onstation, user } = data;
   const free = !onstation || product.price === 0;
