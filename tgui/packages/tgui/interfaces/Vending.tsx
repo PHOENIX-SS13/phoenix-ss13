@@ -2,6 +2,7 @@ import { classes } from 'common/react';
 import { useBackend } from '../backend';
 import { Box, Button, Icon, LabeledList, NoticeBox, Section, Stack, Table } from '../components';
 import { Window } from '../layouts';
+import { capitalizeAll } from 'common/string';
 
 type VendingData = {
   onstation: boolean;
