@@ -156,7 +156,7 @@ export const Vending = (props, context) => {
 
 /** Displays user details if an ID is present and the user is on the station */
 export const UserDetails = (props) => {
-  const { data } = useBackend<VendingData>();
+  const { data } = useBackend<VendingData>(context);
   const { user } = data;
 
   if (!user) {
@@ -192,7 +192,7 @@ const ProductDisplay = (props: {
   selectedCategory: string | null;
   inventory: (ProductRecord | CustomInput)[];
 }) => {
-  const { data } = useBackend<VendingData>();
+  const { data } = useBackend<VendingData>(context);
   const { custom, inventory, selectedCategory } = props;
   const { stock, onstation, user } = data;
 
@@ -236,7 +236,7 @@ const ProductDisplay = (props: {
  * but you cannot use item icons as labels currently.
  */
 const VendingRow = (props) => {
-  const { data } = useBackend<VendingData>();
+  const { data } = useBackend<VendingData>(context);
   const { custom, product, productStock } = props;
   const { access, department, jobDiscount, onstation, user } = data;
   const free = !onstation || product.price === 0;
@@ -307,7 +307,7 @@ const ProductImage = (props) => {
  */
 /*
 const ProductColorSelect = (props) => {
-  const { act } = useBackend<VendingData>();
+  const { act } = useBackend<VendingData>(context);
   const { disabled, product } = props;
 
   return (
@@ -340,7 +340,7 @@ const ProductStock = (props) => {
 
 /** The main button to purchase an item. */
 const ProductButton = (props) => {
-  const { act, data } = useBackend<VendingData>();
+  const { act, data } = useBackend<VendingData>(context);
   const { access } = data;
   const { custom, discount, disabled, free, product, redPrice } = props;
   const customPrice = access ? 'FREE' : product.price;
