@@ -206,7 +206,7 @@ const ProductDisplay = (props: {
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
           </Box>
-        )
+      )
       }
     >
       <Table>
@@ -354,7 +354,7 @@ const ProductButton = (props) => {
     <Button
       fluid
       disabled={disabled}
-      onClick={() => act('dispense', { item: product.path, })}
+      onClick={() => act('dispense', { item: product.path })}
     >
       {customPrice}
       {!access}
@@ -363,7 +363,7 @@ const ProductButton = (props) => {
     <Button
       fluid
       disabled={disabled}
-      onClick={() => act('vend', { ref: product.ref, })}
+      onClick={() => act('vend', { ref: product.ref })}
     >
       {standardPrice}
       {!free}
