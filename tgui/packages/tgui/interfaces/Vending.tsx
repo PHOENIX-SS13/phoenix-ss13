@@ -156,7 +156,7 @@ export const Vending = (props, context) => {
 
 /** Displays user details if an ID is present and the user is on the station */
 export const UserDetails = (props) => {
-  const { data } = useBackend(context);
+  const { act, data } = useBackend(context);
   const { user } = data;
 
   if (!user) {
@@ -192,7 +192,7 @@ const ProductDisplay = (props: {
   selectedCategory: string | null;
   inventory: (ProductRecord | CustomInput)[];
 }) => {
-  const { data } = useBackend(context);
+  const { act, data } = useBackend(context);
   const { custom, inventory, selectedCategory } = props;
   const { stock, onstation, user } = data;
 
