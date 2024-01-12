@@ -265,55 +265,6 @@
 		icon_state += "b"
 	return ..()
 
-/obj/machinery/computer/security/telescreen/entertainment
-	name = "entertainment monitor"
-	desc = "Damn, they better have the /tg/ channel on these things."
-	icon = 'icons/obj/status_display.dmi'
-	icon_state = "entertainment_blank"
-	network = list("thunder")
-	density = FALSE
-	circuit = null
-	interaction_flags_atom = NONE  // interact() is called by BigClick()
-	var/icon_state_off = "entertainment_blank"
-	var/icon_state_on = "entertainment"
-
-/obj/machinery/computer/security/telescreen/entertainment/directional/north
-	dir = SOUTH
-	pixel_y = 32
-
-/obj/machinery/computer/security/telescreen/entertainment/directional/south
-	dir = NORTH
-	pixel_y = -32
-
-/obj/machinery/computer/security/telescreen/entertainment/directional/east
-	dir = WEST
-	pixel_x = 32
-
-/obj/machinery/computer/security/telescreen/entertainment/directional/west
-	dir = EAST
-	pixel_x = -32
-
-/obj/machinery/computer/security/telescreen/entertainment/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_CLICK, .proc/BigClick)
-
-// Bypass clickchain to allow humans to use the telescreen from a distance
-/obj/machinery/computer/security/telescreen/entertainment/proc/BigClick()
-	SIGNAL_HANDLER
-
-	INVOKE_ASYNC(src, /atom.proc/interact, usr)
-
-/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
-	if(on && icon_state == icon_state_off)
-		say(pick(
-			"Feats of bravery live now at the thunderdome!",
-			"Two enter, one leaves! Tune in now!",
-			"Violence like you've never seen it before!",
-			"Spears! Camera! Action! LIVE NOW!"))
-		icon_state = icon_state_on
-	else
-		icon_state = icon_state_off
-
 /obj/machinery/computer/security/telescreen/rd
 	name = "\improper Research Director's telescreen"
 	desc = "Used for watching the AI and the RD's goons from the safety of his office."
@@ -383,5 +334,104 @@
 	name = "bar monitor"
 	desc = "A telescreen that connects to the bar's camera network. Perfect for checking on customers."
 	network = list("bar")
+
+/obj/machinery/computer/security/telescreen/entertainment
+	name = "entertainment monitor"
+	desc = "Damn, they better have the /tg/ channel on these things."
+	icon = 'icons/obj/status_display.dmi'
+	icon_state = "entertainment_blank"
+	network = list("thunder")
+	density = FALSE
+	circuit = null
+	interaction_flags_atom = NONE  // interact() is called by BigClick()
+	var/icon_state_off = "entertainment_blank"
+	var/icon_state_on = "entertainment"
+
+/obj/machinery/computer/security/telescreen/entertainment/directional/north
+	dir = SOUTH
+	pixel_y = 32
+
+/obj/machinery/computer/security/telescreen/entertainment/directional/south
+	dir = NORTH
+	pixel_y = -32
+
+/obj/machinery/computer/security/telescreen/entertainment/directional/east
+	dir = WEST
+	pixel_x = 32
+
+/obj/machinery/computer/security/telescreen/entertainment/directional/west
+	dir = EAST
+	pixel_x = -32
+
+/obj/machinery/computer/security/telescreen/entertainment/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_CLICK, .proc/BigClick)
+
+// Bypass clickchain to allow humans to use the telescreen from a distance
+/obj/machinery/computer/security/telescreen/entertainment/proc/BigClick()
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(src, /atom.proc/interact, usr)
+
+/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
+	if(on && icon_state == icon_state_off)
+		say(pick(
+			"Feats of bravery live now at the thunderdome!",
+			"Two enter, one leaves! Tune in now!",
+			"Violence like you've never seen it before!",
+			"Spears! Camera! Action! LIVE NOW!"))
+		icon_state = icon_state_on
+	else
+		icon_state = icon_state_off
+
+/obj/machinery/computer/security/telescreen/extranet
+	name = "extranet monitor"
+	desc = "Phoenix Network? Thought I left this on Horizon..."
+	icon = 'icons/obj/status_display.dmi'
+	icon_state = "extranet_blank"
+	network = list("extranetchannel01")
+	density = FALSE
+	circuit = null
+	interaction_flags_atom = NONE  // interact() is called by BigClick()
+	var/icon_state_off = "extranet_blank"
+	var/icon_state_on = "extranet"
+
+/obj/machinery/computer/security/telescreen/extranet/directional/north
+	dir = SOUTH
+	pixel_y = 32
+
+/obj/machinery/computer/security/telescreen/extranet/directional/south
+	dir = NORTH
+	pixel_y = -32
+
+/obj/machinery/computer/security/telescreen/extranet/directional/east
+	dir = WEST
+	pixel_x = 32
+
+/obj/machinery/computer/security/telescreen/extranet/directional/west
+	dir = EAST
+	pixel_x = -32
+
+/obj/machinery/computer/security/telescreen/extranet/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_CLICK, .proc/BigClick)
+
+// Bypass clickchain to allow humans to use the telescreen from a distance
+/obj/machinery/computer/security/telescreen/extranet/proc/BigClick()
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(src, /atom.proc/interact, usr)
+
+/obj/machinery/computer/security/telescreen/extranet/proc/notify(on)
+	if(on && icon_state == icon_state_off)
+		say(pick(
+			"Coming at you live with breaking news!",
+			"Developing story! Tune in!",
+			"You won't want to miss this!",
+			"LIVE NOW!"
+			"Don't turn away, or you'll miss it!"))
+		icon_state = icon_state_on
+	else
+		icon_state = icon_state_off
 
 #undef DEFAULT_MAP_SIZE
