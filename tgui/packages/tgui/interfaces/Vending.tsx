@@ -205,7 +205,7 @@ const ProductDisplay = (props: {
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
           </Box>
-        )
+      )
       }
     >
       <Table>
@@ -242,18 +242,20 @@ const VendingRow = (props) => {
   const discount = !product.premium && department === user?.department;
   const remaining = custom ? product.amount : productStock.amount;
   const redPrice = Math.round(product.price * jobDiscount);
-  const disabled =
-    remaining === 0 
+  const disabled = remaining === 0 
     || (onstation && !user) 
-    || (onstation && !access && (discount ? redPrice : product.price) > user?.cash);
+    || (onstation && !access 
+        && (discount ? redPrice : product.price) > user?.cash);
 
-      /* POLYCHROME - DISABLED. TODO: GET WORKING.
+  /* POLYCHROME - DISABLED. TODO: GET WORKING.
       ...<Table.Cell bold>{capitalizeAll(product.name)}</Table.Cell>
           <Table.Cell>
-            {!!productStock?.colorable && (<ProductColorSelect disabled={disabled} product={product} />)}
+            {!!productStock?.colorable 
+            && (<ProductColorSelect disabled={disabled} product={product} 
+            />)}
           </Table.Cell>
           <Table.Cell collapsing textAlign="right">...
-      */
+   */
   return (
     <Table.Row>
       <Table.Cell collapsing>
