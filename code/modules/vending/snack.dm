@@ -41,3 +41,6 @@
 
 /obj/machinery/vending/snack/teal
 	icon_state = "snackteal"
+
+/obj/machinery/vending/snack/black
+	icon_state = "snackblack"

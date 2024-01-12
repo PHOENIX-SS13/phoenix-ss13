@@ -4,48 +4,43 @@
 	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs."
 	icon_state = "cigs"
-	products = list(/obj/item/storage/fancy/cigarettes = 5,
+	products = list(/obj/item/lighter/greyscale = 4,
+					/obj/item/storage/fancy/cigarettes = 5,
 					/obj/item/storage/fancy/cigarettes/cigpack_candy = 4,
 					/obj/item/storage/fancy/cigarettes/cigpack_uplift = 3,
 					/obj/item/storage/fancy/cigarettes/cigpack_robust = 3,
 					/obj/item/storage/fancy/cigarettes/cigpack_carp = 3,
 					/obj/item/storage/fancy/cigarettes/cigpack_midori = 3,
 					/obj/item/storage/box/matches = 10,
-					/obj/item/storage/box/matches/matchbook = 5,
-					/obj/item/lighter/greyscale = 4,
-					/obj/item/storage/fancy/rollingpapers = 5,
-					/obj/item/storage/fancy/cig_carton = 2,
-					/obj/item/storage/fancy/cig_carton/dromedary = 2,
-					/obj/item/storage/fancy/cig_carton/uplift = 2,
-					/obj/item/storage/fancy/cig_carton/carp = 2)
-	contraband = list(/obj/item/clothing/mask/vape = 5)
-	premium = list(/obj/item/storage/fancy/cigarettes/cigpack_robustgold = 3,
-				   /obj/item/storage/box/gum/nicotine = 2,
+					/obj/item/storage/box/matches/matchbook = 5)
+	contraband = list(/obj/item/clothing/mask/vape = 5,
+					  /obj/item/storage/fancy/cigarettes/cigpack_robustgold = 3,
+					  /obj/item/storage/fancy/cigarettes/cigpack_syndicate = 2)
+	premium = list(
 				   /obj/item/lighter = 3,
+				   /obj/item/storage/fancy/cig_carton = 2,
+				   /obj/item/storage/fancy/cig_carton/dromedary = 2,
+				   /obj/item/storage/fancy/cig_carton/uplift = 2,
+				   /obj/item/storage/fancy/cig_carton/carp = 2,
+				   /obj/item/storage/box/gum/nicotine = 2,
+				   /obj/item/storage/fancy/rollingpapers = 5,
 		           /obj/item/storage/fancy/cigarettes/cigars = 1,
 		           /obj/item/storage/fancy/cigarettes/cigars/havana = 1,
 		           /obj/item/storage/fancy/cigarettes/cigars/cohiba = 1)
 	refill_canister = /obj/item/vending_refill/cigarette
 	default_price = PAYCHECK_ASSISTANT
-	extra_price = PAYCHECK_HARD
+	extra_price = PAYCHECK_COMMAND
 	payment_department = ACCOUNT_SRV
 	light_mask = "cigs-light-mask"
 
-/obj/machinery/vending/cigarette/syndicate
-	name = "\improper Sus Cigs Deluxe"
-	desc = "A suspiciously well-stocked cigarette machine."
-	product_slogans = "Brigged for elegant taste.;Smoke!;Light with your esword today!"
-	product_ads = "Smoke!;Nicotine heaven.;Serious cigs for serious spacemen.;Don't buy that NT propaganda! Smoke today!;Omnizine filter cigarettes! Certified healthy by 3 out of 7 Interdyne pharmacists!"
-	icon_state = "syndicigs"
-	products = list(/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 7,
-					/obj/item/storage/fancy/cigarettes/cigpack_uplift = 3,
-					/obj/item/storage/fancy/cigarettes/cigpack_candy = 2,
-					/obj/item/storage/fancy/cigarettes/cigpack_robust = 2,
-					/obj/item/storage/fancy/cigarettes/cigpack_carp = 3,
-					/obj/item/storage/fancy/cigarettes/cigpack_midori = 1,
-					/obj/item/storage/box/matches = 10,
-					/obj/item/lighter/greyscale = 4,
-					/obj/item/storage/fancy/rollingpapers = 5)
+/obj/item/vending_refill/cigarette
+	machine_name = "ShadyCigs Deluxe"
+	icon_state = "refill_smoke"
+
+/obj/machinery/vending/cigarette/pre_throw(obj/item/I)
+	if(istype(I, /obj/item/lighter))
+		var/obj/item/lighter/L = I
+		L.set_lit(TRUE)
 
 /obj/machinery/vending/cigarette/beach //Used in the lavaland_biodome_beach.dmm ruin
 	name = "\improper ShadyCigs Ultra"
@@ -62,14 +57,45 @@
 					/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/fancy/rollingpapers = 5)
 	premium = list(/obj/item/storage/fancy/cigarettes/cigpack_mindbreaker = 5,
-					/obj/item/clothing/mask/vape = 5,
-					/obj/item/lighter = 3)
+				   /obj/item/clothing/mask/vape = 5,
+				   /obj/item/lighter = 3,
+				   /obj/item/storage/fancy/cigarettes/cigpack_robustgold = 3,
+				   /obj/item/storage/box/gum/nicotine = 2,
+				   /obj/item/lighter = 3,
+		           /obj/item/storage/fancy/cigarettes/cigars = 1,
+		           /obj/item/storage/fancy/cigarettes/cigars/havana = 1,
+		           /obj/item/storage/fancy/cigarettes/cigars/cohiba = 1)
 
-/obj/item/vending_refill/cigarette
-	machine_name = "ShadyCigs Deluxe"
-	icon_state = "refill_smoke"
 
-/obj/machinery/vending/cigarette/pre_throw(obj/item/I)
-	if(istype(I, /obj/item/lighter))
-		var/obj/item/lighter/L = I
-		L.set_lit(TRUE)
+
+/obj/machinery/vending/cigarette/syndicate
+	name = "\improper SusSmokes"
+	desc = "A suspiciously well-stocked cigarette machine. Wow! It even has the limited edition series! Where did they get those?"
+	product_slogans = "Brigged for elegant taste.;Smoke!;Light with your esword today!;Omnizine filter cigarettes! Certified healthy by 3 out of 7 Interdyne pharmacists!"
+	product_ads = "Smoke!;Nicotine heaven.;Serious cigs for serious spacemen.;Don't buy that NT propaganda! Smoke today!"
+	icon_state = "syndicigs"
+	products = list(/obj/item/lighter = 2,
+					/obj/item/lighter/greyscale = 4,
+					/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 7,
+					/obj/item/storage/fancy/cigarettes/cigpack_uplift = 4,
+					/obj/item/storage/fancy/cigarettes/cigpack_candy = 3,
+					/obj/item/storage/fancy/cigarettes/cigpack_robust = 3,
+					/obj/item/storage/fancy/cigarettes/cigpack_carp = 4,
+					/obj/item/storage/fancy/cigarettes/cigpack_midori = 3,
+					/obj/item/storage/fancy/cigarettes/cigpack_robustgold = 2,
+		            /obj/item/storage/fancy/cigarettes/cigars = 1,
+		            /obj/item/storage/fancy/cigarettes/cigars/havana = 1,
+		            /obj/item/storage/fancy/cigarettes/cigars/cohiba = 1,
+		            /obj/item/storage/box/gum/nicotine = 2,
+		            /obj/item/storage/fancy/rollingpapers = 5,
+		            /obj/item/storage/box/matches = 10,
+					/obj/item/storage/box/matches/matchbook = 5)
+	contraband = list(/obj/item/clothing/mask/vape = 5)
+	premium = list(/obj/item/storage/fancy/cig_carton = 1,
+				   /obj/item/storage/fancy/cig_carton/dromedary = 1,
+				   /obj/item/storage/fancy/cig_carton/uplift = 1,
+				   /obj/item/storage/fancy/cig_carton/carp = 1)
+	light_color = COLOR_VERY_PALE_LIME_GREEN
+	default_price = PAYCHECK_PRISONER
+	extra_price = PAYCHECK_COMMAND
+	payment_department = NO_FREEBIES
