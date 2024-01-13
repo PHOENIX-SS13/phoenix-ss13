@@ -103,9 +103,9 @@ $indigo-light: #555CC2 !default;
 $magenta: #FF00FF !default;
 $magenta-strong: #B800B8 !default;
 $pink: #FFC0CB !default;
-$pink-vibrant: #e03997 !default;
-$pink-vibrant: #ff3cc8 !default;
 $pink-burnt: #E4005B !default;
+$pink-harsh: #ff3cc8 !default;
+$pink-vibrant: #e03997 !default;
 $purple: #a333c8 !default;
 $purple-vibrant: #800080 !default;
 $violet: #6435c9 !default;
@@ -255,9 +255,9 @@ $_gen_map: (
   'magenta' : $magenta,
   'magenta-strong' : $magenta-strong,
   'pink': $pink,
-  'pink-vibrant' : $pink-vibrant,
-  'pink-vibrant' : $pink-vibrant,
   'pink-burnt' : $pink-burnt,
+  'pink-vibrant' : $pink-vibrant,
+  'pink-harsh' : $pink-harsh,
   'purple': $purple,
   'purple-vibrant' : $purple-vibrant,
   'violet': $violet,
