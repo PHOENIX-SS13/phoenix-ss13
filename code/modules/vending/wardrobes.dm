@@ -6,9 +6,12 @@
 	extra_price = PAYCHECK_HARD
 	payment_department = NO_FREEBIES
 	input_display_header = "Returned Clothing"
-	light_mask = "wardrobe-light-mask"
 	icon_broken = "wardrobe-broken"
+	icon_deny = "wardrobe-deny"
 	icon_off = "wardrobe-off"
+	icon_panel = "wardrobe-panel"
+	icon_vend = "wardrobe-vend"
+	light_mask = "wardrobe-light-mask"
 
 /obj/machinery/vending/wardrobe/canLoadItem(obj/item/I,mob/user)
 	return (I.type in products)
@@ -561,6 +564,7 @@
 	desc = "A slightly eerie vending machine that casts a deep emerald light on its customers. It's either the creepiest or most treehugger-y vendor you've ever seen."
 	icon_state = "syndrobe"
 	icon_deny = "syndrobe-deny"
+	icon_panel = "syndrobe-panel"
 	product_ads = "Put a Donk on it!;Aim, Style, Shoot!;Brigged for wearing the best!;Gorlex? I think you mean Gor-FLEX! ... Sorry, I was really proud of that one.;Donklicious!;Donktacular!;Donut Corp hopes you decide to enjoy a donut today!;Recruit your friends!;Contractor?! Where?!"
 	vend_reply = "Thank you for using the SynDrobe!"
 	product_categories = list(

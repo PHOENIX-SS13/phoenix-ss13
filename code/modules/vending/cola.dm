@@ -2,7 +2,13 @@
 /obj/machinery/vending/cola
 	name = "\improper Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
-	icon_state = "Cola_Machine"
+	icon_state = "cola"
+	icon_broken = "cola-broken"
+	icon_deny = "cola-deny"
+	icon_off = "cola-off"
+	icon_panel = "cola-panel"
+	icon_vend = "cola-vend"
+	light_mask = "cola-light-mask"
 	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
@@ -34,55 +40,69 @@
 	icon_state = "refill_cola"
 
 /obj/machinery/vending/cola/blue
-	icon_state = "Cola_Machine"
-	light_mask = "cola-light-mask"
 	light_color = COLOR_MODERATE_BLUE
 
 /obj/machinery/vending/cola/black
 	icon_state = "cola_black"
-	light_mask = "cola-light-mask"
+	icon_broken = "cola_black-broken"
+	icon_off = "cola_black-off"
 
 /obj/machinery/vending/cola/red
-	icon_state = "red_cola"
+	icon_state = "cola_red"
+	icon_broken = "cola_red-broken"
+	icon_off = "cola_red-off"
 	name = "\improper Space Cola Vendor"
 	desc = "It vends cola, in space."
 	product_slogans = "Cola in space!"
-	light_mask = "red_cola-light-mask"
+	light_mask = "cola_red-light-mask"
 	light_color = COLOR_DARK_RED
 
 /obj/machinery/vending/cola/space_up
 	icon_state = "space_up"
+	icon_broken = "space_up-broken"
+	icon_off = "space_up-off"
+	light_mask = "space_up-light-mask"
+	light_color = COLOR_DARK_MODERATE_LIME_GREEN
 	name = "\improper Space-up! Vendor"
 	desc = "Indulge in an explosion of flavor."
 	product_slogans = "Space-up! Like a hull breach in your mouth."
-	light_mask = "space_up-light-mask"
-	light_color = COLOR_DARK_MODERATE_LIME_GREEN
-
-/obj/machinery/vending/cola/starkist
-	icon_state = "starkist"
-	name = "\improper Star-kist Vendor"
-	desc = "The taste of a star in liquid form."
-	product_slogans = "Drink the stars! Star-kist!"
-	light_mask = "starkist-light-mask"
-	light_color = COLOR_LIGHT_ORANGE
 
 /obj/machinery/vending/cola/sodie
 	icon_state = "soda"
+	icon_broken = "soda-broken"
+	icon_off = "soda-off"
+	icon_panel = "soda-panel"
+	icon_vend = "soda-vend"
 	light_mask = "soda-light-mask"
 	light_color = COLOR_WHITE
 
+/obj/machinery/vending/cola/sodie/starkist
+	icon_state = "starkist"
+	icon_broken = "starkist-broken"
+	icon_off = "starkist-off"
+	light_color = COLOR_LIGHT_ORANGE
+	name = "\improper Star-kist Vendor"
+	desc = "The taste of a star in liquid form."
+	product_slogans = "Drink the stars! Star-kist!"
+
 /obj/machinery/vending/cola/pwr_game
 	icon_state = "pwr_game"
+	icon_broken = "pwr_game-broken"
+	icon_off = "pwr_game-off"
+	light_mask = "pwr_game-light-mask"
+	light_color = COLOR_STRONG_VIOLET
 	name = "\improper Pwr Game Vendor"
 	desc = "You want it, we got it. Brought to you in partnership with Vlad's Salads."
 	product_slogans = "The POWER that gamers crave! PWR GAME!"
-	light_mask = "pwr_game-light-mask"
-	light_color = COLOR_STRONG_VIOLET
 
 /obj/machinery/vending/cola/shamblers
 	name = "\improper Shambler's Vendor"
 	desc = "~Shake me up some of that Shambler's Juice!~"
 	icon_state = "shamblers_juice"
+	icon_broken = "shamblers_juice-broken"
+	icon_off = "shamblers_juice-off"
+	light_mask = "shamblers_juice-light-mask"
+	light_color = COLOR_MOSTLY_PURE_PINK
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
@@ -94,5 +114,3 @@
 					/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 10)
 	product_slogans = "~Shake me up some of that Shambler's Juice!~"
 	product_ads = "Refreshing!;Jyrbv dv lg jfdv fw kyrk Jyrdscvi'j Alztv!;Over 1 trillion souls drank!;Thirsty? Nyp efk uizeb kyv uribevjj?;Kyv Jyrdscvi uizebj kyv ezxyk!;Drink up!;Krjkp."
-	light_mask = "shamblers-light-mask"
-	light_color = COLOR_MOSTLY_PURE_PINK

@@ -646,7 +646,7 @@
 /area/awaymission/beach)
 "cd" = (
 /obj/effect/turf_decal/sand,
-/obj/machinery/vending/cola/starkist,
+/obj/effect/spawner/randomcolavend,
 /turf/open/floor/plating/beach/sand,
 /area/awaymission/beach)
 "ce" = (
@@ -664,7 +664,7 @@
 /area/awaymission/beach)
 "cg" = (
 /obj/effect/turf_decal/sand,
-/obj/machinery/vending/cola/space_up,
+/obj/effect/spawner/randomcolavend,
 /turf/open/floor/plating/beach/sand,
 /area/awaymission/beach)
 "ch" = (
