@@ -127,10 +127,16 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/last_slogan = 0
 	///How many ticks until we can send another
 	var/slogan_delay = 6000
-	///Icon when vending an item to the user
+	///Overlay to flash when vending an item to the user
 	var/icon_vend
-	///Icon to flash when user is denied a vend
+	///Overlay to flash when user is denied a vend
 	var/icon_deny
+	///Overlay when broken
+	var/icon_broken
+	///Overlay when off
+	var/icon_off
+	///Overlay when maintenance panel removed
+	var/icon_panel
 	///World ticks the machine is electified for
 	var/seconds_electrified = MACHINE_NOT_ELECTRIFIED
 	///When this is TRUE, we fire items at customers! We're broken!
@@ -265,9 +271,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 /obj/machinery/vending/update_icon_state()
 	if(machine_stat & BROKEN)
-		icon_state = "[initial(icon_state)]-broken"
+		add_overlay(list("[icon_off]"))
+		add_overlay(list("[icon_broken]"))
 		return ..()
-	icon_state = "[initial(icon_state)][powered() ? null : "-off"]"
+	add_overlay(list("[initial(icon_state)][powered() ? null : "-off"]"))
 	return ..()
 
 
@@ -557,7 +564,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		default_deconstruction_screwdriver(user, icon_state, icon_state, I)
 		cut_overlays()
 		if(panel_open)
-			add_overlay("[initial(icon_state)]-panel")
+			add_overlay(list("[icon_panel]"))
 		updateUsrDialog()
 	else
 		to_chat(user, SPAN_WARNING("You must first secure [src]."))
@@ -1013,7 +1020,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		return
 	if (R.amount <= 0)
 		say("Sold out of [R.name].")
-		flick(icon_deny,src)
+		flick_overlay(icon_deny,src)
 		vend_ready = TRUE
 		return
 	if(onstation)
@@ -1023,17 +1030,17 @@ GLOBAL_LIST_EMPTY(vending_products)
 			C = L.get_idcard(TRUE)
 		if(!C)
 			say("No card found.")
-			flick(icon_deny,src)
+			flick_overlay(icon_deny,src)
 			vend_ready = TRUE
 			return
 		else if (!C.registered_account)
 			say("No account found.")
-			flick(icon_deny,src)
+			flick_overlay(icon_deny,src)
 			vend_ready = TRUE
 			return
 		else if(!C.registered_account.account_job)
 			say("Departmental accounts have been blacklisted from personal expenses due to embezzlement.")
-			flick(icon_deny, src)
+			flick_overlay(icon_deny, src)
 			vend_ready = TRUE
 			return
 		else if(age_restrictions && R.age_restricted && (!C.registered_age || C.registered_age < AGE_MINOR))
@@ -1042,7 +1049,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				Radio.set_frequency(FREQ_SECURITY)
 				Radio.talk_into(src, "SECURITY ALERT: Underaged crewmember [usr] recorded attempting to purchase [R.name] in [get_area(src)]. Please watch for substance abuse.", FREQ_SECURITY)
 				GLOB.narcd_underages += usr
-			flick(icon_deny,src)
+			flick_overlay(icon_deny,src)
 			vend_ready = TRUE
 			return
 		var/datum/bank_account/account = C.registered_account
@@ -1054,7 +1061,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
 		if(price_to_use && !account.adjust_money(-price_to_use))
 			say("You do not possess the funds to purchase [R.name].")
-			flick(icon_deny,src)
+			flick_overlay(icon_deny,src)
 			vend_ready = TRUE
 			return
 		var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
@@ -1069,7 +1076,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		last_shopper = REF(usr)
 	use_power(5)
 	if(icon_vend) //Show the vending animation if needed
-		flick(icon_vend,src)
+		flick_overlay(icon_vend,src)
 	playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
 	var/obj/item/vended_item = new R.product_path(get_turf(src))
 	R.amount--
@@ -1288,12 +1295,12 @@ GLOBAL_LIST_EMPTY(vending_products)
 				C = L.get_idcard(TRUE)
 			if(!C)
 				say("No card found.")
-				flick(icon_deny,src)
+				flick_overlay(icon_deny,src)
 				vend_ready = TRUE
 				return
 			else if (!C.registered_account)
 				say("No account found.")
-				flick(icon_deny,src)
+				flick_overlay(icon_deny,src)
 				vend_ready = TRUE
 				return
 			var/datum/bank_account/account = C.registered_account
@@ -1404,7 +1411,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	//starts in a state where you can move it
 	panel_open = TRUE
 	set_anchored(FALSE)
-	add_overlay("[initial(icon_state)]-panel")
+	add_overlay(list("[icon_panel]"))
 	//and references the deity
 	name = "[GLOB.deity]'s Consecrated Vendor"
 	desc = "A vending machine created by [GLOB.deity]."

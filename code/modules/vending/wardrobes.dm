@@ -7,6 +7,8 @@
 	payment_department = NO_FREEBIES
 	input_display_header = "Returned Clothing"
 	light_mask = "wardrobe-light-mask"
+	icon_broken = "wardrobe-broken"
+	icon_off = "wardrobe-off"
 
 /obj/machinery/vending/wardrobe/canLoadItem(obj/item/I,mob/user)
 	return (I.type in products)
