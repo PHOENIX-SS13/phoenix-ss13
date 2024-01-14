@@ -797,13 +797,6 @@
 	list_reagents = list(/datum/reagent/consumable/space_up = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/starkist
-	name = "Star-kist"
-	desc = "The taste of a star in liquid form. And, a bit of tuna...?"
-	icon_state = "starkist"
-	list_reagents = list(/datum/reagent/consumable/space_cola = 15, /datum/reagent/consumable/orangejuice = 15)
-	foodtype = SUGAR | FRUIT | JUNKFOOD
-
 /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind
 	name = "Space Mountain Wind"
 	desc = "Blows right through you like a space wind."
@@ -818,12 +811,26 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko = 30)
 	foodtype = SUGAR | JUNKFOOD
 
+/obj/item/reagent_containers/food/drinks/soda_cans/bepis
+	name = "Bepis"
+	desc = "A delicious mixture of 42 different flavors."
+	icon_state = "bepis"
+	list_reagents = list(/datum/reagent/consumable/bepis = 30)
+	foodtype = SUGAR | JUNKFOOD
+
 /obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb
 	name = "Dr. Gibb"
 	desc = "A delicious mixture of 42 different flavors."
 	icon_state = "dr_gibb"
 	list_reagents = list(/datum/reagent/consumable/dr_gibb = 30)
 	foodtype = SUGAR | JUNKFOOD
+
+/obj/item/reagent_containers/food/drinks/soda_cans/starkist
+	name = "Star-kist"
+	desc = "The taste of a star in liquid form. And, a bit of tuna...?"
+	icon_state = "starkist"
+	list_reagents = list(/datum/reagent/consumable/bepis = 15, /datum/reagent/consumable/orangejuice = 15)
+	foodtype = SUGAR | FRUIT | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/pwr_game
 	name = "Pwr Game"

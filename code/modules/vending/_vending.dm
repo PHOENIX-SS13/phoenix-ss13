@@ -271,10 +271,14 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 /obj/machinery/vending/update_icon_state()
 	if(machine_stat & BROKEN)
-		add_overlay(list("[icon_off]"))
-		add_overlay(list("[icon_broken]"))
+		add_overlay("[icon_off]")
+		add_overlay("[icon_broken]")
 		return ..()
-	add_overlay(list("[initial(icon_state)][powered() ? null : "-off"]"))
+	if(!BROKEN)
+		cut_overlay("[icon_broken]")
+		return ..()
+	add_overlay("[powered() ? null : icon_off]")
+	cut_overlay("[!powered() ? icon_off : null]")
 	return ..()
 
 
@@ -562,9 +566,9 @@ GLOBAL_LIST_EMPTY(vending_products)
 		return TRUE
 	if(anchored)
 		default_deconstruction_screwdriver(user, icon_state, icon_state, I)
-		cut_overlays()
+		cut_overlay("[icon_panel]")
 		if(panel_open)
-			add_overlay(list("[icon_panel]"))
+			add_overlay("[icon_panel]")
 		updateUsrDialog()
 	else
 		to_chat(user, SPAN_WARNING("You must first secure [src]."))
@@ -1411,7 +1415,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	//starts in a state where you can move it
 	panel_open = TRUE
 	set_anchored(FALSE)
-	add_overlay(list("[icon_panel]"))
+	add_overlay("[icon_panel]")
 	//and references the deity
 	name = "[GLOB.deity]'s Consecrated Vendor"
 	desc = "A vending machine created by [GLOB.deity]."

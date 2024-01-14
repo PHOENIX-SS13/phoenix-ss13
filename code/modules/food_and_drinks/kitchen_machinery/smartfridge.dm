@@ -48,17 +48,17 @@
 
 /obj/machinery/smartfridge/update_icon_state()
 	if(machine_stat)
-		add_overlay(list("[initial(icon_state)]-off")) // turns off the computer screen and fits a generic dark case
+		add_overlay("[initial(icon_state)]-off") // turns off the computer screen and fits a generic dark case
 		var/list/shown_contents = contents - component_parts
 		switch(shown_contents.len) // fits a specific dark case
 			if(0)
-				add_overlay(list("[initial(icon_state)]-1-off"))
+				add_overlay("[initial(icon_state)]-1-off")
 			if(1 to 25)
-				add_overlay(list("[initial(icon_state)]-2-off"))
+				add_overlay("[initial(icon_state)]-2-off")
 			if(26 to 75)
-				add_overlay(list("[initial(icon_state)]-3-off"))
+				add_overlay("[initial(icon_state)]-3-off")
 			if(76 to INFINITY)
-				add_overlay(list("[initial(icon_state)]-4-off"))
+				add_overlay("[initial(icon_state)]-4-off")
 	return ..()
 
 	if(!visible_contents)
@@ -68,13 +68,13 @@
 	var/list/shown_contents = contents - component_parts
 	switch(shown_contents.len) // fits a specific case
 		if(0)
-			add_overlay(list("[initial(icon_state)]-1"))
+			add_overlay("[initial(icon_state)]-1")
 		if(1 to 25)
-			add_overlay(list("[initial(icon_state)]-2"))
+			add_overlay("[initial(icon_state)]-2")
 		if(26 to 75)
-			add_overlay(list("[initial(icon_state)]-3"))
+			add_overlay("[initial(icon_state)]-3")
 		if(76 to INFINITY)
-			add_overlay(list("[initial(icon_state)]-4"))
+			add_overlay("[initial(icon_state)]-4")
 	return ..()
 
 /obj/machinery/smartfridge/update_overlays()
@@ -88,9 +88,9 @@
 
 /obj/machinery/smartfridge/attackby(obj/item/O, mob/living/user, params)
 	if(default_deconstruction_screwdriver(user, icon_state, icon_state, O))
-		cut_overlays()
+		cut_overlay("[initial(icon_state)]-panel")
 		if(panel_open)
-			add_overlay(list("[initial(icon_state)]-panel"))
+			add_overlay("[initial(icon_state)]-panel")
 		SStgui.update_uis(src)
 		return
 

@@ -1,6 +1,6 @@
 
 /obj/machinery/vending/cola
-	name = "\improper Robust Softdrinks"
+	name = "\improper Robust Softdrinks Vendor"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
 	icon_state = "cola"
 	icon_broken = "cola-broken"
@@ -13,6 +13,7 @@
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
@@ -68,22 +69,70 @@
 	product_slogans = "Space-up! Like a hull breach in your mouth."
 
 /obj/machinery/vending/cola/sodie
-	icon_state = "soda"
-	icon_broken = "soda-broken"
-	icon_off = "soda-off"
-	icon_panel = "soda-panel"
-	icon_vend = "soda-vend"
-	light_mask = "soda-light-mask"
+	icon_state = "bepis"
+	icon_broken = "bepis-broken"
+	icon_off = "bepis-off"
+	icon_panel = "bepis-panel"
+	icon_vend = "bepis-vend"
+	light_mask = "bepis-light-mask"
+	light_color = COLOR_MODERATE_BLUE
+	name = "\improper Bepis Co. Vendor"
+	desc = "A softdrink vendor provided by Bepis Co."
+	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
+					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
+
+/obj/machinery/vending/cola/sodie/drgibb
+	icon_state = "drgibb"
 	light_color = COLOR_WHITE
+	name = "\improper Dr. Gibb Vendor"
+	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Dr. Gibb by Bepis Co.!"
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
+					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
 /obj/machinery/vending/cola/sodie/starkist
 	icon_state = "starkist"
-	icon_broken = "starkist-broken"
-	icon_off = "starkist-off"
 	light_color = COLOR_LIGHT_ORANGE
 	name = "\improper Star-kist Vendor"
-	desc = "The taste of a star in liquid form."
-	product_slogans = "Drink the stars! Star-kist!"
+	product_slogans = "Drink the stars! Star-kist!;The taste of a star in liquid form.;Starkist by Bepis Co.!"
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
+					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
 /obj/machinery/vending/cola/pwr_game
 	icon_state = "pwr_game"
@@ -105,6 +154,7 @@
 	light_color = COLOR_MOSTLY_PURE_PINK
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,

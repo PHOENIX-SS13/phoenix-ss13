@@ -441,7 +441,7 @@
 	description = "Cola, cola never changes."
 	color = "#100800" // rgb: 16, 8, 0
 	quality = DRINK_VERYGOOD
-	taste_description = "the future"
+	taste_description = "retrofuturism"
 	glass_icon_state = "nuka_colaglass"
 	glass_name = "glass of Nuka Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
@@ -468,12 +468,12 @@
 /datum/reagent/consumable/grey_bull
 	name = "Grey Bull"
 	description = "Grey Bull, it gives you gloves!"
-	color = "#EEFF00" // rgb: 238, 255, 0
+	color = "#575F6A" // rgb: 87, 95, 106
 	quality = DRINK_VERYGOOD
 	taste_description = "carbonated oil"
 	glass_icon_state = "grey_bull_glass"
 	glass_name = "glass of Grey Bull"
-	glass_desc = "Surprisingly it isn't grey."
+	glass_desc = "Unsurprisingly, it is grey."
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/grey_bull/on_mob_metabolize(mob/living/L)
@@ -495,8 +495,8 @@
 /datum/reagent/consumable/spacemountainwind
 	name = "SM Wind"
 	description = "Blows right through you like a space wind."
-	color = "#102000" // rgb: 16, 32, 0
-	taste_description = "sweet citrus soda"
+	color = "#86D773" // rgb: 134, 215, 115
+	taste_description = "tangy-sweet soda"
 	glass_icon_state = "Space_mountain_wind_glass"
 	glass_name = "glass of Space Mountain Wind"
 	glass_desc = "Space Mountain Wind. As you know, there are no mountains in space, only wind."
@@ -510,11 +510,28 @@
 	..()
 	. = TRUE
 
+/datum/reagent/consumable/bepis
+	name = "Dr. Gibb"
+	description = "Driving less tasty competitor Pepsi out of business on Earth in the mid 21 century, Bepis is a renowned hallmark of human culture."
+	color = "#1f0900" // rgb: 31, 9, 0
+	quality = DRINK_VERYGOOD
+	taste_description = "tasty cola"
+	glass_icon_state = "bepis_glass"
+	glass_name = "glass of Bepis"
+	glass_desc = "Bepis. Driving less tasty competitor Pepsi out of business on Earth in the mid 21 century, Bepis is a renowned hallmark of human culture."
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/bepis/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.drowsyness = max(M.drowsyness - (7 * REM * delta_time), 0)
+	M.adjust_bodytemperature(-5 * REM * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, M.get_body_temp_normal())
+	..()
+
 /datum/reagent/consumable/dr_gibb
 	name = "Dr. Gibb"
 	description = "A delicious blend of 42 different flavours."
-	color = "#102000" // rgb: 16, 32, 0
-	taste_description = "cherry soda" // FALSE ADVERTISING
+	color = "#710C1C" // rgb: 16, 32, 0
+	quality = DRINK_GOOD
+	taste_description = "cherry cola" // FALSE ADVERTISING
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of Dr. Gibb"
 	glass_desc = "Dr. Gibb. Not as dangerous as the glass_name might imply."
@@ -528,13 +545,12 @@
 /datum/reagent/consumable/space_up
 	name = "Space-Up"
 	description = "Tastes like a hull breach in your mouth."
-	color = "#00FF00" // rgb: 0, 255, 0
-	taste_description = "cherry soda"
+	color = "#35E0B0" // rgb: 53, 224, 176
+	taste_description = "tropical soda"
 	glass_icon_state = "space-up_glass"
 	glass_name = "glass of Space-Up"
 	glass_desc = "Space-up. It helps you keep your cool."
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-
 
 /datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjust_bodytemperature(-8 * REM * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, M.get_body_temp_normal())
@@ -554,7 +570,6 @@
 /datum/reagent/consumable/lemon_lime/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjust_bodytemperature(-8 * REM * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, M.get_body_temp_normal())
 	..()
-
 
 /datum/reagent/consumable/pwr_game
 	name = "Pwr Game"

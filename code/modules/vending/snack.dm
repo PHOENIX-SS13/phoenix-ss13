@@ -4,6 +4,9 @@
 	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my god it's so juicy!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
+	icon_broken = "snack-broken"
+	icon_deny = "snack-deny"
+	icon_off = "snack-off"
 	light_mask = "snack-light-mask"
 	products = list(/obj/item/food/spacetwinkie = 6,
 					/obj/item/food/cheesiehonkers = 6,
@@ -38,6 +41,9 @@
 
 /obj/machinery/vending/snack/green
 	icon_state = "snackgreen"
+
+/obj/machinery/vending/snack/olive
+	icon_state = "snackolive"
 
 /obj/machinery/vending/snack/teal
 	icon_state = "snackteal"

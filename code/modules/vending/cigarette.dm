@@ -4,6 +4,9 @@
 	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs."
 	icon_state = "cigs"
+	icon_broken = "cigs-broken"
+	icon_off = "cigs-off"
+	icon_panel = "cigs-panel"
 	products = list(/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/fancy/cigarettes = 5,
 					/obj/item/storage/fancy/cigarettes/cigpack_candy = 4,
@@ -73,7 +76,12 @@
 	desc = "A suspiciously well-stocked cigarette machine. Wow! It even has the limited edition series! Where did they get those?"
 	product_slogans = "Brigged for elegant taste.;Smoke!;Light with your esword today!;Omnizine filter cigarettes! Certified healthy by 3 out of 7 Interdyne pharmacists!"
 	product_ads = "Smoke!;Nicotine heaven.;Serious cigs for serious spacemen.;Don't buy that NT propaganda! Smoke today!"
-	icon_state = "syndicigs"
+	icon_state = "sussmokes"
+	icon_broken = "sussmokes-broken"
+	icon_off = "sussmokes-off"
+	icon_panel = "sussmokes-panel"
+	light_mask = "sussmokes-light-mask"
+	light_color = COLOR_VERY_PALE_LIME_GREEN
 	products = list(/obj/item/lighter = 2,
 					/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 7,
@@ -95,7 +103,7 @@
 				   /obj/item/storage/fancy/cig_carton/dromedary = 1,
 				   /obj/item/storage/fancy/cig_carton/uplift = 1,
 				   /obj/item/storage/fancy/cig_carton/carp = 1)
-	light_color = COLOR_VERY_PALE_LIME_GREEN
+
 	default_price = PAYCHECK_PRISONER
 	extra_price = PAYCHECK_COMMAND
 	payment_department = NO_FREEBIES
