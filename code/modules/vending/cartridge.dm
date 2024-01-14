@@ -4,7 +4,11 @@
 	desc = "Cartridges for PDAs."
 	product_slogans = "Carts to go!"
 	icon_state = "cart"
+	icon_broken = "cart-broken"
 	icon_deny = "cart-deny"
+	icon_off = "cart-off"
+	icon_panel = "cart-panel"
+	light_mask = "cart-light-mask"
 	products = list(/obj/item/cartridge/medical = 10,
 					/obj/item/cartridge/engineering = 10,
 					/obj/item/cartridge/security = 10,

@@ -10,31 +10,23 @@
 	icon_vend = "cola-vend"
 	light_mask = "cola-light-mask"
 	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
-	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
-		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
-		            /obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 megatrillion drinks sold!;Thirsty? Why not soft drink?;Please, have a soft drink!;Drink up!;The best drinks in space."
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 25,
+					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 20,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 20,
 					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
-	contraband = list(/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 6,
+	contraband = list(/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 6,
 		              /obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 6)
-	premium = list(/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola = 1,
-		           /obj/item/reagent_containers/food/drinks/soda_cans/air = 1,
-		           /obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy = 1,
-		           /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull = 1)
+	premium = list(/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy = 10,
+		           /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola = 10)
 	refill_canister = /obj/item/vending_refill/cola
 	default_price = PAYCHECK_ASSISTANT * 0.7
 	extra_price = PAYCHECK_MEDIUM
 	payment_department = ACCOUNT_SRV
-
 
 /obj/item/vending_refill/cola
 	machine_name = "Robust Softdrinks"
@@ -57,6 +49,14 @@
 	product_slogans = "Cola in space!"
 	light_mask = "cola_red-light-mask"
 	light_color = COLOR_DARK_RED
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 25,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 20,
+					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
 /obj/machinery/vending/cola/space_up
 	icon_state = "space_up"
@@ -67,6 +67,33 @@
 	name = "\improper Space-up! Vendor"
 	desc = "Indulge in an explosion of flavor."
 	product_slogans = "Space-up! Like a hull breach in your mouth."
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 25,
+					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 20,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 20,
+					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
+
+/obj/machinery/vending/cola/pwr_game
+	icon_state = "pwr_game"
+	icon_broken = "pwr_game-broken"
+	icon_off = "pwr_game-off"
+	light_mask = "pwr_game-light-mask"
+	light_color = COLOR_STRONG_VIOLET
+	name = "\improper Pwr Game Vendor"
+	desc = "You want it, we got it. Brought to you in partnership with Space Cola."
+	product_slogans = "The POWER that gamers crave! PWR GAME!"
+	product_ads = "You want it, we got it.;Brought to you in partnership with Space Cola.;Parched? Power up with PWR GAME!;Drink, NOW!!!;POWER UP! LET'S GOOOOOOOOOOOOOOOOO-;Not the cause of long term heart damage!"
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 25,
+					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 20,
+		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 20,
+					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
 /obj/machinery/vending/cola/sodie
 	icon_state = "bepis"
@@ -78,39 +105,32 @@
 	light_color = COLOR_MODERATE_BLUE
 	name = "\improper Bepis Co. Vendor"
 	desc = "A softdrink vendor provided by Bepis Co."
-	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
-	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
-		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
+	product_slogans = "Bepis: The tastier soft drink!"
+	product_ads = "Try it with Space Costco pizza!;Hope you're thirsty!;Over 1 jigamillion drinks sold!;Thirsty? Bepis.;Humanity's drink!;By humans, for everyone!!!;Bottoms up!;Better than Conke!"
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 25,
+					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 20,
 					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
+	contraband = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 6,
+		              /obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 6)
+	premium = list(/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull = 10,
+		           /obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 10,
+		           /obj/item/reagent_containers/food/drinks/soda_cans/air = 10)
 
-/obj/machinery/vending/cola/sodie/drgibb
+/obj/machinery/vending/cola/sodie/dr_gibb
 	icon_state = "drgibb"
 	light_color = COLOR_WHITE
 	name = "\improper Dr. Gibb Vendor"
-	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Dr. Gibb by Bepis Co.!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
-	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
-		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
+	product_slogans = "Doctor Gibb: You'll be back for more!;Dr. Gibb by Bepis Co.!"
+	product_ads = "Doctor Gibb!;Quench your thirst!;Cherrylicious!;Get Gibbed!;Dr. Gibb: A recipe so clean, it's never had a controversy. Lately.;Sip your gibb!;Best root drinks in the sector!"
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 25,
+					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 20,
 					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
@@ -118,49 +138,28 @@
 	icon_state = "starkist"
 	light_color = COLOR_LIGHT_ORANGE
 	name = "\improper Star-kist Vendor"
-	product_slogans = "Drink the stars! Star-kist!;The taste of a star in liquid form.;Starkist by Bepis Co.!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
-	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
-		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lubricola = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 10,
+	product_slogans = "Starkist: Feel the heat, have a Starkist!;Starkist by Bepis Co.!"
+	product_ads = "Drink the stars! Star-kist!;Starkist!;The taste of a star in liquid form.;Tangy!"
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 25,
+					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 20,
+					/obj/item/reagent_containers/food/drinks/soda_cans/welding_fizz = 20,
 					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
-/obj/machinery/vending/cola/pwr_game
-	icon_state = "pwr_game"
-	icon_broken = "pwr_game-broken"
-	icon_off = "pwr_game-off"
-	light_mask = "pwr_game-light-mask"
-	light_color = COLOR_STRONG_VIOLET
-	name = "\improper Pwr Game Vendor"
-	desc = "You want it, we got it. Brought to you in partnership with Vlad's Salads."
-	product_slogans = "The POWER that gamers crave! PWR GAME!"
-
 /obj/machinery/vending/cola/shamblers
-	name = "\improper Shambler's Vendor"
-	desc = "~Shake me up some of that Shambler's Juice!~"
+	name = "\improper Shambler's Juice Vendor"
+	desc = "You either love, or hate, their jingle. There is no middleground."
 	icon_state = "shamblers_juice"
 	icon_broken = "shamblers_juice-broken"
 	icon_off = "shamblers_juice-off"
 	light_mask = "shamblers_juice-light-mask"
 	light_color = COLOR_MOSTLY_PURE_PINK
-	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
-		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
-		            /obj/item/reagent_containers/food/drinks/soda_cans/bepis = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
-					/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 10)
 	product_slogans = "~Shake me up some of that Shambler's Juice!~"
-	product_ads = "Refreshing!;Jyrbv dv lg jfdv fw kyrk Jyrdscvi'j Alztv!;Over 1 trillion souls drank!;Thirsty? Nyp efk uizeb kyv uribevjj?;Kyv Jyrdscvi uizebj kyv ezxyk!;Drink up!;Krjkp."
+	product_ads = "Refreshing!;Jyrbv dv lg jfdv fw kyrk Jyrdscvi'j Alztv!;Over 1 trillion cans drank!;Over 1 trillion souls drank!;Thirsty? Nyp efk uizeb kyv uribevjj?;Kyv Jyrdscvi uizebj kyv ezxyk!;Drink up!;Krjkp."
+	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 100)
+	contraband = list(/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 6,
+		              /obj/item/reagent_containers/food/drinks/soda_cans/cola = 6)
+	premium = list(/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 10)

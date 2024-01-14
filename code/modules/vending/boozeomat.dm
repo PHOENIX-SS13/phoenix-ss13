@@ -2,7 +2,11 @@
 	name = "\improper Booze-O-Mat"
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
 	icon_state = "boozeomat"
+	icon_broken = "boozeomat-broken"
 	icon_deny = "boozeomat-deny"
+	icon_off = "boozeomat-off"
+	icon_panel = "boozeomat-panel"
+	light_mask = "parts-light-mask"
 	products = list(/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
 					/obj/item/reagent_containers/food/drinks/flask = 3,
