@@ -2,7 +2,10 @@
 	name = "\improper YouTool"
 	desc = "Tools for tools."
 	icon_state = "tool"
+	icon_broken = "tool-broken"
 	icon_deny = "tool-deny"
+	icon_off = "tool-off"
+	icon_panel = "tool-panel"
 	light_mask = "tool-light-mask"
 	products = list(/obj/item/stack/cable_coil = 10,
 					/obj/item/crowbar = 5,

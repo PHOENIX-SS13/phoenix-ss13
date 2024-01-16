@@ -69,6 +69,7 @@
 	name = "\improper Space-up! Vendor"
 	desc = "Indulge in an explosion of flavor."
 	product_slogans = "Space-up! Like a hull breach in your mouth."
+	input_display_header = "Space-up!"
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 25,
 					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 20,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
@@ -84,10 +85,11 @@
 	icon_off = "pwr_game-off"
 	light_mask = "pwr_game-light-mask"
 	light_color = COLOR_STRONG_VIOLET
-	name = "\improper Pwr Game Vendor"
+	name = "\improper PWR Game Vendor"
 	desc = "You want it, we got it. Brought to you in partnership with Space Cola."
 	product_slogans = "The POWER that gamers crave! PWR GAME!"
 	product_ads = "You want it, we got it.;Brought to you in partnership with Space Cola.;Parched? Power up with PWR GAME!;Drink, NOW!!!;POWER UP! LET'S GOOOOOOOOOOOOOOOOO-;Not the cause of long term heart damage!"
+	input_display_header = "PWR Game"
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 25,
 					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 20,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
@@ -109,6 +111,8 @@
 	desc = "A softdrink vendor provided by Bepis Co."
 	product_slogans = "Bepis: The tastier soft drink!"
 	product_ads = "Try it with Space Costco pizza!;Hope you're thirsty!;Over 1 jigamillion drinks sold!;Thirsty? Bepis.;Humanity's drink!;By humans, for everyone!!!;Bottoms up!;Better than Conke!"
+	vend_reply = "Enjoy!"
+	input_display_header = "Bepis"
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 25,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 20,
 					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 20,
@@ -128,6 +132,7 @@
 	name = "\improper Dr. Gibb Vendor"
 	product_slogans = "Doctor Gibb: You'll be back for more!;Dr. Gibb by Bepis Co.!"
 	product_ads = "Doctor Gibb!;Quench your thirst!;Cherrylicious!;Get Gibbed!;Dr. Gibb: A recipe so clean, it's never had a controversy. Lately.;Sip your gibb!;Best root drinks in the sector!"
+	input_display_header = "Dr. Gibb, by Bepis Co."
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 25,
 					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 20,
 					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 20,
@@ -142,6 +147,7 @@
 	name = "\improper Star-kist Vendor"
 	product_slogans = "Starkist: Feel the heat, have a Starkist!;Starkist by Bepis Co.!"
 	product_ads = "Drink the stars! Star-kist!;Starkist!;The taste of a star in liquid form.;Tangy!"
+	input_display_header = "Starkist, by Bepis Co."
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 25,
 					/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 20,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 20,
@@ -159,8 +165,10 @@
 	icon_off = "shamblers_juice-off"
 	light_mask = "shamblers_juice-light-mask"
 	light_color = COLOR_MOSTLY_PURE_PINK
-	product_slogans = "~Shake me up some of that Shambler's Juice!~"
+	product_slogans = "~Shake me up some of that Shambler's Juice~!"
 	product_ads = "Refreshing!;Jyrbv dv lg jfdv fw kyrk Jyrdscvi'j Alztv!;Over 1 trillion cans drank!;Over 1 trillion souls drank!;Thirsty? Nyp efk uizeb kyv uribevjj?;Kyv Jyrdscvi uizebj kyv ezxyk!;Drink up!;Krjkp."
+	vend_reply = "~Shake me up some of that Shambler's Juice~!"
+	input_display_header = "Shambler's"
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 100)
 	contraband = list(/obj/item/reagent_containers/food/drinks/soda_cans/bepis = 6,
 		              /obj/item/reagent_containers/food/drinks/soda_cans/cola = 6)

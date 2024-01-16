@@ -6,6 +6,7 @@
 	extra_price = PAYCHECK_HARD
 	payment_department = NO_FREEBIES
 	input_display_header = "Returned Clothing"
+	icon_state = "generic"
 	icon_broken = "wardrobe-broken"
 	icon_deny = "wardrobe-deny"
 	icon_off = "wardrobe-off"

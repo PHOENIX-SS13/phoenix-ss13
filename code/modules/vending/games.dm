@@ -3,6 +3,11 @@
 	desc = "Vends things that the Captain and Head of Personnel are probably not going to appreciate you fiddling with instead of your job..."
 	product_ads = "Escape to a fantasy world!;Fuel your gambling addiction!;Ruin your friendships!;Roll for initiative!;Elves and dwarves!;Paranoid computers!;Totally not satanic!;Fun times forever!"
 	icon_state = "games"
+	icon_broken = "games-broken"
+	icon_deny = "games-deny"
+	icon_off = "games-off"
+	icon_panel = "games-panel"
+	light_mask = "games-light-mask"
 	products = list(/obj/item/toy/cards/deck = 5,
 		            /obj/item/storage/pill_bottle/dice = 10,
 		            /obj/item/deathroll_dice = 2,
