@@ -643,13 +643,11 @@
 			),
 		),
 	)
-
 	contraband = list(
 		/obj/item/kitchen/knife/combat = 1,
 		/obj/item/stamp/syndicate = 1,
 		/obj/item/storage/box/monkeycubes/syndicate = 1,
 	)
-
 	premium = list(
 		/obj/item/food/pizza/donkpocket = 2,
 	)
@@ -661,3 +659,4 @@
 
 /obj/item/vending_refill/wardrobe/syndicate_wardrobe
 	machine_name = "SynDrobe"
+	icon_state = "refill_donksoft"

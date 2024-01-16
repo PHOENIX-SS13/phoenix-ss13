@@ -3,7 +3,13 @@
 	name = "ClothesMate" //renamed to make the slogan rhyme
 	desc = "A vending machine for clothing."
 	icon_state = "clothes"
+	icon_broken = "wardrobe-broken"
 	icon_deny = "clothes-deny"
+	icon_off = "wardrobe-off"
+	icon_panel = "wardrobe-panel"
+	icon_vend = "wardrobe-vend"
+	light_mask = "wardrobe-light-mask"
+	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this swag!;Why leave style up to fate? Use the ClothesMate!"
 	vend_reply = "Thank you for using the ClothesMate!"
 	products = list(/obj/item/clothing/head/beanie = 3,
@@ -150,8 +156,6 @@
 	default_price = PAYCHECK_ASSISTANT * 0.7 //Default of
 	extra_price = PAYCHECK_HARD
 	payment_department = NO_FREEBIES
-	light_mask = "wardrobe-light-mask"
-	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 
 /obj/machinery/vending/clothing/canLoadItem(obj/item/I,mob/user)
 	return (I.type in products)

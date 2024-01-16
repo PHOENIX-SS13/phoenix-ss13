@@ -48,6 +48,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	desc = "A generic vending machine."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "generic"
+	icon_broken = "generic-broken"
+	icon_off = "generic-off"
+	icon_panel = "generic-panel"
+	light_mask = "generic-light-mask"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	verb_say = "beeps"
@@ -126,7 +130,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Last world tick we sent a slogan message out
 	var/last_slogan = 0
 	///How many ticks until we can send another
-	var/slogan_delay = 6000
+	var/slogan_delay = 6900
 	///Overlay to flash when vending an item to the user
 	var/icon_vend
 	///Overlay to flash when user is denied a vend

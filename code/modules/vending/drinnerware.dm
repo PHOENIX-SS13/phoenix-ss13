@@ -3,6 +3,12 @@
 	desc = "A kitchen and restaurant equipment vendor."
 	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these..."
 	icon_state = "dinnerware"
+	icon_broken = "dinnerware-broken"
+	icon_off = "dinnerware-off"
+	icon_panel = "dinnerware-panel"
+	icon_vend = "dinnerware-vend"
+	light_mask = "dinnerware-light-mask"
+	input_display_header = "Plasteel Chef's Selection"
 	products = list(
 		/obj/item/storage/bag/tray = 8,
 		/obj/item/reagent_containers/glass/bowl = 20,
@@ -28,7 +34,7 @@
 	default_price = PAYCHECK_ASSISTANT * 0.8
 	extra_price = PAYCHECK_HARD
 	payment_department = ACCOUNT_SRV
-	light_mask = "dinnerware-light-mask"
+
 
 /obj/item/vending_refill/dinnerware
 	machine_name = "Plasteel Chef's Dinnerware Vendor"

@@ -7,6 +7,7 @@
 	icon_broken = "cigs-broken"
 	icon_off = "cigs-off"
 	icon_panel = "cigs-panel"
+	light_mask = "cigs-light-mask"
 	products = list(/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/fancy/cigarettes = 5,
 					/obj/item/storage/fancy/cigarettes/cigpack_candy = 4,
@@ -34,7 +35,6 @@
 	default_price = PAYCHECK_ASSISTANT
 	extra_price = PAYCHECK_COMMAND
 	payment_department = ACCOUNT_SRV
-	light_mask = "cigs-light-mask"
 
 /obj/item/vending_refill/cigarette
 	machine_name = "ShadyCigs Deluxe"
@@ -80,7 +80,6 @@
 	icon_broken = "sussmokes-broken"
 	icon_off = "sussmokes-off"
 	icon_panel = "sussmokes-panel"
-	light_mask = "sussmokes-light-mask"
 	light_color = COLOR_VERY_PALE_LIME_GREEN
 	products = list(/obj/item/lighter = 2,
 					/obj/item/lighter/greyscale = 4,
@@ -103,7 +102,6 @@
 				   /obj/item/storage/fancy/cig_carton/dromedary = 1,
 				   /obj/item/storage/fancy/cig_carton/uplift = 1,
 				   /obj/item/storage/fancy/cig_carton/carp = 1)
-
 	default_price = PAYCHECK_PRISONER
 	extra_price = PAYCHECK_COMMAND
 	payment_department = NO_FREEBIES

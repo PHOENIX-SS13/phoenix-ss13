@@ -1,10 +1,15 @@
 //This one's from bay12
 /obj/machinery/vending/engineering
-	name = "\improper Robco Tool Maker"
+	name = "\improper RobCo Toolmaker"
 	desc = "Everything you need for do-it-yourself station repair."
 	icon_state = "engi"
+	icon_broken = "engi-broken"
 	icon_deny = "engi-deny"
+	icon_off = "engi-off"
+	icon_panel = "engi-panel"
+	light_mask = "engi-light-mask"
 	req_access = list(ACCESS_ENGINE_EQUIP)
+	input_display_header = "RobCo."
 	products = list(/obj/item/clothing/under/rank/engineering/chief_engineer = 4,
 		            /obj/item/clothing/under/rank/engineering/engineer = 4,
 		            /obj/item/clothing/shoes/sneakers/orange = 4,
@@ -34,5 +39,5 @@
 	light_mask = "engi-light-mask"
 
 /obj/item/vending_refill/engineering
-	machine_name = "Robco Tool Maker"
+	machine_name = "RobCo Toolmaker"
 	icon_state = "refill_engi"

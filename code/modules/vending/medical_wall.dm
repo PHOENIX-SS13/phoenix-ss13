@@ -1,9 +1,14 @@
 /obj/machinery/vending/wallmed
 	name = "\improper NanoMed"
-	desc = "Wall-mounted Medical Equipment dispenser."
+	desc = "A wall-mounted medical equipment dispenser."
 	icon_state = "wallmed"
+	icon_broken = "wallmed-broken"
 	icon_deny = "wallmed-deny"
+	icon_off = "wallmed-off"
+	icon_panel = "wallmed-panel"
+	light_mask = "wallmed-light-mask"
 	density = FALSE
+	input_display_header = "NANOMED"
 	products = list(/obj/item/reagent_containers/syringe = 3,
 		            /obj/item/reagent_containers/pill/patch/libital = 5,
 					/obj/item/reagent_containers/pill/patch/aiuri = 5,
@@ -17,11 +22,11 @@
 	                  /obj/item/reagent_containers/pill/morphine = 2,
 	                  /obj/item/storage/box/gum/happiness = 1)
 	refill_canister = /obj/item/vending_refill/wallmed
-	default_price = PAYCHECK_HARD //Double the medical price due to being meant for public consumption, not player specfic
+	default_price = PAYCHECK_HARD //Double the medical price due to being meant for public consumption, not player specific
 	extra_price = PAYCHECK_HARD * 1.5
 	payment_department = ACCOUNT_MED
 	tiltable = FALSE
-	light_mask = "wallmed-light-mask"
+
 
 /obj/machinery/vending/wallmed/directional/north
 	dir = SOUTH

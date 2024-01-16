@@ -2,9 +2,15 @@
 	name = "\improper MagiVend"
 	desc = "A magic vending machine."
 	icon_state = "MagiVend"
+	icon_broken = "generic-broken"
+	icon_deny = "generic-deny"
+	icon_off = "generic-off"
+	icon_panel = "generic-panel"
+	light_mask = "generic-light-mask"
 	product_slogans = "Sling spells the proper way with MagiVend!;Be your own Houdini! Use MagiVend!"
 	vend_reply = "Have an enchanted evening!"
 	product_ads = "FJKLFJSD;AJKFLBJAKL;1234 LOONIES LOL!;>MFW;Kill them fuckers!;GET DAT FUKKEN DISK;HONK!;EI NATH;Destroy the station!;Admin conspiracies since forever!;Space-time bending hardware!"
+	input_display_header = "Wizard Federation Choice Selection"
 	products = list(/obj/item/clothing/head/wizard = 1,
 		            /obj/item/clothing/suit/wizrobe = 1,
 		            /obj/item/clothing/head/wizard/red = 1,
@@ -19,4 +25,3 @@
 	default_price = 0 //Just in case, since it's primary use is storage.
 	extra_price = PAYCHECK_COMMAND
 	payment_department = ACCOUNT_SRV
-	light_mask = "magivend-light-mask"

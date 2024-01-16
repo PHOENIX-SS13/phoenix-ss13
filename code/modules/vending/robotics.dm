@@ -1,11 +1,15 @@
 //This one's from bay12
 /obj/machinery/vending/robotics
-	name = "\improper Robotech Deluxe"
+	name = "\improper RoboTech Vendor"
 	desc = "All the tools you need to create your own robot army."
 	icon_state = "robotics"
+	icon_broken = "robotics-broken"
 	icon_deny = "robotics-deny"
+	icon_off = "robotics-off"
+	icon_panel = "robotics-panel"
 	light_mask = "robotics-light-mask"
 	req_access = list(ACCESS_ROBOTICS)
+	input_display_header = "RoboTech"
 	products = list(/obj/item/clothing/suit/toggle/labcoat = 4,
 					/obj/item/clothing/under/rank/rnd/roboticist = 4,
 					/obj/item/stack/cable_coil = 4,
@@ -26,5 +30,5 @@
 	payment_department = ACCOUNT_SCI
 
 /obj/item/vending_refill/robotics
-	machine_name = "Robotech Deluxe"
+	machine_name = "RoboTech Vendor"
 	icon_state = "refill_engi"

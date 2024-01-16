@@ -2,9 +2,14 @@
 	name = "\improper NanoMed Plus"
 	desc = "Medical drug dispenser."
 	icon_state = "med"
+	icon_broken = "plus-broken"
 	icon_deny = "med-deny"
+	icon_off = "plus-off"
+	icon_panel = "plus-panel"
+	light_mask = "plus-light-mask"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
 	req_access = list(ACCESS_MEDICAL)
+	input_display_header = "NANOMED+"
 	products = list(/obj/item/stack/medical/gauze = 8,
 					/obj/item/reagent_containers/syringe = 12,
 					/obj/item/reagent_containers/dropper = 3,
@@ -28,7 +33,7 @@
 	default_price = PAYCHECK_EASY
 	extra_price = PAYCHECK_COMMAND
 	payment_department = ACCOUNT_MED
-	light_mask = "med-light-mask"
+
 
 /obj/item/vending_refill/medical
 	machine_name = "NanoMed Plus"
@@ -46,6 +51,7 @@
 	icon_deny = "drug-deny"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
 	req_access = list(ACCESS_MEDICAL)
+	input_display_header = "NANODRUG+"
 	products = list(/obj/item/reagent_containers/pill/patch/libital = 5,
 					/obj/item/reagent_containers/pill/patch/aiuri = 5,
 					/obj/item/reagent_containers/syringe/convermol = 2,
@@ -74,3 +80,7 @@
 /obj/item/vending_refill/drugs
 	machine_name = "NanoDrug Plus"
 	icon_state = "refill_medical"
+
+/obj/machinery/vending/drugs/syndicate_access
+	name = "\improper SyndiDrug Plus"
+	req_access = list(ACCESS_SYNDICATE)

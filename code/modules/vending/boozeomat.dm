@@ -2,11 +2,11 @@
 	name = "\improper Booze-O-Mat"
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
 	icon_state = "boozeomat"
-	icon_broken = "boozeomat-broken"
-	icon_deny = "boozeomat-deny"
+	icon_broken = "smartfridge-broken"
+	icon_deny = "smartfridge-deny"
 	icon_off = "boozeomat-off"
 	icon_panel = "boozeomat-panel"
-	light_mask = "parts-light-mask"
+	light_mask = "smartfridge-light-mask"
 	products = list(/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
 					/obj/item/reagent_containers/food/drinks/flask = 3,
@@ -59,7 +59,6 @@
 	default_price = PAYCHECK_ASSISTANT * 0.9
 	extra_price = PAYCHECK_COMMAND
 	payment_department = ACCOUNT_SRV
-	light_mask = "boozeomat-light-mask"
 
 /obj/machinery/vending/boozeomat/all_access
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one. This model appears to have no access restrictions."

@@ -1,11 +1,15 @@
 /obj/machinery/vending/security
-	name = "\improper SecTech"
+	name = "\improper SecTech Vendor"
 	desc = "A security equipment vendor."
 	product_ads = "Crack communist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	icon_state = "sec"
+	icon_broken = "sec-broken"
 	icon_deny = "sec-deny"
+	icon_off = "sec-off"
+	icon_panel = "sec-panel"
 	light_mask = "sec-light-mask"
 	req_access = list(ACCESS_SECURITY)
+	input_display_header = "SecTech"
 	products = list(/obj/item/restraints/handcuffs = 8,
 					/obj/item/restraints/handcuffs/cable/zipties = 10,
 					/obj/item/grenade/flashbang = 4,

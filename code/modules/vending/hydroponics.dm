@@ -9,6 +9,7 @@
 	icon_off = "snack-off"
 	icon_panel = "snack-panel"
 	light_mask = "snack-light-mask"
+	input_display_header = "Nutrimax Max Nutrients Selection"
 	products = list(/obj/item/reagent_containers/glass/bottle/nutrient/ez = 30,
 					/obj/item/reagent_containers/glass/bottle/nutrient/l4z = 20,
 					/obj/item/reagent_containers/glass/bottle/nutrient/rh = 10,

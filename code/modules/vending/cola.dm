@@ -11,6 +11,7 @@
 	light_mask = "cola-light-mask"
 	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 megatrillion drinks sold!;Thirsty? Why not soft drink?;Please, have a soft drink!;Drink up!;The best drinks in space."
+	input_display_header = "Robust Softdrinks"
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 25,
 					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 20,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
@@ -29,7 +30,7 @@
 	payment_department = ACCOUNT_SRV
 
 /obj/item/vending_refill/cola
-	machine_name = "Robust Softdrinks"
+	machine_name = "Robust Softdrinks Vendor"
 	icon_state = "refill_cola"
 
 /obj/machinery/vending/cola/blue
@@ -44,11 +45,12 @@
 	icon_state = "cola_red"
 	icon_broken = "cola_red-broken"
 	icon_off = "cola_red-off"
+	light_mask = "cola_red-light-mask"
+	light_color = COLOR_DARK_RED
 	name = "\improper Space Cola Vendor"
 	desc = "It vends cola, in space."
 	product_slogans = "Cola in space!"
-	light_mask = "cola_red-light-mask"
-	light_color = COLOR_DARK_RED
+	input_display_header = "Space Cola"
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 25,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 20,
 					/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 20,

@@ -23,7 +23,7 @@
 	/// If the machine shows an approximate number of its contents on its sprite
 	var/visible_contents = TRUE
 	///Icon to flash when user is denied a vend
-	var/icon_deny = "boozeomat-deny"
+	var/icon_deny = "smartfridge-deny"
 
 /obj/machinery/smartfridge/Initialize()
 	. = ..()

@@ -2,8 +2,14 @@
 	name = "\improper Engi-Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"
 	icon_state = "engivend"
+
+	icon_broken = "engivend-broken"
 	icon_deny = "engivend-deny"
+	icon_off = "engivend-off"
+	icon_panel = "engivend-panel"
+	light_mask = "engivend-light-mask"
 	req_access = list(ACCESS_ENGINE_EQUIP)
+	input_display_header = "Engi-Vend"
 	products = list(/obj/item/clothing/glasses/meson/engine = 2,
 					/obj/item/clothing/glasses/welding = 3,
 					/obj/item/multitool = 4,

@@ -21,7 +21,6 @@
 	default_price = PAYCHECK_COMMAND
 	extra_price = PAYCHECK_COMMAND * 2.5
 	payment_department = ACCOUNT_SRV
-	light_mask="cart-light-mask"
 
 /obj/item/vending_refill/cart
 	machine_name = "PTech"

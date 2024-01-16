@@ -525,12 +525,13 @@
 
 	var/static/list/vending_names_paths = list(
 		/obj/machinery/vending/boozeomat = "Booze-O-Mat",
-		/obj/machinery/vending/boozeomat/syndicate_access = "suspicious Booze-O-Mat",
+		/obj/machinery/vending/boozeomat/syndicate_access = "\improper suspicious Booze-O-Mat",
 		/obj/machinery/vending/coffee = "Solar's Best Hot Drinks",
 		/obj/machinery/vending/snack/blue = "Getmore Chocolate Corp (Blue)",
 		/obj/machinery/vending/snack/orange = "Getmore Chocolate Corp (Orange)",
 		/obj/machinery/vending/snack/green = "Getmore Chocolate Corp (Green)",
 		/obj/machinery/vending/snack/olive = "Getmore Chocolate Corp (Olive)",
+		/obj/machinery/vending/snack/yellow = "Getmore Chocolate Corp (Yellow)",
 		/obj/machinery/vending/snack/teal = "Getmore Chocolate Corp (Teal)",
 		/obj/machinery/vending/snack/black = "Getmore Chocolate Corp (Black)",
 		/obj/machinery/vending/cola/red = "Space Cola",
@@ -546,7 +547,7 @@
 		/obj/machinery/vending/cigarette/beach = "ShadyCigs Ultra",
 		/obj/machinery/vending/cigarette/syndicate = "SusSmokes",
 		/obj/machinery/vending/games = "\improper Good Clean Fun",
-		/obj/machinery/vending/autodrobe = "AutoDrobe",
+		/obj/machinery/vending/clothing = "ClothesMate",
 		/obj/machinery/vending/wardrobe/sec_wardrobe = "SecDrobe",
 		/obj/machinery/vending/wardrobe/det_wardrobe = "DetDrobe",
 		/obj/machinery/vending/wardrobe/medi_wardrobe = "MediDrobe",
@@ -566,10 +567,16 @@
 		/obj/machinery/vending/wardrobe/gene_wardrobe = "GeneDrobe",
 		/obj/machinery/vending/wardrobe/viro_wardrobe = "ViroDrobe",
 		/obj/machinery/vending/wardrobe/syndicate_wardrobe = "Syndrobe",
-		/obj/machinery/vending/clothing = "ClothesMate",
+		/obj/machinery/vending/autodrobe = "AutoDrobe",
 		/obj/machinery/vending/medical = "NanoMed Plus",
+		/obj/machinery/vending/medical/syndicate_access = "\improper suspicious NanoMed Plus",
 		/obj/machinery/vending/drugs = "NanoDrug Plus",
+		/obj/machinery/vending/drugs/syndicate_access = "\improper suspicious NanoDrug Plus",
 		/obj/machinery/vending/wallmed = "NanoMed",
+		/obj/machinery/vending/drugs/syndicate_access = "\improper suspicious NanoMed",
+		/obj/machinery/vending/donksoft = "Donksoft Vendor",
+		/obj/machinery/vending/donksoft/nanotrasen = "\improper reputable Donksoft Vendor",
+		/obj/machinery/vending/donksoft/syndicate = "\improper suspicious Donksoft Vendor",
 		/obj/machinery/vending/assist  = "Part-Mart",
 		/obj/machinery/vending/engivend = "Engi-Vend",
 		/obj/machinery/vending/hydronutrients = "NutriMax",
@@ -577,11 +584,11 @@
 		/obj/machinery/vending/sustenance = "Sustenance Vendor",
 		/obj/machinery/vending/dinnerware = "Plasteel Chef's Dinnerware Vendor",
 		/obj/machinery/vending/cart = "PTech",
-		/obj/machinery/vending/robotics = "Robotech Deluxe",
-		/obj/machinery/vending/engineering = "Robco Tool Maker",
+		/obj/machinery/vending/robotics = "RoboTech",
+		/obj/machinery/vending/engineering = "RobCo Toolmaker",
 		/obj/machinery/vending/sovietsoda = "BODA",
 		/obj/machinery/vending/security = "SecTech",
-		/obj/machinery/vending/modularpc = "Deluxe Silicate Selections",
+		/obj/machinery/vending/modularpc = "Silicate Selections",
 		/obj/machinery/vending/tool = "YouTool",
 		/obj/machinery/vending/custom = "Custom Vendor")
 
@@ -608,20 +615,6 @@
 			set_type(typepath)
 			break
 	return ..()
-
-/obj/item/circuitboard/machine/vending/donksofttoyvendor
-	name = "Donksoft Toy Vendor (Machine Board)"
-	build_path = /obj/machinery/vending/donksofttoyvendor
-	req_components = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/vending_refill/donksoft = 1)
-
-/obj/item/circuitboard/machine/vending/syndicatedonksofttoyvendor
-	name = "Syndicate Donksoft Toy Vendor (Machine Board)"
-	build_path = /obj/machinery/vending/toyliberationstation
-	req_components = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/vending_refill/donksoft = 1)
 
 /obj/item/circuitboard/machine/bountypad
 	name = "Civilian Bounty Pad (Machine Board)"
