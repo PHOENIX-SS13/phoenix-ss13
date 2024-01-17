@@ -10,7 +10,7 @@
 /turf/open/space/basic,
 /area/space)
 "ci" = (
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "cI" = (
 /obj/item/rack_parts/shelf,
@@ -38,15 +38,15 @@
 /area/engineering/main)
 "iq" = (
 /obj/machinery/door/poddoor/shutters/radiation,
-/turf/open/space/basic,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "iw" = (
 /obj/machinery/light/small/broken/directional/east,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "km" = (
 /obj/machinery/light/small/broken/directional/west,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "ks" = (
 /obj/item/stack/sheet/mineral/titanium,
@@ -56,7 +56,7 @@
 /obj/machinery/computer/shuttle{
 	dir = 1
 	},
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "lp" = (
 /obj/effect/spawner/lootdrop/powercell,
@@ -70,11 +70,11 @@
 /area/space)
 "nz" = (
 /obj/structure/cable,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "px" = (
 /obj/machinery/light/small/broken/directional/west,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/space)
 "pC" = (
 /obj/structure/rack/shelf,
@@ -83,7 +83,7 @@
 "pO" = (
 /obj/structure/rack/shelf,
 /obj/machinery/light/small/broken/directional/east,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "qO" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
@@ -156,12 +156,17 @@
 /area/space)
 "DX" = (
 /obj/structure/rack/shelf,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "Gi" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 8
 	},
+/turf/open/space/basic,
+/area/space)
+"GC" = (
+/obj/structure/lattice,
+/obj/structure/frame/machine,
 /turf/open/space/basic,
 /area/space)
 "GZ" = (
@@ -182,7 +187,7 @@
 "IB" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "IJ" = (
 /obj/structure/closet/crate/engineering,
@@ -195,7 +200,7 @@
 /obj/machinery/door/airlock/maintenance/external{
 	dir = 4
 	},
-/turf/open/space/basic,
+/turf/open/floor/mineral/titanium/airless,
 /area/space)
 "Mt" = (
 /obj/machinery/power/apc/auto_name/west,
@@ -207,31 +212,38 @@
 /obj/machinery/shuttle_comms/active{
 	pixel_y = 5
 	},
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "Rv" = (
 /obj/structure/chair/comfy/shuttle,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "RJ" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/structure/low_wall/titanium,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/space)
 "Sp" = (
 /obj/machinery/light/broken/directional/west,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "St" = (
 /obj/machinery/light/broken/directional/east,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/airless,
 /area/engineering/main)
 "Tn" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering,
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"TU" = (
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering,
+/obj/machinery/atmospherics/components/unary/engine{
+	dir = 1
+	},
 /turf/closed/wall/mineral/titanium,
 /area/space)
 "Uq" = (
@@ -259,10 +271,6 @@
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /turf/open/space/basic,
 /area/space)
-"Zd" = (
-/obj/machinery/door/poddoor/shutters/radiation,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
 
 (1,1,1) = {"
 Ap
@@ -433,7 +441,7 @@ cc
 Ap
 Ap
 Ap
-vp
+TU
 cI
 HA
 UQ
@@ -488,7 +496,7 @@ dx
 dx
 UQ
 UQ
-Zd
+iq
 ci
 ci
 ci
@@ -673,7 +681,7 @@ Ap
 Ap
 cc
 Ap
-wI
+GC
 HA
 HA
 HA
