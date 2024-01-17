@@ -1,0 +1,561 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"d" = (
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"e" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"j" = (
+/obj/machinery/power/smes/engineering{
+	charge = 0
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"l" = (
+/obj/machinery/atmospherics/components/unary/engine,
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"m" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"n" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4;
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4;
+	pixel_x = 13;
+	pixel_y = 6
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"o" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"p" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/frame/computer,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"q" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/material,
+/obj/effect/spawner/lootdrop/material,
+/obj/effect/spawner/lootdrop/material,
+/obj/effect/spawner/lootdrop/material,
+/obj/effect/spawner/lootdrop/material,
+/obj/effect/spawner/lootdrop/material,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"t" = (
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"v" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/ash/large,
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"w" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"y" = (
+/obj/structure/closet/excavation,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"A" = (
+/obj/structure/cable,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"E" = (
+/obj/structure/shuttle/engine/heater,
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"G" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"J" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/low_wall/titanium,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"L" = (
+/turf/closed/mineral/random,
+/area/space)
+"M" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"P" = (
+/obj/machinery/power/apc/auto_name/west{
+	locked = 0
+	},
+/obj/structure/cable,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"S" = (
+/obj/structure/shuttle/engine/heater,
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"T" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"U" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"W" = (
+/obj/machinery/shuttle_comms/active{
+	pixel_y = 4
+	},
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"Y" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/mineral/titanium/airless,
+/area/space)
+"Z" = (
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+
+(1,1,1) = {"
+a
+a
+a
+a
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+L
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(3,1,1) = {"
+a
+L
+L
+L
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(4,1,1) = {"
+L
+L
+L
+L
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(5,1,1) = {"
+L
+L
+L
+L
+L
+L
+L
+Z
+Z
+a
+a
+a
+a
+a
+t
+t
+t
+t
+t
+o
+t
+t
+t
+"}
+(6,1,1) = {"
+L
+L
+L
+L
+L
+L
+Z
+Z
+Z
+w
+a
+a
+a
+a
+J
+U
+d
+G
+P
+d
+M
+E
+l
+"}
+(7,1,1) = {"
+L
+L
+L
+L
+L
+L
+Z
+Z
+w
+v
+a
+a
+L
+L
+L
+p
+Y
+d
+A
+d
+M
+T
+t
+"}
+(8,1,1) = {"
+L
+L
+L
+L
+L
+L
+Z
+Z
+Z
+w
+a
+a
+L
+L
+J
+W
+n
+d
+A
+A
+e
+j
+t
+"}
+(9,1,1) = {"
+L
+L
+L
+L
+L
+L
+L
+Z
+Z
+Z
+a
+a
+a
+a
+J
+y
+m
+q
+q
+d
+M
+S
+l
+"}
+(10,1,1) = {"
+L
+L
+L
+L
+L
+L
+L
+L
+Z
+Z
+a
+a
+a
+a
+t
+t
+t
+t
+t
+o
+t
+t
+t
+"}
+(11,1,1) = {"
+L
+L
+L
+L
+L
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(12,1,1) = {"
+L
+L
+L
+L
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(13,1,1) = {"
+a
+L
+L
+L
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(14,1,1) = {"
+a
+L
+L
+L
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(15,1,1) = {"
+a
+a
+a
+L
+L
+L
+L
+L
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(16,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
