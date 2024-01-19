@@ -206,7 +206,8 @@ const ProductDisplay = (context, props: {
         !!onstation && user && (
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
-          </Box>)}>
+          </Box>)
+      }>
       <Table>
         {inventory
           .filter((product) => {
@@ -374,11 +375,11 @@ const CATEGORY_COLORS = {
   Premium: 'yellow',
 };
 
-const CategorySelector = (props: {
+const CategorySelector = (props: {|
   categories: Record<string, Category>;
   selectedCategory: string;
   onSelect: (category: string) => void;
-}) => {
+|}) => {
   const { categories, selectedCategory, onSelect } = props;
 
   return (
