@@ -224,10 +224,14 @@
 			update_static_data(usr)
 			return TRUE
 
+#define BLACKBOX_INTACT 0
+#define BLACKBOX_EXPOSED 1
+#define BLACKBOX_RETRIEVED 2
+
 /obj/machinery/shuttle_comms/active
 	manual_distress = TRUE
 	desc = "A slightly banged up communications array. At least these things can take a beating."
-	var/blackbox_retrieved = FALSE
+	var/blackbox_status = BLACKBOX_INTACT
 
 /obj/machinery/shuttle_comms/active/Initialize()
 	. = ..()
@@ -235,17 +239,26 @@
 
 /obj/machinery/shuttle_comms/active/examine(mob/user)
 	. = ..()
-	if(blackbox_retrieved)
-		. += SPAN_NOTICE("Upon inspection, it's missing its blackbox.")
-	else
-		. += SPAN_NOTICE("Its blackbox is in place and intact. You could retrieve it after removing a few screws.")
+	switch(blackbox_status)
+		if(BLACKBOX_INTACT)
+			. += SPAN_NOTICE("Its blackbox is in place and intact. You could retrieve it after removing a few screws.")
+		if(BLACKBOX_EXPOSED)
+			. += SPAN_NOTICE("Its blackbox is exposed. You could reach in and pull it out.")
+		if(BLACKBOX_RETRIEVED)
+			. += SPAN_NOTICE("Upon inspection, it's missing its blackbox.")
 
 /obj/machinery/shuttle_comms/active/tool_act(mob/living/user, obj/item/tool, tool_type)
-	if(tool_type != TOOL_SCREWDRIVER || blackbox_retrieved)
+	if(tool_type != TOOL_SCREWDRIVER || blackbox_status != BLACKBOX_INTACT)
 		return
 	if(do_after(user, 10 SECONDS, src))
-		new /obj/item/blackbox/shuttle_comms(loc)
-		blackbox_retrieved = TRUE
+		blackbox_status = BLACKBOX_EXPOSED
+
+/obj/machinery/shuttle_comms/active/attack_hand(mob/user, list/modifiers)
+	. = ..()
+	if(blackbox_status == BLACKBOX_EXPOSED)
+		var/obj/item/blackbox/shuttle_comms/bbox = new /obj/item/blackbox/shuttle_comms(src)
+		user.put_in_hands(bbox)
+		blackbox_status = BLACKBOX_RETRIEVED
 
 /obj/item/blackbox/shuttle_comms
 	name = "blackbox"
@@ -289,3 +302,7 @@
 	path = /obj/item/blackbox/shuttle_comms
 	bounty_text = "We will reward you for retrieving the blackbox from any incapacitated shuttles that may be in the area."
 	bounty_complete_text = "Thank you. Your reward is being transferred."
+
+#undef BLACKBOX_INTACT
+#undef BLACKBOX_EXPOSED
+#undef BLACKBOX_RETRIEVED
