@@ -206,10 +206,7 @@ const ProductDisplay = (context, props: {
         !!onstation && user && (
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
-          </Box>
-      )
-      }
-    >
+          </Box>)}>
       <Table>
         {inventory
           .filter((product) => {
