@@ -1861,7 +1861,6 @@
 		"borg_syndicate_module",
 		"decloner",
 		"donksoft_refill",
-		"donksofttoyvendor",
 		"largecrossbow",
 		"rapidsyringe",
 		"suppressor",
