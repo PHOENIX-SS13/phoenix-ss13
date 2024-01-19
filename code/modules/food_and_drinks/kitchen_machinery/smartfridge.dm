@@ -48,22 +48,25 @@
 
 /obj/machinery/smartfridge/update_icon_state()
 	if(machine_stat)
-		add_overlay("[initial(icon_state)]-off") // turns off the computer screen and fits a generic dark case
-		var/list/shown_contents = contents - component_parts
-		switch(shown_contents.len) // fits a specific dark case
-			if(0)
-				add_overlay("[initial(icon_state)]-1-off")
-			if(1 to 25)
-				add_overlay("[initial(icon_state)]-2-off")
-			if(26 to 75)
-				add_overlay("[initial(icon_state)]-3-off")
-			if(76 to INFINITY)
-				add_overlay("[initial(icon_state)]-4-off")
-		return ..()
+		if(!visible_contents)
+			add_overlay("[initial(icon_state)]-off") // turns off the computer screen and fits a generic dark case
+			return ..()
+		else
+			add_overlay("[initial(icon_state)]-off")
+			var/list/shown_contents = contents - component_parts
+			switch(shown_contents.len) // fits a specific dark case
+				if(0)
+					add_overlay("[initial(icon_state)]-1-off")
+				if(1 to 25)
+					add_overlay("[initial(icon_state)]-2-off")
+				if(26 to 75)
+					add_overlay("[initial(icon_state)]-3-off")
+				if(76 to INFINITY)
+					add_overlay("[initial(icon_state)]-4-off")
+			return ..()
 
 	if(!visible_contents)
-		cut_overlays("[initial(icon_state)]-2-off", "[initial(icon_state)]-3-off", "[initial(icon_state)]-4-off")
-		add_overlay("[initial(icon_state)]-1-off")
+		icon_state = "[initial(icon_state)]"
 		return ..()
 
 	var/list/shown_contents = contents - component_parts
