@@ -227,7 +227,7 @@
 /obj/machinery/shuttle_comms/active
 	manual_distress = TRUE
 	desc = "A slightly banged up communications array. At least these things can take a beating."
-	blackbox_retrieved = FALSE
+	var/blackbox_retrieved = FALSE
 
 /obj/machinery/shuttle_comms/active/Initialize()
 	. = ..()
@@ -259,11 +259,40 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/trader_bounty/blackbox
-	bounty_name = "\proper "
-	amount = 3
+	bounty_name = "\proper blackbox retrieval"
+	amount = 99
 	reward_cash = 2000
 	possible_paths = list(
-		/obj/item/food/meat/slab/monkey,
-		/obj/item/food/fishmeat/carp
+		/obj/item/blackbox/shuttle_comms
 		)
-	bounty_text = "We're in need of a couple meat products to supply our kitchen. Hope you can help us!"
+	bounty_text = "We will reward you for retrieving the blackbox from any incapacitated shuttles that may be in the area."
+
+/datum/trader/echoes
+	name = "Data Specialist"
+	possible_origins = list("ECHOES")
+	trade_flags = TRADER_MONEY
+	speech = list("hail"    = "Hello! Welcome to ORIGIN, may I take your order?",
+				"hail_deny"         = "All our operators are currently busy. Please try again later.",
+
+				"trade_complete"    = "Thank you for choosing ORIGIN!",
+				"trade_no_goods"    = "I'm sorry but we only take cash.",
+				"trade_found_unwanted" = "We only need ingredients, man.",
+				"trade_not_enough"  = "Uhh... that's not enough money for pizza.",
+				"how_much"          = "That pizza will cost you VALUE credits.",
+				"what_want"         = "We could use a bit more...",
+
+				"compliment_deny"   = "That's a bit forward, don't you think?",
+				"compliment_accept" = "Thanks, sir! You're very nice!",
+				"insult_good"       = "Please stop that, sir.",
+				"insult_bad"        = "Sir, just because I'm contractually obligated to keep you on the line for a minute doesn't mean I have to take this.")
+	sold_goods = list()
+	bought_goods = list(
+		)
+	delivery_gain_chance = 0
+	possible_deliveries = list(
+		)
+	possible_bounties = list(
+		/datum/trader_bounty/blackbox = 100,
+		)
+	possible_supplies_bounties = list(
+		)
