@@ -258,33 +258,22 @@
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/trader_bounty/blackbox
-	bounty_name = "\proper blackbox retrieval"
-	amount = 99
-	reward_cash = 2000
-	possible_paths = list(
-		/obj/item/blackbox/shuttle_comms
-		)
-	bounty_text = "We will reward you for retrieving the blackbox from any incapacitated shuttles that may be in the area."
-
 /datum/trader/echoes
 	name = "Data Specialist"
 	possible_origins = list("ECHOES")
 	trade_flags = TRADER_MONEY
-	speech = list("hail"    = "Hello! Welcome to ORIGIN, may I take your order?",
+	speech = list("hail"    = "ECHOES data department. You have a blackbox?",
 				"hail_deny"         = "All our operators are currently busy. Please try again later.",
 
-				"trade_complete"    = "Thank you for choosing ORIGIN!",
-				"trade_no_goods"    = "I'm sorry but we only take cash.",
-				"trade_found_unwanted" = "We only need ingredients, man.",
-				"trade_not_enough"  = "Uhh... that's not enough money for pizza.",
-				"how_much"          = "That pizza will cost you VALUE credits.",
-				"what_want"         = "We could use a bit more...",
+				"trade_complete"    = "Enjoy your bounty.",
+				"trade_no_goods"    = "We only BUY blackboxes.",
+				"trade_found_unwanted" = "I only need blackboxes.",
+				"what_want"         = "If you find any busted up shuttles, get the blackbox from the comms array.",
 
-				"compliment_deny"   = "That's a bit forward, don't you think?",
-				"compliment_accept" = "Thanks, sir! You're very nice!",
-				"insult_good"       = "Please stop that, sir.",
-				"insult_bad"        = "Sir, just because I'm contractually obligated to keep you on the line for a minute doesn't mean I have to take this.")
+				"compliment_deny"   = "Just doing my job.",
+				"compliment_accept" = "Uh, okay. I mean, just doing my job.",
+				"insult_good"       = "I just work here.",
+				"insult_bad"        = "Seriously, I just work here.")
 	sold_goods = list()
 	bought_goods = list(
 		)
@@ -296,3 +285,12 @@
 		)
 	possible_supplies_bounties = list(
 		)
+
+/datum/trader_bounty/blackbox
+	bounty_name = "\proper blackbox retrieval"
+	amount = 99
+	reward_cash = 2000
+	possible_paths = list(
+		/obj/item/blackbox/shuttle_comms
+		)
+	bounty_text = "We will reward you for retrieving the blackbox from any incapacitated shuttles that may be in the area."
