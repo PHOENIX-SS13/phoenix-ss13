@@ -339,8 +339,8 @@ const ProductStock = (props) => {
 };
 
 /** The main button to purchase an item. */
-const ProductButton = (props) => {
-  const { act, data } = useBackend(context);
+const ProductButton = (props, context) => {
+  const { act, data } = useBackend<VendingData>(context);
   const { access } = data;
   const { custom, discount, disabled, free, product, redPrice } = props;
   const customPrice = access ? 'FREE' : product.price;
