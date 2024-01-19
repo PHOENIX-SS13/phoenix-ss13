@@ -82,6 +82,7 @@ export const Vending = (props, context) => {
     stock,
   } = data;
   const [selectedCategory, setSelectedCategory] = useLocalState<string>(
+    context,
     'selectedCategory',
     Object.keys(data.categories)[0],
   );
