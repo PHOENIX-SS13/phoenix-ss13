@@ -48,9 +48,17 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	desc = "A generic vending machine."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "generic"
-	icon_broken = "generic-broken"
-	icon_off = "generic-off"
-	icon_panel = "generic-panel"
+	///Overlay when broken
+	var/icon_broken = "generic-broken"
+	///Overlay to flash when user is denied a vend
+	var/icon_deny
+	///Overlay when off
+	var/icon_off = "generic-off"
+	///Overlay when maintenance panel removed
+	var/icon_panel = "generic-panel"
+	///Overlay to flash when vending an item to the user
+	var/icon_vend
+	///Light mask
 	light_mask = "generic-light-mask"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
@@ -131,16 +139,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/last_slogan = 0
 	///How many ticks until we can send another
 	var/slogan_delay = 6900
-	///Overlay to flash when vending an item to the user
-	var/icon_vend
-	///Overlay to flash when user is denied a vend
-	var/icon_deny
-	///Overlay when broken
-	var/icon_broken
-	///Overlay when off
-	var/icon_off
-	///Overlay when maintenance panel removed
-	var/icon_panel
 	///World ticks the machine is electified for
 	var/seconds_electrified = MACHINE_NOT_ELECTRIFIED
 	///When this is TRUE, we fire items at customers! We're broken!
