@@ -59,12 +59,12 @@
 				add_overlay("[initial(icon_state)]-3-off")
 			if(76 to INFINITY)
 				add_overlay("[initial(icon_state)]-4-off")
-	return ..()
+		return ..()
 
 	if(!visible_contents)
 		cut_overlays("[initial(icon_state)]-2-off", "[initial(icon_state)]-3-off", "[initial(icon_state)]-4-off")
 		add_overlay("[initial(icon_state)]-1-off")
-	return ..()
+		return ..()
 
 	var/list/shown_contents = contents - component_parts
 	switch(shown_contents.len) // fits a specific case
