@@ -227,16 +227,43 @@
 /obj/machinery/shuttle_comms/active
 	manual_distress = TRUE
 	desc = "A slightly banged up communications array. At least these things can take a beating."
+	blackbox_retrieved = FALSE
 
 /obj/machinery/shuttle_comms/active/Initialize()
 	. = ..()
 	set_distress(TRUE)
 
+/obj/machinery/shuttle_comms/active/examine(mob/user)
+	. = ..()
+	if(blackbox_retrieved)
+		. += SPAN_NOTICE("Upon inspection, it's missing its blackbox.")
+	else
+		. += SPAN_NOTICE("Its blackbox is in place and intact.")
+
+/obj/machinery/shuttle_comms/active/screwdriver_act(mob/living/user, obj/item/tool)
+	if(!blackbox_retrieved && do_after(user, 10 SECONDS, src))
+		new /obj/item/blackbox/shuttle_comms(loc)
+		blackbox_retrieved = TRUE
+
+/obj/item/blackbox/shuttle_comms
+	name = "blackbox"
+	desc = "A dense data storage medium containing whatever messages were sent and received by the communications array it was taken from."
+
 /datum/design/board/shuttle_comms
-	name = "Machine Design (Comms Array)"
+	name = "\proper machine design (comms array)"
 	desc = "The circuit board for a comms array."
 	id = "shuttle_comms"
 	build_type = IMPRINTER
 	build_path = /obj/item/circuitboard/machine/shuttle_comms
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/trader_bounty/blackbox
+	bounty_name = "\proper "
+	amount = 3
+	reward_cash = 2000
+	possible_paths = list(
+		/obj/item/food/meat/slab/monkey,
+		/obj/item/food/fishmeat/carp
+		)
+	bounty_text = "We're in need of a couple meat products to supply our kitchen. Hope you can help us!"
