@@ -286,4 +286,4 @@
 	desc = "A face-covering mask that can be connected to an air supply. This one doesn't obscure the wearer's face."
 	icon_state = "gas_clear"
 	flags_inv = HIDEEYES
-	fitted_bodytypes = BODYTYPE_DIGITIGRADE
+	fitted_bodytypes = BODYTYPE_DIGITIGRADE|BODYTYPE_VOX
