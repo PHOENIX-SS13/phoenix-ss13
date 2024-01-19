@@ -375,11 +375,11 @@ const CATEGORY_COLORS = {
   Premium: 'yellow',
 };
 
-const CategorySelector = (props: {|
+const CategorySelector = (category, context, props: {
   categories: Record<string, Category>;
   selectedCategory: string;
   onSelect: (category: string) => void;
-|}) => {
+}) => {
   const { categories, selectedCategory, onSelect } = props;
 
   return (
