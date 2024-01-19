@@ -29,17 +29,16 @@
 			"products" = list(
 				/obj/item/gun/ballistic/automatic/pistol = 4,
 				/obj/item/gun/ballistic/automatic/pistol/aps = 1,
-				/obj/item/gun/ballistic/automatic/pistol/m1911 = 3
+				/obj/item/gun/ballistic/automatic/pistol/m1911 = 3,
 				/obj/item/gun/ballistic/automatic/pistol/deagle = 2,
 		        /obj/item/gun/ballistic/automatic/pistol/deagle/camo = 2,
 		        /obj/item/gun/ballistic/automatic/pistol/deagle/gold = 1,
-
 			),
 		),
 		list(
 			"name" = "Freedom Winners",
 			"products" = list(
-				/obj/item/gun/ballistic/automatic/ar = 2
+				/obj/item/gun/ballistic/automatic/ar = 2,
 				/obj/item/gun/ballistic/automatic/l6_saw/unrestricted = 1,
 				/obj/item/gun/ballistic/shotgun = 2,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 2
@@ -56,7 +55,7 @@
 			"name" = "Gift Shop",
 			"products" = list(
 				/obj/item/clothing/under/misc/patriotsuit = 3,
-		    	/obj/item/bedsheet/patriot = 5,  //U S A
+		    	/obj/item/bedsheet/patriot = 5  //U S A
 			),
 		),
 	)
@@ -74,4 +73,3 @@
 	default_price = PAYCHECK_HARD * 2.5
 	extra_price = PAYCHECK_COMMAND * 2.5
 	payment_department = ACCOUNT_SEC
-
