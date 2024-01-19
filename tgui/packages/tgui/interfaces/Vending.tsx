@@ -155,7 +155,7 @@ export const Vending = (props, context) => {
 };
 
 /** Displays user details if an ID is present and the user is on the station */
-export const UserDetails = (props) => {
+export const UserDetails = (props, context) => {
   const { act, data } = useBackend(context);
   const { user } = data;
 
@@ -186,13 +186,13 @@ export const UserDetails = (props) => {
   }
 };
 
-/** Displays  products in a section, with user balance at top */
+/** Displays products in a section, with user balance at top */
 const ProductDisplay = (props: {
   custom: boolean;
   selectedCategory: string | null;
   inventory: (ProductRecord | CustomInput)[];
 }) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<VendingData>();
   const { custom, inventory, selectedCategory } = props;
   const { stock, onstation, user } = data;
 
@@ -235,7 +235,7 @@ const ProductDisplay = (props: {
  * Uses a table layout. Labeledlist might be better,
  * but you cannot use item icons as labels currently.
  */
-const VendingRow = (props) => {
+const VendingRow = (props, context) => {
   const { act, data } = useBackend<VendingData>(context);
   const { custom, product, productStock } = props;
   const { access, department, jobDiscount, onstation, user } = data;
