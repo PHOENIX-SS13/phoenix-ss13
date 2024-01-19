@@ -156,7 +156,7 @@ export const Vending = (props, context) => {
 
 /** Displays user details if an ID is present and the user is on the station */
 export const UserDetails = (props, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<VendingData>(context);
   const { user } = data;
 
   if (!user) {
