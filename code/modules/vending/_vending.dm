@@ -453,7 +453,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 	. += refill_inventory(canister.contraband, hidden_records)
 	. += refill_inventory(canister.premium, coin_records)
-	return ..()
+	return .
 
 /**
  * Refill our inventory from the passed in product list into the record list

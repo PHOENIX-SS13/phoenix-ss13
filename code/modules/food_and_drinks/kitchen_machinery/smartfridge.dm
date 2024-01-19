@@ -62,7 +62,8 @@
 	return ..()
 
 	if(!visible_contents)
-		icon_state = "[initial(icon_state)]"
+		cut_overlays("[initial(icon_state)]-2-off", "[initial(icon_state)]-3-off", "[initial(icon_state)]-4-off")
+		add_overlay("[initial(icon_state)]-1-off")
 	return ..()
 
 	var/list/shown_contents = contents - component_parts
