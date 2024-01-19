@@ -187,12 +187,12 @@ export const UserDetails = (props, context) => {
 };
 
 /** Displays products in a section, with user balance at top */
-const ProductDisplay = (props: {
+const ProductDisplay = (context, props: {
   custom: boolean;
   selectedCategory: string | null;
   inventory: (ProductRecord | CustomInput)[];
 }) => {
-  const { act, data } = useBackend<VendingData>();
+  const { act, data } = useBackend<VendingData>(context);
   const { custom, inventory, selectedCategory } = props;
   const { stock, onstation, user } = data;
 
@@ -206,7 +206,7 @@ const ProductDisplay = (props: {
           <Box fontSize="16px" color="green">
             {(user && user.cash) || 0}
           </Box>
-        )
+      )
       }
     >
       <Table>
