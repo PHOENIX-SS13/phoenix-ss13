@@ -59,7 +59,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Overlay to flash when vending an item to the user
 	var/icon_vend
 	///Name of lighting mask for the vending machine
-	light_mask = "generic-light-mask"
+	var/light_mask = "generic-light-mask"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	verb_say = "beeps"
@@ -93,7 +93,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	  * form should be list(/type/path = amount, /type/path2 = amount2)
 	  */
 	var/list/products = list()
-
 	/**
 	 * List of products this machine sells, categorized.
 	 * Can only be used as an alternative to `products`, not alongside it.
@@ -104,7 +103,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	 * )
 	 */
 	var/list/product_categories = null
-
 	/**
 	  * List of products this machine sells when you hack it
 	  *
