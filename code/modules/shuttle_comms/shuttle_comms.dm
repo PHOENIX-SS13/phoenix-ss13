@@ -238,10 +238,12 @@
 	if(blackbox_retrieved)
 		. += SPAN_NOTICE("Upon inspection, it's missing its blackbox.")
 	else
-		. += SPAN_NOTICE("Its blackbox is in place and intact.")
+		. += SPAN_NOTICE("Its blackbox is in place and intact. You could retrieve it after removing a few screws.")
 
-/obj/machinery/shuttle_comms/active/screwdriver_act(mob/living/user, obj/item/tool)
-	if(!blackbox_retrieved && do_after(user, 10 SECONDS, src))
+/obj/machinery/shuttle_comms/active/tool_act(mob/living/user, obj/item/tool, tool_type)
+	if(tool_type != TOOL_SCREWDRIVER || blackbox_retrieved)
+		return
+	if(do_after(user, 10 SECONDS, src))
 		new /obj/item/blackbox/shuttle_comms(loc)
 		blackbox_retrieved = TRUE
 
@@ -266,7 +268,7 @@
 				"hail_deny"         = "All our operators are currently busy. Please try again later.",
 
 				"trade_complete"    = "Enjoy your bounty.",
-				"trade_no_goods"    = "We only BUY blackboxes.",
+				"trade_no_goods"    = "Just check the bounties.",
 				"trade_found_unwanted" = "I only need blackboxes.",
 				"what_want"         = "If you find any busted up shuttles, get the blackbox from the comms array.",
 
@@ -274,23 +276,16 @@
 				"compliment_accept" = "Uh, okay. I mean, just doing my job.",
 				"insult_good"       = "I just work here.",
 				"insult_bad"        = "Seriously, I just work here.")
-	sold_goods = list()
-	bought_goods = list(
-		)
-	delivery_gain_chance = 0
-	possible_deliveries = list(
-		)
 	possible_bounties = list(
 		/datum/trader_bounty/blackbox = 100,
 		)
-	possible_supplies_bounties = list(
-		)
+	initial_bounty_gain_chance = 100
+	bounty_gain_chance = 100
 
 /datum/trader_bounty/blackbox
 	bounty_name = "\proper blackbox retrieval"
-	amount = 99
+	amount = 1
 	reward_cash = 2000
-	possible_paths = list(
-		/obj/item/blackbox/shuttle_comms
-		)
+	path = /obj/item/blackbox/shuttle_comms
 	bounty_text = "We will reward you for retrieving the blackbox from any incapacitated shuttles that may be in the area."
+	bounty_complete_text = "Thank you. Your reward is being transferred."
