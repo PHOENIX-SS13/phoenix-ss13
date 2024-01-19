@@ -63,7 +63,7 @@
 
 	if(!visible_contents)
 		icon_state = "[initial(icon_state)]"
-		return ..()
+	return ..()
 
 	var/list/shown_contents = contents - component_parts
 	switch(shown_contents.len) // fits a specific case
