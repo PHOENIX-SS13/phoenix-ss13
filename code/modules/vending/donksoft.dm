@@ -41,10 +41,10 @@
 /obj/machinery/vending/donksoft/nanotrasen
 	name = "\improper Donksoft Toy Vendor"
 	icon_state = "nt-donk"
-	icon_deny = "nt-donk-deny
+	icon_deny = "nt-donk-deny"
 
 /obj/machinery/vending/donksoft/syndicate
-	name = "\improper Syndicate Donksoft Vendor""
+	name = "\improper Syndicate Donksoft Vendor"
 	icon_state = "syn-donk"
 	icon_deny = "syn-donk-deny"
 	icon_panel = "syn-donk-panel"
