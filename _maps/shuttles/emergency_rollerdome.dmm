@@ -243,7 +243,7 @@
 /turf/open/floor/wood,
 /area/shuttle/escape)
 "ON" = (
-/obj/machinery/vending/donksofttoyvendor,
+/obj/machinery/vending/donksoft,
 /turf/open/floor/eighties,
 /area/shuttle/escape)
 "Qf" = (

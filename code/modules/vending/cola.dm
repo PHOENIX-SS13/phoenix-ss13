@@ -99,7 +99,7 @@
 					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
-/obj/machinery/vending/cola/sodie
+/obj/machinery/vending/cola/bepis
 	icon_state = "bepis"
 	icon_broken = "bepis-broken"
 	icon_off = "bepis-off"
@@ -126,7 +126,7 @@
 		           /obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 10,
 		           /obj/item/reagent_containers/food/drinks/soda_cans/air = 10)
 
-/obj/machinery/vending/cola/sodie/dr_gibb
+/obj/machinery/vending/cola/bepis/dr_gibb
 	icon_state = "drgibb"
 	light_color = COLOR_WHITE
 	name = "\improper Dr. Gibb Vendor"
@@ -141,7 +141,7 @@
 					/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 					/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha = 3)
 
-/obj/machinery/vending/cola/sodie/starkist
+/obj/machinery/vending/cola/bepis/starkist
 	icon_state = "starkist"
 	light_color = COLOR_LIGHT_ORANGE
 	name = "\improper Star-kist Vendor"

@@ -58,7 +58,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/icon_panel = "generic-panel"
 	///Overlay to flash when vending an item to the user
 	var/icon_vend
-	///Light mask
+	///Name of lighting mask for the vending machine
 	light_mask = "generic-light-mask"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
@@ -87,7 +87,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/forcecrit = 0
 	var/num_shards = 7
 	var/list/pinned_mobs = list()
-
 	/**
 	  * List of products this machine sells
 	  *
@@ -112,14 +111,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	  * form should be list(/type/path = amount, /type/path2 = amount2)
 	  */
 	var/list/contraband = list()
-
 	/**
 	  * List of premium products this machine sells
 	  *
 	  * form should be list(/type/path, /type/path2) as there is only ever one in stock
 	  */
 	var/list/premium = list()
-
 	///String of slogans separated by semicolons, optional
 	var/product_slogans = ""
 	///String of small ad messages in the vending screen - random chance
@@ -168,23 +165,16 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/onstation = TRUE
 	///A variable to change on a per instance basis on the map that allows the instance to force cost and ID requirements
 	var/onstation_override = FALSE //change this on the object on the map to override the onstation check. DO NOT APPLY THIS GLOBALLY.
-
 	///ID's that can load this vending machine wtih refills
 	var/list/canload_access_list
 
 	var/list/vending_machine_input = list()
 	///Display header on the input view
 	var/input_display_header = "Custom Vendor"
-
 	//The type of refill canisters used by this machine.
 	var/obj/item/vending_refill/refill_canister = null
-
 	/// how many items have been inserted in a vendor
 	var/loaded_items = 0
-
-	///Name of lighting mask for the vending machine
-	var/light_mask
-
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 

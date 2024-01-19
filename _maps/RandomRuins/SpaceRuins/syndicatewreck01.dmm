@@ -81,7 +81,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/vending/donksofttoyvendor,
+/obj/machinery/vending/donksoft/syndicate,
 /turf/open/floor/wood,
 /area/ruin/unpowered/no_grav)
 "an" = (

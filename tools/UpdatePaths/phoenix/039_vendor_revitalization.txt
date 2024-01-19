@@ -1,0 +1,6 @@
+/obj/machinery/vending/donksofttoyvendor : /obj/machinery/vending/donksoft{@OLD}
+/obj/machinery/vending/toyliberationstation : /obj/machinery/vending/donksoft/syndicate{@OLD}
+/obj/machinery/vending/cola/sodie : /obj/machinery/vending/cola/bepis{@OLD}
+/obj/machinery/vending/cola/dr_gibb : /obj/machinery/vending/cola/bepis/dr_gibb{@OLD}
+/obj/machinery/vending/cola/starkist : /obj/machinery/vending/cola/bepis/starkist{@OLD}
+
