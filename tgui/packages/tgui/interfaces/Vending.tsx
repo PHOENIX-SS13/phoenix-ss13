@@ -74,6 +74,20 @@ type CustomInput = {
 export const Vending = (props, context) => {
   const { act, data } = useBackend<VendingData>(context);
   const {
+    categories,
+  } = data;
+  return (<VendingNoCategoryDisplay />);
+  // if (!categories.length) {
+  //  return (<VendingNoCategoryDisplay />);
+  // }
+  // else {
+  //  return (<VendingCategoryDisplay />);
+  // }
+};
+
+export const VendingNoCategoryDisplay = (props, context) => {
+  const { act, data } = useBackend<VendingData>(context);
+  const {
     user,
     onstation,
     product_records = [],
@@ -81,12 +95,83 @@ export const Vending = (props, context) => {
     hidden_records = [],
     stock,
   } = data;
+  let inventory;
+  let custom = false;
+  if (data.vending_machine_input) {
+    inventory = data.vending_machine_input;
+    custom = true;
+  }
+  else {
+    inventory = [
+      ...product_records,
+      ...coin_records,
+    ];
+    if (data.extended_inventory) {
+      inventory = [
+        ...inventory,
+        ...hidden_records,
+      ];
+    }
+  }
+  // Just in case we still have undefined values in the list
+  inventory = inventory.filter(item => !!item);
+  return (
+    <Window
+      title="Vending Machine"
+      width={450}
+      height={600}>
+      <Window.Content scrollable>
+        {!!onstation && (
+          <Section title="User">
+            {user && (
+              <Box>
+                Welcome, <b>{user.name}</b>,
+                {' '}
+                <b>{user.job || 'Unemployed'}</b>!
+                <br />
+                Your balance is <b>{user.cash} credits</b>.
+              </Box>
+            ) || (
+              <Box color="light-grey">
+                No registered ID card!<br />
+                Please contact your local HoP!
+              </Box>
+            )}
+          </Section>
+        )}
+        <Section title="Products">
+          <Table>
+            {inventory.map(product => (
+              <VendingRow
+                key={product.name}
+                custom={custom}
+                product={product}
+                productStock={stock[product.name]} />
+            ))}
+          </Table>
+        </Section>
+      </Window.Content>
+    </Window>
+  );
+};
+
+export const VendingCategoryDisplay = (props, context) => {
+  const { act, data } = useBackend<VendingData>(context);
+  const {
+    user,
+    onstation,
+    product_records = [],
+    coin_records = [],
+    hidden_records = [],
+    stock,
+    categories,
+  } = data;
   const [selectedCategory, setSelectedCategory] = useLocalState<string>(
     context,
     'selectedCategory',
-    Object.keys(data.categories)[0],
+    Object.keys(categories)[0],
   );
-  
+
   let inventory;
   let custom = false;
   if (data.vending_machine_input) {
@@ -119,7 +204,7 @@ export const Vending = (props, context) => {
       });
     }),
   );
-  
+
   return (
     <Window
       title="Vending Machine"
@@ -177,7 +262,7 @@ export const UserDetails = (props, context) => {
             <LabeledList>
               <LabeledList.Item label="User">{user.name}</LabeledList.Item>
               <LabeledList.Item label="Occupation">
-                {user.job || 'Unemployed'}                
+                {user.job || 'Unemployed'}
               </LabeledList.Item>
             </LabeledList>
           </Stack.Item>
@@ -242,16 +327,16 @@ const VendingRow = (props, context) => {
   const discount = !product.premium && department === user?.department;
   const remaining = custom ? product.amount : productStock.amount;
   const redPrice = Math.round(product.price * jobDiscount);
-  const disabled = remaining === 0 
-    || (onstation && !user) 
-    || (onstation && !access 
+  const disabled = remaining === 0
+    || (onstation && !user)
+    || (onstation && !access
         && (discount ? redPrice : product.price) > user?.cash);
 
   /* POLYCHROME - DISABLED. TODO: GET WORKING.
       ...<Table.Cell bold>{capitalizeAll(product.name)}</Table.Cell>
           <Table.Cell>
-            {!!productStock?.colorable 
-            && (<ProductColorSelect disabled={disabled} product={product} 
+            {!!productStock?.colorable
+            && (<ProductColorSelect disabled={disabled} product={product}
             />)}
           </Table.Cell>
           <Table.Cell collapsing textAlign="right">...
@@ -306,7 +391,7 @@ const ProductImage = (props) => {
  */
 /*
 const ProductColorSelect = (props) => {
-  const { act } = useBackend(context);
+  const { act } = useBackend<VendingData>(context);
   const { disabled, product } = props;
 
   return (
@@ -327,8 +412,8 @@ const ProductStock = (props) => {
   return (
     <Box
       color={
-        (remaining <= 0 && 'bad') 
-        || (!custom && remaining <= product.max_amount / 2 && 'average') 
+        (remaining <= 0 && 'bad')
+        || (!custom && remaining <= product.max_amount / 2 && 'average')
         || 'good'
       }
     >

@@ -866,6 +866,16 @@ GLOBAL_LIST_EMPTY(vending_products)
 	.["onstation"] = onstation
 	.["department"] = payment_department
 	.["jobDiscount"] = VENDING_DISCOUNT
+	.["categories"] = list()
+	if(!isnull(product_categories))
+		.["product_records"] = collect_records_for_static_data(product_records, product_categories)
+		.["coin_records"] = collect_records_for_static_data(coin_records, product_categories, premium = TRUE)
+		.["hidden_records"] = collect_records_for_static_data(hidden_records, product_categories, premium = TRUE)
+
+		.["categories"] = product_categories
+		return
+
+
 	.["product_records"] = list()
 	for (var/datum/data/vending_product/R in product_records)
 		var/list/data = list(
@@ -899,15 +909,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		)
 		.["hidden_records"] += list(data)
 
-	var/list/categories = list()
 
-	.["product_records"] = collect_records_for_static_data(product_records, categories)
-	.["coin_records"] = collect_records_for_static_data(coin_records, categories, premium = TRUE)
-	.["hidden_records"] = collect_records_for_static_data(hidden_records, categories, premium = TRUE)
-
-	.["categories"] = categories
-
-	return ..()
 
 /**
  * Returns a list of given product records of the vendor to be used in UI.
