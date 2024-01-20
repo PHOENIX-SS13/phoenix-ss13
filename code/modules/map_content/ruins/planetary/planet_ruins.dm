@@ -166,3 +166,11 @@
 	cost = 5
 	suffix = "alien_nest_calv1.dmm"
 	planet_requirements = PLANET_HABITABLE
+
+/datum/map_template/ruin/planetary/research_escape
+	name = "Bio-research Escapees
+	id = "bio_shuttle_escaped_subject"
+	description = "A research crew that met an unfortunate fate."
+	cost = 5
+	suffix = "bio_shuttle_escaped_subject.dmm"
+	planet_requirements = PLANET_WRECKAGES
