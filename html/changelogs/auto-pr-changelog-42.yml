@@ -1,0 +1,7 @@
+author: alos (whataboutism-alos)
+changes:
+- bugfix: Fixed areas on crashedship.dmm
+- bugfix: Fixed APCs on crashedship.dmm
+- bugfix: Fixed emitters firing without power on crashedship.dmm
+merge-date: 2024-01-20
+prnumber: 42
