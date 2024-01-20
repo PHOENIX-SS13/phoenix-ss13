@@ -36,6 +36,7 @@
 "ag" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/iron/corner,
 /area/awaymission/bmpship/midship/bar)
 "ah" = (
@@ -54,11 +55,8 @@
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/midship/bar)
 "aj" = (
-/obj/structure/table,
-/obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/half,
-/area/awaymission/bmpship/midship/bar)
+/turf/closed/wall/mineral/titanium/interior,
+/area/awaymission/bmpship/aft/storage)
 "ak" = (
 /obj/machinery/smartfridge/drinks,
 /obj/effect/decal/cleanable/dirt,
@@ -81,10 +79,10 @@
 /area/awaymission/bmpship/aft/storage)
 "ao" = (
 /turf/closed/wall/mineral/titanium/interior,
-/area/awaymission/bmpship/aft/storage)
+/area/awaymission/bmpship/aft/quarters)
 "ap" = (
 /turf/closed/wall/mineral/titanium/overspace,
-/area/awaymission/bmpship/aft/quarters)
+/area/awaymission/bmpship/aft/storage)
 "aq" = (
 /turf/closed/wall/mineral/titanium,
 /area/awaymission/bmpship/midship/kitchen/freezer)
@@ -174,7 +172,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/unlocked{
-	dir = 8;
 	pixel_x = 24;
 	environ = 0
 	},
@@ -273,11 +270,6 @@
 "aQ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
-	},
-/obj/machinery/power/apc/unlocked{
-	dir = 4;
-	pixel_x = -24;
-	environ = 0
 	},
 /obj/structure/cable,
 /turf/open/floor/iron/edge{
@@ -416,7 +408,6 @@
 /obj/effect/spawner/lootdrop/memeorgans,
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	dir = 8;
 	pixel_x = 24;
 	environ = 0
 	},
@@ -472,7 +463,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	dir = 4;
 	pixel_x = -24;
 	environ = 0
 	},
@@ -503,7 +493,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/structure/cable,
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/aft/storage)
@@ -548,7 +540,9 @@
 /obj/machinery/door/airlock/titanium{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/structure/cable,
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/fore/bridge)
@@ -1053,7 +1047,6 @@
 /obj/item/kitchen/knife,
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	dir = 4;
 	pixel_x = -24;
 	environ = 0
 	},
@@ -1198,7 +1191,9 @@
 /obj/machinery/door/airlock/titanium{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/midship/atrium)
 "dv" = (
@@ -1234,7 +1229,6 @@
 /obj/item/food/hugemushroomslice,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/unlocked{
-	dir = 4;
 	pixel_x = -24;
 	environ = 0
 	},
@@ -1465,11 +1459,6 @@
 "eg" = (
 /obj/structure/cable,
 /obj/item/storage/box/syringes,
-/obj/machinery/power/apc/unlocked{
-	dir = 4;
-	pixel_x = -24;
-	environ = 0
-	},
 /turf/open/floor/iron/half{
 	dir = 1
 	},
@@ -1504,7 +1493,9 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/aft/quarters)
 "el" = (
@@ -1713,6 +1704,7 @@
 /turf/open/floor/iron/sepia,
 /area/awaymission/bmpship/midship/atrium)
 "eI" = (
+/obj/structure/cable,
 /turf/open/floor/plating/airless{
 	icon_state = "panelscorched"
 	},
@@ -1915,7 +1907,6 @@
 	dir = 1;
 	anchored = 1
 	},
-/obj/structure/cable,
 /turf/open/floor/plating/airless{
 	icon_state = "panelscorched"
 	},
@@ -1940,7 +1931,6 @@
 	dir = 1;
 	anchored = 1
 	},
-/obj/structure/cable,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
@@ -1988,6 +1978,7 @@
 /area/awaymission/bmpship/fore/bridge)
 "fp" = (
 /obj/machinery/light/small/directional/east,
+/obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/fore)
 "fq" = (
@@ -1996,7 +1987,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/fore/bridge)
 "fr" = (
@@ -2121,7 +2114,9 @@
 /obj/machinery/door/airlock/titanium{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/aft/tribay)
 "fK" = (
@@ -2317,7 +2312,7 @@
 "gl" = (
 /obj/machinery/power/emitter/energycannon{
 	dir = 8;
-	use_power = 1
+	req_access = null
 	},
 /obj/structure/cable,
 /turf/open/floor/engine,
@@ -2413,7 +2408,6 @@
 "gy" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	dir = 8;
 	pixel_x = 24;
 	environ = 0
 	},
@@ -2472,7 +2466,6 @@
 /obj/item/screwdriver,
 /obj/item/crowbar,
 /obj/machinery/power/apc/unlocked{
-	dir = 4;
 	pixel_x = -24;
 	environ = 0
 	},
@@ -2670,8 +2663,13 @@
 /area/awaymission/bmpship/aft/engineering)
 "he" = (
 /obj/machinery/door/airlock/titanium,
-/obj/machinery/door/firedoor/closed,
+/obj/machinery/door/firedoor/closed{
+	dir = 4
+	},
 /obj/structure/cable,
+/obj/machinery/door/airlock/titanium{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/fore)
 "hf" = (
@@ -2680,11 +2678,11 @@
 /area/awaymission/bmpship/fore)
 "hg" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
 /obj/machinery/power/emitter/energycannon{
 	dir = 8;
-	use_power = 1
+	req_access = null
 	},
-/obj/structure/cable,
 /turf/open/floor/engine,
 /area/awaymission/bmpship/fore)
 "hh" = (
@@ -2858,7 +2856,9 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/fore/bridge)
 "hB" = (
@@ -2885,7 +2885,7 @@
 /turf/open/floor/vault/sandstone,
 /area/awaymission/bmpship/aft/tribay)
 "hE" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall/r_wall,
 /area/awaymission/bmpship/fore)
 "hF" = (
 /turf/open/floor/iron/half{
@@ -3119,7 +3119,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/low_wall/plastitanium,
 /obj/machinery/power/apc/unlocked{
-	dir = 4;
 	pixel_x = -24;
 	environ = 0
 	},
@@ -3772,11 +3771,6 @@
 /obj/structure/closet/crate/freezer,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/power/apc/unlocked{
-	dir = 4;
-	pixel_x = -24;
-	environ = 0
-	},
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -3874,9 +3868,8 @@
 /area/awaymission/bmpship/fore)
 "kn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/cable_coil/cut,
-/turf/open/floor/engine,
-/area/awaymission/bmpship/fore)
+/turf/open/floor/iron/half,
+/area/awaymission/bmpship/aft/quarters)
 "ko" = (
 /obj/item/clothing/suit/caution,
 /obj/item/mop,
@@ -4350,7 +4343,6 @@
 "lB" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	dir = 4;
 	pixel_x = -24;
 	environ = 0
 	},
@@ -4410,19 +4402,12 @@
 	},
 /turf/open/floor/eighties/red,
 /area/awaymission/bmpship/midship/atrium)
-"vh" = (
+"sk" = (
+/turf/closed/wall/mineral/titanium/overspace,
+/area/awaymission/bmpship/aft/quarters)
+"Af" = (
 /turf/closed/wall/mineral/titanium/overspace,
 /area/awaymission/bmpship/aft/tribay)
-"Bq" = (
-/turf/closed/wall/mineral/titanium/interior,
-/area/awaymission/bmpship/aft/quarters)
-"Wp" = (
-/turf/closed/wall/mineral/titanium/overspace,
-/area/awaymission/bmpship/aft/storage)
-"Yh" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/half,
-/area/awaymission/bmpship/aft/quarters)
 
 (1,1,1) = {"
 aa
@@ -5044,7 +5029,7 @@ hE
 gR
 ll
 gR
-cG
+hE
 fS
 lA
 gb
@@ -5098,11 +5083,11 @@ iS
 fw
 fu
 fg
-cG
+hE
 gl
-kn
+hf
 hg
-cG
+hE
 gb
 gb
 gb
@@ -5153,14 +5138,14 @@ fl
 hx
 ig
 gz
-gI
+fw
 fv
 fi
-cG
+hE
 eM
-hf
 fT
-cG
+fT
+hE
 gb
 gb
 gb
@@ -5213,12 +5198,12 @@ ih
 gz
 eI
 gI
-gn
-cG
-cG
+fv
+hE
+hE
 he
-cG
-cG
+hE
+hE
 gb
 gb
 gb
@@ -5269,7 +5254,7 @@ gV
 hz
 ij
 gz
-fv
+gn
 fp
 fw
 eL
@@ -6588,7 +6573,7 @@ aa
 aa
 aa
 ac
-aj
+ai
 aw
 aW
 bp
@@ -6779,11 +6764,11 @@ gB
 gB
 gB
 ek
-Bq
-Bq
-Bq
-Bq
-Bq
+ao
+ao
+ao
+ao
+ao
 ka
 aa
 aa
@@ -6841,7 +6826,7 @@ jN
 jY
 kp
 kK
-Bq
+ao
 aa
 aa
 aa
@@ -6899,7 +6884,7 @@ jO
 ke
 kA
 kL
-Bq
+ao
 aa
 aa
 aa
@@ -6957,7 +6942,7 @@ jP
 kf
 kB
 kP
-Bq
+ao
 aa
 aa
 aa
@@ -7015,7 +7000,7 @@ jQ
 kg
 kB
 lx
-Bq
+ao
 aa
 aa
 aa
@@ -7072,8 +7057,8 @@ jD
 jP
 kh
 kB
-Yh
-Bq
+kn
+ao
 aa
 aa
 aa
@@ -7131,7 +7116,7 @@ jR
 ki
 kB
 kQ
-Bq
+ao
 aa
 aa
 aa
@@ -7183,13 +7168,13 @@ hb
 hI
 iv
 hb
-vh
+Af
 jI
 jR
 ki
 kB
 kR
-Bq
+ao
 aa
 aa
 aa
@@ -7226,7 +7211,7 @@ aa
 aa
 aa
 aa
-ao
+aj
 aD
 bc
 be
@@ -7247,7 +7232,7 @@ jP
 ki
 kB
 kS
-Bq
+ao
 aa
 aa
 aa
@@ -7284,13 +7269,13 @@ aa
 aa
 aa
 aa
-ao
+aj
 aG
 br
 bw
 aD
 cI
-ao
+aj
 gB
 gB
 gB
@@ -7305,7 +7290,7 @@ jR
 kg
 kC
 kT
-Bq
+ao
 aa
 aa
 aa
@@ -7342,12 +7327,12 @@ aa
 aa
 aa
 aa
-ao
+aj
 aI
-ao
-ao
+aj
+aj
 bZ
-ao
+aj
 an
 dX
 eW
@@ -7362,8 +7347,8 @@ jL
 jS
 kj
 kD
-Yh
-Bq
+kn
+ao
 aa
 aa
 aa
@@ -7400,13 +7385,13 @@ aa
 aa
 aa
 aa
-ao
+aj
 aJ
 bs
-ao
+aj
 ca
 cJ
-ao
+aj
 cM
 hN
 iD
@@ -7421,7 +7406,7 @@ jT
 kk
 kJ
 kU
-Bq
+ao
 aa
 aa
 aa
@@ -7458,13 +7443,13 @@ aa
 aa
 aa
 aa
-Wp
-ao
-Wp
-Wp
-Wp
-ao
-ao
+ap
+aj
+ap
+ap
+ap
+aj
+aj
 dp
 eY
 gc
@@ -7474,12 +7459,12 @@ gJ
 gJ
 jf
 dk
-Bq
-ap
-Bq
-Bq
-ap
-ap
+ao
+sk
+ao
+ao
+sk
+sk
 aa
 aa
 aa
