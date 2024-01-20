@@ -159,14 +159,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/light/small/directional/west,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "aA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "aB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -187,24 +187,24 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/light/small/directional/north,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "aD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "aE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/light/small/directional/north,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "aF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "aG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -212,7 +212,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/light/small/directional/north,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "aH" = (
 /obj/structure/ore_box,
@@ -503,11 +503,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "bz" = (
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/storage)
 "bA" = (
 /obj/structure/dresser,
@@ -974,7 +974,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fireaxecabinet/directional/north,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "cN" = (
 /obj/machinery/door/airlock/titanium,
@@ -1142,7 +1142,7 @@
 "dl" = (
 /obj/structure/cable,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship/atrium)
 "dm" = (
 /turf/closed/wall/mineral/titanium,
@@ -1399,7 +1399,7 @@
 /obj/effect/spawner/lootdrop/clothes,
 /obj/effect/decal/remains/human,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship/atrium)
 "dZ" = (
 /obj/structure/cable,
@@ -1408,7 +1408,7 @@
 	icon_state = "small"
 	},
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship/atrium)
 "ea" = (
 /obj/structure/cable,
@@ -1416,7 +1416,7 @@
 	icon_state = "medium"
 	},
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship/atrium)
 "eb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1428,7 +1428,7 @@
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/north,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "ed" = (
 /obj/structure/cable,
@@ -1454,7 +1454,7 @@
 	},
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "eg" = (
 /obj/structure/cable,
@@ -1470,7 +1470,7 @@
 	},
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/light/small/directional/west,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "ei" = (
 /obj/structure/shuttle/engine/heater{
@@ -1826,7 +1826,7 @@
 "eX" = (
 /obj/structure/lattice/catwalk/plated,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "eY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1851,7 +1851,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "fb" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -1866,7 +1866,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "fd" = (
 /obj/machinery/door/airlock/titanium{
@@ -1881,13 +1881,13 @@
 /obj/effect/turf_decal/siding/thinplating/end{
 	color = "#62676b"
 	},
-/turf/open/floor/iron/sepia,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "fe" = (
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "ff" = (
 /obj/structure/frame/computer{
@@ -2162,7 +2162,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship/atrium)
 "fQ" = (
 /obj/effect/gibspawner/generic,
@@ -2212,20 +2212,20 @@
 /obj/structure/cable,
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "fZ" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship/atrium)
 "ga" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship/atrium)
 "gb" = (
 /turf/closed/mineral/random,
@@ -2266,7 +2266,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "gf" = (
 /obj/structure/cable,
@@ -2280,7 +2280,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "gh" = (
 /obj/effect/decal/cleanable/plasma,
@@ -2288,7 +2288,7 @@
 	dir = 5
 	},
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "gi" = (
 /obj/machinery/light/small/directional/west,
@@ -2435,7 +2435,7 @@
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "gD" = (
 /obj/structure/chair/office/light{
@@ -2478,7 +2478,7 @@
 /obj/effect/spawner/lootdrop/powercell,
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "gI" = (
 /turf/open/floor/plating/airless,
@@ -2521,7 +2521,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "gO" = (
 /obj/structure/rack,
@@ -2744,7 +2744,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "ho" = (
 /obj/structure/cable,
@@ -2947,7 +2947,7 @@
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "hO" = (
 /obj/machinery/power/smes/magical{
@@ -2971,7 +2971,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "hQ" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -2979,7 +2979,7 @@
 	dir = 6
 	},
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "hR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3239,7 +3239,7 @@
 "iD" = (
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "iE" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer4,
@@ -3320,7 +3320,7 @@
 	},
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "iP" = (
 /obj/structure/lattice/catwalk/plated,
@@ -3328,7 +3328,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "iQ" = (
 /obj/machinery/door/airlock/titanium{
@@ -3346,12 +3346,12 @@
 	color = "#62676b"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/sepia,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "iR" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/general/visible,
 /obj/structure/lattice/catwalk/plated,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "iS" = (
 /obj/machinery/door/airlock/titanium,
@@ -3473,7 +3473,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "ji" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/middle,
@@ -3596,7 +3596,7 @@
 	},
 /obj/structure/lattice/catwalk/plated,
 /obj/machinery/light/small/directional/west,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "jy" = (
 /turf/open/floor/iron/dark/textured_corner,
@@ -3867,9 +3867,8 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/fore)
 "kn" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/half,
-/area/awaymission/bmpship/aft/quarters)
+/turf/closed/wall/mineral/titanium/overspace,
+/area/awaymission/bmpship/aft/tribay)
 "ko" = (
 /obj/item/clothing/suit/caution,
 /obj/item/mop,
@@ -4402,12 +4401,13 @@
 	},
 /turf/open/floor/eighties/red,
 /area/awaymission/bmpship/midship/atrium)
-"sk" = (
+"Ik" = (
 /turf/closed/wall/mineral/titanium/overspace,
 /area/awaymission/bmpship/aft/quarters)
-"Af" = (
-/turf/closed/wall/mineral/titanium/overspace,
-/area/awaymission/bmpship/aft/tribay)
+"Wd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/half,
+/area/awaymission/bmpship/aft/quarters)
 
 (1,1,1) = {"
 aa
@@ -7057,7 +7057,7 @@ jD
 jP
 kh
 kB
-kn
+Wd
 ao
 aa
 aa
@@ -7168,7 +7168,7 @@ hb
 hI
 iv
 hb
-Af
+kn
 jI
 jR
 ki
@@ -7347,7 +7347,7 @@ jL
 jS
 kj
 kD
-kn
+Wd
 ao
 aa
 aa
@@ -7460,11 +7460,11 @@ gJ
 jf
 dk
 ao
-sk
+Ik
 ao
 ao
-sk
-sk
+Ik
+Ik
 aa
 aa
 aa
