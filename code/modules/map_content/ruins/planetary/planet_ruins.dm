@@ -168,7 +168,7 @@
 	planet_requirements = PLANET_HABITABLE
 
 /datum/map_template/ruin/planetary/research_escape
-	name = "Bio-research Escapees
+	name = "Bio-research Escapees"
 	id = "bio_shuttle_escaped_subject"
 	description = "A research crew that met an unfortunate fate."
 	cost = 5
