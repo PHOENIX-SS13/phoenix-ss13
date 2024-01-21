@@ -174,6 +174,7 @@ export class Changelog extends Component {
     );
 
     const header = (
+      <>
       <Section>
         <h1>Phoenix SS13</h1>
         <p>
@@ -183,9 +184,11 @@ export class Changelog extends Component {
       <Section>
         {dateDropdown}
       </Section>
+      </>
     );
 
     const footer = (
+      <>
       <Section>
         {dateDropdown}
       </Section>
@@ -313,6 +316,7 @@ export class Changelog extends Component {
           {' unless otherwise indicated.'}
         </p>
       </Section>
+      </>
     );
 
     const changes = typeof data === 'object' && Object.keys(data).length > 0 && (
