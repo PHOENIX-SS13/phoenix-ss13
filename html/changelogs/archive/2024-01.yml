@@ -17,3 +17,6 @@
   - bugfix: Fixed areas on crashedship.dmm
   - bugfix: Fixed APCs on crashedship.dmm
   - bugfix: Fixed emitters firing without power on crashedship.dmm
+2024-01-21:
+  alos (whataboutism-alos):
+  - bugfix: Fixed APCs on crashedship
