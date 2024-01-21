@@ -323,8 +323,8 @@
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "HJ" = (
-/obj/structure/sign/departments/deck4,
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
+/obj/structure/sign/departments/deck4,
 /turf/closed/wall/r_wall,
 /area/maintenance/solars/port/aft)
 "HN" = (
@@ -32276,10 +32276,10 @@ jB
 jB
 oE
 oE
-oE
+HJ
 Vn
 Ye
-HJ
+oE
 oE
 oE
 yC
@@ -34075,10 +34075,10 @@ jB
 jB
 oE
 oE
-HJ
+oE
 aw
 Lg
-oE
+HJ
 oE
 oE
 jB
