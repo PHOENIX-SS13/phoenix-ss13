@@ -1,0 +1,8 @@
+author: alos (whataboutism-alos)
+changes:
+- config: Adds Phoenix SS13 AGPLv3 license to Changelog
+- config: Adds Horizon Station 13 Development Team credits to Changelog
+- config: Creates mini-section for date selector rather than lumping it with other
+    things
+merge-date: 2024-01-21
+prnumber: 43
