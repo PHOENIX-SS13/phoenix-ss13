@@ -1,31 +1,34 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "d" = (
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "e" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "j" = (
 /obj/machinery/power/smes/engineering{
 	charge = 0
 	},
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
+"k" = (
+/turf/closed/mineral/random,
+/area/template_noop)
 "l" = (
 /obj/machinery/atmospherics/components/unary/engine,
 /turf/closed/wall/mineral/titanium,
-/area/space)
+/area/ruin/unpowered)
 "m" = (
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "n" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
@@ -38,18 +41,18 @@
 	pixel_y = 6
 	},
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "o" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "p" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/frame/computer,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "q" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/material,
@@ -59,28 +62,28 @@
 /obj/effect/spawner/lootdrop/material,
 /obj/effect/spawner/lootdrop/material,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "t" = (
 /turf/closed/wall/mineral/titanium,
-/area/space)
+/area/ruin/unpowered)
 "v" = (
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plating/asteroid/airless,
-/area/space)
+/area/template_noop)
 "w" = (
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/asteroid/airless,
-/area/space)
+/area/template_noop)
 "y" = (
 /obj/structure/closet/excavation,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "A" = (
 /obj/structure/cable,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "E" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/window/reinforced{
@@ -92,30 +95,30 @@
 	layer = 2.9
 	},
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "G" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "J" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/low_wall/titanium,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "L" = (
 /turf/closed/mineral/random,
-/area/space)
+/area/ruin/unpowered)
 "M" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/orange/hidden,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "P" = (
 /obj/machinery/power/apc/auto_name/west{
 	locked = 0
 	},
 /obj/structure/cable,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "S" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/window/reinforced{
@@ -126,18 +129,18 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "T" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "U" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "W" = (
 /obj/machinery/shuttle_comms/active{
 	pixel_y = 4
@@ -145,7 +148,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "Y" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -153,18 +156,18 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/mineral/titanium/airless,
-/area/space)
+/area/ruin/unpowered)
 "Z" = (
 /obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating/asteroid/airless,
-/area/space)
+/area/template_noop)
 
 (1,1,1) = {"
 a
 a
 a
 a
-L
+k
 a
 a
 a
@@ -186,12 +189,12 @@ a
 "}
 (2,1,1) = {"
 a
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -211,14 +214,14 @@ a
 "}
 (3,1,1) = {"
 a
-L
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -235,15 +238,15 @@ a
 a
 "}
 (4,1,1) = {"
-L
-L
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -260,13 +263,13 @@ a
 a
 "}
 (5,1,1) = {"
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
 Z
 Z
 a
@@ -285,12 +288,12 @@ t
 t
 "}
 (6,1,1) = {"
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
 Z
 Z
 Z
@@ -310,20 +313,20 @@ E
 l
 "}
 (7,1,1) = {"
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
 Z
 Z
 w
 v
 a
 a
-L
-L
+k
+k
 L
 p
 Y
@@ -335,20 +338,20 @@ T
 t
 "}
 (8,1,1) = {"
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
 Z
 Z
 Z
 w
 a
 a
-L
-L
+k
+k
 J
 W
 n
@@ -360,13 +363,13 @@ j
 t
 "}
 (9,1,1) = {"
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
 Z
 Z
 Z
@@ -385,14 +388,14 @@ S
 l
 "}
 (10,1,1) = {"
-L
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
+k
 Z
 Z
 a
@@ -410,16 +413,16 @@ t
 t
 "}
 (11,1,1) = {"
-L
-L
-L
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -435,15 +438,15 @@ a
 a
 "}
 (12,1,1) = {"
-L
-L
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -461,14 +464,14 @@ a
 "}
 (13,1,1) = {"
 a
-L
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -486,14 +489,14 @@ a
 "}
 (14,1,1) = {"
 a
-L
-L
-L
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -513,11 +516,11 @@ a
 a
 a
 a
-L
-L
-L
-L
-L
+k
+k
+k
+k
+k
 a
 a
 a
