@@ -813,7 +813,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/bepis
 	name = "Bepis"
-	desc = "A delicious mixture of 42 different flavors."
+	desc = "Driving less tasty competitor Pepsi out of business on Earth in the mid 21 century, Bepis is a renowned hallmark of human culture."
 	icon_state = "bepis"
 	list_reagents = list(/datum/reagent/consumable/bepis = 30)
 	foodtype = SUGAR | JUNKFOOD
