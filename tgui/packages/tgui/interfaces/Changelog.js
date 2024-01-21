@@ -179,6 +179,8 @@ export class Changelog extends Component {
         <p>
           Risen from the ashes.
         </p>
+      </Section>
+      <Section>
         {dateDropdown}
       </Section>
     );
@@ -186,6 +188,53 @@ export class Changelog extends Component {
     const footer = (
       <Section>
         {dateDropdown}
+      </Section>
+      <Section>
+        <h3>Horizon Station 13 Development Team</h3>
+        <p>
+          <b>Contributors: </b>
+          13spacemen, Aerden, Asaiaswolfe, Atoribirb, Azarak, Bond,
+          Caseygungeon, carshalash, Colovorat, Cyberboss, CypressBz,
+          Deek-Za, Delnth, dragomagol, drizzlemutt, EmilitiaEnnehrt,
+          FA120, FedTheCat, Fikou, ForrestWick, Funce, gekkono, Ghom,
+          GoblinBackwards, GuiltyNeko, Gurkenglas, Helios7-1,
+          Ironnhawk, Jakksergal, KathrinBailey, LYNXEMS, mamakoshka,
+          MissFox0810, nevimer, RandomGamer123, san7890, Seris02,
+          silicons, SmArtKar, Tastyfish, TheOneGuy, TheSmallBlue,
+          Watermelon914, WarlockD, Y0SH1M4S73R, Zergspower, Zytolg,
+          and others
+        </p>
+        <p>
+          Phoenix SS13 is thankful to the
+          Horizon Station 13 Development Team for its work on the game prior to
+          {'commit 48cf2b. The difflog for changes in 48cf2b can be seen '}
+          <a href="https://github.com/Funce/horizon/compare/48cf2b3a66cbd33a37933ef77318676ddcba8aec...2fff9ca416e6ad6939863c2cd2e2b1f8bebaf668">
+            here
+          </a>
+          .
+        </p>
+        <p>
+          {'Except where otherwise noted, Horizon Station 13 is licensed under a '}
+          <a href="https://www.gnu.org/licenses/agpl-3.0.html/">
+            GNU Affero General Public License 3.0
+          </a>
+          {'.'}
+        </p>
+        <h3>Phoenix SS13 License</h3>
+        <p>
+          {'All code after '}
+          <a href={'https://github.com/CASEYGUNGEON/phoenix-ss13/commit/'
+            + '099d80db542cdbedc3e0e47fe41c3113d4933d27'}>
+            commit 099d80db542cdbedc3e0e47fe41c3113d4933d27 on 2023/03/08
+            at 5:34 PM UTC
+          </a>
+          {' is licensed under '}
+          <a href="https://www.gnu.org/licenses/agpl-3.0.html">
+            GNU AGPL v3
+          </a>
+        </p>
+      </Section>
+      <Section>
         <h3>GoonStation 13 Development Team</h3>
         <p>
           <b>Coders: </b>
@@ -221,7 +270,7 @@ export class Changelog extends Component {
           <a href={'https://github.com/tgstation/tgstation/commit/'
             + '333c566b88108de218d882840e61928a9b759d8f'}>
             commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12
-            at 4:38 PM PST
+            at 12:38 AM UTC
           </a>
           {' is licensed under '}
           <a href="https://www.gnu.org/licenses/agpl-3.0.html">
