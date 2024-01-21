@@ -40,15 +40,6 @@
 	},
 /turf/open/floor/iron/large,
 /area/cargo/storage)
-"bx" = (
-/obj/machinery/atmospherics/pipe/multiz/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/multiz/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/iron/half,
-/area/cargo/storage)
 "bW" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -218,16 +209,6 @@
 /obj/effect/landmark/carpspawn,
 /turf/open/space/basic,
 /area/space)
-"fW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/obj/item/stack/ore/glass{
-	amount = 5
-	},
-/turf/open/floor/iron/large,
-/area/cargo/storage)
 "ge" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -243,11 +224,7 @@
 /turf/open/floor/iron/large,
 /area/cargo/storage)
 "gq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
+/turf/open/floor/iron/half,
 /area/cargo/storage)
 "gr" = (
 /obj/structure/cable,
@@ -296,10 +273,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
-"hw" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/large,
-/area/cargo/storage)
 "hK" = (
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/suit_storage_unit/open,
@@ -308,10 +281,9 @@
 	},
 /area/maintenance/port/aft)
 "hU" = (
-/obj/structure/cable,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/wood,
 /area/service/bar)
 "ih" = (
 /obj/structure/cable,
@@ -359,12 +331,24 @@
 	dir = 1
 	},
 /area/maintenance/port/aft)
+"jL" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet,
+/area/service/bar)
 "jM" = (
 /obj/structure/lattice/catwalk/plated/smooth,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/space/fragile,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"jS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/cargo/storage)
 "kc" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
@@ -529,35 +513,41 @@
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/port/aft)
-"oq" = (
-/obj/structure/closet/emcloset,
-/turf/open/floor/iron/corner,
-/area/cargo/storage)
 "os" = (
 /obj/structure/cable,
 /obj/effect/loot_site_spawner,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"oT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/cargo/storage)
 "pk" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/large,
 /area/cargo/storage)
 "po" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plating,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/smooth_half,
 /area/maintenance/port/aft)
 "pB" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/lattice/catwalk/plated,
 /turf/open/floor/plating,
 /area/cargo/storage)
+"pE" = (
+/turf/open/floor/iron/corner{
+	dir = 1
+	},
+/area/cargo/storage)
 "pK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk/plated,
-/obj/structure/lattice/catwalk/plated,
-/turf/open/floor/plating,
+/turf/open/floor/iron/large,
 /area/cargo/storage)
 "pP" = (
 /obj/machinery/door/airlock/maintenance{
@@ -588,6 +578,10 @@
 /obj/item/stack/tile/wood,
 /turf/open/floor/plating,
 /area/service/bar)
+"qv" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/iron/corner,
+/area/cargo/storage)
 "qw" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /obj/structure/table/reinforced,
@@ -625,11 +619,6 @@
 	},
 /turf/open/floor/plating,
 /area/service/bar)
-"rC" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/smooth_edge,
-/area/maintenance/port/aft)
 "se" = (
 /obj/item/stack/tile/iron/white,
 /turf/open/floor/plating,
@@ -667,12 +656,6 @@
 	dir = 1
 	},
 /obj/structure/fans/tiny,
-/turf/open/floor/plating,
-/area/cargo/storage)
-"td" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment,
-/obj/structure/lattice/catwalk/plated,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "tu" = (
@@ -885,6 +868,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/large,
 /area/cargo/storage)
+"ze" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "zk" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
@@ -908,7 +895,7 @@
 "zC" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/smooth_half,
+/turf/open/floor/iron/smooth_edge,
 /area/maintenance/port/aft)
 "zM" = (
 /obj/structure/table/wood,
@@ -1035,10 +1022,11 @@
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "CH" = (
-/obj/structure/table/wood,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/turf/open/floor/wood,
-/area/service/bar)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "Dp" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
@@ -1102,11 +1090,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /obj/structure/lattice/catwalk/plated,
 /turf/open/floor/plating,
-/area/cargo/storage)
-"Fm" = (
-/turf/open/floor/iron/corner{
-	dir = 4
-	},
 /area/cargo/storage)
 "Fu" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
@@ -1172,11 +1155,12 @@
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "HX" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/turf/open/floor/carpet,
-/area/service/bar)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/lattice/catwalk/plated,
+/obj/structure/lattice/catwalk/plated,
+/turf/open/floor/plating,
+/area/cargo/storage)
 "HY" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
@@ -1290,8 +1274,9 @@
 /turf/closed/wall/r_wall,
 /area/maintenance/port/aft)
 "LU" = (
-/turf/open/floor/iron/half,
-/area/cargo/storage)
+/obj/item/organ/ears/cat,
+/turf/open/space/basic,
+/area/space)
 "Mg" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
@@ -1323,10 +1308,6 @@
 	icon_state = "wood-broken5"
 	},
 /area/service/bar)
-"Nl" = (
-/obj/item/organ/ears/cat,
-/turf/open/space/basic,
-/area/space)
 "ND" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/departments/deck1,
@@ -1574,11 +1555,6 @@
 	},
 /turf/open/floor/wood,
 /area/service/bar)
-"SM" = (
-/turf/open/floor/iron/corner{
-	dir = 1
-	},
-/area/cargo/storage)
 "Tt" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -1644,7 +1620,6 @@
 	req_access_txt = "25";
 	dir = 4
 	},
-/obj/structure/cable,
 /obj/machinery/door/firedoor,
 /turf/open/floor/wood,
 /area/service/bar)
@@ -1729,6 +1704,15 @@
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"VV" = (
+/obj/machinery/atmospherics/pipe/multiz/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/multiz/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/iron/half,
+/area/cargo/storage)
 "VW" = (
 /obj/structure/cable,
 /obj/effect/spawner/randomcolavend,
@@ -1760,6 +1744,16 @@
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/iron,
 /area/security/brig)
+"Wz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/item/stack/ore/glass{
+	amount = 5
+	},
+/turf/open/floor/iron/large,
+/area/cargo/storage)
 "WB" = (
 /obj/machinery/processor/slime,
 /obj/machinery/light/directional/east,
@@ -1770,11 +1764,10 @@
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
 "WP" = (
-/obj/structure/disposalpipe/segment{
+/turf/open/floor/iron/corner{
 	dir = 4
 	},
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
+/area/cargo/storage)
 "WQ" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron/half{
@@ -32370,7 +32363,7 @@ ff
 ff
 LT
 HQ
-po
+ze
 ar
 kg
 kg
@@ -32640,7 +32633,7 @@ CD
 ZG
 Bu
 tu
-rC
+zC
 jM
 nh
 Lv
@@ -32883,7 +32876,7 @@ zT
 qI
 av
 Kr
-WP
+CH
 PH
 YP
 YP
@@ -32897,7 +32890,7 @@ YP
 YP
 YP
 YP
-zC
+po
 At
 Wh
 Lv
@@ -33395,7 +33388,7 @@ Kg
 Kg
 GZ
 Bn
-hU
+MR
 Kr
 hq
 os
@@ -33408,7 +33401,7 @@ YP
 YP
 YP
 Ub
-hw
+pK
 HO
 ND
 YP
@@ -33662,7 +33655,7 @@ wF
 pB
 QR
 Ty
-td
+jS
 BP
 nf
 Cz
@@ -33909,7 +33902,7 @@ Kg
 Kg
 GZ
 DF
-Op
+TE
 Oq
 zk
 AP
@@ -33923,8 +33916,8 @@ Pk
 Pk
 wu
 kG
-pK
-fW
+HX
+Wz
 VW
 YP
 YP
@@ -34167,7 +34160,7 @@ Kg
 GZ
 Tv
 MR
-CH
+hU
 et
 zM
 RK
@@ -34184,9 +34177,9 @@ PB
 GJ
 Cw
 HY
-oq
+qv
 WQ
-Fm
+WP
 Sn
 Vg
 Kg
@@ -34441,9 +34434,9 @@ sn
 mV
 fi
 xJ
-bx
+VV
 GJ
-LU
+gq
 sP
 xP
 Kg
@@ -34698,9 +34691,9 @@ Fu
 nd
 JZ
 Ch
-LU
+gq
 GJ
-LU
+gq
 sP
 mm
 Kg
@@ -34957,7 +34950,7 @@ dz
 HY
 uA
 PX
-SM
+pE
 Sn
 Vg
 Kg
@@ -35209,7 +35202,7 @@ YW
 TY
 cW
 Tz
-gq
+oT
 YK
 Ul
 Ul
@@ -35460,7 +35453,7 @@ Ez
 PZ
 kG
 pk
-hw
+pK
 Yj
 cW
 so
@@ -35708,7 +35701,7 @@ Kg
 Kg
 GZ
 Tt
-HX
+jL
 Kr
 RM
 Xg
@@ -36990,7 +36983,7 @@ Kg
 Kg
 Kg
 Kg
-Nl
+LU
 ff
 ff
 ff
