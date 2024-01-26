@@ -259,6 +259,7 @@
 		var/obj/item/blackbox/shuttle_comms/bbox = new /obj/item/blackbox/shuttle_comms(src)
 		user.put_in_hands(bbox)
 		blackbox_status = BLACKBOX_RETRIEVED
+		set_distress(FALSE)
 
 /obj/item/blackbox/shuttle_comms
 	name = "blackbox"
