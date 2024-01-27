@@ -197,7 +197,7 @@ export class Changelog extends Component {
           <p>
             <b>Contributors: </b>
             13spacemen, Aerden, Asaiaswolfe, Atoribirb, Azarak, Bond,
-            Caseygungeon, carshalash, Colovorat, Cyberboss, CypressBz,
+            CASEYGUNGEON, carshalash, Colovorat, Cyberboss, CypressBz,
             Deek-Za, Delnth, dragomagol, drizzlemutt, EmilitiaEnnehrt,
             FA120, FedTheCat, Fikou, ForrestWick, Funce, gekkono, Ghom,
             GoblinBackwards, GuiltyNeko, Gurkenglas, Helios7-1,
@@ -209,8 +209,8 @@ export class Changelog extends Component {
           </p>
           <p>
             Phoenix SS13 is thankful to the
-            Horizon Station 13 Development Team for its work on the game prior to
-            {'commit 48cf2b. The difflog for changes in 48cf2b can be seen '}
+            Horizon Station 13 Development Team for its work on the game prior
+            to {'commit 48cf2b. The difflog for changes in 48cf2b can be seen '}
             <a href="https://github.com/Funce/horizon/compare/48cf2b3a66cbd33a37933ef77318676ddcba8aec...2fff9ca416e6ad6939863c2cd2e2b1f8bebaf668">
               here
             </a>
