@@ -24,3 +24,6 @@
   - config: Adds Horizon Station 13 Development Team credits to Changelog
   - config: Creates mini-section for date selector rather than lumping it with other
       things
+2024-01-27:
+  alos (whataboutism-alos):
+  - bugfix: Fixes changelog.js
