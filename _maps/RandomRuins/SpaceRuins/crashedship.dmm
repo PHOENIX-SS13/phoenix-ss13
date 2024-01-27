@@ -55,8 +55,8 @@
 /turf/open/floor/iron/half,
 /area/awaymission/bmpship/midship/bar)
 "aj" = (
-/turf/closed/wall/mineral/titanium/interior,
-/area/awaymission/bmpship/aft/storage)
+/turf/closed/wall/mineral/titanium/overspace,
+/area/awaymission/bmpship/aft/tribay)
 "ak" = (
 /obj/machinery/smartfridge/drinks,
 /obj/effect/decal/cleanable/dirt,
@@ -172,7 +172,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = 24;
+	dir = 4;
 	environ = 0
 	},
 /obj/structure/cable,
@@ -348,7 +348,7 @@
 "bc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/half,
-/area/awaymission/bmpship/aft/storage)
+/area/awaymission/bmpship/aft/quarters)
 "bd" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
@@ -408,7 +408,7 @@
 /obj/effect/spawner/lootdrop/memeorgans,
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = 24;
+	dir = 4;
 	environ = 0
 	},
 /obj/item/food/salami,
@@ -463,7 +463,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = -24;
+	dir = 8;
 	environ = 0
 	},
 /turf/open/floor/iron/corner{
@@ -739,9 +739,7 @@
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
 	dir = 2;
-	environ = 0;
-	pixel_x = 0;
-	pixel_y = -24
+	environ = 0
 	},
 /turf/open/floor/wood,
 /area/awaymission/bmpship/fore/bridge/caproom)
@@ -1047,7 +1045,7 @@
 /obj/item/kitchen/knife,
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = -24;
+	dir = 8;
 	environ = 0
 	},
 /turf/open/floor/iron/white/textured_half{
@@ -1167,7 +1165,7 @@
 /turf/open/floor/iron/corner,
 /area/awaymission/bmpship/aft/engineering)
 "dq" = (
-/obj/effect/mapping_helpers/smart_pipe/simple/general/visible,
+/obj/effect/mapping_helpers/smart_pipe/simple/general/hidden,
 /turf/closed/wall/mineral/titanium/overspace,
 /area/awaymission/bmpship/aft/engineering)
 "dr" = (
@@ -1229,7 +1227,7 @@
 /obj/item/food/hugemushroomslice,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = -24;
+	dir = 8;
 	environ = 0
 	},
 /obj/structure/cable,
@@ -1881,6 +1879,9 @@
 /obj/effect/turf_decal/siding/thinplating/end{
 	color = "#62676b"
 	},
+/obj/effect/mapping_helpers/smart_pipe/simple/general/visible{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft/engineering)
 "fe" = (
@@ -2408,7 +2409,7 @@
 "gy" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = 24;
+	dir = 4;
 	environ = 0
 	},
 /turf/open/floor/iron/half{
@@ -2465,16 +2466,10 @@
 /obj/item/screwdriver,
 /obj/item/screwdriver,
 /obj/item/crowbar,
-/obj/machinery/power/apc/unlocked{
-	pixel_x = -24;
-	environ = 0
-	},
-/obj/structure/cable,
 /obj/effect/spawner/lootdrop/toolbox,
 /turf/open/floor/iron/large,
 /area/awaymission/bmpship/aft/engineering)
 "gH" = (
-/obj/structure/cable,
 /obj/effect/spawner/lootdrop/powercell,
 /obj/structure/lattice/catwalk/plated,
 /obj/effect/decal/cleanable/dirt,
@@ -2595,6 +2590,10 @@
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/lootdrop/clothes,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/unlocked{
+	dir = 8;
+	environ = 0
+	},
 /turf/open/floor/iron/half{
 	dir = 1
 	},
@@ -2659,6 +2658,11 @@
 /obj/structure/rack,
 /obj/item/stack/cable_coil,
 /obj/effect/spawner/lootdrop/powercell,
+/obj/machinery/power/apc/unlocked{
+	dir = 8;
+	environ = 0
+	},
+/obj/structure/cable,
 /turf/open/floor/iron/large,
 /area/awaymission/bmpship/aft/engineering)
 "he" = (
@@ -3119,7 +3123,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/low_wall/plastitanium,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = -24;
+	dir = 8;
 	environ = 0
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -3867,8 +3871,8 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/fore)
 "kn" = (
-/turf/closed/wall/mineral/titanium/overspace,
-/area/awaymission/bmpship/aft/tribay)
+/turf/closed/wall/mineral/titanium/interior,
+/area/awaymission/bmpship/aft/storage)
 "ko" = (
 /obj/item/clothing/suit/caution,
 /obj/item/mop,
@@ -4342,7 +4346,7 @@
 "lB" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/unlocked{
-	pixel_x = -24;
+	dir = 8;
 	environ = 0
 	},
 /obj/item/plate,
@@ -4401,12 +4405,12 @@
 	},
 /turf/open/floor/eighties/red,
 /area/awaymission/bmpship/midship/atrium)
-"Ik" = (
-/turf/closed/wall/mineral/titanium/overspace,
-/area/awaymission/bmpship/aft/quarters)
-"Wd" = (
+"Hg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/half,
+/area/awaymission/bmpship/aft/storage)
+"Nu" = (
+/turf/closed/wall/mineral/titanium/overspace,
 /area/awaymission/bmpship/aft/quarters)
 
 (1,1,1) = {"
@@ -6866,7 +6870,7 @@ aa
 an
 aA
 ba
-bc
+Hg
 bz
 cb
 an
@@ -6981,8 +6985,8 @@ aa
 aa
 an
 aD
-bc
-bc
+Hg
+Hg
 bz
 cd
 an
@@ -7057,7 +7061,7 @@ jD
 jP
 kh
 kB
-Wd
+bc
 ao
 aa
 aa
@@ -7098,7 +7102,7 @@ aa
 an
 aE
 be
-bc
+Hg
 bz
 cE
 an
@@ -7168,7 +7172,7 @@ hb
 hI
 iv
 hb
-kn
+aj
 jI
 jR
 ki
@@ -7211,9 +7215,9 @@ aa
 aa
 aa
 aa
-aj
+kn
 aD
-bc
+Hg
 be
 aF
 cH
@@ -7269,13 +7273,13 @@ aa
 aa
 aa
 aa
-aj
+kn
 aG
 br
 bw
 aD
 cI
-aj
+kn
 gB
 gB
 gB
@@ -7327,12 +7331,12 @@ aa
 aa
 aa
 aa
-aj
+kn
 aI
-aj
-aj
+kn
+kn
 bZ
-aj
+kn
 an
 dX
 eW
@@ -7347,7 +7351,7 @@ jL
 jS
 kj
 kD
-Wd
+bc
 ao
 aa
 aa
@@ -7385,13 +7389,13 @@ aa
 aa
 aa
 aa
-aj
+kn
 aJ
 bs
-aj
+kn
 ca
 cJ
-aj
+kn
 cM
 hN
 iD
@@ -7444,12 +7448,12 @@ aa
 aa
 aa
 ap
-aj
+kn
 ap
 ap
 ap
-aj
-aj
+kn
+kn
 dp
 eY
 gc
@@ -7460,11 +7464,11 @@ gJ
 jf
 dk
 ao
-Ik
+Nu
 ao
 ao
-Ik
-Ik
+Nu
+Nu
 aa
 aa
 aa
