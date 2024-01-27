@@ -208,13 +208,12 @@ export class Changelog extends Component {
             and others
           </p>
           <p>
-            Phoenix SS13 is thankful to the
-            Horizon Station 13 Development Team for its work on the game prior
-            to {'commit 48cf2b. The difflog for changes in 48cf2b can be seen '}
-            <a href="https://github.com/Funce/horizon/compare/48cf2b3a66cbd33a37933ef77318676ddcba8aec...2fff9ca416e6ad6939863c2cd2e2b1f8bebaf668">
-              here
+            Phoenix SS13 would not exist without the hard work and
+            {' dedication of the Horizon contributors, up to and including '}
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/commit/3a29f8aca693fcc3181d165b9bf245beb817f666">
+              commit 3a29f8aca693fcc3181d165b9bf245beb817f666
             </a>
-            .
+            {' on November 28, 2022.'}
           </p>
           <p>
             {'Except where otherwise noted, Horizon Station 13 is licensed under a '}
