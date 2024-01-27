@@ -4,21 +4,8 @@
 /obj/effect/decal/cleanable/blood,
 /turf/template_noop,
 /area/template_noop)
-"aJ" = (
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/vatbeast,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/mineral/titanium,
-/area/ruin/unpowered)
 "bV" = (
 /obj/effect/turf_decal/trimline/purple/filled/line,
-/turf/open/floor/mineral/titanium,
-/area/ruin/unpowered)
-"cp" = (
-/mob/living/simple_animal/hostile/vatbeast,
-/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "cQ" = (
@@ -35,7 +22,6 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "eH" = (
-/mob/living/simple_animal/hostile/vatbeast,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /turf/open/floor/mineral/titanium,
@@ -97,13 +83,6 @@
 	dir = 4
 	},
 /obj/item/shard,
-/turf/open/floor/mineral/titanium,
-/area/ruin/unpowered)
-"ju" = (
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "kn" = (
@@ -208,12 +187,15 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "tN" = (
+/obj/item/reagent_containers/glass/maunamug{
+	pixel_x = 7;
+	pixel_y = 12
+	},
 /obj/machinery/shuttle_comms/active,
 /obj/structure/table/reinforced/rglass,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "uS" = (
-/mob/living/simple_animal/hostile/vatbeast,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
@@ -227,6 +209,10 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
+"vH" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
 "wh" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber{
 	dir = 1
@@ -238,14 +224,30 @@
 /area/ruin/unpowered)
 "wi" = (
 /obj/structure/table/reinforced/rglass,
-/obj/effect/spawner/lootdrop/minor/pen/safe{
-	pixel_x = 6;
-	pixel_y = 6
-	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/item/slime_extract/rainbow{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/soft/rainbow{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/clothing/under/color/rainbow{
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/item/clothing/gloves/color/rainbow{
+	pixel_x = -8;
+	pixel_y = -5
+	},
+/obj/item/clothing/shoes/sneakers/rainbow{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "wI" = (
@@ -261,23 +263,6 @@
 	},
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
 	dir = 4
-	},
-/turf/open/floor/mineral/titanium,
-/area/ruin/unpowered)
-"wU" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 15
-	},
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
@@ -390,6 +375,17 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
+"Ej" = (
+/obj/structure/table/reinforced/rglass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/minor/pen/safe{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
 "EN" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /obj/effect/turf_decal/trimline/purple/filled/corner{
@@ -418,6 +414,14 @@
 /obj/effect/mob_spawn/human/corpse/damaged,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Fx" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/slime_extract/silver{
+	pixel_x = -1;
+	pixel_y = -2
+	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "Gr" = (
@@ -497,40 +501,12 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
-"Lg" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 15
-	},
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/mineral/titanium,
-/area/ruin/unpowered)
-"Mo" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 15
-	},
-/turf/open/floor/mineral/titanium,
-/area/ruin/unpowered)
 "Mr" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
 "NK" = (
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
-/mob/living/simple_animal/hostile/vatbeast,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /turf/open/floor/mineral/titanium,
@@ -640,6 +616,14 @@
 /obj/item/folder/yellow,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered)
+"Vy" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/slime_extract/silver{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
 "WH" = (
 /obj/item/shard{
 	icon_state = "medium";
@@ -656,6 +640,21 @@
 "WY" = (
 /turf/template_noop,
 /area/template_noop)
+"XC" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"XV" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/stack/sheet/mineral/plasma/five{
+	pixel_x = 1;
+	pixel_y = 6
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
 "Yk" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
@@ -741,7 +740,7 @@ Jp
 oB
 Td
 Td
-cp
+cQ
 Jp
 WY
 WY
@@ -803,11 +802,11 @@ WY
 ay
 xh
 QA
-wU
-Mo
-Mo
-Lg
-ju
+YH
+cQ
+cQ
+cQ
+Jt
 Mr
 cQ
 cQ
@@ -821,10 +820,10 @@ WY
 WY
 QA
 YH
+vH
 cQ
 cQ
-cQ
-aJ
+Jt
 Mr
 cQ
 cQ
@@ -844,7 +843,7 @@ Jt
 fA
 kZ
 cQ
-cQ
+vH
 Ri
 Jw
 ay
@@ -872,7 +871,7 @@ WY
 WY
 Jw
 bV
-Zt
+Fx
 Zt
 Zj
 Jt
@@ -895,7 +894,7 @@ Ku
 Jt
 NK
 kS
-Zt
+XV
 YH
 Jw
 WY
@@ -906,10 +905,10 @@ WY
 WY
 Jw
 bV
-Zt
+Vy
 DA
 CW
-Jt
+XC
 TM
 Uu
 kS
@@ -960,7 +959,7 @@ cQ
 It
 YH
 eH
-qV
+Ej
 qm
 bV
 xn
@@ -990,7 +989,7 @@ Jw
 Jw
 cQ
 cQ
-Cd
+cQ
 cQ
 Fj
 Fn
