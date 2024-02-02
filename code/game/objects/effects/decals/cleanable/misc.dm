@@ -4,6 +4,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shards"
 	beauty = -50
+	layer = 2.040 // prevents cleanables from being layered beneath floor decals
 
 /obj/effect/decal/cleanable/ash
 	name = "ashes"
