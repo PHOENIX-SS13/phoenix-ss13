@@ -264,6 +264,19 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"ho" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/large,
+/area/cargo/storage)
 "hq" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
@@ -347,6 +360,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
 /obj/structure/lattice/catwalk/plated,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "kc" = (
@@ -449,6 +463,12 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/large,
 /area/cargo/storage)
+"mY" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
 "nb" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
@@ -475,6 +495,7 @@
 /area/maintenance/port/aft)
 "nk" = (
 /obj/structure/lattice/catwalk,
+/obj/structure/lattice,
 /turf/open/space/basic,
 /area/science/xenobiology)
 "nn" = (
@@ -1368,8 +1389,6 @@
 "OP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/cargo/storage)
 "OR" = (
@@ -1475,6 +1494,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
 /obj/structure/lattice/catwalk/plated,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "Rd" = (
@@ -1577,6 +1597,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
 /obj/structure/lattice/catwalk/plated,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "Tz" = (
@@ -1655,8 +1676,6 @@
 "Up" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/ore/iron{
 	amount = 5
@@ -31849,20 +31868,20 @@ Kg
 Kg
 Kg
 Kg
-Kg
-Kg
+ff
+ff
 LT
 IU
 IU
 IU
 IU
 LT
-Kg
-Kg
-Kg
-Kg
-Kg
-Kg
+ff
+ff
+ff
+ff
+ff
+ff
 Kg
 Kg
 Kg
@@ -33908,8 +33927,8 @@ Kr
 JO
 iz
 aU
-Pk
-Pk
+ho
+ho
 Pk
 Pk
 wu
@@ -36467,7 +36486,7 @@ Kg
 Kg
 Kg
 Kg
-ff
+Kg
 zT
 zT
 zT
@@ -36724,8 +36743,8 @@ Kg
 Kg
 Kg
 Kg
-ff
-ff
+Kg
+Kg
 ff
 ff
 RX
@@ -36981,10 +37000,10 @@ Kg
 Kg
 Kg
 Kg
+Kg
+Kg
+Kg
 LU
-ff
-ff
-ff
 RX
 DO
 RX
@@ -37240,8 +37259,8 @@ Kg
 Kg
 Kg
 Kg
-ff
-ff
+Kg
+Kg
 ww
 Kg
 ww
@@ -37255,10 +37274,10 @@ nk
 nk
 nk
 IT
-Kg
-Kg
-Kg
-Kg
+ff
+ff
+ff
+ff
 Kg
 Kg
 Kg
@@ -37498,16 +37517,16 @@ Kg
 Kg
 Kg
 Kg
-ff
+Kg
+Kg
+Kg
 Kg
 Kg
 Kg
 ff
-ff
-ff
-ww
+mY
 Kg
-ww
+mY
 Kg
 Kg
 Kg

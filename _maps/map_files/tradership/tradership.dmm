@@ -2118,6 +2118,7 @@
 /area/maintenance/aft/secondary)
 "nk" = (
 /obj/structure/lattice/catwalk,
+/obj/structure/lattice,
 /turf/open/space/basic,
 /area/science/xenobiology)
 "nl" = (
@@ -2822,6 +2823,19 @@
 	},
 /turf/open/floor/plating,
 /area/service/bar)
+"rv" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/large,
+/area/cargo/storage)
 "rz" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -3891,6 +3905,9 @@
 	id = "emergency_home";
 	name = "bearcat emergency evac bay";
 	width = 32
+	},
+/obj/structure/marker_beacon/white{
+	pixel_x = 16
 	},
 /turf/open/space/basic,
 /area/cargo/storage)
@@ -6002,6 +6019,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
 /obj/structure/lattice/catwalk/plated,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "LO" = (
@@ -6485,8 +6503,6 @@
 "OP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/cargo/storage)
 "OR" = (
@@ -6873,6 +6889,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
 /obj/structure/lattice/catwalk/plated,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "QU" = (
@@ -7354,6 +7371,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
 /obj/structure/lattice/catwalk/plated,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/cargo/storage)
 "Tz" = (
@@ -7550,8 +7568,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/ore/iron{
 	amount = 5
 	},
@@ -7699,8 +7715,9 @@
 "Vg" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/burgundy,
+/obj/structure/lattice,
 /turf/open/space/basic,
-/area/cargo/storage)
+/area/space/nearstation)
 "Vh" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 4
@@ -38455,20 +38472,20 @@ Kg
 Kg
 Kg
 Kg
-Kg
-Kg
+ff
+ff
 LT
 IU
 IU
 IU
 IU
 LT
-Kg
-Kg
-Kg
-Kg
-Kg
-Kg
+ff
+ff
+ff
+ff
+ff
+ff
 Kg
 Kg
 Kg
@@ -40514,8 +40531,8 @@ Kr
 JO
 iz
 aU
-Pk
-Pk
+rv
+rv
 Pk
 Pk
 wu
@@ -40785,7 +40802,7 @@ Ds
 WQ
 TO
 Sn
-Vg
+mm
 Kg
 Kg
 Kg
@@ -41556,7 +41573,7 @@ uA
 PX
 LU
 Sn
-Vg
+mm
 Kg
 Kg
 Kg
@@ -43073,7 +43090,7 @@ Kg
 Kg
 Kg
 Kg
-ff
+Kg
 zT
 zT
 zT
@@ -43330,8 +43347,8 @@ Kg
 Kg
 Kg
 Kg
-ff
-ff
+Kg
+Kg
 ff
 ff
 RX
@@ -43587,10 +43604,10 @@ Kg
 Kg
 Kg
 Kg
+Kg
+Kg
+Kg
 gB
-ff
-ff
-ff
 RX
 DO
 RX
@@ -43846,8 +43863,8 @@ Kg
 Kg
 Kg
 Kg
-ff
-ff
+Kg
+Kg
 ww
 Kg
 ww
@@ -43861,10 +43878,10 @@ nk
 nk
 nk
 IT
-Kg
-Kg
-Kg
-Kg
+ff
+ff
+ff
+ff
 Kg
 Kg
 Kg
@@ -44104,16 +44121,16 @@ Kg
 Kg
 Kg
 Kg
-ff
+Kg
+Kg
+Kg
 Kg
 Kg
 Kg
 ff
-ff
-ff
-ww
+Vg
 Kg
-ww
+Vg
 Kg
 Kg
 Kg

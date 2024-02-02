@@ -223,14 +223,6 @@
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/aft/secondary)
-"fx" = (
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
-/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/iron/large,
-/area/cargo/warehouse)
 "fJ" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall/r_wall,
@@ -239,6 +231,7 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/mining_brace,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/cargo/warehouse)
 "fM" = (
@@ -329,7 +322,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/engineering/storage)
 "ha" = (
 /obj/structure/cable,
@@ -624,6 +617,7 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/mining_brace,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/cargo/warehouse)
 "mV" = (
@@ -688,6 +682,7 @@
 "nS" = (
 /obj/machinery/light/broken/directional/west,
 /obj/machinery/light_switch/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/cargo/warehouse)
 "nW" = (
@@ -761,9 +756,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/sand{
-	color = "#f7ff9c"
-	},
 /turf/open/floor/plating,
 /area/cargo/warehouse)
 "pO" = (
@@ -832,6 +824,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/item/metal_density_scanner,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/cargo/warehouse)
 "rd" = (
@@ -842,11 +835,8 @@
 "rh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/sand{
-	color = "#f7ff9c"
-	},
-/turf/open/floor/plating,
-/area/cargo/warehouse)
+/turf/open/floor/plating/rust,
+/area/commons/vacant_room)
 "rn" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1299,18 +1289,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
-/area/cargo/warehouse)
-"BH" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/sand{
-	color = "#f7ff9c"
-	},
-/turf/open/floor/plating,
 /area/cargo/warehouse)
 "BI" = (
 /obj/structure/cable,
@@ -2125,6 +2103,7 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/power/mining_drill,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/cargo/warehouse)
 "Sd" = (
@@ -34487,14 +34466,14 @@ Mg
 Mg
 pJ
 ME
-rh
+pD
 iF
 Hv
 iN
-gW
+ab
 RR
 fL
-fx
+Zs
 nS
 hF
 uE
@@ -34743,7 +34722,7 @@ Mg
 Mg
 Aj
 pJ
-BH
+ME
 pD
 iF
 Hv
@@ -34751,7 +34730,7 @@ mQ
 Tt
 mR
 rc
-fx
+Zs
 FP
 Yk
 Oj
@@ -37331,7 +37310,7 @@ tX
 WG
 lh
 gM
-Rr
+rh
 tl
 NI
 KH
