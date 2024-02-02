@@ -833,6 +833,9 @@
 	name = "bearcat emergency evac bay";
 	width = 32
 	},
+/obj/structure/marker_beacon/white{
+	pixel_x = 16
+	},
 /turf/open/space/basic,
 /area/cargo/storage)
 "xX" = (
@@ -1684,11 +1687,6 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/large,
-/area/cargo/storage)
-"Vg" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/marker_beacon/burgundy,
-/turf/open/space/basic,
 /area/cargo/storage)
 "Vo" = (
 /obj/structure/disposalpipe/segment,
@@ -34181,7 +34179,7 @@ qv
 WQ
 WP
 Sn
-Vg
+mm
 Kg
 Kg
 Kg
@@ -34952,7 +34950,7 @@ uA
 PX
 pE
 Sn
-Vg
+mm
 Kg
 Kg
 Kg

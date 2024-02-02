@@ -761,6 +761,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
 /turf/open/floor/plating,
 /area/cargo/warehouse)
 "pO" = (
@@ -836,6 +839,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
 /area/construction/storage_wing)
+"rh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/turf/open/floor/plating,
+/area/cargo/warehouse)
 "rn" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1288,6 +1299,18 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/large,
+/area/cargo/warehouse)
+"BH" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/turf/open/floor/plating,
 /area/cargo/warehouse)
 "BI" = (
 /obj/structure/cable,
@@ -34464,7 +34487,7 @@ Mg
 Mg
 pJ
 ME
-pD
+rh
 iF
 Hv
 iN
@@ -34720,7 +34743,7 @@ Mg
 Mg
 Aj
 pJ
-ME
+BH
 pD
 iF
 Hv

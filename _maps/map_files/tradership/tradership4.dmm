@@ -3,6 +3,13 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"ba" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 9
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "bU" = (
 /obj/item/stack/cable_coil,
 /turf/open/floor/plating/airless,
@@ -36,6 +43,16 @@
 	},
 /turf/open/openspace,
 /area/maintenance/solars/port/aft)
+"gj" = (
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 5
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "gD" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing/corner{
@@ -47,6 +64,12 @@
 /obj/machinery/ntnet_relay,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"hN" = (
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "hT" = (
 /obj/machinery/telecomms/server/presets/engineering,
 /obj/machinery/light/directional/west,
@@ -67,6 +90,11 @@
 /obj/machinery/telecomms/receiver/preset_right,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"iz" = (
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/hull/reinforced
+	},
+/area/space/nearstation)
 "ju" = (
 /obj/machinery/telecomms/server/presets/supply,
 /turf/open/floor/circuit,
@@ -182,6 +210,23 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
+"tl" = (
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 6
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"uy" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "ve" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -227,6 +272,10 @@
 /obj/structure/girder,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"wl" = (
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "wC" = (
 /obj/structure/ladder,
 /turf/open/floor/plating,
@@ -247,6 +296,13 @@
 /obj/machinery/telecomms/broadcaster/preset_right,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"yd" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "yp" = (
 /obj/structure/cable/multilayer/multiz,
 /turf/open/floor/iron,
@@ -260,7 +316,9 @@
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "yC" = (
-/turf/closed/mineral/random/high_chance,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/airless
+	},
 /area/space/nearstation)
 "yH" = (
 /obj/structure/lattice/catwalk,
@@ -281,6 +339,17 @@
 	},
 /turf/open/openspace,
 /area/maintenance/solars/port/aft)
+"AX" = (
+/obj/structure/marker_beacon/olive,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"Bi" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 1
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "By" = (
 /obj/machinery/telecomms/bus/preset_one,
 /turf/open/floor/circuit,
@@ -289,6 +358,9 @@
 /obj/machinery/door/airlock/external,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "DK" = (
@@ -299,6 +371,13 @@
 /obj/machinery/telecomms/server/presets/service,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"Eb" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "Eu" = (
 /obj/machinery/telecomms/bus/preset_three,
 /turf/open/floor/circuit,
@@ -356,6 +435,9 @@
 "Lf" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "Lg" = (
@@ -386,6 +468,13 @@
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Qi" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 4
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Qr" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/railing,
@@ -393,6 +482,12 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Qy" = (
+/obj/structure/lattice,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/airless
+	},
+/area/space/nearstation)
 "QM" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/door/firedoor/border_only,
@@ -431,6 +526,20 @@
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"SX" = (
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 10
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Tj" = (
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
@@ -505,6 +614,14 @@
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"WJ" = (
+/obj/structure/grille,
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "WY" = (
 /obj/structure/lattice,
 /turf/open/floor/engine/airless,
@@ -521,6 +638,12 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Xs" = (
+/obj/structure/marker_beacon/white{
+	pixel_x = 16
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Ye" = (
 /obj/structure/closet/crate/solarpanel_small,
 /turf/open/floor/plating,
@@ -28418,12 +28541,12 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
-Zw
-Zw
-Zw
-Zw
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
 Zw
 Zw
 Zw
@@ -28674,13 +28797,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
 Ou
 Ou
+jB
+jB
+jB
+jB
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -28931,13 +29054,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Ou
 Ou
 jB
+jB
+jB
+jB
+jB
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -29189,12 +29312,12 @@ Zw
 Zw
 Zw
 Ou
-Ou
 jB
 jB
+jB
+jB
+jB
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -29449,9 +29572,9 @@ Ou
 Ou
 jB
 jB
+jB
+jB
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -29702,13 +29825,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
 Ou
 Ou
 Ou
 Ou
-Zw
-Zw
+Ou
+Ou
+Ou
 Zw
 Zw
 Nf
@@ -30483,7 +30606,7 @@ jB
 jB
 jB
 jB
-jB
+Ou
 jB
 jB
 jB
@@ -30724,7 +30847,7 @@ Zw
 Zw
 Ou
 Ou
-jB
+Ou
 jB
 jB
 jB
@@ -30740,7 +30863,7 @@ jB
 jB
 jB
 jB
-jB
+Ou
 jB
 jB
 jB
@@ -30972,7 +31095,7 @@ Zw
 Zw
 Zw
 Ou
-jB
+wl
 Ou
 Zw
 Zw
@@ -30997,7 +31120,7 @@ cn
 zC
 zC
 zC
-jB
+Ou
 jB
 jB
 jB
@@ -31254,7 +31377,7 @@ zC
 zC
 zC
 jB
-jB
+Ou
 jB
 jB
 jB
@@ -31476,8 +31599,8 @@ Zw
 Zw
 Zw
 Vd
-yC
-yC
+Ou
+Ou
 Ou
 Ou
 jB
@@ -31511,7 +31634,7 @@ zC
 UI
 zC
 zC
-jB
+Ou
 jB
 jB
 jB
@@ -31734,23 +31857,23 @@ Vd
 pE
 Vd
 Vd
-yC
-yC
-yC
+jB
+jB
+Ou
+jB
+jB
+jB
+Ou
+jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -31766,11 +31889,11 @@ jB
 jB
 jB
 jB
+Qi
+Qi
+Ou
 jB
-jB
-jB
-jB
-jB
+Qi
 jB
 jB
 jB
@@ -31991,23 +32114,23 @@ hT
 qP
 ju
 Vd
-yC
-yC
-yC
+jB
+jB
+Ou
+Ou
+Ou
+Ou
+Ou
+jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -32025,8 +32148,8 @@ FM
 oE
 yC
 yC
-yC
-jB
+gj
+tl
 yC
 oE
 nZ
@@ -32249,22 +32372,22 @@ qP
 VA
 Vd
 yC
-yC
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -32282,7 +32405,7 @@ Ye
 oE
 oE
 oE
-yC
+iz
 yC
 yC
 oE
@@ -32513,15 +32636,15 @@ Vd
 Vd
 jB
 jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -32539,7 +32662,7 @@ Ux
 ve
 SU
 oE
-yC
+iz
 yC
 yC
 oE
@@ -32770,15 +32893,15 @@ ch
 Vd
 jB
 jB
+Ou
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
 jB
 jB
 jB
@@ -33027,22 +33150,22 @@ Wh
 Vd
 jB
 jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
+Ou
 jB
 jB
-jB
-jB
-jB
-jB
-jB
+Xs
 ZG
 ZG
 Cc
-Ph
+uy
 Ph
 yw
 Ph
@@ -33284,23 +33407,23 @@ wP
 Vd
 jB
 jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
 ZG
 jB
 Lf
-rQ
-rQ
+hN
+hN
 vS
 rQ
 QM
@@ -33541,15 +33664,15 @@ yp
 Vd
 jB
 jB
+Ou
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
 jB
 jB
 jB
@@ -33798,15 +33921,15 @@ Vd
 Vd
 jB
 jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -33824,18 +33947,18 @@ fB
 fB
 SH
 oE
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-WY
-jB
-WY
-jB
+iz
+yC
+yC
+yC
+yC
+yC
+yC
+SX
+Qy
+yC
+Qy
+Bi
 jB
 jB
 jB
@@ -34047,23 +34170,23 @@ Eu
 qP
 By
 Vd
+yC
+yC
+Ou
 jB
 jB
 jB
 jB
 jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -34081,17 +34204,17 @@ Lg
 HJ
 oE
 oE
+iz
+ba
+yd
+yd
+yd
+yd
+yd
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-Iu
-Iu
-Iu
+WJ
+WJ
+WJ
 jB
 jB
 jB
@@ -34306,21 +34429,21 @@ ib
 Vd
 jB
 jB
+Ou
+Ou
+Ou
+Ou
+Ou
+jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -34338,7 +34461,7 @@ FM
 oE
 jB
 jB
-jB
+Eb
 jB
 jB
 jB
@@ -34563,21 +34686,21 @@ Vd
 Vd
 jB
 jB
+Ou
+jB
+jB
+jB
+Ou
+jB
+Ou
+jB
+Ou
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
@@ -34595,7 +34718,7 @@ jB
 jB
 jB
 jB
-jB
+Ou
 jB
 jB
 jB
@@ -34852,7 +34975,7 @@ zC
 zC
 zC
 zC
-jB
+Ou
 jB
 jB
 jB
@@ -35109,7 +35232,7 @@ zC
 zC
 zC
 zC
-jB
+Ou
 jB
 jB
 jB
@@ -35341,7 +35464,7 @@ Zw
 Zw
 Zw
 Ou
-jB
+AX
 Ou
 Zw
 Zw
@@ -35366,7 +35489,7 @@ zC
 zC
 bU
 jB
-jB
+Ou
 jB
 jB
 jB
@@ -35607,7 +35730,7 @@ Zw
 Zw
 Ou
 Ou
-jB
+Ou
 jB
 jB
 jB
@@ -35623,7 +35746,7 @@ jB
 jB
 jB
 jB
-jB
+Ou
 jB
 jB
 jB
@@ -35880,7 +36003,7 @@ jB
 jB
 jB
 jB
-jB
+Ou
 jB
 jB
 jB
@@ -36641,13 +36764,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
 Ou
 Ou
 Ou
 Ou
-Zw
-Zw
+Ou
+Ou
+Ou
 Zw
 Zw
 Zw
@@ -36901,10 +37024,10 @@ Zw
 Ou
 Ou
 jB
-yC
+jB
+jB
+jB
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -37156,12 +37279,12 @@ Zw
 Zw
 Zw
 Ou
-yC
-yC
-yC
-yC
-Zw
-Zw
+jB
+jB
+jB
+jB
+jB
+Ou
 Zw
 Zw
 Zw
@@ -37412,13 +37535,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
 Ou
-yC
-yC
-yC
-Zw
-Zw
+jB
+jB
+jB
+jB
+jB
+Ou
 Zw
 Zw
 Zw
@@ -37669,13 +37792,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
 Ou
-yC
-yC
-Zw
-Zw
+Ou
+jB
+jB
+jB
+jB
+Ou
 Zw
 Zw
 Zw
@@ -37927,12 +38050,12 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
-Zw
-Zw
-Zw
-Zw
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
 Zw
 Zw
 Zw
