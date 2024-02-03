@@ -10,7 +10,7 @@
 	/// Reference to the song list from the jukebox subsystem.
 	var/static/list/songs
 	/// Currently selected artist
-	var/artist_selected
+	var/artist_selected = "uncredited"
 	/// Currently selected track.
 	var/datum/jukebox_track/selection
 	/// Currently played track.
