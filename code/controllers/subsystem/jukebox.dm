@@ -80,12 +80,14 @@ SUBSYSTEM_DEF(jukebox)
 /datum/controller/subsystem/jukebox/proc/free_channel(channel)
 	free_channels += channel
 
+/// attempts to call ffprobe to get metadata from an audio file in the jukebox sounds. songfilename should include file extension.
 /datum/controller/subsystem/jukebox/proc/ffprobe(songfilename as text)
 	var/ffprobe_path = CONFIG_GET(string/ffprobe_path)
 	if(ffprobe_path == "")
 		CRASH("Called ffprobe with no path set! Check config/phoenix.txt")
 	var/list/shelleo_output = world.shelleo("[ffprobe_path] ./[global.config.directory]/jukebox_music/sounds/[songfilename] -hide_banner -of json -v quiet -show_streams")
 	if(shelleo_output[1] != 0)
+		CRASH("ffprobe exit code [shelleo_output[1]] - Either ffprobe_path is incorrect, or config/jukebox_music/sounds/[songfilename] is not a correct file.")
 		return null
 	var/list/decodedstdout = json_decode(shelleo_output[2])
 	var/duration = text2num(decodedstdout["streams"][1]["duration"])
@@ -94,7 +96,7 @@ SUBSYSTEM_DEF(jukebox)
 	var/title = tags["title"]
 	if(isnull(artist) || isnull(title) || isnull(duration))
 		return null
-	return list("artist" = artist, "title" = title, "duration" = duration)
+	return list(artist, title, duration)
 
 /datum/controller/subsystem/jukebox/proc/is_ffprobe_path_set()
 	return CONFIG_GET(string/ffprobe_path) != ""
