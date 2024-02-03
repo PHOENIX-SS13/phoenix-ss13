@@ -54,7 +54,8 @@ export const Jukebox = (props, context) => {
                 disabled={active}
                 selected={track_selected || "Select a Track"}
                 onSelected={value => act('select_track', {
-                  track: value,
+                  track_title: value,
+                  track_artist: artist_selected,
                 })} />
             </LabeledList.Item>
             <LabeledList.Item label="Track Length">

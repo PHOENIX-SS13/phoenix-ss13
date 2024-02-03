@@ -140,13 +140,16 @@
 			if(active)
 				to_chat(usr, SPAN_WARNING("Error: You cannot change the song until the current one is over."))
 				return
-			var/list/available = list()
-			for(var/datum/jukebox_track/S in songs)
-				available["[S.song_artist] - [S.song_title]"] = S
-			var/selected = params["track"]
-			if(QDELETED(src) || !selected || !istype(available[selected], /datum/jukebox_track))
+			var/selected_title = params["track_title"]
+			var/selected_artist = params["track_artist"]
+
+			if(QDELETED(src) || !selected_title || !selected_artist)
 				return
-			selection = available[selected]
+
+			for(var/datum/jukebox_track/S in songs)
+				if(S.song_title == selected_title && S.song_artist == selected_artist)
+					selection = S
+					break
 			return TRUE
 		if("set_volume")
 			var/new_volume = params["volume"]
