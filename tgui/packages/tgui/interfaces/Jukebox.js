@@ -40,7 +40,7 @@ export const Jukebox = (props, context) => {
                 width="240px"
                 options={artists}
                 disabled={active}
-                selected={selectedArtist || "Select an artist"}
+                selected={artist_selected || "Select an artist"}
                 onSelected={value => act('select_artist', {
                   artist: value,
                 })} />
@@ -49,7 +49,7 @@ export const Jukebox = (props, context) => {
               <Dropdown
                 overflow-y="scroll"
                 width="240px"
-                options={songs.filter(song => song.artist === selectedArtist)
+                options={songs.filter(song => song.artist === artist_selected)
                   .map(song => song.name)}
                 disabled={active}
                 selected={track_selected || "Select a Track"}
