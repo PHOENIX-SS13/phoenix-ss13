@@ -51,6 +51,7 @@ SUBSYSTEM_DEF(jukebox)
 	tracks.Cut()
 
 	var/list/to_load_tracks = flist("[global.config.directory]/jukebox_music/sounds/")
+	var/use_ffprobe = is_ffprobe_path_set()
 
 	for(var/some_file in to_load_tracks)
 		var/datum/jukebox_track/track = new()
@@ -78,3 +79,24 @@ SUBSYSTEM_DEF(jukebox)
 
 /datum/controller/subsystem/jukebox/proc/free_channel(channel)
 	free_channels += channel
+
+/datum/controller/subsystem/jukebox/proc/ffprobe(songfilename as text)
+	var/ffprobe_path = CONFIG_GET(string/ffprobe_path)
+	if(ffprobe_path == "")
+		CRASH("Called ffprobe with no path set! Check config/phoenix.txt")
+	var/list/shelleo_output = world.shelleo("[ffprobe_path] ./[global.config.directory]/jukebox_music/sounds/[songfilename] -hide_banner -of json -v quiet -show_streams")
+	if(shelleo_output[1] != 0)
+		return null
+	var/list/decodedstdout = json_decode(shelleo_output[2])
+	var/duration = text2num(decodedstdout["streams"][1]["duration"])
+	var/list/tags = decodedstdout["streams"][1]["tags"]
+	var/artist = tags["artist"]
+	var/title = tags["title"]
+	if(isnull(artist) || isnull(title) || isnull(duration))
+		return null
+	return list("artist" = artist, "title" = title, "duration" = duration)
+
+/datum/controller/subsystem/jukebox/proc/is_ffprobe_path_set()
+	return CONFIG_GET(string/ffprobe_path) != ""
+
+/datum/controller/subsystem/jukebox/proc/songfile2params()

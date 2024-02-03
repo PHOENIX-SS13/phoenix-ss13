@@ -4,3 +4,7 @@ AUTOSHELL_POP 8
 
 ## multiplier for simple_animal/hostile maxhealth.
 HOSTILE_HEALTH_MULT 1.5
+
+## file system path for ffprobe if it exists.
+#  just comment this out if you dont have it.
+# FFPROBE_PATH C:\ffprobe.exe
