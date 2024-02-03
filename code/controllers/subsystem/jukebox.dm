@@ -5,6 +5,8 @@ SUBSYSTEM_DEF(jukebox)
 	wait = 1 SECONDS
 	/// All tracks that jukeboxes can pick from to play.
 	var/list/tracks = list()
+	/// List of artists for sorting and filtering
+	var/list/artists = list()
 	/// Remaining free channels, those get used and freed as songs start and end.
 	var/list/free_channels = list()
 	/// Currently playing tracks.
@@ -62,7 +64,7 @@ SUBSYSTEM_DEF(jukebox)
 			if(!isnull(track))
 				tracks += track
 				continue
-		track = songfile2params(some_file)
+		track = songfile2track(some_file)
 		tracks += track
 
 /datum/controller/subsystem/jukebox/proc/get_free_channel()
@@ -80,14 +82,25 @@ SUBSYSTEM_DEF(jukebox)
 	var/ffprobe_path = CONFIG_GET(string/ffprobe_path)
 	if(ffprobe_path == "")
 		CRASH("Called ffprobe with no path set! Check config/phoenix.txt")
-	var/list/shelleo_output = world.shelleo("[ffprobe_path] ./[global.config.directory]/jukebox_music/sounds/'[songfilename]' -hide_banner -of json -v quiet -show_streams")
-	//if(shelleo_output[1] != "0")
-		//CRASH("ffprobe exit code [shelleo_output[1]] - Either ffprobe_path is incorrect, or config/jukebox_music/sounds/[songfilename] is not a correct file.")
+	if(findtext(songfilename, " "))
+		songfilename = "\"[songfilename]\""
+	var/list/shelleo_output = world.shelleo("[ffprobe_path] ./[global.config.directory]/jukebox_music/sounds/[songfilename] -hide_banner -of json -v quiet -show_streams")
+	if(shelleo_output[1] != 0)
+		return null
 	var/list/decodedstdout = json_decode(shelleo_output[2])
-	var/duration = text2num(decodedstdout["streams"][1]["duration"])
+	var/duration = text2num(decodedstdout["streams"][1]["duration"]) SECONDS
 	var/list/tags = decodedstdout["streams"][1]["tags"]
-	var/artist = tags["artist"]
-	var/title = tags["title"]
+	var/artist = ""
+	var/title = ""
+	for(var/key in tags)
+		if(lowertext(key) == "artist")
+			artist = tags[key]
+			if(!artists.Find(artist))
+				artists.Add(artist)
+		if(lowertext(key) == "title")
+			title = tags[key]
+		if(artist != "" && title != "")
+			break
 	if(isnull(artist) || isnull(title) || isnull(duration))
 		return null
 	return list(artist, title, duration)
@@ -108,7 +121,7 @@ SUBSYSTEM_DEF(jukebox)
 	return CONFIG_GET(string/ffprobe_path) != ""
 
 /// old filename-parsing method of getting song parameters
-/datum/controller/subsystem/jukebox/proc/songfile2params(filename as text)
+/datum/controller/subsystem/jukebox/proc/songfile2track(filename as text)
 	var/datum/jukebox_track/track = new()
 	track.song_path = file("[global.config.directory]/jukebox_music/sounds/[filename]")
 	var/list/param_list = splittext(filename,"+")
@@ -123,4 +136,6 @@ SUBSYSTEM_DEF(jukebox)
 		track.song_beat = ((text2num(param_list[4]) / 60) SECONDS)
 	else
 		return null
+	if(!artists.Find(track.song_artist))
+		artists.Add(track.song_artist)
 	return track
