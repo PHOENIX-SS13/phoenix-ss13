@@ -94,7 +94,8 @@
 	data["songs"] = list()
 	for(var/datum/jukebox_track/S in songs)
 		var/list/track_data = list(
-			name = "[S.song_artist] - [S.song_title]"
+			name = S.song_title,
+			artist = S.song_artist,
 		)
 		data["songs"] += list(track_data)
 	data["track_selected"] = null
