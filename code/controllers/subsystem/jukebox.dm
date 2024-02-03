@@ -126,6 +126,7 @@ SUBSYSTEM_DEF(jukebox)
 	track.song_path = file("[global.config.directory]/jukebox_music/sounds/[filename]")
 	var/list/param_list = splittext(filename,"+")
 	if(param_list.len == 3)
+		track.song_artist = "uncredited"
 		track.song_title = param_list[1]
 		track.song_length = ((text2num(param_list[2]) / 10) SECONDS)
 		track.song_beat = ((text2num(param_list[3]) / 60) SECONDS)
