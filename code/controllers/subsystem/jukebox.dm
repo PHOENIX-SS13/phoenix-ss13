@@ -88,7 +88,6 @@ SUBSYSTEM_DEF(jukebox)
 	var/list/shelleo_output = world.shelleo("[ffprobe_path] ./[global.config.directory]/jukebox_music/sounds/[songfilename] -hide_banner -of json -v quiet -show_streams")
 	if(shelleo_output[1] != 0)
 		CRASH("ffprobe exit code [shelleo_output[1]] - Either ffprobe_path is incorrect, or config/jukebox_music/sounds/[songfilename] is not a correct file.")
-		return null
 	var/list/decodedstdout = json_decode(shelleo_output[2])
 	var/duration = text2num(decodedstdout["streams"][1]["duration"])
 	var/list/tags = decodedstdout["streams"][1]["tags"]
