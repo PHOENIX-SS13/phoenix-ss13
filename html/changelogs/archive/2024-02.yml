@@ -1,0 +1,7 @@
+2024-02-04:
+  CASEY GUNGEON (CASEYGUNGEON):
+  - config: added FFPROBE_PATH config
+  - qol: jukebox songs now sort and filter by artist for easier menu navigation
+  - server: jukebox audio files can now have metadata parsed by ffprobe if ffmpeg
+      is installed. it won&#x27;t bother if FFPROBE_PATH isn&#x27;t set, so if you
+      don&#x27;t want it just don&#x27;t use it.
