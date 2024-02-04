@@ -127,6 +127,7 @@
 #define INIT_ORDER_TICKER 55
 #define INIT_ORDER_TCG 55
 #define INIT_ORDER_REAGENTS 55 //HAS to be before mapping - mapping creates objects, which creates reagents, which relies on lists made in this subsystem
+#define INIT_ORDER_SHUTTLECOMMS 51 // right before mapping places these things
 #define INIT_ORDER_MAPPING 50
 #define INIT_ORDER_TIMETRACK 47
 #define INIT_ORDER_NETWORKS 45
@@ -148,7 +149,6 @@
 #define INIT_ORDER_STICKY_BAN -10
 #define INIT_ORDER_LIGHTING -20
 #define INIT_ORDER_SHUTTLE -21
-#define INIT_ORDER_SHUTTLECOMMS -22
 #define INIT_ORDER_MINOR_MAPPING -40
 #define INIT_ORDER_PATH -50
 #define INIT_ORDER_DISCORD -60

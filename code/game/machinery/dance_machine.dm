@@ -9,6 +9,8 @@
 	var/active = FALSE
 	/// Reference to the song list from the jukebox subsystem.
 	var/static/list/songs
+	/// Currently selected artist
+	var/artist_selected = "uncredited"
 	/// Currently selected track.
 	var/datum/jukebox_track/selection
 	/// Currently played track.
@@ -87,10 +89,13 @@
 /obj/machinery/jukebox/ui_data(mob/user)
 	var/list/data = list()
 	data["active"] = active
+	data["artists"] = SSjukebox.artists
+	data["artist_selected"] = artist_selected
 	data["songs"] = list()
 	for(var/datum/jukebox_track/S in songs)
 		var/list/track_data = list(
-			name = "[S.song_artist] - [S.song_title]"
+			name = S.song_title,
+			artist = S.song_artist,
 		)
 		data["songs"] += list(track_data)
 	data["track_selected"] = null
@@ -127,17 +132,24 @@
 				/// Deleting the track stops the song.
 				qdel(played_track)
 				return TRUE
+		if("select_artist")
+			var/selected = params["artist"]
+			if(SSjukebox.artists.Find(selected))
+				artist_selected = selected
 		if("select_track")
 			if(active)
 				to_chat(usr, SPAN_WARNING("Error: You cannot change the song until the current one is over."))
 				return
-			var/list/available = list()
-			for(var/datum/jukebox_track/S in songs)
-				available["[S.song_artist] - [S.song_title]"] = S
-			var/selected = params["track"]
-			if(QDELETED(src) || !selected || !istype(available[selected], /datum/jukebox_track))
+			var/selected_title = params["track_title"]
+			var/selected_artist = params["track_artist"]
+
+			if(QDELETED(src) || !selected_title || !selected_artist)
 				return
-			selection = available[selected]
+
+			for(var/datum/jukebox_track/S in songs)
+				if(S.song_title == selected_title && S.song_artist == selected_artist)
+					selection = S
+					break
 			return TRUE
 		if("set_volume")
 			var/new_volume = params["volume"]

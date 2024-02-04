@@ -4,3 +4,8 @@ AUTOSHELL_POP 8
 
 ## multiplier for simple_animal/hostile maxhealth.
 HOSTILE_HEALTH_MULT 1.5
+
+## file system path for ffprobe if it exists.
+#  this makes the jukebox system a lot more convenient to use,
+#  but just comment this out if you dont have it or don't want to use it.
+# FFPROBE_PATH C:\ffprobe.exe
