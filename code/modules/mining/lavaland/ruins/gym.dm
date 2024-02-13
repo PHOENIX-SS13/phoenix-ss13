@@ -26,6 +26,8 @@
 	anchored = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	var/icon_state_inuse
+	var/list/lift_sounds = list('sound/effects/gym/lift_1.ogg', 'sound/effects/gym/lift_2.ogg', 'sound/effects/gym/lift_3.ogg',\
+	'sound/effects/gym/lift_4.ogg', 'sound/weapons/lift_5.ogg', 'sound/effects/gym/drop_1.ogg', 'sound/effects/gym/drop_2.ogg')
 
 /obj/structure/weightmachine/proc/AnimateMachine(mob/living/user)
 	return
@@ -71,7 +73,7 @@
 		sleep(3)
 		animate(user, pixel_y = -4, time = 3)
 		sleep(3)
-		playsound(user, 'goon/sound/effects/spring.ogg', 60, TRUE)
+		playsound(user, pick(lift_sounds), 60, TRUE)
 
 /obj/structure/weightmachine/weightlifter
 	icon = 'goon/icons/obj/fitness.dmi'
@@ -89,7 +91,7 @@
 		for (var/innerReps = max(reps, 1), innerReps > 0, innerReps--)
 			sleep(3)
 			animate(user, pixel_y = (user.pixel_y == 3) ? 5 : 3, time = 3)
-		playsound(user, 'goon/sound/effects/spring.ogg', 60, TRUE)
+		playsound(user, pick(lift_sounds), 60, TRUE)
 	sleep(3)
 	animate(user, pixel_y = 2, time = 3)
 	sleep(3)
