@@ -53,7 +53,7 @@
 	name = "cable machine"
 	desc = "Great for seated pulldowns. Feel those arms burn!"
 	icon_state = "cable"
-	icon_state_inuse = "[icon_state]-flick"
+	icon_state_inuse = "cable-flick"
 
 /obj/structure/weightmachine/stacklifter/AnimateMachine(mob/living/user)
 	var/lifts = 0
@@ -71,7 +71,7 @@
 /obj/structure/weightmachine/weightlifter
 	name = "barbell station"
 	icon_state = "weight"
-	icon_state_inuse = "[icon_state]-flick"
+	icon_state_inuse = "weight-flick"
 
 /obj/structure/weightmachine/weightlifter/AnimateMachine(mob/living/user)
 	var/mutable_appearance/swole_overlay = mutable_appearance(icon, "[icon_state]-barbell", WALL_OBJ_LAYER)
