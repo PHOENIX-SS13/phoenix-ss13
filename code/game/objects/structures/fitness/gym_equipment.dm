@@ -12,7 +12,6 @@
 	name = "weight machine"
 	desc = "Just looking at this thing makes you feel tired."
 	icon = 'icons/obj/structures/fitness/weight_machine.dmi'
-	icon_state_inuse = "[icon_state]-flick"
 	density = TRUE
 	anchored = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
@@ -54,6 +53,7 @@
 	name = "cable machine"
 	desc = "Great for seated pulldowns. Feel those arms burn!"
 	icon_state = "cable"
+	icon_state_inuse = "[icon_state]-flick"
 
 /obj/structure/weightmachine/stacklifter/AnimateMachine(mob/living/user)
 	var/lifts = 0
@@ -69,7 +69,9 @@
 
 // Weight Lifter
 /obj/structure/weightmachine/weightlifter
+	name = "barbell station"
 	icon_state = "weight"
+	icon_state_inuse = "[icon_state]-flick"
 
 /obj/structure/weightmachine/weightlifter/AnimateMachine(mob/living/user)
 	var/mutable_appearance/swole_overlay = mutable_appearance(icon, "[icon_state]-barbell", WALL_OBJ_LAYER)
