@@ -1,33 +1,24 @@
-/obj/structure/punching_bag
-	name = "punching bag"
-	desc = "A punching bag. Can you get to speed level 4???"
-	icon = 'goon/icons/obj/fitness.dmi'
-	icon_state = "punchingbag"
-	anchored = TRUE
-	layer = WALL_OBJ_LAYER
-	var/list/hit_sounds = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg',\
-	'sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 'sound/weapons/punch4.ogg')
+/* Gym Equipment
+ * -------------
+ * Contains:
+ * Weight Machine parent
+ * Stacklifter
+ * Weightlifter
+ * Punching bag
+ */
 
-/obj/structure/punching_bag/attack_hand(mob/user, list/modifiers)
-	. = ..()
-	if(.)
-		return
-	flick("[icon_state]2", src)
-	playsound(loc, pick(hit_sounds), 25, TRUE, -1)
-	if(isliving(user))
-		var/mob/living/L = user
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)
-		L.apply_status_effect(STATUS_EFFECT_EXERCISED)
-
+// Weight machine
 /obj/structure/weightmachine
 	name = "weight machine"
 	desc = "Just looking at this thing makes you feel tired."
+	icon = 'icons/obj/structures/fitness/weight_machine.dmi'
+	icon_state_inuse = "[icon_state]-flick"
 	density = TRUE
 	anchored = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	var/icon_state_inuse
-	var/list/lift_sounds = list('sound/effects/gym/lift_1.ogg', 'sound/effects/gym/lift_2.ogg', 'sound/effects/gym/lift_3.ogg',\
-	'sound/effects/gym/lift_4.ogg', 'sound/weapons/lift_5.ogg', 'sound/effects/gym/drop_1.ogg', 'sound/effects/gym/drop_2.ogg')
+	var/list/lift_sounds = list('sound/effects/fitness/lift_1.ogg', 'sound/effects/fitness/lift_2.ogg', 'sound/effects/fitness/lift_3.ogg',\
+	'sound/effects/fitness/lift_4.ogg', 'sound/effects/fitness/lift_5.ogg', 'sound/effects/fitness/drop_1.ogg', 'sound/effects/fitness/drop_2.ogg')
 
 /obj/structure/weightmachine/proc/AnimateMachine(mob/living/user)
 	return
@@ -58,10 +49,11 @@
 		to_chat(user, finishmessage)
 		user.apply_status_effect(STATUS_EFFECT_EXERCISED)
 
+// Stack Lifter
 /obj/structure/weightmachine/stacklifter
-	icon = 'goon/icons/obj/fitness.dmi'
-	icon_state = "fitnesslifter"
-	icon_state_inuse = "fitnesslifter2"
+	name = "cable machine"
+	desc = "Great for seated pulldowns. Feel those arms burn!"
+	icon_state = "cable"
 
 /obj/structure/weightmachine/stacklifter/AnimateMachine(mob/living/user)
 	var/lifts = 0
@@ -75,13 +67,12 @@
 		sleep(3)
 		playsound(user, pick(lift_sounds), 60, TRUE)
 
+// Weight Lifter
 /obj/structure/weightmachine/weightlifter
-	icon = 'goon/icons/obj/fitness.dmi'
-	icon_state = "fitnessweight"
-	icon_state_inuse = "fitnessweight-c"
+	icon_state = "weight"
 
 /obj/structure/weightmachine/weightlifter/AnimateMachine(mob/living/user)
-	var/mutable_appearance/swole_overlay = mutable_appearance(icon, "fitnessweight-w", WALL_OBJ_LAYER)
+	var/mutable_appearance/swole_overlay = mutable_appearance(icon, "[icon_state]-barbell", WALL_OBJ_LAYER)
 	add_overlay(swole_overlay)
 	var/reps = 0
 	user.pixel_y = 5
@@ -96,3 +87,25 @@
 	animate(user, pixel_y = 2, time = 3)
 	sleep(3)
 	cut_overlay(swole_overlay)
+
+// Punching bag
+/obj/structure/punching_bag
+	name = "punching bag"
+	desc = "A punching bag. Can you get to speed level 4???"
+	icon = 'icons/obj/structures/fitness/punching_bag.dmi'
+	icon_state = "punchingbag"
+	anchored = TRUE
+	layer = WALL_OBJ_LAYER
+	var/list/hit_sounds = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg',\
+	'sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 'sound/weapons/punch4.ogg')
+
+/obj/structure/punching_bag/attack_hand(mob/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	flick("[icon_state]-flick", src)
+	playsound(loc, pick(hit_sounds), 25, TRUE, -1)
+	if(isliving(user))
+		var/mob/living/L = user
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)
+		L.apply_status_effect(STATUS_EFFECT_EXERCISED)
