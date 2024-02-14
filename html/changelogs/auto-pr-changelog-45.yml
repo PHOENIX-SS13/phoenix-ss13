@@ -1,0 +1,22 @@
+author: alos (whataboutism-alos)
+changes:
+- rscadd: Catwalks over Bearcat piping arteries (some unscrewed by default)
+- rscadd: More floor tile items, since cryobay had those and it was neat
+- rscadd: Moved R&amp;D servers to south wall so they didn&#x27;t border ship exterior
+    window
+- rscdel: Removed old things
+- qol: Simplified piping
+- qol: Simplified wiring
+- qol: Simplified disposals
+- qol: Rearranged chemistry for accessibility
+- qol: Rearranged bathroom to fit large crew
+- qol: Arranged break room
+- qol: Added trim to various carpet sections
+- qol: Added more dust for crew to clean
+- qol: Added more rusty walls
+- bugfix: Fixed some unary vents covered or missing
+- bugfix: Fixed inaccessible APC in Engineering Grav Gen room
+- bugfix: Fixed some objects and decals obscured via layering
+- bugfix: Added missing firelocks from some airlocks
+merge-date: 2024-02-14
+prnumber: 45
