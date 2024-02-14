@@ -52,6 +52,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"dH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "dO" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
@@ -257,6 +262,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"oJ" = (
+/turf/open/space/openspace,
+/area/space/nearstation)
 "oV" = (
 /obj/structure/cable,
 /obj/item/radio/intercom/directional/east,
@@ -442,7 +450,8 @@
 /area/maintenance/solars/port/aft)
 "wP" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering"
+	name = "Engineering";
+	dir = 4
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -500,6 +509,12 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/openspace,
 /area/maintenance/solars/port/aft)
+"yR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "zC" = (
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
@@ -854,8 +869,9 @@
 /area/maintenance/solars/port/aft)
 "UH" = (
 /obj/structure/lattice,
+/obj/structure/lattice/catwalk,
 /turf/open/space/openspace,
-/area/space)
+/area/space/nearstation)
 "UI" = (
 /obj/item/solar_assembly,
 /turf/open/floor/plating/airless,
@@ -30153,7 +30169,7 @@ Ou
 Ou
 Zw
 Zw
-Nf
+Zw
 Zw
 Zw
 Zw
@@ -30402,14 +30418,14 @@ Zw
 Zw
 Zw
 Zw
-Zw
+Nf
 mV
 Nf
-Zw
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+Nf
+Nf
 Nf
 Ou
 Ou
@@ -31669,20 +31685,20 @@ Ou
 Ou
 Ou
 Ou
-UH
-Ou
-jB
-Ou
-Nf
-Nf
-Nf
-Nf
 Nf
 Ou
 jB
+Ou
+Nf
+Nf
+Nf
+Nf
+Nf
+Ou
 jB
 jB
-ZG
+jB
+jB
 kr
 kr
 kr
@@ -31712,10 +31728,10 @@ jB
 jB
 Ou
 Nf
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+oJ
 Zw
 Zw
 Zw
@@ -31913,7 +31929,7 @@ Zw
 Zw
 Zw
 NJ
-UH
+Nf
 Nf
 Zw
 Zw
@@ -31939,8 +31955,8 @@ rO
 qG
 jB
 jB
-kr
 qG
+dH
 AN
 qG
 jB
@@ -31969,10 +31985,10 @@ qG
 jB
 Ou
 Ou
+UH
 Nf
-Zw
-Zw
-Zw
+Nf
+Nf
 Zw
 Zw
 Zw
@@ -32169,7 +32185,7 @@ Zw
 Zw
 Zw
 pF
-UH
+Nf
 Zw
 Vd
 Vd
@@ -32196,8 +32212,8 @@ Ou
 jB
 jB
 jB
-kr
-AN
+qG
+yR
 qG
 qG
 qG
@@ -32226,10 +32242,10 @@ AN
 jB
 jB
 Ou
+UH
+UH
+UH
 Nf
-Zw
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -32453,8 +32469,8 @@ Ou
 jB
 jB
 jB
-ZG
 jB
+ZG
 jB
 qG
 jB
@@ -32710,8 +32726,8 @@ Ou
 qG
 jB
 jB
-ZG
 jB
+ZG
 qG
 jB
 AN
@@ -32967,8 +32983,8 @@ Ou
 qG
 jB
 jB
-ZG
 jB
+ZG
 qG
 qG
 AN
@@ -33224,8 +33240,8 @@ Ou
 jB
 jB
 jB
-ZG
-qG
+jB
+dH
 oE
 nZ
 oE
@@ -33481,7 +33497,7 @@ Ou
 jB
 jB
 Xs
-ZG
+jB
 YZ
 Cc
 uy
@@ -33738,8 +33754,8 @@ Ou
 jB
 jB
 qG
-YZ
 AN
+yR
 Lf
 hN
 rQ
@@ -33995,8 +34011,8 @@ Ou
 AN
 qG
 qG
-kr
 qG
+dH
 oE
 nZ
 oE
@@ -34252,8 +34268,8 @@ Ou
 qG
 jB
 qG
-kr
-jB
+qG
+ZG
 jB
 jB
 jB
@@ -34509,8 +34525,8 @@ pC
 qG
 jB
 qG
-kr
-jB
+qG
+ZG
 jB
 jB
 qG
@@ -34766,8 +34782,8 @@ pC
 jB
 jB
 qG
-YZ
-qG
+AN
+dH
 qG
 jB
 jB
@@ -34996,7 +35012,7 @@ Zw
 Zw
 Zw
 pS
-UH
+Nf
 Zw
 Vd
 Vd
@@ -35023,8 +35039,8 @@ vQ
 jB
 jB
 jB
-kr
 qG
+dH
 AN
 qG
 jB
@@ -35254,7 +35270,7 @@ Zw
 Zw
 Zw
 lE
-UH
+Nf
 Nf
 Zw
 Zw
@@ -35280,8 +35296,8 @@ Ou
 qG
 jB
 qG
-ZG
 jB
+ZG
 jB
 jB
 jB
@@ -35310,10 +35326,10 @@ jB
 jB
 Ou
 Ou
+UH
 Nf
-Zw
-Zw
-Zw
+Nf
+Nf
 Zw
 Zw
 Zw
@@ -35524,20 +35540,20 @@ rO
 rO
 Ou
 Ou
-Zw
+Nf
 Ou
 jB
 Ou
 Nf
 Nf
 Nf
-Zw
-Zw
+Nf
+Nf
 Ou
 qG
 jB
 jB
-ZG
+jB
 ZG
 ZG
 ZG
@@ -35567,10 +35583,10 @@ jB
 jB
 Ou
 Nf
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+Nf
 Zw
 Zw
 Zw
@@ -36827,15 +36843,15 @@ Zw
 Zw
 Zw
 Zw
-Zw
+Nf
 mV
 Nf
-Zw
-Zw
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+Nf
+Nf
+Nf
 Ou
 Ou
 Ou
