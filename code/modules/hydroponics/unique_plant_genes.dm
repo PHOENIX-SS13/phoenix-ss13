@@ -444,7 +444,7 @@
 		grown_plant.max_volume = new_capcity
 
 /// Omegaweed's funny 420 max volume gene
-/datum/plant_gene/trait/modified_volume/omega_weed
+/datum/plant_gene/trait/modified_volume/hemp/omega
 	name = "Dank Vesicles"
 	new_capcity = 420
 

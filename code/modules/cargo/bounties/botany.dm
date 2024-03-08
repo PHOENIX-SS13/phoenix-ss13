@@ -57,32 +57,48 @@
 	multiplier = 2
 	foodtype = "sorbet"
 
-/datum/bounty/item/botany/cannabis
-	name = "Cannabis Leaves"
-	wanted_types = list(/obj/item/food/grown/cannabis)
-	exclude_types = list(/obj/item/food/grown/cannabis/white, /obj/item/food/grown/cannabis/death, /obj/item/food/grown/cannabis/ultimate)
+/datum/bounty/item/botany/hemp
+	name = "Industrial Hemp"
+	wanted_types = list(/obj/item/food/grown/hemp)
+	exclude_types = list(/obj/item/food/grown/hemp/rgb, /obj/item/food/grown/hemp/life, /obj/item/food/grown/hemp/death, /obj/item/food/grown/hemp/omega)
+	multiplier = 2
+	bonus_desc = "Only basic industrial hemp will be accepted."
+	foodtype = "hemp"
+
+/datum/bounty/item/botany/hemp/recreational // recreational
+	name = "Weed"
+	wanted_types = list(/obj/item/food/grown/hemp)
 	multiplier = 4 //hush money
 	bonus_desc = "Do not mention this shipment to security."
 	foodtype = "batch of \"muffins\""
 
-/datum/bounty/item/botany/cannabis_white
+/datum/bounty/item/botany/hemp/rgb
+	name = "Prismatic Hemp Leaves"
+	wanted_types = list(/obj/item/food/grown/hemp/rgb)
+	exclude_types = list(/obj/item/food/grown/hemp, /obj/item/food/grown/hemp/life, /obj/item/food/grown/hemp/death, /obj/item/food/grown/hemp/omega)
+	multiplier = 5
+	bonus_desc = "Do not mention this shipment to security."
+	foodtype = "\"meal\""
+
+/datum/bounty/item/botany/hemp/life
 	name = "Lifeweed Leaves"
-	wanted_types = list(/obj/item/food/grown/cannabis/white)
+	wanted_types = list(/obj/item/food/grown/hemp/life)
+	exclude_types = list(/obj/item/food/grown/hemp/rgb, /obj/item/food/grown/hemp/life, /obj/item/food/grown/hemp/death, /obj/item/food/grown/hemp/omega)
 	multiplier = 6
 	bonus_desc = "Do not mention this shipment to security."
 	foodtype = "\"meal\""
 
-/datum/bounty/item/botany/cannabis_death
+/datum/bounty/item/botany/hemp/death
 	name = "Deathweed Leaves"
-	wanted_types = list(/obj/item/food/grown/cannabis/death)
+	wanted_types = list(/obj/item/food/grown/hemp/death)
 	multiplier = 6
-	bonus_desc = "Do not mention this shipment to security."
+	bonus_desc = "Under no circumstances mention this shipment to security."
 	foodtype = "\"meal\""
 
-/datum/bounty/item/botany/cannabis_ultimate
-	name = "Omega Weed Leaves"
-	wanted_types = list(/obj/item/food/grown/cannabis/ultimate)
-	multiplier = 6
+/datum/bounty/item/botany/hemp/omega
+	name = "Omegaweed Leaves"
+	wanted_types = list(/obj/item/food/grown/hemp/ultimate)
+	multiplier = 8
 	bonus_desc = "Under no circumstances mention this shipment to security."
 	foodtype = "batch of \"brownies\""
 
@@ -204,6 +220,7 @@
 	name = "Lit Bonfire"
 	description = "Space heaters are malfunctioning and the cargo crew of Central Command is starting to feel cold. Grow some logs and Ship a lit bonfire to warm them up."
 	wanted_types = list(/obj/structure/bonfire)
+	foodtype = "central heating"
 
 /datum/bounty/item/botany/bonfire/applies_to(obj/O)
 	if(!..())

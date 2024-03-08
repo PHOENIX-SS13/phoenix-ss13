@@ -2479,9 +2479,9 @@
 	num_contained = 7
 	contains = list(/obj/item/poster/random_contraband,
 					/obj/item/poster/random_contraband,
-					/obj/item/food/grown/cannabis,
-					/obj/item/food/grown/cannabis/rainbow,
-					/obj/item/food/grown/cannabis/white,
+					/obj/item/food/grown/hemp,
+					/obj/item/food/grown/hemp/rgb,
+					/obj/item/food/grown/hemp/life,
 					/obj/item/storage/box/fireworks/dangerous,
 					/obj/item/storage/pill_bottle/zoom,
 					/obj/item/storage/pill_bottle/happy,

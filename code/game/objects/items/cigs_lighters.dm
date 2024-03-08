@@ -225,7 +225,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		qdel(src)
 		return
 	// Setting the puffed pollutant to cannabis if we're smoking cannabis
-	if(reagents.has_reagent(/datum/reagent/drug/cannabis))
+	if(reagents.has_reagent(/datum/reagent/drug/tetrahydrocannabinol))
 		pollution_type = /datum/pollutant/smoke/cannabis
 	// allowing reagents to react after being lit
 	reagents.flags &= ~(NO_REACT)
@@ -455,7 +455,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	starts_lit = TRUE
 
 /obj/item/clothing/mask/cigarette/rollie/cannabis
-	list_reagents = list(/datum/reagent/drug/cannabis = 15)
+	list_reagents = list(/datum/reagent/drug/tetrahydrocannabinol = 15)
 
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 	list_reagents = list(/datum/reagent/toxin/mindbreaker = 35, /datum/reagent/toxin/lipolicide = 15)

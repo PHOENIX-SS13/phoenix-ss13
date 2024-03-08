@@ -329,7 +329,7 @@
 	name = "Dank-pocket"
 	reqs = list(
 		/obj/item/food/pastrybase = 1,
-		/obj/item/food/grown/cannabis = 1
+		/obj/item/food/grown/hemp = 1
 	)
 	result = /obj/item/food/dankpocket
 	subcategory = CAT_PASTRY
