@@ -403,7 +403,7 @@ SUBSYSTEM_DEF(ticker)
 			captainless = FALSE
 			var/acting_captain = !is_captain_job(player_assigned_role)
 			SSjob.promote_to_captain(new_player_living, acting_captain)
-			OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, player_assigned_role.get_captaincy_announcement(new_player_living)))
+			OnRoundstart(CALLBACK(GLOBAL_PROC, PROC_REF(minor_announce), player_assigned_role.get_captaincy_announcement(new_player_living)))
 		CHECK_TICK
 
 	if(captainless)
@@ -453,7 +453,7 @@ SUBSYSTEM_DEF(ticker)
 				living.client.init_verbs()
 			livings += living
 	if(livings.len)
-		addtimer(CALLBACK(src, .proc/release_characters, livings), 30, TIMER_CLIENT_TIME)
+		addtimer(CALLBACK(src, PROC_REF(release_characters), livings), 30, TIMER_CLIENT_TIME)
 
 /datum/controller/subsystem/ticker/proc/release_characters(list/livings)
 	for(var/I in livings)
@@ -513,7 +513,7 @@ SUBSYSTEM_DEF(ticker)
 		return
 	if(world.time - SSticker.round_start_time < 10 MINUTES) //Not forcing map rotation for very short rounds.
 		return
-	INVOKE_ASYNC(SSmapping, /datum/controller/subsystem/mapping/.proc/maprotate)
+	INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping,maprotate))
 
 /datum/controller/subsystem/ticker/proc/HasRoundStarted()
 	return current_state >= GAME_STATE_PLAYING

@@ -336,7 +336,7 @@ If you make a derivative work from this code, you must include this notification
 			A.setDir(turn(A.dir, 90))
 
 		A.forceMove(D.loc)
-		addtimer(CALLBACK(src, .proc/CheckStrikeTurf, A, T), 4)
+		addtimer(CALLBACK(src, PROC_REF(CheckStrikeTurf), A, T), 4)
 
 		D.visible_message(SPAN_DANGER("[A] headbutts [D]!"), \
 						SPAN_USERDANGER("You're headbutted by [A]!"), SPAN_HEAR("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)

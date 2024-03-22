@@ -58,7 +58,7 @@
 		else
 			cell = new preload_cell_type(src)
 	update_appearance()
-	RegisterSignal(src, COMSIG_PARENT_ATTACKBY, .proc/convert)
+	RegisterSignal(src, COMSIG_PARENT_ATTACKBY, PROC_REF(convert)
 
 
 /obj/item/melee/baton/Destroy()
@@ -236,7 +236,7 @@
 	L.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
 
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
-	addtimer(CALLBACK(src, .proc/apply_stun_effect_end, L), apply_stun_delay)
+	addtimer(CALLBACK(src, PROC_REF(apply_stun_effect_end), L), apply_stun_delay)
 
 	if(user)
 		L.lastattacker = user.real_name

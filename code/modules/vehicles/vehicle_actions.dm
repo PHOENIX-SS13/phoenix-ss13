@@ -240,4 +240,4 @@
 		if((locate(/obj/structure/table) in vehicle.loc.contents) || (locate(/obj/structure/fluff/tram_rail) in vehicle.loc.contents))
 			vehicle.grinding = TRUE
 			vehicle.icon_state = "[initial(vehicle.icon_state)]-grind"
-			addtimer(CALLBACK(vehicle, /obj/vehicle/ridden/scooter/skateboard/.proc/grind), 2)
+			addtimer(CALLBACK(vehicle, TYPE_PROC_REF(/obj/vehicle/ridden/scooter/skateboard,grind)), 2)

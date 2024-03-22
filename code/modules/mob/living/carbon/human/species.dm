@@ -1464,7 +1464,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	if(radiation > RAD_MOB_HAIRLOSS && DT_PROB(RAD_MOB_HAIRLOSS_PROB, delta_time))
 		if(!(source.hairstyle == "Bald") && (HAIR in species_traits))
 			to_chat(source, SPAN_DANGER("Your hair starts to fall out in clumps..."))
-			addtimer(CALLBACK(src, .proc/go_bald, source), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(go_bald), source), 5 SECONDS)
 
 /**
  * Makes the target human bald.
@@ -2384,7 +2384,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		buckled_obj.unbuckle_mob(H)
 		step(buckled_obj, olddir)
 	else
-		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, /mob/living/carbon/.proc/spin, 1, 1))
+		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon,spin), 1, 1))
 	return TRUE
 
 //UNSAFE PROC, should only be called through the Activate or other sources that check for CanFly

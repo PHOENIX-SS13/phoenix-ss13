@@ -1,3 +1,5 @@
+environment = "phoenix.dme"
+
 [langserver]
 dreamchecker = true
 

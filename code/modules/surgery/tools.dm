@@ -376,8 +376,8 @@
 	for(var/obj/item/bodypart/thing in user.bodyparts)
 		if(thing.body_part == CHEST)
 			continue
-		addtimer(CALLBACK(thing, /obj/item/bodypart/.proc/dismember), timer)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, user, 'sound/weapons/bladeslice.ogg', 70), timer)
+		addtimer(CALLBACK(thing, TYPE_PROC_REF(/obj/item/bodypart,dismember)), timer)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(playsound), user, 'sound/weapons/bladeslice.ogg', 70), timer)
 		timer += 1 SECONDS
 	sleep(timer)
 	return BRUTELOSS
