@@ -18853,9 +18853,9 @@
 /area/hallway/skylineship/deck_5_hallway)
 "kqH" = (
 /obj/structure/rack,
-/obj/item/seeds/cannabis,
-/obj/item/seeds/cannabis,
-/obj/item/seeds/cannabis,
+/obj/item/seeds/hemp,
+/obj/item/seeds/hemp,
+/obj/item/seeds/hemp,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,

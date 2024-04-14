@@ -65153,9 +65153,9 @@
 "tty" = (
 /obj/structure/rack,
 /obj/item/seeds/tower,
-/obj/item/seeds/cannabis,
-/obj/item/seeds/cannabis,
-/obj/item/seeds/cannabis,
+/obj/item/seeds/hemp,
+/obj/item/seeds/hemp,
+/obj/item/seeds/hemp,
 /obj/item/food/grown/mushroom/glowshroom,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
