@@ -97,7 +97,7 @@
 
 /datum/bounty/item/botany/hemp/omega
 	name = "Omegaweed Leaves"
-	wanted_types = list(/obj/item/food/grown/hemp/ultimate)
+	wanted_types = list(/obj/item/food/grown/hemp/omega)
 	multiplier = 8
 	bonus_desc = "Under no circumstances mention this shipment to security."
 	foodtype = "batch of \"brownies\""
