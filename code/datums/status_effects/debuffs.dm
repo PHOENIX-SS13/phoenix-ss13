@@ -141,8 +141,8 @@
 	if(!HAS_TRAIT(owner, TRAIT_SLEEPIMMUNE))
 		ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
 		tick_interval = -1
-	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE), PROC_REF(on_owner_insomniac)
-	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE), PROC_REF(on_owner_sleepy)
+	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE), PROC_REF(on_owner_insomniac))
+	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE), PROC_REF(on_owner_sleepy))
 
 /datum/status_effect/incapacitating/sleeping/on_remove()
 	UnregisterSignal(owner, list(SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE), SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE)))
@@ -670,7 +670,7 @@
 /datum/status_effect/trance/on_apply()
 	if(!iscarbon(owner))
 		return FALSE
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, PROC_REF(hypnotize)
+	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, PROC_REF(hypnotize))
 	ADD_TRAIT(owner, TRAIT_MUTE, STATUS_EFFECT_TRAIT)
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
 	owner.visible_message("[stun ? SPAN_WARNING("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \

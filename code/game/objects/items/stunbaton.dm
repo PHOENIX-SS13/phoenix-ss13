@@ -58,7 +58,7 @@
 		else
 			cell = new preload_cell_type(src)
 	update_appearance()
-	RegisterSignal(src, COMSIG_PARENT_ATTACKBY, PROC_REF(convert)
+	RegisterSignal(src, COMSIG_PARENT_ATTACKBY, PROC_REF(convert))
 
 
 /obj/item/melee/baton/Destroy()

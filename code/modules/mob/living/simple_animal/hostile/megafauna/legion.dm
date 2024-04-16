@@ -121,10 +121,10 @@
 	minimum_distance = 0
 	set_varspeed(0)
 	charging = TRUE
-	addtimer(CALLBACK(src, PROC_REF(reset_charge), 60)
+	addtimer(CALLBACK(src, PROC_REF(reset_charge), 60))
 	var/mob/living/L = target
 	if(!istype(L) || L.stat != DEAD) //I know, weird syntax, but it just works.
-		addtimer(CALLBACK(src, PROC_REF(throw_thyself), 20)
+		addtimer(CALLBACK(src, PROC_REF(throw_thyself), 20))
 
 ///This is the proc that actually does the throwing. Charge only adds a timer for this.
 /mob/living/simple_animal/hostile/megafauna/legion/proc/throw_thyself()
@@ -341,7 +341,7 @@
 
 /obj/structure/legionturret/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(set_up_shot), initial_firing_time)
+	addtimer(CALLBACK(src, PROC_REF(set_up_shot), initial_firing_time))
 
 ///Handles an extremely basic AI
 /obj/structure/legionturret/proc/set_up_shot()

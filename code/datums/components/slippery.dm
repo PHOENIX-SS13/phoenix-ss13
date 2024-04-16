@@ -36,10 +36,10 @@
 		AddElement(/datum/element/connect_loc, parent, default_connections)
 
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip)
-		RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(on_drop)
+		RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
+		RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
 	else
-		RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(Slip)
+		RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(Slip))
 
 /*
  * The proc that does the sliping. Invokes the slip callback we have set.
@@ -70,7 +70,7 @@
 	if((!LAZYLEN(slot_whitelist) || (slot in slot_whitelist)) && isliving(equipper))
 		holder = equipper
 		AddElement(/datum/element/connect_loc, holder, holder_connections)
-		RegisterSignal(holder, COMSIG_PARENT_PREQDELETED, PROC_REF(holder_deleted)
+		RegisterSignal(holder, COMSIG_PARENT_PREQDELETED, PROC_REF(holder_deleted))
 
 /*
  * Detects if the holder mob is deleted.

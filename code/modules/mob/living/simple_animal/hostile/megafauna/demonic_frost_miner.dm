@@ -292,7 +292,7 @@ Difficulty: Extremely Hard
 		return
 	forceMove(user)
 	to_chat(user, SPAN_NOTICE("You feel a bit safer... but a demonic presence lurks in the back of your head..."))
-	RegisterSignal(user, COMSIG_LIVING_DEATH, PROC_REF(resurrect)
+	RegisterSignal(user, COMSIG_LIVING_DEATH, PROC_REF(resurrect))
 
 /// Resurrects the target when they die by moving them and dusting a clone in their place, one life for another
 /obj/item/resurrection_crystal/proc/resurrect(mob/living/carbon/user, gibbed)
@@ -325,7 +325,7 @@ Difficulty: Extremely Hard
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(on_step)
+	RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(on_step))
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/equipped(mob/user, slot)
 	. = ..()
@@ -401,7 +401,7 @@ Difficulty: Extremely Hard
 	icon_state = "frozen"
 
 /datum/status_effect/ice_block_talisman/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved)
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
 	if(!owner.stat)
 		to_chat(owner, SPAN_USERDANGER("You become frozen in a cube!"))
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")

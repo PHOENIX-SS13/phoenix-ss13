@@ -9,7 +9,7 @@ GLOBAL_DATUM(highlander_controller, /datum/highlander_controller)
 
 /datum/highlander_controller/New()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_CREWMEMBER_JOINED, PROC_REF(new_highlander)
+	RegisterSignal(SSdcs, COMSIG_GLOB_CREWMEMBER_JOINED, PROC_REF(new_highlander))
 	sound_to_playing_players('sound/misc/highlander.ogg')
 	send_to_playing_players(SPAN_BOLDANNOUNCE("<font size=6>THERE CAN BE ONLY ONE</font>"))
 	for(var/obj/item/disk/nuclear/fukkendisk in GLOB.poi_list)

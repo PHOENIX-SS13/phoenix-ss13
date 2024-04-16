@@ -25,9 +25,9 @@
 	src.range = range
 
 	if(plumes == 1)
-		RegisterSignal(target, COMSIG_GUN_FIRED, PROC_REF(gun_fired_simple)
+		RegisterSignal(target, COMSIG_GUN_FIRED, PROC_REF(gun_fired_simple))
 	else
-		RegisterSignal(target, COMSIG_GUN_FIRED, PROC_REF(gun_fired)
+		RegisterSignal(target, COMSIG_GUN_FIRED, PROC_REF(gun_fired))
 
 /datum/element/backblast/Detach(datum/source)
 	if(source)

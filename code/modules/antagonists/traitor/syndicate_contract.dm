@@ -61,7 +61,7 @@
 /datum/syndicate_contract/proc/launch_extraction_pod(turf/empty_pod_turf)
 	var/obj/structure/closet/supplypod/extractionpod/empty_pod = new()
 
-	RegisterSignal(empty_pod, COMSIG_ATOM_ENTERED, PROC_REF(enter_check)
+	RegisterSignal(empty_pod, COMSIG_ATOM_ENTERED, PROC_REF(enter_check))
 
 	empty_pod.stay_after_drop = TRUE
 	empty_pod.reversing = TRUE
@@ -137,7 +137,7 @@
 			priority_announce("One of your crew was captured by a rival organisation - we've needed to pay their ransom to bring them back. \
 							As is policy we've taken a portion of the station's funds to offset the overall cost.", null, null, null, "Nanotrasen Asset Protection")
 
-			INVOKE_ASYNC(src, PROC_REF(finish_enter)
+			INVOKE_ASYNC(src, PROC_REF(finish_enter))
 
 /datum/syndicate_contract/proc/finish_enter()
 	sleep(30)

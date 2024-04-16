@@ -379,7 +379,7 @@
 	fully_heal()
 	add_filter("anger_glow", 3, list("type" = "outline", "color" = "#ff330030", "size" = 5))
 	add_movespeed_modifier(/datum/movespeed_modifier/dragon_rage)
-	addtimer(CALLBACK(src, PROC_REF(rift_depower), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(rift_depower), 30 SECONDS))
 
 /**
  * Gives Space Dragon their the rift speed buff permanantly.

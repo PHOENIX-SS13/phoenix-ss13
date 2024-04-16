@@ -58,7 +58,7 @@
 		else
 			src.value = datatype_handler.convert_value(src, value, force)
 		if(is_proper_datum(value))
-			RegisterSignal(value, COMSIG_PARENT_QDELETING, PROC_REF(null_value)
+			RegisterSignal(value, COMSIG_PARENT_QDELETING, PROC_REF(null_value))
 	SEND_SIGNAL(src, COMSIG_PORT_SET_VALUE, value)
 
 /**
@@ -185,9 +185,9 @@
 	if(output in connected_ports)
 		return
 	connected_ports += output
-	RegisterSignal(output, COMSIG_PORT_SET_VALUE, PROC_REF(receive_value)
-	RegisterSignal(output, COMSIG_PORT_SET_TYPE, PROC_REF(check_type)
-	RegisterSignal(output, COMSIG_PORT_DISCONNECT, PROC_REF(disconnect)
+	RegisterSignal(output, COMSIG_PORT_SET_VALUE, PROC_REF(receive_value))
+	RegisterSignal(output, COMSIG_PORT_SET_TYPE, PROC_REF(check_type))
+	RegisterSignal(output, COMSIG_PORT_DISCONNECT, PROC_REF(disconnect))
 	// For signals, we don't update the input to prevent sending a signal when connecting ports.
 	if(!(datatype_handler.datatype_flags & DATATYPE_FLAG_AVOID_VALUE_UPDATE))
 		set_input(output.value)

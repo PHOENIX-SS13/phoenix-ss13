@@ -636,7 +636,7 @@
 	last_teleport = world.time
 	UpdateButtonIcon() //action icon looks unavailable
 	//action icon looks available again
-	addtimer(CALLBACK(src, PROC_REF(UpdateButtonIcon), cooldown + 5)
+	addtimer(CALLBACK(src, PROC_REF(UpdateButtonIcon), cooldown + 5))
 
 
 //honk
@@ -684,7 +684,7 @@
 	..()
 	COOLDOWN_START(src, honkooldown, 0)
 	COOLDOWN_START(src, banana_cooldown, banana_delay)
-	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech)
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
 /datum/species/golem/bananium/on_species_loss(mob/living/carbon/C)
 	. = ..()
@@ -910,7 +910,7 @@
 		H.forceMove(src)
 		cloth_golem = H
 		to_chat(cloth_golem, SPAN_NOTICE("You start gathering your life energy, preparing to rise again..."))
-		addtimer(CALLBACK(src, PROC_REF(revive), revive_time)
+		addtimer(CALLBACK(src, PROC_REF(revive), revive_time))
 	else
 		return INITIALIZE_HINT_QDEL
 

@@ -254,7 +254,7 @@
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, TRUE)
 	SLEEP_CHECK_DEATH(0)
 	if(prob(50) && meteors)
-		INVOKE_ASYNC(src, PROC_REF(fire_rain)
+		INVOKE_ASYNC(src, PROC_REF(fire_rain))
 	var/range = 15
 	var/list/turfs = list()
 	turfs = line_target(-40, range, at)

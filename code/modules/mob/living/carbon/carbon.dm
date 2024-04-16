@@ -8,7 +8,7 @@
 	ADD_TRAIT(src, TRAIT_AGEUSIA, NO_TONGUE_TRAIT)
 
 	GLOB.carbon_list += src
-	RegisterSignal(src, COMSIG_LIVING_DEATH, PROC_REF(attach_rot)
+	RegisterSignal(src, COMSIG_LIVING_DEATH, PROC_REF(attach_rot))
 
 /mob/living/carbon/Destroy()
 	//This must be done first, so the mob ghosts correctly before DNA etc is nulled

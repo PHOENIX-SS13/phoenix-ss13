@@ -122,7 +122,7 @@
 			icon_state = "grievous-c"
 			visible_message("<b>[src]</b> points at [C.name]!")
 			mode = BOT_HUNT
-			INVOKE_ASYNC(src, PROC_REF(handle_automated_action)
+			INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 			break
 		else
 			continue

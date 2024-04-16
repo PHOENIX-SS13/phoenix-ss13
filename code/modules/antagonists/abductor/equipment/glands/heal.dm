@@ -205,7 +205,7 @@
 		if(owner.reagents.has_reagent(R.type))
 			keep_going = TRUE
 	if(keep_going)
-		addtimer(CALLBACK(src, PROC_REF(keep_replacing_blood), 30)
+		addtimer(CALLBACK(src, PROC_REF(keep_replacing_blood), 30))
 
 /obj/item/organ/heart/gland/heal/proc/replace_chest(obj/item/bodypart/chest/chest)
 	if(chest.status == BODYPART_ROBOTIC)

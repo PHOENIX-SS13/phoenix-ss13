@@ -201,7 +201,7 @@
 	animate(src, deflate_time, transform = matrix)
 	set_density(FALSE)
 	air_update_turf(TRUE, TRUE)
-	addtimer(CALLBACK(src, PROC_REF(post_deflate), deflate_time)
+	addtimer(CALLBACK(src, PROC_REF(post_deflate), deflate_time))
 
 /obj/structure/inflatable/proc/post_deflate()
 	if(QDELETED(src))

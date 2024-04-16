@@ -50,23 +50,23 @@
 	src.start_experiment_callback = start_experiment_callback
 
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(try_run_handheld_experiment)
-		RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, PROC_REF(ignored_handheld_experiment_attempt)
+		RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(try_run_handheld_experiment))
+		RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, PROC_REF(ignored_handheld_experiment_attempt))
 	if(istype(parent, /obj/machinery/doppler_array))
-		RegisterSignal(parent, COMSIG_DOPPLER_ARRAY_EXPLOSION_DETECTED, PROC_REF(try_run_doppler_experiment)
+		RegisterSignal(parent, COMSIG_DOPPLER_ARRAY_EXPLOSION_DETECTED, PROC_REF(try_run_doppler_experiment))
 	if(istype(parent, /obj/machinery/destructive_scanner))
-		RegisterSignal(parent, COMSIG_MACHINERY_DESTRUCTIVE_SCAN, PROC_REF(try_run_destructive_experiment)
+		RegisterSignal(parent, COMSIG_MACHINERY_DESTRUCTIVE_SCAN, PROC_REF(try_run_destructive_experiment))
 
 	// Determine UI display mode
 	switch(config_mode)
 		if(EXPERIMENT_CONFIG_ATTACKSELF)
-			RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(configure_experiment)
+			RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(configure_experiment))
 		if(EXPERIMENT_CONFIG_ALTCLICK)
-			RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(configure_experiment)
+			RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(configure_experiment))
 		if(EXPERIMENT_CONFIG_CLICK)
-			RegisterSignal(parent, COMSIG_ATOM_UI_INTERACT, PROC_REF(configure_experiment_click)
+			RegisterSignal(parent, COMSIG_ATOM_UI_INTERACT, PROC_REF(configure_experiment_click))
 		if(EXPERIMENT_CONFIG_UI)
-			RegisterSignal(parent, COMSIG_UI_ACT, PROC_REF(ui_handle_experiment)
+			RegisterSignal(parent, COMSIG_UI_ACT, PROC_REF(ui_handle_experiment))
 
 	// Auto connect to the first visible techweb (useful for always active handlers)
 	// Note this won't work at the moment for non-machines that have been included

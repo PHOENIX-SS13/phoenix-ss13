@@ -65,7 +65,7 @@
 		return
 	LAZYINITLIST(lift_load)
 	lift_load[AM] = TRUE
-	RegisterSignal(AM, COMSIG_PARENT_QDELETING, PROC_REF(RemoveItemFromLift)
+	RegisterSignal(AM, COMSIG_PARENT_QDELETING, PROC_REF(RemoveItemFromLift))
 
 /obj/structure/industrial_lift/proc/RemoveAllItemsFromLift()
 	if(!lift_load)

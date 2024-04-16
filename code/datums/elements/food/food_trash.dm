@@ -15,16 +15,16 @@
 		return ELEMENT_INCOMPATIBLE
 	src.trash = trash
 	src.flags = flags
-	RegisterSignal(target, COMSIG_FOOD_CONSUMED, PROC_REF(generate_trash)
+	RegisterSignal(target, COMSIG_FOOD_CONSUMED, PROC_REF(generate_trash))
 	if(!generate_trash_procpath && generate_trash_proc)
 		generate_trash_procpath = generate_trash_proc
 	if(flags & FOOD_TRASH_OPENABLE)
-		RegisterSignal(target, COMSIG_ITEM_ATTACK_SELF, PROC_REF(open_trash)
+		RegisterSignal(target, COMSIG_ITEM_ATTACK_SELF, PROC_REF(open_trash))
 	if(flags & FOOD_TRASH_POPABLE)
-		RegisterSignal(target, COMSIG_FOOD_CROSSED, PROC_REF(food_crossed)
-	RegisterSignal(target, COMSIG_ITEM_ON_GRIND, PROC_REF(generate_trash)
-	RegisterSignal(target, COMSIG_ITEM_ON_JUICE, PROC_REF(generate_trash)
-	RegisterSignal(target, COMSIG_ITEM_ON_COMPOSTED, PROC_REF(generate_trash)
+		RegisterSignal(target, COMSIG_FOOD_CROSSED, PROC_REF(food_crossed))
+	RegisterSignal(target, COMSIG_ITEM_ON_GRIND, PROC_REF(generate_trash))
+	RegisterSignal(target, COMSIG_ITEM_ON_JUICE, PROC_REF(generate_trash))
+	RegisterSignal(target, COMSIG_ITEM_ON_COMPOSTED, PROC_REF(generate_trash))
 
 /datum/element/food_trash/Detach(datum/target)
 	. = ..()

@@ -61,10 +61,10 @@
 /mob/living/simple_animal/bot/mulebot/Initialize(mapload)
 	. = ..()
 
-	RegisterSignal(src, COMSIG_MOB_BOT_PRE_STEP, PROC_REF(check_pre_step)
-	RegisterSignal(src, COMSIG_MOB_CLIENT_PRE_MOVE, PROC_REF(check_pre_step)
-	RegisterSignal(src, COMSIG_MOB_BOT_STEP, PROC_REF(on_bot_step)
-	RegisterSignal(src, COMSIG_MOB_CLIENT_MOVED, PROC_REF(on_bot_step)
+	RegisterSignal(src, COMSIG_MOB_BOT_PRE_STEP, PROC_REF(check_pre_step))
+	RegisterSignal(src, COMSIG_MOB_CLIENT_PRE_MOVE, PROC_REF(check_pre_step))
+	RegisterSignal(src, COMSIG_MOB_BOT_STEP, PROC_REF(on_bot_step))
+	RegisterSignal(src, COMSIG_MOB_CLIENT_MOVED, PROC_REF(on_bot_step))
 
 	ADD_TRAIT(src, TRAIT_NOMOBSWAP, INNATE_TRAIT)
 
@@ -624,7 +624,7 @@
 
 		if(BOT_NAV) // calculate new path
 			mode = BOT_WAIT_FOR_NAV
-			INVOKE_ASYNC(src, PROC_REF(process_nav)
+			INVOKE_ASYNC(src, PROC_REF(process_nav))
 
 /mob/living/simple_animal/bot/mulebot/proc/process_blocked(turf/next)
 	calc_path(avoid=next)
@@ -672,7 +672,7 @@
 /mob/living/simple_animal/bot/mulebot/proc/start_home()
 	if(!on)
 		return
-	INVOKE_ASYNC(src, PROC_REF(do_start_home)
+	INVOKE_ASYNC(src, PROC_REF(do_start_home))
 
 /mob/living/simple_animal/bot/mulebot/proc/do_start_home()
 	set_destination(home_destination)
@@ -873,7 +873,7 @@
 
 	if(isobserver(AM))
 		visible_message(SPAN_WARNING("A ghostly figure appears on [src]!"))
-		RegisterSignal(AM, COMSIG_MOVABLE_MOVED, PROC_REF(ghostmoved)
+		RegisterSignal(AM, COMSIG_MOVABLE_MOVED, PROC_REF(ghostmoved))
 		AM.forceMove(src)
 
 	else if(!wires.is_cut(WIRE_LOADCHECK))

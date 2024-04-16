@@ -161,7 +161,7 @@
 	. = ..()
 	.["Dagger"] = CALLBACK(src,.proc/admin_give_dagger)
 	.["Dagger and Metal"] = CALLBACK(src,.proc/admin_give_metal)
-	.["Remove Dagger and Metal"] = CALLBACK(src, PROC_REF(admin_take_all)
+	.["Remove Dagger and Metal"] = CALLBACK(src, PROC_REF(admin_take_all))
 
 /datum/antagonist/cult/proc/admin_give_dagger(mob/admin)
 	if(!equip_cultist(metal=FALSE))

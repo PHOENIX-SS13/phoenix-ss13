@@ -27,7 +27,7 @@
 
 /obj/effect/abstract/shuttle_roof/proc/turf_updated(datum/source, path, new_baseturfs, flags, post_change_callbacks)
 	SIGNAL_HANDLER
-	post_change_callbacks += CALLBACK(src, PROC_REF(attached_to_new_turf) //Because there isn't an AFTER_CHANGE signal
+	post_change_callbacks += CALLBACK(src, PROC_REF(attached_to_new_turf)) //Because there isn't an AFTER_CHANGE signal
 
 /obj/effect/abstract/shuttle_roof/proc/attached_to_new_turf()
 	update_turf_for_appearance()

@@ -179,8 +179,8 @@
 	charge_action = new(src)
 	bci.actions += list(charge_action)
 
-	RegisterSignal(shell, COMSIG_ORGAN_IMPLANTED, PROC_REF(on_organ_implanted)
-	RegisterSignal(shell, COMSIG_ORGAN_REMOVED, PROC_REF(on_organ_removed)
+	RegisterSignal(shell, COMSIG_ORGAN_IMPLANTED, PROC_REF(on_organ_implanted))
+	RegisterSignal(shell, COMSIG_ORGAN_REMOVED, PROC_REF(on_organ_removed))
 
 /obj/item/circuit_component/bci_core/unregister_shell(atom/movable/shell)
 	var/obj/item/organ/cyberimp/bci/bci = shell
@@ -218,9 +218,9 @@
 	user_port.set_output(owner)
 	user = WEAKREF(owner)
 
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine)
-	RegisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(on_borg_charge)
-	RegisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute)
+	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(on_borg_charge))
+	RegisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute))
 
 /obj/item/circuit_component/bci_core/proc/on_organ_removed(datum/source, mob/living/carbon/owner)
 	SIGNAL_HANDLER
@@ -512,7 +512,7 @@
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
 			return FALSE
 
-	addtimer(CALLBACK(src, PROC_REF(start_process), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(start_process), 1 SECONDS))
 	return TRUE
 
 /obj/machinery/bci_implanter/relaymove(mob/living/user, direction)

@@ -79,7 +79,7 @@
 		UnregisterSignal(detached_pockets, COMSIG_PARENT_QDELETING)
 	detached_pockets = new_pocket
 	if(detached_pockets)
-		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, PROC_REF(handle_pockets_del)
+		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, PROC_REF(handle_pockets_del))
 
 /obj/item/clothing/accessory/proc/handle_pockets_del(datum/source)
 	SIGNAL_HANDLER
@@ -315,7 +315,7 @@
 	user.visible_message(SPAN_NOTICE("[user] shows [user.p_their()] attorney's badge."), SPAN_NOTICE("You show your attorney's badge."))
 
 /obj/item/clothing/accessory/lawyers_badge/on_uniform_equip(obj/item/clothing/under/U, mob/living/user)
-	RegisterSignal(user, COMSIG_LIVING_SLAM_TABLE, PROC_REF(table_slam)
+	RegisterSignal(user, COMSIG_LIVING_SLAM_TABLE, PROC_REF(table_slam))
 	user.bubble_icon = "lawyer"
 
 /obj/item/clothing/accessory/lawyers_badge/on_uniform_dropped(obj/item/clothing/under/U, mob/living/user)

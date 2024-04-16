@@ -80,7 +80,7 @@
 
 /obj/machinery/door/firedoor/power_change()
 	. = ..()
-	INVOKE_ASYNC(src, PROC_REF(latetoggle)
+	INVOKE_ASYNC(src, PROC_REF(latetoggle))
 
 /obj/machinery/door/firedoor/attack_hand(mob/user, list/modifiers)
 	. = ..()
@@ -146,9 +146,9 @@
 		if(QDELETED(user))
 			being_held_open = FALSE
 			return
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(handle_held_open_adjacency)
-		RegisterSignal(user, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(handle_held_open_adjacency)
-		RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(handle_held_open_adjacency)
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(handle_held_open_adjacency))
+		RegisterSignal(user, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(handle_held_open_adjacency))
+		RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(handle_held_open_adjacency))
 		handle_held_open_adjacency(user)
 	else
 		close()
@@ -170,7 +170,7 @@
 	if(!QDELETED(user) && Adjacent(user) && isliving(user) && (living_user.body_position == STANDING_UP))
 		return
 	being_held_open = FALSE
-	INVOKE_ASYNC(src, PROC_REF(close)
+	INVOKE_ASYNC(src, PROC_REF(close))
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(user, COMSIG_LIVING_SET_BODY_POSITION)
 	UnregisterSignal(user, COMSIG_PARENT_QDELETING)

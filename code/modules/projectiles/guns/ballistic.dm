@@ -129,7 +129,7 @@
 	else
 		chamber_round(replace_new_round = TRUE)
 	update_appearance()
-	RegisterSignal(src, COMSIG_ITEM_RECHARGED, PROC_REF(instant_reload)
+	RegisterSignal(src, COMSIG_ITEM_RECHARGED, PROC_REF(instant_reload))
 
 /obj/item/gun/ballistic/vv_edit_var(vname, vval)
 	. = ..()

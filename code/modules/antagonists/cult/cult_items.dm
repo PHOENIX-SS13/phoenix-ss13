@@ -272,7 +272,7 @@
 	sword.spinning = TRUE
 	sword.block_chance = 100
 	sword.slowdown += 1.5
-	addtimer(CALLBACK(src, PROC_REF(stop_spinning), 50)
+	addtimer(CALLBACK(src, PROC_REF(stop_spinning), 50))
 	holder.update_action_buttons_icon()
 
 /datum/action/innate/cult/spin2win/proc/stop_spinning()
@@ -700,8 +700,8 @@
 
 /obj/item/melee/cultblade/halberd/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/melee/cultblade/halberd/ComponentInitialize()
 	. = ..()

@@ -115,7 +115,7 @@
 		return
 	if(stat == CONSCIOUS)
 		icon_state = "[base_icon_state]_thrown"
-		addtimer(CALLBACK(src, PROC_REF(clear_throw_icon_state), 15)
+		addtimer(CALLBACK(src, PROC_REF(clear_throw_icon_state), 15))
 
 /obj/item/clothing/mask/facehugger/proc/clear_throw_icon_state()
 	if(icon_state == "[base_icon_state]_thrown")
@@ -187,7 +187,7 @@
 	// early returns and validity checks done: attach.
 	attached++
 	//ensure we detach once we no longer need to be attached
-	addtimer(CALLBACK(src, PROC_REF(detach), MAX_IMPREGNATION_TIME)
+	addtimer(CALLBACK(src, PROC_REF(detach), MAX_IMPREGNATION_TIME))
 
 
 	if(!sterile)

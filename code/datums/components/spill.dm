@@ -27,8 +27,8 @@
 		return COMPONENT_INCOMPATIBLE
 
 /datum/component/spill/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(equip_react)
-	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(drop_react)
+	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(equip_react))
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(drop_react))
 	var/obj/item/master = parent
 	preexisting_slot_flags = master.slot_flags
 	master.slot_flags |= ITEM_SLOT_POCKETS

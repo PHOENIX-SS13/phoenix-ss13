@@ -774,7 +774,7 @@ GLOBAL_VAR_INIT(icon_holographic_window, init_holographic_window())
 		buzz loudly!</b></span>","<span class='danger'><b>[src] begins \
 		vibrating violently!</b></span>")
 	// 5 seconds to get rid of it
-	addtimer(CALLBACK(src, PROC_REF(detonate_pulse_explode), 50)
+	addtimer(CALLBACK(src, PROC_REF(detonate_pulse_explode), 50))
 
 /obj/item/construction/rcd/proc/detonate_pulse_explode()
 	explosion(src, light_impact_range = 3, flame_range = 1, flash_range = 1)
@@ -1114,7 +1114,7 @@ GLOBAL_VAR_INIT(icon_holographic_window, init_holographic_window())
 /obj/item/construction/plumbing/equipped(mob/user, slot, initial)
 	. = ..()
 	if(slot == ITEM_SLOT_HANDS)
-		RegisterSignal(user, COMSIG_MOUSE_SCROLL_ON, PROC_REF(mouse_wheeled)
+		RegisterSignal(user, COMSIG_MOUSE_SCROLL_ON, PROC_REF(mouse_wheeled))
 	else
 		UnregisterSignal(user, COMSIG_MOUSE_SCROLL_ON)
 

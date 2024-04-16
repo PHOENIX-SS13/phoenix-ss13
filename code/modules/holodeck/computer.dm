@@ -243,7 +243,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 			spawned -= holo_atom
 			continue
 
-		RegisterSignal(holo_atom, COMSIG_PARENT_PREQDELETED, PROC_REF(remove_from_holo_lists)
+		RegisterSignal(holo_atom, COMSIG_PARENT_PREQDELETED, PROC_REF(remove_from_holo_lists))
 		holo_atom.flags_1 |= HOLOGRAM_1
 
 		if(isholoeffect(holo_atom))//activates holo effects and transfers them from the spawned list into the effects list

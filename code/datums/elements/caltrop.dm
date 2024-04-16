@@ -41,7 +41,7 @@
 	if(ismovable(target))
 		AddElement(/datum/element/connect_loc, target, crossed_connections)
 	else
-		RegisterSignal(get_turf(target), COMSIG_ATOM_ENTERED, PROC_REF(on_entered)
+		RegisterSignal(get_turf(target), COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
 
 /datum/element/caltrop/proc/on_entered(datum/source, atom/movable/arrived, direction)
 	SIGNAL_HANDLER

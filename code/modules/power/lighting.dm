@@ -404,7 +404,7 @@
 	// Set dir to apply the pixel offset.
 	setDir(dir)
 
-	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, PROC_REF(on_light_eater)
+	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, PROC_REF(on_light_eater))
 	AddElement(/datum/element/atmos_sensitive, mapload)
 	return INITIALIZE_HINT_LATELOAD
 
@@ -566,7 +566,7 @@
 		if(!start_only)
 			do_sparks(3, TRUE, src)
 		var/delay = rand(BROKEN_SPARKS_MIN, BROKEN_SPARKS_MAX)
-		addtimer(CALLBACK(src, PROC_REF(broken_sparks), delay, TIMER_UNIQUE | TIMER_NO_HASH_WAIT)
+		addtimer(CALLBACK(src, PROC_REF(broken_sparks), delay, TIMER_UNIQUE | TIMER_NO_HASH_WAIT))
 
 /obj/machinery/light/process()
 	if (!cell)
@@ -1028,8 +1028,8 @@
 
 /obj/item/light/create_reagents(max_vol, flags)
 	. = ..()
-	RegisterSignal(reagents, list(COMSIG_REAGENTS_NEW_REAGENT, COMSIG_REAGENTS_ADD_REAGENT, COMSIG_REAGENTS_DEL_REAGENT, COMSIG_REAGENTS_REM_REAGENT), PROC_REF(on_reagent_change)
-	RegisterSignal(reagents, COMSIG_PARENT_QDELETING, PROC_REF(on_reagents_del)
+	RegisterSignal(reagents, list(COMSIG_REAGENTS_NEW_REAGENT, COMSIG_REAGENTS_ADD_REAGENT, COMSIG_REAGENTS_DEL_REAGENT, COMSIG_REAGENTS_REM_REAGENT), PROC_REF(on_reagent_change))
+	RegisterSignal(reagents, COMSIG_PARENT_QDELETING, PROC_REF(on_reagents_del))
 
 /**
  * Handles rigging the cell if it contains enough plasma.

@@ -67,7 +67,7 @@
 	explosion_block = EXPLOSION_BLOCK_PROC
 
 	flags_1 |= ALLOW_DARK_PAINTS_1
-	RegisterSignal(src, COMSIG_OBJ_PAINTED, PROC_REF(on_painted)
+	RegisterSignal(src, COMSIG_OBJ_PAINTED, PROC_REF(on_painted))
 	AddElement(/datum/element/atmos_sensitive, mapload)
 
 	var/static/list/loc_connections = list(
@@ -79,7 +79,7 @@
 
 /obj/structure/window/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, PROC_REF(can_be_rotated),CALLBACK(src,.proc/after_rotation))
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, PROC_REF(can_be_rotated),CALLBACK(src,.proc/after_rotation)))
 
 /obj/structure/window/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
@@ -409,7 +409,7 @@
 				if(tool.use_tool(src, user, 150, volume = 100))
 					to_chat(user, SPAN_NOTICE("The security screws are glowing white hot and look ready to be removed."))
 					state = RWINDOW_BOLTS_HEATED
-					addtimer(CALLBACK(src, PROC_REF(cool_bolts), 300)
+					addtimer(CALLBACK(src, PROC_REF(cool_bolts), 300))
 			else if (tool.tool_behaviour)
 				to_chat(user, SPAN_WARNING("The security screws need to be heated first!"))
 
@@ -550,7 +550,7 @@
 				if(I.use_tool(src, user, 180, volume = 100))
 					to_chat(user, SPAN_NOTICE("The security screws are glowing white hot and look ready to be removed."))
 					state = RWINDOW_BOLTS_HEATED
-					addtimer(CALLBACK(src, PROC_REF(cool_bolts), 300)
+					addtimer(CALLBACK(src, PROC_REF(cool_bolts), 300))
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)

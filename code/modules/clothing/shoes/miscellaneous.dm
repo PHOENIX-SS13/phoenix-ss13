@@ -89,7 +89,7 @@
 
 /obj/item/clothing/shoes/galoshes/dry/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(on_step)
+	RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(on_step))
 
 /obj/item/clothing/shoes/galoshes/dry/proc/on_step()
 	SIGNAL_HANDLER
@@ -422,13 +422,13 @@
 	active = TRUE
 	set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 	set_light_on(active)
-	addtimer(CALLBACK(src, PROC_REF(lightUp), 0.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(lightUp), 0.5 SECONDS))
 
 /obj/item/clothing/shoes/kindle_kicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
 		set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 		lightCycle++
-		addtimer(CALLBACK(src, PROC_REF(lightUp), 0.5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(lightUp), 0.5 SECONDS))
 	else
 		lightCycle = 0
 		active = FALSE
@@ -462,7 +462,7 @@
 
 /obj/item/clothing/shoes/cowboy/equipped(mob/living/carbon/user, slot)
 	. = ..()
-	RegisterSignal(user, COMSIG_LIVING_SLAM_TABLE, PROC_REF(table_slam)
+	RegisterSignal(user, COMSIG_LIVING_SLAM_TABLE, PROC_REF(table_slam))
 	if(slot == ITEM_SLOT_FEET)
 		for(var/mob/living/occupant in occupants)
 			occupant.forceMove(user.drop_location())
@@ -576,12 +576,12 @@
 
 /obj/item/clothing/shoes/gunboots/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(check_step)
+	RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(check_step))
 
 /obj/item/clothing/shoes/gunboots/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_FEET)
-		RegisterSignal(user, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, PROC_REF(check_kick)
+		RegisterSignal(user, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, PROC_REF(check_kick))
 	else
 		UnregisterSignal(user, COMSIG_HUMAN_MELEE_UNARMED_ATTACK)
 
@@ -596,7 +596,7 @@
 	if(!prob(shot_prob))
 		return
 
-	INVOKE_ASYNC(src, PROC_REF(fire_shot)
+	INVOKE_ASYNC(src, PROC_REF(fire_shot))
 
 /// Stomping on someone while wearing gunboots shoots them point blank
 /obj/item/clothing/shoes/gunboots/proc/check_kick(mob/living/carbon/human/kicking_person, atom/attacked_atom, proximity)

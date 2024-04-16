@@ -71,7 +71,7 @@
 
 	. = ..()
 	if(.)
-		RegisterSignal(target, COMSIG_LIVING_DEATH, PROC_REF(on_death)
+		RegisterSignal(target, COMSIG_LIVING_DEATH, PROC_REF(on_death))
 
 /obj/item/implant/explosive/proc/timed_explosion()
 	imp_in.visible_message(SPAN_WARNING("[imp_in] starts beeping ominously!"))

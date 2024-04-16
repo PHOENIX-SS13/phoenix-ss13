@@ -48,7 +48,7 @@
 	set_volume(_acid_volume)
 
 	var/atom/parent_atom = parent
-	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(on_update_overlays)
+	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(on_update_overlays))
 	parent_atom.update_appearance()
 	sizzle = new(list(parent), TRUE)
 	START_PROCESSING(SSacid, src)
@@ -65,12 +65,12 @@
 	return ..()
 
 /datum/component/acid/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine)
-	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_clean)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand)
-	RegisterSignal(parent, COMSIG_ATOM_EXPOSE_REAGENT, PROC_REF(on_expose_reagent)
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_clean))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
+	RegisterSignal(parent, COMSIG_ATOM_EXPOSE_REAGENT, PROC_REF(on_expose_reagent))
 	if(isturf(parent))
-		RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(on_entered)
+		RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
 
 /datum/component/acid/UnregisterFromParent()
 	UnregisterSignal(parent, list(

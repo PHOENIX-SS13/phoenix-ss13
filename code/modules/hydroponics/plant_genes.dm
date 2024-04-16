@@ -263,7 +263,7 @@
 
 	// Add on any bonus lines on examine
 	if(examine_line)
-		RegisterSignal(our_plant, COMSIG_PARENT_EXAMINE, PROC_REF(examine)
+		RegisterSignal(our_plant, COMSIG_PARENT_EXAMINE, PROC_REF(examine))
 
 	return TRUE
 
@@ -294,9 +294,9 @@
 	if(!.)
 		return
 
-	RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(squash_plant)
-	RegisterSignal(our_plant, COMSIG_MOVABLE_IMPACT, PROC_REF(squash_plant)
-	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK_SELF, PROC_REF(squash_plant)
+	RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(squash_plant))
+	RegisterSignal(our_plant, COMSIG_MOVABLE_IMPACT, PROC_REF(squash_plant))
+	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK_SELF, PROC_REF(squash_plant))
 
 /*
  * Signal proc to squash the plant this trait belongs to, causing a smudge, exposing the target to reagents, and deleting it,
@@ -382,11 +382,11 @@
 	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
 	if(our_seed.get_gene(/datum/plant_gene/trait/squash))
 		// If we have the squash gene, let that handle slipping
-		RegisterSignal(our_plant, COMSIG_PLANT_ON_SQUASH, PROC_REF(zap_target)
+		RegisterSignal(our_plant, COMSIG_PLANT_ON_SQUASH, PROC_REF(zap_target))
 	else
-		RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(zap_target)
+		RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(zap_target))
 
-	RegisterSignal(our_plant, COMSIG_FOOD_EATEN, PROC_REF(recharge_cells)
+	RegisterSignal(our_plant, COMSIG_FOOD_EATEN, PROC_REF(recharge_cells))
 
 /*
  * Zaps the target with a stunning shock.
@@ -525,9 +525,9 @@
 	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
 	if(our_seed.get_gene(/datum/plant_gene/trait/squash))
 		// If we have the squash gene, let that handle slipping
-		RegisterSignal(our_plant, COMSIG_PLANT_ON_SQUASH, PROC_REF(squash_teleport)
+		RegisterSignal(our_plant, COMSIG_PLANT_ON_SQUASH, PROC_REF(squash_teleport))
 	else
-		RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(slip_teleport)
+		RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(slip_teleport))
 
 /*
  * When squashed, makes the target teleport.
@@ -615,7 +615,7 @@
 	if(!.)
 		return
 
-	RegisterSignal(our_plant, COMSIG_PARENT_ATTACKBY, PROC_REF(make_battery)
+	RegisterSignal(our_plant, COMSIG_PARENT_ATTACKBY, PROC_REF(make_battery))
 
 /*
  * When a plant with this gene is hit (attackby) with cables, we turn it into a battery.
@@ -669,8 +669,8 @@
 	if(!.)
 		return
 
-	RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(prickles_inject)
-	RegisterSignal(our_plant, COMSIG_MOVABLE_IMPACT, PROC_REF(prickles_inject)
+	RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(prickles_inject))
+	RegisterSignal(our_plant, COMSIG_MOVABLE_IMPACT, PROC_REF(prickles_inject))
 
 /*
  * Injects a target with a number of reagents from our plant.
@@ -703,7 +703,7 @@
 	if(!.)
 		return
 
-	RegisterSignal(our_plant, COMSIG_PLANT_ON_SQUASH, PROC_REF(make_smoke)
+	RegisterSignal(our_plant, COMSIG_PLANT_ON_SQUASH, PROC_REF(make_smoke))
 
 /*
  * Makes a cloud of reagent smoke.
@@ -751,7 +751,7 @@
 	if(!.)
 		return FALSE
 
-	RegisterSignal(new_seed, COMSIG_PLANT_ON_GROW, PROC_REF(try_spread)
+	RegisterSignal(new_seed, COMSIG_PLANT_ON_GROW, PROC_REF(try_spread))
 
 	return TRUE
 /*
@@ -843,7 +843,7 @@
 	if(istype(grown_plant) && ispath(grown_plant.trash_type, /obj/item/grown))
 		return
 
-	RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(laughter)
+	RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(laughter))
 
 /*
  * Play a sound effect from our plant.

@@ -15,7 +15,7 @@
 	after_select_cb = _after_select_cb
 
 /datum/component/surgery_initiator/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(initiate_surgery_moment)
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(initiate_surgery_moment))
 
 /datum/component/surgery_initiator/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ITEM_ATTACK)

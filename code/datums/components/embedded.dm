@@ -86,7 +86,7 @@
 
 	limb.embedded_objects |= weapon // on the inside... on the inside...
 	weapon.forceMove(victim)
-	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(weaponDeleted)
+	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(weaponDeleted))
 	victim.visible_message(SPAN_DANGER("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "to"] [victim]'s [limb.name]!"), SPAN_USERDANGER("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "to"] your [limb.name]!"))
 
 	var/damage = weapon.throwforce
@@ -113,10 +113,10 @@
 	return ..()
 
 /datum/component/embedded/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostleCheck)
-	RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(ripOut)
-	RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safeRemove)
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(checkTweeze)
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostleCheck))
+	RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(ripOut))
+	RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safeRemove))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(checkTweeze))
 
 /datum/component/embedded/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_PARENT_ATTACKBY))

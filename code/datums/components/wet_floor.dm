@@ -33,8 +33,8 @@
 	last_process = world.time
 
 /datum/component/wet_floor/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_TURF_IS_WET, PROC_REF(is_wet)
-	RegisterSignal(parent, COMSIG_TURF_MAKE_DRY, PROC_REF(dry)
+	RegisterSignal(parent, COMSIG_TURF_IS_WET, PROC_REF(is_wet))
+	RegisterSignal(parent, COMSIG_TURF_MAKE_DRY, PROC_REF(dry))
 
 /datum/component/wet_floor/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_TURF_IS_WET, COMSIG_TURF_MAKE_DRY))
@@ -94,7 +94,7 @@
 			qdel(parent.GetComponent(/datum/component/slippery))
 			return
 
-	parent.LoadComponent(/datum/component/slippery, intensity, lube_flags, CALLBACK(src, PROC_REF(AfterSlip))
+	parent.LoadComponent(/datum/component/slippery, intensity, lube_flags, CALLBACK(src, PROC_REF(AfterSlip)))
 
 /datum/component/wet_floor/proc/dry(datum/source, strength = TURF_WET_WATER, immediate = FALSE, duration_decrease = INFINITY)
 	SIGNAL_HANDLER

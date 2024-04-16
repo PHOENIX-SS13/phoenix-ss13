@@ -50,7 +50,7 @@
 	. = ..()
 	if(istype(shell, /obj/structure/scanner_gate_shell))
 		attached_gate = shell
-		RegisterSignal(attached_gate, COMSIG_SCANGATE_SHELL_PASS, PROC_REF(on_trigger)
+		RegisterSignal(attached_gate, COMSIG_SCANGATE_SHELL_PASS, PROC_REF(on_trigger))
 
 /obj/item/circuit_component/scanner_gate/unregister_shell(atom/movable/shell)
 	UnregisterSignal(attached_gate, COMSIG_SCANGATE_SHELL_PASS)

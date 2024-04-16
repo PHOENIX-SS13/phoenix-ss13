@@ -138,7 +138,7 @@
 	if(client)
 		INVOKE_ASYNC(src, PROC_REF(apply_pref_name),"ai",client)
 
-	INVOKE_ASYNC(src, PROC_REF(set_core_display_icon)
+	INVOKE_ASYNC(src, PROC_REF(set_core_display_icon))
 
 
 	holo_icon = getHologramIcon(icon('icons/mob/ai.dmi',"default"))
@@ -1018,7 +1018,7 @@
 		return
 
 	else if(mind)
-		RegisterSignal(target, COMSIG_LIVING_DEATH, PROC_REF(disconnect_shell)
+		RegisterSignal(target, COMSIG_LIVING_DEATH, PROC_REF(disconnect_shell))
 		deployed_shell = target
 		target.deploy_init(src)
 		mind.transfer_to(target)

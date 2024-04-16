@@ -74,16 +74,16 @@
 	return ..()
 
 /datum/component/pellet_cloud/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, PROC_REF(nullspace_parent)
+	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, PROC_REF(nullspace_parent))
 	if(isammocasing(parent))
-		RegisterSignal(parent, COMSIG_PELLET_CLOUD_INIT, PROC_REF(create_casing_pellets)
+		RegisterSignal(parent, COMSIG_PELLET_CLOUD_INIT, PROC_REF(create_casing_pellets))
 	else if(isgrenade(parent))
-		RegisterSignal(parent, COMSIG_GRENADE_ARMED, PROC_REF(grenade_armed)
-		RegisterSignal(parent, COMSIG_GRENADE_DETONATE, PROC_REF(create_blast_pellets)
+		RegisterSignal(parent, COMSIG_GRENADE_ARMED, PROC_REF(grenade_armed))
+		RegisterSignal(parent, COMSIG_GRENADE_DETONATE, PROC_REF(create_blast_pellets))
 	else if(islandmine(parent))
-		RegisterSignal(parent, COMSIG_MINE_TRIGGERED, PROC_REF(create_blast_pellets)
+		RegisterSignal(parent, COMSIG_MINE_TRIGGERED, PROC_REF(create_blast_pellets))
 	else if(issupplypod(parent))
-		RegisterSignal(parent, COMSIG_SUPPLYPOD_LANDED, PROC_REF(create_blast_pellets)
+		RegisterSignal(parent, COMSIG_SUPPLYPOD_LANDED, PROC_REF(create_blast_pellets))
 
 /datum/component/pellet_cloud/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_PARENT_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_DETONATE, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
@@ -115,8 +115,8 @@
 			else //Smart spread
 				spread = round((i / num_pellets - 0.5) * distro)
 
-		RegisterSignal(shell.loaded_projectile, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit)
-		RegisterSignal(shell.loaded_projectile, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range)
+		RegisterSignal(shell.loaded_projectile, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
+		RegisterSignal(shell.loaded_projectile, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 		shell.loaded_projectile.damage = original_damage
 		shell.loaded_projectile.wound_bonus = original_wb
 		shell.loaded_projectile.bare_wound_bonus = original_bwb
@@ -271,8 +271,8 @@
 	P.impacted = list(parent = TRUE) // don't hit the target we hit already with the flak
 	P.suppressed = SUPPRESSED_VERY // set the projectiles to make no message so we can do our own aggregate message
 	P.preparePixelProjectile(target, parent)
-	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit)
-	RegisterSignal(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range)
+	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
+	RegisterSignal(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 	pellets += P
 	P.fire()
 	if(landmine_victim)
@@ -318,8 +318,8 @@
 	if(ismob(nade.loc))
 		shooter = nade.loc
 	LAZYINITLIST(bodies)
-	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(grenade_dropped)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(grenade_moved)
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(grenade_dropped))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(grenade_moved))
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_EXITED =.proc/grenade_uncrossed,
 	)

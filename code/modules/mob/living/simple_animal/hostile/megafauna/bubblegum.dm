@@ -328,7 +328,7 @@ Difficulty: Hard
 	update_approach()
 	change_move_delay(5)
 	add_atom_colour(COLOR_BUBBLEGUM_RED, TEMPORARY_COLOUR_PRIORITY)
-	var/datum/callback/cb = CALLBACK(src, PROC_REF(blood_enrage_end)
+	var/datum/callback/cb = CALLBACK(src, PROC_REF(blood_enrage_end))
 	addtimer(cb, enrage_time)
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/proc/blood_enrage_end()

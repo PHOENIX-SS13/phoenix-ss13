@@ -53,8 +53,8 @@
 	if(force_multiplier)
 		var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
 		our_plant.force = round((5 + our_seed.potency * force_multiplier), 1)
-	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK, PROC_REF(on_plant_attack)
-	RegisterSignal(our_plant, COMSIG_ITEM_AFTERATTACK, PROC_REF(after_plant_attack)
+	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK, PROC_REF(on_plant_attack))
+	RegisterSignal(our_plant, COMSIG_ITEM_AFTERATTACK, PROC_REF(after_plant_attack))
 
 /*
  * Plant effects ON attack.
@@ -233,7 +233,7 @@
 	if(!.)
 		return
 
-	RegisterSignal(our_plant, list(COMSIG_PARENT_PREQDELETED, COMSIG_ITEM_DROPPED), PROC_REF(stop_backfire_effect)
+	RegisterSignal(our_plant, list(COMSIG_PARENT_PREQDELETED, COMSIG_ITEM_DROPPED), PROC_REF(stop_backfire_effect))
 
 /*
  * Begin processing the trait on backfire.
@@ -309,8 +309,8 @@
 
 	if(dangerous)
 		our_plant.AddElement(/datum/element/plant_backfire, CALLBACK(src, PROC_REF(early_awakening), TRUE)
-	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK_SELF, PROC_REF(manual_awakening)
-	RegisterSignal(our_plant, COMSIG_ITEM_PRE_ATTACK, PROC_REF(pre_consumption_check)
+	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK_SELF, PROC_REF(manual_awakening))
+	RegisterSignal(our_plant, COMSIG_ITEM_PRE_ATTACK, PROC_REF(pre_consumption_check))
 
 /*
  * Before we can eat our plant, check to see if it's waking up. Don't eat it if it is.
@@ -464,9 +464,9 @@
 		return
 
 	our_plant.max_integrity = 40 // Max_integrity is lowered so they explode better, or something like that.
-	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK_SELF, PROC_REF(trigger_detonation)
-	RegisterSignal(our_plant, COMSIG_ATOM_EX_ACT, PROC_REF(explosion_reaction)
-	RegisterSignal(our_plant, COMSIG_OBJ_DECONSTRUCT, PROC_REF(deconstruct_reaction)
+	RegisterSignal(our_plant, COMSIG_ITEM_ATTACK_SELF, PROC_REF(trigger_detonation))
+	RegisterSignal(our_plant, COMSIG_ATOM_EX_ACT, PROC_REF(explosion_reaction))
+	RegisterSignal(our_plant, COMSIG_OBJ_DECONSTRUCT, PROC_REF(deconstruct_reaction))
 
 /*
  * Trigger our plant's detonation.
@@ -566,8 +566,8 @@
 	if(!.)
 		return
 
-	RegisterSignal(new_seed, COMSIG_PLANT_ON_GROW, PROC_REF(try_release_gas)
-	RegisterSignal(new_seed, COMSIG_PARENT_PREQDELETED, PROC_REF(stop_gas)
+	RegisterSignal(new_seed, COMSIG_PLANT_ON_GROW, PROC_REF(try_release_gas))
+	RegisterSignal(new_seed, COMSIG_PARENT_PREQDELETED, PROC_REF(stop_gas))
 
 /*
  * Whenever the plant starts to grow in a tray, check if we can release gas.

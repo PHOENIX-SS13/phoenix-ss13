@@ -22,10 +22,10 @@
 	if(climb_over)
 		src.climb_over = climb_over
 
-	RegisterSignal(target, COMSIG_ATOM_ATTACK_HAND, PROC_REF(attack_hand)
-	RegisterSignal(target, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine)
-	RegisterSignal(target, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive)
-	RegisterSignal(target, COMSIG_ATOM_BUMPED, PROC_REF(try_speedrun)
+	RegisterSignal(target, COMSIG_ATOM_ATTACK_HAND, PROC_REF(attack_hand))
+	RegisterSignal(target, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(target, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
+	RegisterSignal(target, COMSIG_ATOM_BUMPED, PROC_REF(try_speedrun))
 
 /datum/element/climbable/Detach(datum/target)
 	UnregisterSignal(target, list(COMSIG_ATOM_ATTACK_HAND, COMSIG_PARENT_EXAMINE, COMSIG_MOUSEDROPPED_ONTO, COMSIG_ATOM_BUMPED))

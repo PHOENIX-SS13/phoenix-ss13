@@ -564,7 +564,7 @@ Difficulty: Hard
 	friendly_fire_check = is_friendly_fire
 	if(new_speed)
 		speed = new_speed
-	addtimer(CALLBACK(src, PROC_REF(seek_target), 1)
+	addtimer(CALLBACK(src, PROC_REF(seek_target), 1))
 
 /obj/effect/temp_visual/hierophant/chaser/proc/get_target_dir()
 	. = get_cardinal_dir(src, targetturf)
@@ -649,7 +649,7 @@ Difficulty: Hard
 	if(ismineralturf(loc)) //drill mineral turfs
 		var/turf/closed/mineral/M = loc
 		M.gets_drilled(caster)
-	INVOKE_ASYNC(src, PROC_REF(blast)
+	INVOKE_ASYNC(src, PROC_REF(blast))
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)

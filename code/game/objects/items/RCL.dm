@@ -25,8 +25,8 @@
 
 /obj/item/rcl/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/rcl/ComponentInitialize()
 	. = ..()
@@ -171,7 +171,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(to_hook, COMSIG_MOVABLE_MOVED, PROC_REF(trigger)
+	RegisterSignal(to_hook, COMSIG_MOVABLE_MOVED, PROC_REF(trigger))
 	listeningTo = to_hook
 
 /obj/item/rcl/proc/trigger(mob/user)

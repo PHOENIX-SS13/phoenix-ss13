@@ -55,7 +55,7 @@
 		if (!isturf(S.loc) || !(is_station_level(S) || is_mining_level(S) || S.z == T.z))
 			continue
 		supermatters.Add(S)
-		RegisterSignal(S, COMSIG_PARENT_QDELETING, PROC_REF(react_to_del)
+		RegisterSignal(S, COMSIG_PARENT_QDELETING, PROC_REF(react_to_del))
 
 /datum/computer_file/program/supermatter_monitor/proc/get_status()
 	. = SUPERMATTER_INACTIVE

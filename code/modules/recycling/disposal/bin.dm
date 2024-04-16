@@ -41,7 +41,7 @@
 	air_contents = new /datum/gas_mixture()
 	//gas.volume = 1.05 * CELLSTANDARD
 	update_appearance()
-	RegisterSignal(src, COMSIG_RAT_INTERACT, PROC_REF(on_rat_rummage)
+	RegisterSignal(src, COMSIG_RAT_INTERACT, PROC_REF(on_rat_rummage))
 
 	return INITIALIZE_HINT_LATELOAD //we need turfs to have air
 

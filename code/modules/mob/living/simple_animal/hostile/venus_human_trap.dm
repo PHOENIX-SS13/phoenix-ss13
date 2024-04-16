@@ -42,8 +42,8 @@
 	for(var/turf/T in anchors)
 		vines += Beam(T, "vine", maxdistance=5, beam_type=/obj/effect/ebeam/vine)
 	finish_time = world.time + growth_time
-	addtimer(CALLBACK(src, PROC_REF(bear_fruit), growth_time)
-	addtimer(CALLBACK(src, PROC_REF(progress_growth), growth_time/4)
+	addtimer(CALLBACK(src, PROC_REF(bear_fruit), growth_time))
+	addtimer(CALLBACK(src, PROC_REF(progress_growth), growth_time/4))
 	countdown.start()
 
 /obj/structure/alien/resin/flower_bud/Destroy()
@@ -65,7 +65,7 @@
 	icon_state = "bud[growth_icon]"
 	if(growth_icon == FINAL_BUD_GROWTH_ICON)
 		return
-	addtimer(CALLBACK(src, PROC_REF(progress_growth), growth_time/4)
+	addtimer(CALLBACK(src, PROC_REF(progress_growth), growth_time/4))
 
 /obj/effect/ebeam/vine
 	name = "thick vine"

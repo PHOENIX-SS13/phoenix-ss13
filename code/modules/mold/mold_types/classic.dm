@@ -88,7 +88,7 @@
 	set_full(TRUE)
 	for(var/open_turf in get_adjacent_open_turfs(src))
 		registered_turfs += open_turf
-		RegisterSignal(open_turf, COMSIG_ATOM_ENTERED, PROC_REF(proximity_trigger)
+		RegisterSignal(open_turf, COMSIG_ATOM_ENTERED, PROC_REF(proximity_trigger))
 
 /obj/structure/mold/structure/bulb/proc/proximity_trigger(datum/source, atom/movable/movable_atom)
 	if(!isliving(movable_atom))

@@ -278,7 +278,7 @@
 /mob/living/simple_animal/hostile/imp/slaughter/laughter/bloodcrawl_swallow(mob/living/victim)
 	// Keep their corpse so rescue is possible
 	consumed_mobs += victim
-	RegisterSignal(victim, COMSIG_MOB_STATCHANGE, PROC_REF(on_victim_statchange)
+	RegisterSignal(victim, COMSIG_MOB_STATCHANGE, PROC_REF(on_victim_statchange))
 
 /* Handle signal from a consumed mob changing stat.
  *

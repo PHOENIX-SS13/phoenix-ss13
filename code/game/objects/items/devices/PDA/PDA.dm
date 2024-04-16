@@ -119,7 +119,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		inserted_item = new inserted_item(src)
 	else
 		inserted_item = new /obj/item/pen(src)
-	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, PROC_REF(on_light_eater)
+	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, PROC_REF(on_light_eater))
 
 	update_appearance()
 
@@ -1208,7 +1208,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			A.emp_act(severity)
 	if (!(. & EMP_PROTECT_SELF))
 		emped++
-		addtimer(CALLBACK(src, PROC_REF(emp_end), 200 * severity)
+		addtimer(CALLBACK(src, PROC_REF(emp_end), 200 * severity))
 
 /obj/item/pda/proc/emp_end()
 	emped--

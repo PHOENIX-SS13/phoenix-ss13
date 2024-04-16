@@ -26,7 +26,7 @@
 	if(_can_be_blunt)
 		can_be_blunt = _can_be_blunt
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(onItemAttack)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(onItemAttack))
 
 /datum/component/butchering/proc/onItemAttack(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER

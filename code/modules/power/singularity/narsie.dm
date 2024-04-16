@@ -87,7 +87,7 @@
 			souls_needed[player] = TRUE
 
 	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)
-	INVOKE_ASYNC(GLOBAL_PROC, PROC_REF(begin_the_end)
+	INVOKE_ASYNC(GLOBAL_PROC, PROC_REF(begin_the_end))
 
 /obj/narsie/Destroy()
 	send_to_playing_players(SPAN_NARSIE("\"<b>[pick("Nooooo...", "Not die. How-", "Die. Mort-", "Sas tyen re-")]\"</b>"))
@@ -194,7 +194,7 @@
 /obj/narsie/proc/narsie_spawn_animation()
 	setDir(SOUTH)
 	flick("narsie_spawn_anim", src)
-	addtimer(CALLBACK(src, PROC_REF(narsie_spawn_animation_end), 3.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(narsie_spawn_animation_end), 3.5 SECONDS))
 
 /obj/narsie/proc/narsie_spawn_animation_end()
 	var/datum/component/singularity/singularity_component = singularity.resolve()
@@ -211,7 +211,7 @@
  *  * [/proc/cult_ending_helper()]
  */
 /proc/begin_the_end()
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_end_begin_check), 5 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_end_begin_check), 5 SECONDS))
 
 ///First crew last second win check and flufftext for [/proc/begin_the_end()]
 /proc/narsie_end_begin_check()
@@ -221,7 +221,7 @@
 		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(cult_ending_helper), 2), 2 SECONDS)
 		return
 	priority_announce("An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.","Central Command Higher Dimensional Affairs", 'sound/misc/airraid.ogg')
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_end_second_check), 50 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_end_second_check), 50 SECONDS))
 
 ///Second crew last second win check and flufftext for [/proc/begin_the_end()]
 /proc/narsie_end_second_check()
@@ -231,26 +231,26 @@
 		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(cult_ending_helper), 2), 2 SECONDS)
 		return
 	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Central Command Higher Dimensional Affairs")
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_start_destroy_station), 5 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_start_destroy_station), 5 SECONDS))
 
 ///security level and shuttle lockdowns for [/proc/begin_the_end()]
 /proc/narsie_start_destroy_station()
 	set_security_level("delta")
 	SSshuttle.registerHostileEnvironment(GLOB.cult_narsie)
 	SSshuttle.lockdown = TRUE
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_apocalypse), 1 MINUTES)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_apocalypse), 1 MINUTES))
 
 ///Third crew last second win check and flufftext for [/proc/begin_the_end()]
 /proc/narsie_apocalypse()
 	if(QDELETED(GLOB.cult_narsie)) // tres
 		priority_announce("Normalization detected! Abort the solution package!","Central Command Higher Dimensional Affairs", 'sound/misc/notice1.ogg')
 		GLOB.cult_narsie = null
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_last_second_win), 2 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(narsie_last_second_win), 2 SECONDS))
 		return
 	if(GLOB.cult_narsie.resolved == FALSE)
 		GLOB.cult_narsie.resolved = TRUE
 		sound_to_playing_players('sound/machines/alarm.ogg')
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(cult_ending_helper), 12 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(cult_ending_helper), 12 SECONDS))
 
 ///Called only if the crew managed to destroy narsie at the very last second for [/proc/begin_the_end()]
 /proc/narsie_last_second_win()

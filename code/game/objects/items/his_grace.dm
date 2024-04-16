@@ -31,7 +31,7 @@
 	. = ..()
 	START_PROCESSING(SSprocessing, src)
 	AddElement(/datum/element/point_of_interest)
-	RegisterSignal(src, COMSIG_MOVABLE_POST_THROW, PROC_REF(move_gracefully)
+	RegisterSignal(src, COMSIG_MOVABLE_POST_THROW, PROC_REF(move_gracefully))
 	update_appearance()
 
 /obj/item/his_grace/Destroy()

@@ -17,11 +17,11 @@
 	hl3_release_date = _half_life
 	can_contaminate = _can_contaminate
 	if(istype(parent, /atom))
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(rad_examine)
-		RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(rad_clean)
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(rad_examine))
+		RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(rad_clean))
 		if(istype(parent, /obj/item))
-			RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(rad_attack)
-			RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ, PROC_REF(rad_attack)
+			RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(rad_attack))
+			RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ, PROC_REF(rad_attack))
 	else
 		return COMPONENT_INCOMPATIBLE
 	if(strength > RAD_MINIMUM_CONTAMINATION)

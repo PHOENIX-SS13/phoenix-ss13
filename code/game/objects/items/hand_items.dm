@@ -15,7 +15,7 @@
 	var/mob/living/owner = loc
 	if(!istype(owner))
 		return
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(ownerExamined)
+	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(ownerExamined))
 
 /obj/item/circlegame/Destroy()
 	var/mob/owner = loc

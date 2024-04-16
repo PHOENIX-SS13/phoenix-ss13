@@ -63,7 +63,7 @@
 	var/datum/antagonist/heretic/master = user.mind.has_antag_datum(/datum/antagonist/heretic)
 	heretic_monster.set_owner(master)
 	atoms -= humie
-	RegisterSignal(humie,COMSIG_LIVING_DEATH, PROC_REF(remove_ghoul)
+	RegisterSignal(humie,COMSIG_LIVING_DEATH, PROC_REF(remove_ghoul))
 	ghouls += humie
 
 /datum/eldritch_knowledge/flesh_ghoul/proc/remove_ghoul(datum/source)

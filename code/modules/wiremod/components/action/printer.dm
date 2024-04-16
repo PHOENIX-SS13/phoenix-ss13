@@ -29,7 +29,7 @@
 	var/max_paper_capacity = 10
 
 /obj/item/circuit_component/printer/populate_ports()
-	print = add_input_port("Print", PORT_TYPE_STRING, trigger = PROC_REF(print_on_paper)
+	print = add_input_port("Print", PORT_TYPE_STRING, trigger = PROC_REF(print_on_paper))
 	text_color_red = add_input_port("Color (Red)", PORT_TYPE_NUMBER, trigger = null, default = 0)
 	text_color_green = add_input_port("Color (Green)", PORT_TYPE_NUMBER, trigger = null, default = 0)
 	text_color_blue = add_input_port("Color (Blue)", PORT_TYPE_NUMBER, trigger = null, default = 0)
@@ -62,7 +62,7 @@
 	return ..()
 
 /obj/item/circuit_component/printer/register_shell(atom/movable/shell)
-	RegisterSignal(shell, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine)
+	RegisterSignal(shell, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 
 /obj/item/circuit_component/printer/unregister_shell(atom/movable/shell)
 

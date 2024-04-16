@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	natural = !forced
 
 	// Cancel early if the target is deleted
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(target_deleting)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(target_deleting))
 
 /datum/hallucination/proc/target_deleting()
 	SIGNAL_HANDLER
@@ -365,7 +365,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		target.client.images |= fakerune
 	target.playsound_local(wall,'sound/effects/meteorimpact.ogg', 150, 1)
 	bubblegum = new(wall, target)
-	addtimer(CALLBACK(src, PROC_REF(start_processing), 10)
+	addtimer(CALLBACK(src, PROC_REF(start_processing), 10))
 
 /datum/hallucination/oh_yeah/proc/start_processing()
 	if (isnull(target))
@@ -1156,7 +1156,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if("charge")
 			target.throw_alert(alert_type, /atom/movable/screen/alert/emptycell, override = TRUE)
 
-	addtimer(CALLBACK(src, PROC_REF(cleanup), duration)
+	addtimer(CALLBACK(src, PROC_REF(cleanup), duration))
 
 /datum/hallucination/fake_alert/proc/cleanup()
 	target.clear_alert(alert_type, clear_override = TRUE)
@@ -1176,7 +1176,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	LAZYSET(human_mob.hal_screwydoll, specific_limb, severity)
 	human_mob.update_health_hud()
 
-	timer_id = addtimer(CALLBACK(src, PROC_REF(cleanup), duration, TIMER_STOPPABLE)
+	timer_id = addtimer(CALLBACK(src, PROC_REF(cleanup), duration, TIMER_STOPPABLE))
 
 ///Increments the severity of the damage seen on the doll
 /datum/hallucination/fake_health_doll/proc/increment_fake_damage()
@@ -1459,7 +1459,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	to_chat(target, SPAN_USERDANGER("You're set on fire!"))
 	target.throw_alert("fire", /atom/movable/screen/alert/fire, override = TRUE)
 	times_to_lower_stamina = rand(5, 10)
-	addtimer(CALLBACK(src, PROC_REF(start_expanding), 20)
+	addtimer(CALLBACK(src, PROC_REF(start_expanding), 20))
 
 /datum/hallucination/fire/Destroy()
 	. = ..()
@@ -1542,13 +1542,13 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images |= shock_image
 		target.client.images |= electrocution_skeleton_anim
-	addtimer(CALLBACK(src, PROC_REF(reset_shock_animation), 40)
+	addtimer(CALLBACK(src, PROC_REF(reset_shock_animation), 40))
 	target.playsound_local(get_turf(src), "sparks", 100, 1)
 	target.staminaloss += 50
 	target.Stun(40)
 	target.jitteriness += 1000
 	target.do_jitter_animation(target.jitteriness)
-	addtimer(CALLBACK(src, PROC_REF(shock_drop), 20)
+	addtimer(CALLBACK(src, PROC_REF(shock_drop), 20))
 
 /datum/hallucination/shock/proc/reset_shock_animation()
 	if(target.client)

@@ -16,7 +16,7 @@
 
 	new /obj/effect/temp_visual/monkeyify(loc)
 
-	transformation_timer = addtimer(CALLBACK(src, PROC_REF(finish_monkeyize), TRANSFORMATION_DURATION, TIMER_UNIQUE)
+	transformation_timer = addtimer(CALLBACK(src, PROC_REF(finish_monkeyize), TRANSFORMATION_DURATION, TIMER_UNIQUE))
 
 /mob/living/carbon/proc/finish_monkeyize()
 	transformation_timer = null

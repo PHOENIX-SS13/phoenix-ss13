@@ -509,12 +509,12 @@
 			investigate_log("Experimentor has drained power from its APC", INVESTIGATE_EXPERIMENTOR)
 		if(globalMalf == 99)
 			visible_message(SPAN_WARNING("[src] begins to glow and vibrate. It's going to blow!"))
-			addtimer(CALLBACK(src, PROC_REF(boom), 50)
+			addtimer(CALLBACK(src, PROC_REF(boom), 50))
 		if(globalMalf == 100)
 			visible_message(SPAN_WARNING("[src] begins to glow and vibrate. It's going to blow!"))
-			addtimer(CALLBACK(src, PROC_REF(honk), 50)
+			addtimer(CALLBACK(src, PROC_REF(honk), 50))
 
-	addtimer(CALLBACK(src, PROC_REF(reset_exp), resetTime)
+	addtimer(CALLBACK(src, PROC_REF(reset_exp), resetTime))
 
 /obj/machinery/rnd/experimentor/proc/boom()
 	explosion(src, devastation_range = 1, heavy_impact_range = 5, light_impact_range = 10, flash_range = 5, adminlog = TRUE)

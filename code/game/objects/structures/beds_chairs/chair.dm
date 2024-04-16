@@ -25,7 +25,7 @@
 /obj/structure/chair/Initialize()
 	. = ..()
 	if(!anchored) //why would you put these on the shuttle?
-		addtimer(CALLBACK(src, PROC_REF(RemoveFromLatejoin), 0)
+		addtimer(CALLBACK(src, PROC_REF(RemoveFromLatejoin), 0))
 	if(prob(0.2))
 		name = "tactical [name]"
 

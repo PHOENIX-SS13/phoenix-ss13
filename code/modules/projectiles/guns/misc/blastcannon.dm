@@ -39,7 +39,7 @@
 	. = ..()
 	if(!pin)
 		pin = new
-	RegisterSignal(src, COMSIG_ATOM_INTERNAL_EXPLOSION, PROC_REF(channel_blastwave)
+	RegisterSignal(src, COMSIG_ATOM_INTERNAL_EXPLOSION, PROC_REF(channel_blastwave))
 
 /obj/item/gun/blastcannon/Destroy()
 	if(bomb)

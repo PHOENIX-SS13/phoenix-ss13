@@ -124,7 +124,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		base.layer = NOT_HIGH_OBJ_LAYER
 		underlays += base
 	if(!has_cover)
-		INVOKE_ASYNC(src, PROC_REF(popUp)
+		INVOKE_ASYNC(src, PROC_REF(popUp))
 
 /obj/machinery/porta_turret/proc/toggle_on(set_to)
 	var/current = on
@@ -176,7 +176,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		turret_gun.forceMove(src)
 		stored_gun = turret_gun
 
-	RegisterSignal(stored_gun, COMSIG_PARENT_PREQDELETED, PROC_REF(null_gun)
+	RegisterSignal(stored_gun, COMSIG_PARENT_PREQDELETED, PROC_REF(null_gun))
 	var/list/gun_properties = stored_gun.get_turret_properties()
 
 	//required properties
@@ -390,7 +390,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			spark_system.start()
 		if(on && !(turret_flags & TURRET_FLAG_SHOOT_ALL_REACT) && !(obj_flags & EMAGGED))
 			turret_flags |= TURRET_FLAG_SHOOT_ALL_REACT
-			addtimer(CALLBACK(src, PROC_REF(reset_attacked), 60)
+			addtimer(CALLBACK(src, PROC_REF(reset_attacked), 60))
 
 /obj/machinery/porta_turret/proc/reset_attacked()
 	turret_flags &= ~TURRET_FLAG_SHOOT_ALL_REACT
