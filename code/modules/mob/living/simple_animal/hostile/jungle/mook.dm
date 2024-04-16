@@ -117,7 +117,7 @@
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 25, TRUE)
 		playsound(src, 'sound/voice/mook_leap_yell.ogg', 100, TRUE)
 		var/target_turf = get_turf(target)
-		throw_at(target_turf, 7, 1, src, FALSE, callback = CALLBACK(src, PROC_REF(AttackRecovery))
+		throw_at(target_turf, 7, 1, src, FALSE, callback = CALLBACK(src, PROC_REF(AttackRecovery)))
 		return
 	attack_state = MOOK_ATTACK_RECOVERY
 	ResetNeutral()
