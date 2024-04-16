@@ -428,7 +428,7 @@
 			"Coming at you live with breaking news!",
 			"Developing story! Tune in!",
 			"You won't want to miss this!",
-			"LIVE NOW!"
+			"LIVE NOW!",
 			"Don't turn away, or you'll miss it!"))
 		icon_state = icon_state_on
 	else
