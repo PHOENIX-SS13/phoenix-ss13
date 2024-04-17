@@ -82,8 +82,11 @@
 /area/ruin/unpowered)
 "p" = (
 /obj/structure/window/reinforced/spawner/north,
-/obj/effect/spawner/lootdrop/tech_supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/machinery/shuttle_comms/active{
+	pixel_y = 2
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered)
 "q" = (
@@ -278,6 +281,11 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered)
+"X" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/tech_supply,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered)
 "Y" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -392,7 +400,7 @@ T
 d
 r
 u
-r
+X
 r
 G
 s

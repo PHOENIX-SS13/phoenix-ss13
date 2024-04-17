@@ -1,6 +1,6 @@
 import { sortBy } from 'common/collections';
 import { flow } from 'common/fp';
-import { useBackend } from '../backend';
+import { useLocalState, useBackend } from '../backend';
 import { Box, Button, Dropdown, Section, Knob, LabeledControls, LabeledList } from '../components';
 import { Window } from '../layouts';
 
@@ -8,6 +8,8 @@ export const Jukebox = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     active,
+    artists,
+    artist_selected,
     track_selected,
     track_length,
     track_beat,
@@ -32,15 +34,28 @@ export const Jukebox = (props, context) => {
               onClick={() => act('toggle')} />
           )}>
           <LabeledList>
+            <LabeledList.Item label="Artist">
+              <Dropdown
+                overflow-y="scroll"
+                width="240px"
+                options={artists}
+                disabled={active}
+                selected={artist_selected || "Select an artist"}
+                onSelected={value => act('select_artist', {
+                  artist: value,
+                })} />
+            </LabeledList.Item>
             <LabeledList.Item label="Track Selected">
               <Dropdown
                 overflow-y="scroll"
                 width="240px"
-                options={songs.map(song => song.name)}
+                options={songs.filter(song => (song.artist === artist_selected))
+                  .map(song => song.name)}
                 disabled={active}
                 selected={track_selected || "Select a Track"}
                 onSelected={value => act('select_track', {
-                  track: value,
+                  track_title: value,
+                  track_artist: artist_selected,
                 })} />
             </LabeledList.Item>
             <LabeledList.Item label="Track Length">

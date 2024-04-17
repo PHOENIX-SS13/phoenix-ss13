@@ -224,19 +224,86 @@
 			update_static_data(usr)
 			return TRUE
 
+#define BLACKBOX_INTACT 0
+#define BLACKBOX_EXPOSED 1
+#define BLACKBOX_RETRIEVED 2
+
 /obj/machinery/shuttle_comms/active
 	manual_distress = TRUE
 	desc = "A slightly banged up communications array. At least these things can take a beating."
+	var/blackbox_status = BLACKBOX_INTACT
 
 /obj/machinery/shuttle_comms/active/Initialize()
 	. = ..()
 	set_distress(TRUE)
 
+/obj/machinery/shuttle_comms/active/examine(mob/user)
+	. = ..()
+	switch(blackbox_status)
+		if(BLACKBOX_INTACT)
+			. += SPAN_NOTICE("Its blackbox is in place and intact. You could retrieve it after removing a few screws.")
+		if(BLACKBOX_EXPOSED)
+			. += SPAN_NOTICE("Its blackbox is exposed. You could reach in and pull it out.")
+		if(BLACKBOX_RETRIEVED)
+			. += SPAN_NOTICE("Upon inspection, it's missing its blackbox.")
+
+/obj/machinery/shuttle_comms/active/tool_act(mob/living/user, obj/item/tool, tool_type)
+	if(tool_type != TOOL_SCREWDRIVER || blackbox_status != BLACKBOX_INTACT)
+		return
+	if(do_after(user, 10 SECONDS, src))
+		blackbox_status = BLACKBOX_EXPOSED
+
+/obj/machinery/shuttle_comms/active/attack_hand(mob/user, list/modifiers)
+	. = ..()
+	if(blackbox_status == BLACKBOX_EXPOSED)
+		var/obj/item/blackbox/shuttle_comms/bbox = new /obj/item/blackbox/shuttle_comms(src)
+		user.put_in_hands(bbox)
+		blackbox_status = BLACKBOX_RETRIEVED
+		set_distress(FALSE)
+
+/obj/item/blackbox/shuttle_comms
+	name = "blackbox"
+	desc = "A dense data storage medium containing whatever messages were sent and received by the communications array it was taken from."
+
 /datum/design/board/shuttle_comms
-	name = "Machine Design (Comms Array)"
+	name = "\proper machine design (comms array)"
 	desc = "The circuit board for a comms array."
 	id = "shuttle_comms"
 	build_type = IMPRINTER
 	build_path = /obj/item/circuitboard/machine/shuttle_comms
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/trader/echoes
+	name = "Data Specialist"
+	possible_origins = list("ECHOES")
+	trade_flags = TRADER_MONEY
+	speech = list("hail"    = "ECHOES data department. You have a blackbox?",
+				"hail_deny"         = "All our operators are currently busy. Please try again later.",
+
+				"trade_complete"    = "Enjoy your bounty.",
+				"trade_no_goods"    = "Just check the bounties.",
+				"trade_found_unwanted" = "I only need blackboxes.",
+				"what_want"         = "If you find any busted up shuttles, get the blackbox from the comms array.",
+
+				"compliment_deny"   = "Just doing my job.",
+				"compliment_accept" = "Uh, okay. I mean, just doing my job.",
+				"insult_good"       = "I just work here.",
+				"insult_bad"        = "Seriously, I just work here.")
+	possible_bounties = list(
+		/datum/trader_bounty/blackbox = 100,
+		)
+	initial_bounty_gain_chance = 100
+	bounty_gain_chance = 100
+
+/datum/trader_bounty/blackbox
+	bounty_name = "\proper blackbox retrieval"
+	amount = 1
+	reward_cash = 2000
+	path = /obj/item/blackbox/shuttle_comms
+	bounty_text = "We will reward you for retrieving the blackbox from any incapacitated shuttles that may be in the area."
+	bounty_complete_text = "Thank you. Your reward is being transferred."
+
+#undef BLACKBOX_INTACT
+#undef BLACKBOX_EXPOSED
+#undef BLACKBOX_RETRIEVED

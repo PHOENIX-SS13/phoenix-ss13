@@ -174,96 +174,148 @@ export class Changelog extends Component {
     );
 
     const header = (
-      <Section>
-        <h1>Phoenix SS13</h1>
-        <p>
-          Risen from the ashes.
-        </p>
-        {dateDropdown}
-      </Section>
+      <>
+        <Section>
+          <h1>Phoenix SS13</h1>
+          <p>
+            Risen from the ashes.
+          </p>
+        </Section>
+        <Section>
+          {dateDropdown}
+        </Section>
+      </>
     );
 
     const footer = (
-      <Section>
-        {dateDropdown}
-        <h3>GoonStation 13 Development Team</h3>
-        <p>
-          <b>Coders: </b>
-          Stuntwaffle, Showtime, Pantaloons, Nannek, Keelin, Exadv1, hobnob,
-          Justicefries, 0staf, sniperchance, AngriestIBM, BrianOBlivion
-        </p>
-        <p>
-          <b>Spriters: </b>
-          Supernorn, Haruhi, Stuntwaffle, Pantaloons, Rho, SynthOrange,
-          I Said No
-        </p>
-        <p>
-          Traditional Games Space Station 13 is thankful to the
-          GoonStation 13 Development Team for its work on the game up to the
-          {' r4407 release. The changelog for changes up to r4407 can be seen '}
-          <a href="https://wiki.ss13.co/Changelog#April_2010">
-            here
-          </a>
-          .
-        </p>
-        <p>
-          {'Except where otherwise noted, Goon Station 13 is licensed under a '}
-          <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
-            Creative Commons Attribution-Noncommercial-Share Alike 3.0 License
-          </a>
-          {'. Rights are currently extended to '}
-          <a href="http://forums.somethingawful.com/">SomethingAwful Goons</a>
-          {' only.'}
-        </p>
-        <h3>Traditional Games Space Station 13 License</h3>
-        <p>
-          {'All code after '}
-          <a href={'https://github.com/tgstation/tgstation/commit/'
-            + '333c566b88108de218d882840e61928a9b759d8f'}>
-            commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12
-            at 4:38 PM PST
-          </a>
-          {' is licensed under '}
-          <a href="https://www.gnu.org/licenses/agpl-3.0.html">
-            GNU AGPL v3
-          </a>
-          {'. All code before that commit is licensed under '}
-          <a href="https://www.gnu.org/licenses/gpl-3.0.html">
-            GNU GPL v3
-          </a>
-          {', including tools unless their readme specifies otherwise. See '}
-          <a href="https://github.com/tgstation/tgstation/blob/master/LICENSE">
-            LICENSE
-          </a>
-          {' and '}
-          <a
-            href="https://github.com/tgstation/tgstation/blob/master/GPLv3.txt">
-            GPLv3.txt
-          </a>
-          {' for more details.'}
-        </p>
-        <p>
-          The TGS DMAPI API is licensed as a subproject under the MIT license.
-          {' See the footer of '}
-          <a href={'https://github.com/tgstation/tgstation/blob/master'
-            + '/code/__DEFINES/tgs.dm'}>
-            code/__DEFINES/tgs.dm
-          </a>
-          {' and '}
-          <a href={'https://github.com/tgstation/tgstation/blob/master'
-            + '/code/modules/tgs/LICENSE'}>
-            code/modules/tgs/LICENSE
-          </a>
-          {' for the MIT license.'}
-        </p>
-        <p>
-          {'All assets including icons and sound are under a '}
-          <a href="https://creativecommons.org/licenses/by-sa/3.0/">
-            Creative Commons 3.0 BY-SA license
-          </a>
-          {' unless otherwise indicated.'}
-        </p>
-      </Section>
+      <>
+        <Section>
+          {dateDropdown}
+        </Section>
+        <Section>
+          <h3>Horizon Station 13 Development Team</h3>
+          <p>
+            <b>Contributors: </b>
+            13spacemen, Aerden, Asaiaswolfe, Atoribirb, Azarak, Bond,
+            CASEYGUNGEON, carshalash, Colovorat, Cyberboss, CypressBz,
+            Deek-Za, Delnth, dragomagol, drizzlemutt, EmilitiaEnnehrt,
+            FA120, FedTheCat, Fikou, ForrestWick, Funce, gekkono, Ghom,
+            GoblinBackwards, GuiltyNeko, Gurkenglas, Helios7-1,
+            Ironnhawk, Jakksergal, KathrinBailey, LYNXEMS, mamakoshka,
+            MissFox0810, nevimer, RandomGamer123, san7890, Seris02,
+            silicons, SmArtKar, Tastyfish, TheOneGuy, TheSmallBlue,
+            Watermelon914, WarlockD, Y0SH1M4S73R, Zergspower, Zytolg,
+            and others
+          </p>
+          <p>
+            Phoenix SS13 would not exist without the hard work and
+            {' dedication of the Horizon contributors, up to and including '}
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/commit/3a29f8aca693fcc3181d165b9bf245beb817f666">
+              commit 3a29f8aca693fcc3181d165b9bf245beb817f666
+            </a>
+            {' on November 28, 2022.'}
+          </p>
+          <p>
+            {'Except where otherwise noted, Horizon Station 13 is licensed under a '}
+            <a href="https://www.gnu.org/licenses/agpl-3.0.html/">
+              GNU Affero General Public License 3.0
+            </a>
+            {'.'}
+          </p>
+          <h3>Phoenix SS13 License</h3>
+          <p>
+            {'All code after '}
+            <a href={'https://github.com/CASEYGUNGEON/phoenix-ss13/commit/'
+              + '099d80db542cdbedc3e0e47fe41c3113d4933d27'}>
+              commit 099d80db542cdbedc3e0e47fe41c3113d4933d27 on 2023/03/08
+              at 5:34 PM UTC
+            </a>
+            {' is licensed under '}
+            <a href="https://www.gnu.org/licenses/agpl-3.0.html">
+              GNU AGPL v3
+            </a>
+          </p>
+        </Section>
+        <Section>
+          <h3>GoonStation 13 Development Team</h3>
+          <p>
+            <b>Coders: </b>
+            Stuntwaffle, Showtime, Pantaloons, Nannek, Keelin, Exadv1, hobnob,
+            Justicefries, 0staf, sniperchance, AngriestIBM, BrianOBlivion
+          </p>
+          <p>
+            <b>Spriters: </b>
+            Supernorn, Haruhi, Stuntwaffle, Pantaloons, Rho, SynthOrange,
+            I Said No
+          </p>
+          <p>
+            Traditional Games Space Station 13 is thankful to the
+            GoonStation 13 Development Team for its work on the game up to the
+            {' r4407 release. The changelog for changes up to r4407 can be seen '}
+            <a href="https://wiki.ss13.co/Changelog#April_2010">
+              here
+            </a>
+            .
+          </p>
+          <p>
+            {'Except where otherwise noted, Goon Station 13 is licensed under a '}
+            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
+              Creative Commons Attribution-Noncommercial-Share Alike 3.0 License
+            </a>
+            {'. Rights are currently extended to '}
+            <a href="http://forums.somethingawful.com/">SomethingAwful Goons</a>
+            {' only.'}
+          </p>
+          <h3>Traditional Games Space Station 13 License</h3>
+          <p>
+            {'All code after '}
+            <a href={'https://github.com/tgstation/tgstation/commit/'
+              + '333c566b88108de218d882840e61928a9b759d8f'}>
+              commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12
+              at 12:38 AM UTC
+            </a>
+            {' is licensed under '}
+            <a href="https://www.gnu.org/licenses/agpl-3.0.html">
+              GNU AGPL v3
+            </a>
+            {'. All code before that commit is licensed under '}
+            <a href="https://www.gnu.org/licenses/gpl-3.0.html">
+              GNU GPL v3
+            </a>
+            {', including tools unless their readme specifies otherwise. See '}
+            <a href="https://github.com/tgstation/tgstation/blob/master/LICENSE">
+              LICENSE
+            </a>
+            {' and '}
+            <a
+              href="https://github.com/tgstation/tgstation/blob/master/GPLv3.txt">
+              GPLv3.txt
+            </a>
+            {' for more details.'}
+          </p>
+          <p>
+            The TGS DMAPI API is licensed as a subproject under the MIT license.
+            {' See the footer of '}
+            <a href={'https://github.com/tgstation/tgstation/blob/master'
+              + '/code/__DEFINES/tgs.dm'}>
+              code/__DEFINES/tgs.dm
+            </a>
+            {' and '}
+            <a href={'https://github.com/tgstation/tgstation/blob/master'
+              + '/code/modules/tgs/LICENSE'}>
+              code/modules/tgs/LICENSE
+            </a>
+            {' for the MIT license.'}
+          </p>
+          <p>
+            {'All assets including icons and sound are under a '}
+            <a href="https://creativecommons.org/licenses/by-sa/3.0/">
+              Creative Commons 3.0 BY-SA license
+            </a>
+            {' unless otherwise indicated.'}
+          </p>
+        </Section>
+      </>
     );
 
     const changes = typeof data === 'object' && Object.keys(data).length > 0 && (

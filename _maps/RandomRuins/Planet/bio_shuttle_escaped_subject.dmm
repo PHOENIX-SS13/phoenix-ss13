@@ -1,0 +1,1072 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ay" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood,
+/turf/template_noop,
+/area/template_noop)
+"bV" = (
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"cQ" = (
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"dN" = (
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"et" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"eH" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"fa" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard{
+	pixel_x = -4;
+	pixel_y = -8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"fA" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"fG" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"fZ" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"gZ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"iy" = (
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"iK" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"ja" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"jf" = (
+/obj/structure/frame/computer{
+	anchored = 1;
+	dir = 4
+	},
+/obj/item/shard,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"kn" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"kJ" = (
+/obj/effect/turf_decal/trimline/purple/filled/corner,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"kS" = (
+/obj/structure/table/reinforced/rglass,
+/obj/effect/spawner/lootdrop/minor/pen/safe{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/folder/yellow,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"kZ" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"md" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"mS" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"mX" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/turf_decal/trimline/purple/filled/corner,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"nO" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered)
+"oB" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"ql" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"qm" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"qV" = (
+/obj/structure/table/reinforced/rglass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"rf" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"rC" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"tN" = (
+/obj/item/reagent_containers/glass/maunamug{
+	pixel_x = 7;
+	pixel_y = 12
+	},
+/obj/machinery/shuttle_comms/active,
+/obj/structure/table/reinforced/rglass,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"uS" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"vk" = (
+/obj/structure/window/reinforced,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"vH" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"wh" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"wi" = (
+/obj/structure/table/reinforced/rglass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/item/slime_extract/rainbow{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/soft/rainbow{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/clothing/under/color/rainbow{
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/item/clothing/gloves/color/rainbow{
+	pixel_x = -8;
+	pixel_y = -5
+	},
+/obj/item/clothing/shoes/sneakers/rainbow{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"wI" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/folder/yellow,
+/obj/item/folder/yellow{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/folder/yellow{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"xh" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1;
+	pixel_x = 1;
+	pixel_y = 15
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/turf/template_noop,
+/area/template_noop)
+"xj" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"xn" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"xx" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"yK" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"yW" = (
+/obj/effect/decal/cleanable/blood/footprints,
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"zG" = (
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"zY" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"AI" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Cd" = (
+/mob/living/simple_animal/hostile/vatbeast,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"CW" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Dl" = (
+/obj/structure/table/reinforced/rglass,
+/obj/effect/spawner/lootdrop/minor/pen/safe{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"DA" = (
+/obj/structure/table/reinforced/rglass,
+/obj/effect/spawner/lootdrop/minor/pen/safe{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"DR" = (
+/obj/structure/window/reinforced,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Ee" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Ej" = (
+/obj/structure/table/reinforced/rglass,
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/minor/pen/safe{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"EN" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Fh" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Fj" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard{
+	pixel_x = -13;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Fn" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Fx" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/slime_extract/silver{
+	pixel_x = -1;
+	pixel_y = -2
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Gr" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Hd" = (
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/template_noop,
+/area/template_noop)
+"HY" = (
+/obj/machinery/door/window/brigdoor{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"It" = (
+/obj/structure/window/reinforced,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"IG" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"IY" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Jp" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/low_wall/titanium,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Jt" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Jw" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered)
+"JC" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"Ku" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"KY" = (
+/obj/machinery/door/window/brigdoor{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Mr" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"NK" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"PC" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"PT" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Qz" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard{
+	pixel_x = -2;
+	pixel_y = -3
+	},
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"QA" = (
+/obj/machinery/door/airlock/external,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"QF" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"QH" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Ri" = (
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Rr" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"SF" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Td" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Tw" = (
+/mob/living/simple_animal/hostile/carp/megacarp,
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"TM" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"TS" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Ug" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
+"Uu" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/folder/yellow,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Vy" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/slime_extract/silver{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"WH" = (
+/obj/item/shard{
+	icon_state = "medium";
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/vatbeast,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"WY" = (
+/turf/template_noop,
+/area/template_noop)
+"XC" = (
+/obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"XV" = (
+/obj/structure/table/reinforced/rglass,
+/obj/item/stack/sheet/mineral/plasma/five{
+	pixel_x = 1;
+	pixel_y = 6
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Yk" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"YH" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Za" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard{
+	icon_state = "medium";
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Zj" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+"Zt" = (
+/obj/structure/table/reinforced/rglass,
+/turf/open/floor/mineral/titanium,
+/area/ruin/unpowered)
+
+(1,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+Jp
+Jp
+Jp
+Jp
+Jp
+Jp
+WY
+WY
+WY
+WY
+"}
+(2,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+Jp
+cQ
+jf
+tN
+cQ
+Jp
+WY
+WY
+WY
+WY
+"}
+(3,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+Jp
+oB
+Td
+Td
+cQ
+Jp
+WY
+WY
+WY
+WY
+"}
+(4,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+Jp
+Fh
+WH
+xj
+oB
+Jp
+WY
+WY
+WY
+WY
+"}
+(5,1,1) = {"
+WY
+WY
+Jw
+Jw
+Jw
+Jw
+Gr
+Qz
+KY
+Gr
+Jw
+Jw
+Jw
+WY
+WY
+"}
+(6,1,1) = {"
+WY
+WY
+Jw
+zG
+cQ
+Ri
+fG
+TS
+et
+fG
+iy
+kJ
+Jw
+WY
+WY
+"}
+(7,1,1) = {"
+ay
+xh
+QA
+YH
+cQ
+cQ
+cQ
+Jt
+Mr
+cQ
+cQ
+bV
+QA
+WY
+WY
+"}
+(8,1,1) = {"
+WY
+WY
+QA
+YH
+vH
+cQ
+cQ
+Jt
+Mr
+cQ
+cQ
+yW
+AI
+Hd
+WY
+"}
+(9,1,1) = {"
+WY
+WY
+Jw
+iy
+oB
+PC
+Jt
+fA
+kZ
+cQ
+vH
+Ri
+Jw
+ay
+WY
+"}
+(10,1,1) = {"
+WY
+WY
+Jw
+kJ
+uS
+rC
+Yk
+Jt
+mX
+wh
+QF
+zG
+Jw
+WY
+WY
+"}
+(11,1,1) = {"
+WY
+WY
+Jw
+bV
+Fx
+Zt
+Zj
+Jt
+ja
+kS
+Zt
+YH
+Jw
+WY
+WY
+"}
+(12,1,1) = {"
+WY
+WY
+Jw
+bV
+kS
+Uu
+Ku
+Jt
+NK
+kS
+XV
+YH
+Jw
+WY
+WY
+"}
+(13,1,1) = {"
+WY
+WY
+Jw
+bV
+Vy
+DA
+CW
+XC
+TM
+Uu
+kS
+YH
+Jw
+WY
+WY
+"}
+(14,1,1) = {"
+WY
+WY
+Jw
+Ri
+fG
+fG
+iy
+Jt
+SF
+IG
+Ee
+iy
+Jw
+WY
+WY
+"}
+(15,1,1) = {"
+Jw
+Jw
+Jw
+ql
+ql
+zG
+kJ
+QH
+EN
+kJ
+ql
+ql
+Jw
+Jw
+Jw
+"}
+(16,1,1) = {"
+Jw
+cQ
+cQ
+cQ
+It
+YH
+eH
+Ej
+qm
+bV
+xn
+dN
+dN
+dN
+Jw
+"}
+(17,1,1) = {"
+Jw
+cQ
+cQ
+PC
+vk
+PT
+md
+Dl
+rf
+fZ
+JC
+Rr
+dN
+dN
+Jw
+"}
+(18,1,1) = {"
+Jw
+cQ
+cQ
+cQ
+cQ
+Fj
+Fn
+qV
+qm
+bV
+xn
+dN
+dN
+iK
+Jw
+"}
+(19,1,1) = {"
+Jw
+cQ
+cQ
+cQ
+fa
+Za
+bV
+wI
+qm
+bV
+HY
+dN
+dN
+dN
+Jw
+"}
+(20,1,1) = {"
+Jw
+cQ
+Cd
+yK
+DR
+qm
+ja
+wi
+qm
+ja
+kn
+gZ
+Tw
+dN
+Jw
+"}
+(21,1,1) = {"
+Jw
+cQ
+cQ
+cQ
+It
+mS
+IY
+xx
+zY
+bV
+Ug
+dN
+dN
+dN
+Jw
+"}
+(22,1,1) = {"
+Jw
+Jw
+Jw
+Jw
+Jw
+Jw
+nO
+nO
+nO
+Jw
+Jw
+Jw
+Jw
+Jw
+Jw
+"}

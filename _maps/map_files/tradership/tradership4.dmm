@@ -1,10 +1,33 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aw" = (
-/obj/structure/closet/emcloset,
+"al" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"aw" = (
+/obj/structure/closet/emcloset,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
+"ba" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"be" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "bU" = (
 /obj/item/stack/cable_coil,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "ch" = (
@@ -12,6 +35,12 @@
 	dir = 4;
 	network = "tcommsat"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/tcommsat/server)
+"ck" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
 "cn" = (
@@ -20,12 +49,33 @@
 /area/space/nearstation)
 "cs" = (
 /obj/machinery/telecomms/processor/preset_four,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"dH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "dO" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/closed/wall,
 /area/maintenance/solars/port/aft)
+"ec" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/hull/reinforced
+	},
+/area/space/nearstation)
+"fa" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 9
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "fB" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing{
@@ -36,6 +86,24 @@
 	},
 /turf/open/openspace,
 /area/maintenance/solars/port/aft)
+"fE" = (
+/obj/item/solar_assembly,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"gj" = (
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "gD" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing/corner{
@@ -45,11 +113,27 @@
 /area/maintenance/solars/port/aft)
 "hg" = (
 /obj/machinery/ntnet_relay,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"hq" = (
+/obj/structure/lattice,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"hN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "hT" = (
 /obj/machinery/telecomms/server/presets/engineering,
 /obj/machinery/light/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "hW" = (
@@ -57,16 +141,31 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "ib" = (
 /obj/machinery/telecomms/server/presets/science,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "im" = (
 /obj/machinery/telecomms/receiver/preset_right,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"iz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/hull/reinforced
+	},
+/area/space/nearstation)
 "ju" = (
 /obj/machinery/telecomms/server/presets/supply,
 /turf/open/floor/circuit,
@@ -77,41 +176,60 @@
 "jE" = (
 /obj/machinery/light/small/directional/west,
 /obj/machinery/light_switch/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/tcommsat/server)
+"kr" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "kC" = (
 /obj/machinery/telecomms/message_server/preset,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
 "ln" = (
 /obj/machinery/telecomms/processor/preset_two,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "lC" = (
 /obj/machinery/blackbox_recorder,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "lE" = (
 /obj/structure/grille,
+/obj/structure/lattice,
 /turf/open/space/openspace,
 /area/space/nearstation)
 "lK" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "mP" = (
 /obj/machinery/light/directional/north,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "mV" = (
 /obj/structure/lattice/catwalk,
+/obj/structure/lattice,
 /turf/open/space/openspace,
 /area/space/nearstation)
 "nP" = (
 /obj/machinery/telecomms/bus/preset_four,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "nZ" = (
@@ -129,6 +247,8 @@
 "ok" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "oE" = (
@@ -137,29 +257,61 @@
 /area/maintenance/solars/port/aft)
 "oH" = (
 /obj/effect/loot_site_spawner,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"oJ" = (
+/turf/open/space/openspace,
+/area/space/nearstation)
 "oV" = (
 /obj/structure/cable,
 /obj/item/radio/intercom/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
 "pf" = (
 /obj/machinery/telecomms/server/presets/common,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"pC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "pE" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
 /turf/open/floor/plating,
 /area/tcommsat/server)
+"pF" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/open/space/openspace,
+/area/space/nearstation)
+"pS" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/open/space/openspace,
+/area/space/nearstation)
 "pW" = (
 /obj/machinery/shield_generator,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"qG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "qM" = (
 /obj/machinery/telecomms/server/presets/command,
 /obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "qP" = (
@@ -172,9 +324,27 @@
 /obj/structure/cable,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"rO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "rQ" = (
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"sw" = (
+/obj/structure/grille,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"sz" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "sZ" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -182,6 +352,34 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
+"tl" = (
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"uo" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 5
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"uy" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "ve" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -194,6 +392,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "vf" = (
@@ -207,6 +406,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "vy" = (
@@ -214,8 +414,18 @@
 	id = "CARGOLIFT";
 	pixel_x = 27
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/maintenance/solars/port/aft)
+"vC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/tcommsat/server)
+"vQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "vS" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -225,28 +435,57 @@
 /area/maintenance/solars/port/aft)
 "wc" = (
 /obj/structure/girder,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"wl" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "wC" = (
 /obj/structure/ladder,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "wP" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering"
+	name = "Engineering";
+	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/tcommsat/server)
+"wZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/airless
+	},
+/area/space/nearstation)
 "xg" = (
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "ya" = (
 /obj/machinery/telecomms/broadcaster/preset_right,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"yd" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "yp" = (
 /obj/structure/cable/multilayer/multiz,
 /turf/open/floor/iron,
@@ -260,7 +499,9 @@
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "yC" = (
-/turf/closed/mineral/random/high_chance,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/airless
+	},
 /area/space/nearstation)
 "yH" = (
 /obj/structure/lattice/catwalk,
@@ -268,8 +509,33 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/openspace,
 /area/maintenance/solars/port/aft)
+"yR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "zC" = (
 /turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Ar" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
+"At" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/airless
+	},
+/area/space/nearstation)
+"AN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
 /area/space/nearstation)
 "AW" = (
 /obj/structure/lattice/catwalk,
@@ -281,24 +547,66 @@
 	},
 /turf/open/openspace,
 /area/maintenance/solars/port/aft)
+"AX" = (
+/obj/structure/marker_beacon/olive,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"Bi" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "By" = (
 /obj/machinery/telecomms/bus/preset_one,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "Cc" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
+"CB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 5
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"Dz" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
+/turf/closed/wall/rust,
 /area/maintenance/solars/port/aft)
 "DK" = (
 /obj/machinery/telecomms/server/presets/security,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"DU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/aft)
 "DY" = (
 /obj/machinery/telecomms/server/presets/service,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
+"Eb" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/space/nearstation)
 "Eu" = (
 /obj/machinery/telecomms/bus/preset_three,
 /turf/open/floor/circuit,
@@ -315,20 +623,27 @@
 /area/maintenance/solars/port/aft)
 "Hf" = (
 /obj/machinery/telecomms/server/presets/medical,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "Hp" = (
 /obj/machinery/telecomms/receiver/preset_left,
 /obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
-"HJ" = (
-/obj/structure/sign/departments/deck4,
+"Hu" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
+/turf/closed/wall/r_wall/rust,
+/area/maintenance/solars/port/aft)
+"HJ" = (
+/obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
+/obj/structure/sign/departments/deck4,
 /turf/closed/wall/r_wall,
 /area/maintenance/solars/port/aft)
 "HN" = (
 /obj/machinery/telecomms/processor/preset_three,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "Iu" = (
@@ -342,6 +657,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"IW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/maintenance/solars/port/aft)
 "Jc" = (
 /obj/effect/landmark/carpspawn,
 /turf/open/space/openspace,
@@ -353,21 +672,65 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"JW" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Lf" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "Lg" = (
 /obj/structure/closet/firecloset,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Mo" = (
+/obj/structure/grille,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"Mu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/airless
+	},
+/area/space/nearstation)
 "MK" = (
 /obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Nc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "Nf" = (
 /obj/structure/lattice,
+/turf/open/space/openspace,
+/area/space/nearstation)
+"ND" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark,
+/area/tcommsat/server)
+"NJ" = (
+/obj/structure/lattice,
+/obj/structure/grille/broken,
 /turf/open/space/openspace,
 /area/space/nearstation)
 "Ou" = (
@@ -379,13 +742,23 @@
 /area/maintenance/solars/port/aft)
 "PA" = (
 /obj/structure/ladder,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/tcommsat/server)
 "Qd" = (
 /obj/structure/cable,
 /obj/machinery/light_switch/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Qi" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Qr" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/railing,
@@ -393,6 +766,13 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Qy" = (
+/obj/structure/lattice,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/mineral/random/high_chance{
+	baseturfs = /turf/open/floor/engine/airless
+	},
+/area/space/nearstation)
 "QM" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/door/firedoor/border_only,
@@ -400,6 +780,7 @@
 /area/maintenance/solars/port/aft)
 "Rg" = (
 /obj/machinery/telecomms/hub/preset,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "Rx" = (
@@ -429,14 +810,31 @@
 	},
 /obj/structure/cable,
 /obj/machinery/light_switch/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"SX" = (
+/obj/effect/turf_decal/sand{
+	color = "#f7ff9c"
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Tj" = (
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
 "TB" = (
 /obj/machinery/telecomms/broadcaster/preset_left,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "TI" = (
@@ -466,15 +864,27 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
 "UH" = (
 /obj/structure/lattice,
+/obj/structure/lattice/catwalk,
 /turf/open/space/openspace,
-/area/space)
+/area/space/nearstation)
 "UI" = (
 /obj/item/solar_assembly,
 /turf/open/floor/plating/airless,
+/area/space/nearstation)
+"UX" = (
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
 /area/space/nearstation)
 "Vd" = (
 /obj/effect/mapping_helpers/paint_wall/free_trade_union_ship,
@@ -489,30 +899,65 @@
 /area/maintenance/solars/port/aft)
 "VA" = (
 /obj/machinery/telecomms/bus/preset_two,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 "Wh" = (
 /obj/machinery/light/directional/south,
 /obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
 "WB" = (
 /obj/structure/cable,
 /obj/machinery/light_switch/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
 "WG" = (
 /obj/machinery/door/airlock/maintenance,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"WJ" = (
+/obj/structure/grille,
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"WK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 8
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
+"WM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/sand{
+	color = "#ad9f71";
+	dir = 9
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "WY" = (
 /obj/structure/lattice,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine/airless,
 /area/space/nearstation)
 "Xb" = (
 /obj/machinery/computer/message_monitor{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/tcommsat/server)
 "Xd" = (
@@ -521,10 +966,22 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"Xs" = (
+/obj/structure/marker_beacon/white{
+	pixel_x = 16
+	},
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Ye" = (
 /obj/structure/closet/crate/solarpanel_small,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/aft)
+"YZ" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/airless,
+/area/space/nearstation)
 "Zw" = (
 /turf/open/space/openspace,
 /area/space)
@@ -535,6 +992,7 @@
 "ZS" = (
 /obj/machinery/telecomms/processor/preset_one,
 /obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit,
 /area/tcommsat/server)
 
@@ -28418,12 +28876,12 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
-Zw
-Zw
-Zw
-Zw
+rO
+rO
+rO
+rO
+rO
+Ou
 Zw
 Zw
 Zw
@@ -28674,13 +29132,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
 Ou
 Ou
+jB
+qG
+jB
+qG
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -28931,13 +29389,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
 Ou
-Ou
+AN
+qG
+qG
 jB
+qG
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -29189,12 +29647,12 @@ Zw
 Zw
 Zw
 Ou
+qG
+qG
+AN
+qG
+qG
 Ou
-jB
-jB
-Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -29445,13 +29903,13 @@ Zw
 Zw
 Zw
 Zw
+rO
+pC
+qG
+qG
+qG
+qG
 Ou
-Ou
-jB
-jB
-Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -29702,16 +30160,16 @@ Zw
 Zw
 Zw
 Zw
-Zw
+rO
+Ou
+rO
+Ou
+rO
 Ou
 Ou
-Ou
-Ou
 Zw
 Zw
 Zw
-Zw
-Nf
 Zw
 Zw
 Zw
@@ -29960,14 +30418,14 @@ Zw
 Zw
 Zw
 Zw
-Zw
+Nf
 mV
 Nf
-Zw
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+Nf
+Nf
 Nf
 Ou
 Ou
@@ -30232,9 +30690,9 @@ jB
 jB
 jB
 jB
-jB
-jB
-jB
+qG
+qG
+qG
 jB
 jB
 Ou
@@ -30470,29 +30928,29 @@ Ou
 Ou
 jB
 jB
+qG
+qG
+qG
+qG
 jB
 jB
 jB
 jB
 jB
 jB
+qG
+qG
+qG
+Ou
 jB
+qG
 jB
+qG
+qG
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+AN
 jB
 jB
 jB
@@ -30724,7 +31182,7 @@ Zw
 Zw
 Ou
 Ou
-jB
+Ou
 jB
 jB
 jB
@@ -30739,18 +31197,18 @@ zC
 jB
 jB
 jB
+qG
+Ou
+qG
+qG
 jB
+qG
+AN
+qG
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+AN
 jB
 jB
 Ou
@@ -30972,7 +31430,7 @@ Zw
 Zw
 Zw
 Ou
-jB
+wl
 Ou
 Zw
 Zw
@@ -30988,26 +31446,26 @@ jB
 jB
 jB
 jB
+zC
+zC
 zC
 zC
 IQ
-zC
-zC
 cn
 zC
 zC
-zC
+Nc
+rO
+qG
+qG
 jB
 jB
 jB
 jB
+qG
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
 jB
 jB
 jB
@@ -31214,9 +31672,9 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
-Zw
+NJ
+NJ
+NJ
 Zw
 Zw
 Zw
@@ -31227,23 +31685,23 @@ Ou
 Ou
 Ou
 Ou
-UH
-Ou
-jB
-Ou
-Nf
-Nf
-Nf
-Nf
 Nf
 Ou
 jB
+Ou
+Nf
+Nf
+Nf
+Nf
+Nf
+Ou
 jB
 jB
-ZG
-ZG
-ZG
-ZG
+jB
+jB
+kr
+kr
+kr
 ZG
 ZG
 IQ
@@ -31251,29 +31709,29 @@ IQ
 IQ
 zC
 zC
-zC
-zC
+Nc
+Nc
+qG
+pC
+qG
+qG
 jB
 jB
+qG
+qG
+qG
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
 jB
 jB
 jB
 Ou
 Nf
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+oJ
 Zw
 Zw
 Zw
@@ -31470,67 +31928,67 @@ Zw
 Zw
 Zw
 Zw
-lE
-Zw
-Zw
-Zw
-Zw
-Vd
-yC
-yC
-Ou
-Ou
-jB
-jB
-jB
-Ou
-Ou
-Ou
-jB
-Ou
-Ou
-Ou
-Ou
-Ou
-Ou
-Ou
-jB
-jB
-jB
-ZG
-jB
-jB
-jB
-jB
-jB
-zC
-zC
-zC
-zC
-zC
-UI
-zC
-zC
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-Ou
-Ou
+NJ
+Nf
 Nf
 Zw
 Zw
-Zw
+Vd
+vQ
+rO
+Ou
+Ou
+jB
+jB
+jB
+Ou
+Ou
+Ou
+jB
+Ou
+Ou
+Ou
+Ou
+Ou
+rO
+rO
+qG
+jB
+jB
+qG
+dH
+AN
+qG
+jB
+jB
+zC
+zC
+zC
+Nc
+Nc
+fE
+Nc
+Nc
+pC
+jB
+jB
+jB
+jB
+qG
+qG
+qG
+qG
+jB
+qG
+AN
+qG
+jB
+Ou
+Ou
+UH
+Nf
+Nf
+Nf
 Zw
 Zw
 Zw
@@ -31726,68 +32184,68 @@ Zw
 Zw
 Zw
 Zw
-Zw
-lE
+pF
+Nf
 Zw
 Vd
 Vd
 pE
 Vd
 Vd
-yC
-yC
-yC
+AN
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-ZG
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
 Ou
+jB
+Ou
+jB
+rO
+qG
+jB
+qG
+qG
+jB
+Ou
+jB
+jB
+jB
+qG
+yR
+qG
+qG
+qG
+jB
+qG
+AN
+qG
+qG
+qG
+AN
+UX
+JW
+pC
+qG
+Qi
+jB
+jB
+qG
+qG
+AN
+qG
+jB
+jB
+qG
+AN
+jB
+jB
+Ou
+UH
+UH
+UH
 Nf
-Zw
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -31984,61 +32442,61 @@ Zw
 Zw
 Zw
 lE
-lE
+Nf
 Nf
 Vd
 hT
-qP
+ck
 ju
 Vd
-yC
-yC
-yC
+uo
+qG
+Ou
+Ou
+Ou
+Ou
+Ou
+jB
+Ou
+qG
+rO
+qG
+qG
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
 jB
 jB
 jB
 jB
 ZG
 jB
+qG
 jB
-jB
-jB
-jB
-jB
-jB
+AN
+AN
+AN
 oE
 FM
 FM
 oE
-yC
-yC
-yC
-jB
-yC
+Mu
+Mu
+gj
+tl
+wZ
 oE
 nZ
 nZ
 oE
-jB
+AN
+sw
 Iu
 Iu
-Iu
 jB
-jB
-jB
+qG
+qG
 jB
 Ou
 Ou
@@ -32240,62 +32698,62 @@ Zw
 Zw
 Zw
 Zw
-lE
+NJ
 Zw
 Zw
 Vd
 nP
-qP
+vC
 VA
 Vd
 yC
-yC
+CB
+pC
+AN
+qG
+jB
+qG
+jB
+rO
+qG
+rO
+qG
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+Ou
+qG
 jB
 jB
 jB
 ZG
+qG
 jB
-jB
-jB
-jB
-jB
+AN
+AN
 oE
 oE
-oE
+HJ
 Vn
 Ye
-HJ
+Hu
 oE
 oE
-yC
-yC
-yC
+iz
+Mu
+wZ
 oE
 ok
 Hc
 oE
-jB
+AN
 WY
+AN
+hq
 jB
-WY
 jB
-jB
-jB
+qG
 jB
 jB
 jB
@@ -32502,7 +32960,7 @@ Zw
 Vd
 Vd
 pf
-qP
+vC
 DY
 Vd
 Vd
@@ -32512,24 +32970,24 @@ Vd
 Vd
 Vd
 jB
+qG
+rO
+jB
+Ou
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+Ou
+qG
 jB
 jB
 jB
 ZG
-jB
-jB
-jB
-jB
+qG
+qG
+AN
 oE
 oE
 JQ
@@ -32538,26 +32996,26 @@ Ux
 Ux
 ve
 SU
-oE
-yC
-yC
-yC
+Hu
+iz
+Mu
+wZ
 oE
 lK
-rQ
+DU
 oE
 oE
 oE
 oE
 oE
+qG
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
+qG
+qG
 Ou
 Zw
 Jc
@@ -32770,20 +33228,20 @@ ch
 Vd
 jB
 jB
+Ou
+jB
+Ou
+Ou
+Ou
+Ou
+Ou
+rO
+Ou
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-ZG
-jB
+dH
 oE
 nZ
 oE
@@ -32801,20 +33259,20 @@ oE
 oE
 oE
 hW
-rQ
+al
 dO
 rQ
-rQ
-rQ
+DU
+DU
 oE
-WY
-Iu
+hq
+Mo
 jB
 jB
 jB
 jB
-jB
-jB
+qG
+qG
 Ou
 Zw
 Zw
@@ -33016,10 +33474,10 @@ Zw
 Vd
 mP
 Tj
-Tj
+ND
+vC
 qP
-qP
-Tj
+ND
 oV
 WB
 Tj
@@ -33027,22 +33485,22 @@ Wh
 Vd
 jB
 jB
+Ou
+jB
+Ou
 jB
 jB
+qG
+jB
+qG
+Ou
 jB
 jB
+Xs
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-ZG
-ZG
+YZ
 Cc
-Ph
+uy
 Ph
 yw
 Ph
@@ -33053,25 +33511,25 @@ IE
 IE
 Uh
 Xd
-Ph
-Ph
+uy
+uy
 xg
 Qd
-Ph
-rQ
+uy
+IW
 WG
-rQ
+DU
 pW
-rQ
+al
 oE
-jB
+qG
 Iu
 jB
 jB
 jB
-jB
-jB
-jB
+qG
+AN
+qG
 Ou
 Zw
 Zw
@@ -33275,7 +33733,7 @@ lC
 qP
 Tj
 qP
-qP
+vC
 sZ
 Vd
 Vd
@@ -33284,22 +33742,22 @@ wP
 Vd
 jB
 jB
+Ou
+jB
+rO
+qG
+qG
 jB
 jB
 jB
+Ou
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-ZG
-jB
+qG
+AN
+yR
 Lf
-rQ
+hN
 rQ
 vS
 rQ
@@ -33309,25 +33767,25 @@ IE
 IE
 IE
 oa
-dO
+Dz
 oH
 wc
-rQ
+al
 MK
 rQ
 wC
 dO
-rQ
-rQ
-rQ
-oE
+DU
+al
+Ar
+Hu
 WY
-Iu
+Mo
+qG
 jB
-jB
-jB
-jB
-jB
+qG
+AN
+qG
 jB
 Ou
 Zw
@@ -33530,7 +33988,7 @@ Nf
 Vd
 im
 HN
-Tj
+ND
 ZS
 Hp
 qX
@@ -33541,20 +33999,20 @@ yp
 Vd
 jB
 jB
+Ou
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-ZG
-jB
+rO
+rO
+rO
+Ou
+Ou
+Ou
+Ou
+AN
+qG
+qG
+qG
+dH
 oE
 nZ
 oE
@@ -33578,14 +34036,14 @@ oE
 oE
 oE
 oE
+be
+qG
+qG
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
+qG
 Ou
 Zw
 Zw
@@ -33787,7 +34245,7 @@ Zw
 Vd
 Vd
 DK
-qP
+ck
 Hf
 Vd
 Vd
@@ -33798,20 +34256,20 @@ Vd
 Vd
 jB
 jB
+Ou
+jB
+rO
+be
+qG
 jB
 jB
+qG
+Ou
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
 ZG
-jB
 jB
 jB
 jB
@@ -33824,26 +34282,26 @@ fB
 fB
 SH
 oE
+ec
+At
+At
+At
+At
+At
+At
+SX
+Qy
+At
+Qy
+Bi
+qG
 jB
 jB
 jB
+qG
 jB
-jB
-jB
-jB
-jB
-WY
-jB
-WY
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-Ou
+qG
+rO
 Zw
 Zw
 Zw
@@ -34044,62 +34502,62 @@ Zw
 Zw
 Vd
 Eu
-qP
+vC
 By
 Vd
+yC
+yC
+fa
+AN
+AN
+qG
 jB
 jB
+Ou
 jB
+Ou
+AN
+qG
+qG
 jB
+qG
+pC
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
 ZG
 jB
 jB
-jB
-jB
+qG
 jB
 oE
 oE
-HJ
+Hu
 aw
 Lg
+HJ
 oE
 oE
-oE
+ec
+ba
+yd
+yd
+yd
+sz
+sz
+qG
+WJ
+WJ
+WJ
+qG
 jB
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-Iu
-Iu
-Iu
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
 Ou
 Zw
 Zw
@@ -34297,36 +34755,36 @@ Zw
 Zw
 Zw
 lE
-lE
+Nf
 Nf
 Vd
 qM
-qP
+vC
 ib
 Vd
+WM
+WK
+pC
+rO
+Ou
+Ou
+Ou
+jB
+Ou
+jB
+rO
+qG
+qG
+jB
+qG
+jB
+pC
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-ZG
-jB
-jB
+qG
+AN
+dH
+qG
 jB
 jB
 jB
@@ -34336,6 +34794,10 @@ oE
 FM
 FM
 oE
+qG
+qG
+Eb
+qG
 jB
 jB
 jB
@@ -34346,16 +34808,12 @@ jB
 jB
 jB
 jB
+qG
 jB
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
 jB
 Ou
 Zw
@@ -34553,64 +35011,64 @@ Zw
 Zw
 Zw
 Zw
-Zw
-lE
+pS
+Nf
 Zw
 Vd
 Vd
 pE
 Vd
 Vd
+AN
+qG
+Ou
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-ZG
-jB
-jB
-jB
-jB
-zC
-zC
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
 jB
 Ou
+jB
+Ou
+jB
+Ou
+jB
+jB
+jB
+jB
+jB
+vQ
+jB
+jB
+jB
+qG
+dH
+AN
+qG
+jB
+zC
+zC
+jB
+jB
+jB
+jB
+qG
+qG
+jB
+Ou
+jB
+jB
+jB
+jB
+qG
+AN
+qG
+qG
+qG
+qG
+jB
+jB
+jB
+qG
+rO
 Ou
 Ou
 Ou
@@ -34812,53 +35270,53 @@ Zw
 Zw
 Zw
 lE
-Zw
-Zw
+Nf
+Nf
 Zw
 Zw
 Vd
+rO
+rO
 Ou
-Ou
-Ou
-Ou
-jB
-jB
-jB
-Ou
-Ou
-Ou
+pC
+qG
+qG
 jB
 Ou
 Ou
 Ou
-Ou
-Ou
-Ou
-Ou
 jB
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+qG
 jB
+qG
 jB
 ZG
 jB
 jB
 jB
 jB
-jB
 zC
 zC
 zC
 zC
-zC
-zC
-zC
-zC
+Nc
+Nc
+Nc
+Nc
+Ou
 jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
+AN
+qG
+qG
 jB
 jB
 jB
@@ -34868,10 +35326,10 @@ jB
 jB
 Ou
 Ou
+UH
 Nf
-Zw
-Zw
-Zw
+Nf
+Nf
 Zw
 Zw
 Zw
@@ -35069,33 +35527,33 @@ Zw
 Zw
 Zw
 Zw
+NJ
+NJ
+NJ
 Zw
 Zw
 Zw
 Zw
 Zw
-Zw
-Zw
-Zw
+rO
+rO
+rO
 Ou
 Ou
-Ou
-Ou
-Ou
-Zw
+Nf
 Ou
 jB
 Ou
 Nf
 Nf
 Nf
-Zw
-Zw
+Nf
+Nf
 Ou
+qG
 jB
 jB
 jB
-ZG
 ZG
 ZG
 ZG
@@ -35106,29 +35564,29 @@ IQ
 IQ
 IQ
 zC
-zC
-zC
-zC
+Nc
+Nc
+Nc
+Ou
+qG
+qG
+qG
+qG
 jB
 jB
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
 jB
 jB
 jB
 Ou
 Nf
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+Nf
 Zw
 Zw
 Zw
@@ -35341,42 +35799,42 @@ Zw
 Zw
 Zw
 Ou
-jB
+AX
 Ou
 Zw
 Zw
 Zw
 Zw
 Zw
-Ou
+rO
+qG
+qG
 jB
 jB
+qG
 jB
-jB
-jB
-jB
-jB
+qG
 jB
 zC
 zC
 UI
 zC
 zC
-zC
-zC
+Nc
+Nc
 bU
+AN
+pC
+be
+be
+qG
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
+AN
+AN
+qG
 jB
 jB
 jB
@@ -35605,8 +36063,9 @@ Zw
 Zw
 Zw
 Zw
-Ou
-Ou
+rO
+rO
+rO
 jB
 jB
 jB
@@ -35616,25 +36075,24 @@ jB
 jB
 jB
 jB
+Nc
 jB
-zC
+qG
+qG
+AN
+AN
+pC
+qG
+qG
+qG
+qG
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+AN
+qG
+qG
+AN
+AN
+qG
 jB
 Ou
 Ou
@@ -35863,35 +36321,35 @@ Zw
 Zw
 Zw
 Zw
+rO
 Ou
-Ou
 jB
 jB
 jB
 jB
 jB
+qG
+jB
+qG
+qG
+qG
+qG
+qG
+qG
+AN
+AN
+pC
+qG
+jB
+qG
 jB
 jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
-jB
+qG
+qG
+qG
+qG
+qG
+qG
 jB
 Ou
 Zw
@@ -36121,6 +36579,13 @@ Zw
 Zw
 Zw
 Zw
+rO
+Ou
+rO
+Ou
+rO
+rO
+rO
 Ou
 Ou
 Ou
@@ -36130,22 +36595,15 @@ Ou
 Ou
 Ou
 Ou
-Ou
-Ou
-Ou
-Ou
-Ou
-Ou
-Ou
-Ou
+rO
+qG
+qG
+qG
 jB
 jB
 jB
 jB
-jB
-jB
-jB
-jB
+qG
 jB
 jB
 Ou
@@ -36385,15 +36843,15 @@ Zw
 Zw
 Zw
 Zw
-Zw
+Nf
 mV
 Nf
-Zw
-Zw
-Zw
-Zw
-Zw
-Zw
+Nf
+Nf
+Nf
+Nf
+Nf
+Nf
 Ou
 Ou
 Ou
@@ -36641,13 +37099,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
+rO
+pC
+pC
+pC
+rO
+rO
 Ou
-Ou
-Ou
-Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -36898,13 +37356,13 @@ Zw
 Zw
 Zw
 Zw
-Ou
-Ou
+rO
+pC
+qG
 jB
-yC
+jB
+qG
 Ou
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -37155,13 +37613,13 @@ Zw
 Zw
 Zw
 Zw
+rO
+qG
+qG
+qG
+qG
+jB
 Ou
-yC
-yC
-yC
-yC
-Zw
-Zw
 Zw
 Zw
 Zw
@@ -37412,13 +37870,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
 Ou
-yC
-yC
-yC
-Zw
-Zw
+qG
+jB
+jB
+qG
+qG
+Ou
 Zw
 Zw
 Zw
@@ -37669,13 +38127,13 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
 Ou
-yC
-yC
-Zw
-Zw
+rO
+jB
+qG
+qG
+qG
+Ou
 Zw
 Zw
 Zw
@@ -37927,12 +38385,12 @@ Zw
 Zw
 Zw
 Zw
-Zw
-Zw
-Zw
-Zw
-Zw
-Zw
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
 Zw
 Zw
 Zw
