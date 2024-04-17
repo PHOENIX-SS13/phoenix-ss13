@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;mapping - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/controller/subsystem/mapping.html#var">Var Details</a> - <a href="datum/controller/subsystem/mapping.html#proc">Proc Details</a></header>
+<main>
+<h1>mapping <aside>/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/mapping.html">mapping</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#var/adding_new_zlevel">adding_new_zlevel</a></th><td>True when in the process of adding a new Z-level, global locking</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#var/biomes">biomes</a></th><td>All possible biomes in assoc list as type || instance</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#var/map_zones">map_zones</a></th><td>List of all map zones</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#var/station_map_zone">station_map_zone</a></th><td>The map zone of the main loaded station, for easy access</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#var/virtual_z_translation">virtual_z_translation</a></th><td>Translation of virtual level ID to a virtual level reference</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/add_new_zlevel">add_new_zlevel</a></th><td>Adds new physical space level. DO NOT USE THIS TO LOAD SOMETHING NEW. SSmapping.get_free_allocation() will create any levels nessecary and pass you coordinates to create a new virtual level</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/create_map_zone">create_map_zone</a></th><td>Sanity
+Methodical trial and error method
+Creates and passes a new map zone</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/create_virtual_level">create_virtual_level</a></th><td>Allocates, creates and passes a new virtual level</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/find_allocation_in_level">find_allocation_in_level</a></th><td>None of the levels could faciliate a new allocation, make a new one
+Finds a box allocation inside a Z level. Uses a methodical box boundary check method</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/get_free_allocation">get_free_allocation</a></th><td>Searches for a free allocation for the passed type and size, creates new physical levels if nessecary.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/get_level">get_level</a></th><td>Initialize the turfs on the new space level</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/initialize_biomes">initialize_biomes</a></th><td>Initialize all biomes, assoc as type || instance</td></tr>
+            <tr><th><a href="datum/controller/subsystem/mapping.html#proc/pre_load_allocation_levels">pre_load_allocation_levels</a></th><td>Pre loads some allocation levels that are very likely to be used so they dont have to initalized on runtime. Completely fine if this didn't exist.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/adding_new_zlevel"><aside class="declaration">var </aside>adding_new_zlevel
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L41">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 41"/></a></h3>
+        <p>True when in the process of adding a new Z-level, global locking</p><h3 id="var/biomes"><aside class="declaration">var </aside>biomes
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L36">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 36"/></a></h3>
+        <p>All possible biomes in assoc list as type || instance</p><h3 id="var/map_zones"><aside class="declaration">var </aside>map_zones
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L47">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 47"/></a></h3>
+        <p>List of all map zones</p><h3 id="var/station_map_zone"><aside class="declaration">var </aside>station_map_zone
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/map_zone.html">map_zone</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L45">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 45"/></a></h3>
+        <p>The map zone of the main loaded station, for easy access</p><h3 id="var/virtual_z_translation"><aside class="declaration">var </aside>virtual_z_translation
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L49">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 49"/></a></h3>
+        <p>Translation of virtual level ID to a virtual level reference</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_new_zlevel"><aside class="declaration">proc </aside>add_new_zlevel<aside>(name, allocation_type) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mapping/space_management/zlevel_manager.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mapping&#x2F;space_management&#x2F;zlevel_manager.dm 24"/></a></aside>
+        </h3>
+        <p>Adds new physical space level. DO NOT USE THIS TO LOAD SOMETHING NEW. SSmapping.get_free_allocation() will create any levels nessecary and pass you coordinates to create a new virtual level</p><h3 id="proc/create_map_zone"><aside class="declaration">proc </aside>create_map_zone<aside>(new_name, /<a href="datum.html">datum</a>/<a href="datum/overmap_object.html">overmap_object</a>/passed_ov_obj) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L680">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 680"/></a></aside>
+        </h3>
+        <p>Sanity
+Methodical trial and error method
+Creates and passes a new map zone</p><h3 id="proc/create_virtual_level"><aside class="declaration">proc </aside>create_virtual_level<aside>(new_name, /list/traits, /<a href="datum.html">datum</a>/<a href="datum/map_zone.html">map_zone</a>/mapzone, width, height, allocation_type, allocation_jump, reservation_margin) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L684">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 684"/></a></aside>
+        </h3>
+        <p>Allocates, creates and passes a new virtual level</p><h3 id="proc/find_allocation_in_level"><aside class="declaration">proc </aside>find_allocation_in_level<aside>(/<a href="datum.html">datum</a>/<a href="datum/space_level.html">space_level</a>/level, size_x, size_y, allocation_jump) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L646">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 646"/></a></aside>
+        </h3>
+        <p>None of the levels could faciliate a new allocation, make a new one
+Finds a box allocation inside a Z level. Uses a methodical box boundary check method</p><h3 id="proc/get_free_allocation"><aside class="declaration">proc </aside>get_free_allocation<aside>(allocation_type, size_x, size_y, allocation_jump) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L613">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 613"/></a></aside>
+        </h3>
+        <p>Searches for a free allocation for the passed type and size, creates new physical levels if nessecary.</p><h3 id="proc/get_level"><aside class="declaration">proc </aside>get_level<aside>(z) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mapping/space_management/zlevel_manager.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mapping&#x2F;space_management&#x2F;zlevel_manager.dm 43"/></a></aside>
+        </h3>
+        <p>Initialize the turfs on the new space level</p><h3 id="proc/initialize_biomes"><aside class="declaration">proc </aside>initialize_biomes<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L584">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 584"/></a></aside>
+        </h3>
+        <p>Initialize all biomes, assoc as type || instance</p><h3 id="proc/pre_load_allocation_levels"><aside class="declaration">proc </aside>pre_load_allocation_levels<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/controllers/subsystem/mapping.dm#L117">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;mapping.dm 117"/></a></aside>
+        </h3>
+        <p>Pre loads some allocation levels that are very likely to be used so they dont have to initalized on runtime. Completely fine if this didn't exist.</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

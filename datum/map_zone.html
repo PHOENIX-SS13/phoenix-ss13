@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;map_zone - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/map_zone.html#var">Var Details</a> - <a href="datum/map_zone.html#proc">Proc Details</a></header>
+<main>
+<h1>map_zone <aside>/<a href="datum.html">datum</a>/<a href="datum/map_zone.html">map_zone</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/map_zone.html#var/all_extensions">all_extensions</a></th><td>Extensions for z levels as overmap objects</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/day_night_controller">day_night_controller</a></th><td>Linked day and night controller, expect this to apply to all related_levels</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/grass_color">grass_color</a></th><td>An override of grass colors on this level</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/gravity_generators">gravity_generators</a></th><td>List of all gravity generators inside of the sub levels of this map zone</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/planetary_gas_string">planetary_gas_string</a></th><td>Gas string for planetary atmospherics of this map zone</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/plant_color">plant_color</a></th><td>An override of plant colors on this level</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/rock_color">rock_color</a></th><td>An override of rock colors on this level</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/virtual_levels">virtual_levels</a></th><td>List of all virtual levels this map zone contains</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/water_color">water_color</a></th><td>An override of water colors on this level</td></tr>
+            <tr><th><a href="datum/map_zone.html#var/weather_controller">weather_controller</a></th><td>Weather controller for this level</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/map_zone.html#proc/assert_weather_controller">assert_weather_controller</a></th><td>If something requires a level to have a weather controller, use this</td></tr>
+            <tr><th><a href="datum/map_zone.html#proc/clear_reservation">clear_reservation</a></th><td>Clears all of what's inside the virtual levels managed by the mapzone.</td></tr>
+            <tr><th><a href="datum/map_zone.html#proc/get_block">get_block</a></th><td>Excepts overmap extensions (like engines and such), gravity generators etc. to have been deleted before this.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/all_extensions"><aside class="declaration">var </aside>all_extensions
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 10"/></a></h3>
+        <p>Extensions for z levels as overmap objects</p><h3 id="var/day_night_controller"><aside class="declaration">var </aside>day_night_controller
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/day_night_controller.html">day_night_controller</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 14"/></a></h3>
+        <p>Linked day and night controller, expect this to apply to all related_levels</p><h3 id="var/grass_color"><aside class="declaration">var </aside>grass_color
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 20"/></a></h3>
+        <p>An override of grass colors on this level</p><h3 id="var/gravity_generators"><aside class="declaration">var </aside>gravity_generators
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 30"/></a></h3>
+        <p>List of all gravity generators inside of the sub levels of this map zone</p><h3 id="var/planetary_gas_string"><aside class="declaration">var </aside>planetary_gas_string
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 24"/></a></h3>
+        <p>Gas string for planetary atmospherics of this map zone</p><h3 id="var/plant_color"><aside class="declaration">var </aside>plant_color
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 18"/></a></h3>
+        <p>An override of plant colors on this level</p><h3 id="var/rock_color"><aside class="declaration">var </aside>rock_color
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L16">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 16"/></a></h3>
+        <p>An override of rock colors on this level</p><h3 id="var/virtual_levels"><aside class="declaration">var </aside>virtual_levels
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 26"/></a></h3>
+        <p>List of all virtual levels this map zone contains</p><h3 id="var/water_color"><aside class="declaration">var </aside>water_color
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L22">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 22"/></a></h3>
+        <p>An override of water colors on this level</p><h3 id="var/weather_controller"><aside class="declaration">var </aside>weather_controller
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/weather_controller.html">weather_controller</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 12"/></a></h3>
+        <p>Weather controller for this level</p><h2 id="proc">Proc Details</h2><h3 id="proc/assert_weather_controller"><aside class="declaration">proc </aside>assert_weather_controller<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L64">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 64"/></a></aside>
+        </h3>
+        <p>If something requires a level to have a weather controller, use this</p><h3 id="proc/clear_reservation"><aside class="declaration">proc </aside>clear_reservation<aside>(immediate) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L59">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 59"/></a></aside>
+        </h3>
+        <p>Clears all of what's inside the virtual levels managed by the mapzone.</p><h3 id="proc/get_block"><aside class="declaration">proc </aside>get_block<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L53">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 53"/></a></aside>
+        </h3>
+        <p>Excepts overmap extensions (like engines and such), gravity generators etc. to have been deleted before this.</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

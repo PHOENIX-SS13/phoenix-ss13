@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;round_event_control - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/round_event_control.html#var">Var Details</a> - <a href="datum/round_event_control.html#proc">Proc Details</a></header>
+<main>
+<h1>round_event_control <aside>/<a href="datum.html">datum</a>/<a href="datum/round_event_control.html">round_event_control</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 2"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/calculated_weight">calculated_weight</a></th><td>Last calculated weight that the storyteller assigned this event</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/can_run_post_roundstart">can_run_post_roundstart</a></th><td>Whether a roundstart event can happen post roundstart. Very important for events which override job assignments.</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/cost">cost</a></th><td>How much event points will this event spend. It's a multiplier to the track threshold and effectively affects how long until the next event of the same track type. Affected by random bell curve for variance.</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/min_eng_crew">min_eng_crew</a></th><td>Minimum engineering crew required for the event to spawn</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/min_head_crew">min_head_crew</a></th><td>Minimum head role crew required for the event to spawn</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/min_med_crew">min_med_crew</a></th><td>Minimum medical crew required for the event to spawn</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/min_sec_crew">min_sec_crew</a></th><td>Minimum security crew required for the event to spawn</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/reoccurence_penalty_multiplier">reoccurence_penalty_multiplier</a></th><td>Multiplier to the penalty applied to weight for re-occurance. The smaller the lesser the penalty</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/roundstart">roundstart</a></th><td>Whether this is a roundstart event or not. Not exactly sure how I should handle this.</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/shared_occurence_type">shared_occurence_type</a></th><td>Whether this event uses a shared occurence type, sharing occurence counts with the ones that also do have this set. Important if you want different event types to share weight penalties for recurrence.</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/shared_occurences">shared_occurences</a></th><td>List of the shared occurence types.</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/tags">tags</a></th><td>Tags of the event</td></tr>
+            <tr><th><a href="datum/round_event_control.html#var/track">track</a></th><td>To which event track does this event belong to</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/round_event_control.html#proc/add_occurence">add_occurence</a></th><td>Adds an occurence. Has to use the setter to properly handle shared occurences</td></tr>
+            <tr><th><a href="datum/round_event_control.html#proc/get_href_actions">get_href_actions</a></th><td>Prints the action buttons for this event.</td></tr>
+            <tr><th><a href="datum/round_event_control.html#proc/get_occurences">get_occurences</a></th><td>Gets occurences. Has to use the getter to properly handle shared occurences</td></tr>
+            <tr><th><a href="datum/round_event_control.html#proc/subtract_occurence">subtract_occurence</a></th><td>Subtracts an occurence. Has to use the setter to properly handle shared occurences</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/calculated_weight"><aside class="declaration">var </aside>calculated_weight
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 28"/></a></h3>
+        <p>Last calculated weight that the storyteller assigned this event</p><h3 id="var/can_run_post_roundstart"><aside class="declaration">var </aside>can_run_post_roundstart
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L48">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 48"/></a></h3>
+        <p>Whether a roundstart event can happen post roundstart. Very important for events which override job assignments.</p><h3 id="var/cost"><aside class="declaration">var </aside>cost
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 26"/></a></h3>
+        <p>How much event points will this event spend. It's a multiplier to the track threshold and effectively affects how long until the next event of the same track type. Affected by random bell curve for variance.</p><h3 id="var/min_eng_crew"><aside class="declaration">var </aside>min_eng_crew
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L38">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 38"/></a></h3>
+        <p>Minimum engineering crew required for the event to spawn</p><h3 id="var/min_head_crew"><aside class="declaration">var </aside>min_head_crew
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L44">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 44"/></a></h3>
+        <p>Minimum head role crew required for the event to spawn</p><h3 id="var/min_med_crew"><aside class="declaration">var </aside>min_med_crew
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L40">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 40"/></a></h3>
+        <p>Minimum medical crew required for the event to spawn</p><h3 id="var/min_sec_crew"><aside class="declaration">var </aside>min_sec_crew
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L42">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 42"/></a></h3>
+        <p>Minimum security crew required for the event to spawn</p><h3 id="var/reoccurence_penalty_multiplier"><aside class="declaration">var </aside>reoccurence_penalty_multiplier
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L32">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 32"/></a></h3>
+        <p>Multiplier to the penalty applied to weight for re-occurance. The smaller the lesser the penalty</p><h3 id="var/roundstart"><aside class="declaration">var </aside>roundstart
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L46">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 46"/></a></h3>
+        <p>Whether this is a roundstart event or not. Not exactly sure how I should handle this.</p><h3 id="var/shared_occurence_type"><aside class="declaration">var </aside>shared_occurence_type
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L34">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 34"/></a></h3>
+        <p>Whether this event uses a shared occurence type, sharing occurence counts with the ones that also do have this set. Important if you want different event types to share weight penalties for recurrence.</p><h3 id="var/shared_occurences"><aside class="declaration">var </aside>shared_occurences
+            <aside>&ndash; /static/list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L36">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 36"/></a></h3>
+        <p>List of the shared occurence types.</p><h3 id="var/tags"><aside class="declaration">var </aside>tags
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 30"/></a></h3>
+        <p>Tags of the event</p><h3 id="var/track"><aside class="declaration">var </aside>track
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 24"/></a></h3>
+        <p>To which event track does this event belong to</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_occurence"><aside class="declaration">proc </aside>add_occurence<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L108">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 108"/></a></aside>
+        </h3>
+        <p>Adds an occurence. Has to use the setter to properly handle shared occurences</p><h3 id="proc/get_href_actions"><aside class="declaration">proc </aside>get_href_actions<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L132">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 132"/></a></aside>
+        </h3>
+        <p>Prints the action buttons for this event.</p><h3 id="proc/get_occurences"><aside class="declaration">proc </aside>get_occurences<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L124">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 124"/></a></aside>
+        </h3>
+        <p>Gets occurences. Has to use the getter to properly handle shared occurences</p><h3 id="proc/subtract_occurence"><aside class="declaration">proc </aside>subtract_occurence<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/events/_event.dm#L116">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;_event.dm 116"/></a></aside>
+        </h3>
+        <p>Subtracts an occurence. Has to use the setter to properly handle shared occurences</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

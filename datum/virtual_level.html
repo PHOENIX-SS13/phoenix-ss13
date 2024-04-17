@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;virtual_level - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/virtual_level.html#var">Var Details</a> - <a href="datum/virtual_level.html#proc">Proc Details</a></header>
+<main>
+<h1>virtual_level <aside>/<a href="datum.html">datum</a>/<a href="datum/virtual_level.html">virtual_level</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L113">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 113"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/crosslinked">crosslinked</a></th><td>Neighboring virtual levels, associative by direction</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/down_linkage">down_linkage</a></th><td>Virtual level that is below this one (multi-z)</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/high_x">high_x</a></th><td>The high X boundary of the sub-zone</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/high_y">high_y</a></th><td>The high Y boundary of the sub-zone</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/low_x">low_x</a></th><td>The low X boundary of the sub-zone</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/low_y">low_y</a></th><td>The low Y boundary of the sub-zone</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/mapping_margin">mapping_margin</a></th><td>Margin for dockers and ruins to avoid placing things</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/ore_nodes">ore_nodes</a></th><td>Content variables:
+A list of all ore nodes on this level</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/parent_level">parent_level</a></th><td>Z level which contains this virtual level</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/reserved_margin">reserved_margin</a></th><td>The amount of margin we have reserved in turfs on all sides of the reservation</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/traits">traits</a></th><td>Traits of this virtual level</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/transit_instance">transit_instance</a></th><td>Transit handler of virtual level.</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/up_linkage">up_linkage</a></th><td>Virtual level that is above this one (multi-z)</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/x_distance">x_distance</a></th><td>Distance in the X axis of the sub-zone</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/y_distance">y_distance</a></th><td>Distance in the Y axis of the sub-zone</td></tr>
+            <tr><th><a href="datum/virtual_level.html#var/z_value">z_value</a></th><td>Z value of the virtual level, for easy access</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/virtual_level.html#proc/New">New</a></th><td>Should you want to do any advanced shanenigans, you can turn this into an argument and adjust unlink logic, and it'll work</td></tr>
+            <tr><th><a href="datum/virtual_level.html#proc/get_multi_z_connect_distance">get_multi_z_connect_distance</a></th><td>Finds whether levels connect through multi-z and returns a distance to them. Will return 0 if they dont connect.</td></tr>
+            <tr><th><a href="datum/virtual_level.html#proc/get_side_turf">get_side_turf</a></th><td>Gets a random turf on a side of a virtual level</td></tr>
+            <tr><th><a href="datum/virtual_level.html#proc/on_edge">on_edge</a></th><td>Checks whether an atom is at or past the edge, adjacent to reservation if any. Assumes atom is in bounds</td></tr>
+            <tr><th><a href="datum/virtual_level.html#proc/on_edge_reservation">on_edge_reservation</a></th><td>Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
+Checks whether an atom is at or past the edge reservation turfs. Assumes atom is in bounds</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/crosslinked"><aside class="declaration">var </aside>crosslinked
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L142">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 142"/></a></h3>
+        <p>Neighboring virtual levels, associative by direction</p><h3 id="var/down_linkage"><aside class="declaration">var </aside>down_linkage
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/virtual_level.html">virtual_level</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L140">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 140"/></a></h3>
+        <p>Virtual level that is below this one (multi-z)</p><h3 id="var/high_x"><aside class="declaration">var </aside>high_x
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L128">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 128"/></a></h3>
+        <p>The high X boundary of the sub-zone</p><h3 id="var/high_y"><aside class="declaration">var </aside>high_y
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L130">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 130"/></a></h3>
+        <p>The high Y boundary of the sub-zone</p><h3 id="var/low_x"><aside class="declaration">var </aside>low_x
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L124">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 124"/></a></h3>
+        <p>The low X boundary of the sub-zone</p><h3 id="var/low_y"><aside class="declaration">var </aside>low_y
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L126">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 126"/></a></h3>
+        <p>The low Y boundary of the sub-zone</p><h3 id="var/mapping_margin"><aside class="declaration">var </aside>mapping_margin
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L148">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 148"/></a></h3>
+        <p>Margin for dockers and ruins to avoid placing things</p><h3 id="var/ore_nodes"><aside class="declaration">var </aside>ore_nodes
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L152">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 152"/></a></h3>
+        <p>Content variables:
+A list of all ore nodes on this level</p><h3 id="var/parent_level"><aside class="declaration">var </aside>parent_level
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/space_level.html">space_level</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L120">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 120"/></a></h3>
+        <p>Z level which contains this virtual level</p><h3 id="var/reserved_margin"><aside class="declaration">var </aside>reserved_margin
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L146">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 146"/></a></h3>
+        <p>The amount of margin we have reserved in turfs on all sides of the reservation</p><h3 id="var/traits"><aside class="declaration">var </aside>traits
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L144">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 144"/></a></h3>
+        <p>Traits of this virtual level</p><h3 id="var/transit_instance"><aside class="declaration">var </aside>transit_instance
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/transit_instance.html">transit_instance</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L122">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 122"/></a></h3>
+        <p>Transit handler of virtual level.</p><h3 id="var/up_linkage"><aside class="declaration">var </aside>up_linkage
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/virtual_level.html">virtual_level</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L138">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 138"/></a></h3>
+        <p>Virtual level that is above this one (multi-z)</p><h3 id="var/x_distance"><aside class="declaration">var </aside>x_distance
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L132">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 132"/></a></h3>
+        <p>Distance in the X axis of the sub-zone</p><h3 id="var/y_distance"><aside class="declaration">var </aside>y_distance
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L134">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 134"/></a></h3>
+        <p>Distance in the Y axis of the sub-zone</p><h3 id="var/z_value"><aside class="declaration">var </aside>z_value
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L136">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 136"/></a></h3>
+        <p>Z value of the virtual level, for easy access</p><h2 id="proc">Proc Details</h2><h3 id="proc/New">New<aside>(passed_name, /list/passed_traits, /<a href="datum.html">datum</a>/<a href="datum/map_zone.html">map_zone</a>/passed_map, lx, ly, hx, hy, passed_z) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L450">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 450"/></a></aside>
+        </h3>
+        <p>Should you want to do any advanced shanenigans, you can turn this into an argument and adjust unlink logic, and it'll work</p><h3 id="proc/get_multi_z_connect_distance"><aside class="declaration">proc </aside>get_multi_z_connect_distance<aside>(/<a href="datum.html">datum</a>/<a href="datum/virtual_level.html">virtual_level</a>/other_vlevel) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L160">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 160"/></a></aside>
+        </h3>
+        <p>Finds whether levels connect through multi-z and returns a distance to them. Will return 0 if they dont connect.</p><h3 id="proc/get_side_turf"><aside class="declaration">proc </aside>get_side_turf<aside>(dir, padding, middle) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L619">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 619"/></a></aside>
+        </h3>
+        <p>Gets a random turf on a side of a virtual level</p><h3 id="proc/on_edge"><aside class="declaration">proc </aside>on_edge<aside>(/<a href="atom.html">atom</a>/Atom) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L613">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 613"/></a></aside>
+        </h3>
+        <p>Checks whether an atom is at or past the edge, adjacent to reservation if any. Assumes atom is in bounds</p><h3 id="proc/on_edge_reservation"><aside class="declaration">proc </aside>on_edge_reservation<aside>(/<a href="atom.html">atom</a>/Atom) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/map_zones.dm#L607">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;map_zones.dm 607"/></a></aside>
+        </h3>
+        <p>Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
+Checks whether an atom is at or past the edge reservation turfs. Assumes atom is in bounds</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

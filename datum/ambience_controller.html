@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;ambience_controller - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/ambience_controller.html#var">Var Details</a> - <a href="datum/ambience_controller.html#proc">Proc Details</a></header>
+<main>
+<h1>ambience_controller <aside>/<a href="datum.html">datum</a>/<a href="datum/ambience_controller.html">ambience_controller</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/ambience_cooldowns">ambience_cooldowns</a></th><td>A list of lists of cooldowns per emitters to our ambient sounds</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/ambient_sounds">ambient_sounds</a></th><td>Fast ref to the list with ambient datums</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/client">client</a></th><td>Client we play things to and respects prefs of</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/free_channels">free_channels</a></th><td>List of free channels for playing ambient sounds</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/jukebox_volume_multiplier">jukebox_volume_multiplier</a></th><td>Volume multiplier we get from hearing jukebox stuff</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/managed_sounds">managed_sounds</a></th><td>List of sounds we're currently managing. They will take up channels and free them when they end</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/next_area_ambience">next_area_ambience</a></th><td>Next time we shall play area ambience at</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/next_area_handling">next_area_handling</a></th><td>When do we call the updates for area and ship ambience handling</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/next_object_sweep">next_object_sweep</a></th><td>Time until the next object sweep for scheduling played object ambience</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/pref_ship_ambience">pref_ship_ambience</a></th><td>Preference variables</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#var/queued_object_ambience">queued_object_ambience</a></th><td>Queued object ambiences that we process</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/add_area_noises_cooldowns">add_area_noises_cooldowns</a></th><td>Adds cooldowns to non looping ambient noises of the area as we enter it</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/client_pref_update">client_pref_update</a></th><td>When our client pref gets updated.</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/free_channel">free_channel</a></th><td>Frees a once taken channel</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/get_free_channel">get_free_channel</a></th><td>This will not be updated if the user position does not change, but that's fine.
+Takes a free channel from the pool of remaining channels. Null if none left</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/handle_area_ambience">handle_area_ambience</a></th><td>Update multiplier from jukeboxes</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/handle_object_sweep">handle_object_sweep</a></th><td>Clear existing cooldowns</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/invoke_ambient_sound">invoke_ambient_sound</a></th><td>Check the cooldown in the cooldown lists
+Iterate over all cooldowns and see if we can play a sound in the next 5s (AMBIENCE_QUEUE_TIME)
+If there isn't a cooldown list, free to assume we can create a new cooldown.
+While the next played ambience would have to happen before the next queue, add another queued sound and increment cooldown approprietly
+Set the cooldown and add a queued sound.
+If there is a cooldown between emitters, populate the cooldown list and fill them all with the cooldown</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/play_ambience_sound">play_ambience_sound</a></th><td>Once again, checking the distance, but adding 1 for extra leisure to not cancel too many queued ambiences</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/set_target_volume_for_ambience_id">set_target_volume_for_ambience_id</a></th><td>Sets the target volumes for currently playing ambiences of an ID</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/try_invoke_ambient_sound">try_invoke_ambient_sound</a></th><td>Do a sweep
+Sort by distance
+Try and queue the ambiences we have found
+Consider if it's out of the range.</td></tr>
+            <tr><th><a href="datum/ambience_controller.html#proc/update_mob_positions">update_mob_positions</a></th><td>If a sound is expired, free it's channel and remove it.
+Sound is not expired and has a turf. Update it's xyz position and volume
+Returns TRUE if updated anything, FALSE if not</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/ambience_cooldowns"><aside class="declaration">var </aside>ambience_cooldowns
+            <aside>&ndash; /list/list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L39">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 39"/></a></h3>
+        <p>A list of lists of cooldowns per emitters to our ambient sounds</p><h3 id="var/ambient_sounds"><aside class="declaration">var </aside>ambient_sounds
+            <aside>&ndash; /static/list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 37"/></a></h3>
+        <p>Fast ref to the list with ambient datums</p><h3 id="var/client"><aside class="declaration">var </aside>client
+            <aside>&ndash; /<a href="client.html">client</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L3">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 3"/></a></h3>
+        <p>Client we play things to and respects prefs of</p><h3 id="var/free_channels"><aside class="declaration">var </aside>free_channels
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 43"/></a></h3>
+        <p>List of free channels for playing ambient sounds</p><h3 id="var/jukebox_volume_multiplier"><aside class="declaration">var </aside>jukebox_volume_multiplier
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 30"/></a></h3>
+        <p>Volume multiplier we get from hearing jukebox stuff</p><h3 id="var/managed_sounds"><aside class="declaration">var </aside>managed_sounds
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L45">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 45"/></a></h3>
+        <p>List of sounds we're currently managing. They will take up channels and free them when they end</p><h3 id="var/next_area_ambience"><aside class="declaration">var </aside>next_area_ambience
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 5"/></a></h3>
+        <p>Next time we shall play area ambience at</p><h3 id="var/next_area_handling"><aside class="declaration">var </aside>next_area_handling
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 7"/></a></h3>
+        <p>When do we call the updates for area and ship ambience handling</p><h3 id="var/next_object_sweep"><aside class="declaration">var </aside>next_object_sweep
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L35">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 35"/></a></h3>
+        <p>Time until the next object sweep for scheduling played object ambience</p><h3 id="var/pref_ship_ambience"><aside class="declaration">var </aside>pref_ship_ambience
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 12"/></a></h3>
+        <p>Preference variables</p><h3 id="var/queued_object_ambience"><aside class="declaration">var </aside>queued_object_ambience
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L41">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 41"/></a></h3>
+        <p>Queued object ambiences that we process</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_area_noises_cooldowns"><aside class="declaration">proc </aside>add_area_noises_cooldowns<aside>(/list/noises) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L120">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 120"/></a></aside>
+        </h3>
+        <p>Adds cooldowns to non looping ambient noises of the area as we enter it</p><h3 id="proc/client_pref_update"><aside class="declaration">proc </aside>client_pref_update<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L161">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 161"/></a></aside>
+        </h3>
+        <p>When our client pref gets updated.</p><h3 id="proc/free_channel"><aside class="declaration">proc </aside>free_channel<aside>(channel_to_free) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L395">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 395"/></a></aside>
+        </h3>
+        <p>Frees a once taken channel</p><h3 id="proc/get_free_channel"><aside class="declaration">proc </aside>get_free_channel<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L387">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 387"/></a></aside>
+        </h3>
+        <p>This will not be updated if the user position does not change, but that's fine.
+Takes a free channel from the pool of remaining channels. Null if none left</p><h3 id="proc/handle_area_ambience"><aside class="declaration">proc </aside>handle_area_ambience<aside>(/<a href="mob.html">mob</a>/client_mob) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L86">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 86"/></a></aside>
+        </h3>
+        <p>Update multiplier from jukeboxes</p><h3 id="proc/handle_object_sweep"><aside class="declaration">proc </aside>handle_object_sweep<aside>(/<a href="mob.html">mob</a>/client_mob) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L194">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 194"/></a></aside>
+        </h3>
+        <p>Clear existing cooldowns</p><h3 id="proc/invoke_ambient_sound"><aside class="declaration">proc </aside>invoke_ambient_sound<aside>(ambience_id, ambience_turf, wait_time, emitter_index, /<a href="datum.html">datum</a>/<a href="datum/ambient_sound.html">ambient_sound</a>/sound_datum) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L289">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 289"/></a></aside>
+        </h3>
+        <p>Check the cooldown in the cooldown lists
+Iterate over all cooldowns and see if we can play a sound in the next 5s (AMBIENCE_QUEUE_TIME)
+If there isn't a cooldown list, free to assume we can create a new cooldown.
+While the next played ambience would have to happen before the next queue, add another queued sound and increment cooldown approprietly
+Set the cooldown and add a queued sound.
+If there is a cooldown between emitters, populate the cooldown list and fill them all with the cooldown</p><h3 id="proc/play_ambience_sound"><aside class="declaration">proc </aside>play_ambience_sound<aside>(/<a href="mob.html">mob</a>/client_mob, /<a href="turf.html">turf</a>/play_turf, /<a href="datum.html">datum</a>/<a href="datum/ambient_sound.html">ambient_sound</a>/sound_datum, emitter_index) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L318">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 318"/></a></aside>
+        </h3>
+        <p>Once again, checking the distance, but adding 1 for extra leisure to not cancel too many queued ambiences</p><h3 id="proc/set_target_volume_for_ambience_id"><aside class="declaration">proc </aside>set_target_volume_for_ambience_id<aside>(ambience_id, target_volume) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L137">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 137"/></a></aside>
+        </h3>
+        <p>Sets the target volumes for currently playing ambiences of an ID</p><h3 id="proc/try_invoke_ambient_sound"><aside class="declaration">proc </aside>try_invoke_ambient_sound<aside>(ambience, /<a href="turf.html">turf</a>/ambience_turf, /<a href="datum.html">datum</a>/<a href="datum/ambient_sound.html">ambient_sound</a>/sound_datum) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L232">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 232"/></a></aside>
+        </h3>
+        <p>Do a sweep
+Sort by distance
+Try and queue the ambiences we have found
+Consider if it's out of the range.</p><h3 id="proc/update_mob_positions"><aside class="declaration">proc </aside>update_mob_positions<aside>(/<a href="mob.html">mob</a>/client_mob) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/ambience/ambience_controller.dm#L363">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;ambience&#x2F;ambience_controller.dm 363"/></a></aside>
+        </h3>
+        <p>If a sound is expired, free it's channel and remove it.
+Sound is not expired and has a turf. Update it's xyz position and volume
+Returns TRUE if updated anything, FALSE if not</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="code/game/objects/structures/inflatables.html#define">Define Details</a></header>
+<main>
+<h1>code/game/objects/structures/inflatables.dm 
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm"/></a></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th><a href="code/game/objects/structures/inflatables.html#define/FAST_DEFLATE_TIME">FAST_DEFLATE_TIME</a></th><td>Time it takes for the inflatable to inflate.</td></tr>
+        <tr><th><a href="code/game/objects/structures/inflatables.html#define/SLOW_DEFLATE_TIME">SLOW_DEFLATE_TIME</a></th><td>Time it takes for the inflatable to quickly deflate, e.g. by manual usage</td></tr>
+        <tr><th><a href="code/game/objects/structures/inflatables.html#define/DEPLOY_DELAY">DEPLOY_DELAY</a></th><td>Time it takes for the inflatable to slowly deflate, e.g. by puncturing</td></tr>
+        <tr><th><a href="code/game/objects/structures/inflatables.html#define/WALL_DEFLATED_SCALE_X">WALL_DEFLATED_SCALE_X</a></th><td>The delay before the inflatable deploys it's structural variant</td></tr>
+        <tr><th><a href="code/game/objects/structures/inflatables.html#define/WALL_DEFLATED_SCALE_Y">WALL_DEFLATED_SCALE_Y</a></th><td>Width scale of the wall structure, to match the item</td></tr>
+        <tr><th><a href="code/game/objects/structures/inflatables.html#define/WALL_SPRITE_MARGIN">WALL_SPRITE_MARGIN</a></th><td>Height scale of the wall structure, to match the item</td></tr>
+        <tr><th><a href="code/game/objects/structures/inflatables.html#define/SUICIDE_INFLATION_PROBABILITY">SUICIDE_INFLATION_PROBABILITY</a></th><td>How big the margin on all sides of the sprites are, solve for (-)MARGIN/2
+Example: If the sprite is 40x40, the margin is 8 pixels in both directions (4 on each side), negate it, presto.</td></tr>
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/effect/decal/cleanable.html">effect/decal/cleanable</a>/plastic/inflatables</th><td>How likely it is to become a balloon animal if suiciding</td></tr>
+        <tr><th><a href="obj&#x2F;structure&#x2F;inflatable.html">&#x2F;obj&#x2F;structure&#x2F;inflatable</a></th><td>A temporary structure that can be deployed by using an item
+Will deflate after a while, or after being pierced.</td></tr></table><h2 id="define">Define Details</h2>
+<h3 id="define/DEPLOY_DELAY"><aside class="declaration">#define </aside>DEPLOY_DELAY
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm 7"/></a>
+    </h3>
+    <p>Time it takes for the inflatable to slowly deflate, e.g. by puncturing</p><h3 id="define/FAST_DEFLATE_TIME"><aside class="declaration">#define </aside>FAST_DEFLATE_TIME
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm#L3">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm 3"/></a>
+    </h3>
+    <p>Time it takes for the inflatable to inflate.</p><h3 id="define/SLOW_DEFLATE_TIME"><aside class="declaration">#define </aside>SLOW_DEFLATE_TIME
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm 5"/></a>
+    </h3>
+    <p>Time it takes for the inflatable to quickly deflate, e.g. by manual usage</p><h3 id="define/SUICIDE_INFLATION_PROBABILITY"><aside class="declaration">#define </aside>SUICIDE_INFLATION_PROBABILITY
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm 18"/></a>
+    </h3>
+    <p>How big the margin on all sides of the sprites are, solve for (-)MARGIN/2
+Example: If the sprite is 40x40, the margin is 8 pixels in both directions (4 on each side), negate it, presto.</p><h3 id="define/WALL_DEFLATED_SCALE_X"><aside class="declaration">#define </aside>WALL_DEFLATED_SCALE_X
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm 9"/></a>
+    </h3>
+    <p>The delay before the inflatable deploys it's structural variant</p><h3 id="define/WALL_DEFLATED_SCALE_Y"><aside class="declaration">#define </aside>WALL_DEFLATED_SCALE_Y
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm#L11">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm 11"/></a>
+    </h3>
+    <p>Width scale of the wall structure, to match the item</p><h3 id="define/WALL_SPRITE_MARGIN"><aside class="declaration">#define </aside>WALL_SPRITE_MARGIN
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/game/objects/structures/inflatables.dm#L13">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;inflatables.dm 13"/></a>
+    </h3>
+    <p>Height scale of the wall structure, to match the item</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

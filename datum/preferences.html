@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;preferences - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/preferences.html#var">Var Details</a> - <a href="datum/preferences.html#proc">Proc Details</a></header>
+<main>
+<h1>preferences <aside>/<a href="datum.html">datum</a>/<a href="datum/preferences.html">preferences</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L3">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 3"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/preferences.html#var/arousal_preview">arousal_preview</a></th><td>The arousal state of the previewed character, can be toggled by the user</td></tr>
+            <tr><th><a href="datum/preferences.html#var/attributes">attributes</a></th><td>Customized character attributed. In difference from the base value</td></tr>
+            <tr><th><a href="datum/preferences.html#var/augment_limb_styles">augment_limb_styles</a></th><td>List of chosen preferred styles for limb replacements</td></tr>
+            <tr><th><a href="datum/preferences.html#var/augments">augments</a></th><td>List of chosen augmentations. It's an associative list with key name of the slot, pointing to a typepath of an augment define</td></tr>
+            <tr><th><a href="datum/preferences.html#var/auto_fit_viewport">auto_fit_viewport</a></th><td>Should we automatically fit the viewport?</td></tr>
+            <tr><th><a href="datum/preferences.html#var/background_state">background_state</a></th><td>Background of the character mannequin preview</td></tr>
+            <tr><th><a href="datum/preferences.html#var/background_state_options">background_state_options</a></th><td>List of icon_states available for the character mannequin preview</td></tr>
+            <tr><th><a href="datum/preferences.html#var/balloon_alerts_pref">balloon_alerts_pref</a></th><td>Does the user see balloon alerts (minor actions), or chat messages, or both?</td></tr>
+            <tr><th><a href="datum/preferences.html#var/body_type">body_type</a></th><td>Agendered spessmen can choose whether to have a male or female bodytype</td></tr>
+            <tr><th><a href="datum/preferences.html#var/brief_outfit">brief_outfit</a></th><td>If we spawn an ERT as an admin and choose to spawn as the briefing officer, we'll be given this outfit</td></tr>
+            <tr><th><a href="datum/preferences.html#var/broadcast_login_logout">broadcast_login_logout</a></th><td>If we want to broadcast deadchat connect/disconnect messages</td></tr>
+            <tr><th><a href="datum/preferences.html#var/chat_on_map">chat_on_map</a></th><td>Runechat preference. If true, certain messages will be displayed on the map, not ust on the chat area. Boolean.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/chosen_augment_slot">chosen_augment_slot</a></th><td>Which augment slot we currently have chosen, this is for UI display</td></tr>
+            <tr><th><a href="datum/preferences.html#var/culture_more_info">culture_more_info</a></th><td>Whether someone wishes to see more information regarding either of those</td></tr>
+            <tr><th><a href="datum/preferences.html#var/dominant_hand">dominant_hand</a></th><td>Characters dominant hand</td></tr>
+            <tr><th><a href="datum/preferences.html#var/favorite_outfits">favorite_outfits</a></th><td>What outfit typepaths we've favorited in the SelectEquipment menu</td></tr>
+            <tr><th><a href="datum/preferences.html#var/hear_jukebox">hear_jukebox</a></th><td>Jukebox pref. It's not in a flag anywhere because the flags need to be split around first and this pref is important enough to implement now</td></tr>
+            <tr><th><a href="datum/preferences.html#var/hear_storyteller">hear_storyteller</a></th><td>Admin pref to hear storyteller logging, because bitfield is full lol.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/hearted">hearted</a></th><td>Someone thought we were nice! We get a little heart in OOC until we join the server past the below time (we can keep it until the end of the round otherwise)</td></tr>
+            <tr><th><a href="datum/preferences.html#var/hearted_until">hearted_until</a></th><td>If we have a hearted commendations, we honor it every time the player loads preferences until this time has been passed</td></tr>
+            <tr><th><a href="datum/preferences.html#var/interview_accepted">interview_accepted</a></th><td>Whether this client has gotten their interview accepted at any point in time.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/itemoutline_pref">itemoutline_pref</a></th><td>Do we show item hover outlines?</td></tr>
+            <tr><th><a href="datum/preferences.html#var/joblessrole">joblessrole</a></th><td>What to do if the selected jobs are not available</td></tr>
+            <tr><th><a href="datum/preferences.html#var/loadout_points">loadout_points</a></th><td>How many loadout points we've got remaining</td></tr>
+            <tr><th><a href="datum/preferences.html#var/loadout_slot">loadout_slot</a></th><td>Currently selected loadout slot</td></tr>
+            <tr><th><a href="datum/preferences.html#var/loadouts">loadouts</a></th><td>List with all loadout slots we have.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/max_chat_length">max_chat_length</a></th><td>Limit preference on the size of the message. Requires chat_on_map to have effect.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/mismatched_customization">mismatched_customization</a></th><td>Will the person see accessories not meant for their species to choose from</td></tr>
+            <tr><th><a href="datum/preferences.html#var/needs_update">needs_update</a></th><td>Whether the system should have to update the sprite. This is set to TRUE whenever anything appearance changing is set</td></tr>
+            <tr><th><a href="datum/preferences.html#var/perceived_attributes">perceived_attributes</a></th><td>Attributes that the character will end up with, accounting in for other factors</td></tr>
+            <tr><th><a href="datum/preferences.html#var/perceived_skills">perceived_skills</a></th><td>Skills that the character will end up with, accounting in for other factors</td></tr>
+            <tr><th><a href="datum/preferences.html#var/persistent_scars">persistent_scars</a></th><td>If we have persistent scars enabled</td></tr>
+            <tr><th><a href="datum/preferences.html#var/pixel_size">pixel_size</a></th><td>What size should pixels be displayed as? 0 is strech to fit</td></tr>
+            <tr><th><a href="datum/preferences.html#var/playtime_reward_cloak">playtime_reward_cloak</a></th><td>The playtime_reward_cloak variable can be set to TRUE from the prefs menu only once the user has gained over 5K playtime hours. If true, it allows the user to get a cool looking roundstart cloak.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/pref_culture">pref_culture</a></th><td>Chosen cultural informations</td></tr>
+            <tr><th><a href="datum/preferences.html#var/scaling_method">scaling_method</a></th><td>What scaling method should we use? Distort means nearest neighbor</td></tr>
+            <tr><th><a href="datum/preferences.html#var/screentip_color">screentip_color</a></th><td>Color of screentips at top of screen</td></tr>
+            <tr><th><a href="datum/preferences.html#var/screentip_pref">screentip_pref</a></th><td>Do we show screentips, if so, how big?</td></tr>
+            <tr><th><a href="datum/preferences.html#var/see_chat_non_mob">see_chat_non_mob</a></th><td>Whether non-mob messages will be displayed, such as machine vendor announcements. Requires chat_on_map to have effect. Boolean.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/see_rc_emotes">see_rc_emotes</a></th><td>Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.</td></tr>
+            <tr><th><a href="datum/preferences.html#var/show_body_size">show_body_size</a></th><td>Whether the user wants to see body size being shown in the preview</td></tr>
+            <tr><th><a href="datum/preferences.html#var/show_loadout_equipped_items">show_loadout_equipped_items</a></th><td>Whether to only show the loadout equipped items instead of the catalogue</td></tr>
+            <tr><th><a href="datum/preferences.html#var/skills">skills</a></th><td>Customized character skills. In difference from the base value</td></tr>
+            <tr><th><a href="datum/preferences.html#var/widescreenpref">widescreenpref</a></th><td>Should we be in the widescreen mode set by the config?</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/preferences.html#proc/CaptureKeybinding">CaptureKeybinding</a></th><td>Put slots in here</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/allocate_to_sheet">allocate_to_sheet</a></th><td>Will try to customize the stat and skill allocations to match a passed attribute sheet.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/can_modify_attribute">can_modify_attribute</a></th><td>Returns whether an attribute can be modified by a value.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/can_modify_skill">can_modify_skill</a></th><td>Returns whether a skill can be modified by a value.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/check_keybindings">check_keybindings</a></th><td>checks through keybindings for outdated unbound keys and updates them</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/modify_attribute">modify_attribute</a></th><td>Modifies an attribute by a value</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/modify_skill">modify_skill</a></th><td>Modifies a skill by a value.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/print_attributes_page">print_attributes_page</a></th><td>If the sheet doesnt have any attributes, dont even try to change anything there
+If the sheet doesnt have any skills, dont even try to change anything there</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/remaining_attribute_points">remaining_attribute_points</a></th><td>Returns amount of remaining attribute points</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/remaining_skill_points">remaining_skill_points</a></th><td>Returns amount of remaining skill points.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/reset_attributes">reset_attributes</a></th><td>If there isn't a list for either of those, just reset them, most likely it's savefile getting those for the first time.
+Make sure they have all the attributes and skills.
+Make sure none of their attributes or skills exceed the set minimums and maximums
+See if we exceed our remaining points, if so then reset attributes
+Resets attributes and skills to no changes.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/reset_loadout_slot">reset_loadout_slot</a></th><td>Resets current loadout slot</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/safe_transfer_prefs_to">safe_transfer_prefs_to</a></th><td>Sanitizes the preferences, applies the randomization prefs, and then applies the preference to the human mob.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/sanitize_chosen_prefs">sanitize_chosen_prefs</a></th><td>Sanitization checks to be performed before using these preferences.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/validate_attributes">validate_attributes</a></th><td>Validates attributes and skills saved in the preferences.</td></tr>
+            <tr><th><a href="datum/preferences.html#proc/validate_loadouts">validate_loadouts</a></th><td>If we don't have an item in our loadout, show the user if it could be colorable</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/arousal_preview"><aside class="declaration">var </aside>arousal_preview
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L217">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 217"/></a></h3>
+        <p>The arousal state of the previewed character, can be toggled by the user</p><h3 id="var/attributes"><aside class="declaration">var </aside>attributes
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L235">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 235"/></a></h3>
+        <p>Customized character attributed. In difference from the base value</p><h3 id="var/augment_limb_styles"><aside class="declaration">var </aside>augment_limb_styles
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L211">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 211"/></a></h3>
+        <p>List of chosen preferred styles for limb replacements</p><h3 id="var/augments"><aside class="declaration">var </aside>augments
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L209">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 209"/></a></h3>
+        <p>List of chosen augmentations. It's an associative list with key name of the slot, pointing to a typepath of an augment define</p><h3 id="var/auto_fit_viewport"><aside class="declaration">var </aside>auto_fit_viewport
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L144">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 144"/></a></h3>
+        <p>Should we automatically fit the viewport?</p><h3 id="var/background_state"><aside class="declaration">var </aside>background_state
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L35">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 35"/></a></h3>
+        <p>Background of the character mannequin preview</p><h3 id="var/background_state_options"><aside class="declaration">var </aside>background_state_options
+            <aside>&ndash; /static/list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 37"/></a></h3>
+        <p>List of icon_states available for the character mannequin preview</p><h3 id="var/balloon_alerts_pref"><aside class="declaration">var </aside>balloon_alerts_pref
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L133">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 133"/></a></h3>
+        <p>Does the user see balloon alerts (minor actions), or chat messages, or both?</p><h3 id="var/body_type"><aside class="declaration">var </aside>body_type
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L165">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 165"/></a></h3>
+        <p>Agendered spessmen can choose whether to have a male or female bodytype</p><h3 id="var/brief_outfit"><aside class="declaration">var </aside>brief_outfit
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 20"/></a></h3>
+        <p>If we spawn an ERT as an admin and choose to spawn as the briefing officer, we'll be given this outfit</p><h3 id="var/broadcast_login_logout"><aside class="declaration">var </aside>broadcast_login_logout
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L169">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 169"/></a></h3>
+        <p>If we want to broadcast deadchat connect/disconnect messages</p><h3 id="var/chat_on_map"><aside class="declaration">var </aside>chat_on_map
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L48">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 48"/></a></h3>
+        <p>Runechat preference. If true, certain messages will be displayed on the map, not ust on the chat area. Boolean.</p><h3 id="var/chosen_augment_slot"><aside class="declaration">var </aside>chosen_augment_slot
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L213">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 213"/></a></h3>
+        <p>Which augment slot we currently have chosen, this is for UI display</p><h3 id="var/culture_more_info"><aside class="declaration">var </aside>culture_more_info
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L223">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 223"/></a></h3>
+        <p>Whether someone wishes to see more information regarding either of those</p><h3 id="var/dominant_hand"><aside class="declaration">var </aside>dominant_hand
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L106">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 106"/></a></h3>
+        <p>Characters dominant hand</p><h3 id="var/favorite_outfits"><aside class="declaration">var </aside>favorite_outfits
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L171">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 171"/></a></h3>
+        <p>What outfit typepaths we've favorited in the SelectEquipment menu</p><h3 id="var/hear_jukebox"><aside class="declaration">var </aside>hear_jukebox
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L231">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 231"/></a></h3>
+        <p>Jukebox pref. It's not in a flag anywhere because the flags need to be split around first and this pref is important enough to implement now</p><h3 id="var/hear_storyteller"><aside class="declaration">var </aside>hear_storyteller
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L233">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 233"/></a></h3>
+        <p>Admin pref to hear storyteller logging, because bitfield is full lol.</p><h3 id="var/hearted"><aside class="declaration">var </aside>hearted
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L161">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 161"/></a></h3>
+        <p>Someone thought we were nice! We get a little heart in OOC until we join the server past the below time (we can keep it until the end of the round otherwise)</p><h3 id="var/hearted_until"><aside class="declaration">var </aside>hearted_until
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L163">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 163"/></a></h3>
+        <p>If we have a hearted commendations, we honor it every time the player loads preferences until this time has been passed</p><h3 id="var/interview_accepted"><aside class="declaration">var </aside>interview_accepted
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L229">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 229"/></a></h3>
+        <p>Whether this client has gotten their interview accepted at any point in time.</p><h3 id="var/itemoutline_pref"><aside class="declaration">var </aside>itemoutline_pref
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L140">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 140"/></a></h3>
+        <p>Do we show item hover outlines?</p><h3 id="var/joblessrole"><aside class="declaration">var </aside>joblessrole
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L119">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 119"/></a></h3>
+        <p>What to do if the selected jobs are not available</p><h3 id="var/loadout_points"><aside class="declaration">var </aside>loadout_points
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L181">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 181"/></a></h3>
+        <p>How many loadout points we've got remaining</p><h3 id="var/loadout_slot"><aside class="declaration">var </aside>loadout_slot
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L185">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 185"/></a></h3>
+        <p>Currently selected loadout slot</p><h3 id="var/loadouts"><aside class="declaration">var </aside>loadouts
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L183">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 183"/></a></h3>
+        <p>List with all loadout slots we have.</p><h3 id="var/max_chat_length"><aside class="declaration">var </aside>max_chat_length
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L50">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 50"/></a></h3>
+        <p>Limit preference on the size of the message. Requires chat_on_map to have effect.</p><h3 id="var/mismatched_customization"><aside class="declaration">var </aside>mismatched_customization
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L173">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 173"/></a></h3>
+        <p>Will the person see accessories not meant for their species to choose from</p><h3 id="var/needs_update"><aside class="declaration">var </aside>needs_update
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L207">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 207"/></a></h3>
+        <p>Whether the system should have to update the sprite. This is set to TRUE whenever anything appearance changing is set</p><h3 id="var/perceived_attributes"><aside class="declaration">var </aside>perceived_attributes
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L239">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 239"/></a></h3>
+        <p>Attributes that the character will end up with, accounting in for other factors</p><h3 id="var/perceived_skills"><aside class="declaration">var </aside>perceived_skills
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L241">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 241"/></a></h3>
+        <p>Skills that the character will end up with, accounting in for other factors</p><h3 id="var/persistent_scars"><aside class="declaration">var </aside>persistent_scars
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L167">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 167"/></a></h3>
+        <p>If we have persistent scars enabled</p><h3 id="var/pixel_size"><aside class="declaration">var </aside>pixel_size
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L148">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 148"/></a></h3>
+        <p>What size should pixels be displayed as? 0 is strech to fit</p><h3 id="var/playtime_reward_cloak"><aside class="declaration">var </aside>playtime_reward_cloak
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L153">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 153"/></a></h3>
+        <p>The playtime_reward_cloak variable can be set to TRUE from the prefs menu only once the user has gained over 5K playtime hours. If true, it allows the user to get a cool looking roundstart cloak.</p><h3 id="var/pref_culture"><aside class="declaration">var </aside>pref_culture
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L219">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 219"/></a></h3>
+        <p>Chosen cultural informations</p><h3 id="var/scaling_method"><aside class="declaration">var </aside>scaling_method
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L150">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 150"/></a></h3>
+        <p>What scaling method should we use? Distort means nearest neighbor</p><h3 id="var/screentip_color"><aside class="declaration">var </aside>screentip_color
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L138">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 138"/></a></h3>
+        <p>Color of screentips at top of screen</p><h3 id="var/screentip_pref"><aside class="declaration">var </aside>screentip_pref
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L136">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 136"/></a></h3>
+        <p>Do we show screentips, if so, how big?</p><h3 id="var/see_chat_non_mob"><aside class="declaration">var </aside>see_chat_non_mob
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L52">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 52"/></a></h3>
+        <p>Whether non-mob messages will be displayed, such as machine vendor announcements. Requires chat_on_map to have effect. Boolean.</p><h3 id="var/see_rc_emotes"><aside class="declaration">var </aside>see_rc_emotes
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L54">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 54"/></a></h3>
+        <p>Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.</p><h3 id="var/show_body_size"><aside class="declaration">var </aside>show_body_size
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L215">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 215"/></a></h3>
+        <p>Whether the user wants to see body size being shown in the preview</p><h3 id="var/show_loadout_equipped_items"><aside class="declaration">var </aside>show_loadout_equipped_items
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L187">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 187"/></a></h3>
+        <p>Whether to only show the loadout equipped items instead of the catalogue</p><h3 id="var/skills"><aside class="declaration">var </aside>skills
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L237">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 237"/></a></h3>
+        <p>Customized character skills. In difference from the base value</p><h3 id="var/widescreenpref"><aside class="declaration">var </aside>widescreenpref
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L146">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 146"/></a></h3>
+        <p>Should we be in the widescreen mode set by the config?</p><h2 id="proc">Proc Details</h2><h3 id="proc/CaptureKeybinding"><aside class="declaration">proc </aside>CaptureKeybinding<aside>(/<a href="mob.html">mob</a>/user, /<a href="datum.html">datum</a>/keybinding/kb, old_key) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L1235">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 1235"/></a></aside>
+        </h3>
+        <p>Put slots in here</p><h3 id="proc/allocate_to_sheet"><aside class="declaration">proc </aside>allocate_to_sheet<aside>(sheet_type, allocate_attributes, allocate_skills) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L111">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 111"/></a></aside>
+        </h3>
+        <p>Will try to customize the stat and skill allocations to match a passed attribute sheet.</p><h3 id="proc/can_modify_attribute"><aside class="declaration">proc </aside>can_modify_attribute<aside>(attribute_type, value) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L68">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 68"/></a></aside>
+        </h3>
+        <p>Returns whether an attribute can be modified by a value.</p><h3 id="proc/can_modify_skill"><aside class="declaration">proc </aside>can_modify_skill<aside>(skill_type, value) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L93">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 93"/></a></aside>
+        </h3>
+        <p>Returns whether a skill can be modified by a value.</p><h3 id="proc/check_keybindings"><aside class="declaration">proc </aside>check_keybindings<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_savefile.dm#L101">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_savefile.dm 101"/></a></aside>
+        </h3>
+        <p>checks through keybindings for outdated unbound keys and updates them</p><h3 id="proc/modify_attribute"><aside class="declaration">proc </aside>modify_attribute<aside>(attribute_type, value) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L80">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 80"/></a></aside>
+        </h3>
+        <p>Modifies an attribute by a value</p><h3 id="proc/modify_skill"><aside class="declaration">proc </aside>modify_skill<aside>(skill_type, value) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L105">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 105"/></a></aside>
+        </h3>
+        <p>Modifies a skill by a value.</p><h3 id="proc/print_attributes_page"><aside class="declaration">proc </aside>print_attributes_page<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L129">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 129"/></a></aside>
+        </h3>
+        <p>If the sheet doesnt have any attributes, dont even try to change anything there
+If the sheet doesnt have any skills, dont even try to change anything there</p><h3 id="proc/remaining_attribute_points"><aside class="declaration">proc </aside>remaining_attribute_points<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L61">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 61"/></a></aside>
+        </h3>
+        <p>Returns amount of remaining attribute points</p><h3 id="proc/remaining_skill_points"><aside class="declaration">proc </aside>remaining_skill_points<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L86">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 86"/></a></aside>
+        </h3>
+        <p>Returns amount of remaining skill points.</p><h3 id="proc/reset_attributes"><aside class="declaration">proc </aside>reset_attributes<aside>(reset_attributes, reset_skills) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 30"/></a></aside>
+        </h3>
+        <p>If there isn't a list for either of those, just reset them, most likely it's savefile getting those for the first time.
+Make sure they have all the attributes and skills.
+Make sure none of their attributes or skills exceed the set minimums and maximums
+See if we exceed our remaining points, if so then reset attributes
+Resets attributes and skills to no changes.</p><h3 id="proc/reset_loadout_slot"><aside class="declaration">proc </aside>reset_loadout_slot<aside>(slot_to_reset) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_loadout.dm#L19">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_loadout.dm 19"/></a></aside>
+        </h3>
+        <p>Resets current loadout slot</p><h3 id="proc/safe_transfer_prefs_to"><aside class="declaration">proc </aside>safe_transfer_prefs_to<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/<a href="mob/living/carbon.html">carbon</a>/<a href="mob/living/carbon/human.html">human</a>/character, icon_updates, is_antag) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L2859">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 2859"/></a></aside>
+        </h3>
+        <p>Sanitizes the preferences, applies the randomization prefs, and then applies the preference to the human mob.</p><h3 id="proc/sanitize_chosen_prefs"><aside class="declaration">proc </aside>sanitize_chosen_prefs<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences.dm#L2849">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences.dm 2849"/></a></aside>
+        </h3>
+        <p>Sanitization checks to be performed before using these preferences.</p><h3 id="proc/validate_attributes"><aside class="declaration">proc </aside>validate_attributes<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_attributes.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_attributes.dm 2"/></a></aside>
+        </h3>
+        <p>Validates attributes and skills saved in the preferences.</p><h3 id="proc/validate_loadouts"><aside class="declaration">proc </aside>validate_loadouts<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/client/preferences_loadout.dm#L201">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;client&#x2F;preferences_loadout.dm 201"/></a></aside>
+        </h3>
+        <p>If we don't have an item in our loadout, show the user if it could be colorable</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

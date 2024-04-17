@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;mind - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/mind.html#var">Var Details</a> - <a href="datum/mind.html#proc">Proc Details</a></header>
+<main>
+<h1>mind <aside>/<a href="datum.html">datum</a>/<a href="datum/mind.html">mind</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L32">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 32"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/mind.html#var/active_addictions">active_addictions</a></th><td>Assoc list of key active addictions and value amount of cycles that it has been active.</td></tr>
+            <tr><th><a href="datum/mind.html#var/addiction_points">addiction_points</a></th><td>Assoc list of addiction values, key is the type of withdrawal (as singleton type), and the value is the amount of addiction points (as number)</td></tr>
+            <tr><th><a href="datum/mind.html#var/assigned_role">assigned_role</a></th><td>Job datum indicating the mind's role. This should always exist after initialization, as a reference to a singleton.</td></tr>
+            <tr><th><a href="datum/mind.html#var/current_scar_slot_index">current_scar_slot_index</a></th><td>The index for our current scar slot, so we don't have to constantly check the savefile (unlike the slots themselves, this index is independent of selected char slot, and increments whenever a valid char is joined with)</td></tr>
+            <tr><th><a href="datum/mind.html#var/experience_multiplier">experience_multiplier</a></th><td>Skill multiplier, adjusts how much xp you get/loose from adjust_xp. Dont override it directly, add your reason to experience_multiplier_reasons and use that as a key to put your value in there.</td></tr>
+            <tr><th><a href="datum/mind.html#var/experience_multiplier_reasons">experience_multiplier_reasons</a></th><td>Skill multiplier list, just slap your multiplier change onto this with the type it is coming from as key.</td></tr>
+            <tr><th><a href="datum/mind.html#var/known_skills">known_skills</a></th><td>Assoc list of skills. Use SKILL_LVL to access level, and SKILL_EXP to access skill's exp.</td></tr>
+            <tr><th><a href="datum/mind.html#var/my_ambitions">my_ambitions</a></th><td>Datum holding the ambitions of the mind</td></tr>
+            <tr><th><a href="datum/mind.html#var/original_character">original_character</a></th><td>Weakref to thecharacter we joined in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not</td></tr>
+            <tr><th><a href="datum/mind.html#var/original_character_slot_index">original_character_slot_index</a></th><td>The index for what character slot, if any, we were loaded from, so we can track persistent scars on a per-character basis. Each character slot gets PERSISTENT_SCAR_SLOTS scar slots</td></tr>
+            <tr><th><a href="datum/mind.html#var/skills_rewarded">skills_rewarded</a></th><td>List of skills the user has received a reward for. Should not be used to keep track of currently known skills. Lazy list because it shouldnt be filled often</td></tr>
+            <tr><th><a href="datum/mind.html#var/special_statuses">special_statuses</a></th><td>A lazy list of statuses to add next to this mind in the traitor panel</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/mind.html#proc/add_addiction_points">add_addiction_points</a></th><td>Adds addiction points to the specified addiction</td></tr>
+            <tr><th><a href="datum/mind.html#proc/get_hijack_speed">get_hijack_speed</a></th><td>Sets our can_hijack to the fastest speed our antag datums allow.</td></tr>
+            <tr><th><a href="datum/mind.html#proc/remove_addiction_points">remove_addiction_points</a></th><td>Adds addiction points to the specified addiction</td></tr>
+            <tr><th><a href="datum/mind.html#proc/remove_antags_for_borging">remove_antags_for_borging</a></th><td>Remove the antagonists that should not persist when being borged</td></tr>
+            <tr><th><a href="datum/mind.html#proc/set_assigned_role">set_assigned_role</a></th><td>Setter for the assigned_role job datum.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/active_addictions"><aside class="declaration">var </aside>active_addictions
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L95">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 95"/></a></h3>
+        <p>Assoc list of key active addictions and value amount of cycles that it has been active.</p><h3 id="var/addiction_points"><aside class="declaration">var </aside>addiction_points
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L91">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 91"/></a></h3>
+        <p>Assoc list of addiction values, key is the type of withdrawal (as singleton type), and the value is the amount of addiction points (as number)</p><h3 id="var/assigned_role"><aside class="declaration">var </aside>assigned_role
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/job.html">job</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L42">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 42"/></a></h3>
+        <p>Job datum indicating the mind's role. This should always exist after initialization, as a reference to a singleton.</p><h3 id="var/current_scar_slot_index"><aside class="declaration">var </aside>current_scar_slot_index
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L78">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 78"/></a></h3>
+        <p>The index for our current scar slot, so we don't have to constantly check the savefile (unlike the slots themselves, this index is independent of selected char slot, and increments whenever a valid char is joined with)</p><h3 id="var/experience_multiplier"><aside class="declaration">var </aside>experience_multiplier
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L81">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 81"/></a></h3>
+        <p>Skill multiplier, adjusts how much xp you get/loose from adjust_xp. Dont override it directly, add your reason to experience_multiplier_reasons and use that as a key to put your value in there.</p><h3 id="var/experience_multiplier_reasons"><aside class="declaration">var </aside>experience_multiplier_reasons
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L83">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 83"/></a></h3>
+        <p>Skill multiplier list, just slap your multiplier change onto this with the type it is coming from as key.</p><h3 id="var/known_skills"><aside class="declaration">var </aside>known_skills
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L72">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 72"/></a></h3>
+        <p>Assoc list of skills. Use SKILL_LVL to access level, and SKILL_EXP to access skill's exp.</p><h3 id="var/my_ambitions"><aside class="declaration">var </aside>my_ambitions
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/ambitions.html">ambitions</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L88">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 88"/></a></h3>
+        <p>Datum holding the ambitions of the mind</p><h3 id="var/original_character"><aside class="declaration">var </aside>original_character
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/weakref.html">weakref</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L74">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 74"/></a></h3>
+        <p>Weakref to thecharacter we joined in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not</p><h3 id="var/original_character_slot_index"><aside class="declaration">var </aside>original_character_slot_index
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L76">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 76"/></a></h3>
+        <p>The index for what character slot, if any, we were loaded from, so we can track persistent scars on a per-character basis. Each character slot gets PERSISTENT_SCAR_SLOTS scar slots</p><h3 id="var/skills_rewarded"><aside class="declaration">var </aside>skills_rewarded
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L70">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 70"/></a></h3>
+        <p>List of skills the user has received a reward for. Should not be used to keep track of currently known skills. Lazy list because it shouldnt be filled often</p><h3 id="var/special_statuses"><aside class="declaration">var </aside>special_statuses
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L86">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 86"/></a></h3>
+        <p>A lazy list of statuses to add next to this mind in the traitor panel</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_addiction_points"><aside class="declaration">proc </aside>add_addiction_points<aside>(type, amount) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L745">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 745"/></a></aside>
+        </h3>
+        <p>Adds addiction points to the specified addiction</p><h3 id="proc/get_hijack_speed"><aside class="declaration">proc </aside>get_hijack_speed<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L724">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 724"/></a></aside>
+        </h3>
+        <p>Sets our can_hijack to the fastest speed our antag datums allow.</p><h3 id="proc/remove_addiction_points"><aside class="declaration">proc </aside>remove_addiction_points<aside>(type, amount) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L751">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 751"/></a></aside>
+        </h3>
+        <p>Adds addiction points to the specified addiction</p><h3 id="proc/remove_antags_for_borging"><aside class="declaration">proc </aside>remove_antags_for_borging<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L286">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 286"/></a></aside>
+        </h3>
+        <p>Remove the antagonists that should not persist when being borged</p><h3 id="proc/set_assigned_role"><aside class="declaration">proc </aside>set_assigned_role<aside>(/<a href="datum.html">datum</a>/<a href="datum/job.html">job</a>/new_role) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/mind.dm#L762">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mind.dm 762"/></a></aside>
+        </h3>
+        <p>Setter for the assigned_role job datum.</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

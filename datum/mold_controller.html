@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;mold_controller - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/mold_controller.html#var">Var Details</a> - <a href="datum/mold_controller.html#proc">Proc Details</a></header>
+<main>
+<h1>mold_controller <aside>/<a href="datum.html">datum</a>/<a href="datum/mold_controller.html">mold_controller</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/active_resin">active_resin</a></th><td>All active resin under this controller.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/all_resin">all_resin</a></th><td>All resin under this controller.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/all_structures">all_structures</a></th><td>All structures under this controller.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/all_walls">all_walls</a></th><td>All walls under this controller.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/attack_prob">attack_prob</a></th><td>Probably of resin attacking structures per process</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/can_attack">can_attack</a></th><td>Whether the resin can attack.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/can_do_wall_resin">can_do_wall_resin</a></th><td>Whether we can put resin on walls. This slows down the expansion and will cause the structures to be more densely packed.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/core">core</a></th><td>Reference to our core.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/death_behaviour">death_behaviour</a></th><td>What's the type of our death behaviour.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/do_initial_expansion">do_initial_expansion</a></th><td>Whether we do an initial expansion.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/initial_expansion_spreads">initial_expansion_spreads</a></th><td>How many spread in our initial expansion.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/initial_expansion_structures">initial_expansion_structures</a></th><td>How many structures in our initial expansion.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/next_core_damage_resin_activation">next_core_damage_resin_activation</a></th><td>Next time we activate nearby resin when core is damaged.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/resin_attacks_doors">resin_attacks_doors</a></th><td>Whether the resin can attack doors.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/resin_attacks_windows">resin_attacks_windows</a></th><td>Whether the resin can attack windows.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/resin_type">resin_type</a></th><td>What resin type are we gonna spawn.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/spawns_walls">spawns_walls</a></th><td>Whether the resin can spawn walls.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/spread_progress">spread_progress</a></th><td>Progress to the next resin spread.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/spread_progress_per_second">spread_progress_per_second</a></th><td>How much progress to spreading we get per second.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/spreads_for_structure">spreads_for_structure</a></th><td>How many times do we need to spread to spawn an extra structure.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/structure_progression">structure_progression</a></th><td>Progress to spawning the next structure.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/structure_types">structure_types</a></th><td>Types of structures we can spawn.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/wall_off_planetary">wall_off_planetary</a></th><td>Whether the resin can spawn walls to seal off planetary environments.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/wall_off_vaccuum">wall_off_vaccuum</a></th><td>Whether the resin can spawn walls to seal off vaccuum.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/wall_prob">wall_prob</a></th><td>Probability of resin making a wall when able per process</td></tr>
+            <tr><th><a href="datum/mold_controller.html#var/wall_type">wall_type</a></th><td>What wall type are we gonna spawn.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/activate_resin_nearby">activate_resin_nearby</a></th><td>Activates resin of this controller in a range around a location, following atmos adjacency.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/core_damaged">core_damaged</a></th><td>When the core is damaged, activate nearby resin just to make sure that we've sealed up walls near the core, which could be important to prevent cheesing.</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/core_death">core_death</a></th><td>When a core dies, called by core</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/delete_everything">delete_everything</a></th><td>Deletes everything, unless an argument is passed, then it just deletes structures</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/handle_slow_decay">handle_slow_decay</a></th><td>Handles slow decay when core is dead, slowly removing resin and then qdelling self</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/initial_expansion">initial_expansion</a></th><td>The initial expansion process of a mold, spawns some resin, and then spawns sturctures</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/resin_death">resin_death</a></th><td>When a resin dies, called by resin</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/resin_process">resin_process</a></th><td>The process of handling active resin behaviours</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/spawn_resin">spawn_resin</a></th><td>Check if we can place resin in here
+Spawns and registers a resin at location</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/spawn_structure">spawn_structure</a></th><td>Spawns and registers a structure at location</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/spawn_structures">spawn_structures</a></th><td>Spawns an amount of structured across all resin, guaranteed to spawn atleast 1 of each type</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/spawn_wall">spawn_wall</a></th><td>Spawns and registers a wall at location</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/structure_death">structure_death</a></th><td>When a structure dies, called by structure</td></tr>
+            <tr><th><a href="datum/mold_controller.html#proc/wall_death">wall_death</a></th><td>When a wall dies, called by wall</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/active_resin"><aside class="declaration">var </aside>active_resin
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L41">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 41"/></a></h3>
+        <p>All active resin under this controller.</p><h3 id="var/all_resin"><aside class="declaration">var </aside>all_resin
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 43"/></a></h3>
+        <p>All resin under this controller.</p><h3 id="var/all_structures"><aside class="declaration">var </aside>all_structures
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L45">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 45"/></a></h3>
+        <p>All structures under this controller.</p><h3 id="var/all_walls"><aside class="declaration">var </aside>all_walls
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L47">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 47"/></a></h3>
+        <p>All walls under this controller.</p><h3 id="var/attack_prob"><aside class="declaration">var </aside>attack_prob
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L11">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 11"/></a></h3>
+        <p>Probably of resin attacking structures per process</p><h3 id="var/can_attack"><aside class="declaration">var </aside>can_attack
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L17">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 17"/></a></h3>
+        <p>Whether the resin can attack.</p><h3 id="var/can_do_wall_resin"><aside class="declaration">var </aside>can_do_wall_resin
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L15">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 15"/></a></h3>
+        <p>Whether we can put resin on walls. This slows down the expansion and will cause the structures to be more densely packed.</p><h3 id="var/core"><aside class="declaration">var </aside>core
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/structure/mold.html">structure/mold</a>/<a href="obj/structure/mold/core.html">core</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L49">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 49"/></a></h3>
+        <p>Reference to our core.</p><h3 id="var/death_behaviour"><aside class="declaration">var </aside>death_behaviour
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L31">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 31"/></a></h3>
+        <p>What's the type of our death behaviour.</p><h3 id="var/do_initial_expansion"><aside class="declaration">var </aside>do_initial_expansion
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L33">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 33"/></a></h3>
+        <p>Whether we do an initial expansion.</p><h3 id="var/initial_expansion_spreads"><aside class="declaration">var </aside>initial_expansion_spreads
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L35">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 35"/></a></h3>
+        <p>How many spread in our initial expansion.</p><h3 id="var/initial_expansion_structures"><aside class="declaration">var </aside>initial_expansion_structures
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 37"/></a></h3>
+        <p>How many structures in our initial expansion.</p><h3 id="var/next_core_damage_resin_activation"><aside class="declaration">var </aside>next_core_damage_resin_activation
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L55">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 55"/></a></h3>
+        <p>Next time we activate nearby resin when core is damaged.</p><h3 id="var/resin_attacks_doors"><aside class="declaration">var </aside>resin_attacks_doors
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L19">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 19"/></a></h3>
+        <p>Whether the resin can attack doors.</p><h3 id="var/resin_attacks_windows"><aside class="declaration">var </aside>resin_attacks_windows
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L21">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 21"/></a></h3>
+        <p>Whether the resin can attack windows.</p><h3 id="var/resin_type"><aside class="declaration">var </aside>resin_type
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L3">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 3"/></a></h3>
+        <p>What resin type are we gonna spawn.</p><h3 id="var/spawns_walls"><aside class="declaration">var </aside>spawns_walls
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L23">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 23"/></a></h3>
+        <p>Whether the resin can spawn walls.</p><h3 id="var/spread_progress"><aside class="declaration">var </aside>spread_progress
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L51">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 51"/></a></h3>
+        <p>Progress to the next resin spread.</p><h3 id="var/spread_progress_per_second"><aside class="declaration">var </aside>spread_progress_per_second
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 9"/></a></h3>
+        <p>How much progress to spreading we get per second.</p><h3 id="var/spreads_for_structure"><aside class="declaration">var </aside>spreads_for_structure
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L29">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 29"/></a></h3>
+        <p>How many times do we need to spread to spawn an extra structure.</p><h3 id="var/structure_progression"><aside class="declaration">var </aside>structure_progression
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L53">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 53"/></a></h3>
+        <p>Progress to spawning the next structure.</p><h3 id="var/structure_types"><aside class="declaration">var </aside>structure_types
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 7"/></a></h3>
+        <p>Types of structures we can spawn.</p><h3 id="var/wall_off_planetary"><aside class="declaration">var </aside>wall_off_planetary
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L27">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 27"/></a></h3>
+        <p>Whether the resin can spawn walls to seal off planetary environments.</p><h3 id="var/wall_off_vaccuum"><aside class="declaration">var </aside>wall_off_vaccuum
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L25">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 25"/></a></h3>
+        <p>Whether the resin can spawn walls to seal off vaccuum.</p><h3 id="var/wall_prob"><aside class="declaration">var </aside>wall_prob
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L13">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 13"/></a></h3>
+        <p>Probability of resin making a wall when able per process</p><h3 id="var/wall_type"><aside class="declaration">var </aside>wall_type
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 5"/></a></h3>
+        <p>What wall type are we gonna spawn.</p><h2 id="proc">Proc Details</h2><h3 id="proc/activate_resin_nearby"><aside class="declaration">proc </aside>activate_resin_nearby<aside>(/<a href="turf.html">turf</a>/location, range) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L289">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 289"/></a></aside>
+        </h3>
+        <p>Activates resin of this controller in a range around a location, following atmos adjacency.</p><h3 id="proc/core_damaged"><aside class="declaration">proc </aside>core_damaged<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L311">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 311"/></a></aside>
+        </h3>
+        <p>When the core is damaged, activate nearby resin just to make sure that we've sealed up walls near the core, which could be important to prevent cheesing.</p><h3 id="proc/core_death"><aside class="declaration">proc </aside>core_death<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L231">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 231"/></a></aside>
+        </h3>
+        <p>When a core dies, called by core</p><h3 id="proc/delete_everything"><aside class="declaration">proc </aside>delete_everything<aside>(just_structures) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L242">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 242"/></a></aside>
+        </h3>
+        <p>Deletes everything, unless an argument is passed, then it just deletes structures</p><h3 id="proc/handle_slow_decay"><aside class="declaration">proc </aside>handle_slow_decay<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L255">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 255"/></a></aside>
+        </h3>
+        <p>Handles slow decay when core is dead, slowly removing resin and then qdelling self</p><h3 id="proc/initial_expansion"><aside class="declaration">proc </aside>initial_expansion<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L263">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 263"/></a></aside>
+        </h3>
+        <p>The initial expansion process of a mold, spawns some resin, and then spawns sturctures</p><h3 id="proc/resin_death"><aside class="declaration">proc </aside>resin_death<aside>(/<a href="obj.html">obj</a>/<a href="obj/structure/mold.html">structure/mold</a>/<a href="obj/structure/mold/resin.html">resin</a>/dying_resin) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L215">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 215"/></a></aside>
+        </h3>
+        <p>When a resin dies, called by resin</p><h3 id="proc/resin_process"><aside class="declaration">proc </aside>resin_process<aside>(do_spread, do_attack, progress_structure) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L104">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 104"/></a></aside>
+        </h3>
+        <p>The process of handling active resin behaviours</p><h3 id="proc/spawn_resin"><aside class="declaration">proc </aside>spawn_resin<aside>(/<a href="turf.html">turf</a>/location, resin_type) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L192">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 192"/></a></aside>
+        </h3>
+        <p>Check if we can place resin in here
+Spawns and registers a resin at location</p><h3 id="proc/spawn_structure"><aside class="declaration">proc </aside>spawn_structure<aside>(/<a href="turf.html">turf</a>/location, structure_type) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L209">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 209"/></a></aside>
+        </h3>
+        <p>Spawns and registers a structure at location</p><h3 id="proc/spawn_structures"><aside class="declaration">proc </aside>spawn_structures<aside>(amount) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L269">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 269"/></a></aside>
+        </h3>
+        <p>Spawns an amount of structured across all resin, guaranteed to spawn atleast 1 of each type</p><h3 id="proc/spawn_wall"><aside class="declaration">proc </aside>spawn_wall<aside>(/<a href="turf.html">turf</a>/location, wall_type) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L203">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 203"/></a></aside>
+        </h3>
+        <p>Spawns and registers a wall at location</p><h3 id="proc/structure_death"><aside class="declaration">proc </aside>structure_death<aside>(/<a href="obj.html">obj</a>/<a href="obj/structure/mold.html">structure/mold</a>/structure/dying_structure) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L226">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 226"/></a></aside>
+        </h3>
+        <p>When a structure dies, called by structure</p><h3 id="proc/wall_death"><aside class="declaration">proc </aside>wall_death<aside>(/<a href="obj.html">obj</a>/<a href="obj/structure/mold.html">structure/mold</a>/wall/dying_wall) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mold/mold_controller.dm#L221">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mold&#x2F;mold_controller.dm 221"/></a></aside>
+        </h3>
+        <p>When a wall dies, called by wall</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

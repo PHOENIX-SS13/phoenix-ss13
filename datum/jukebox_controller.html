@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;jukebox_controller - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/jukebox_controller.html#var">Var Details</a> - <a href="datum/jukebox_controller.html#proc">Proc Details</a></header>
+<main>
+<h1>jukebox_controller <aside>/<a href="datum.html">datum</a>/<a href="datum/jukebox_controller.html">jukebox_controller</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/jukebox_datums.dm#L71">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;jukebox_datums.dm 71"/></a></h1>
+
+<p>Jukebox subscription that gets attached to clients and manages the sounds that are being played to it.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/jukebox_controller.html#var/loudest_jukebox_volume">loudest_jukebox_volume</a></th><td>The loudest volume of a jukebox a client is currently hearing. This is used to clamp the ambience by a little when jukeboxes are playing</td></tr>
+            <tr><th><a href="datum/jukebox_controller.html#var/track_to_sound">track_to_sound</a></th><td>Associative list pointing to a sound from a jukebox playing track</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/jukebox_controller.html#proc/add_played_track">add_played_track</a></th><td>At close range we dont set a position of the sound.
+If we're close enough, check if we're jukebox view or the same area to not get echo.
+Apply an echo and slightly lower volume if we're not in the jukebox &quot;viscinity&quot;
+Pressure handling somewhat duplicate code, because sound handling is not designed to be centralized in any way currently.
+Update loudest volume.</td></tr>
+            <tr><th><a href="datum/jukebox_controller.html#proc/remove_played_track">remove_played_track</a></th><td>Create a sound for us from the track</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/loudest_jukebox_volume"><aside class="declaration">var </aside>loudest_jukebox_volume
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/jukebox_datums.dm#L74">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;jukebox_datums.dm 74"/></a></h3>
+        <p>The loudest volume of a jukebox a client is currently hearing. This is used to clamp the ambience by a little when jukeboxes are playing</p><h3 id="var/track_to_sound"><aside class="declaration">var </aside>track_to_sound
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/jukebox_datums.dm#L76">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;jukebox_datums.dm 76"/></a></h3>
+        <p>Associative list pointing to a sound from a jukebox playing track</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_played_track"><aside class="declaration">proc </aside>add_played_track<aside>(/<a href="datum.html">datum</a>/<a href="datum/jukebox_playing_track.html">jukebox_playing_track</a>/played_track, /list/jukebox_hearers) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/jukebox_datums.dm#L174">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;jukebox_datums.dm 174"/></a></aside>
+        </h3>
+        <p>At close range we dont set a position of the sound.
+If we're close enough, check if we're jukebox view or the same area to not get echo.
+Apply an echo and slightly lower volume if we're not in the jukebox &quot;viscinity&quot;
+Pressure handling somewhat duplicate code, because sound handling is not designed to be centralized in any way currently.
+Update loudest volume.</p><h3 id="proc/remove_played_track"><aside class="declaration">proc </aside>remove_played_track<aside>(/<a href="datum.html">datum</a>/<a href="datum/jukebox_playing_track.html">jukebox_playing_track</a>/played_track) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/datums/jukebox_datums.dm#L185">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;jukebox_datums.dm 185"/></a></aside>
+        </h3>
+        <p>Create a sound for us from the track</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

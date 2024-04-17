@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;attribute_holder - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/attribute_holder.html#var">Var Details</a> - <a href="datum/attribute_holder.html#proc">Proc Details</a></header>
+<main>
+<h1>attribute_holder <aside>/<a href="datum.html">datum</a>/<a href="datum/attribute_holder.html">attribute_holder</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 2"/></a></h1>
+
+<p>Holder datum for attributes, skill and modifiers for them. Those get attached to mob/living</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/attribute_holder.html#var/attributes_final">attributes_final</a></th><td>Assoc list of attribute types to final values (with buffs)</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#var/attributes_raw">attributes_raw</a></th><td>Assoc list of attribute types to raw values</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#var/buffs">buffs</a></th><td>Assoc list, from buff ID to instances of /datum/attribute_buff</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#var/owner">owner</a></th><td>Mob owner of this attribute holder.</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#var/skills_final">skills_final</a></th><td>Assoc list of skill types to final values (with buffs)</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#var/skills_raw">skills_raw</a></th><td>Assoc list of skill types to raw values</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/add_attribute_sheet">add_attribute_sheet</a></th><td>Adds values from an attribute sheet to this holder</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/add_attributes">add_attributes</a></th><td>Add or subtract attributes to the holder from a list</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/add_buff">add_buff</a></th><td>Instantiates a buff from a type and adds id to the holder.</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/add_buff_instance">add_buff_instance</a></th><td>Adds an already instantiated buff to the holder. Useful if you need to customise a buff before adding it.</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/add_skills">add_skills</a></th><td>Adds or subtract skills to the holder from a list</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/attach_buff">attach_buff</a></th><td>Internal proc to actually add a buff</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/get_buff_from">get_buff_from</a></th><td>Returns a buff from a given ID, possibly useful to modify existing buffs, just remember to call update_attributes() afterwards.</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/has_buff_from">has_buff_from</a></th><td>Whether the holder has a buff from a given ID</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/remove_attribute_sheet">remove_attribute_sheet</a></th><td>Removes values from an attribute sheet from this holder</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/remove_buff">remove_buff</a></th><td>Removes a buff of a given ID</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/show_admin_edit_panel">show_admin_edit_panel</a></th><td>Below is admin panel code for editing the attributes in a holder</td></tr>
+            <tr><th><a href="datum/attribute_holder.html#proc/update_attributes">update_attributes</a></th><td>Updates final values of the attributes and skills.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/attributes_final"><aside class="declaration">var </aside>attributes_final
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 10"/></a></h3>
+        <p>Assoc list of attribute types to final values (with buffs)</p><h3 id="var/attributes_raw"><aside class="declaration">var </aside>attributes_raw
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 6"/></a></h3>
+        <p>Assoc list of attribute types to raw values</p><h3 id="var/buffs"><aside class="declaration">var </aside>buffs
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 14"/></a></h3>
+        <p>Assoc list, from buff ID to instances of /datum/attribute_buff</p><h3 id="var/owner"><aside class="declaration">var </aside>owner
+            <aside>&ndash; /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a></aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L4">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 4"/></a></h3>
+        <p>Mob owner of this attribute holder.</p><h3 id="var/skills_final"><aside class="declaration">var </aside>skills_final
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 12"/></a></h3>
+        <p>Assoc list of skill types to final values (with buffs)</p><h3 id="var/skills_raw"><aside class="declaration">var </aside>skills_raw
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L8">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 8"/></a></h3>
+        <p>Assoc list of skill types to raw values</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_attribute_sheet"><aside class="declaration">proc </aside>add_attribute_sheet<aside>(sheet_type) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L110">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 110"/></a></aside>
+        </h3>
+        <p>Adds values from an attribute sheet to this holder</p><h3 id="proc/add_attributes"><aside class="declaration">proc </aside>add_attributes<aside>(/list/attributes_to_add, subtract) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L92">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 92"/></a></aside>
+        </h3>
+        <p>Add or subtract attributes to the holder from a list</p><h3 id="proc/add_buff"><aside class="declaration">proc </aside>add_buff<aside>(buff_id, buff_type) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L56">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 56"/></a></aside>
+        </h3>
+        <p>Instantiates a buff from a type and adds id to the holder.</p><h3 id="proc/add_buff_instance"><aside class="declaration">proc </aside>add_buff_instance<aside>(buff_id, /<a href="datum.html">datum</a>/<a href="datum/attribute_buff.html">attribute_buff</a>/buff_instance) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L60">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 60"/></a></aside>
+        </h3>
+        <p>Adds an already instantiated buff to the holder. Useful if you need to customise a buff before adding it.</p><h3 id="proc/add_skills"><aside class="declaration">proc </aside>add_skills<aside>(/list/skills_to_add, subtract) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L101">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 101"/></a></aside>
+        </h3>
+        <p>Adds or subtract skills to the holder from a list</p><h3 id="proc/attach_buff"><aside class="declaration">proc </aside>attach_buff<aside>(buff_id, /<a href="datum.html">datum</a>/<a href="datum/attribute_buff.html">attribute_buff</a>/buff_instance) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L64">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 64"/></a></aside>
+        </h3>
+        <p>Internal proc to actually add a buff</p><h3 id="proc/get_buff_from"><aside class="declaration">proc </aside>get_buff_from<aside>(buff_id) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L88">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 88"/></a></aside>
+        </h3>
+        <p>Returns a buff from a given ID, possibly useful to modify existing buffs, just remember to call update_attributes() afterwards.</p><h3 id="proc/has_buff_from"><aside class="declaration">proc </aside>has_buff_from<aside>(buff_id) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L82">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 82"/></a></aside>
+        </h3>
+        <p>Whether the holder has a buff from a given ID</p><h3 id="proc/remove_attribute_sheet"><aside class="declaration">proc </aside>remove_attribute_sheet<aside>(sheet_type) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L118">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 118"/></a></aside>
+        </h3>
+        <p>Removes values from an attribute sheet from this holder</p><h3 id="proc/remove_buff"><aside class="declaration">proc </aside>remove_buff<aside>(buff_id) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L74">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 74"/></a></aside>
+        </h3>
+        <p>Removes a buff of a given ID</p><h3 id="proc/show_admin_edit_panel"><aside class="declaration">proc </aside>show_admin_edit_panel<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L126">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 126"/></a></aside>
+        </h3>
+        <p>Below is admin panel code for editing the attributes in a holder</p><h3 id="proc/update_attributes"><aside class="declaration">proc </aside>update_attributes<aside>() 
+        
+    
+            <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/blob/432cdbd7719427b3694439bad1f9c3244d242fc0/code/modules/mob/living/attributes/attribute_holder.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;attributes&#x2F;attribute_holder.dm 30"/></a></aside>
+        </h3>
+        <p>Updates final values of the attributes and skills.</p></main>
+<footer>
+    phoenix.dme
+    <a href="https://github.com/CASEYGUNGEON/phoenix-ss13/tree/432cdbd7719427b3694439bad1f9c3244d242fc0">432cdbd</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
