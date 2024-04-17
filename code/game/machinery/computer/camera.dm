@@ -337,15 +337,15 @@
 
 /obj/machinery/computer/security/telescreen/entertainment
 	name = "entertainment monitor"
-	desc = "Damn, they better have the /tg/ channel on these things."
+	desc = "A monitor that connects to the Thunderdome Broadcasting Network. Damn, they better have the /tg/ channel on these things."
 	icon = 'icons/obj/status_display.dmi'
-	icon_state = "entertainment_blank"
+	icon_state = "entertainment"
 	network = list("thunder")
 	density = FALSE
 	circuit = null
 	interaction_flags_atom = NONE  // interact() is called by BigClick()
-	var/icon_state_off = "entertainment_blank"
-	var/icon_state_on = "entertainment"
+	var/icon_off = "entertainment_blank"
+	var/icon_on = "entertainment"
 
 /obj/machinery/computer/security/telescreen/entertainment/directional/north
 	dir = SOUTH
@@ -374,40 +374,39 @@
 	INVOKE_ASYNC(src, /atom.proc/interact, usr)
 
 /obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
-	if(on && icon_state == icon_state_off)
+	if(on && icon_state == icon_off)
 		say(pick(
 			"Feats of bravery live now at the thunderdome!",
 			"Two enter, one leaves! Tune in now!",
 			"Violence like you've never seen it before!",
 			"Spears! Camera! Action! LIVE NOW!"))
-		icon_state = icon_state_on
+		icon_state = icon_on
 	else
-		icon_state = icon_state_off
+		icon_state = icon_off
 
+// Live television! Now in technicolor!
 /obj/machinery/computer/security/telescreen/extranet
 	name = "extranet monitor"
-	desc = "Phoenix Network? Thought I left this on Horizon..."
+	desc = "A telescreen connected to both the company's exonet and the wider inter-corporate extranet. Phoenix channel? Thought I left this on Horizon..."
 	icon = 'icons/obj/status_display.dmi'
-	icon_state = "extranet_blank"
-	network = list("extranetchannel01")
+	icon_state = "extranet"
+	network = list("extranetchannel01", "thunder")
 	density = FALSE
 	circuit = null
 	interaction_flags_atom = NONE  // interact() is called by BigClick()
-	var/icon_state_off = "extranet_blank"
-	var/icon_state_on = "extranet"
-
+	var/icon_broken = "extranet-broken"
+	var/icon_off = "extranet-off"
+	var/icon_on = "extranet-astro"
+	var/icon_transition = "extranet-transition"
 /obj/machinery/computer/security/telescreen/extranet/directional/north
 	dir = SOUTH
 	pixel_y = 32
-
 /obj/machinery/computer/security/telescreen/extranet/directional/south
 	dir = NORTH
 	pixel_y = -32
-
 /obj/machinery/computer/security/telescreen/extranet/directional/east
 	dir = WEST
 	pixel_x = 32
-
 /obj/machinery/computer/security/telescreen/extranet/directional/west
 	dir = EAST
 	pixel_x = -32
@@ -422,16 +421,37 @@
 
 	INVOKE_ASYNC(src, /atom.proc/interact, usr)
 
-/obj/machinery/computer/security/telescreen/extranet/proc/notify(on)
-	if(on && icon_state == icon_state_off)
+// we want our monitor to turn off when shows end
+/obj/machinery/computer/security/telescreen/extranet/update_icon_state(on)
+	if(!on)
+		icon_state = "[initial(icon_state)]-blank"
+		add_overlay("[icon_off]")
+		return ..()
+	if(!BROKEN)
+		cut_overlay("[icon_broken]")
+		return ..()
+	icon_state = "[initial(icon_state)][powered() ? null : "-off"]"
+	add_overlay("[powered() ? null : icon_off]")
+	cut_overlay("[!powered() ? icon_off : null]")
+	return ..()
+
+// we want our monitor to be able to change channels
+/obj/machinery/computer/security/telescreen/extranet/proc/notify()
+	if(!(machine_stat & BROKEN) && powered())
+	// still need to copy vend slogan delay code over into here
+	// adapt it to read multiline from a .txt so we can write scripts for it to read
+	// can we get it to pair certain scripts with specific sprite overlays?
 		say(pick(
 			"Coming at you live with breaking news!",
 			"Developing story! Tune in!",
 			"You won't want to miss this!",
 			"LIVE NOW!",
+			"New episode!",
 			"Don't turn away, or you'll miss it!"))
-		icon_state = icon_state_on
+		icon_state = icon_on
+		flick_overlay(icon_transition,src)
+		playsound(src, 'sound/machines/high_tech_confirm.ogg', 20, TRUE, extrarange = -3)
 	else
-		icon_state = icon_state_off
+		icon_state = icon_off
 
 #undef DEFAULT_MAP_SIZE

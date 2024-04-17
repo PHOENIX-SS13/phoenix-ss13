@@ -7,10 +7,10 @@
 #define FONT_STYLE "Small Fonts"
 #define SCROLL_SPEED 2
 
-#define SD_BLANK 0  // 0 = Blank
-#define SD_EMERGENCY 1  // 1 = Emergency Shuttle timer
-#define SD_MESSAGE 2  // 2 = Arbitrary message(s)
-#define SD_PICTURE 3  // 3 = alert picture
+#define SD_BLANK 0     // 0 = Blank
+#define SD_EMERGENCY 1 // 1 = Emergency Shuttle timer
+#define SD_MESSAGE 2   // 2 = Arbitrary message(s)
+#define SD_PICTURE 3   // 3 = alert picture
 
 /// Status display which can show images and scrolling text.
 /obj/machinery/status_display
@@ -18,10 +18,16 @@
 	desc = null
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "frame"
+	var/icon_off = "frame-off"
+	var/icon_broken = "frame-broken"
+	var/light_mask = "frame-light-mask"
+	max_integrity = 150
 	density = FALSE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	layer = ABOVE_WINDOW_LAYER
+	light_power = 0.5
+	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 
 	maptext_height = 26
 	maptext_width = 32
@@ -31,6 +37,34 @@
 	var/message2 = "" // message line 2
 	var/index1 // display index for scrolling messages or 0 if non-scrolling
 	var/index2
+
+/// Lightmask and Overlays
+
+/obj/machinery/status_display/update_appearance(updates=ALL)
+	. = ..()
+	if(machine_stat & BROKEN)
+		set_light(0)
+		return
+	set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
+
+/obj/machinery/status_display/update_icon_state()
+	if(machine_stat & BROKEN)
+		add_overlay("[icon_off]")
+		add_overlay("[icon_broken]")
+		return ..()
+	if(!BROKEN)
+		cut_overlay("[icon_broken]")
+		return ..()
+	add_overlay("[powered() ? null : icon_off]")
+	cut_overlay("[!powered() ? icon_off : null]")
+	return ..()
+
+/obj/machinery/status_display/update_overlays()
+	. = ..()
+	if(!light_mask)
+		return
+	if(!(machine_stat & BROKEN) && powered())
+		. += emissive_appearance(icon, light_mask)
 
 /// Immediately blank the display.
 /obj/machinery/status_display/proc/remove_display()
@@ -326,7 +360,7 @@
 
 	/// A mapping between AI_EMOTION_* string constants, which also double as user readable descriptions, and the name of the iconfile.
 	var/static/list/emotion_map = list(
-		AI_EMOTION_BLANK = "ai_off",
+		AI_EMOTION_BLANK = "frame-off",
 		AI_EMOTION_VERY_HAPPY = "ai_veryhappy",
 		AI_EMOTION_HAPPY = "ai_happy",
 		AI_EMOTION_NEUTRAL = "ai_neutral",
@@ -373,7 +407,7 @@
 		return
 	var/list/choices = list()
 	for(var/emotion_const in emotion_map)
-		var/icon_state = emotion_map[emotion_const]
+		add_overlay("[emotion_const]")
 		choices[emotion_const] = image(icon = 'icons/obj/status_display.dmi', icon_state = icon_state)
 
 	var/emotion_result = show_radial_menu(user, src, choices, tooltips = TRUE)
@@ -430,7 +464,9 @@
 		"Unsure" = "ai_unsure",
 		"Confused" = "ai_confused",
 		"Surprised" = "ai_surprised",
-		"BSOD" = "ai_bsod"
+		"BSOD" = "ai_bsod",
+		"Offline" = "frame-off",
+		"Pancake" = "pancake"
 	)
 
 	command = add_option_port("Command", command_options)

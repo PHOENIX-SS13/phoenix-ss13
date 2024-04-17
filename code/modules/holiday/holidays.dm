@@ -506,10 +506,10 @@
 
 /datum/holiday/xmas/proc/roundstart_celebrate()
 	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)
-		Monitor.icon_state_on = "entertainment_xmas"
+		Monitor.icon_on = "entertainment-xmas"
 
 	for(var/obj/machinery/computer/security/telescreen/extranet/Monitor in GLOB.machines)
-		Monitor.icon_state_on = "extranet_xmas"
+		Monitor.icon_on = "extranet-xmas"
 
 	for(var/mob/living/simple_animal/pet/dog/corgi/ian/Ian in GLOB.mob_living_list)
 		Ian.place_on_head(new /obj/item/clothing/head/helmet/space/santahat(Ian))
