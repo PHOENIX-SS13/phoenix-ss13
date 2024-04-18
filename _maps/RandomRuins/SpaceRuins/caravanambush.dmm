@@ -488,11 +488,6 @@
 /area/shuttle/caravan/freighter3)
 "ha" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/yellow,
-/obj/effect/spawner/lootdrop/minor/pen/safe{
-	pixel_x = 6;
-	pixel_y = 6
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
@@ -501,6 +496,9 @@
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/machinery/shuttle_comms/active{
+	pixel_y = 4
 	},
 /turf/open/floor/iron/dark{
 	initial_gas_mix = "TEMP=2.7"
@@ -873,6 +871,14 @@
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/item/folder/yellow{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/effect/spawner/lootdrop/minor/pen/safe{
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/iron/dark{
 	initial_gas_mix = "TEMP=2.7"

@@ -4,18 +4,18 @@
 	dir = 6
 	},
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "cc" = (
 /obj/effect/spawner/lootdrop/toolbox,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "ci" = (
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "cI" = (
 /obj/item/rack_parts/shelf,
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "dk" = (
 /obj/structure/closet/crate/engineering,
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
@@ -23,7 +23,7 @@
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "dx" = (
 /obj/structure/window/plasma/reinforced{
 	dir = 4
@@ -31,66 +31,62 @@
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable,
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "fB" = (
 /obj/structure/frame/machine,
 /turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/area/ruin/unpowered)
 "iq" = (
 /obj/machinery/door/poddoor/shutters/radiation,
-/turf/open/space/basic,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "iw" = (
 /obj/machinery/light/small/broken/directional/east,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "km" = (
 /obj/machinery/light/small/broken/directional/west,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "ks" = (
 /obj/item/stack/sheet/mineral/titanium,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "kX" = (
 /obj/machinery/computer/shuttle{
 	dir = 1
 	},
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "lp" = (
 /obj/effect/spawner/lootdrop/powercell,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "nf" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
 	},
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "nz" = (
 /obj/structure/cable,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
-"px" = (
-/obj/machinery/light/small/broken/directional/west,
-/turf/open/floor/mineral/titanium,
-/area/space)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "pC" = (
 /obj/structure/rack/shelf,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "pO" = (
 /obj/structure/rack/shelf,
 /obj/machinery/light/small/broken/directional/east,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "qO" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 4
 	},
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "sg" = (
 /obj/structure/closet/crate/engineering,
 /obj/item/fireaxe/metal_h2_axe,
@@ -98,171 +94,175 @@
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "tp" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
-/area/engineering/main)
+/area/ruin/unpowered)
 "vp" = (
 /obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering,
 /turf/closed/wall/mineral/titanium,
-/area/space)
+/area/ruin/unpowered)
 "vv" = (
 /obj/effect/mob_spawn/human/engineer,
 /turf/open/space/basic,
-/area/space)
-"wI" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "wL" = (
 /obj/item/crowbar/power,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "wS" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 9
 	},
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "wX" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 10
 	},
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "xH" = (
 /obj/item/organ/cyberimp/arm/toolset,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "yD" = (
 /obj/item/rack_parts/shelf,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "Ap" = (
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "AL" = (
 /obj/item/screwdriver/power,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "BW" = (
 /obj/item/stack/cable_coil/five,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "CJ" = (
 /obj/effect/spawner/lootdrop/tool,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "DX" = (
 /obj/structure/rack/shelf,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "Gi" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 8
 	},
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
+"GC" = (
+/obj/structure/lattice,
+/obj/structure/frame/machine,
+/turf/open/space/basic,
+/area/ruin/unpowered)
 "GZ" = (
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "Hc" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "HA" = (
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "Ig" = (
 /obj/structure/frame/machine,
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "IB" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "IJ" = (
 /obj/structure/closet/crate/engineering,
 /obj/effect/spawner/lootdrop/material,
 /obj/effect/spawner/lootdrop/material,
 /obj/effect/spawner/lootdrop/material,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "Kg" = (
 /obj/machinery/door/airlock/maintenance/external{
 	dir = 4
 	},
-/turf/open/space/basic,
-/area/space)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "Mt" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "PP" = (
 /obj/structure/table/reinforced,
 /obj/machinery/shuttle_comms/active{
 	pixel_y = 5
 	},
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "Rv" = (
 /obj/structure/chair/comfy/shuttle,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "RJ" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/structure/low_wall/titanium,
-/turf/open/floor/mineral/titanium,
-/area/space)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "Sp" = (
 /obj/machinery/light/broken/directional/west,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "St" = (
 /obj/machinery/light/broken/directional/east,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/unpowered)
 "Tn" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering,
 /turf/closed/wall/mineral/titanium,
-/area/space)
+/area/ruin/unpowered)
+"TU" = (
+/obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/engineering,
+/obj/machinery/atmospherics/components/unary/engine{
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered)
 "Uq" = (
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "Uz" = (
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "UQ" = (
 /obj/structure/cable,
 /turf/open/floor/engine/airless,
-/area/engineering/supermatter)
+/area/ruin/unpowered)
 "Ve" = (
 /obj/effect/spawner/lootdrop/material_scarce,
 /turf/open/space/basic,
-/area/space)
+/area/template_noop)
 "Ws" = (
 /obj/structure/closet/crate/engineering,
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /obj/effect/spawner/lootdrop/space/fancytool/engineonly,
 /turf/open/space/basic,
-/area/space)
-"Zd" = (
-/obj/machinery/door/poddoor/shutters/radiation,
-/turf/open/floor/mineral/titanium,
-/area/engineering/main)
+/area/template_noop)
 
 (1,1,1) = {"
 Ap
@@ -433,7 +433,7 @@ cc
 Ap
 Ap
 Ap
-vp
+TU
 cI
 HA
 UQ
@@ -481,19 +481,19 @@ Ap
 ks
 Ap
 Ap
-wI
+tp
 HA
 HA
 dx
 dx
 UQ
 UQ
-Zd
+iq
 ci
 ci
 ci
 ci
-px
+km
 ci
 ci
 km
@@ -529,7 +529,7 @@ Ap
 Ap
 Ap
 Ap
-wI
+tp
 HA
 HA
 HA
@@ -577,7 +577,7 @@ Ap
 Ap
 Ap
 Ap
-wI
+tp
 Ig
 HA
 HA
@@ -625,7 +625,7 @@ Ap
 Ap
 ks
 Ap
-wI
+tp
 HA
 HA
 Uz
@@ -673,7 +673,7 @@ Ap
 Ap
 cc
 Ap
-wI
+GC
 HA
 HA
 HA

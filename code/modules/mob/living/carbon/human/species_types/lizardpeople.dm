@@ -2,7 +2,7 @@
 	// Reptilian humanoids with scaled skin and tails.
 	name = "Lizardperson"
 	id = "lizard"
-	flavor_text = "A generalized term used for most reptilian species. Most reptiles are unable to digest dairy, or starchy products, such as bread, potatoes, and tortillas. Cold-blooded, even the lightest jacket or change in temperature can cause them harm."
+	flavor_text = "A broad category which refers to multiple bipedal, sapient species analogous to Earth reptiles. Most are unable to digest dairy or nut products, though they are generally able to break down a mostly-overlapping group of several proteins toxic to the Earth biosphere. Cold-blooded, harsh temperature changes or freezing weather can cause them harm."
 	say_mod = "hisses"
 	default_color = "0F0"
 	species_traits = list(
@@ -39,8 +39,8 @@
 	meat = /obj/item/food/meat/slab/human/mutant/lizard
 	skinned_type = /obj/item/stack/sheet/animalhide/lizard
 	exotic_bloodtype = "L"
-	disliked_food = GRAIN | DAIRY | CLOTH
-	liked_food = GROSS | MEAT
+	disliked_food = NUTS | DAIRY | CLOTH
+	liked_food = GROSS | MEAT | RAW | TOXIC
 	inert_mutation = FIREBREATH
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	scream_sounds = list(

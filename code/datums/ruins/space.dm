@@ -299,3 +299,9 @@
 	suffix = "engiwreck.dmm"
 	name = "Engineering Wreck"
 	description = "The remnants of a fatal mistake."
+
+/datum/map_template/ruin/space/miningblastfail
+	id = "miningblastfail"
+	suffix = "miningblastfail.dmm"
+	name = "Mining Blast Fail"
+	description = "A small mining ship, floating unpowered near a small space rock."
