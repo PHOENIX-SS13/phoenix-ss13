@@ -13,6 +13,8 @@ jobs:
   label_new_pulls:
     name: "Add and Sync PR Labels"
     runs-on: ubuntu-20.04
+    permissions:
+      pull-requests: write
     steps:
       - uses: fuxingloh/multi-labeler@1d6d95ddcc7ef8b928d514329663ba4e0ff0eaf5
         with:
