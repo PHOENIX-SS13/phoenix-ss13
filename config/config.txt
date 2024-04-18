@@ -253,14 +253,14 @@ WEBSITEURL https://youtu.be/dQw4w9WgXcQ
 
 ## Wiki address
 # WIKIURL https://example.com/wiki
-WIKIURL https://github.com/CASEYGUNGEON/phoenix-ss13/wiki
+WIKIURL https://github.com/PHOENIX-SS13/phoenix-ss13/wiki
 
 ## Rules address
 # RULESURL https://example.com/rules
 
 ## GitHub address
 # SOURCEREPOURL https://github.com/octocat/Hello-World
-SOURCEREPOURL https://github.com/CASEYGUNGEON/phoenix-ss13
+SOURCEREPOURL https://github.com/PHOENIX-SS13/phoenix-ss13
 
 ## Discord bot command prefix, if the discord bot is used
 # DISCORDBOTCOMMANDPREFIX ?
