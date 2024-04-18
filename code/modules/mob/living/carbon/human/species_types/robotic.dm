@@ -1,4 +1,8 @@
 /datum/species/robotic
+	name = "Synthetic"
+	id = "synthetic"
+	flavor_text = "A robotic lifeform. Most sport a screen, instead of a humanoid face. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
+
 	say_mod = "beeps"
 	default_color = "0F0"
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
@@ -16,8 +20,36 @@
 		TRAIT_NO_HUSK,
 		TRAIT_OXYIMMUNE,
 	)
+		species_traits = list(
+		ROBOTIC_DNA_ORGANS,
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAIR,
+		ROBOTIC_LIMBS,
+		NOTRANSSTING,
+		REVIVES_BY_HEALING,
+	)
 	mutant_bodyparts = list()
+	default_mutant_bodyparts = list(
+		"ipc_antenna" = ACC_RANDOM,
+		"ipc_screen" = ACC_NONE,
+		"ipc_chassis" = ACC_RANDOM,
+		"legs" = ACC_RANDOM,
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"taur" = ACC_NONE,
+		"horns" = ACC_NONE,
+		"ears" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	limbs_icon = 'icons/mob/species/ipc_parts.dmi'
+	hair_alpha = 210 // TODO: MAKE THIS CHANGEABLE
+	sexes = 0
+	var/datum/action/innate/monitor_change/screen
+	var/saved_screen = "Blank"
 	reagent_flags = PROCESS_SYNTHETIC
 	coldmod = 0.5
 	burnmod = 1.1
@@ -65,42 +97,14 @@
 	randname = "[randname]-[rand(100, 999)]"
 	return randname
 
-/datum/species/robotic/ipc
-	name = "I.P.C."
-	id = "ipc"
-	flavor_text = "A robotic lifeform. Most sport a screen, instead of a humanoid face. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
-	species_traits = list(
-		ROBOTIC_DNA_ORGANS,
-		MUTCOLORS_PARTSONLY,
-		EYECOLOR,
-		LIPS,
-		HAIR,
-		NOEYESPRITES,
-		ROBOTIC_LIMBS,
-		NOTRANSSTING,
-		REVIVES_BY_HEALING,
-	)
-	mutant_bodyparts = list()
-	default_mutant_bodyparts = list(
-		"ipc_antenna" = ACC_RANDOM,
-		"ipc_screen" = ACC_RANDOM,
-		"ipc_chassis" = ACC_RANDOM,
-	)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon = 'icons/mob/species/ipc_parts.dmi'
-	hair_alpha = 210
-	sexes = 0
-	var/datum/action/innate/monitor_change/screen
-	var/saved_screen = "Blank"
-
-/datum/species/robotic/ipc/spec_revival(mob/living/carbon/human/H)
+/datum/species/robotic/spec_revival(mob/living/carbon/human/H)
 	. = ..()
 	//TODO: fix this
 	/*H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "BSOD"
 	sleep(3 SECONDS)*/
 	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = saved_screen
 
-/datum/species/robotic/ipc/spec_death(gibbed, mob/living/carbon/human/H)
+/datum/species/robotic/spec_death(gibbed, mob/living/carbon/human/H)
 	. = ..()
 	saved_screen = H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME]
 	//TODO: fix this
@@ -108,7 +112,7 @@
 	sleep(3 SECONDS)*/
 	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "Blank"
 
-/datum/species/robotic/ipc/on_species_gain(mob/living/carbon/human/C)
+/datum/species/robotic/on_species_gain(mob/living/carbon/human/C)
 	. = ..()
 	if(!screen)
 		screen = new
@@ -123,7 +127,7 @@
 			species_traits += MUTCOLORS
 		C.update_body()
 
-/datum/species/robotic/ipc/on_species_loss(mob/living/carbon/human/C)
+/datum/species/robotic/on_species_loss(mob/living/carbon/human/C)
 	. = ..()
 	if(screen)
 		screen.Remove(C)
@@ -143,27 +147,11 @@
 	H.dna.species.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = new_ipc_screen
 	H.update_body()
 
+/// SYNTH LIZARD
+
 /datum/species/robotic/synthliz
 	name = "Synthetic Lizardperson"
 	id = "synthliz"
-	flavor_text = "A robotic lifeform. This model looks similar to reptiles. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
-	species_traits = list(
-		ROBOTIC_DNA_ORGANS,
-		MUTCOLORS,EYECOLOR,
-		LIPS,
-		HAIR,
-		ROBOTIC_LIMBS,
-		NOTRANSSTING,
-		REVIVES_BY_HEALING,
-	)
-	default_mutant_bodyparts = list(
-		"ipc_antenna" = ACC_RANDOM,
-		"tail" = ACC_RANDOM,
-		"snout" = ACC_RANDOM,
-		"legs" = "Digitigrade Legs",
-		"taur" = ACC_NONE,
-	)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
 
 /datum/species/robotic/synthliz/get_random_body_markings(list/passed_features)
@@ -174,30 +162,11 @@
 		markings = assemble_body_markings_from_set(BMS, passed_features, src)
 	return markings
 
+/// SYNTH ANTHRO
+
 /datum/species/robotic/synth_anthro
 	name = "Synthetic Anthromorph"
 	id = "synthanthro"
-	flavor_text = "A robotic lifeform. This model is designed to appear similar to anthromorphs. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
-	species_traits = list(
-		ROBOTIC_DNA_ORGANS,
-		MUTCOLORS,
-		EYECOLOR,
-		LIPS,
-		HAIR,
-		ROBOTIC_LIMBS,
-		NOTRANSSTING,
-		REVIVES_BY_HEALING,
-	)
-	default_mutant_bodyparts = list(
-		"tail" = ACC_RANDOM,
-		"snout" = ACC_RANDOM,
-		"horns" = ACC_NONE,
-		"ears" = ACC_RANDOM,
-		"legs" = ACC_RANDOM,
-		"taur" = ACC_NONE,
-		"wings" = ACC_NONE,
-		"neck" = ACC_NONE,
-	)
 	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
 	limbs_id = "mammal"
 

@@ -220,3 +220,14 @@
 /datum/sprite_accessory/ipc_chassis/zenghupharmaceuticals
 	name = "Zeng-Hu Pharmaceuticals"
 	icon_state = "zhpipc"
+
+/datum/sprite_accessory/ipc_chassis/syntheticlizard
+	name = "Synthetic Lizardperson"
+	icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
+	icon_state = "synthliz"
+
+/datum/sprite_accessory/ipc_chassis/syntheticlizard
+	name = "Synthetic Mammal"
+	icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	icon_state = "synthliz"
+
