@@ -44,6 +44,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table_frame,
 /obj/effect/turf_decal/sand,
+/obj/effect/spawner/lootdrop/powercell,
+/obj/effect/spawner/lootdrop/medicine,
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "hb" = (
@@ -246,10 +248,11 @@
 /area/ruin/unpowered/crashed_pod)
 "wC" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/medicine,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/powercell,
 /obj/effect/turf_decal/sand/plating,
+/obj/machinery/shuttle_comms/active{
+	pixel_y = 5
+	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/unpowered/crashed_pod)
 "wO" = (

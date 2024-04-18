@@ -7,3 +7,7 @@
 	config_entry_value = 1
 	integer = FALSE
 	min_val = 0.1
+
+/datum/config_entry/string/ffprobe_path //filepath (including the file and its extension) for ffprobe for reading jukebox song metadata
+	config_entry_value = ""
+	protection = CONFIG_ENTRY_LOCKED | CONFIG_ENTRY_HIDDEN

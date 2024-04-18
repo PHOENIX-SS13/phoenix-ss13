@@ -1,6 +1,6 @@
 /obj/effect/overlay/distress_effect
-	icon = 'icons/overmap/targeted.dmi'
-	icon_state = "locking"
+	icon = 'icons/overmap/overmap.dmi'
+	icon_state = "distress"
 	layer = FLY_LAYER
 	plane = GAME_PLANE
 	appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART

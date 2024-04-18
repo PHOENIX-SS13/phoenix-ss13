@@ -12,3 +12,18 @@
   alos (whataboutism-alos):
   - code_imp: Added capitalizeAll function.
   - code_imp: Added documentation for capitalize and toTitleCase functions.
+2024-01-20:
+  alos (whataboutism-alos):
+  - bugfix: Fixed areas on crashedship.dmm
+  - bugfix: Fixed APCs on crashedship.dmm
+  - bugfix: Fixed emitters firing without power on crashedship.dmm
+2024-01-21:
+  alos (whataboutism-alos):
+  - bugfix: Fixed APCs on crashedship
+  - config: Adds Phoenix SS13 AGPLv3 license to Changelog
+  - config: Adds Horizon Station 13 Development Team credits to Changelog
+  - config: Creates mini-section for date selector rather than lumping it with other
+      things
+2024-01-27:
+  alos (whataboutism-alos):
+  - bugfix: Fixes changelog.js
