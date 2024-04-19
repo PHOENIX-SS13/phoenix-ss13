@@ -97,28 +97,28 @@
 
 #define LOCATIONS_ANTHROMORPH
 
-#define LOCATIONS_AQUATIC
+#define LOCATIONS_AQUATIC	/datum/cultural_info/location/nralakk/qerrbalak
 
-#define LOCATIONS_ETHEREAL
+#define LOCATIONS_ETHEREAL	/datum/cultural_info/location/tau_ceti/tau_ceti_b, \
 
-#define LOCATIONS_HUMAN 	/datum/cultural_info/location/earth, \
-							/datum/cultural_info/location/mars, \
-							/datum/cultural_info/location/luna, \
-							/datum/cultural_info/location/mars, \
-							/datum/cultural_info/location/venus, \
-							/datum/cultural_info/location/ceres, \
-							/datum/cultural_info/location/pluto, \
-							/datum/cultural_info/location/cetiepsilon, \
-							/datum/cultural_info/location/eos, \
-							/datum/cultural_info/location/terra, \
-							/datum/cultural_info/location/tersten, \
-							/datum/cultural_info/location/lorriman, \
-							/datum/cultural_info/location/cinu, \
-							/datum/cultural_info/location/yuklid, \
-							/datum/cultural_info/location/lordania, \
-							/datum/cultural_info/location/kingston, \
-							/datum/cultural_info/location/gaia, \
-							/datum/cultural_info/location/magnitka
+#define LOCATIONS_HUMAN 	/datum/cultural_info/location/tau_ceti/tau_ceti_b/tau_ceti_b-v, \
+							/datum/cultural_info/location/sol/venus, \
+							/datum/cultural_info/location/sol/earth, \
+							/datum/cultural_info/location/sol/earth/luna, \
+							/datum/cultural_info/location/sol/mars, \
+							/datum/cultural_info/location/sol/ceres, \
+							/datum/cultural_info/location/sol/saturn/titan, \
+							/datum/cultural_info/location/sol/pluto, \
+							/datum/cultural_info/location/helios/eos, \
+							/datum/cultural_info/location/gavil/tersten, \
+							/datum/cultural_info/location/lucinaer/cinu, \
+							/datum/cultural_info/location/yuklid/yuklid_f, \
+							/datum/cultural_info/location/gessshire/lorriman, \
+							/datum/cultural_info/location/lordania/lordania_b, \
+							/datum/cultural_info/location/lordania/kingston, \
+							/datum/cultural_info/location/galilei/gaia, \
+							/datum/cultural_info/location/ursa/magnitka, \
+							/datum/cultural_info/location/gilgamesh/terra
 
 #define LOCATIONS_INSECT
 
@@ -132,7 +132,7 @@
 
 #define LOCATIONS_TAJARAN
 
-#define LOCATIONS_TESHARI
+#define LOCATIONS_TESHARI	/datum/cultural_info/location/nralakk/qerrbalak/sirisai
 
 #define LOCATIONS_UNDEAD
 

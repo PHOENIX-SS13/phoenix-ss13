@@ -3,7 +3,8 @@
 	id = "teshari"
 	flavor_text = "A race of diminuitive feathered raptor-analogues who developed alongside the Skrell, the Teshari are newcomers to the galactic stage. \
 	Uniquely challenged by their ammonia-solvent biology, Teshari rely on clothes with active cooling systems in order to preserve their comfort in all but \
-	the most frigid environments. They have a love for fruits, grains, vegetables, and meat; their bodies cannot process simple sugars."
+	the most frigid environments. This can sometimes be further complicated by their general aversion to cybernetics. They have a love for fruits, grains, \
+	vegetables, and meat; their bodies cannot easily process simple sugars."
 	default_color = "6060FF"
 	eyes_icon = 'icons/mob/species/teshari_eyes.dmi'
 	species_traits = list(
