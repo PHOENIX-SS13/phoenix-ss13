@@ -15,7 +15,7 @@
 
 // Ceti Epsilon b-ii
 
-/datum/cultural_info/location/tau_ceti/tau_ceti_b/tau_ceti_b-v
+/datum/cultural_info/location/tau_ceti/tau_ceti_b/tau_ceti_bv
 	name = "Tau Ceti b-vii"
 	description = "Tau Ceti b-v, or much more commonly Ceti 5, is the only terrestrial body in the Tau Ceti system. Fifth moon of the \
 	only gas giant in the system, it is home to its largest population centre. The moon itself is effectively covered in one large city with a \
