@@ -103,7 +103,7 @@
 	new /obj/effect/decal/cleanable/vomit(vomit_turf)
 
 	if(!add_dropdel) //gives a head start for the person to get away from the cursed item before it begins hunting again!
-		addtimer(CALLBACK(src, PROC_REF(seek_new_target), 10 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(seek_new_target)), 10 SECONDS)
 
 ///proc called after a timer to awaken the AI in the cursed item if it doesn't have a target already.
 /datum/component/curse_of_hunger/proc/seek_new_target()

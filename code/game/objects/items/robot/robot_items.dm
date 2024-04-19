@@ -367,7 +367,7 @@
 
 /obj/item/borg/lollipop/proc/check_amount() //Doesn't even use processing ticks.
 	if(!charging && candy < candymax)
-		addtimer(CALLBACK(src, PROC_REF(charge_lollipops), charge_delay))
+		addtimer(CALLBACK(src, PROC_REF(charge_lollipops)), charge_delay)
 		charging = TRUE
 
 /obj/item/borg/lollipop/proc/charge_lollipops()

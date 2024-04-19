@@ -1,13 +1,13 @@
 /* Table Frames
- * Contains:
- * Frames
- * Wooden Frames
- */
+* Contains:
+* Frames
+* Wooden Frames
+*/
 
 
 /*
- * Normal Frames
- */
+* Normal Frames
+*/
 
 /obj/structure/table_frame
 	name = "table frame"
@@ -84,8 +84,8 @@
 	qdel(src)
 
 /*
- * Wooden Frames
- */
+* Wooden Frames
+*/
 
 /obj/structure/table_frame/wood
 	name = "wooden table frame"

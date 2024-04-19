@@ -241,7 +241,7 @@
 	stat = UNCONSCIOUS
 	icon_state = "[base_icon_state]_inactive"
 
-	addtimer(CALLBACK(src, PROC_REF(GoActive), rand(MIN_ACTIVE_TIME, MAX_ACTIVE_TIME))
+	addtimer(CALLBACK(src, PROC_REF(GoActive), rand(MIN_ACTIVE_TIME, MAX_ACTIVE_TIME)))
 
 /obj/item/clothing/mask/facehugger/proc/Die()
 	if(stat == DEAD)

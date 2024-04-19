@@ -396,13 +396,13 @@
 				if(otherlock.operating)
 					otherlock.delayed_close_requested = TRUE
 				else
-					addtimer(CALLBACK(otherlock, PROC_REF(close), 2))
+					addtimer(CALLBACK(otherlock, PROC_REF(close)), 2)
 	if(cyclelinkedairlock)
 		if(!shuttledocked && !emergency && !cyclelinkedairlock.shuttledocked && !cyclelinkedairlock.emergency && allowed(user))
 			if(cyclelinkedairlock.operating)
 				cyclelinkedairlock.delayed_close_requested = TRUE
 			else
-				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close), 2))
+				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2)
 	..()
 
 /obj/machinery/door/airlock/proc/isElectrified()
@@ -1097,7 +1097,7 @@
 			if(axe && !axe.wielded)
 				to_chat(user, SPAN_WARNING("You need to be wielding \the [axe] to do that!"))
 				return
-		INVOKE_ASYNC(src, (density ? .proc/open : PROC_REF(close), 2))
+		INVOKE_ASYNC(src, (density ? PROC_REF(open) : PROC_REF(close), 2))
 
 
 /obj/machinery/door/airlock/open(forced=0)
@@ -1139,7 +1139,7 @@
 	operating = FALSE
 	if(delayed_close_requested)
 		delayed_close_requested = FALSE
-		addtimer(CALLBACK(src, PROC_REF(close), 1))
+		addtimer(CALLBACK(src, PROC_REF(close)), 1)
 	return TRUE
 
 

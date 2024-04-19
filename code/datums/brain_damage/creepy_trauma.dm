@@ -112,7 +112,7 @@
 	if(examining_mob != owner || !triggering_examiner || prob(50))
 		return
 
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), obsession, SPAN_WARNING("You catch [examining_mob] staring at you..."), 3))
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat)), obsession, SPAN_WARNING("You catch [examining_mob] staring at you..."), 3)
 	return COMSIG_BLOCK_EYECONTACT
 
 /datum/brain_trauma/special/obsessed/proc/find_obsession()

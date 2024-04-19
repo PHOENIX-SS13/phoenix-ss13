@@ -201,7 +201,7 @@
 	user.visible_message(SPAN_SUICIDE("[user] consumes [src]! It looks like [user.p_theyre()] trying to commit suicicide!"))
 	playsound(user, 'sound/items/eatfood.ogg', 50, TRUE)
 	user.adjust_nutrition(50) // mmmm delicious
-	addtimer(CALLBACK(src, PROC_REF(manual_suicide), user), (3SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(manual_suicide), user), 3 SECONDS)
 	return MANUAL_SUICIDE
 
 /**
@@ -435,7 +435,7 @@
 		update_appearance()
 		playsound(src, 'sound/effects/pope_entry.ogg', 100)
 		Rumble()
-		addtimer(CALLBACK(src, PROC_REF(stopRumble), 600))
+		addtimer(CALLBACK(src, PROC_REF(stopRumble)), 600)
 	else
 		to_chat(user, SPAN_WARNING("[src] is already active!"))
 
@@ -559,7 +559,7 @@
 
 /obj/effect/decal/cleanable/ash/snappop_phoenix/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(respawn), respawn_time))
+	addtimer(CALLBACK(src, PROC_REF(respawn)), respawn_time)
 
 /obj/effect/decal/cleanable/ash/snappop_phoenix/proc/respawn()
 	new /obj/item/toy/snappop/phoenix(get_turf(src))

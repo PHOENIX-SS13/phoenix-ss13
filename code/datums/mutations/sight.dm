@@ -77,7 +77,7 @@
 	user.update_sight()
 	to_chat(user, text("You focus your eyes intensely, as your vision becomes filled with heat signatures."))
 
-	addtimer(CALLBACK(src, PROC_REF(thermal_vision_deactivate), thermal_duration SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(thermal_vision_deactivate)), thermal_duration SECONDS)
 
 /obj/effect/proc_holder/spell/self/thermal_vision_activate/proc/thermal_vision_deactivate(mob/user = usr)
 

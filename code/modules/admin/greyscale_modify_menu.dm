@@ -198,7 +198,7 @@ This is highly likely to cause a lag spike for a few seconds."},
 
 /datum/greyscale_modify_menu/proc/queue_refresh()
 	refreshing = TRUE
-	addtimer(CALLBACK(src, PROC_REF(refresh_preview), 1 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE))
+	addtimer(CALLBACK(src, PROC_REF(refresh_preview)), 1 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /datum/greyscale_modify_menu/proc/refresh_preview()
 	for(var/i in length(split_colors) + 1 to config.expected_colors)

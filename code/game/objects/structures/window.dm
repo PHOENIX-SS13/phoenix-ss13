@@ -409,7 +409,7 @@
 				if(tool.use_tool(src, user, 150, volume = 100))
 					to_chat(user, SPAN_NOTICE("The security screws are glowing white hot and look ready to be removed."))
 					state = RWINDOW_BOLTS_HEATED
-					addtimer(CALLBACK(src, PROC_REF(cool_bolts), 300))
+					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 			else if (tool.tool_behaviour)
 				to_chat(user, SPAN_WARNING("The security screws need to be heated first!"))
 
@@ -550,7 +550,7 @@
 				if(I.use_tool(src, user, 180, volume = 100))
 					to_chat(user, SPAN_NOTICE("The security screws are glowing white hot and look ready to be removed."))
 					state = RWINDOW_BOLTS_HEATED
-					addtimer(CALLBACK(src, PROC_REF(cool_bolts), 300))
+					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)

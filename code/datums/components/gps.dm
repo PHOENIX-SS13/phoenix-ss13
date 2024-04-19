@@ -62,7 +62,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/atom/A = parent
 	A.cut_overlay("working")
 	A.add_overlay("emp")
-	addtimer(CALLBACK(src, PROC_REF(reboot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)) //if a new EMP happens, remove the old timer so it doesn't reactivate early
+	addtimer(CALLBACK(src, PROC_REF(reboot)), 300, TIMER_UNIQUE|TIMER_OVERRIDE) //if a new EMP happens, remove the old timer so it doesn't reactivate early
 	SStgui.close_uis(src) //Close the UI control if it is open.
 
 ///Restarts the GPS after getting turned off by an EMP.
