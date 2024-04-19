@@ -29,6 +29,9 @@
 		NOTRANSSTING,
 		REVIVES_BY_HEALING,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_SYNTHETIC)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_SYNTHETIC)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_SYNTHETIC)
 	mutant_bodyparts = list()
 	default_mutant_bodyparts = list(
 		"ipc_antenna" = ACC_RANDOM,

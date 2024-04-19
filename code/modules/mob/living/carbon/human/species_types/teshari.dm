@@ -1,7 +1,10 @@
-/datum/species/teshari //small voxes
-	name = "Avali"
-	id = "avali"
-	flavor_text = "A race of feathered raptor-analogues who developed alongside the Skrell, "	default_color = "6060FF"
+/datum/species/teshari //small vox
+	name = "Teshari"
+	id = "teshari"
+	flavor_text = "A race of diminuitive feathered raptor-analogues who developed alongside the Skrell, the Teshari are newcomers to the galactic stage. \
+	Uniquely challenged by their ammonia-solvent biology, Teshari rely on clothes with active cooling systems in order to preserve their comfort in all but \
+	the most frigid environments. They have a love for fruits, grains, vegetables, and meat; their bodies cannot process simple sugars."
+	default_color = "6060FF"
 	eyes_icon = 'icons/mob/species/teshari_eyes.dmi'
 	species_traits = list(
 		MUTCOLORS,
@@ -15,13 +18,16 @@
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_TESHARI)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_TESHARI)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_TESHARI)
 	default_mutant_bodyparts = list(
 		"tail" = ACC_RANDOM,
 		"ears" = ACC_RANDOM,
 	)
 	mutanttongue = /obj/item/organ/tongue/avian
-	disliked_food = GROSS | GRAIN
-	liked_food = MEAT
+	disliked_food = GROSS | SUGAR
+	liked_food = MEAT | GRAIN | FRUIT | VEGETABLES
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'

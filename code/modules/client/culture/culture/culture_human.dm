@@ -1,20 +1,20 @@
 /// Generic
 
 /datum/cultural_info/culture/generic_human
-	name = "Humankind"
+	name = "Human"
 	description = "You are from one of various planetary cultures of humankind."
-	additional_langs = list(/datum/language/russian, /datum/language/gutter, /datum/language/spacer)
+	additional_langs = list(HUMAN_CULTURAL_LANGUAGES)
 
 /// Sol Central Government
 
 // Ceti Epsilon (Capital)
 /datum/cultural_info/culture/ceti
 	name = "Cetite"
-	description = "You are from Ceti Epsilon, the technical hub of the SCG. As a Cetite you are no stranger to the cutting edge of technology present in Sol space. \
-	Putting education and the latest tech at the forefront of their priorities the people of Ceti are some of the brightest or tech savvy around. \
-	This has afforded those from the system or planet a reputation as being a cut above the rest in technical matters, with those who attended the Ceti Institute of Technology \
-	being considered some of the best qualified technical specialists in humanity. Recently there has been a rising transhumanist element in Ceti society resulting in a large \
-	cybernetics culture; it is not uncommon to see many Cetites sporting some chrome."
+	description = "You are from Ceti Epsilon b-ii, second moon of the system's innermost gas giant - the technical hub of the SCG. As a Cetite you are no stranger \
+	to the cutting edge of technology present in Sol space. Putting education and the latest tech at the forefront of their priorities, the people of Ceti are some of the \
+	brightest or tech savvy around. This has afforded those from the system or planet a reputation as being a cut above the rest in technical matters, with those who \
+	attended the Ceti Institute of Technology being considered some of the best qualified technical specialists in humanity. Recently there has been a rising transhumanist \
+	element in Ceti society resulting in a large cybernetics culture; it is not uncommon to see many Cetites sporting some chrome."
 	economic_power = 1.1
 
 // Venus
@@ -91,6 +91,17 @@
 	human space."
 	economic_power = 1
 
+// Titan
+/datum/cultural_info/culture/titan
+	name = "Titanean"
+	description = "You are from Titan, a small, cold moon amidst the shadow of Saturn's rings. The people of Ceres and the wider asteroid belt are colloquially known as 'Belters.' Traditionally a people rooted in the mining industry, \
+	the belters of today are primarily engaged in the mechanical services, engineering, shipbuilding and maintenance industries. Belters are quite varied, and something of a melting \
+	pot owing to the sheer number of transient workers, hauler crews and government and corporate employees basing themselves around the great shipyards of Ceres. This has led to belter \
+	culture being mainly about embracing change, new people and new experiences, as well as a sense of pride in their work, as the reputation of Ceres shipbuilding is widely known across \
+	human space."
+	economic_power = 1
+
+// Pluto
 /datum/cultural_info/culture/plutonian
 	name = "Plutionian"
 	description = "You are from Pluto, one of many denizens of this cruel and unforgiving world. For centuries Pluto has been in a slow state of decay and decline, resulting in \
@@ -98,7 +109,7 @@
 	the planet has led to the people of Pluto having something of a seedy reputation, its citizens being viewed with disrepute. The people themselves, however, are usually \
 	just happy to get off the rock and to healthier locales. Unfortunately, despite the efforts of the wider SCG, many Plutonians tend to maintain criminal ties, even offworld."
 	economic_power = 0.8
-	additional_langs = list(/datum/language/russian, /datum/language/gutter, /datum/language/spacer)
+	required_lang = list(/datum/language/gutter)
 
 
 
@@ -111,5 +122,5 @@
 	Unfortunately, the years since the war have not been easy on Terra and the long period of economic recovery has not made life easy. The people of Terra are typically employed \
 	in the military, industrial, government or service sectors, with an emphasis being placed on military service. Terrans today are generally poor, bitter and a somewhat broken people angry and \
 	resentful about their loss in the Gaia Conflict. An upbringing on Terra emphasises an odd mix of service to the state, liberalism and militarism."
-	required_lang = /datum/language/russian
+	required_lang = list(/datum/language/russian, /datum/language/terrum)
 	economic_power = 0.9

@@ -24,6 +24,9 @@
 		TRAIT_NOBREATH,
 		TRAIT_NOFLASH,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_PLANT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_PLANT)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_PLANT)
 	inherent_factions = list(
 		"mushroom",
 	)

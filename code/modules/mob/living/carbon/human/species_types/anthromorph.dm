@@ -24,6 +24,9 @@
 		"wings" = ACC_NONE,
 		"neck" = ACC_NONE,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_ANTHROMORPH)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_ANTHROMORPH)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_ANTHROMORPH)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'

@@ -56,8 +56,9 @@
 
 	ass_image = 'icons/ass/asslizard.png'
 	limbs_icon = 'icons/mob/species/lizard_parts_greyscale.dmi'
-
-	cultures = list(CULTURES_EXOTIC, CULTURES_LIZARD, CULTURES_HUMAN)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_LIZARD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_LIZARD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_LIZARD)
 	learnable_languages = list(
 		/datum/language/common,
 		/datum/language/draconic,

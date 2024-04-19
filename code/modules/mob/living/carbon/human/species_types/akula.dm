@@ -17,6 +17,9 @@
 		"ears" = ACC_RANDOM,
 		"legs" = "Normal Legs",
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_AQUATIC)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_AQUATIC)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_AQUATIC)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'

@@ -12,6 +12,9 @@
 		HAS_FLESH,
 		HAS_BONE,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_XENOMORPH_HYBRID)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_XENOMORPH_HYBRID)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_XENOMORPH_HYBRID)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	default_mutant_bodyparts = list(
 		"tail" = "Xenomorph Tail",

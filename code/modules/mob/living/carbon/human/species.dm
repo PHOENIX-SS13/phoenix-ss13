@@ -256,7 +256,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	/// Bodytype variant used for when the species is snouted, for clothing.
 	var/snout_bodytype = BODYTYPE_DIGITIGRADE
 	/// Available cultural informations
-	var/list/cultures = list(CULTURES_EXOTIC, CULTURES_HUMAN)
+	var/list/cultures = list(CULTURES_GENERIC, CULTURES_HUMAN)
 	var/list/locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN)
 	var/list/factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN)
 	/// List of all the languages our species can learn NO MATTER their background

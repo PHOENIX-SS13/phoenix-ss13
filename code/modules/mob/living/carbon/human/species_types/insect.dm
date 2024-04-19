@@ -23,5 +23,8 @@
 		"wings" = "Bee",
 		"moth_antennae" = ACC_RANDOM,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_INSECT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_INSECT)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_INSECT)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/insect_parts_greyscale.dmi'

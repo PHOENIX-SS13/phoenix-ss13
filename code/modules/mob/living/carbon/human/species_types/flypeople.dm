@@ -7,6 +7,9 @@
 		HAS_BONE,
 		TRAIT_ANTENNAE
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_INSECT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_INSECT)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_INSECT)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	meat = /obj/item/food/meat/slab/human/mutant/fly
 	mutanteyes = /obj/item/organ/eyes/fly

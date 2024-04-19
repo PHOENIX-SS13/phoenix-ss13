@@ -20,6 +20,9 @@
 		"plants",
 		"vines",
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_PLANT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_PLANT)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_PLANT)
 	attack_verb = "slash"
 	attack_effect = ATTACK_EFFECT_CLAW
 	attack_sound = 'sound/weapons/slice.ogg'
@@ -85,16 +88,3 @@
 		"wings" = ACC_NONE,
 		"neck" = ACC_NONE,
 		)
-
-	cultures = list(
-		CULTURES_EXOTIC,
-		CULTURES_HUMAN,
-	)
-	locations = list(
-		LOCATIONS_GENERIC,
-		LOCATIONS_HUMAN,
-	)
-	factions = list(
-		FACTIONS_GENERIC,
-		FACTIONS_HUMAN,
-	)

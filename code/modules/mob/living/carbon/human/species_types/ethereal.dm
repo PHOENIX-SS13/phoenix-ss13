@@ -23,6 +23,9 @@
 		HAS_FLESH,
 		HAS_BONE,
 	) // i mean i guess they have blood so they can have wounds too
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_ETHEREAL)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_ETHEREAL)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_ETHEREAL)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(

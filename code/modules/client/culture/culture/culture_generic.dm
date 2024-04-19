@@ -2,15 +2,24 @@
 
 // Generic
 /datum/cultural_info/culture/generic
-	name = "Other Culture"
-	description = "<b>This option allows a variety of exotic languages, make sure to only pick those who fit your backstory.</b><BR>You are from one of the many small, relatively unknown cultures scattered across the galaxy."
-	additional_langs = list(LANGUAGES_FOR_EXOTIC_CULTURES)
+	name = "Other culture"
+	description = "<b>This option allows a variety of exotic languages, make sure to only pick those who fit your backstory.</b><BR>You are from one of the many small, \
+	relatively unknown cultures scattered across the galaxy."
+	additional_langs = list(GENERIC_CULTURAL_LANGUAGES)
 
 // Vat Grown
 /datum/cultural_info/culture/vatgrown
-	name = "Vat Grown"
-	description = "<b>This option allows a variety of exotic languages, make sure to only pick those who fit your backstory.</b><BR>You were not born like most of the people, instead grown and raised in laboratory conditions, either as clone, gene-adapt or some experiment. Your outlook diverges from baseline humanity accordingly."
-	additional_langs = list(LANGUAGES_FOR_EXOTIC_CULTURES)
+	name = "Vat-Grown"
+	description = "<b>This option allows a variety of exotic languages, make sure to only pick those who fit your backstory.</b><BR>You were not born like most of the people, \
+	instead grown and raised in laboratory conditions, either as clone, gene-adapt or some experiment. Your outlook diverges from baseline humanity accordingly."
+	additional_langs = list(GENERIC_CULTURAL_LANGUAGES)
+
+// Tradeship
+/datum/cultural_info/culture/interstellar_trader
+	name = "Former Interstellar Trader"
+	description = "<b>This option allows a variety of exotic languages, make sure to only pick those who fit your backstory.</b><BR>You are the descendent of a clan inhabiting \
+	and operating a colossal interstellar trading vessel. For one reason or another, you have disembarked from that which houses both your family and all you have known."
+	additional_langs = list(GENERIC_CULTURAL_LANGUAGES)
 
 // Generic rural
 /datum/cultural_info/culture/spacer_core

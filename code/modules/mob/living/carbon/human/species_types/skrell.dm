@@ -1,6 +1,7 @@
 /datum/species/skrell
 	name = "Skrell"
 	id = "skrell"
+	flavor_text = "A species often found near large or reliable water sources, Skrell have a sensitive immune system dependent upon their skin retaining moisture. Their headtails are loosely prehensile, and can hold objects for extended periods of time. Their neurons possess a unique insulator, making their thoughts slightly more efficient than most other sapient species; this makes them excellent negotiatiors, tacticians, and mathematicians. They possess a curious affinity for sugary foods and the pineapple; they cannot handle alcohol, or a heavily meat diet."
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -13,6 +14,11 @@
 	default_mutant_bodyparts = list(
 		"skrell_hair" = ACC_RANDOM,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_AQUATIC)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_AQUATIC)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_AQUATIC)
+	disliked_food = ALCOHOL | MEAT
+	liked_food = PINEAPPLE | SUGAR
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/skrell_parts_greyscale.dmi'
 	eyes_icon = 'icons/mob/species/skrell_eyes.dmi'

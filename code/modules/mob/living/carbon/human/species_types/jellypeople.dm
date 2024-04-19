@@ -16,6 +16,9 @@
 		TRAIT_CAN_STRIP,
 		TRAIT_TOXINLOVER,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_JELLY)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_JELLY)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_JELLY)
 	mutantlungs = /obj/item/organ/lungs/slime
 	meat = /obj/item/food/meat/slab/human/mutant/slime
 	exotic_blood = /datum/reagent/toxin/slimejelly
