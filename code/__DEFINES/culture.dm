@@ -22,6 +22,8 @@
 
 #define CULTURES_LIZARD /datum/cultural_info/culture/lavaland
 
+#define CULTURES_AVALI /datum/cultural_info/culture/sirisai
+
 #define CULTURES_HUMAN	/datum/cultural_info/culture/generic_human, \
 						/datum/cultural_info/culture/martian_surfacer, \
 						/datum/cultural_info/culture/martian_tunneller, \

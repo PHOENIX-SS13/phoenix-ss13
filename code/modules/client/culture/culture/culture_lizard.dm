@@ -1,3 +1,6 @@
+/// Lizard
+
+// Ashwalkers
 /datum/cultural_info/culture/lavaland
 	name = "Lavaland"
 	description = "Born from The Underground of the volcanic planet, Lavaland. \

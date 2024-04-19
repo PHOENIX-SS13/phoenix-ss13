@@ -1,7 +1,7 @@
 /datum/species/akula
 	name = "Akula"
 	id = "akula"
-	flavor_text = "An aquatic species, most having a big similarity to sharks."
+	flavor_text = "A formerly aquatic species now mostly adapted for life on land, albeit with frequent dips in water. They primarily subsist on fruits and meats, most of which fall into universally compatible foodstuff categories."
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -20,7 +20,7 @@
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	liked_food = GROSS | MEAT | FRIED
+	liked_food = DAIRY | MEAT | FRUIT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/akula_parts_greyscale.dmi'
 

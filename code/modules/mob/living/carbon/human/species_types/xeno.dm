@@ -1,7 +1,7 @@
 /datum/species/xeno
 	// A cloning mistake, crossing human and xenomorph DNA
 	name = "Xenomorph Hybrid"
-	id = "xeno"
+	id = "xenomorph_hybrid"
 	flavor_text = "While their true origin is unknown, many believe them to be a cross between humanoid and xenomorph DNA. Much less dangerous than their feral cousins. They enjoy meat, but can consume just about anything."
 	say_mod = "hisses"
 	default_color = "0F0"

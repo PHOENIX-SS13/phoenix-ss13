@@ -1,7 +1,7 @@
-/datum/species/mammal
-	name = "Anthromorph" //Called so because the species is so much more universal than just mammals
-	id = "mammal"
-	flavor_text = "A term encompassing most humanoids with animal-like qualities."
+/datum/species/anthromorph
+	name = "Anthromorph"
+	id = "anthromorph"
+	flavor_text = "A broad category which refers to multiple bipedal, sapient species all analogous to animals from the Human homeworld."
 	default_color = "4B4B4B"
 	species_traits = list(
 		MUTCOLORS,
@@ -27,11 +27,11 @@
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	liked_food = GROSS | MEAT | FRIED
+	liked_food = BREAKFAST | MEAT | SUGAR // generic!
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	limbs_icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 
-/datum/species/mammal/get_random_features()
+/datum/species/anthromorph/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	var/main_color
 	var/second_color
@@ -71,7 +71,7 @@
 	returned["mcolor3"] = third_color
 	return returned
 
-/datum/species/mammal/get_random_body_markings(list/passed_features)
+/datum/species/anthromorph/get_random_body_markings(list/passed_features)
 	var/name = "None"
 	var/list/candidates = GLOB.body_marking_sets.Copy()
 	for(var/candi in candidates)

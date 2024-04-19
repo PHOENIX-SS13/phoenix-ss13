@@ -23,7 +23,7 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	liked_food = GROSS | MEAT | FRIED
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	limbs_icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	limbs_id = "mammal"
 	scream_sounds = list(
 		NEUTER = 'sound/voice/cat_scream.ogg',

@@ -1,8 +1,7 @@
-/datum/species/robotic
+/datum/species/synthetic
 	name = "Synthetic"
 	id = "synthetic"
-	flavor_text = "A robotic lifeform. Most sport a screen, instead of a humanoid face. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
-
+	flavor_text = "A synthetic lifeform. Most sport a screen, instead of a humanoid face. Surface level damage is easy to repair, but they're sensitive to electronic disruptions."
 	say_mod = "beeps"
 	default_color = "0F0"
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
@@ -20,7 +19,7 @@
 		TRAIT_NO_HUSK,
 		TRAIT_OXYIMMUNE,
 	)
-		species_traits = list(
+	species_traits = list(
 		ROBOTIC_DNA_ORGANS,
 		MUTCOLORS,
 		EYECOLOR,
@@ -47,7 +46,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/ipc_parts.dmi'
 	hair_alpha = 210 // TODO: MAKE THIS CHANGEABLE
-	sexes = 0
+	sexes = FALSE
 	var/datum/action/innate/monitor_change/screen
 	var/saved_screen = "Blank"
 	reagent_flags = PROCESS_SYNTHETIC
@@ -73,38 +72,38 @@
 		/datum/descriptor/age/robot
 	)
 
-/datum/species/robotic/spec_life(mob/living/carbon/human/H)
-	// Deal damage when we're in crit because otherwise robotics can't die (immune to oxyloss)
+/datum/species/synthetic/spec_life(mob/living/carbon/human/H)
+	// Deal damage when we're in crit because otherwise synthetics can't die (immune to oxyloss)
 	if(H.stat == SOFT_CRIT || H.stat == HARD_CRIT)
 		H.adjustFireLoss(1)
 		if(prob(10))
 			to_chat(H, SPAN_WARNING("Alert: Critical damage taken! Cooling systems failing!"))
 			do_sparks(3, TRUE, H)
 
-/datum/species/robotic/spec_revival(mob/living/carbon/human/H)
+/datum/species/synthetic/spec_revival(mob/living/carbon/human/H)
 	playsound(H.loc, 'sound/machines/chime.ogg', 50, 1, -1)
 	H.visible_message(SPAN_NOTICE("[H]'s monitor lights up."), SPAN_NOTICE("All systems nominal. You're back online!"))
 
-/datum/species/robotic/on_species_gain(mob/living/carbon/human/C)
+/datum/species/synthetic/on_species_gain(mob/living/carbon/human/C)
 	. = ..()
 	var/obj/item/organ/appendix/appendix = C.getorganslot(ORGAN_SLOT_APPENDIX)
 	if(appendix)
 		appendix.Remove(C)
 		qdel(appendix)
 
-/datum/species/robotic/random_name(gender,unique,lastname)
+/datum/species/synthetic/random_name(gender,unique,lastname)
 	var/randname = pick(GLOB.posibrain_names)
 	randname = "[randname]-[rand(100, 999)]"
 	return randname
 
-/datum/species/robotic/spec_revival(mob/living/carbon/human/H)
+/datum/species/synthetic/spec_revival(mob/living/carbon/human/H)
 	. = ..()
 	//TODO: fix this
 	/*H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "BSOD"
 	sleep(3 SECONDS)*/
 	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = saved_screen
 
-/datum/species/robotic/spec_death(gibbed, mob/living/carbon/human/H)
+/datum/species/synthetic/spec_death(gibbed, mob/living/carbon/human/H)
 	. = ..()
 	saved_screen = H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME]
 	//TODO: fix this
@@ -112,7 +111,7 @@
 	sleep(3 SECONDS)*/
 	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "Blank"
 
-/datum/species/robotic/on_species_gain(mob/living/carbon/human/C)
+/datum/species/synthetic/on_species_gain(mob/living/carbon/human/C)
 	. = ..()
 	if(!screen)
 		screen = new
@@ -127,7 +126,7 @@
 			species_traits += MUTCOLORS
 		C.update_body()
 
-/datum/species/robotic/on_species_loss(mob/living/carbon/human/C)
+/datum/species/synthetic/on_species_loss(mob/living/carbon/human/C)
 	. = ..()
 	if(screen)
 		screen.Remove(C)
@@ -149,12 +148,12 @@
 
 /// SYNTH LIZARD
 
-/datum/species/robotic/synthliz
+/datum/species/synthetic/synthliz
 	name = "Synthetic Lizardperson"
 	id = "synthliz"
 	limbs_icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
 
-/datum/species/robotic/synthliz/get_random_body_markings(list/passed_features)
+/datum/species/synthetic/synthliz/get_random_body_markings(list/passed_features)
 	var/name = pick("Synth Pecs Lights", "Synth Scutes", "Synth Pecs")
 	var/datum/body_marking_set/BMS = GLOB.body_marking_sets[name]
 	var/list/markings = list()
@@ -164,14 +163,14 @@
 
 /// SYNTH ANTHRO
 
-/datum/species/robotic/synth_anthro
+/datum/species/synthetic/synth_anthro
 	name = "Synthetic Anthromorph"
 	id = "synthanthro"
-	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	limbs_icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	limbs_id = "mammal"
 
 // Somewhat of a paste from the mammal's random features, because they're supposed to mimick them in appearance.
-/datum/species/robotic/synth_anthro/get_random_features()
+/datum/species/synthetic/synth_anthro/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	var/main_color
 	var/second_color

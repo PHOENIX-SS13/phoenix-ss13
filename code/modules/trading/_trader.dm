@@ -351,7 +351,7 @@
 		var/mob/living/carbon/human/human_user = user
 		if(isgolem(human_user))
 			return TRADE_USER_SUFFIX_GOLEM
-		if(is_species(human_user, /datum/species/robotic/ipc) || is_species(human_user, /datum/species/robotic/synthliz))
+		if(is_species(human_user, /datum/species/synthetic))
 			return TRADE_USER_SUFFIX_ROBOT_PERSON
 		return human_user.dna.species.id
 

@@ -228,6 +228,6 @@
 
 /datum/sprite_accessory/ipc_chassis/syntheticlizard
 	name = "Synthetic Mammal"
-	icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	icon_state = "synthliz"
 

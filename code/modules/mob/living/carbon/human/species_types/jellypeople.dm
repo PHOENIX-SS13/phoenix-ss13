@@ -146,7 +146,7 @@
 
 /datum/species/jelly/slime
 	name = "Slimeperson"
-	id = "slime"
+	id = "jelly_slime"
 	default_color = "0FF"
 	species_traits = list(
 		MUTCOLORS,
@@ -438,7 +438,7 @@
 
 /datum/species/jelly/luminescent
 	name = "Luminescent"
-	id = "lum"
+	id = "jelly_luminescent"
 	say_mod = "says"
 	var/glow_intensity = LUMINESCENT_DEFAULT_GLOW
 	var/obj/effect/dummy/luminescent_glow/glow
@@ -612,7 +612,7 @@
 
 /datum/species/jelly/stargazer
 	name = "Stargazer"
-	id = "stargazer"
+	id = "jelly_stargazer"
 	var/datum/action/innate/project_thought/project_thought
 	var/datum/action/innate/link_minds/link_minds
 	var/list/mob/living/linked_mobs = list()

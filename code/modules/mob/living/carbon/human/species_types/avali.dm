@@ -1,7 +1,7 @@
 /datum/species/teshari //small voxes
 	name = "Avali"
-	id = "teshari"
-	default_color = "6060FF"
+	id = "avali"
+	flavor_text = "A race of feathered raptor-analogues who developed alongside the Skrell, "	default_color = "6060FF"
 	eyes_icon = 'icons/mob/species/teshari_eyes.dmi'
 	species_traits = list(
 		MUTCOLORS,
@@ -58,7 +58,6 @@
 	)
 	body_size_restricted = TRUE
 	bodytype = BODYTYPE_TESHARI
-	flavor_text = "A race of feathered raptors who developed alongside the Skrell, inhabiting the polar tundral regions outside of Skrell territory. Extremely fragile, they developed hunting skills that emphasized taking out their prey without themselves getting hit. They are only recently becoming known on human stations after reaching space with Skrell assistance."
 
 /datum/species/teshari/get_bodytype(item_slot = NONE, obj/item/checked_item_for)
 	///Always return a Teshari bodytype if the item accounts for it

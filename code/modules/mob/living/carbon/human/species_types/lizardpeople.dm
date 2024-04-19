@@ -110,8 +110,8 @@ Lizard subspecies: ASHWALKERS
 */
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"
-	id = "ashlizard"
-	flavor_text = "A reptilian species adapted to harsher environments. They can breathe in low pressure areas, hold their breath for extended periods, and have an immunity to most viral outbreaks. Similar to normal Lizardpeople, they cannot eat grains or dairy."
+	id = "lizard_ash"
+	flavor_text = "A reptilian species adapted to harsher environments. They can breathe in low pressure areas, hold their breath for extended periods, and have an immunity to most viral outbreaks. Similar to average lizardpeople, they cannot eat nuts or dairy."
 	limbs_id = "lizard"
 	species_traits = list(
 		MUTCOLORS,
@@ -143,7 +143,8 @@ Lizard subspecies: SILVER SCALED
 */
 /datum/species/lizard/silverscale
 	name = "Silver Scale"
-	id = "silverlizard"
+	id = "lizard_silver"
+	flavor_text = "Pressure-proof, lacking a need to breathe, and generally hardier than their nearest genetic peers, this subspecies arose from lizardlike genemodders on the fringe of known space. They are unable to digest dairy or nut products, though they are generally able to break down a mostly-overlapping group of several proteins toxic to the Earth biosphere. When in danger, they can grow a into a silvery cocoon."
 	limbs_id = "lizard"
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	inherent_traits = list(
