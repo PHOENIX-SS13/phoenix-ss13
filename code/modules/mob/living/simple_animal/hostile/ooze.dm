@@ -173,7 +173,7 @@
 		return
 	var/mob/living/simple_animal/hostile/ooze/ooze = owner
 	ooze.add_movespeed_modifier(/datum/movespeed_modifier/metabolicboost)
-	var/timerid = addtimer(CALLBACK(src, PROC_REF(HeatUp), 1 SECONDS, TIMER_STOPPABLE | TIMER_LOOP)) //Heat up every second
+	var/timerid = addtimer(CALLBACK(src, PROC_REF(HeatUp)), 1 SECONDS, TIMER_STOPPABLE | TIMER_LOOP) //Heat up every second
 	addtimer(CALLBACK(src, PROC_REF(FinishSpeedup), timerid), 6 SECONDS)
 	to_chat(ooze, SPAN_NOTICE("You start feel a lot quicker."))
 	active = TRUE

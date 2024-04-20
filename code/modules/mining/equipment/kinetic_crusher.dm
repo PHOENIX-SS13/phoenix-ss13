@@ -120,7 +120,7 @@
 		D.fire()
 		charged = FALSE
 		update_appearance()
-		addtimer(CALLBACK(src, PROC_REF(Recharge), charge_time))
+		addtimer(CALLBACK(src, PROC_REF(Recharge)), charge_time)
 		return
 	if(proximity_flag && isliving(target))
 		var/mob/living/L = target
@@ -428,7 +428,7 @@
 
 /obj/item/crusher_trophy/blaster_tubes/on_mark_detonation(mob/living/target, mob/living/user)
 	deadly_shot = TRUE
-	addtimer(CALLBACK(src, PROC_REF(reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE))
+	addtimer(CALLBACK(src, PROC_REF(reset_deadly_shot)), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/item/crusher_trophy/blaster_tubes/proc/reset_deadly_shot()
 	deadly_shot = FALSE

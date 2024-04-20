@@ -28,7 +28,7 @@
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(Destroy))
 	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(Destroy))
 
-	addtimer(CALLBACK(src, PROC_REF(Calibrate), 3 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(Calibrate)), 3 SECONDS)
 
 /datum/overmap_lock/Destroy()
 	parent.LockLost()

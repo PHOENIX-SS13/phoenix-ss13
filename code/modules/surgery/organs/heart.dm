@@ -29,7 +29,7 @@
 /obj/item/organ/heart/Remove(mob/living/carbon/heartless, special = 0)
 	..()
 	if(!special)
-		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned), 120))
+		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned)), 120)
 
 /obj/item/organ/heart/proc/stop_if_unowned()
 	if(!owner)
@@ -41,7 +41,7 @@
 		user.visible_message("<span class='notice'>[user] squeezes [src] to \
 			make it beat again!</span>",SPAN_NOTICE("You squeeze [src] to make it beat again!"))
 		Restart()
-		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned), 80))
+		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned)), 80)
 
 /obj/item/organ/heart/proc/Stop()
 	beating = FALSE
@@ -224,7 +224,7 @@
 		Stop()
 		owner.visible_message(SPAN_DANGER("[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!"), \
 						SPAN_USERDANGER("You feel a terrible pain in your chest, as if your heart has stopped!"))
-		addtimer(CALLBACK(src, PROC_REF(Restart), 10 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(Restart)), 10 SECONDS)
 
 /obj/item/organ/heart/cybernetic/on_life(delta_time, times_fired)
 	. = ..()
@@ -435,11 +435,11 @@
 	playsound(get_turf(src), 'sound/effects/ethereal_crystalization.ogg', 50)
 	ethereal_heart.owner.forceMove(src) //put that ethereal in
 	add_atom_colour(ethereal_heart.ethereal_color, FIXED_COLOUR_PRIORITY)
-	crystal_heal_timer = addtimer(CALLBACK(src, PROC_REF(heal_ethereal), CRYSTALIZE_HEAL_TIME, TIMER_STOPPABLE))
+	crystal_heal_timer = addtimer(CALLBACK(src, PROC_REF(heal_ethereal)), CRYSTALIZE_HEAL_TIME, TIMER_STOPPABLE)
 	set_light(4, 10, ethereal_heart.ethereal_color)
 	update_icon()
 	flick("ethereal_crystal_forming", src)
-	addtimer(CALLBACK(src, PROC_REF(start_crystalization), 1 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(start_crystalization)), 1 SECONDS)
 
 /obj/structure/ethereal_crystal/proc/start_crystalization()
 	being_built = FALSE

@@ -151,7 +151,7 @@
 	testing = TRUE
 	test_status = null
 	inserted_bomb.toggle_valve()
-	timeout_timer = addtimer(CALLBACK(src, PROC_REF(timeout_test), COMPRESSION_TEST_TIME, TIMER_STOPPABLE | TIMER_UNIQUE | TIMER_NO_HASH_WAIT))
+	timeout_timer = addtimer(CALLBACK(src, PROC_REF(timeout_test)), COMPRESSION_TEST_TIME, TIMER_STOPPABLE | TIMER_UNIQUE | TIMER_NO_HASH_WAIT)
 	return
 
 /**

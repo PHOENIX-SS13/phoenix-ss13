@@ -189,7 +189,7 @@
 		if(attempt_charge(src, user) & COMPONENT_OBJ_CANCEL_CHARGE)
 			break
 		addtimer(copy_cb, i SECONDS)
-	addtimer(CALLBACK(src, PROC_REF(reset_busy), i SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(reset_busy)), i SECONDS)
 
 /**
  * Sets busy to `FALSE`. Created as a proc so it can be used in callbacks.

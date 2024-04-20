@@ -512,7 +512,7 @@
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
 			return FALSE
 
-	addtimer(CALLBACK(src, PROC_REF(start_process), 1 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(start_process)), 1 SECONDS)
 	return TRUE
 
 /obj/machinery/bci_implanter/relaymove(mob/living/user, direction)

@@ -64,7 +64,7 @@
 
 /obj/structure/cursed_money/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(collapse), 600))
+	addtimer(CALLBACK(src, PROC_REF(collapse)), 600)
 
 /obj/structure/cursed_money/proc/collapse()
 	visible_message("<span class='warning'>[src] falls in on itself, \

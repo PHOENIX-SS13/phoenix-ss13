@@ -113,7 +113,7 @@
 	if(reward_item_path)
 		new reward_item_path(position)
 	do_sparks(3, TRUE, position)
-	addtimer(CALLBACK(src, PROC_REF(TimedDestroy), rand(20 SECONDS, 40 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(TimedDestroy)), rand(20 SECONDS, 40 SECONDS))
 
 /datum/delivery_run_instance/proc/TimedDestroy()
 	qdel(src)

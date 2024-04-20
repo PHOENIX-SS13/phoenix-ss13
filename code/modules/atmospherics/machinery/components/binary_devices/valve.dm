@@ -53,7 +53,7 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 		return
 	update_icon_nopipes(TRUE)
 	switching = TRUE
-	addtimer(CALLBACK(src, PROC_REF(finish_interact), 1 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(finish_interact)), 1 SECONDS)
 
 /**
  * Called by iteract() after a 1 second timer, calls toggle(), allows another interaction with the component.

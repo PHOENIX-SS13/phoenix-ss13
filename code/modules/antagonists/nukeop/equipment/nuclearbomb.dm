@@ -466,7 +466,7 @@ GLOBAL_VAR(station_nuke_source)
 	sound_to_playing_players('sound/machines/alarm.ogg')
 	if(SSticker?.mode)
 		SSticker.roundend_check_paused = TRUE
-	addtimer(CALLBACK(src, PROC_REF(actually_explode), 100))
+	addtimer(CALLBACK(src, PROC_REF(actually_explode)), 100)
 
 /obj/machinery/nuclearbomb/proc/actually_explode()
 	if(!core)
@@ -502,7 +502,7 @@ GLOBAL_VAR(station_nuke_source)
 
 /obj/machinery/nuclearbomb/proc/really_actually_explode(off_station)
 	Cinematic(get_cinematic_type(off_station),world,CALLBACK(SSticker,/datum/controller/subsystem/ticker/proc/station_explosion_detonation,src))
-	INVOKE_ASYNC(GLOBAL_PROC,.proc/KillEveryoneOnZLevel, z)
+	INVOKE_ASYNC(GLOBAL_PROC, PROC_REF(KillEveryoneOnZLevel), z)
 
 /obj/machinery/nuclearbomb/proc/get_cinematic_type(off_station)
 	if(off_station < 2)
@@ -545,10 +545,10 @@ GLOBAL_VAR(station_nuke_source)
 		disarm()
 		return
 	if(is_station_level(bomb_location))
-		addtimer(CALLBACK(src, PROC_REF(really_actually_explode), 110))
+		addtimer(CALLBACK(src, PROC_REF(really_actually_explode)), 110)
 	else
 		visible_message(SPAN_NOTICE("[src] fizzes ominously."))
-		addtimer(CALLBACK(src, PROC_REF(local_foam), 110))
+		addtimer(CALLBACK(src, PROC_REF(local_foam)), 110)
 
 /obj/machinery/nuclearbomb/beer/proc/disarm()
 	detonation_timer = null

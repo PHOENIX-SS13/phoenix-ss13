@@ -134,7 +134,7 @@
 			if(get_dist(src,target) >= 4 && prob(40))
 				SolarBeamStartup(target)
 				return
-		addtimer(CALLBACK(src, PROC_REF(Volley), 5))
+		addtimer(CALLBACK(src, PROC_REF(Volley)), 5)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/SolarBeamStartup(mob/living/living_target)//It's more like requiem than final spark
 	if(combatant_state == SEEDLING_STATE_WARMUP && target)
@@ -165,7 +165,7 @@
 			living_target.adjust_fire_stacks(0.2)//Just here for the showmanship
 			living_target.IgniteMob()
 			playsound(living_target,'sound/weapons/sear.ogg', 50, TRUE)
-			addtimer(CALLBACK(src, PROC_REF(AttackRecovery), 5))
+			addtimer(CALLBACK(src, PROC_REF(AttackRecovery)), 5)
 			return
 	AttackRecovery()
 
@@ -176,7 +176,7 @@
 		var/datum/callback/cb = CALLBACK(src, PROC_REF(InaccurateShot))
 		for(var/i in 1 to 13)
 			addtimer(cb, i)
-		addtimer(CALLBACK(src, PROC_REF(AttackRecovery), 14))
+		addtimer(CALLBACK(src, PROC_REF(AttackRecovery)), 14)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/InaccurateShot()
 	if(!QDELETED(target) && combatant_state == SEEDLING_STATE_ACTIVE && !stat)
@@ -196,7 +196,7 @@
 		ranged_cooldown = world.time + ranged_cooldown_time
 		if(target)
 			face_atom(target)
-		addtimer(CALLBACK(src, PROC_REF(ResetNeutral), 10))
+		addtimer(CALLBACK(src, PROC_REF(ResetNeutral)), 10)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/ResetNeutral()
 	combatant_state = SEEDLING_STATE_NEUTRAL

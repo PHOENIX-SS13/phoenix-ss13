@@ -141,7 +141,7 @@
 			visible_message(SPAN_DANGER("[user] presses one of the colorful buttons on [src], and the clown car turns on its singularity disguise system."))
 			icon = 'icons/obj/singularity.dmi'
 			icon_state = "singularity_s1"
-			addtimer(CALLBACK(src, PROC_REF(reset_icon), 10 SECONDS))
+			addtimer(CALLBACK(src, PROC_REF(reset_icon)), 10 SECONDS)
 		if(4)
 			visible_message(SPAN_DANGER("[user] presses one of the colorful buttons on [src], and the clown car spews out a cloud of laughing gas."))
 			var/datum/reagents/funnychems = new/datum/reagents(300)
@@ -154,7 +154,7 @@
 		if(5)
 			visible_message(SPAN_DANGER("[user] presses one of the colorful buttons on [src], and the clown car starts dropping an oil trail."))
 			RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(cover_in_oil))
-			addtimer(CALLBACK(src, PROC_REF(stop_dropping_oil), 3 SECONDS))
+			addtimer(CALLBACK(src, PROC_REF(stop_dropping_oil)), 3 SECONDS)
 		if(6)
 			visible_message(SPAN_DANGER("[user] presses one of the colorful buttons on [src], and the clown car lets out a comedic toot."))
 			playsound(src, 'sound/vehicles/clowncar_fart.ogg', 100)
@@ -185,7 +185,7 @@
 	if(cannonmode) //canon active, deactivate
 		flick("clowncar_fromfire", src)
 		icon_state = "clowncar"
-		addtimer(CALLBACK(src, PROC_REF(deactivate_cannon), 2 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(deactivate_cannon)), 2 SECONDS)
 		playsound(src, 'sound/vehicles/clowncar_cannonmode2.ogg', 75)
 		visible_message(SPAN_DANGER("The [src] starts going back into mobile mode."))
 	else
@@ -193,7 +193,7 @@
 		flick("clowncar_tofire", src)
 		icon_state = "clowncar_fire"
 		visible_message(SPAN_DANGER("The [src] opens up and reveals a large cannon."))
-		addtimer(CALLBACK(src, PROC_REF(activate_cannon), 2 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(activate_cannon)), 2 SECONDS)
 		playsound(src, 'sound/vehicles/clowncar_cannonmode1.ogg', 75)
 	cannonmode = CLOWN_CANNON_BUSY
 
