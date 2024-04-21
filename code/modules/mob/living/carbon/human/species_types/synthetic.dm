@@ -47,7 +47,7 @@
 		"neck" = ACC_NONE,
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon = 'icons/mob/species/ipc_parts.dmi'
+	limbs_icon = 'icons/mob/species/synth_parts.dmi'
 	hair_alpha = 210 // TODO: MAKE THIS CHANGEABLE
 	sexes = FALSE
 	var/datum/action/innate/monitor_change/screen
