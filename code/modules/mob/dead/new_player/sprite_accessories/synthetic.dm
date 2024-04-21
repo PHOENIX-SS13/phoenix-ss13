@@ -228,14 +228,14 @@
 	icon_state = "zhpipc"
 
 /datum/sprite_accessory/ipc_chassis/syntheticlizard
-	name = "Synthetic Lizardperson"
+	name = "Synthetic Reptilomorph"
 	icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
 	icon_state = "synthliz"
 
-/datum/sprite_accessory/ipc_chassis/syntheticlizard
-	name = "Synthetic Mammal"
+/datum/sprite_accessory/ipc_chassis/syntheticanthromorph
+	name = "Synthetic Anthromorph"
 	icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
-	icon_state = "synthliz"
+	icon_state = "mammal"
 
 /******************************************
  *********** Synth Boot Sounds ************

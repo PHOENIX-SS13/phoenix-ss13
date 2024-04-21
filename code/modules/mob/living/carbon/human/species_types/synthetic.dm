@@ -34,17 +34,17 @@
 	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_SYNTHETIC)
 	mutant_bodyparts = list()
 	default_mutant_bodyparts = list(
-		"ipc_antenna" = ACC_RANDOM,
-		"ipc_screen" = ACC_NONE,
-		"ipc_chassis" = ACC_RANDOM,
-		"legs" = ACC_RANDOM,
-		"tail" = ACC_RANDOM, // As machines, these guys can bolt on whatever they want. Unified robotic species!
-		"snout" = ACC_RANDOM,
-		"taur" = ACC_NONE,
-		"horns" = ACC_NONE,
-		"ears" = ACC_NONE,
-		"wings" = ACC_NONE,
-		"neck" = ACC_NONE,
+		"ipc_antenna" 	= ACC_RANDOM,
+		"ipc_screen" 	= ACC_NONE,
+		"ipc_chassis" 	= ACC_RANDOM,
+		"legs" 			= ACC_RANDOM,
+		"tail" 			= ACC_RANDOM, // As machines, these guys can bolt on whatever they want. Unified robotic species!
+		"snout" 		= ACC_RANDOM,
+		"taur" 			= ACC_NONE,
+		"horns" 		= ACC_NONE,
+		"ears" 			= ACC_NONE,
+		"wings" 		= ACC_NONE,
+		"neck" 			= ACC_NONE,
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/synth_parts.dmi'
@@ -61,17 +61,17 @@
 	brutemod = 1.1
 	siemens_coeff = 1.2 //Not more because some shocks will outright crit you, which is very unfun
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
-	mutantbrain = /obj/item/organ/brain/ipc_positron
+	mutantbrain   = /obj/item/organ/brain/ipc_positron
 	mutantstomach = /obj/item/organ/stomach/robot_ipc
-	mutantears = /obj/item/organ/ears/robot_ipc
-	mutanttongue = /obj/item/organ/tongue/robot_ipc
-	mutanteyes = /obj/item/organ/eyes/robot_ipc
-	mutantlungs = /obj/item/organ/lungs/robot_ipc
-	mutantheart = /obj/item/organ/heart/robot_ipc
-	mutantliver = /obj/item/organ/liver/robot_ipc
-	exotic_blood = /datum/reagent/fuel/oil
+	mutantears    = /obj/item/organ/ears/robot_ipc
+	mutanttongue  = /obj/item/organ/tongue/robot_ipc
+	mutanteyes    = /obj/item/organ/eyes/robot_ipc
+	mutantlungs   = /obj/item/organ/lungs/robot_ipc
+	mutantheart   = /obj/item/organ/heart/robot_ipc
+	mutantliver   = /obj/item/organ/liver/robot_ipc
+	exotic_blood  = /datum/reagent/fuel/oil
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_silicon.ogg',
+		NEUTER    = 'sound/voice/scream_silicon.ogg',
 	)
 	species_descriptors = list(
 		/datum/descriptor/age/robot
@@ -106,7 +106,7 @@
 /datum/species/synthetic/spec_revival(mob/living/carbon/human/H)
 	. = ..()
 	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "BSOD"
-	to_chat(affected_mob, SPAN_DANGER("You are booting up..."))
+	to_chat(H, SPAN_DANGER("You are booting up..."))
 	H.Unconscious(rand(15, 45))
 	playsound(H.loc, 'sound/machines/chime.ogg', 50, 1, -1)
 	H.visible_message(SPAN_WARNING("[H]'s indicator lights flicker."), SPAN_NOTICE("All systems nominal. You're back online!"))
@@ -221,7 +221,7 @@
 	limbs_id = "mammal"
  */
 // Somewhat of a paste from the mammal's random features, because they're supposed to mimick them in appearance.
-/datum/species/synthetic/get_random_features()
+/*/datum/species/synthetic/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	var/main_color
 	var/second_color
@@ -255,4 +255,4 @@
 	returned["mcolor"] = main_color
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = third_color
-	return returned
+	return returned*/

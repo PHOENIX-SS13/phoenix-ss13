@@ -1137,6 +1137,9 @@
 /mob/living/carbon/human/species/android/infiltration_android/military
 	race = /datum/species/android/infiltration_android/military
 
+/mob/living/carbon/human/species/anthromorph
+	race = /datum/species/anthromorph
+
 /mob/living/carbon/human/species/dullahan
 	race = /datum/species/dullahan
 
@@ -1278,6 +1281,9 @@
 /mob/living/carbon/human/species/snail
 	race = /datum/species/snail
 
+/mob/living/carbon/human/species/synthetic
+	race = /datum/species/synthetic
+
 /mob/living/carbon/human/species/vampire
 	race = /datum/species/vampire
 
@@ -1292,12 +1298,6 @@
 
 /mob/living/carbon/human/species/vox
 	race = /datum/species/vox
-
-/mob/living/carbon/human/species/synthetic
-	race = /datum/species/synthetic
-
-/mob/living/carbon/human/species/anthromorph
-	race = /datum/species/anthromorph
 
 /mob/living/carbon/human/species/xeno
 	race = /datum/species/xeno
