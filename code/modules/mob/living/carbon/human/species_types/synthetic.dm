@@ -38,7 +38,7 @@
 		"ipc_screen" = ACC_NONE,
 		"ipc_chassis" = ACC_RANDOM,
 		"legs" = ACC_RANDOM,
-		"tail" = ACC_RANDOM,
+		"tail" = ACC_RANDOM, // As machines, these guys can bolt on whatever they want. Unified robotic species!
 		"snout" = ACC_RANDOM,
 		"taur" = ACC_NONE,
 		"horns" = ACC_NONE,
@@ -52,6 +52,8 @@
 	sexes = FALSE
 	var/datum/action/innate/monitor_change/screen
 	var/saved_screen = "Blank"
+	var/datum/action/innate/bootsound_change/sound
+	var/saved_bootsound = 'sound/machines/chime.ogg'
 	reagent_flags = PROCESS_SYNTHETIC
 	coldmod = 0.5
 	burnmod = 1.1
@@ -75,6 +77,20 @@
 		/datum/descriptor/age/robot
 	)
 
+// Name generator
+/* Don't you want to get your own special name?
+ */
+/datum/species/synthetic/random_name(gender,unique,lastname)
+	var/randname = pick(GLOB.posibrain_names)
+	randname = "[randname]-[rand(100, 99999)]"
+	return randname
+
+// Mortal machinery datum
+/*
+ * Otherwise known as a Salt PR, this feature permits IPCs to die if alive and in soft crit
+ * No one is sure if the salt comes from the redtexted antag or the IPC player condemned to
+ * purgatory when medical doesn't know they've gone missing.
+ */
 /datum/species/synthetic/spec_life(mob/living/carbon/human/H)
 	// Deal damage when we're in crit because otherwise synthetics can't die (immune to oxyloss)
 	if(H.stat == SOFT_CRIT || H.stat == HARD_CRIT)
@@ -83,39 +99,31 @@
 			to_chat(H, SPAN_WARNING("Alert: Critical damage taken! Cooling systems failing!"))
 			do_sparks(3, TRUE, H)
 
+// Revival datums
+/*
+ * Hello world!
+ */
 /datum/species/synthetic/spec_revival(mob/living/carbon/human/H)
+	. = ..()
+	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "BSOD"
+	to_chat(affected_mob, SPAN_DANGER("You are booting up..."))
+	H.Unconscious(rand(15, 45))
 	playsound(H.loc, 'sound/machines/chime.ogg', 50, 1, -1)
-	H.visible_message(SPAN_NOTICE("[H]'s monitor lights up."), SPAN_NOTICE("All systems nominal. You're back online!"))
+	H.visible_message(SPAN_WARNING("[H]'s indicator lights flicker."), SPAN_NOTICE("All systems nominal. You're back online!"))
+	//TODO: fix this
+	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = saved_screen
 
+// Appendix Removotron 8300
+/*
+ * Appendix Inspection Day is now in effect
+ * Conveniently also bestows our screen and chassis. How kind!
+ */
 /datum/species/synthetic/on_species_gain(mob/living/carbon/human/C)
 	. = ..()
 	var/obj/item/organ/appendix/appendix = C.getorganslot(ORGAN_SLOT_APPENDIX)
 	if(appendix)
 		appendix.Remove(C)
 		qdel(appendix)
-
-/datum/species/synthetic/random_name(gender,unique,lastname)
-	var/randname = pick(GLOB.posibrain_names)
-	randname = "[randname]-[rand(100, 999)]"
-	return randname
-
-/datum/species/synthetic/spec_revival(mob/living/carbon/human/H)
-	. = ..()
-	//TODO: fix this
-	/*H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "BSOD"
-	sleep(3 SECONDS)*/
-	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = saved_screen
-
-/datum/species/synthetic/spec_death(gibbed, mob/living/carbon/human/H)
-	. = ..()
-	saved_screen = H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME]
-	//TODO: fix this
-	/*H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "BSOD"
-	sleep(3 SECONDS)*/
-	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "Blank"
-
-/datum/species/synthetic/on_species_gain(mob/living/carbon/human/C)
-	. = ..()
 	if(!screen)
 		screen = new
 		screen.Grant(C)
@@ -129,12 +137,34 @@
 			species_traits += MUTCOLORS
 		C.update_body()
 
+// Screen removal datum
+/*
+ * Removes IPC screen in the event species changes
+ */
 /datum/species/synthetic/on_species_loss(mob/living/carbon/human/C)
 	. = ..()
 	if(screen)
 		screen.Remove(C)
 	..()
 
+// Screen removal during gib
+/*
+ * We would not want our screen to persist afterwards now would we?
+ */
+/datum/species/synthetic/spec_death(gibbed, mob/living/carbon/human/H)
+	. = ..()
+	saved_screen = H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME]
+	//TODO: fix this
+	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "BSOD"
+	sleep(30)
+	H.dna.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = "Blank"
+
+
+
+// Monitor Change action
+/*
+ * Lets us change our screensaver
+ */
 /datum/action/innate/monitor_change
 	name = "Screen Change"
 	check_flags = AB_CHECK_CONSCIOUS
@@ -143,20 +173,38 @@
 
 /datum/action/innate/monitor_change/Activate()
 	var/mob/living/carbon/human/H = owner
-	var/new_ipc_screen = input(usr, "Choose your character's screen:", "Monitor Display") as null|anything in GLOB.sprite_accessories["ipc_screen"]
+	var/new_ipc_screen = input(usr, "Choose screen:", "Screen Display") as null|anything in GLOB.sprite_accessories["ipc_screen"]
 	if(!new_ipc_screen)
 		return
 	H.dna.species.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = new_ipc_screen
 	H.update_body()
 
-/// SYNTH LIZARD
+// Bootup Sound Change action
+/*
+ * Lets us pick our bootup sound
+ */
+/datum/action/innate/bootsound_change
+	name = "Boot-Up Sound Change"
+	check_flags = AB_CHECK_CONSCIOUS
+	icon_icon = 'icons/mob/actions/actions_silicon.dmi'
+	button_icon_state = "monkey_up" // TODO: SOUND ICON
 
+/datum/action/innate/bootsound_change/Activate()
+	var/mob/living/carbon/human/H = owner
+	var/new_ipc_boot_sound = input(usr, "Choose boot-up sound:", "Sound Library") as null|anything in GLOB.sprite_accessories["ipc_screen"]
+	if(!new_ipc_boot_sound)
+		return
+	H.dna.species.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = new_ipc_boot_sound
+	H.update_body()
+
+/// SYNTH LIZARD
+/*
 /datum/species/synthetic/synthliz
 	name = "Synthetic Lizardperson"
 	id = "synthliz"
 	limbs_icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
-
-/datum/species/synthetic/synthliz/get_random_body_markings(list/passed_features)
+ */
+/datum/species/synthetic/get_random_body_markings(list/passed_features)
 	var/name = pick("Synth Pecs Lights", "Synth Scutes", "Synth Pecs")
 	var/datum/body_marking_set/BMS = GLOB.body_marking_sets[name]
 	var/list/markings = list()
@@ -165,15 +213,15 @@
 	return markings
 
 /// SYNTH ANTHRO
-
+/*
 /datum/species/synthetic/synth_anthro
 	name = "Synthetic Anthromorph"
 	id = "synthanthro"
 	limbs_icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	limbs_id = "mammal"
-
+ */
 // Somewhat of a paste from the mammal's random features, because they're supposed to mimick them in appearance.
-/datum/species/synthetic/synth_anthro/get_random_features()
+/datum/species/synthetic/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	var/main_color
 	var/second_color
@@ -204,10 +252,6 @@
 			main_color = "FFFFDD"
 			second_color = "FFEECC"
 			third_color = "FFDDBB"
-		if(7) //Oh no you've rolled the sparkle dog
-			main_color = random_color()
-			second_color = random_color()
-			third_color = random_color()
 	returned["mcolor"] = main_color
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = third_color

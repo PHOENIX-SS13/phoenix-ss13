@@ -1,7 +1,10 @@
 
 /******************************************
-************** IPC SCREENS ****************
-*******************************************/
+ ************** Synth Screens *************
+ ******************************************/
+
+// Ancient TG sprites
+
 /datum/sprite_accessory/screen
 	icon = 'icons/mob/sprite_accessory/ipc_screens.dmi'
 	color_src = null
@@ -129,8 +132,8 @@
 
 
 /******************************************
-************** IPC Antennas ***************
-*******************************************/
+ ************* Synth Antennae *************
+ ******************************************/
 
 /datum/sprite_accessory/antenna
 	icon = 'icons/mob/sprite_accessory/ipc_antennas.dmi'
@@ -171,7 +174,10 @@
 	name = "Crowned"
 	icon_state = "crowned"
 
-//Chasises - snowflake phantom accessory for choosing chassises
+/******************************************
+ ************* Synth Chassis **************
+ ******************************************/
+
 /datum/sprite_accessory/ipc_chassis
 	icon = null
 	icon_state = "ipc"
@@ -231,3 +237,14 @@
 	icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	icon_state = "synthliz"
 
+/******************************************
+ *********** Synth Boot Sounds ************
+ ******************************************/
+
+/datum/sprite_accessory/synth_bootsound
+	key = "bootsound"
+	generic = "Boot-Up Sound Type"
+
+/datum/sprite_accessory/synth_bootsound/ipc
+	key = "ipc_bootsound"
+	generic = "I.P.C."
