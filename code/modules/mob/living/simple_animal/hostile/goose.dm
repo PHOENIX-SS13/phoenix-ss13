@@ -40,7 +40,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/goose/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/goosement)
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(goosement))
 
 /mob/living/simple_animal/hostile/retaliate/goose/proc/goosement(atom/movable/AM, OldLoc, Dir, Forced)
 	SIGNAL_HANDLER
@@ -135,7 +135,7 @@
 /mob/living/simple_animal/hostile/retaliate/goose/proc/choke(obj/item/reagent_containers/food/plastic)
 	if(stat == DEAD || choking)
 		return
-	addtimer(CALLBACK(src, .proc/suffocate), 300)
+	addtimer(CALLBACK(src, PROC_REF(suffocate)), 300)
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/choke(obj/item/reagent_containers/food/plastic)
 	if(stat == DEAD || choking)
@@ -143,9 +143,9 @@
 	if(prob(25))
 		visible_message(SPAN_WARNING("[src] is gagging on \the [plastic]!"))
 		manual_emote("gags!")
-		addtimer(CALLBACK(src, .proc/vomit), 300)
+		addtimer(CALLBACK(src, PROC_REF(vomit)), 300)
 	else
-		addtimer(CALLBACK(src, .proc/suffocate), 300)
+		addtimer(CALLBACK(src, PROC_REF(suffocate)), 300)
 
 /mob/living/simple_animal/hostile/retaliate/goose/Life(delta_time = SSMOBS_DT, times_fired)
 	. = ..()
@@ -192,13 +192,13 @@
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/vomit_prestart(duration)
 	flick("vomit_start",src)
-	addtimer(CALLBACK(src, .proc/vomit_start, duration), 13) //13 is the length of the vomit_start animation in gooseloose.dmi
+	addtimer(CALLBACK(src, PROC_REF(vomit_start), duration), 13) //13 is the length of the vomit_start animation in gooseloose.dmi
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/vomit_start(duration)
 	vomiting = TRUE
 	icon_state = "vomit"
 	vomit()
-	addtimer(CALLBACK(src, .proc/vomit_preend), duration)
+	addtimer(CALLBACK(src, PROC_REF(vomit_preend)), duration)
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/vomit_preend()
 	for (var/obj/item/consumed in contents) //Get rid of any food left in the poor thing
@@ -216,7 +216,7 @@
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/goosement(atom/movable/AM, OldLoc, Dir, Forced)
 	. = ..()
 	if(vomiting)
-		INVOKE_ASYNC(src, .proc/vomit) // its supposed to keep vomiting if you move
+		INVOKE_ASYNC(src, PROC_REF(vomit)) // its supposed to keep vomiting if you move
 		return
 	if(prob(vomitCoefficient * 0.2))
 		vomit_prestart(vomitTimeBonus + 25)

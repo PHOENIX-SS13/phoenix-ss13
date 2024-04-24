@@ -88,7 +88,7 @@
 	set_full(TRUE)
 	for(var/open_turf in get_adjacent_open_turfs(src))
 		registered_turfs += open_turf
-		RegisterSignal(open_turf, COMSIG_ATOM_ENTERED, .proc/proximity_trigger)
+		RegisterSignal(open_turf, COMSIG_ATOM_ENTERED, PROC_REF(proximity_trigger))
 
 /obj/structure/mold/structure/bulb/proc/proximity_trigger(datum/source, atom/movable/movable_atom)
 	if(!isliving(movable_atom))
@@ -107,7 +107,7 @@
 	discharge_effect()
 	playsound(src, 'sound/effects/bamf.ogg', 100, TRUE)
 	set_full(FALSE)
-	addtimer(CALLBACK(src, .proc/set_full, TRUE), 150 SECONDS, TIMER_UNIQUE|TIMER_NO_HASH_WAIT)
+	addtimer(CALLBACK(src, PROC_REF(set_full), TRUE), 150 SECONDS, TIMER_UNIQUE|TIMER_NO_HASH_WAIT)
 
 /obj/structure/mold/structure/bulb/proc/discharge_effect()
 	return

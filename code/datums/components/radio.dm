@@ -6,11 +6,11 @@
 	var/canhear_range = 3
 
 /datum/component/radio/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOVABLE_HEAR, .proc/handle_hear)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_examine)
-	RegisterSignal(parent, COMSIG_CLICK_ALT, .proc/toggle_broadcasting)
-	RegisterSignal(parent, COMSIG_CLICK_ALT_SECONDARY, .proc/toggle_listening)
-	RegisterSignal(parent, COMSIG_OBJ_RECEIVE_SIGNAL, .proc/receive_signal)
+	RegisterSignal(parent, COMSIG_MOVABLE_HEAR, PROC_REF(handle_hear))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(toggle_broadcasting))
+	RegisterSignal(parent, COMSIG_CLICK_ALT_SECONDARY, PROC_REF(toggle_listening))
+	RegisterSignal(parent, COMSIG_OBJ_RECEIVE_SIGNAL, PROC_REF(receive_signal))
 
 /datum/component/radio/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MOVABLE_HEAR)
