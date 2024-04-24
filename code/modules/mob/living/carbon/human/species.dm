@@ -1464,7 +1464,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	if(radiation > RAD_MOB_HAIRLOSS && DT_PROB(RAD_MOB_HAIRLOSS_PROB, delta_time))
 		if(!(source.hairstyle == "Bald") && (HAIR in species_traits))
 			to_chat(source, SPAN_DANGER("Your hair starts to fall out in clumps..."))
-			addtimer(CALLBACK(src, .proc/go_bald, source), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(go_bald), source), 5 SECONDS)
 
 /**
  * Makes the target human bald.
@@ -1955,13 +1955,12 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		// Apply cold slow down
 		humi.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((bodytemp_cold_damage_limit - humi.bodytemperature) / COLD_SLOWDOWN_FACTOR))
 		// Display alerts based how cold it is
-		switch(humi.bodytemperature)
-			if(201 to bodytemp_cold_damage_limit)
-				humi.throw_alert("temp", /atom/movable/screen/alert/cold, 1)
-			if(120 to 200)
-				humi.throw_alert("temp", /atom/movable/screen/alert/cold, 2)
-			else
-				humi.throw_alert("temp", /atom/movable/screen/alert/cold, 3)
+		if(humi.bodytemperature >= 201)
+			humi.throw_alert("temp", /atom/movable/screen/alert/cold, 1)
+		else if(humi.bodytemperature >= 120)
+			humi.throw_alert("temp", /atom/movable/screen/alert/cold, 2)
+		else
+			humi.throw_alert("temp", /atom/movable/screen/alert/cold, 3)
 
 	// We are not to hot or cold, remove status and moods
 	else
@@ -2016,13 +2015,12 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	if(humi.coretemperature < cold_damage_limit && !HAS_TRAIT(humi, TRAIT_RESISTCOLD))
 		var/damage_type = is_hulk ? BRUTE : BURN // Why?
 		var/damage_mod = coldmod * humi.physiology.cold_mod * (is_hulk ? HULK_COLD_DAMAGE_MOD : 1)
-		switch(humi.coretemperature)
-			if(201 to cold_damage_limit)
-				humi.apply_damage(COLD_DAMAGE_LEVEL_1 * damage_mod * delta_time, damage_type)
-			if(120 to 200)
-				humi.apply_damage(COLD_DAMAGE_LEVEL_2 * damage_mod * delta_time, damage_type)
-			else
-				humi.apply_damage(COLD_DAMAGE_LEVEL_3 * damage_mod * delta_time, damage_type)
+		if(humi.coretemperature >= 201)
+			humi.apply_damage(COLD_DAMAGE_LEVEL_1 * damage_mod * delta_time, damage_type)
+		else if(humi.coretemperature >= 120)
+			humi.apply_damage(COLD_DAMAGE_LEVEL_2 * damage_mod * delta_time, damage_type)
+		else
+			humi.apply_damage(COLD_DAMAGE_LEVEL_3 * damage_mod * delta_time, damage_type)
 
 /**
  * Used to apply burn wounds on random limbs
@@ -2384,7 +2382,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 		buckled_obj.unbuckle_mob(H)
 		step(buckled_obj, olddir)
 	else
-		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, /mob/living/carbon/.proc/spin, 1, 1))
+		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon, spin), 1, 1))
 	return TRUE
 
 //UNSAFE PROC, should only be called through the Activate or other sources that check for CanFly

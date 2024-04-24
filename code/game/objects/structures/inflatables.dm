@@ -43,7 +43,7 @@
 
 	if(do_after(user, 0.50 SECONDS, src))
 		// We put it on the floor, and quickly pulled on the tab
-		addtimer(CALLBACK(src, .proc/inflate, user), DEPLOY_DELAY)
+		addtimer(CALLBACK(src, PROC_REF(inflate), user), DEPLOY_DELAY)
 	else
 		// We just drop it to the ground cause we somehow couldn't pull on the tab quick enough.
 		to_chat(user, SPAN_NOTICE("You lost your grip on the tab!"))
@@ -201,7 +201,7 @@
 	animate(src, deflate_time, transform = matrix)
 	set_density(FALSE)
 	air_update_turf(TRUE, TRUE)
-	addtimer(CALLBACK(src, .proc/post_deflate), deflate_time)
+	addtimer(CALLBACK(src, PROC_REF(post_deflate)), deflate_time)
 
 /obj/structure/inflatable/proc/post_deflate()
 	if(QDELETED(src))

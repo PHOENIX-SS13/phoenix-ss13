@@ -57,7 +57,7 @@
 	if(highest_scar)
 		UnregisterSignal(highest_scar, COMSIG_PARENT_QDELETING)
 	if(new_scar)
-		RegisterSignal(new_scar, COMSIG_PARENT_QDELETING, .proc/clear_highest_scar)
+		RegisterSignal(new_scar, COMSIG_PARENT_QDELETING, PROC_REF(clear_highest_scar))
 	highest_scar = new_scar
 
 /datum/wound/slash/proc/clear_highest_scar(datum/source)
@@ -196,7 +196,7 @@
 
 	user.visible_message(SPAN_NOTICE("[user] begins licking the wounds on [victim]'s [limb.name]."), SPAN_NOTICE("You begin licking the wounds on [victim]'s [limb.name]..."), ignored_mobs=victim)
 	to_chat(victim, "<span class='notice'>[user] begins to lick the wounds on your [limb.name].</span")
-	if(!do_after(user, base_treat_time, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	user.visible_message(SPAN_NOTICE("[user] licks the wounds on [victim]'s [limb.name]."), SPAN_NOTICE("You lick some of the wounds on [victim]'s [limb.name]"), ignored_mobs=victim)
@@ -220,7 +220,7 @@
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
 	user.visible_message(SPAN_WARNING("[user] begins aiming [lasgun] directly at [victim]'s [limb.name]..."), SPAN_USERDANGER("You begin aiming [lasgun] directly at [user == victim ? "your" : "[victim]'s"] [limb.name]..."))
-	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	var/damage = lasgun.chambered.loaded_projectile.damage
 	lasgun.chambered.loaded_projectile.wound_bonus -= 30
@@ -237,7 +237,7 @@
 	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% longer and less effective if you do it to yourself
 
 	user.visible_message(SPAN_DANGER("[user] begins cauterizing [victim]'s [limb.name] with [I]..."), SPAN_WARNING("You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
-	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	user.visible_message(SPAN_GREEN("[user] cauterizes some of the bleeding on [victim]."), SPAN_GREEN("You cauterize some of the bleeding on [victim]."))
@@ -257,7 +257,7 @@
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
 	user.visible_message(SPAN_NOTICE("[user] begins stitching [victim]'s [limb.name] with [I]..."), SPAN_NOTICE("You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
 
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	user.visible_message(SPAN_GREEN("[user] stitches up some of the bleeding on [victim]."), SPAN_GREEN("You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"]."))
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
