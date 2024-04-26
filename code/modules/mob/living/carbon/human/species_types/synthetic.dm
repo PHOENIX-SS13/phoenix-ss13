@@ -35,7 +35,7 @@
 	mutant_bodyparts = list()
 	default_mutant_bodyparts = list(
 		"ipc_antenna" 	= ACC_RANDOM,
-		"ipc_screen" 	= ACC_NONE,
+		"ipc_screen" 	= ACC_RANDOM,
 		"ipc_chassis" 	= ACC_RANDOM,
 		"legs" 			= ACC_RANDOM,
 		"tail" 			= ACC_RANDOM, // As machines, these guys can bolt on whatever they want. Unified robotic species!
