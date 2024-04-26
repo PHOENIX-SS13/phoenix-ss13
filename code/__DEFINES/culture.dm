@@ -143,7 +143,7 @@
 
 #define LOCATIONS_UNDEAD
 
-#define LOCATIONS_VULPKANIN	//datum/cultural_info/location/vazzend/altam, \
+#define LOCATIONS_VULPKANIN	//datum/cultural_info/location/vazzend/altam,
 							//datum/cultural_info/location/vazzend/kelune
 
 #define LOCATIONS_VOX
