@@ -69,7 +69,7 @@
 #define LIZARD_CULTURAL_LANGUAGES 		/datum/language/draconic, \
 										/datum/language/ashtongue
 
-#define CULTURES_PLANT
+#define CULTURES_PLANT		/datum/cultural_info/location/epsilon_ursae_minoris/topiary
 #define PLANT_CULTURAL_LANGUAGES 		/datum/language/diona, \
 										/datum/language/sylvan, \
 										/datum/language/mushroom
