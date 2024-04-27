@@ -197,13 +197,6 @@
 	H.dna.species.mutant_bodyparts["ipc_screen"][MUTANT_INDEX_NAME] = new_ipc_boot_sound
 	H.update_body()
 
-/// SYNTH LIZARD
-/*
-/datum/species/synthetic/synthliz
-	name = "Synthetic Lizardperson"
-	id = "synthliz"
-	limbs_icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
- */
 /datum/species/synthetic/get_random_body_markings(list/passed_features)
 	var/name = pick("Synth Pecs Lights", "Synth Scutes", "Synth Pecs")
 	var/datum/body_marking_set/BMS = GLOB.body_marking_sets[name]
@@ -212,16 +205,8 @@
 		markings = assemble_body_markings_from_set(BMS, passed_features, src)
 	return markings
 
-/// SYNTH ANTHRO
-/*
-/datum/species/synthetic/synth_anthro
-	name = "Synthetic Anthromorph"
-	id = "synthanthro"
-	limbs_icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
-	limbs_id = "mammal"
- */
 // Somewhat of a paste from the mammal's random features, because they're supposed to mimick them in appearance.
-/*/datum/species/synthetic/get_random_features()
+/datum/species/synthetic/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	var/main_color
 	var/second_color
@@ -255,4 +240,4 @@
 	returned["mcolor"] = main_color
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = third_color
-	return returned*/
+	return returned
