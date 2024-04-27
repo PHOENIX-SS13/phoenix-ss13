@@ -34,7 +34,7 @@
 #define AQUATIC_CULTURAL_LANGUAGES
 
 #define CULTURES_ETHEREAL	/datum/cultural_info/culture/tau_ceti/ethereal
-#define ETHEREAL_CULTURAL_LANGUAGES /datum/language/voltaic
+#define ETHEREAL_CULTURAL_LANGUAGES 	/datum/language/voltaic
 
 #define CULTURES_HUMAN		/datum/cultural_info/culture/generic_human, \
 							/datum/cultural_info/culture/tau_ceti, \
@@ -78,8 +78,7 @@
 #define CULTURES_SYNTHETIC
 #define SYNTHETIC_CULTURAL_LANGUAGES 	/datum/language/drone, \
 								   		/datum/language/machine, \
-								   		/datum/language/swarmer, \
-								   		/datum/language/sylvan
+								   		/datum/language/swarmer
 
 #define CULTURES_TAJARAN
 #define TAJARAN_CULTURAL_LANGUAGES		/datum/language/siiktajr
@@ -91,7 +90,9 @@
 
 #define CULTURES_UNDEAD
 #define UNDEAD_CULTURAL_LANGUAGES 		/datum/language/calcic, \
-										/datum/language/shadowtongue
+										/datum/language/shadowtongue, \
+										/datum/language/narsie, \
+										/datum/language/piratespeak
 
 #define CULTURES_VULPKANIN
 #define VULPKANIN_CULTURAL_LANGUAGES 	/datum/language/canilunzt

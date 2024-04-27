@@ -1,6 +1,6 @@
 // The language of the diona, basically picture a bunch of flood forms but made of tree bark and friendly
 /datum/language/diona
-	name = "Barksong"
+	name = "Barksong" // formerly rootsong/rootspeak... but diona don't have roots, so we changed it
 	desc = "It seems to operate via oscillating sine and cosine waves in a variety of mediums. \
 	Pressure and electromagnetic spectra are the most common. The larger the collective, generally \
 	speaking, the larger the wavelength. While nymphs prefer to use ultrasound and low-level x-rays, \
