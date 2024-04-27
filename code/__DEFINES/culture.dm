@@ -55,7 +55,8 @@
 										/datum/language/russian, \
 										/datum/language/terrum, \
 										/datum/language/gutter, \
-										/datum/language/spacer
+										/datum/language/spacer, \
+										/datum/language/alnujum
 
 #define CULTURES_INSECT
 #define INSECT_CULTURAL_LANGUAGES	 	/datum/language/buzzwords, \
@@ -65,11 +66,14 @@
 #define JELLY_CULTURAL_LANGUAGES 		/datum/language/slime
 
 #define CULTURES_LIZARD 	/datum/cultural_info/culture/lavaland
-#define LIZARD_CULTURAL_LANGUAGES 		/datum/language/draconic
+#define LIZARD_CULTURAL_LANGUAGES 		/datum/language/draconic, \
+										/datum/language/ashtongue
 
 #define CULTURES_PLANT
-#define PLANT_CULTURAL_LANGUAGES 		/datum/language/sylvan, \
+#define PLANT_CULTURAL_LANGUAGES 		/datum/language/diona, \
+										/datum/language/sylvan, \
 										/datum/language/mushroom
+
 
 #define CULTURES_SYNTHETIC
 #define SYNTHETIC_CULTURAL_LANGUAGES 	/datum/language/drone, \
@@ -78,7 +82,7 @@
 								   		/datum/language/sylvan
 
 #define CULTURES_TAJARAN
-#define TAJARAN_CULTURAL_LANGUAGES
+#define TAJARAN_CULTURAL_LANGUAGES		/datum/language/siiktajr
 
 #define CULTURES_TESHARI	/datum/cultural_info/culture/sirisai, \
 							/datum/cultural_info/culture/titan/immigrant, \
@@ -131,9 +135,10 @@
 
 #define LOCATIONS_JELLY
 
-#define LOCATIONS_LIZARD	//datum/cultural_info/location/beta_centaurus/moghes
+#define LOCATIONS_LIZARD	//datum/cultural_info/location/beta_centaurus/moghes,
+							//datum/cultural_info/location/rizkalon/tizira
 
-#define LOCATIONS_PLANT
+#define LOCATIONS_PLANT		/datum/cultural_info/location/epsilon_ursae_minoris/topiary
 
 #define LOCATIONS_SYNTHETIC
 

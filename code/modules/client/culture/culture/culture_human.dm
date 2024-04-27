@@ -110,8 +110,6 @@
 	economic_power = 0.8
 	required_lang = list(/datum/language/gutter)
 
-
-
 /// Gilgamesh Colonial Confederation
 
 // Terra (Capital)

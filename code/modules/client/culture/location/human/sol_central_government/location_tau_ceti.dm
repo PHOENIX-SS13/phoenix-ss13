@@ -5,12 +5,9 @@
 // Ceti Epsilon b
 
 /datum/cultural_info/location/tau_ceti/tau_ceti_b
-	name = "Tau Ceti b"
-	description = "Tau Ceti b, or Ceti beta"
-	distance = "11.9 light years"
-	capital = "Verlize"
-	ruling_body = "Sol Central Government"
-	economic_power = 1.4
+/*
+ * see equivalent ethereal file!
+ */
 
 
 // Ceti Epsilon b-ii
