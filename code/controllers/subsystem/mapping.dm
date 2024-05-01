@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(mapping)
 #endif
 	// Run map generation after ruin generation to prevent issues
 	run_map_generation()
-	
+
 	repopulate_sorted_areas()
 	generate_station_area_list()
 	return ..()
@@ -221,9 +221,9 @@ Used by the AI doomsday and the self-destruct nuke.
 	for (var/list/level as anything in traits)
 		i++
 		var/level_name = "[name] [i]"
-		
+
 		var/datum/virtual_level/vlevel = create_virtual_level(level_name, level.Copy(), mapzone, world.maxx, world.maxy, ALLOCATION_FULL, reservation_margin = map_margin)
-		
+
 		ordered_vlevels += vlevel
 	var/subi = 0
 	for(var/datum/virtual_level/vlevel as anything in ordered_vlevels)
@@ -480,7 +480,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
 
-	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
+	for(var/item in sortList(subtypesof(/datum/map_template/ruin),GLOBAL_PROC_REF(cmp_ruincost_priority)))
 		var/datum/map_template/ruin/ruin_type = item
 		// screen out the abstract subtypes
 		if(!initial(ruin_type.id))

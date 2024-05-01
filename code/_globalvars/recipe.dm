@@ -33,6 +33,6 @@ GLOBAL_LIST_INIT(recipes, build_recipe_list())
 
 	// Sort the appliance recipes lists by recipe priority.
 	for(var/appliance in GLOB.appliance_recipes)
-		sortTim(GLOB.appliance_recipes[appliance], /proc/cmp_recipe_priority, associative = FALSE)
+		sortTim(GLOB.appliance_recipes[appliance],GLOBAL_PROC_REF(cmp_recipe_priority), associative = FALSE)
 
 	return recipe_list

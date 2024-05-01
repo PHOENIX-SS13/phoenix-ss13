@@ -13,7 +13,7 @@ GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons
 		IF YOU ADD MORE ICON CRAP TO THIS
 		ENSURE YOU ALSO ADD THE NEW VARS TO CHAMELEON ITEM_ACTION'S update_item() PROC (/datum/action/item_action/chameleon/change/proc/update_item())
 		WASHING MASHINE'S dye_item() PROC (/obj/item/proc/dye_item())
-		AND ALSO TO THE CHANGELING PROFILE DISGUISE SYSTEMS (/datum/changelingprofile / /datum/antagonist/changeling/proc/create_profile() / /proc/changeling_transform())
+		AND ALSO TO THE CHANGELING PROFILE DISGUISE SYSTEMS (/datum/changelingprofile / /datum/antagonist/changeling/proc/create_profile() /GLOBAL_PROC_REF(changeling_transform()))
 
 		!!!!!!!!!!!!!!! IMPORTANT !!!!!!!!!!!!!! */
 
@@ -48,7 +48,7 @@ GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons
 		IF YOU ADD MORE ICON CRAP TO THIS
 		ENSURE YOU ALSO ADD THE NEW VARS TO CHAMELEON ITEM_ACTION'S update_item() PROC (/datum/action/item_action/chameleon/change/proc/update_item())
 		WASHING MASHINE'S dye_item() PROC (/obj/item/proc/dye_item())
-		AND ALSO TO THE CHANGELING PROFILE DISGUISE SYSTEMS (/datum/changelingprofile / /datum/antagonist/changeling/proc/create_profile() / /proc/changeling_transform())
+		AND ALSO TO THE CHANGELING PROFILE DISGUISE SYSTEMS (/datum/changelingprofile / /datum/antagonist/changeling/proc/create_profile() /GLOBAL_PROC_REF(changeling_transform()))
 
 		!!!!!!!!!!!!!!! IMPORTANT !!!!!!!!!!!!!! */
 

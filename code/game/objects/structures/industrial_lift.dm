@@ -33,7 +33,7 @@
 		type_blacklist = typecacheof(INDUSTRIAL_LIFT_BLACKLISTED_TYPESOF)
 	AddElement(/datum/element/footstep_override, FOOTSTEP_LATTICE, FOOTSTEP_HARD_BAREFOOT, FOOTSTEP_LATTICE, FOOTSTEP_LATTICE)
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXITED =.proc/UncrossedRemoveItemFromLift,
+		COMSIG_ATOM_EXITED =PROC_REF(UncrossedRemoveItemFromLift),
 		COMSIG_ATOM_ENTERED = PROC_REF(AddItemOnLift),
 		COMSIG_ATOM_CREATED = PROC_REF(AddItemOnLift),
 	)
