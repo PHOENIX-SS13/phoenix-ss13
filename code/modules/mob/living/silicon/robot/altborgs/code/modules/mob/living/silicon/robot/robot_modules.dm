@@ -5,9 +5,9 @@
 	basic_modules += new /obj/item/dogborg_nose(src)
 	basic_modules += new /obj/item/dogborg_tongue(src)
 	var/mob/living/silicon/robot/cyborg = loc
-	add_verb(cyborg , /mob/living/silicon/robot/proc/robot_lay_down)
-	add_verb(cyborg , /mob/living/silicon/robot/proc/rest_style)
-	add_verb(cyborg , /mob/living/silicon/robot/proc/user_reset_model)
+	add_verb(cyborg , TYPE_PROC_REF(/mob/living/silicon/robot, robot_lay_down))
+	add_verb(cyborg , TYPE_PROC_REF(/mob/living/silicon/robot, rest_style))
+	add_verb(cyborg , TYPE_PROC_REF(/mob/living/silicon/robot, user_reset_model))
 	rebuild_modules()
 
 //ROBOT ADDITIONAL MODULES

@@ -50,7 +50,7 @@
 /mob/living/simple_animal/pet/cat/Initialize()
 	. = ..()
 	AddElement(/datum/element/pet_bonus, "purrs!")
-	add_verb(src, /mob/living/proc/toggle_resting)
+	add_verb(src, TYPE_PROC_REF(/mob/living, toggle_resting))
 	add_cell_sample()
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
