@@ -6,7 +6,7 @@
 	name = "The Sleeping Carp"
 	id = MARTIALART_SLEEPINGCARP
 	allow_temp_override = FALSE
-	help_verb = /mob/living/proc/sleeping_carp_help
+	help_verb = TYPE_PROC_REF(/mob/living, sleeping_carp_help)
 	display_combos = TRUE
 
 /datum/martial_art/the_sleeping_carp/proc/check_streak(mob/living/A, mob/living/D)

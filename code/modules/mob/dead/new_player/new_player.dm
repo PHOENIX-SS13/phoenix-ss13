@@ -570,4 +570,4 @@
 		I.ui_interact(src)
 
 	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
-	add_verb(src, /mob/dead/new_player/proc/open_interview)
+	add_verb(src, TYPE_PROC_REF(/mob/dead/new_player, open_interview))

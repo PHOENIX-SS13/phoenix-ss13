@@ -7,7 +7,7 @@
 /datum/martial_art/cqc
 	name = "CQC"
 	id = MARTIALART_CQC
-	help_verb = /mob/living/proc/CQC_help
+	help_verb = TYPE_PROC_REF(/mob/living, CQC_help)
 	block_chance = 75
 	smashes_tables = TRUE
 	var/old_grab_state = null
