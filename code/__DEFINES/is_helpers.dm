@@ -82,6 +82,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define issynthetic(A) (is_species(A,/datum/species/synthetic))
 #define ismammal(A) (is_species(A,/datum/species/mammal))
 #define ispodweak(A) (is_species(A,/datum/species/pod/podweak))
+#define isdiona(A) (is_species(A,/datum/species/diona))
 #define isxenohybrid(A) (is_species(A,/datum/species/xeno))
 #define isroundstartslime(A) (is_species(A,/datum/species/jelly/roundstartslime))
 

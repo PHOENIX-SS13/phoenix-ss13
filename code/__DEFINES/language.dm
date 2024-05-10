@@ -2,6 +2,8 @@
 #define TONGUELESS_SPEECH 2
 #define LANGUAGE_HIDE_ICON_IF_UNDERSTOOD 4
 #define LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD 8
+#define HIVEMIND 16         // Broadcast to all mobs with this language.
+#define HIVEMIND_RUNECHAT (1<<11) // Flag for letting hivemind languages have a runechat appear over the head of the recipient
 
 // LANGUAGE SOURCE DEFINES
 #define LANGUAGE_ALL "all" // For use in full removal only.

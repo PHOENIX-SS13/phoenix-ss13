@@ -1,7 +1,8 @@
 /datum/species/aquatic
 	name = "Aquatic"
 	id = "aquatic"
-	flavor_text = "A broad category which refers to multiple bipedal, sapient species which evolved in marine environments. Most enjoy meats, and fried foods, but will eat just about anything."
+	flavor_text = "A broad category which refers to multiple bipedal, sapient species \
+	which evolved in marine environments. Most enjoy meats, and fried foods, but will eat just about anything."
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
