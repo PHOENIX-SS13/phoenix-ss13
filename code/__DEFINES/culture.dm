@@ -175,8 +175,8 @@
 
 #define FACTIONS_ANTHROMORPH			///datum/cultural_info/faction/[whatever people want]
 
-#define FACTIONS_AQUATIC				///datum/cultural_info/faction/akula, \
-										///datum/cultural_info/faction/eskith, \
+#define FACTIONS_AQUATIC				///datum/cultural_info/faction/akula,
+										///datum/cultural_info/faction/eskith,
 										///datum/cultural_info/faction/skrell
 
 #define FACTIONS_ETHEREAL				///datum/cultural_info/faction/ethereal
@@ -193,18 +193,18 @@
 										/datum/cultural_info/faction/saare, \
 										/datum/cultural_info/faction/dais
 
-#define FACTIONS_INSECT					///datum/cultural_info/faction/moth, \
+#define FACTIONS_INSECT					///datum/cultural_info/faction/moth,
 										///datum/cultural_info/faction/kidan //(maybe?)
 
 #define FACTIONS_JELLY					///datum/cultural_info/faction/slime_ranch
 
-#define FACTIONS_LIZARD					///datum/cultural_info/faction/tizira, \
-										///datum/cultural_info/faction/moghes, \
-										///datum/cultural_info/faction/unathi_clan, \
+#define FACTIONS_LIZARD					///datum/cultural_info/faction/tizira,
+										///datum/cultural_info/faction/moghes,
+										///datum/cultural_info/faction/unathi_clan,
 										///datum/cultural_info/faction/silverscale
 
-#define FACTIONS_PLANT					///datum/cultural_info/faction/podpeople, \
-										///datum/cultural_info/faction/mushroom_republic, \
+#define FACTIONS_PLANT					///datum/cultural_info/faction/podpeople,
+										///datum/cultural_info/faction/mushroom_republic,
 										///datum/cultural_info/faction/diona_gestalt
 
 #define FACTIONS_SYNTHETIC				///datum/cultural_info/faction/[is there a synth state?]
