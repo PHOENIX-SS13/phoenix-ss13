@@ -176,7 +176,7 @@
 #define FACTIONS_ANTHROMORPH			///datum/cultural_info/faction/[whatever people want]
 
 #define FACTIONS_AQUATIC				///datum/cultural_info/faction/akula, \
-										///datum/cultural_info/faction/eskith,
+										///datum/cultural_info/faction/eskith, \
 										///datum/cultural_info/faction/skrell
 
 #define FACTIONS_ETHEREAL				///datum/cultural_info/faction/ethereal

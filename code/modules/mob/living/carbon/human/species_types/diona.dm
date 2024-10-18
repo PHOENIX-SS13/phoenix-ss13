@@ -33,15 +33,6 @@
 	breathid = "co2" // plants breathe co2!
 	exotic_bloodtype = "D"
 	meat = /obj/item/food/meat/slab/human/mutant/plant
-	list/knife_butcher_results = list(
-		/mob/living/simple_animal/diona,
-		/mob/living/simple_animal/diona,
-		/mob/living/simple_animal/diona,
-		/mob/living/simple_animal/diona,
-		/mob/living/simple_animal/diona,
-		/mob/living/simple_animal/diona,
-		/mob/living/simple_animal/diona
-	)
 	say_mod = list(
 		"creaks",
 		"oscillates",

@@ -367,7 +367,7 @@
 		to_chat(src, "<span class='noticealien'>The blood seeps into your small form, and you draw out the echoes of memories and personality from it, working them into your budding mind.</span>")
 
 
-/mob/living/simple_animal/diona/put_in_hands(obj/item/W)
+/mob/living/simple_animal/diona/put_in_hands(obj/item/W, merge_stacks = FALSE)
 	W.forceMove(get_turf(src))
 	W.layer = initial(W.layer)
 	W.plane = initial(W.plane)
