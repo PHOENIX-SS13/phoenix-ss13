@@ -22,14 +22,8 @@
 
 	/// Flavor text announced to nymphs on [/mob/proc/Login]
 	var/flavortext = \
-	"<span class='notice'>Diona nymphs are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
-	"<span class='notice'>Actions that constitute interference include, but are not limited to:</span>\n"+\
-	"<span class='notice'>     - Interacting with round critical objects (IDs, weapons, contraband, powersinks, bombs, etc.)</span>\n"+\
-	"<span class='notice'>     - Interacting with living beings (communication, attacking, healing, etc.)</span>\n"+\
-	"<span class='notice'>     - Interacting with non-living beings (dragging bodies, looting bodies, etc.)</span>\n"+\
-	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
-	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>\n"+\
-	"<span class='notice'>Prefix your message with :b to speak in Drone Chat.</span>\n"
+	"<span class='notice'>Diona nymphs strive to increase their knowledge base and gain resources to multiply themselves into a gestalt Diona.</span>\n"+\
+	"<span class='notice'>You may do as you like, but your blood drawing may draw ire from the surprised.</span>\n"
 
 	maxHealth = 50
 	health = 50
@@ -383,10 +377,9 @@
 	if(!B || !B.brainmob || !B.brainmob.mind)
 		return
 	B.brainmob.mind.transfer_to(src)
-	to_chat(src, "<span class='big bold'>You are a diona nymph!</span><b> You're a harmless cat/cake hybrid that everyone loves. People can take bites out of you if they're hungry, but you regenerate health \
-	so quickly that it generally doesn't matter. You're remarkably resilient to any damage besides this and it's hard for you to really die at all. You should go around and bring happiness and \
-	free cake to the station!</b>")
-	var/new_name = stripped_input(src, "Enter your name, or press \"Cancel\" to stick with Keeki.", "Name Change")
+	to_chat(src, "<span class='big bold'>You are a diona nymph!</span><b> You're a lovely little plant creature that communicates via sound and light. Your goal is to sample blood to learn new \
+	ways to develop your genetic structure, eventually you will grow large and wise enough to multiply and begin working with your descdendants in a collective consciousness, a gestalt colony.</b>")
+	var/new_name = stripped_input(src, "Enter your name, or press \"Cancel\" to stick with a nymph designation.", "Name Change")
 	if(new_name)
 		to_chat(src, SPAN_NOTICE("Your name is now <b>\"new_name\"</b>!"))
 		name = new_name
