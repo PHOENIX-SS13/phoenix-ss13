@@ -147,6 +147,6 @@
 /// Same name and everything; we want the same limitations on them; we just want their regeneration to kick in at all times and them to have special factions
 /datum/species/diona/pod
 	name = "Podgrown Diona" //Seperate name needed else can't select diona period
-	id = "diona/pod"
+	id = "diona_pod"
 	pod = TRUE
 	inherent_factions = list("plants", "vines")

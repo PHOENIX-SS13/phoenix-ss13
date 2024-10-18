@@ -1,6 +1,8 @@
 /datum/species/jelly
 	// Entirely alien beings that seem to be made entirely out of gel. They have three eyes and a skeleton visible within them.
 	name = "Jellyperson"
+	flavor_text = "Entirely alien beings that seem to be made entirely out of gel. \
+	They have three eyes and a skeleton visible within them."
 	id = "jelly"
 	default_color = "0F9"
 	say_mod = "chirps"

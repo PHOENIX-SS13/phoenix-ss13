@@ -394,10 +394,11 @@ SILICON_MAX_LAW_AMOUNT 12
 #ROUNDSTART_RACES android_infiltration_militarized
 
 ## Plantoids
- ROUNDSTART_RACES pod
+#ROUNDSTART_RACES pod
  ROUNDSTART_RACES podweak
  ROUNDSTART_RACES mush
  ROUNDSTART_RACES diona
+#ROUNDSTART_RACES diona_pod
 
 ## Special
  ROUNDSTART_RACES anthromorph
