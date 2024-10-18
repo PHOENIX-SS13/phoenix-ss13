@@ -9,6 +9,27 @@
 	else
 		. = ..()
 
+/mob/living/carbon/human/say_understands(atom/movable/other, datum/language/speaking = null)
+	if(dna.species.can_understand(other))
+		return TRUE
+
+	//These only pertain to common. Languages are handled by mob/say_understands()
+	if(!speaking && ismob(other))
+		if(isnymph(other))
+			var/mob/nymph = other
+			if(length(nymph.languages) >= 2) //They've sucked down some blood and can speak common now.
+				return TRUE
+		if(issilicon(other))
+			return TRUE
+		if(isbot(other))
+			return TRUE
+		if(isbrain(other))
+			return TRUE
+		if(isslime(other))
+			return TRUE
+
+	return ..()
+
 /mob/living/carbon/human/GetVoice()
 	if(istype(wear_mask, /obj/item/clothing/mask/chameleon))
 		var/obj/item/clothing/mask/chameleon/V = wear_mask

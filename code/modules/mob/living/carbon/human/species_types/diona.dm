@@ -27,14 +27,31 @@
 	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_PLANT)
 	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_PLANT)
 	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_PLANT)
+	species_language_holder = /datum/language_holder/plant
+	always_customizable = TRUE
 	default_color = "000"
 	breathid = "co2" // plants breathe co2!
+	exotic_bloodtype = "D"
+	meat = /obj/item/food/meat/slab/human/mutant/plant
+	list/knife_butcher_results = list(
+		/mob/living/simple_animal/diona,
+		/mob/living/simple_animal/diona,
+		/mob/living/simple_animal/diona,
+		/mob/living/simple_animal/diona,
+		/mob/living/simple_animal/diona,
+		/mob/living/simple_animal/diona,
+		/mob/living/simple_animal/diona
+	)
+	say_mod = list(
+		"creaks",
+		"oscillates",
+		"emits"
+	)
 	mutantliver	=   /obj/item/organ/liver/diona
 	mutantlungs	=   /obj/item/organ/lungs/diona
 	mutantheart	=   /obj/item/organ/heart/diona
 	mutanteyes	=   /obj/item/organ/eyes/diona //Default darksight of 2.
 	mutantbrain =   /obj/item/organ/brain/diona
-	mutantkidneys = /obj/item/organ/kidneys/diona
 	mutantappendix = /obj/item/organ/appendix/diona
 	bodypart_overides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/diona,
@@ -44,53 +61,44 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/r_leg/diona,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/diona,
 	)
-	//max_age = 300
+
+	liked_food = VEGETABLES | FRUIT | GRAIN
+	disliked_food = ALCOHOL
+	toxic_food = MEAT
+
 	limbs_icon = 'icons/mob/species/diona_parts.dmi'
 	var/pod = FALSE //did they come from a pod? If so, they're stronger than normal Diona.
 
-/*
-	//language = "Nymphsong"
-	//speech_sounds = list('sound/voice/dionatalk1.ogg') //Credit https://www.youtube.com/watch?v=ufnvlRjsOTI [0:13 - 0:16]
-	//speech_chance = 20
-	//unarmed_type = /datum/unarmed_attack/diona
-	//remains_type = /obj/effect/decal/cleanable/ash
-	//heatmod = 3
-	//clothing_flags = HAS_SOCKS
-	//default_hair_colour = "#000000"
-	//bodyflags = SHAVED
-	//dietflags = DIET_HERB		//Diona regenerate nutrition in light and water, no diet necessary, but if they must, they eat other plants *scream
-	//taste_sensitivity = TASTE_SENSITIVITY_DULL
-	skinned_type = /obj/item/stack/sheet/wood
-	flesh_color = "#907E4A"
+	ass_image = "icons/ass/assdiona.png"
 
-	blood_color = "#004400"
-	butt_sprite = "diona"
+	burnmod = 1.25
+	heatmod = 1.5
+	speedmod = 1.2
+/*
+	language = "Nymphsong"
+	speech_sounds = list('sound/voice/dionatalk1.ogg') //Credit https://www.youtube.com/watch?v=ufnvlRjsOTI [0:13 - 0:16]
+	speech_chance = 20
+	unarmed_type = /datum/unarmed_attack/diona
+
+	max_age = 300
+
+	bodyflags = SHAVED
+	dietflags = DIET_HERB	//Diona regenerate nutrition in light and water, no diet necessary, but if they must, they eat other plants *scream
+	taste_sensitivity = TASTE_SENSITIVITY_DULL
 	reagent_tag = PROCESS_ORG
 
-	has_limbs = list(
-		"chest" =  list("path" = /obj/item/organ/external/chest/diona, "descriptor" = "core trunk"),
-		"groin" =  list("path" = /obj/item/organ/external/groin/diona, "descriptor" = "fork"),
-		"head" =   list("path" = /obj/item/organ/external/head/diona, "descriptor" = "head"),
-		"l_arm" =  list("path" = /obj/item/organ/external/arm/diona, "descriptor" = "left upper tendril"),
-		"r_arm" =  list("path" = /obj/item/organ/external/arm/right/diona, "descriptor" = "right upper tendril"),
-		"l_leg" =  list("path" = /obj/item/organ/external/leg/diona, "descriptor" = "left lower tendril"),
-		"r_leg" =  list("path" = /obj/item/organ/external/leg/right/diona, "descriptor" = "right lower tendril"),
-		"l_hand" = list("path" = /obj/item/organ/external/hand/diona, "descriptor" = "left grasper"),
-		"r_hand" = list("path" = /obj/item/organ/external/hand/right/diona, "descriptor" = "right grasper"),
-		"l_foot" = list("path" = /obj/item/organ/external/foot/diona, "descriptor" = "left foot"),
-		"r_foot" = list("path" = /obj/item/organ/external/foot/right/diona, "descriptor" = "right foot")
-		)
-
-	suicide_messages = list(
-		"is losing branches!",
-		"pulls out a secret stash of herbicide and takes a hearty swig!",
-		"is pulling themselves apart!")
+	flesh_color = "#907E4A"
+	default_hair_colour = "#000000"
+	blood_color = "#004400"
+	skinned_type = /obj/item/stack/sheet/wood
+	remains_type = /obj/effect/decal/cleanable/ash
+*/
 
 /datum/species/diona/can_understand(mob/other)
 	if(isnymph(other))
 		return TRUE
 	return FALSE
-*/
+
 /datum/species/diona/on_species_gain(mob/living/carbon/human/H)
 	..()
 	H.gender = NEUTER
@@ -102,49 +110,41 @@
 	for(var/mob/living/simple_animal/diona/N in H.contents) // Let nymphs wiggle out
 		N.split()
 
-/datum/species/diona/handle_reagents(mob/living/carbon/human/H, datum/reagent/R)
-	if(R.id == "glyphosate" || R.id == "atrazine")
-		H.adjustToxLoss(3) //Deal aditional damage
+/datum/species/diona/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, delta_time, times_fired)
+	if(chem.type == /datum/reagent/toxin/plantbgone || chem.type == /datum/reagent/toxin/plantbgone/weedkiller)
+		H.adjustToxLoss(3 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * delta_time)
 		return TRUE
-	return ..()
 
-/datum/species/diona/handle_life(mob/living/carbon/human/H)
+/datum/species/diona/spec_life(mob/living/carbon/human/H, delta_time, times_fired)
+	if(H.stat == DEAD)
+		return
+
 	var/light_amount = 0 //how much light there is in the place, affects receiving nutrition and healing
-	var/is_vamp = H.mind && H.mind.has_antag_datum(/datum/antagonist/vampire)
 	if(isturf(H.loc)) //else, there's considered to be no light
 		var/turf/T = H.loc
 		light_amount = min(1, T.get_lumcount()) - 0.5
-		if(light_amount > 0)
-			H.clear_alert("nolight")
-		else
-			H.throw_alert("nolight", /atom/movable/screen/alert/nolight)
-
-		if(!is_vamp)
-			H.adjust_nutrition(light_amount * 10)
-			if(H.nutrition > NUTRITION_LEVEL_ALMOST_FULL)
-				H.set_nutrition(NUTRITION_LEVEL_ALMOST_FULL)
-
+		H.adjust_nutrition(5 * light_amount * delta_time)
+		if(H.nutrition > NUTRITION_LEVEL_ALMOST_FULL)
+			H.set_nutrition(NUTRITION_LEVEL_ALMOST_FULL)
 		if(light_amount > 0.2 && !H.suiciding) //if there's enough light, heal
-			if(!pod && H.health <= 0)
-				return
-			H.adjustBruteLoss(-1)
-			H.adjustToxLoss(-1)
-			H.adjustOxyLoss(-1)
+			H.heal_overall_damage(0.5 * delta_time, 0.5 * delta_time, 0, BODYPART_ORGANIC)
+			H.adjustToxLoss(-0.5 * delta_time)
+			H.adjustOxyLoss(-0.5 * delta_time)
 
-	if(!is_vamp && H.nutrition < NUTRITION_LEVEL_STARVING + 50)
+	if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
 		H.adjustBruteLoss(2)
-	..()
 
-/datum/species/diona/bullet_act(obj/item/projectile/P, mob/living/carbon/human/H, def_zone)
-	if(istype(P, /obj/item/projectile/energy/floramut))
+/datum/species/diona/bullet_act(obj/projectile/P, mob/living/carbon/human/H, def_zone)
+	if(istype(P, /obj/projectile/energy/floramut))
 		P.nodamage = TRUE
-		H.Weaken(1 SECONDS)
+		H.Stun(1 SECONDS)
 		if(prob(80))
-			randmutb(H)
+			H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
 		else
-			randmutg(H)
+			H.easy_randmut(POSITIVE)
 		H.visible_message("[H] writhes for a moment as [H.p_their()] nymphs squirm and mutate.", "All of you squirm uncomfortably for a moment as you feel your genes changing.")
-	else if(istype(P, /obj/item/projectile/energy/florayield))
+	else if(istype(P, /obj/projectile/energy/florayield))
 		P.nodamage = TRUE
 		var/obj/item/bodypart/organ = H.getorgan(check_zone(def_zone))
 		if(!organ)

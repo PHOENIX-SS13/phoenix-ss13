@@ -1,7 +1,7 @@
 
 //DIONA: Sprites by skittles below
 /datum/sprite_accessory/hair/diona
-	icon = 'icons/mob/sprite_accessories/diona_hair.dmi'
+	icon = 'icons/mob/sprite_accessory/diona_hair.dmi'
 	recommended_species = list("diona")
 
 /datum/sprite_accessory/hair/diona/diona_bracket
@@ -98,7 +98,7 @@
 /datum/sprite_accessory/hair/diona/diona_bigleaf
 	name = "Big Leaf"
 	icon_state = "bigleaf"
-	glasses_over = FALSE
+	//glasses_over = FALSE
 
 //Sprites from Aurora Below
 /datum/sprite_accessory/hair/diona/diona_treebeard

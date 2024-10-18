@@ -11,16 +11,32 @@
 	icon = 'icons/mob/monkey.dmi'
 	icon_state = "nymph"
 	icon_living = "nymph"
+	var/icon_resting = "nymph_rest"
 	icon_dead = "nymph_dead"
 	pass_flags = PASSTABLE | PASSMOB
 	mob_biotypes = MOB_ORGANIC | MOB_PLANT
 	mob_size = MOB_SIZE_SMALL
+	density = FALSE
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 
+	/// Flavor text announced to nymphs on [/mob/proc/Login]
+	var/flavortext = \
+	"<span class='notice'>Diona nymphs are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
+	"<span class='notice'>Actions that constitute interference include, but are not limited to:</span>\n"+\
+	"<span class='notice'>     - Interacting with round critical objects (IDs, weapons, contraband, powersinks, bombs, etc.)</span>\n"+\
+	"<span class='notice'>     - Interacting with living beings (communication, attacking, healing, etc.)</span>\n"+\
+	"<span class='notice'>     - Interacting with non-living beings (dragging bodies, looting bodies, etc.)</span>\n"+\
+	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
+	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>\n"+\
+	"<span class='notice'>Prefix your message with :b to speak in Drone Chat.</span>\n"
+
 	maxHealth = 50
 	health = 50
-
+	damage_coeff = list(BRUTE = 1, BURN = 1.5, TOX = 1, CLONE = 0, STAMINA = 1, OXY = 1)
+	faction = list("neutral", FACTIONS_PLANT)
+	initial_language_holder = /datum/language_holder/plant/nymph
+	gender = NEUTER
 	speak_emote = list("chirrups","sings","hums","chirps","sounds","chitters","peeps","tweets","trills","jabbers")
 	emote_hear = list("produces a low hum.","sounds out a low resonation.","produces a very dim series of purple light flashes.")
 	emote_see = list("resonates.")
@@ -29,8 +45,11 @@
 	response_help_simple = "pet"
 	response_disarm_continuous = "pushes"
 	response_disarm_simple = "push"
-	response_harm_continuous = "punches"
-	response_harm_simple = "punch"
+	response_harm_continuous = "strikes"
+	response_harm_simple = "strike"
+	deathmessage = "becomes inert."
+
+	butcher_results = /obj/item/food/meat/slab/human/mutant/plant
 
 	melee_damage_lower = 5
 	melee_damage_upper = 8
@@ -43,11 +62,14 @@
 	stop_automated_movement = FALSE
 	turns_per_move = 4
 
-	var/list/donors = list()
-	holder_type = /obj/item/clothing/head/mob_holder/diona
-	can_collar = TRUE
+	mobility_flags = MOBILITY_FLAGS_REST_CAPABLE_DEFAULT
+	gold_core_spawnable = FRIENDLY_SPAWN
+	can_be_held = TRUE
+	worn_slot_flags = ITEM_SLOT_HEAD
 
-	a_intent = INTENT_HELP
+	var/list/donors = list()
+	//can_collar = TRUE
+
 	var/evolve_donors = 5 //amount of blood donors needed before evolving
 	var/awareness_donors = 3 //amount of blood donors needed for understand language
 	var/nutrition_need = 500 //amount of nutrition needed before evolving
@@ -58,16 +80,55 @@
 
 /mob/living/simple_animal/diona/Initialize()
 	. = ..()
+	add_verb(src, /mob/living/proc/toggle_resting)
+	add_cell_sample()
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+
+/mob/living/simple_animal/diona/Login()
+	. = ..()
+	if(!. || !client)
+		return FALSE
+
+	if(flavortext)
+		to_chat(src, "[flavortext]")
+
+/mob/living/simple_animal/diona/auto_deadmin_on_login()
+	if(!client?.holder)
+		return TRUE
+	if(CONFIG_GET(flag/auto_deadmin_players) || (client.prefs?.toggles))
+		return client.holder.auto_deadmin()
+	return ..()
+
+/mob/living/simple_animal/diona/add_cell_sample()
+	AddElement(/datum/element/swabable, CELL_LINE_TABLE_GRAPE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)
+
+/mob/living/simple_animal/diona/original/add_cell_sample()
+	return
 
 /mob/living/simple_animal/diona/update_resting()
 	. = ..()
+	if(stat == DEAD)
+		return
 	if(resting)
-		icon_state = "[initial(icon_state)]_rest"
+		icon_state = icon_resting
 	else
 		icon_state = "[initial(icon_state)]"
-	if(loc != card)
-		visible_message(SPAN_NOTICE("[src] [resting? "lays down for a moment..." : "perks up from the ground"]"))
+	regenerate_icons()
+
+/mob/living/simple_animal/diona/Life(delta_time = SSMOBS_DT, times_fired)
+	if(!stat && !buckled && !client)
+		if(DT_PROB(0.5, delta_time))
+			manual_emote(pick("lays down for a moment...", "grows still and silent momentarily...", "loses track of time, daydreaming..."))
+			set_resting(TRUE)
+		else if(DT_PROB(0.5, delta_time))
+			manual_emote(pick("conceals its sensory organs by curling up into a little ball.", "sploots on the ground, all its little limbs spreading out.", "concentrates on a spot on the floor."))
+			set_resting(TRUE)
+		else if(DT_PROB(0.5, delta_time))
+			if (resting)
+				manual_emote(pick("perks up from the ground.", "rises to its tiny legs and and scuttles around in a circle.", "stops resting."))
+				set_resting(FALSE)
+			else
+				manual_emote(pick("chirps and vibrates.", "emits an earthy thrum.", "produces tiny flashes of light."))
 
 /datum/action/innate/diona/merge
 	name = "Merge with gestalt"
@@ -116,19 +177,39 @@
 	if(!split())
 		..()
 
-/mob/living/simple_animal/diona/attack_hand(mob/living/carbon/human/M)
+/mob/living/simple_animal/diona/attack_hand(mob/living/user, list/modifiers)
 	//Let people pick the little buggers up.
-	if(M.a_intent == INTENT_HELP)
-		if(isdiona(M))
-			to_chat(M, "You feel your being twine with that of [src] as it merges with your biomass.")
-			to_chat(src, "You feel your being twine with that of [M] as you merge with its biomass.")
+	if(!user.combat_mode)
+		if(isdiona(user))
+			to_chat(user, "You feel your being twine with that of [src] as it merges with your biomass.")
+			to_chat(src, "You feel your being twine with that of [user] as you merge with its biomass.")
 			throw_alert(GESTALT_ALERT, /atom/movable/screen/alert/nymph, new_master = src) //adds a screen alert that can call resist
-			M.throw_alert(NYMPH_ALERT, /atom/movable/screen/alert/gestalt, new_master = src)
-			forceMove(M)
-		else if(issynthetic(M))
-			M.visible_message("<span class='notice'>[M] playfully boops [src] on the head!</span>", "<span class='notice'>You playfully boop [src] on the head!</span>")
+			user.throw_alert(NYMPH_ALERT, /atom/movable/screen/alert/gestalt, new_master = src)
+			forceMove(user)
+		else if(issilicon(user))
+			user.visible_message("<span class='notice'>[user] playfully boops [src] on the head!</span>", "<span class='notice'>You playfully boop [src] on the head!</span>")
 		else
-			get_scooped(M)
+			if(ishuman(user))
+				if(stat == DEAD || status_flags & GODMODE || !can_be_held)
+					..()
+					return
+				if(user.get_active_held_item())
+					to_chat(user, SPAN_WARNING("Your hands are full!"))
+					return
+				visible_message(SPAN_WARNING("[user] starts picking up [src]."), \
+								SPAN_USERDANGER("[user] starts picking you up!"))
+				if(!do_after(user, 20, target = src))
+					return
+				visible_message(SPAN_WARNING("[user] picks up [src]!"), \
+								SPAN_USERDANGER("[user] picks you up!"))
+				if(buckled)
+					to_chat(user, SPAN_WARNING("[src] is buckled to [buckled] and cannot be picked up!"))
+					return
+				to_chat(user, SPAN_NOTICE("You pick [src] up."))
+				drop_all_held_items()
+				var/obj/item/clothing/head/mob_holder/diona/DH = new(get_turf(src), src)
+				DH.slot_flags = worn_slot_flags
+				user.put_in_hands(DH)
 	else
 		..()
 
@@ -175,10 +256,10 @@
 
 	var/hasMobs = FALSE
 	for(var/atom/A in D.contents)
-		if(ismob(A) || istype(A, /obj/item/holder))
+		if(ismob(A) || istype(A, /obj/item/clothing/head/mob_holder))
 			hasMobs = TRUE
 	if(!hasMobs)
-		D.status_flags /*&= ~PASSEMOTES*/
+		D.status_flags &= ~PASSEMOTES
 		D.clear_alert(NYMPH_ALERT)
 
 	clear_alert(GESTALT_ALERT)
@@ -193,13 +274,13 @@
 		return FALSE
 
 	if(nutrition < nutrition_need)
-		to_chat(src, "<span class='warning'>You need to binge on weeds in order to have the energy to grow...</span>")
+		to_chat(src, "<span class='warning'>You need to binge in order to have the energy to grow...</span>")
 		return FALSE
 
-	if(isdiona(loc) && !split()) //if it's merged with diona, needs to able to split before evolving
+	if(isdiona(loc) && !split()) //if it's merged with dionae, needs to able to split before evolving
 		return FALSE
 
-	visible_message("<span class='danger'>[src] begins to shift and quiver, and erupts in a shower of shed bark as it splits into a tangle of nearly a dozen new dionaea.</span>","<span class='danger'>You begin to shift and quiver, feeling your awareness splinter. All at once, we consume our stored nutrients to surge with growth, splitting into a tangle of at least a dozen new dionaea. We have attained our gestalt form.</span>")
+	visible_message("<span class='danger'>[src] begins to shift and quiver, and erupts in a shower of shed bark as it splits into a tangle of nearly a dozen new dionae.</span>","<span class='danger'>You begin to shift and quiver, feeling your awareness splinter. All at once, we consume our stored nutrients to surge with growth, splitting into a tangle of at least a dozen new dionae. We have attained our gestalt form.</span>")
 
 	var/mob/living/carbon/human/species/diona/adult = new(get_turf(loc))
 	adult.set_species(/datum/species/diona)
@@ -216,7 +297,7 @@
 	adult.name = "diona ([rand(100,999)])"
 	adult.real_name = adult.name
 	adult.ckey = ckey
-	adult.real_name = adult.dna.species.get_random_name()	//I hate this being here of all places but unfortunately dna is based on real_name!
+	adult.real_name = adult.dna.species.random_name() //I hate this being here of all places but unfortunately dna is based on real_name!
 
 	for(var/obj/item/W in contents)
 		doUnEquip(W)

@@ -527,6 +527,39 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	final.Turn(difference)
 	animate(src, transform = final, time = 5, loop = 0)
 
+// DIONA NYMPHS
+
+//Diona Nymph
+/atom/movable/screen/alert/nymph
+	name = "Gestalt merge"
+	desc = "You have merged with a diona gestalt and are now part of it's biomass. You can still wiggle yourself free though."
+
+/atom/movable/screen/alert/nymph/Click()
+	if(!..())
+		return
+	if(isnymph(usr))
+		var/mob/living/simple_animal/diona/D = usr
+		return D.resist()
+
+/atom/movable/screen/alert/gestalt
+	name = "Merged nymph"
+	desc = "You have merged with one or more diona nymphs. Click here to drop it (or one of them)."
+
+/atom/movable/screen/alert/gestalt/Click()
+	if(!..())
+		return
+
+	var/list/nymphs = list()
+	for(var/mob/living/simple_animal/diona/D in usr.contents)
+		nymphs += D
+
+	if(length(nymphs) == 1)
+		var/mob/living/simple_animal/diona/D = nymphs[1]
+		D.split(TRUE)
+	else
+		var/mob/living/simple_animal/diona/D = tgui_input_list(usr, "Select a nymph to drop:", "Nymph Dropping", nymphs)
+		if(D in usr.contents)
+			D.split(TRUE)
 
 //GUARDIANS
 

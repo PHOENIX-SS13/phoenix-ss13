@@ -1802,6 +1802,9 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	// called before a projectile hit
 	return 0
 
+/datum/species/proc/can_understand(mob/other)
+	return
+
 /////////////
 //BREATHING//
 /////////////

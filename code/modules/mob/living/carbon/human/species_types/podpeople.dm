@@ -37,9 +37,9 @@
 	species_language_holder = /datum/language_holder/plant
 	always_customizable = TRUE
 
-	cultures = list(/datum/cultural_info/culture/lavaland)
-	locations = list(/datum/cultural_info/location/stateless)
-	factions = list(/datum/cultural_info/faction/none)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_PLANT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_PLANT)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_PLANT)
 
 /datum/species/pod/spec_life(mob/living/carbon/human/H, delta_time, times_fired)
 	if(H.stat == DEAD)
@@ -52,7 +52,7 @@
 		H.adjust_nutrition(5 * light_amount * delta_time)
 		if(H.nutrition > NUTRITION_LEVEL_ALMOST_FULL)
 			H.set_nutrition(NUTRITION_LEVEL_ALMOST_FULL)
-		if(light_amount > 0.2) //if there's enough light, heal
+		if(light_amount > 0.2 && !H.suiciding) //if there's enough light, heal
 			H.heal_overall_damage(0.5 * delta_time, 0.5 * delta_time, 0, BODYPART_ORGANIC)
 			H.adjustToxLoss(-0.5 * delta_time)
 			H.adjustOxyLoss(-0.5 * delta_time)
