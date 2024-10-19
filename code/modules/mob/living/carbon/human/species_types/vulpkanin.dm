@@ -1,7 +1,7 @@
 /datum/species/vulpkanin
 	name = "Vulpkanin"
 	id = "vulpkanin"
-	flavor_text = "A fully-furred bipedal fox. Most enjoy meats, and fried foods, but will eat just about anything."
+	flavor_text = "An inquisitive, amenable species of sapient bipedals capable of regulating their own body temperature. Possessing a coat of fine fur reminiscent of spider silk, they come in a variety of earthy and grey tones."
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -18,12 +18,15 @@
 		"ears" = ACC_RANDOM,
 		"legs" = "Normal Legs",
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_VULPKANIN)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_VULPKANIN)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_VULPKANIN)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	liked_food = GROSS | MEAT | FRIED
+	liked_food = DAIRY | MEAT | FRIED | RAW | VEGETABLES
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	limbs_icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	limbs_id = "mammal"
 
 /datum/species/vulpkanin/get_random_features()

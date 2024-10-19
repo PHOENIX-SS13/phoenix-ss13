@@ -6,16 +6,70 @@
 #define SCANGATE_SPECIES "Species"
 #define SCANGATE_NUTRITION "Nutrition"
 
+#define SCANGATE_MONKEY "monkey"
 #define SCANGATE_HUMAN "human"
-#define SCANGATE_LIZARD "lizard"
+#define SCANGATE_HUMANOID "humanoid"
 #define SCANGATE_FELINID "felinid"
-#define SCANGATE_FLY "fly"
-#define SCANGATE_PLASMAMAN "plasma"
+
+#define SCANGATE_VULPKANIN "vulpkanin"
+
+#define SCANGATE_TAJARAN "tajaran"
+
+#define SCANGATE_LIZARD "lizard"
+#define SCANGATE_LIZARD_ASH "lizard_ash"
+#define SCANGATE_LIZARD_SILVER "lizard_silver"
+#define SCANGATE_UNATHI "unathi"
+
+#define SCANGATE_TESHARI "teshari"
+#define SCANGATE_VOX "vox"
+
+#define SCANGATE_AQUATIC "aquatic"
+#define SCANGATE_AKULA "akula"
+#define SCANGATE_SKRELL "skrell"
+#define SCANGATE_SNAIL "snail"
+
+#define SCANGATE_INSECT "insect"
 #define SCANGATE_MOTH "moth"
+#define SCANGATE_FLY "fly"
+
+#define SCANGATE_SLIMEPERSON "slimeperson"
 #define SCANGATE_JELLY "jelly"
-#define SCANGATE_POD "pod"
+#define SCANGATE_JELLY_SLIME "jelly_slime"
+#define SCANGATE_JELLY_LUMINESCENT "jelly_luminescent"
+#define SCANGATE_JELLY_STARGAZER "jelly_stargazer"
+
+#define SCANGATE_SYNTHETIC "synthetic"
+#define SCANGATE_ANDROID "android"
+#define SCANGATE_ANDROID_INFILTRATION "android_infiltration"
+#define SCANGATE_ANDROID_INFILTRATION_MILITARIZED "android_infiltration_militarized"
+
+#define SCANGATE_POD_PRIMAL "pod"
+#define SCANGATE_POD "podweak"
+#define SCANGATE_MUSHROOM "mush"
+#define SCANGATE_DIONA "diona"
+#define SCANGATE_DIONA_POD "diona_pod"
+
+#define SCANGATE_ANTHROMORPH "anthromorph"
+#define SCANGATE_ETHEREAL "ethereal"
+#define SCANGATE_SHADOW "shadow"
+#define SCANGATE_ABDUCTOR "abductor"
+#define SCANGATE_XENOMORPH_HYBRID "xenomorph_hybrid"
+
+#define SCANGATE_PLASMAMAN "plasmaman"
+#define SCANGATE_SKELETON "skeleton"
+#define SCANGATE_DULLAHAN "dullahan"
+#define SCANGATE_ZOMBIE_A "zombie"
+#define SCANGATE_ZOMBIE_B "memezombies"
+#define SCANGATE_KROKODIL_ADDICT "goofzombies"
+#define SCANGATE_VAMPIRE "vampire"
+
 #define SCANGATE_GOLEM "golem"
-#define SCANGATE_ZOMBIE "zombie"
+#define SCANGATE_GOLEM_A "adamantine"
+#define SCANGATE_GOLEM_P "plasma"
+#define SCANGATE_GOLEM_D "diamond"
+#define SCANGATE_GOLEM_G "gold"
+#define SCANGATE_GOLEM_S "silver"
+#define SCANGATE_GOLEM_U "uranium"
 
 /obj/machinery/scanner_gate
 	name = "scanner gate"
@@ -141,27 +195,113 @@
 				var/mob/living/carbon/human/H = M
 				var/datum/species/scan_species = /datum/species/human
 				switch(detect_species)
-					if(SCANGATE_LIZARD)
-						scan_species = /datum/species/lizard
-					if(SCANGATE_FLY)
-						scan_species = /datum/species/fly
+					if(SCANGATE_MONKEY)
+						scan_species = /datum/species/monkey
+					if(SCANGATE_HUMAN)
+						scan_species = /datum/species/human
+					if(SCANGATE_HUMANOID)
+						scan_species = /datum/species/humanoid
 					if(SCANGATE_FELINID)
 						scan_species = /datum/species/human/felinid
-					if(SCANGATE_PLASMAMAN)
-						scan_species = /datum/species/plasmaman
+					if(SCANGATE_VULPKANIN)
+						scan_species = /datum/species/vulpkanin
+					if(SCANGATE_TAJARAN)
+						scan_species = /datum/species/tajaran
+					if(SCANGATE_LIZARD)
+						scan_species = /datum/species/lizard
+					if(SCANGATE_LIZARD_ASH)
+						scan_species = /datum/species/lizard/ashwalker
+					if(SCANGATE_LIZARD_SILVER)
+						scan_species = /datum/species/lizard/silverscale
+					if(SCANGATE_UNATHI)
+						scan_species = /datum/species/unathi
+					if(SCANGATE_TESHARI)
+						scan_species = /datum/species/teshari
+					if(SCANGATE_VOX)
+						scan_species = /datum/species/vox
+					if(SCANGATE_AQUATIC)
+						scan_species = /datum/species/aquatic
+					if(SCANGATE_AKULA)
+						scan_species = /datum/species/akula
+					if(SCANGATE_SKRELL)
+						scan_species = /datum/species/skrell
+					if(SCANGATE_SNAIL)
+						scan_species = /datum/species/snail
+					if(SCANGATE_INSECT)
+						scan_species = /datum/species/insect
 					if(SCANGATE_MOTH)
 						scan_species = /datum/species/moth
+					if(SCANGATE_FLY)
+						scan_species = /datum/species/fly
 					if(SCANGATE_JELLY)
 						scan_species = /datum/species/jelly
-					if(SCANGATE_POD)
+					if(SCANGATE_JELLY_SLIME)
+						scan_species = /datum/species/jelly/slime
+					if(SCANGATE_SLIMEPERSON)
+						scan_species = /datum/species/jelly/roundstartslime
+					if(SCANGATE_JELLY_LUMINESCENT)
+						scan_species = /datum/species/jelly/luminescent
+					if(SCANGATE_JELLY_STARGAZER)
+						scan_species = /datum/species/jelly/stargazer
+					if(SCANGATE_SYNTHETIC)
+						scan_species = /datum/species/synthetic
+					if(SCANGATE_ANDROID)
+						scan_species = /datum/species/android
+					if(SCANGATE_ANDROID_INFILTRATION)
+						scan_species = /datum/species/android/infiltration_android
+					if(SCANGATE_ANDROID_INFILTRATION_MILITARIZED)
+						scan_species = /datum/species/android/infiltration_android/military
+					if(SCANGATE_POD_PRIMAL)
 						scan_species = /datum/species/pod
+					if(SCANGATE_POD)
+						scan_species = /datum/species/pod/podweak
+					if(SCANGATE_MUSHROOM)
+						scan_species = /datum/species/mush
+					if(SCANGATE_DIONA)
+						scan_species = /datum/species/diona
+					if(SCANGATE_DIONA_POD)
+						scan_species = /datum/species/diona/pod
+					if(SCANGATE_ANTHROMORPH)
+						scan_species = /datum/species/anthromorph
+					if(SCANGATE_ETHEREAL)
+						scan_species = /datum/species/ethereal
+					if(SCANGATE_SHADOW)
+						scan_species = /datum/species/shadow
+					if(SCANGATE_ABDUCTOR)
+						scan_species = /datum/species/abductor
+					if(SCANGATE_XENOMORPH_HYBRID)
+						scan_species = /datum/species/xeno
+					if(SCANGATE_PLASMAMAN)
+						scan_species = /datum/species/plasmaman
+					if(SCANGATE_SKELETON)
+						scan_species = /datum/species/skeleton
+					if(SCANGATE_DULLAHAN)
+						scan_species = /datum/species/dullahan
+					if(SCANGATE_ZOMBIE_A)
+						scan_species = /datum/species/zombie
+					if(SCANGATE_ZOMBIE_B)
+						scan_species = /datum/species/zombie/infectious
+					if(SCANGATE_KROKODIL_ADDICT)
+						scan_species = /datum/species/krokodil_addict
+					if(SCANGATE_VAMPIRE)
+						scan_species = /datum/species/vampire
 					if(SCANGATE_GOLEM)
 						scan_species = /datum/species/golem
-					if(SCANGATE_ZOMBIE)
-						scan_species = /datum/species/zombie
+					if(SCANGATE_GOLEM_A)
+						scan_species = /datum/species/golem/adamantine
+					if(SCANGATE_GOLEM_P)
+						scan_species = /datum/species/golem/plasma
+					if(SCANGATE_GOLEM_D)
+						scan_species = /datum/species/golem/diamond
+					if(SCANGATE_GOLEM_G)
+						scan_species = /datum/species/golem/gold
+					if(SCANGATE_GOLEM_S)
+						scan_species = /datum/species/golem/silver
+					if(SCANGATE_GOLEM_U)
+						scan_species = /datum/species/golem/uranium
 				if(is_species(H, scan_species))
 					beep = TRUE
-				if(detect_species == SCANGATE_ZOMBIE) //Can detect dormant zombies
+				if(detect_species == SCANGATE_ZOMBIE_A || detect_species == SCANGATE_ZOMBIE_B) //Can detect dormant zombies
 					if(H.getorganslot(ORGAN_SLOT_ZOMBIE))
 						beep = TRUE
 		if(SCANGATE_GUNS)

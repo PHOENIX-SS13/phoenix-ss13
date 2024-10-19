@@ -965,6 +965,14 @@
 	vary = TRUE
 	sound = 'sound/voice/merp.ogg'
 
+/datum/emote/living/simple_animal/diona_chirp
+	key = "chirp"
+	key_third_person = "chirps"
+	message = "chirps!"
+	sound = "sound/creatures/nymphchirp.ogg"
+	emote_type = EMOTE_AUDIBLE
+	mob_type_allowed_typecache = list(/mob/living/simple_animal/diona, /mob/living/carbon/human/species/diona)
+
 /datum/emote/living/bark
 	key = "bark"
 	key_third_person = "barks"

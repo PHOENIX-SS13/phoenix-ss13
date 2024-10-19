@@ -68,7 +68,8 @@
 #define CANKNOCKDOWN (1<<1)
 #define CANUNCONSCIOUS (1<<2)
 #define CANPUSH (1<<3)
-#define GODMODE (1<<4)
+#define PASSEMOTES (1<<4) //Mob has holders inside of it that need to see emotes.
+#define GODMODE (1<<5)
 
 //Health Defines
 #define HEALTH_THRESHOLD_CRIT 0

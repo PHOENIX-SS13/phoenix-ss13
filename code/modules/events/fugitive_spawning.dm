@@ -82,7 +82,7 @@
 		if("waldo")
 			S.equipOutfit(/datum/outfit/waldo)
 		if("synth")
-			S.equipOutfit(/datum/outfit/synthetic)
+			S.equipOutfit(/datum/outfit/android)
 	message_admins("[ADMIN_LOOKUPFLW(S)] has been made into a Fugitive by an event.")
 	log_game("[key_name(S)] was spawned as a Fugitive by an event.")
 	spawned_mobs += S

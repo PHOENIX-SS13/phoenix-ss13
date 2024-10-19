@@ -108,6 +108,8 @@
 				SA = random_accessory_of_key_for_species(key, pref_species)
 			else
 				SA = GLOB.sprite_accessories[key][target_bodyparts[key]]
+			if(isnull(SA))
+				continue
 			var/final_list = list()
 			final_list[MUTANT_INDEX_NAME] = SA.name
 			final_list[MUTANT_INDEX_COLOR_LIST] = SA.get_default_color(features, pref_species)

@@ -16,6 +16,60 @@
 /proc/moth_name()
 	return "[pick(GLOB.moth_first)] [pick(GLOB.moth_last)]"
 
+/*
+names_dionae_first_prefix
+names_dionae_first
+names_dionae_first_suffix
+names_dionae_middle_prefix
+names_dionae_middle
+names_dionae_last_prefix
+names_dionae_last
+names_dionae_last_suffix
+*/
+/proc/diona_name()
+	var/new_name
+	if(prob(20))
+		new_name += "[pick(GLOB.names_dionae_first_prefix)]"
+	if(prob(100))
+		new_name += "[pick(GLOB.names_dionae_first)]"
+	if(prob(100))
+		new_name += "[pick(GLOB.names_dionae_first_suffix)]"
+	if(prob(30))
+		new_name += "[pick(GLOB.names_dionae_middle_prefix)]"
+		if(prob(80))
+			new_name += "[pick(GLOB.names_dionae_middle)]"
+			if(prob(90))
+				new_name += "[pick(GLOB.names_dionae_last_prefix)]"
+			if(prob(70))
+				new_name += "[pick(GLOB.names_dionae_last)]"
+			if(prob(90))
+				new_name += "[pick(GLOB.names_dionae_last_suffix)]"
+	new_name = replacetext(new_name,"eing","ing")
+	new_name = replacetext(new_name,"nying","nizing")
+	new_name = replacetext(new_name,"sss","sses")
+	new_name = replacetext(new_name,"ys","ies")
+	new_name = replacetext(new_name,"stills","still")
+	new_name = replacetext(new_name,"stilling","still")
+	new_name = replacetext(new_name,"songing","singing")
+	new_name = replacetext(new_name,"heiring","heir")
+	new_name = replacetext(new_name,"puritying","purifying")
+	new_name = replacetext(new_name,"restorationing","restoring")
+	new_name = replacetext(new_name,"elementing","element")
+	new_name = replacetext(new_name,"nymphing","nymph")
+	new_name = replacetext(new_name,"hiving","hive")
+	new_name = replacetext(new_name,"gestalting","gestalt")
+	new_name = replacetext(new_name,"unioning","unifying")
+	new_name = replacetext(new_name,"ying","ing")
+	new_name = replacetext(new_name,"'sbreak","break")
+	new_name = replacetext(new_name,"wander's","wanderer's")
+	new_name = replacetext(new_name,"soothefall","Soothing Autumn")
+	new_name = replacetext(new_name,"undeathing","undying")
+	new_name = replacetext(new_name,"tentativing","tentative")
+	new_name = replacetext(new_name,"tentativefall","tentative")
+	new_name = replacetext(new_name,"ings","ing")
+	new_name = replacetext(new_name,"ings","ing")
+	return new_name
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)

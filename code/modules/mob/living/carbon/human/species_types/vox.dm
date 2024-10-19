@@ -21,11 +21,15 @@
 		TRAIT_CAN_STRIP,
 		TRAIT_RESISTCOLD,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_VOX)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_VOX)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_VOX)
+	breathid = "n2"
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutantlungs = /obj/item/organ/lungs/vox
 	mutantbrain = /obj/item/organ/brain/vox
 	mutanttongue = /obj/item/organ/tongue/avian
-	breathid = "n2"
+
 	default_mutant_bodyparts = list(
 		"tail" = "Vox Tail",
 		"legs" = "Digitigrade Legs",

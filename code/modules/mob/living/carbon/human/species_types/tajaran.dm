@@ -1,7 +1,7 @@
 /datum/species/tajaran
 	name = "Tajaran"
 	id = "tajaran"
-	flavor_text = "A fully-furred bipedal feline. Most enjoy meats, and fried foods, but will eat just about anything."
+	flavor_text = "Covered in coarse fur, tajarans are a sapient species which places great emphasis on appearance. They lead a large federation beyond Skrell space, not much is known of their inner social workings. Most enjoy meats, and raw foods, in fact they will eat just about anything!"
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -18,12 +18,16 @@
 		"ears" = ACC_RANDOM,
 		"legs" = "Normal Legs",
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_TAJARAN)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_TAJARAN)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_TAJARAN)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	liked_food = GROSS | MEAT | FRIED
+	disliked_food = PINEAPPLE
+	liked_food = GROSS | MEAT | RAW | TOXIC | NUTS | GRAIN
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon = 'icons/mob/species/mammal_parts_greyscale.dmi'
+	limbs_icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	limbs_id = "mammal"
 	scream_sounds = list(
 		NEUTER = 'sound/voice/cat_scream.ogg',

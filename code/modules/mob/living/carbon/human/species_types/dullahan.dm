@@ -16,6 +16,9 @@
 		TRAIT_NOHUNGER,
 		TRAIT_NOBREATH,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_UNDEAD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_UNDEAD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_UNDEAD)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	use_skintones = TRUE
 	mutantbrain = /obj/item/organ/brain/dullahan

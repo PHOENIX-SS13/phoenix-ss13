@@ -57,7 +57,9 @@ GLOBAL_LIST_INIT(robotic_styles_list, list("None" = "None",
 										"Ward-Takahashi Manufacturing" = 'icons/mob/augmentation/wtmipc.dmi',
 										"Xion Manufacturing Group" = 'icons/mob/augmentation/xmgipc.dmi',
 										"Xion Manufacturing Group 2.0" = 'icons/mob/augmentation/xm2ipc.dmi',
-										"Zeng-Hu Pharmaceuticals" = 'icons/mob/augmentation/zhpipc.dmi'
+										"Zeng-Hu Pharmaceuticals" = 'icons/mob/augmentation/zhpipc.dmi',
+										"Synthetic Reptilomorph" = 'icons/mob/species/synthliz_parts_greyscale.dmi',
+										"Synthetic Anthromorph" = 'icons/mob/species/anthro_parts_greyscale.dmi'
 										))
 
 GLOBAL_LIST_EMPTY(hairstyle_cache)

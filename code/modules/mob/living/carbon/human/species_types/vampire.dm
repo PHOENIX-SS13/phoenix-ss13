@@ -23,6 +23,9 @@
 		"tail" = ACC_NONE,
 		"wings" = ACC_NONE,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_UNDEAD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_UNDEAD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_UNDEAD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | ERT_SPAWN
 	exotic_bloodtype = "U"
 	use_skintones = TRUE

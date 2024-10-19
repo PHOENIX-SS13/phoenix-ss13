@@ -56,8 +56,9 @@
 
 	ass_image = 'icons/ass/asslizard.png'
 	limbs_icon = 'icons/mob/species/lizard_parts_greyscale.dmi'
-
-	cultures = list(CULTURES_EXOTIC, CULTURES_LIZARD, CULTURES_HUMAN)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_LIZARD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_LIZARD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_LIZARD)
 	learnable_languages = list(
 		/datum/language/common,
 		/datum/language/draconic,
@@ -110,8 +111,8 @@ Lizard subspecies: ASHWALKERS
 */
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"
-	id = "ashlizard"
-	flavor_text = "A reptilian species adapted to harsher environments. They can breathe in low pressure areas, hold their breath for extended periods, and have an immunity to most viral outbreaks. Similar to normal Lizardpeople, they cannot eat grains or dairy."
+	id = "lizard_ash"
+	flavor_text = "A reptilian species adapted to harsher environments. They can breathe in low pressure areas, hold their breath for extended periods, and have an immunity to most viral outbreaks. Similar to average lizardpeople, they cannot eat nuts or dairy."
 	limbs_id = "lizard"
 	species_traits = list(
 		MUTCOLORS,
@@ -138,12 +139,25 @@ Lizard subspecies: ASHWALKERS
 
 	learnable_languages = list(/datum/language/draconic)
 
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"spines" = ACC_RANDOM,
+		"frills" = ACC_RANDOM,
+		"horns" = ACC_RANDOM,
+		"body_markings" = ACC_RANDOM,
+		"legs" = "Digitigrade Legs",
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 /*
 Lizard subspecies: SILVER SCALED
 */
 /datum/species/lizard/silverscale
 	name = "Silver Scale"
-	id = "silverlizard"
+	id = "lizard_silver"
+	flavor_text = "Pressure-proof, lacking a need to breathe, and generally hardier than their nearest genetic peers, this subspecies arose from lizardlike genemodders on the fringe of known space. They are unable to digest dairy or nut products, though they are generally able to break down a mostly-overlapping group of several proteins toxic to the Earth biosphere. When in danger, they can grow a into a silvery cocoon."
 	limbs_id = "lizard"
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	inherent_traits = list(
@@ -161,6 +175,18 @@ Lizard subspecies: SILVER SCALED
 	var/old_mutcolor
 	///stored eye color for when we turn back off of a silverscale.
 	var/old_eyecolor
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"spines" = ACC_RANDOM,
+		"frills" = ACC_RANDOM,
+		"horns" = ACC_RANDOM,
+		"body_markings" = ACC_RANDOM,
+		"legs" = "Digitigrade Legs",
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 
 /datum/species/lizard/silverscale/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	var/mob/living/carbon/human/new_silverscale = C

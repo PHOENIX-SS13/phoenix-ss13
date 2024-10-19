@@ -65,9 +65,9 @@
 /datum/wound/muscle/proc/attack_with_hurt_hand(mob/M, atom/target, proximity)
 	SIGNAL_HANDLER
 
-	//FIXME: Re-enable when intents are back.
-	//if(victim.get_active_hand() != limb || victim.a_intent == INTENT_HELP || !ismob(target) || severity <= WOUND_SEVERITY_MODERATE)
-	//	return
+	//FIXME: Re-enable when intents are back. 2024/10/18 fixed via replacing .a_intent == INTENT_HELP with !.combat_mode
+	if(victim.get_active_hand() != limb || !victim.combat_mode || !ismob(target) || severity <= WOUND_SEVERITY_MODERATE)
+		return
 
 	// 15% of 30% chance to proc pain on hit
 	if(prob(severity * 15))
