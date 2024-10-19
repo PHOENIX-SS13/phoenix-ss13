@@ -37,7 +37,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/lobstrosity/ranged_secondary_attack(atom/target, modifiers)
 	if(COOLDOWN_FINISHED(src, charge_cooldown))
-		INVOKE_ASYNC(src, /mob/living/simple_animal/hostile/.proc/enter_charge, target)
+		INVOKE_ASYNC(src, /mob/living/simple_TYPE_PROC_REF(animal/hostile,enter_charge), target)
 	else
 		to_chat(src, SPAN_NOTICE("Your charge is still on cooldown!"))
 

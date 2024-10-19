@@ -88,8 +88,11 @@ export const DmTestTarget = new Juke.Target({
       defines: ['CBT', 'CIBUILDING', ...get(DefineParameter)],
     });
     Juke.rm('data/logs/ci', { recursive: true });
+    const options = {
+      dmbFile : `$DME_NAME}.test.dmb`,
+    }
     await DreamDaemon(
-      `${DME_NAME}.test.dmb`,
+      options,
       '-close', '-trusted', '-verbose',
       '-params', 'log-directory=ci'
     );
@@ -130,7 +133,12 @@ export const TgFontTarget = new Juke.Target({
     'tgui/packages/tgfont/dist/tgfont.eot',
     'tgui/packages/tgfont/dist/tgfont.woff2',
   ],
-  executes: () => yarn('tgfont:build'),
+  executes: async () => {
+    await yarn('tgfont:build');
+    fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.css', 'tgui/packages/tgfont/static/tgfont.css');
+    fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.eot', 'tgui/packages/tgfont/static/tgfont.eot');
+    fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.woff2', 'tgui/packages/tgfont/static/tgfont.woff2');
+  }
 });
 
 export const TguiTarget = new Juke.Target({
@@ -139,7 +147,7 @@ export const TguiTarget = new Juke.Target({
     'tgui/.yarn/install-target',
     'tgui/webpack.config.js',
     'tgui/**/package.json',
-    'tgui/packages/**/*.+(js|cjs|ts|tsx|scss)',
+    'tgui/packages/**/*.+(js|cjs|ts|tsx|jsx|scss)',
   ],
   outputs: [
     'tgui/public/tgui.bundle.css',
@@ -202,7 +210,10 @@ export const ServerTarget = new Juke.Target({
   dependsOn: [BuildTarget],
   executes: async ({ get }) => {
     const port = get(PortParameter) || '1337';
-    await DreamDaemon(`${DME_NAME}.dmb`, port, '-trusted');
+    const options = {
+      dmbFile: `$DME_NAME}.dmb`,
+    }
+    await DreamDaemon(options, port, '-trusted');
   },
 });
 
@@ -228,8 +239,8 @@ export const CleanTarget = new Juke.Target({
   dependsOn: [TguiCleanTarget],
   executes: async () => {
     Juke.rm('*.{dmb,rsc}');
-    Juke.rm('*.mdme*');
-    Juke.rm('*.m.*');
+    //Juke.rm('*.mdme*');
+    //Juke.rm('*.m.*');
     Juke.rm('_maps/templates.dm');
   },
 });

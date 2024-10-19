@@ -42,4 +42,4 @@
 	to_chat(user, SPAN_NOTICE("You activate [src]. It now has <b>[uses]</b> uses of foam remaining."))
 	cooldown = world.time + cooldown_time
 	power_change()
-	addtimer(CALLBACK(src, .proc/power_change), cooldown_time)
+	addtimer(CALLBACK(src, PROC_REF(power_change)), cooldown_time)

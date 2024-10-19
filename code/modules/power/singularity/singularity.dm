@@ -45,7 +45,7 @@
 
 	var/datum/component/singularity/new_component = AddComponent(
 		/datum/component/singularity, \
-		consume_callback = CALLBACK(src, .proc/consume), \
+		consume_callback = CALLBACK(src, PROC_REF(consume), \
 	)
 
 	singularity_component = WEAKREF(new_component)
@@ -86,7 +86,7 @@
 		rip_u.dismember(BURN) //nice try jedi
 		qdel(rip_u)
 		return
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/carbon_tk_part_two, jedi), 0.1 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(carbon_tk_part_two), jedi), 0.1 SECONDS)
 
 
 /obj/singularity/proc/carbon_tk_part_two(mob/living/carbon/jedi)
@@ -103,7 +103,7 @@
 			rip_u.dismember(BURN)
 			qdel(rip_u)
 		return
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/carbon_tk_part_three, jedi), 0.1 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(carbon_tk_part_three), jedi), 0.1 SECONDS)
 
 
 /obj/singularity/proc/carbon_tk_part_three(mob/living/carbon/jedi)

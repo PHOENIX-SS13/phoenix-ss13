@@ -44,8 +44,8 @@ GLOBAL_VAR(test_log)
 
 		var/datum/map_template/unit_tests/template = new
 		template.load(locate(
-			vlevel.low_x, 
-			vlevel.low_y, 
+			vlevel.low_x,
+			vlevel.low_y,
 			vlevel.z_value)
 		)
 
@@ -123,7 +123,7 @@ GLOBAL_VAR(test_log)
 			tests_to_run = list(test_to_run)
 			break
 
-	tests_to_run = sortTim(tests_to_run, /proc/cmp_unit_test_priority)
+	tests_to_run = sortTim(tests_to_run,GLOBAL_PROC_REF(cmp_unit_test_priority))
 
 	var/list/test_results = list()
 

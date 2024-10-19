@@ -716,10 +716,10 @@
 				spawn_gibs()
 				set_species(/datum/species/skeleton)
 				if(prob(90))
-					addtimer(CALLBACK(src, .proc/death), 30)
+					addtimer(CALLBACK(src, PROC_REF(death)), 30)
 			if(5)
 				to_chat(src, SPAN_PHOBIA("LOOK UP!"))
-				addtimer(CALLBACK(src, .proc/something_horrible_mindmelt), 30)
+				addtimer(CALLBACK(src, PROC_REF(something_horrible_mindmelt)), 30)
 
 
 /mob/living/carbon/human/proc/something_horrible_mindmelt()
@@ -730,5 +730,5 @@
 		eyes.Remove(src)
 		qdel(eyes)
 		visible_message(SPAN_NOTICE("[src] looks up and their eyes melt away!"), SPAN_USERDANGER("I understand now."))
-		addtimer(CALLBACK(src, .proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 20)
+		addtimer(CALLBACK(src, PROC_REF(adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 20)
 

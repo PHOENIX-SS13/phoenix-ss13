@@ -22,7 +22,7 @@
 	if(climbable)
 		AddElement(/datum/element/climbable, null, null, TRUE)
 
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated),CALLBACK(src,.proc/after_rotation))
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, PROC_REF(can_be_rotated),CALLBACK(src, PROC_REF(after_rotation))))
 	init_connect_loc_element()
 
 /obj/structure/railing/attackby(obj/item/I, mob/living/user, params)
@@ -62,7 +62,7 @@
 	if(flags_1&NODECONSTRUCT_1)
 		return
 	to_chat(user, SPAN_NOTICE("You begin to [anchored ? "unfasten the railing from":"fasten the railing to"] the floor..."))
-	if(I.use_tool(src, user, volume = 75, extra_checks = CALLBACK(src, .proc/check_anchored, anchored)))
+	if(I.use_tool(src, user, volume = 75, extra_checks = CALLBACK(src, PROC_REF(check_anchored), anchored)))
 		set_anchored(!anchored)
 		to_chat(user, SPAN_NOTICE("You [anchored ? "fasten the railing to":"unfasten the railing from"] the floor."))
 	return TRUE
@@ -80,7 +80,7 @@
 
 /obj/structure/railing/proc/init_connect_loc_element()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 
 	AddElement(/datum/element/connect_loc, src, loc_connections)

@@ -33,9 +33,9 @@
 		type_blacklist = typecacheof(INDUSTRIAL_LIFT_BLACKLISTED_TYPESOF)
 	AddElement(/datum/element/footstep_override, FOOTSTEP_LATTICE, FOOTSTEP_HARD_BAREFOOT, FOOTSTEP_LATTICE, FOOTSTEP_LATTICE)
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXITED =.proc/UncrossedRemoveItemFromLift,
-		COMSIG_ATOM_ENTERED = .proc/AddItemOnLift,
-		COMSIG_ATOM_CREATED = .proc/AddItemOnLift,
+		COMSIG_ATOM_EXITED =PROC_REF(UncrossedRemoveItemFromLift),
+		COMSIG_ATOM_ENTERED = PROC_REF(AddItemOnLift),
+		COMSIG_ATOM_CREATED = PROC_REF(AddItemOnLift),
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
 	if(!id || lift_controller)
@@ -65,7 +65,7 @@
 		return
 	LAZYINITLIST(lift_load)
 	lift_load[AM] = TRUE
-	RegisterSignal(AM, COMSIG_PARENT_QDELETING, .proc/RemoveItemFromLift)
+	RegisterSignal(AM, COMSIG_PARENT_QDELETING, PROC_REF(RemoveItemFromLift))
 
 /obj/structure/industrial_lift/proc/RemoveAllItemsFromLift()
 	if(!lift_load)

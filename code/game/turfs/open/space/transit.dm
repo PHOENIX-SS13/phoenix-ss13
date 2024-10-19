@@ -8,7 +8,7 @@
 
 /turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_CREATED, .proc/CreatedOnTransit) //Why isn't this a turf proc too..
+	RegisterSignal(src, COMSIG_ATOM_CREATED, PROC_REF(CreatedOnTransit)) //Why isn't this a turf proc too..
 
 /turf/open/space/transit/Destroy()
 	UnregisterSignal(src, COMSIG_ATOM_CREATED)

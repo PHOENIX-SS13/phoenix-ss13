@@ -132,18 +132,18 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return FALSE
 	return TRUE
 /*
- * Call back proc that should be checked in all paths where a client can send messages
- *
- * Handles checking for duplicate messages and people sending messages too fast
- *
- * The first checks are if you're sending too fast, this is defined as sending
- * SPAM_TRIGGER_AUTOMUTE messages in
- * 5 seconds, this will start supressing your messages,
- * if you send 2* that limit, you also get muted
- *
- * The second checks for the same duplicate message too many times and mutes
- * you for it
- */
+* Call back proc that should be checked in all paths where a client can send messages
+*
+* Handles checking for duplicate messages and people sending messages too fast
+*
+* The first checks are if you're sending too fast, this is defined as sending
+* SPAM_TRIGGER_AUTOMUTE messages in
+* 5 seconds, this will start supressing your messages,
+* if you send 2* that limit, you also get muted
+*
+* The second checks for the same duplicate message too many times and mutes
+* you for it
+*/
 /client/proc/handle_spam_prevention(message, mute_type)
 
 	//Increment message count
@@ -344,7 +344,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	// Initialize tgui panel
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
-	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
 	tgui_panel.initialize()
 
 	if(alert_mob_dupe_login)
@@ -925,7 +925,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 		//Precache the client with all other assets slowly, so as to not block other browse() calls
 		if (CONFIG_GET(flag/asset_simple_preload))
-			addtimer(CALLBACK(SSassets.transport, /datum/asset_transport.proc/send_assets_slow, src, SSassets.transport.preload), 5 SECONDS)
+			addtimer(CALLBACK(SSassets.transport, TYPE_PROC_REF(/datum/asset_transport, send_assets_slow), src, SSassets.transport.preload), 5 SECONDS)
 
 		#if (PRELOAD_RSC == 0)
 		for (var/name in GLOB.vox_sounds)

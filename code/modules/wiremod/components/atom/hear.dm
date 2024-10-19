@@ -30,7 +30,7 @@
 
 /obj/item/circuit_component/hear/register_shell(atom/movable/shell)
 	if(parent.loc != shell)
-		RegisterSignal(shell, COMSIG_MOVABLE_HEAR, .proc/on_shell_hear)
+		RegisterSignal(shell, COMSIG_MOVABLE_HEAR, PROC_REF(on_shell_hear))
 
 /obj/item/circuit_component/hear/unregister_shell(atom/movable/shell)
 

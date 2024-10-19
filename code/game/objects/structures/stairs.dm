@@ -22,7 +22,7 @@
 
 /obj/structure/stairs/Initialize(mapload)
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
 	update_appearance()
@@ -31,7 +31,7 @@
 /obj/structure/stairs/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
 	if(!isobserver(leaving) && direction == dir)
-		INVOKE_ASYNC(src, .proc/stair_ascend, leaving)
+		INVOKE_ASYNC(src, PROC_REF(stair_ascend), leaving)
 		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/stairs/update_icon_state()

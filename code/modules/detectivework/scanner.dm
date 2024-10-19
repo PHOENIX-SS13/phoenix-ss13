@@ -34,7 +34,7 @@
 	if(log.len && !scanning)
 		scanning = TRUE
 		to_chat(user, SPAN_NOTICE("Printing report, please wait..."))
-		addtimer(CALLBACK(src, .proc/PrintReport), 100)
+		addtimer(CALLBACK(src, PROC_REF(PrintReport)), 100)
 	else
 		to_chat(user, SPAN_NOTICE("The scanner has no logs or is in use."))
 

@@ -523,7 +523,7 @@ client << browse(...)
 
 #### Avoid negative variable names
 `is_flying` is better than `is_not_flying`. `late` is better than `not_on_time`.
-This prevents double-negatives (such as `if (!is_not_flying)` which can make complex checks more difficult to parse.
+This prevents double-negatives (such as `if (!is_not_flying)`) which can make complex checks more difficult to parse.
 
 #### Exceptions to variable names
 

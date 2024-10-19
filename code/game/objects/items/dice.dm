@@ -302,13 +302,13 @@
 	if(!about_to_blow)
 		result = roll(result)
 		update_appearance()
-	
+
 		if(result == 1)
 			comment = "You lose!"
 			playsound(get_turf(src), 'sound/machines/buzz-sigh.ogg', 25, TRUE)
 			if(obj_flags & EMAGGED)
 				about_to_blow = TRUE
-				addtimer(CALLBACK(src, .proc/emag_boom), 1 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(emag_boom)), 1 SECONDS)
 
 	if(user != null) //Dice was rolled in someone's hand
 		user.visible_message(SPAN_NOTICE("[user] throws [src]. The screen shows [result]. [comment]"), \

@@ -140,7 +140,7 @@
 
 ///wrapper for the tameable component addition so you can have non tamable cow subtypes
 /mob/living/simple_animal/cow/proc/make_tameable()
-	AddComponent(/datum/component/tameable, food_types = list(/obj/item/food/grown/wheat), tame_chance = 25, bonus_tame_chance = 15, after_tame = CALLBACK(src, .proc/tamed))
+	AddComponent(/datum/component/tameable, food_types = list(/obj/item/food/grown/wheat), tame_chance = 25, bonus_tame_chance = 15, after_tame = CALLBACK(src, PROC_REF(tamed)))
 
 /mob/living/simple_animal/cow/add_cell_sample()
 	AddElement(/datum/element/swabable, CELL_LINE_TABLE_COW, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)
@@ -157,7 +157,7 @@
 		to_chat(src, SPAN_USERDANGER("You are tipped over by [user]!"))
 		Paralyze(60, ignore_canstun = TRUE)
 		icon_state = icon_dead
-		addtimer(CALLBACK(src, .proc/cow_tipped, user), rand(20,50))
+		addtimer(CALLBACK(src, PROC_REF(cow_tipped), user), rand(20,50))
 
 	else
 		..()
@@ -311,7 +311,7 @@
 		eggs_left = 0,\
 		eggs_added_from_eating = rand(1, 4),\
 		max_eggs_held = 8,\
-		egg_laid_callback = CALLBACK(src, .proc/egg_laid)\
+		egg_laid_callback = CALLBACK(src, PROC_REF(egg_laid))\
 	)
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 

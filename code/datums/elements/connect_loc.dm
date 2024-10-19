@@ -15,7 +15,7 @@
 
 /datum/element/connect_loc/New()
 	. = ..()
-	changeturf_callback = CALLBACK(src, .proc/post_turf_change)
+	changeturf_callback = CALLBACK(src, PROC_REF(post_turf_change))
 
 /datum/element/connect_loc/Attach(datum/listener, atom/movable/tracked, list/connections)
 	. = ..()
@@ -24,7 +24,7 @@
 
 	src.connections = connections
 
-	RegisterSignal(tracked, COMSIG_MOVABLE_MOVED, .proc/on_moved, override = TRUE)
+	RegisterSignal(tracked, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved), override = TRUE)
 	update_signals(listener, tracked)
 
 /datum/element/connect_loc/Detach(datum/listener, atom/movable/tracked, list/connections)
@@ -50,7 +50,7 @@
 		//override=TRUE because more than one connect_loc element instance tracked object can be on the same loc
 
 	if (!existing && isturf(tracked.loc))
-		RegisterSignal(tracked.loc, COMSIG_TURF_CHANGE, .proc/on_turf_change)
+		RegisterSignal(tracked.loc, COMSIG_TURF_CHANGE, PROC_REF(on_turf_change))
 
 /datum/element/connect_loc/proc/unregister_all(datum/listener)
 	for(var/atom/location as anything in targets)

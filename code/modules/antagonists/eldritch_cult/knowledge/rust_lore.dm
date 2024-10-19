@@ -74,7 +74,7 @@
 
 /datum/eldritch_knowledge/rust_regen/on_gain(mob/user)
 	. = ..()
-	RegisterSignal(user,COMSIG_MOVABLE_MOVED,.proc/on_move)
+	RegisterSignal(user,COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
 /datum/eldritch_knowledge/rust_regen/proc/on_move(mob/mover)
 	SIGNAL_HANDLER
@@ -170,7 +170,7 @@
 	var/mob/living/carbon/human/H = user
 	H.physiology.brute_mod *= 0.5
 	H.physiology.burn_mod *= 0.5
-	RegisterSignal(H,COMSIG_MOVABLE_MOVED,.proc/on_move)
+	RegisterSignal(H,COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Fear the decay, for the Rustbringer, [user.real_name] has ascended! None shall escape the corrosion! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", ANNOUNCER_SPANOMALIES)
 	new /datum/rust_spread(loc)
 	return ..()
