@@ -6,11 +6,16 @@
 // Ancient TG sprites
 
 /datum/sprite_accessory/screen
+	recommended_species = list("synthetic")
 	icon = 'icons/mob/sprite_accessory/ipc_screens.dmi'
 	color_src = null
 	key = "ipc_screen"
 	generic = "Screen"
 	relevent_layers = list(BODY_ADJ_LAYER)
+
+/datum/sprite_accessory/screen/none
+	name = "None"
+	icon_state = "none"
 
 /datum/sprite_accessory/screen/blank
 	name = "Blank"
@@ -179,13 +184,13 @@
  ******************************************/
 
 /datum/sprite_accessory/ipc_chassis
+	recommended_species = list("synthetic")
 	icon = null
 	icon_state = "ipc"
 	color_src = null
 	factual = FALSE
 	key = "ipc_chassis"
 	generic = "Chassis Type"
-	recommended_species = list("synthetic")
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics(Greyscale)"
@@ -236,7 +241,7 @@
 /datum/sprite_accessory/ipc_chassis/syntheticanthromorph
 	name = "Synthetic Anthromorph"
 	icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
-	icon_state = "mammal"
+	icon_state = "anthromorph"
 
 /******************************************
  *********** Synth Boot Sounds ************

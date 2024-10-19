@@ -18,6 +18,7 @@
 		HAS_FLESH,
 		HAS_BONE
 	)
+	mutant_bodyparts = list()
 	default_mutant_bodyparts = list(
 		"eyes" = ACC_RANDOM,
 		"caps" = ACC_NONE,
@@ -63,7 +64,6 @@
 	liked_food = VEGETABLES | FRUIT | GRAIN
 	disliked_food = ALCOHOL
 	toxic_food = MEAT
-
 	limbs_icon = 'icons/mob/species/diona_parts.dmi'
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	var/pod = FALSE //did they come from a pod? If so, they're stronger than normal Diona.

@@ -71,20 +71,3 @@
 	id = "podweak"
 	flavor_text = "A plant-based lifeform that does well in suitably-lit environments. Feeds off of light and plants, but shies away from meat and dairy. Over-exposure to light may cause issues with their metabolism."
 	limbs_id = "pod"
-	species_traits = list(
-		MUTCOLORS,
-		EYECOLOR,
-		HAS_FLESH,
-		HAS_BONE,
-		HAIR,
-		FACEHAIR,
-	)
-	default_mutant_bodyparts = list(
-		"tail" = ACC_NONE,
-		"snout" = ACC_NONE,
-		"horns" = ACC_NONE,
-		"ears" = ACC_NONE,
-		"taur" = ACC_NONE,
-		"wings" = ACC_NONE,
-		"neck" = ACC_NONE,
-		)

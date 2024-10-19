@@ -21,7 +21,7 @@
 	)
 	species_traits = list(
 		ROBOTIC_DNA_ORGANS,
-		MUTCOLORS,
+		MUTCOLORS_PARTSONLY,
 		EYECOLOR,
 		LIPS,
 		HAIR,
@@ -47,7 +47,7 @@
 		"neck" 			= ACC_NONE,
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon = 'icons/mob/species/synth_parts.dmi'
+	limbs_icon = 'icons/mob/species/synthetic_parts.dmi'
 	hair_alpha = 210 // TODO: MAKE THIS CHANGEABLE
 	sexes = FALSE
 	var/datum/action/innate/monitor_change/screen
@@ -120,10 +120,6 @@
  */
 /datum/species/synthetic/on_species_gain(mob/living/carbon/human/C)
 	. = ..()
-	var/obj/item/organ/appendix/appendix = C.getorganslot(ORGAN_SLOT_APPENDIX)
-	if(appendix)
-		appendix.Remove(C)
-		qdel(appendix)
 	if(!screen)
 		screen = new
 		screen.Grant(C)
@@ -136,6 +132,10 @@
 		if(chassis_of_choice.color_src)
 			species_traits += MUTCOLORS
 		C.update_body()
+	var/obj/item/organ/appendix/appendix = C.getorganslot(ORGAN_SLOT_APPENDIX)
+	if(appendix)
+		appendix.Remove(C)
+		qdel(appendix)
 
 // Screen removal datum
 /*
@@ -211,7 +211,7 @@
 	var/main_color
 	var/second_color
 	var/third_color
-	var/random = rand(1,7)
+	var/random = rand(1,6)
 	switch(random)
 		if(1)
 			main_color = "FFFFFF"
