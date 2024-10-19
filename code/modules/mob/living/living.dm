@@ -13,6 +13,8 @@
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
 
+	COOLDOWN_START(src, comfort_cooldown, comfort_cooldown_duration)
+
 /mob/living/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/movetype_handler)
@@ -811,6 +813,10 @@
 	if(body_position == LYING_DOWN && !buckled && prob(getBruteLoss()*200/maxHealth))
 		makeTrail(newloc, T, old_direction)
 
+	COOLDOWN_START(src, comfort_cooldown, comfort_cooldown_duration)
+
+/mob/living/proc/is_comfortable()
+	return COOLDOWN_FINISHED(src, comfort_cooldown)
 
 ///Called by mob Move() when the lying_angle is different than zero, to better visually simulate crawling.
 /mob/living/proc/lying_angle_on_movement(direct)

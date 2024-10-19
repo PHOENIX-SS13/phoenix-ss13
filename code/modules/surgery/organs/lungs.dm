@@ -155,10 +155,16 @@
 			gas_breathed = breath_gases[/datum/gas/oxygen][MOLES]
 			breather.clear_alert("not_enough_oxy")
 
+	//Disable gas changes if we haven't moved in a while.
+	var/comfort = FALSE
+	if(breather.is_comfortable())
+		comfort = TRUE
+
 	//Exhale
-	breath_gases[/datum/gas/oxygen][MOLES] -= gas_breathed
-	breath_gases[/datum/gas/carbon_dioxide][MOLES] += gas_breathed
-	gas_breathed = 0
+	if(!comfort)
+		breath_gases[/datum/gas/oxygen][MOLES] -= gas_breathed
+		breath_gases[/datum/gas/carbon_dioxide][MOLES] += gas_breathed
+		gas_breathed = 0
 
 	//-- Nitrogen --//
 
@@ -184,9 +190,10 @@
 			breather.clear_alert("nitro")
 
 	//Exhale
-	breath_gases[/datum/gas/nitrogen][MOLES] -= gas_breathed
-	breath_gases[/datum/gas/carbon_dioxide][MOLES] += gas_breathed
-	gas_breathed = 0
+	if(!comfort)
+		breath_gases[/datum/gas/nitrogen][MOLES] -= gas_breathed
+		breath_gases[/datum/gas/carbon_dioxide][MOLES] += gas_breathed
+		gas_breathed = 0
 
 	//-- CO2 --//
 
@@ -221,9 +228,10 @@
 			breather.clear_alert("not_enough_co2")
 
 	//Exhale
-	breath_gases[/datum/gas/carbon_dioxide][MOLES] -= gas_breathed
-	breath_gases[/datum/gas/oxygen][MOLES] += gas_breathed
-	gas_breathed = 0
+	if(!comfort)
+		breath_gases[/datum/gas/carbon_dioxide][MOLES] -= gas_breathed
+		breath_gases[/datum/gas/oxygen][MOLES] += gas_breathed
+		gas_breathed = 0
 
 
 	//-- TOX --//
@@ -251,9 +259,10 @@
 			breather.clear_alert("not_enough_tox")
 
 	//Exhale
-	breath_gases[/datum/gas/plasma][MOLES] -= gas_breathed
-	breath_gases[/datum/gas/carbon_dioxide][MOLES] += gas_breathed
-	gas_breathed = 0
+	if(!comfort)
+		breath_gases[/datum/gas/plasma][MOLES] -= gas_breathed
+		breath_gases[/datum/gas/carbon_dioxide][MOLES] += gas_breathed
+		gas_breathed = 0
 
 
 	//-- TRACES --//

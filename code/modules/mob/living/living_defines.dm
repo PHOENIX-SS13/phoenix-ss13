@@ -187,3 +187,7 @@
 	var/datum/attribute_holder/attributes
 	/// Type of the initial attribute sheet to apply. Can be null
 	var/initial_attribute_sheet
+
+	///For disabling some some passive life functions if not moving
+	COOLDOWN_DECLARE(comfort_cooldown)
+	var/comfort_cooldown_duration = 5 MINUTES

@@ -340,6 +340,8 @@
 
 /datum/component/mood/proc/HandleNutrition()
 	var/mob/living/L = parent
+	if(L.is_comfortable())
+		return
 	if(isethereal(L))
 		HandleCharge(L)
 	if(HAS_TRAIT(L, TRAIT_NOHUNGER))
