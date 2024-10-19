@@ -139,6 +139,18 @@ Lizard subspecies: ASHWALKERS
 
 	learnable_languages = list(/datum/language/draconic)
 
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"spines" = ACC_RANDOM,
+		"frills" = ACC_RANDOM,
+		"horns" = ACC_RANDOM,
+		"body_markings" = ACC_RANDOM,
+		"legs" = "Digitigrade Legs",
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 /*
 Lizard subspecies: SILVER SCALED
 */
@@ -163,6 +175,18 @@ Lizard subspecies: SILVER SCALED
 	var/old_mutcolor
 	///stored eye color for when we turn back off of a silverscale.
 	var/old_eyecolor
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"spines" = ACC_RANDOM,
+		"frills" = ACC_RANDOM,
+		"horns" = ACC_RANDOM,
+		"body_markings" = ACC_RANDOM,
+		"legs" = "Digitigrade Legs",
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 
 /datum/species/lizard/silverscale/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	var/mob/living/carbon/human/new_silverscale = C

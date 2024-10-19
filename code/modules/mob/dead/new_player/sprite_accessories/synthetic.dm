@@ -139,7 +139,7 @@
 	icon = 'icons/mob/sprite_accessory/ipc_antennas.dmi'
 	color_src = USE_ONE_COLOR
 	default_color = DEFAULT_SECONDARY
-	recommended_species = list("ipc")
+	recommended_species = list("synthetic")
 	key = "ipc_antenna"
 	generic = "Antenna"
 	relevent_layers = list(BODY_ADJ_LAYER)
@@ -185,6 +185,7 @@
 	factual = FALSE
 	key = "ipc_chassis"
 	generic = "Chassis Type"
+	recommended_species = list("synthetic")
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics(Greyscale)"
@@ -244,6 +245,7 @@
 /datum/sprite_accessory/synth_bootsound
 	key = "bootsound"
 	generic = "Boot-Up Sound Type"
+	recommended_species = list("synthetic")
 
 /datum/sprite_accessory/synth_bootsound/ipc
 	key = "ipc_bootsound"

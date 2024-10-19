@@ -2,12 +2,9 @@
 	name = "Diona"
 	//name_plural = "Dionae"
 	id = "diona"
-	flavor_text = "The Dionae are plant-like creatures made up of a gestalt of smaller Nymphs. Dionae lack any form of \
-	centralized government or homeworld, the closest thing being their known origin point, the Topiary in the Epislon \
-	Ursae Minoris system. Avoiding the affairs of the wider galaxy, most prefer instead to focus \
-	on the spread of their species.<br/><br/> As a gestalt entity, each nymph possesses an individual personality, yet \
-	they communicate collectively. Consequently, Diona often speak in a unique blend of first and third person, using \
-	'We' and 'I' to reflect their internal dialogue."
+	flavor_text = "The Dionae are plant-like creatures made up of a gestalt colony of smaller Nymphs. As a gestalt entity, \
+	each nymph possesses an individual personality, yet they communicate collectively. Consequently, a Diona will often \
+	speak in a unique blend of first and third person, using 'We' and 'I' to reflect their internal dialogue."
 	inherent_traits = list(
 		TRAIT_CAN_STRIP,
 		TRAIT_RADIMMUNE,
@@ -17,11 +14,13 @@
 		TRAIT_NO_HUSK
 	)
 	species_traits = list(
-		MUTCOLORS,
-		EYECOLOR,
 		LIPS,
 		HAS_FLESH,
 		HAS_BONE
+	)
+	default_mutant_bodyparts = list(
+		"eyes" = ACC_RANDOM,
+		"caps" = ACC_NONE,
 	)
 	inherent_biotypes = MOB_ORGANIC | MOB_HUMANOID | MOB_PLANT
 	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_PLANT)
@@ -29,6 +28,7 @@
 	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_PLANT)
 	species_language_holder = /datum/language_holder/plant
 	always_customizable = TRUE
+	sexes = FALSE // dionae are collectives, there are a multitude of nymphs with their own biological sexes in each
 	default_color = "000"
 	breathid = "co2" // plants breathe co2!
 	exotic_bloodtype = "D"
@@ -42,8 +42,15 @@
 	mutantlungs	=   /obj/item/organ/lungs/diona
 	mutantheart	=   /obj/item/organ/heart/diona
 	mutanteyes	=   /obj/item/organ/eyes/diona //Default darksight of 2.
+	mutanttongue = /obj/item/organ/tongue/diona
 	mutantbrain =   /obj/item/organ/brain/diona
 	mutantappendix = /obj/item/organ/appendix/diona
+	mutant_organs = list(
+		/obj/item/organ/eyes/diona/alt,
+		/obj/item/organ/eyes/diona/alt/alt,
+		/obj/item/organ/heart/diona/alt,
+		/obj/item/organ/tongue/diona/alt
+	)
 	bodypart_overides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/diona,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/diona,
@@ -85,6 +92,14 @@
 	skinned_type = /obj/item/stack/sheet/wood
 	remains_type = /obj/effect/decal/cleanable/ash
 */
+
+/datum/species/diona/random_name(gender,unique,lastname)
+	if(unique)
+		return random_unique_diona_name()
+
+	var/randname = diona_name()
+
+	return randname
 
 /datum/species/diona/can_understand(mob/other)
 	if(isnymph(other))

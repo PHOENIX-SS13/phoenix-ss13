@@ -79,7 +79,7 @@
 
 /// Turns into a nymph instantly, no transplanting possible.
 /obj/item/organ/eyes/diona
-	name = "receptor node"
+	name = "electromagnetic receptor array"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "nymph"
 
@@ -91,3 +91,34 @@
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "claw"
 	alcohol_tolerance = 0.5
+
+/obj/item/organ/tongue/diona
+	name = "sonic resonance gland network"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "nymph"
+
+//dionae are giant colonies right? there should be a lot of decentralized systems crammed in there
+/// Turns into a nymph instantly, no transplanting possible.
+/obj/item/organ/eyes/diona/alt
+	zone = BODY_ZONE_HEAD
+	name = "narrow-band electromagnetic receptor node"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "nymph"
+
+/obj/item/organ/eyes/diona/alt/alt
+	zone = BODY_ZONE_CHEST
+	name = "wide-spectrum electromagnetic receptor node"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "nymph"
+
+/obj/item/organ/heart/diona/alt //groin organ one
+	zone = BODY_ZONE_PRECISE_GROIN
+	name = "auxiliary neural strata"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "nymph"
+
+/obj/item/organ/tongue/diona/alt //and groin organ two
+	zone = BODY_ZONE_PRECISE_GROIN
+	name = "electromagnetic resonance gland network"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "nymph"

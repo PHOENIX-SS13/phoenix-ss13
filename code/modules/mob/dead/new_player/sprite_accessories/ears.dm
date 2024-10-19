@@ -239,4 +239,4 @@
 	icon = 'icons/mob/sprite_accessory/synthanthro_ears.dmi'
 	name = "Protogen"
 	icon_state = "protogen"
-	recommended_species = list("synthanthro")
+	recommended_species = list("synthetic")

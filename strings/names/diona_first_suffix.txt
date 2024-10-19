@@ -39,5 +39,3 @@
  Bounty
  Harvest
  Restoration
- Restorations
- Restoring

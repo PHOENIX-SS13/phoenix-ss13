@@ -10,9 +10,9 @@ break
  Rain
  Stars
  Waves
-Dusk
-Night
-The Wind
+ Dusk
+ Night
+ The Wind
  Wind
  Sun
  Field

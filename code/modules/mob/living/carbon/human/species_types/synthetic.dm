@@ -38,8 +38,8 @@
 		"ipc_screen" 	= ACC_RANDOM,
 		"ipc_chassis" 	= ACC_RANDOM,
 		"legs" 			= ACC_RANDOM,
-		"tail" 			= ACC_RANDOM, // As machines, these guys can bolt on whatever they want. Unified robotic species!
-		"snout" 		= ACC_RANDOM,
+		"tail" 			= ACC_NONE, // As machines, these guys can bolt on whatever they want. Unified robotic species!
+		"snout" 		= ACC_NONE,
 		"taur" 			= ACC_NONE,
 		"horns" 		= ACC_NONE,
 		"ears" 			= ACC_NONE,

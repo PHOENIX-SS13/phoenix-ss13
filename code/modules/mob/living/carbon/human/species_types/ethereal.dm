@@ -18,6 +18,7 @@
 	species_traits = list(
 		DYNCOLORS,
 		AGENDER,
+		EYECOLOR,
 		NO_UNDERWEAR,
 		HAIR,
 		HAS_FLESH,

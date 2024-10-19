@@ -2,7 +2,7 @@
 	name = "Mushroomperson"
 	id = "mush"
 	default_mutant_bodyparts = list(
-		"caps" = "Round",
+		"caps" = ACC_RANDOM,
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 

@@ -184,7 +184,7 @@ const TARGET_SPECIES_LIST = [
     value: 'memezombies',
   }, 
   {
-    name: 'Zombie',
+    name: 'Krokodil Addict',
     value: 'goofzombies',
   }, 
   {

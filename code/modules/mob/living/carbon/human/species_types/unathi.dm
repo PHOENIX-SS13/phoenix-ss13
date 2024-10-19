@@ -16,9 +16,9 @@
 		"tail" = ACC_RANDOM,
 		"snout" = ACC_RANDOM,
 		"spines" = ACC_NONE,
-		"frills" = ACC_NONE,
+		"frills" = ACC_RANDOM,
 		"horns" = ACC_RANDOM,
-		"body_markings" = ACC_RANDOM,
+		"body_markings" = ACC_NONE,
 		"legs" = "Normal Legs",
 	)
 	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_LIZARD)

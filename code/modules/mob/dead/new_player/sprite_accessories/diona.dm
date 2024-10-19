@@ -17,7 +17,7 @@
 	icon_state = "cornflower"
 
 /datum/sprite_accessory/hair/diona/diona_laur
-	name = "Laural"
+	name = "Laurel"
 	icon_state = "laurel"
 
 /datum/sprite_accessory/hair/diona/diona_leaf
@@ -100,19 +100,6 @@
 	icon_state = "bigleaf"
 	//glasses_over = FALSE
 
-//Sprites from Aurora Below
-/datum/sprite_accessory/hair/diona/diona_treebeard
-	name = "Treebeard"
-	icon_state = "treebeard"
-
-/datum/sprite_accessory/hair/diona/monoeye
-	name = "Monoeye"
-	icon_state = "monoeye"
-
-/datum/sprite_accessory/hair/diona/trioptics
-	name = "Trioptics"
-	icon_state = "trioptics"
-
 /datum/sprite_accessory/hair/diona/lopsided
 	name = "Lopsided"
 	icon_state = "lopsided"
@@ -120,6 +107,18 @@
 /datum/sprite_accessory/hair/diona/helmethead
 	name = "Helmet Head"
 	icon_state = "helmethead"
+
+//Sprites from Aurora Below
+
+
+/*
+/datum/sprite_accessory/hair/diona/monoeye
+	name = "Monoeye"
+	icon_state = "monoeye"
+
+/datum/sprite_accessory/hair/diona/trioptics
+	name = "Trioptics"
+	icon_state = "trioptics"
 
 /datum/sprite_accessory/hair/diona/eyestalk
 	name = "Eyestalk"
@@ -137,6 +136,12 @@
 	name = "Skrell Eyes"
 	icon_state = "skrelleyes"
 
+/datum/sprite_accessory/hair/diona/eyebrow
+	name = "Eye Brow"
+	icon_state = "eyebrow"
+
+*/
+
 /datum/sprite_accessory/hair/diona/smallhorns
 	name = "Small Horns"
 	icon_state = "smallhorns"
@@ -152,10 +157,6 @@
 /datum/sprite_accessory/hair/diona/headtails2
 	name = "Head Tails 2"
 	icon_state = "headtails2"
-
-/datum/sprite_accessory/hair/diona/eyebrow
-	name = "Eye Brow"
-	icon_state = "eyebrow"
 
 /datum/sprite_accessory/hair/diona/bullhorn
 	name = "Bull Horn"
@@ -173,6 +174,7 @@
 	name = "Glorp"
 	icon_state = "glorp"
 
+/*
 /datum/sprite_accessory/hair/diona/mellowcap
 	name = "Mellow Cap"
 	icon_state = "mellowcap"
@@ -187,6 +189,7 @@
 	name = "Purple Cap"
 	icon_state = "purplecap"
 //	glasses_over = FALSE
+*/
 
 /datum/sprite_accessory/hair/diona/spanishmoss
 	name = "Spanish Moss"
@@ -200,4 +203,13 @@
 /datum/sprite_accessory/hair/diona/stump
 	name = "Stump"
 	icon_state = "stump"
-//Sprites from Aurora Above
+
+/// Facial hair
+
+/datum/sprite_accessory/facial_hair/diona
+	icon = 'icons/mob/sprite_accessory/diona_facial_hair.dmi'
+	recommended_species = list("diona")
+
+/datum/sprite_accessory/facial_hair/diona/diona_treebeard
+	name = "Treebeard"
+	icon_state = "treebeard"

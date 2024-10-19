@@ -28,3 +28,4 @@
 	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_INSECT)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon = 'icons/mob/species/insect_parts_greyscale.dmi'
+	eyes_icon = 'icons/mob/species/insect_eyes.dmi'
