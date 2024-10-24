@@ -65,9 +65,9 @@
 	if(mode == RESONATOR_MODE_MATRIX)
 		icon_state = "shield2"
 		name = "resonance matrix"
-		RegisterSignal(src, COMSIG_ATOM_ENTERED, .proc/burst)
+		RegisterSignal(src, COMSIG_ATOM_ENTERED, PROC_REF(burst))
 		var/static/list/loc_connections = list(
-			COMSIG_ATOM_ENTERED = .proc/burst,
+			COMSIG_ATOM_ENTERED = PROC_REF(burst),
 		)
 		AddElement(/datum/element/connect_loc, src, loc_connections)
 	. = ..()
@@ -80,7 +80,7 @@
 		transform = matrix()*0.75
 		animate(src, transform = matrix()*1.5, time = duration)
 	deltimer(timerid)
-	timerid = addtimer(CALLBACK(src, .proc/burst), duration, TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(burst)), duration, TIMER_STOPPABLE)
 
 /obj/effect/temp_visual/resonance/Destroy()
 	if(res)
@@ -116,7 +116,7 @@
 		to_chat(L, SPAN_USERDANGER("[src] ruptured with you in it!"))
 		L.apply_damage(resonance_damage, BRUTE)
 		L.add_movespeed_modifier(/datum/movespeed_modifier/resonance)
-		addtimer(CALLBACK(L, /mob/proc/remove_movespeed_modifier, /datum/movespeed_modifier/resonance), 10 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, remove_movespeed_modifier), /datum/movespeed_modifier/resonance), 10 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 	for(var/obj/effect/temp_visual/resonance/field in range(1, src))
 		if(field != src && !field.rupturing)
 			field.burst()

@@ -15,7 +15,7 @@
 	update_turf_for_appearance()
 	var/turf/my_turf = loc
 	var/static/list/loc_connections = list(
-		COMSIG_TURF_CHANGE = .proc/turf_updated,
+		COMSIG_TURF_CHANGE = PROC_REF(turf_updated),
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
 	SEND_SIGNAL(my_turf, COMSIG_TURF_UPDATE_TRANSPARENCY)
@@ -27,7 +27,7 @@
 
 /obj/effect/abstract/shuttle_roof/proc/turf_updated(datum/source, path, new_baseturfs, flags, post_change_callbacks)
 	SIGNAL_HANDLER
-	post_change_callbacks += CALLBACK(src, .proc/attached_to_new_turf) //Because there isn't an AFTER_CHANGE signal
+	post_change_callbacks += CALLBACK(src, PROC_REF(attached_to_new_turf)) //Because there isn't an AFTER_CHANGE signal
 
 /obj/effect/abstract/shuttle_roof/proc/attached_to_new_turf()
 	update_turf_for_appearance()

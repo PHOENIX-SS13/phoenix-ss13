@@ -5,10 +5,10 @@
  * ## USAGE
  *
  * ```
- * var/datum/callback/C = new(object|null, /proc/type/path|"procstring", arg1, arg2, ... argn)
+ * var/datum/callback/C = new(object|null, GLOBAL_PROC_REF(type/path|"procstring"), arg1, arg2, ... argn)
  * var/timerid = addtimer(C, time, timertype)
  * you can also use the compiler define shorthand
- * var/timerid = addtimer(CALLBACK(object|null, /proc/type/path|procstring, arg1, arg2, ... argn), time, timertype)
+ * var/timerid = addtimer(CALLBACK(object|null, GLOBAL_PROC_REF(type/path|procstring), arg1, arg2, ... argn), time, timertype)
  * ```
  *
  * Note: proc strings can only be given for datum proc calls, global procs must be proc paths
@@ -37,9 +37,9 @@
  * `CALLBACK(src, .some_proc_here)`
  *
  * ### when the above doesn't apply:
- *.proc/procname
+ *PROC_REF(procname)
  *
- * `CALLBACK(src, .proc/some_proc_here)`
+ * `CALLBACK(src, PROC_REF(some_proc_here))`
  *
  *
  * proc defined on a parent of a some type
@@ -159,6 +159,8 @@
 		else
 			calling_arguments = args
 	if(datum_flags & DF_VAR_EDITED)
+		if(usr != GLOB.AdminProcCallHandler && !usr?.client?.ckey) //This happens when a timer or the MC invokes a callback
+			return HandleUserlessProcCall(usr, object, delegate, calling_arguments)
 		return WrapAdminProcCall(object, delegate, calling_arguments)
 	if (object == GLOBAL_PROC)
 		return call(delegate)(arglist(calling_arguments))

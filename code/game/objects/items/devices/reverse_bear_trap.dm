@@ -42,7 +42,7 @@
 		soundloop.stop()
 		soundloop2.stop()
 		to_chat(loc, SPAN_USERDANGER("*ding*"))
-		addtimer(CALLBACK(src, .proc/snap), 2)
+		addtimer(CALLBACK(src, PROC_REF(snap)), 2)
 
 /obj/item/reverse_bear_trap/attack_hand(mob/user, list/modifiers)
 	if(iscarbon(user))

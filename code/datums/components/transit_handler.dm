@@ -10,7 +10,7 @@
 	transit_instance = transit_instance_
 	time_until_strand = world.time + 1 SECONDS
 	transit_instance.affected_movables[parent] = TRUE
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_parent_moved)
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_moved))
 
 /datum/component/transit_handler/proc/on_parent_moved(atom/movable/source, atom/old_loc, Dir, Forced)
 	if(QDELETED(source))

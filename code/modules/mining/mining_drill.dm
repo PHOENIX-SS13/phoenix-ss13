@@ -102,10 +102,10 @@
 
 /obj/machinery/power/mining_drill/proc/RegisterNode(datum/ore_node/node)
 	current_node = node
-	RegisterSignal(current_node, COMSIG_PARENT_QDELETING, .proc/UnregisterNode)
+	RegisterSignal(current_node, COMSIG_PARENT_QDELETING, PROC_REF(UnregisterNode))
 
 /obj/machinery/power/mining_drill/proc/UnregisterNode()
-	UnregisterSignal(current_node, COMSIG_PARENT_QDELETING, .proc/UnregisterNode)
+	UnregisterSignal(current_node, COMSIG_PARENT_QDELETING, PROC_REF(UnregisterNode))
 	current_node = null
 
 /obj/machinery/power/mining_drill/examine(mob/user)
@@ -450,7 +450,7 @@
 	. = ..()
 	//Very mechanical, so EMP proof
 	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
-	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, PROC_REF(can_be_rotated)))
 
 /obj/machinery/mining_brace/proc/can_be_rotated(mob/user, rotation_type)
 	if(anchored)

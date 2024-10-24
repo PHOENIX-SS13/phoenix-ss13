@@ -145,10 +145,10 @@ Doesn't work on other aliens/AI.*/
 	action_icon_state = "alien_acid"
 
 /obj/effect/proc_holder/alien/acid/on_gain(mob/living/carbon/user)
-	add_verb(user, /mob/living/carbon/proc/corrosive_acid)
+	add_verb(user, TYPE_PROC_REF(/mob/living/carbon, corrosive_acid))
 
 /obj/effect/proc_holder/alien/acid/on_lose(mob/living/carbon/user)
-	remove_verb(user, /mob/living/carbon/proc/corrosive_acid)
+	remove_verb(user, TYPE_PROC_REF(/mob/living/carbon, corrosive_acid))
 
 /obj/effect/proc_holder/alien/acid/proc/corrode(atom/target,mob/living/carbon/user = usr)
 	if(target in oview(1,user))

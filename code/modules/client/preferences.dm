@@ -3094,6 +3094,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	return lang_list
 
 /datum/preferences/proc/get_optional_languages()
+	if(isnull(pref_species))
+		return null
 	var/list/lang_list = list()
 	for(var/lang in pref_species.learnable_languages)
 		lang_list[lang] = TRUE
@@ -3120,6 +3122,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/validate_languages()
 	var/list/opt_langs = get_optional_languages()
 	var/list/req_langs = get_required_languages()
+	if(isnull(opt_langs) || isnull(req_langs))
+		return TRUE
 	for(var/langkey in languages)
 		if(!opt_langs[langkey] && !req_langs[langkey])
 			languages -= langkey

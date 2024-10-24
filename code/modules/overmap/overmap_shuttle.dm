@@ -376,7 +376,7 @@
 					target_command = TARGET_SCAN
 					scan_text = "Scanning..."
 					scan_id = lock.target.id
-					addtimer(CALLBACK(src, .proc/Scan), 3 SECONDS)
+					addtimer(CALLBACK(src, PROC_REF(Scan)), 3 SECONDS)
 					return TRUE
 				if("command_beam_on_board")
 					target_command = TARGET_BEAM_ON_BOARD

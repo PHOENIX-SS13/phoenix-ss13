@@ -122,7 +122,7 @@
 
 	add_verb(src, list(/mob/living/simple_animal/parrot/proc/steal_from_ground, \
 			  /mob/living/simple_animal/parrot/proc/steal_from_mob, \
-			  /mob/living/simple_animal/parrot/verb/drop_held_item_player, \
+			  /mob/living/simple_animal/parrot/proc/drop_held_item_player, \
 			  /mob/living/simple_animal/parrot/proc/perch_player, \
 			  /mob/living/simple_animal/parrot/proc/toggle_mode,
 			  /mob/living/simple_animal/parrot/proc/perch_mob_player))
@@ -739,7 +739,7 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 	to_chat(src, SPAN_WARNING("There is nothing of interest to take!"))
 	return 0
 
-/mob/living/simple_animal/parrot/verb/drop_held_item_player()
+/mob/living/simple_animal/parrot/proc/drop_held_item_player()
 	set name = "Drop held item"
 	set category = "Parrot"
 	set desc = "Drop the item you're holding."

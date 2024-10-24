@@ -69,7 +69,7 @@ GLOBAL_LIST_INIT(cursed_animal_masks, list(
 		var/mob/M = loc
 		if(M.get_item_by_slot(ITEM_SLOT_MASK) == src)
 			if(update_speech_mod)
-				RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+				RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 			to_chat(M, SPAN_USERDANGER("[src] was cursed!"))
 			M.update_inv_wear_mask()
 

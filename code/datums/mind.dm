@@ -111,7 +111,7 @@
 		UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 	current = new_current
 	if(current)
-		RegisterSignal(src, COMSIG_PARENT_QDELETING, .proc/clear_current)
+		RegisterSignal(src, COMSIG_PARENT_QDELETING, PROC_REF(clear_current))
 
 /datum/mind/proc/clear_current(datum/source)
 	SIGNAL_HANDLER
@@ -143,8 +143,8 @@
 	if(current)
 		current.transfer_observers_to(new_character) //transfer anyone observing the old character to the new one
 	if(my_ambitions)
-		remove_verb(current, /mob/proc/view_ambitions)
-		add_verb(new_character, /mob/proc/view_ambitions)
+		remove_verb(current, TYPE_PROC_REF(/mob, view_ambitions))
+		add_verb(new_character, TYPE_PROC_REF(/mob, view_ambitions))
 	set_current(new_character) //associate ourself with our new body
 	new_character.mind = src //and associate our new body with ourself
 	for(var/a in antag_datums) //Makes sure all antag datums effects are applied in the new body
@@ -156,7 +156,7 @@
 	transfer_antag_huds(hud_to_transfer) //inherit the antag HUD
 	transfer_actions(new_character)
 	transfer_martial_arts(new_character)
-	RegisterSignal(new_character, COMSIG_LIVING_DEATH, .proc/set_death_time)
+	RegisterSignal(new_character, COMSIG_LIVING_DEATH, PROC_REF(set_death_time))
 	if(active || force_key_move)
 		new_character.key = key //now transfer the key to link the client to our new body
 	if(new_character.client)
@@ -207,12 +207,12 @@
 	var/datum/team/antag_team = A.get_team()
 	if(antag_team)
 		antag_team.add_member(src)
-	INVOKE_ASYNC(A, /datum/antagonist.proc/on_gain)
+	INVOKE_ASYNC(A, TYPE_PROC_REF(/datum/antagonist, on_gain))
 	log_game("[key_name(src)] has gained antag datum [A.name]([A.type])")
 	if(A.uses_ambitions)
 		if(!my_ambitions)
 			my_ambitions = new(src)
-			add_verb(current, /mob/proc/view_ambitions)
+			add_verb(current, TYPE_PROC_REF(/mob, view_ambitions))
 		//If we already have ambitions done, call the add proc to give us the proper powers/uplinks
 		if(my_ambitions.submitted)
 			A.ambitions_add()
@@ -705,7 +705,7 @@
 				continue
 		S.charge_counter = delay
 		S.updateButtonIcon()
-		INVOKE_ASYNC(S, /obj/effect/proc_holder/spell.proc/start_recharge)
+		INVOKE_ASYNC(S, TYPE_PROC_REF(/obj/effect/proc_holder/spell, start_recharge))
 
 /datum/mind/proc/get_ghost(even_if_they_cant_reenter, ghosts_with_clients)
 	for(var/mob/dead/observer/G in (ghosts_with_clients ? GLOB.player_list : GLOB.dead_mob_list))

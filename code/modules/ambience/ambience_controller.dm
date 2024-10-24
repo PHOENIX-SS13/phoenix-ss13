@@ -212,7 +212,7 @@
 	if(!found_ambience.len)
 		return
 	/// Sort by distance
-	sortTim(found_ambience, cmp=/proc/cmp_ambience_dist_asc)
+	sortTim(found_ambience, cmp = GLOBAL_PROC_REF(cmp_ambience_dist_asc))
 
 	/// Try and queue the ambiences we have found
 	var/list/cached_ambience_sounds = ambient_sounds

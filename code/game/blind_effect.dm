@@ -24,7 +24,7 @@
 				fov_image.transform = matrix
 			fov_image.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		mob_client.images += fov_image
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_client, fov_image, mob_client), 30)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(remove_image_from_client), fov_image, mob_client), 30)
 
 // Range at which nearsighted people will receive blind effects
 #define NEARSIGHT_BLIND_EFF_RANGE 2
