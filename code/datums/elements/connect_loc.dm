@@ -32,7 +32,7 @@
 
 	if(!tracked)
 		unregister_all(listener)
-	else if(targets[tracked.loc]) // Detach can happen multiple times due to qdel
+	else if(targets.len && targets[tracked.loc]) // Detach can happen multiple times due to qdel
 		unregister_signals(listener, tracked, tracked.loc)
 		UnregisterSignal(tracked, COMSIG_MOVABLE_MOVED)
 

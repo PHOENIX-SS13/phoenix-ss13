@@ -135,7 +135,8 @@ GLOBAL_PROTECT(href_token)
 	if (deadmined)
 		activate()
 
-	remove_verb(client, TYPE_PROC_REF(/client, admin_2fa_verify))
+	remove_verb(client, /client/proc/admin_2fa_verify)
+	//remove_verb(client, TYPE_PROC_REF(/client, admin_2fa_verify))
 
 	owner = client
 	owner.holder = src
