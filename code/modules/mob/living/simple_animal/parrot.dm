@@ -120,12 +120,12 @@
 
 	parrot_sleep_dur = parrot_sleep_max //In case someone decides to change the max without changing the duration var
 
-	add_verb(src, list(TYPE_PROC_REF(/mob/living/simple_animal/parrot, steal_from_ground), \
-			  TYPE_PROC_REF(/mob/living/simple_animal/parrot, steal_from_mob), \
-			  TYPE_PROC_REF(/mob/living/simple_animal/parrot, drop_held_item_player), \
-			  TYPE_PROC_REF(/mob/living/simple_animal/parrot, perch_player), \
-			  TYPE_PROC_REF(/mob/living/simple_animal/parrot, toggle_mode),
-			  TYPE_PROC_REF(/mob/living/simple_animal/parrot, perch_mob_player)))
+	add_verb(src, list(/mob/living/simple_animal/parrot/proc/steal_from_ground, \
+			  /mob/living/simple_animal/parrot/proc/steal_from_mob, \
+			  /mob/living/simple_animal/parrot/proc/drop_held_item_player, \
+			  /mob/living/simple_animal/parrot/proc/perch_player, \
+			  /mob/living/simple_animal/parrot/proc/toggle_mode,
+			  /mob/living/simple_animal/parrot/proc/perch_mob_player))
 
 	AddElement(/datum/element/strippable, GLOB.strippable_parrot_items)
 	AddElement(/datum/element/simple_flying)
