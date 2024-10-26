@@ -33,13 +33,13 @@
 	mutantliver	   = /obj/item/organ/liver/diona
 	mutantlungs	   = /obj/item/organ/lungs/diona
 	mutantheart	   = /obj/item/organ/heart/diona
-	mutanteyes	   = /obj/item/organ/eyes/diona //Default darksight of 2.
+	mutanteyes	   = /obj/item/organ/eyes/night_vision/diona //Default darksight of 2.
 	mutanttongue   = /obj/item/organ/tongue/diona
 	mutantbrain    = /obj/item/organ/brain/diona
 	mutantappendix = /obj/item/organ/appendix/diona
 	mutant_organs  = list(
-		/obj/item/organ/eyes/diona/alt,
-		/obj/item/organ/eyes/diona/alt/alt,
+		/obj/item/organ/eyes/night_vision/diona/alt,
+		/obj/item/organ/eyes/night_vision/diona/alt/alt,
 		/obj/item/organ/heart/diona/alt,
 		/obj/item/organ/tongue/diona/alt,
 	)
@@ -52,6 +52,7 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/l_leg/diona,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/r_leg/diona,
 	)
+	bodytype = BODYTYPE_DIONA
 	meat = /obj/item/food/meat/slab/human/mutant/plant
 	skinned_type = /obj/item/stack/sheet/mineral/wood
 	exotic_blood = /datum/reagent/medicine/salglu_solution
@@ -65,18 +66,14 @@
 	heatmod  = 1.5
 	speedmod = 1.2
 	scream_sounds = list(
-		NEUTER = 'sound/voice/scream_silicon.ogg',
+		NEUTER = 'sound/voice/scream_diona.ogg',
 	)
 
 	cultures  = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_PLANT)
 	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_PLANT)
 	factions  = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_PLANT)
 	species_language_holder = /datum/language_holder/plant
-	say_mod = list(
-		"creaks",
-		"oscillates",
-		"emits",
-	)
+	say_mod = "oscillates"
 	liked_food = VEGETABLES | FRUIT | GRAIN
 	disliked_food = ALCOHOL
 	toxic_food = MEAT

@@ -10,13 +10,15 @@
 	return FALSE
 
 /datum/sprite_accessory/eyes/diona
-	organ_type = /obj/item/organ/eyes/diona
+	organ_type = /obj/item/organ/eyes/night_vision/diona
 	name = "Dion-eye"
 	icon = 'icons/mob/species/diona_eyes.dmi'
 	icon_state = "blinkinghelmethead"
 	color_src = null // no recolor (for now)
 	recommended_species = list("diona")
-	relevent_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+	bodytypes = BODYTYPE_DIONA
+	special = TRUE
+	relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/eyes/diona/none
 	name = "None"

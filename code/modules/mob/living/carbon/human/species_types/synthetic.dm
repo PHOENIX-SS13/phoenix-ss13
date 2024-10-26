@@ -36,8 +36,8 @@
 	default_mutant_bodyparts = list(
 		"ipc_antenna" 	= ACC_RANDOM,
 		"ipc_screen" 	= ACC_RANDOM,
-		"ipc_chassis" 	= ACC_RANDOM,
-		"legs" 			= ACC_RANDOM,
+		"chassis" 		= ACC_RANDOM,
+		"legs"  		= ACC_RANDOM,
 		"tail" 			= ACC_NONE, // As machines, these guys can bolt on whatever they want. Unified robotic species!
 		"snout" 		= ACC_NONE,
 		"taur" 			= ACC_NONE,
@@ -123,10 +123,10 @@
 	if(!screen)
 		screen = new
 		screen.Grant(C)
-	var/chassis = C.dna.mutant_bodyparts["ipc_chassis"]
+	var/chassis = C.dna.mutant_bodyparts["chassis"]
 	if(!chassis)
 		return
-	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.sprite_accessories["ipc_chassis"][chassis[MUTANT_INDEX_NAME]]
+	var/datum/sprite_accessory/chassis/chassis_of_choice = GLOB.sprite_accessories["chassis"][chassis[MUTANT_INDEX_NAME]]
 	if(chassis_of_choice)
 		limbs_id = chassis_of_choice.icon_state
 		if(chassis_of_choice.color_src)

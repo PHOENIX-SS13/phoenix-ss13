@@ -11,6 +11,7 @@
 	icon = 'icons/mob/sprite_accessory/vox_hair.dmi'
 	recommended_species = list("vox")
 	bodytypes = BODYTYPE_VOX
+	special = TRUE
 
 /datum/sprite_accessory/hair/vox/vox_afro
 	name = "Vox Afro"
@@ -103,6 +104,12 @@
 	default_color = DEFAULT_TERTIARY
 	recommended_species = list("vox")
 	relevent_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
+
+/datum/sprite_accessory/spines/vox/none
+	name = "None"
+	icon_state = "none"
+	factual = FALSE
 
 /datum/sprite_accessory/spines/vox/vox_bands
 	name = "Vox Bands"

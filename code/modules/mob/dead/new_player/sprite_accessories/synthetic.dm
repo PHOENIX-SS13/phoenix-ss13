@@ -183,71 +183,70 @@
  ************* Synth Chassis **************
  ******************************************/
 
-/datum/sprite_accessory/ipc_chassis
+/datum/sprite_accessory/chassis
 	recommended_species = list("synthetic")
 	icon = null
-	icon_state = "ipc"
+	icon_state = "synthetic"
 	color_src = null
 	factual = FALSE
-	key = "ipc_chassis"
+	key = "chassis"
 	generic = "Chassis Type"
 
-/datum/sprite_accessory/ipc_chassis/mcgreyscale
+/datum/sprite_accessory/chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics(Greyscale)"
 	icon_state = "mcgipc"
 	color_src = 1 //Here it's used to tell apart greyscalling
 
-/datum/sprite_accessory/ipc_chassis/bishopcyberkinetics
+/datum/sprite_accessory/chassis/bishopcyberkinetics
 	name = "Bishop Cyberkinetics"
 	icon_state = "bshipc"
 
-/datum/sprite_accessory/ipc_chassis/bishopcyberkinetics2
+/datum/sprite_accessory/chassis/bishopcyberkinetics2
 	name = "Bishop Cyberkinetics 2.0"
 	icon_state = "bs2ipc"
 
-/datum/sprite_accessory/ipc_chassis/hephaestussindustries
+/datum/sprite_accessory/chassis/hephaestussindustries
 	name = "Hephaestus Industries"
 	icon_state = "hsiipc"
 
-/datum/sprite_accessory/ipc_chassis/hephaestussindustries2
+/datum/sprite_accessory/chassis/hephaestussindustries2
 	name = "Hephaestus Industries 2.0"
 	icon_state = "hi2ipc"
 
-/datum/sprite_accessory/ipc_chassis/shellguardmunitions
+/datum/sprite_accessory/chassis/shellguardmunitions
 	name = "Shellguard Munitions Standard Series"
 	icon_state = "sgmipc"
 
-/datum/sprite_accessory/ipc_chassis/wardtakahashimanufacturing
+/datum/sprite_accessory/chassis/wardtakahashimanufacturing
 	name = "Ward-Takahashi Manufacturing"
 	icon_state = "wtmipc"
 
-/datum/sprite_accessory/ipc_chassis/xionmanufacturinggroup
+/datum/sprite_accessory/chassis/xionmanufacturinggroup
 	name = "Xion Manufacturing Group"
 	icon_state = "xmgipc"
 
-/datum/sprite_accessory/ipc_chassis/xionmanufacturinggroup2
+/datum/sprite_accessory/chassis/xionmanufacturinggroup2
 	name = "Xion Manufacturing Group 2.0"
 	icon_state = "xm2ipc"
 
-/datum/sprite_accessory/ipc_chassis/zenghupharmaceuticals
+/datum/sprite_accessory/chassis/zenghupharmaceuticals
 	name = "Zeng-Hu Pharmaceuticals"
 	icon_state = "zhpipc"
 
-/datum/sprite_accessory/ipc_chassis/syntheticlizard
+/datum/sprite_accessory/chassis/syntheticlizard
 	name = "Synthetic Reptilomorph"
-	icon = 'icons/mob/species/synthliz_parts_greyscale.dmi'
 	icon_state = "synthliz"
 
-/datum/sprite_accessory/ipc_chassis/syntheticanthromorph
+/datum/sprite_accessory/chassis/syntheticanthromorph
 	name = "Synthetic Anthromorph"
-	icon = 'icons/mob/species/anthro_parts_greyscale.dmi'
 	icon_state = "anthromorph"
 
 /******************************************
  *********** Synth Boot Sounds ************
  ******************************************/
 
-/datum/sprite_accessory/synth_bootsound
+/datum/sprite_accessory/synth_bootsound //special case, aren't actually sprite_accessory (being ogg files) but are updated via it
+	icon = null //These datums exist for selecting bootsound on preference, and little else
 	key = "bootsound"
 	generic = "Boot-Up Sound Type"
 	recommended_species = list("synthetic")

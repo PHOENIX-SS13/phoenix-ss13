@@ -194,12 +194,19 @@
 	key = "caps"
 	generic = "Caps"
 
+/datum/sprite_accessory/caps/none
+	name = "None"
+	icon_state = "None"
+	factual = FALSE
+
 /datum/sprite_accessory/caps/round
 	name = "Round"
 	icon_state = "round"
+	relevent_layers = list(BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/caps/diona
 	color_src = null
+	relevent_layers = list(BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/caps/diona/mellowcap
 	name = "Mellow Cap"

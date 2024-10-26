@@ -1,6 +1,7 @@
 /datum/species/mush //mush mush codecuck
 	name = "Mushroomperson"
 	id = "mush"
+	flavor_text = "A fungus among us, this species is new to the galactic stage, having been uplifted into sapience by a joint Skrell-Diona research project. They have excellent night vision and use their inertia to their advantage, being rather slow."
 	default_mutant_bodyparts = list(
 		"caps" = ACC_RANDOM,
 	)

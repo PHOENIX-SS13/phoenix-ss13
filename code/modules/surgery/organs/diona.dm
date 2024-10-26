@@ -28,10 +28,11 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "nymph"
 
-/obj/item/organ/eyes/diona
+/obj/item/organ/eyes/night_vision/diona
 	name = "electromagnetic receptor array"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "nymph"
+	see_in_dark = 2
 
 //TODO:Make absorb rads on insert //done! radimmune!
 /obj/item/organ/liver/diona
@@ -46,14 +47,14 @@
 	icon_state = "nymph"
 
 //dionae are giant colonies right? there should be a lot of decentralized systems crammed in there
-/obj/item/organ/eyes/diona/alt
+/obj/item/organ/eyes/night_vision/diona/alt
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_ADAMANTINE_RESONATOR
 	name = "narrow-band electromagnetic receptor node"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "nymph"
 
-/obj/item/organ/eyes/diona/alt/alt
+/obj/item/organ/eyes/night_vision/diona/alt/alt
 	zone = BODY_ZONE_CHEST
 	name = "wide-spectrum electromagnetic receptor node"
 	icon = 'icons/obj/objects.dmi'

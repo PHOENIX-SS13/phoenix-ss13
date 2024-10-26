@@ -1,4 +1,4 @@
-//DO NOT CHANGE THOSE LISTS UNLESS YOU KNOW WHAT YOURE DOING (will mess savefiles)
+//DO NOT CHANGE THESE LISTS UNLESS YOU KNOW WHAT YOURE DOING (will mess up savefiles)
 
 GLOBAL_LIST_INIT(breasts_size_translation, list("0" = "Flatchested",
 												"1" = "A",
@@ -58,8 +58,8 @@ GLOBAL_LIST_INIT(robotic_styles_list, list("None" = "None",
 										"Xion Manufacturing Group" = 'icons/mob/augmentation/xmgipc.dmi',
 										"Xion Manufacturing Group 2.0" = 'icons/mob/augmentation/xm2ipc.dmi',
 										"Zeng-Hu Pharmaceuticals" = 'icons/mob/augmentation/zhpipc.dmi',
-										"Synthetic Reptilomorph" = 'icons/mob/species/synthliz_parts_greyscale.dmi',
-										"Synthetic Anthromorph" = 'icons/mob/species/anthro_parts_greyscale.dmi'
+										"Synthetic Reptilomorph" = 'icons/mob/augmentation/synthliz.dmi',
+										"Synthetic Anthromorph" = 'icons/mob/augmentation/synthanthro.dmi'
 										))
 
 GLOBAL_LIST_EMPTY(hairstyle_cache)
