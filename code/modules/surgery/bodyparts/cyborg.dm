@@ -1,10 +1,10 @@
-#define ROBOTIC_LIGHT_BRUTE_MSG "marred"
-#define ROBOTIC_MEDIUM_BRUTE_MSG "dented"
-#define ROBOTIC_HEAVY_BRUTE_MSG "falling apart"
+#define SYNTHETIC_LIGHT_BRUTE_MSG "marred"
+#define SYNTHETIC_MEDIUM_BRUTE_MSG "dented"
+#define SYNTHETIC_HEAVY_BRUTE_MSG "falling apart"
 
-#define ROBOTIC_LIGHT_BURN_MSG "scorched"
-#define ROBOTIC_MEDIUM_BURN_MSG "charred"
-#define ROBOTIC_HEAVY_BURN_MSG "smoldering"
+#define SYNTHETIC_LIGHT_BURN_MSG "scorched"
+#define SYNTHETIC_MEDIUM_BURN_MSG "charred"
+#define SYNTHETIC_HEAVY_BURN_MSG "smoldering"
 
 //For ye whom may venture here, split up arm / hand sprites are formatted as "l_hand" & "l_arm".
 //The complete sprite (displayed when the limb is on the ground) should be named "borg_l_arm".
@@ -25,13 +25,13 @@
 	brute_reduction = 5
 	burn_reduction = 4
 
-	light_brute_msg = ROBOTIC_LIGHT_BRUTE_MSG
-	medium_brute_msg = ROBOTIC_MEDIUM_BRUTE_MSG
-	heavy_brute_msg = ROBOTIC_HEAVY_BRUTE_MSG
+	light_brute_msg = SYNTHETIC_LIGHT_BRUTE_MSG
+	medium_brute_msg = SYNTHETIC_MEDIUM_BRUTE_MSG
+	heavy_brute_msg = SYNTHETIC_HEAVY_BRUTE_MSG
 
-	light_burn_msg = ROBOTIC_LIGHT_BURN_MSG
-	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
-	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
+	light_burn_msg = SYNTHETIC_LIGHT_BURN_MSG
+	medium_burn_msg = SYNTHETIC_MEDIUM_BURN_MSG
+	heavy_burn_msg = SYNTHETIC_HEAVY_BURN_MSG
 	organic_render = FALSE
 
 /obj/item/bodypart/r_arm/robot
@@ -49,13 +49,13 @@
 	brute_reduction = 5
 	burn_reduction = 4
 
-	light_brute_msg = ROBOTIC_LIGHT_BRUTE_MSG
-	medium_brute_msg = ROBOTIC_MEDIUM_BRUTE_MSG
-	heavy_brute_msg = ROBOTIC_HEAVY_BRUTE_MSG
+	light_brute_msg = SYNTHETIC_LIGHT_BRUTE_MSG
+	medium_brute_msg = SYNTHETIC_MEDIUM_BRUTE_MSG
+	heavy_brute_msg = SYNTHETIC_HEAVY_BRUTE_MSG
 
-	light_burn_msg = ROBOTIC_LIGHT_BURN_MSG
-	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
-	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
+	light_burn_msg = SYNTHETIC_LIGHT_BURN_MSG
+	medium_burn_msg = SYNTHETIC_MEDIUM_BURN_MSG
+	heavy_burn_msg = SYNTHETIC_HEAVY_BURN_MSG
 	organic_render = FALSE
 
 /obj/item/bodypart/l_leg/robot
@@ -73,13 +73,13 @@
 	brute_reduction = 5
 	burn_reduction = 4
 
-	light_brute_msg = ROBOTIC_LIGHT_BRUTE_MSG
-	medium_brute_msg = ROBOTIC_MEDIUM_BRUTE_MSG
-	heavy_brute_msg = ROBOTIC_HEAVY_BRUTE_MSG
+	light_brute_msg = SYNTHETIC_LIGHT_BRUTE_MSG
+	medium_brute_msg = SYNTHETIC_MEDIUM_BRUTE_MSG
+	heavy_brute_msg = SYNTHETIC_HEAVY_BRUTE_MSG
 
-	light_burn_msg = ROBOTIC_LIGHT_BURN_MSG
-	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
-	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
+	light_burn_msg = SYNTHETIC_LIGHT_BURN_MSG
+	medium_burn_msg = SYNTHETIC_MEDIUM_BURN_MSG
+	heavy_burn_msg = SYNTHETIC_HEAVY_BURN_MSG
 	organic_render = FALSE
 
 /obj/item/bodypart/r_leg/robot
@@ -97,13 +97,13 @@
 	brute_reduction = 5
 	burn_reduction = 4
 
-	light_brute_msg = ROBOTIC_LIGHT_BRUTE_MSG
-	medium_brute_msg = ROBOTIC_MEDIUM_BRUTE_MSG
-	heavy_brute_msg = ROBOTIC_HEAVY_BRUTE_MSG
+	light_brute_msg = SYNTHETIC_LIGHT_BRUTE_MSG
+	medium_brute_msg = SYNTHETIC_MEDIUM_BRUTE_MSG
+	heavy_brute_msg = SYNTHETIC_HEAVY_BRUTE_MSG
 
-	light_burn_msg = ROBOTIC_LIGHT_BURN_MSG
-	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
-	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
+	light_burn_msg = SYNTHETIC_LIGHT_BURN_MSG
+	medium_burn_msg = SYNTHETIC_MEDIUM_BURN_MSG
+	heavy_burn_msg = SYNTHETIC_HEAVY_BURN_MSG
 	organic_render = FALSE
 
 /obj/item/bodypart/chest/robot
@@ -118,13 +118,13 @@
 	brute_reduction = 5
 	burn_reduction = 4
 
-	light_brute_msg = ROBOTIC_LIGHT_BRUTE_MSG
-	medium_brute_msg = ROBOTIC_MEDIUM_BRUTE_MSG
-	heavy_brute_msg = ROBOTIC_HEAVY_BRUTE_MSG
+	light_brute_msg = SYNTHETIC_LIGHT_BRUTE_MSG
+	medium_brute_msg = SYNTHETIC_MEDIUM_BRUTE_MSG
+	heavy_brute_msg = SYNTHETIC_HEAVY_BRUTE_MSG
 
-	light_burn_msg = ROBOTIC_LIGHT_BURN_MSG
-	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
-	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
+	light_burn_msg = SYNTHETIC_LIGHT_BURN_MSG
+	medium_burn_msg = SYNTHETIC_MEDIUM_BURN_MSG
+	heavy_burn_msg = SYNTHETIC_HEAVY_BURN_MSG
 	organic_render = FALSE
 
 	var/wired = FALSE
@@ -222,13 +222,13 @@
 	brute_reduction = 5
 	burn_reduction = 4
 
-	light_brute_msg = ROBOTIC_LIGHT_BRUTE_MSG
-	medium_brute_msg = ROBOTIC_MEDIUM_BRUTE_MSG
-	heavy_brute_msg = ROBOTIC_HEAVY_BRUTE_MSG
+	light_brute_msg = SYNTHETIC_LIGHT_BRUTE_MSG
+	medium_brute_msg = SYNTHETIC_MEDIUM_BRUTE_MSG
+	heavy_brute_msg = SYNTHETIC_HEAVY_BRUTE_MSG
 
-	light_burn_msg = ROBOTIC_LIGHT_BURN_MSG
-	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
-	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
+	light_burn_msg = SYNTHETIC_LIGHT_BURN_MSG
+	medium_burn_msg = SYNTHETIC_MEDIUM_BURN_MSG
+	heavy_burn_msg = SYNTHETIC_HEAVY_BURN_MSG
 	organic_render = FALSE
 
 	var/obj/item/assembly/flash/handheld/flash1 = null
@@ -358,10 +358,10 @@
 	burn_reduction = 0
 
 
-#undef ROBOTIC_LIGHT_BRUTE_MSG
-#undef ROBOTIC_MEDIUM_BRUTE_MSG
-#undef ROBOTIC_HEAVY_BRUTE_MSG
+#undef SYNTHETIC_LIGHT_BRUTE_MSG
+#undef SYNTHETIC_MEDIUM_BRUTE_MSG
+#undef SYNTHETIC_HEAVY_BRUTE_MSG
 
-#undef ROBOTIC_LIGHT_BURN_MSG
-#undef ROBOTIC_MEDIUM_BURN_MSG
-#undef ROBOTIC_HEAVY_BURN_MSG
+#undef SYNTHETIC_LIGHT_BURN_MSG
+#undef SYNTHETIC_MEDIUM_BURN_MSG
+#undef SYNTHETIC_HEAVY_BURN_MSG

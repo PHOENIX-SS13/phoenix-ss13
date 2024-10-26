@@ -4,6 +4,7 @@
 	id = "pod"
 	flavor_text = "A plant-based lifeform that does well in suitably-lit environments. Feeds off of light and plants, but shies away from meat and dairy. Over-exposure to light may cause issues with their metabolism."
 	default_color = "5C0"
+	limbs_id = "plant"
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
@@ -29,6 +30,9 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	burnmod = 1.25
 	heatmod = 1.5
+	breathid   = "co2" // plants breathe co2!
+	exotic_blood = /datum/reagent/consumable/korta_nectar
+	exotic_bloodtype = "K-"
 	payday_modifier = 0.75
 	meat = /obj/item/food/meat/slab/human/mutant/plant
 	disliked_food = MEAT | DAIRY
@@ -70,4 +74,13 @@
 	name = "Podperson"
 	id = "podweak"
 	flavor_text = "A plant-based lifeform that does well in suitably-lit environments. Feeds off of light and plants, but shies away from meat and dairy. Over-exposure to light may cause issues with their metabolism."
+	default_color = "489940"
 	limbs_id = "pod"
+	exotic_blood = /datum/reagent/consumable/korta_milk
+	exotic_bloodtype = "K+"
+	inherent_factions = list()
+	inherent_traits = list(
+		TRAIT_ADVANCEDTOOLUSER,
+		TRAIT_CAN_STRIP,
+	)
+	payday_modifier = 1

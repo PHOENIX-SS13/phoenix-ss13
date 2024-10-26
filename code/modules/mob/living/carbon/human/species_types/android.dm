@@ -28,10 +28,10 @@
 	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_SYNTHETIC)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	meat = null
-	damage_overlay_type = "infiltration_android"
+	damage_overlay_type = "android"
 	mutanttongue = /obj/item/organ/tongue/robot
 	species_language_holder = /datum/language_holder/synthetic
-	limbs_id = "infiltration_android"
+	limbs_id = "android"
 	wings_icons = list(
 		"Robotic",
 	)
@@ -40,24 +40,23 @@
 		NEUTER = 'sound/voice/scream_silicon.ogg',
 	)
 
-/datum/species/android/on_species_gain(mob/living/carbon/C)
+/datum/species/android/on_species_gain(mob/living/carbon/Android)
 	. = ..()
-	for(var/X in C.bodyparts)
-		var/obj/item/bodypart/O = X
-		O.change_bodypart_status(BODYPART_ROBOTIC, FALSE, TRUE)
-		O.brute_reduction = 5
-		O.burn_reduction = 4
-
+	for(var/X in Android.bodyparts)
+		var/obj/item/bodypart/Limbs = X
+		Limbs.change_bodypart_status(BODYPART_ROBOTIC, FALSE, TRUE)
+		Limbs.brute_reduction = 5
+		Limbs.burn_reduction = 4
 	// Androids don't eat, hunger or metabolise foods. Let's do some cleanup.
-	C.set_safe_hunger_level()
+	Android.set_safe_hunger_level()
 
-/datum/species/android/on_species_loss(mob/living/carbon/C)
+/datum/species/android/on_species_loss(mob/living/carbon/Android)
 	. = ..()
-	for(var/X in C.bodyparts)
-		var/obj/item/bodypart/O = X
-		O.change_bodypart_status(BODYPART_ORGANIC,FALSE, TRUE)
-		O.brute_reduction = initial(O.brute_reduction)
-		O.burn_reduction = initial(O.burn_reduction)
+	for(var/X in Android.bodyparts)
+		var/obj/item/bodypart/Limbs = X
+		Limbs.change_bodypart_status(BODYPART_ORGANIC,FALSE, TRUE)
+		Limbs.brute_reduction = initial(Limbs.brute_reduction)
+		Limbs.burn_reduction = initial(Limbs.burn_reduction)
 
 // Sneaky little impersonators
 
@@ -108,15 +107,15 @@
 	disguise_fail_health = 50
 	changesource_flags = MIRROR_BADMIN | WABBAJACK
 
-/datum/species/android/infiltration_android/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
+/datum/species/android/infiltration_android/on_species_gain(mob/living/carbon/human/Infiltration_Android, datum/species/old_species)
 	..()
-	assume_disguise(old_species, H)
-	RegisterSignal(H, COMSIG_MOB_SAY, .proc/handle_speech)
-	H.set_safe_hunger_level()
+	assume_disguise(old_species, Infiltration_Android)
+	RegisterSignal(Infiltration_Android, COMSIG_MOB_SAY, .proc/handle_speech)
+	Infiltration_Android.set_safe_hunger_level()
 
-/datum/species/android/infiltration_android/on_species_loss(mob/living/carbon/human/H)
+/datum/species/android/infiltration_android/on_species_loss(mob/living/carbon/human/Infiltration_Android)
 	. = ..()
-	UnregisterSignal(H, COMSIG_MOB_SAY)
+	UnregisterSignal(Infiltration_Android, COMSIG_MOB_SAY)
 
 /datum/species/android/infiltration_android/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, delta_time, times_fired)
 	if(chem.type == /datum/reagent/medicine/c2/synthflesh)
