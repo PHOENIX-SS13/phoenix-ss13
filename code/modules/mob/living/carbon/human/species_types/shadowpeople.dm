@@ -15,6 +15,9 @@
 		TRAIT_VIRUSIMMUNE,
 		TRAIT_NOBREATH,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_UNDEAD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_UNDEAD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_UNDEAD)
 	inherent_factions = list("faithless")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	mutanteyes = /obj/item/organ/eyes/night_vision

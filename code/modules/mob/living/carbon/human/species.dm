@@ -20,7 +20,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	// Default color. If mutant colors are disabled, this is the color that will be used by that race.
 	var/default_color = "FFF"
 
-	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
+	///Whether or not the race has sexual characteristics (biological genders).
 	var/sexes = TRUE
 
 	///Clothing offsets. If species is wearing things not fitted to its bodytype, this will apply pixel offsets
@@ -256,7 +256,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	/// Bodytype variant used for when the species is snouted, for clothing.
 	var/snout_bodytype = BODYTYPE_DIGITIGRADE
 	/// Available cultural informations
-	var/list/cultures = list(CULTURES_EXOTIC, CULTURES_HUMAN)
+	var/list/cultures = list(CULTURES_GENERIC, CULTURES_HUMAN)
 	var/list/locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN)
 	var/list/factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN)
 	/// List of all the languages our species can learn NO MATTER their background
@@ -1804,6 +1804,9 @@ GLOBAL_LIST_EMPTY(customizable_races)
 /datum/species/proc/bullet_act(obj/projectile/P, mob/living/carbon/human/H)
 	// called before a projectile hit
 	return 0
+
+/datum/species/proc/can_understand(mob/other)
+	return
 
 /////////////
 //BREATHING//

@@ -1,8 +1,9 @@
 /datum/species/mush //mush mush codecuck
 	name = "Mushroomperson"
 	id = "mush"
+	flavor_text = "A fungus among us, this species is new to the galactic stage, having been uplifted into sapience by a joint Skrell-Diona research project. They have excellent night vision and use their inertia to their advantage, being rather slow."
 	default_mutant_bodyparts = list(
-		"caps" = "Round",
+		"caps" = ACC_RANDOM,
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 
@@ -24,6 +25,9 @@
 		TRAIT_NOBREATH,
 		TRAIT_NOFLASH,
 	)
+	cultures  = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_PLANT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_PLANT)
+	factions  = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_PLANT)
 	inherent_factions = list(
 		"mushroom",
 	)
@@ -48,10 +52,10 @@
 	use_skintones = FALSE
 	var/datum/martial_art/mushpunch/mush
 	species_language_holder = /datum/language_holder/mushroom
-
-/datum/species/mush/check_roundstart_eligible()
-	return FALSE //hard locked out of roundstart on the order of design lead kor, this can be removed in the future when planetstation is here OR SOMETHING but right now we have a problem with races.
-
+/*
+ * /datum/species/mush/check_roundstart_eligible()
+ *	 return FALSE //hard locked out of roundstart on the order of design lead kor, this can be removed in the future when planetstation is here OR SOMETHING but right now we have a problem with races.
+ */
 /datum/species/mush/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
 	if(ishuman(C))

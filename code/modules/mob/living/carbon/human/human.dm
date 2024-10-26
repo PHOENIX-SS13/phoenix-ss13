@@ -1131,6 +1131,18 @@
 /mob/living/carbon/human/species/android
 	race = /datum/species/android
 
+/mob/living/carbon/human/species/android/infiltration_android
+	race = /datum/species/android/infiltration_android
+
+/mob/living/carbon/human/species/android/infiltration_android/military
+	race = /datum/species/android/infiltration_android/military
+
+/mob/living/carbon/human/species/anthromorph
+	race = /datum/species/anthromorph
+
+/mob/living/carbon/human/species/diona
+	race = /datum/species/diona
+
 /mob/living/carbon/human/species/dullahan
 	race = /datum/species/dullahan
 
@@ -1230,6 +1242,9 @@
 /mob/living/carbon/human/species/jelly/luminescent
 	race = /datum/species/jelly/luminescent
 
+/mob/living/carbon/human/species/roundstartslime
+	race = /datum/species/jelly/roundstartslime
+
 /mob/living/carbon/human/species/lizard
 	race = /datum/species/lizard
 
@@ -1254,6 +1269,9 @@
 /mob/living/carbon/human/species/pod
 	race = /datum/species/pod
 
+/mob/living/carbon/human/species/podweak
+	race = /datum/species/pod/podweak
+
 /mob/living/carbon/human/species/shadow
 	race = /datum/species/shadow
 
@@ -1266,11 +1284,8 @@
 /mob/living/carbon/human/species/snail
 	race = /datum/species/snail
 
-/mob/living/carbon/human/species/synth
-	race = /datum/species/synth
-
-/mob/living/carbon/human/species/synth/military
-	race = /datum/species/synth/military
+/mob/living/carbon/human/species/synthetic
+	race = /datum/species/synthetic
 
 /mob/living/carbon/human/species/vampire
 	race = /datum/species/vampire
@@ -1284,26 +1299,11 @@
 /mob/living/carbon/human/species/zombie/krokodil_addict
 	race = /datum/species/krokodil_addict
 
-/mob/living/carbon/human/species/synthliz
-	race = /datum/species/robotic/synthliz
-
 /mob/living/carbon/human/species/vox
 	race = /datum/species/vox
 
-/mob/living/carbon/human/species/ipc
-	race = /datum/species/robotic/ipc
-
-/mob/living/carbon/human/species/mammal
-	race = /datum/species/mammal
-
-/mob/living/carbon/human/species/podweak
-	race = /datum/species/pod/podweak
-
 /mob/living/carbon/human/species/xeno
 	race = /datum/species/xeno
-
-/mob/living/carbon/human/species/roundstartslime
-	race = /datum/species/jelly/roundstartslime
 
 /mob/living/carbon/human/verb/toggle_undies()
 	set category = "IC"

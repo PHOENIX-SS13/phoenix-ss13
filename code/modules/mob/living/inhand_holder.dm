@@ -95,6 +95,15 @@
 	icon = 'icons/mob/drone.dmi'
 	icon_state = "[D.visualAppearance]_hat"
 
+/obj/item/clothing/head/mob_holder/diona/deposit(mob/living/L)
+	. = ..()
+	if(!isnymph(L))
+		qdel(src)
+	name = "diona nymph (hiding)"
+	desc = "This diona nymph is scared and has curled up into a ball!"
+	icon = 'icons/mob/monkey.dmi'
+	icon_state = "nymph_hat"
+
 /obj/item/clothing/head/mob_holder/destructible
 
 /obj/item/clothing/head/mob_holder/destructible/Destroy()

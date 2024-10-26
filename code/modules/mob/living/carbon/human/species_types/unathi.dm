@@ -16,11 +16,14 @@
 		"tail" = ACC_RANDOM,
 		"snout" = ACC_RANDOM,
 		"spines" = ACC_NONE,
-		"frills" = ACC_NONE,
+		"frills" = ACC_RANDOM,
 		"horns" = ACC_RANDOM,
-		"body_markings" = ACC_RANDOM,
+		"body_markings" = ACC_NONE,
 		"legs" = "Normal Legs",
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_LIZARD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_LIZARD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_LIZARD)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'

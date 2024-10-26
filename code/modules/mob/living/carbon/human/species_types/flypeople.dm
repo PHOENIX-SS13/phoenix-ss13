@@ -7,9 +7,12 @@
 		HAS_BONE,
 		TRAIT_ANTENNAE
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_INSECT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_INSECT)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_INSECT)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	meat = /obj/item/food/meat/slab/human/mutant/fly
-	mutanteyes = /obj/item/organ/eyes/fly
+
 	liked_food = GROSS
 	disliked_food = NONE
 	toxic_food = NONE
@@ -23,6 +26,7 @@
 	mutantliver = /obj/item/organ/liver/fly
 	mutantstomach = /obj/item/organ/stomach/fly
 	mutantappendix = /obj/item/organ/appendix/fly
+	mutanteyes = /obj/item/organ/eyes/fly
 	mutant_organs = list(/obj/item/organ/fly, /obj/item/organ/fly/groin)
 	scream_sounds = list(
 		NEUTER = 'sound/voice/scream_moth.ogg',

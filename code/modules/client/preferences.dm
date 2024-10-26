@@ -3049,7 +3049,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "</tr>"
 	dat += "<table>"
 	dat += "<hr>"
-	dat += "<center><b>Below you have species which you cannot play on station, however you can customize them and join as an event or ghost role</b></center>"
+	dat += "<center><b>Listed below are species which cannot be played on the Bearcat, however they may be available for customization for event or ghost roles.</b></center>"
 	dat += "<hr>"
 	dat += "<table width='100%' align='center'><tr>"
 	dat += "<td width=20%></td>"

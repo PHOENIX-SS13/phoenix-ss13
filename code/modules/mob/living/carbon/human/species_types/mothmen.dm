@@ -18,6 +18,9 @@
 		"moth_antennae" = ACC_RANDOM,
 		"neck" = ACC_RANDOM,
 	)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_INSECT)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_INSECT)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_INSECT)
 	attack_verb = "slash"
 	attack_effect = ATTACK_EFFECT_CLAW
 	attack_sound = 'sound/weapons/slash.ogg'

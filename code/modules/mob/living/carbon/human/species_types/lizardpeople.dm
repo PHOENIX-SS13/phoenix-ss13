@@ -38,6 +38,7 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/food/meat/slab/human/mutant/lizard
 	skinned_type = /obj/item/stack/sheet/animalhide/lizard
+	limbs_id = "lizard"
 	exotic_bloodtype = "L"
 	disliked_food = NUTS | DAIRY | CLOTH
 	liked_food = GROSS | MEAT | RAW | TOXIC
@@ -56,8 +57,9 @@
 
 	ass_image = 'icons/ass/asslizard.png'
 	limbs_icon = 'icons/mob/species/lizard_parts_greyscale.dmi'
-
-	cultures = list(CULTURES_EXOTIC, CULTURES_LIZARD, CULTURES_HUMAN)
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_LIZARD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_LIZARD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_LIZARD)
 	learnable_languages = list(
 		/datum/language/common,
 		/datum/language/draconic,
@@ -88,10 +90,10 @@
 		if(1) //First random case - all is the same
 			second_color = main_color
 			third_color = main_color
-		if(2) //Second case, derrivatory shades, except there's no helpers for that and I dont feel like writing them
+		if(2) //Second case, derivative shades, except there's no helpers for that and I dont feel like writing them
 			second_color = main_color
 			third_color = main_color
-		if(3) //Third case, more randomisation
+		if(3) //Third case, more randomization
 			second_color = random_color()
 			third_color = random_color()
 	returned["mcolor"] = main_color
@@ -110,9 +112,8 @@ Lizard subspecies: ASHWALKERS
 */
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"
-	id = "ashlizard"
-	flavor_text = "A reptilian species adapted to harsher environments. They can breathe in low pressure areas, hold their breath for extended periods, and have an immunity to most viral outbreaks. Similar to normal Lizardpeople, they cannot eat grains or dairy."
-	limbs_id = "lizard"
+	id = "lizard_ash"
+	flavor_text = "A reptilian species adapted to harsher environments. They can breathe in low pressure areas, hold their breath for extended periods, and have an immunity to most viral outbreaks. Similar to average lizardpeople, they cannot eat nuts or dairy."
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
@@ -135,16 +136,33 @@ Lizard subspecies: ASHWALKERS
 	cultures = list(/datum/cultural_info/culture/lavaland)
 	locations = list(/datum/cultural_info/location/stateless)
 	factions = list(/datum/cultural_info/faction/none)
-
 	learnable_languages = list(/datum/language/draconic)
-
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"spines" = ACC_RANDOM,
+		"frills" = ACC_RANDOM,
+		"horns" = ACC_RANDOM,
+		"body_markings" = ACC_RANDOM,
+		"legs" = "Digitigrade Legs",
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 /*
 Lizard subspecies: SILVER SCALED
 */
 /datum/species/lizard/silverscale
 	name = "Silver Scale"
-	id = "silverlizard"
-	limbs_id = "lizard"
+	id = "lizard_silver"
+	flavor_text = "Pressure-proof, lacking a need to breathe, and generally hardier than their nearest genetic peers, this subspecies arose from lizardlike genemodders on the fringe of known space. They are unable to digest dairy or nut products, though they are generally able to break down a mostly-overlapping group of several proteins toxic to the Earth biosphere. When in danger, they can grow a into a silvery cocoon."
+	species_traits = list(
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+		HAIR,
+		FACEHAIR,
+	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -157,10 +175,23 @@ Lizard subspecies: SILVER SCALED
 	mutanttongue = /obj/item/organ/tongue/lizard/silver
 	armor = 10 //very light silvery scales soften blows
 	changesource_flags = MIRROR_BADMIN | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
+	fixed_mut_color = "eeeeee"
 	///stored mutcolor for when we turn back off of a silverscale.
 	var/old_mutcolor
 	///stored eye color for when we turn back off of a silverscale.
 	var/old_eyecolor
+	default_mutant_bodyparts = list(
+		"tail" = ACC_RANDOM,
+		"snout" = ACC_RANDOM,
+		"spines" = ACC_RANDOM,
+		"frills" = ACC_RANDOM,
+		"horns" = ACC_RANDOM,
+		"body_markings" = ACC_RANDOM,
+		"legs" = "Digitigrade Legs",
+		"taur" = ACC_NONE,
+		"wings" = ACC_NONE,
+		"neck" = ACC_NONE,
+	)
 
 /datum/species/lizard/silverscale/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	var/mob/living/carbon/human/new_silverscale = C

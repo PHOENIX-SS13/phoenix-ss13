@@ -20,7 +20,9 @@
 		TRAIT_NOHUNGER,
 		TRAIT_HARDLY_WOUNDED,
 	)
-
+	cultures = list(CULTURES_GENERIC, CULTURES_HUMAN, CULTURES_UNDEAD)
+	locations = list(LOCATIONS_GENERIC, LOCATIONS_HUMAN, LOCATIONS_UNDEAD)
+	factions = list(FACTIONS_GENERIC, FACTIONS_HUMAN, FACTIONS_UNDEAD)
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
 	mutantlungs = /obj/item/organ/lungs/plasmaman
 	mutanttongue = /obj/item/organ/tongue/bone/plasmaman

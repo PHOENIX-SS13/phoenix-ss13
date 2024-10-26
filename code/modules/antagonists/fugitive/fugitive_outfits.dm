@@ -49,12 +49,12 @@
 	for(var/obj/item/trait_needed as anything in no_drops)
 		ADD_TRAIT(trait_needed, TRAIT_NODROP, CURSED_ITEM_TRAIT(trait_needed.type))
 
-/datum/outfit/synthetic
-	name = "Factory Error Synth"
+/datum/outfit/android
+	name = "Android Factory Escapee"
 	uniform = /obj/item/clothing/under/color/white
 	ears = /obj/item/radio/headset
 
-/datum/outfit/synthetic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/android/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 	var/obj/item/organ/eyes/robotic/glow/eyes = new()
@@ -163,9 +163,9 @@
 /datum/outfit/bountysynth/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
-	var/datum/species/synth/synthetic_appearance = new()
-	H.set_species(synthetic_appearance)
-	synthetic_appearance.assume_disguise(synthetic_appearance, H)
+	var/datum/species/android/infiltration_android/infiltration_appearance = new()
+	H.set_species(infiltration_appearance)
+	infiltration_appearance.assume_disguise(infiltration_appearance, H)
 	H.update_hair()
 	var/obj/item/card/id/W = H.wear_id
 	W.assignment = "Bounty Hunter"

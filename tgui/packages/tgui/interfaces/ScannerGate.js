@@ -14,46 +14,211 @@ const DISEASE_THEASHOLD_LIST = [
 ];
 
 const TARGET_SPECIES_LIST = [
+
+  {
+    name: 'Monkey',
+    value: 'monkey',
+  },
   {
     name: 'Human',
     value: 'human',
   },
   {
-    name: 'Lizardperson',
-    value: 'lizard',
-  },
-  {
-    name: 'Flyperson',
-    value: 'fly',
+    name: 'Humanoid',
+    value: 'humanoid',
   },
   {
     name: 'Felinid',
     value: 'felinid',
   },
   {
-    name: 'Plasmaman',
-    value: 'plasma',
+    name: 'Vulpkanin',
+    value: 'vulpkanin',
+  },
+  {
+    name: 'Tajaran',
+    value: 'tajaran',
+  },
+  {
+    name: 'Lizardperson',
+    value: 'lizard',
+  },
+  {
+    name: 'Ashwalker',
+    value: 'lizard_ash',
+  },
+  {
+    name: 'Silverscale',
+    value: 'lizard_silver',
+  },
+  {
+    name: 'Unathi',
+    value: 'unathi',
+  },
+  {
+    name: 'Teshari',
+    value: 'teshari',
+  },
+  {
+    name: 'Vox',
+    value: 'vox',
+  },
+  {
+    name: 'Aquatic',
+    value: 'aquatic',
+  },
+  {
+    name: 'Akula',
+    value: 'akula',
+  },
+  {
+    name: 'Skrell',
+    value: 'skrell',
+  },
+  {
+    name: 'Snailperson',
+    value: 'snail',
+  },
+  {
+    name: 'Anthromorphic Insect',
+    value: 'insect',
   },
   {
     name: 'Mothperson',
     value: 'moth',
   },
   {
-    name: 'Jellyperson',
-    value: 'jelly',
+    name: 'Flyperson',
+    value: 'fly',
+  },
+  {
+    name: 'Slimeperson',
+    value: 'slimeperson',
+  },
+  {
+    name: 'Jellyslime',
+    value: 'jelly_slime',
+  },
+  {
+    name: 'Luminescent',
+    value: 'jelly_luminescent',
+  },
+  {
+    name: 'Stargazer',
+    value: 'jelly_stargazer',
+  },
+  {
+    name: 'Synthetic',
+    value: 'synthetic',
+  },
+  {
+    name: 'Android',
+    value: 'android',
+  },
+  {
+    name: 'Infiltration Android',
+    value: 'android_infiltration',
+  },
+  {
+    name: 'Militarized Infiltration Android',
+    value: 'android_infiltration_militarized',
+  },
+  {
+    name: 'Primal Podperson',
+    value: 'pod',
   },
   {
     name: 'Podperson',
-    value: 'pod',
+    value: 'podweak',
   },
+  {
+    name: 'Mushroomperson',
+    value: 'mush',
+  },
+  {
+    name: 'Diona',
+    value: 'diona',
+  },
+  {
+    name: 'Podgrown Diona',
+    value: 'diona_pod',
+  },
+  {
+    name: 'Anthromorph',
+    value: 'anthromorph',
+  },
+  {
+    name: 'Ethereal',
+    value: 'ethereal',
+  },
+  {
+    name: '???',
+    value: 'shadow',
+  },
+  {
+    name: 'Abductor',
+    value: 'abductor',
+  },
+  {
+    name: 'Xenomorph Hybrid',
+    value: 'xenomorph_hybrid',
+  },  
+  {
+    name: 'Plasmaman',
+    value: 'plasmaman',
+  },  
+  {
+    name: 'Skeleton',
+    value: 'skeleton',
+  },  
+  {
+    name: 'Dullahan',
+    value: 'dullahan',
+  }, 
+  {
+    name: 'Zombie',
+    value: 'zombie',
+  }, 
+  {
+    name: 'Zombie',
+    value: 'memezombies',
+  }, 
+  {
+    name: 'Krokodil Addict',
+    value: 'goofzombies',
+  }, 
+  {
+    name: 'Vampire',
+    value: 'vampire',
+  }, 
   {
     name: 'Golem',
     value: 'golem',
   },
   {
-    name: 'Zombie',
-    value: 'zombie',
+    name: 'Golem, Adamantine',
+    value: 'adamantine',
+  }, 
+  {
+    name: 'Golem, Plasma',
+    value: 'plasma',
   },
+  {
+    name: 'Golem, Diamond',
+    value: 'diamond',
+  },
+  {
+    name: 'Golem, Gold',
+    value: 'gold',
+  }, 
+  {
+    name: 'Golem, Silver',
+    value: 'silver',
+  }, 
+  {
+    name: 'Golem, Uranium',
+    value: 'uranium',
+  }, 
 ];
 
 const TARGET_NUTRITION_LIST = [

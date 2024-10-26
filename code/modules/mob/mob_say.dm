@@ -125,6 +125,42 @@
 		displayed_key = null
 	deadchat_broadcast(rendered, source, follow_target = src, speaker_key = displayed_key)
 
+/**
+ * Checks if the mob can understand the other speaker
+ *
+ * If it return FALSE, then the message will have some letters replaced with stars from the heard message
+ */
+/mob/proc/say_understands(atom/movable/other, datum/language/speaking = null)
+	if(stat == DEAD)
+		return TRUE
+
+	//Universal speak makes everything understandable, for obvious reasons.
+	if(universal_speak || universal_understand)
+		return TRUE
+
+	//Languages are handled after.
+	if(!speaking)
+		if(!other || !ismob(other))
+			return TRUE
+		var/mob/other_mob = other
+		if(other_mob.universal_speak)
+			return TRUE
+		if(isAI(src) && ispAI(other_mob))
+			return TRUE
+		if(istype(other_mob, src.type) || istype(src, other_mob.type))
+			return TRUE
+		return FALSE
+
+	if(speaking.flags & INNATE)
+		return TRUE
+
+	//Language check.
+	for(var/datum/language/L in languages)
+		if(speaking.name == L.name)
+			return TRUE
+
+	return FALSE
+
 ///Check if this message is an emote
 /mob/proc/check_emote(message, forced)
 	if(message[1] == "*")

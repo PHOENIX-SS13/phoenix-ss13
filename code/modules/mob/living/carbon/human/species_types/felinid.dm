@@ -9,7 +9,6 @@
 		"tail" = "Cat",
 		"ears" = "Cat",
 	)
-
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/felinid
 	disliked_food = GROSS | RAW | CLOTH

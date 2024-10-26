@@ -1,6 +1,6 @@
 //Synth snouts (This is the most important part)
 /datum/sprite_accessory/snouts/synthliz
-	recommended_species = list("synthliz")
+	recommended_species = list("synthetic")
 	icon = 'icons/mob/sprite_accessory/synthliz_snouts.dmi'
 	color_src = USE_ONE_COLOR
 	default_color = null
@@ -34,7 +34,7 @@
 
 //Synth tails
 /datum/sprite_accessory/tails/synthliz
-	recommended_species = list("synthliz")
+	recommended_species = list("synthetic")
 	icon = 'icons/mob/sprite_accessory/synthliz_tails.dmi'
 	color_src = USE_ONE_COLOR
 	name = "Synthetic Lizard"
@@ -43,7 +43,7 @@
 
 //Synth Antennae
 /datum/sprite_accessory/antenna/synthliz
-	recommended_species = list("synthliz")
+	recommended_species = list("synthetic")
 	icon = 'icons/mob/sprite_accessory/synthliz_antennas.dmi'
 	color_src = USE_ONE_COLOR
 	name = "Synthetic Lizard - Antennae"
@@ -105,7 +105,7 @@
 	name = "Cybernetic Lizard"
 	icon_state = "synthlizard"
 	taur_mode = BODYTYPE_TAUR_PAW
-	recommended_species = list("synthliz")
+	recommended_species = list("synthetic")
 
 /datum/sprite_accessory/taur/synthliz/inv
 	name = "Cybernetic Lizard (Inverted)"
