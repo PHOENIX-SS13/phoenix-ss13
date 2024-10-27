@@ -1641,6 +1641,7 @@
 #include "code\modules\admin\verbs\BrokenInhands.dm"
 #include "code\modules\admin\verbs\cinematic.dm"
 #include "code\modules\admin\verbs\commandreport.dm"
+#include "code\modules\admin\verbs\coordteleport.dm"
 #include "code\modules\admin\verbs\deadmin_asay.dm"
 #include "code\modules\admin\verbs\deadsay.dm"
 #include "code\modules\admin\verbs\debug.dm"
