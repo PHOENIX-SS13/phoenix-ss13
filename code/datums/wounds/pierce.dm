@@ -110,7 +110,7 @@
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
 	user.visible_message(SPAN_NOTICE("[user] begins stitching [victim]'s [limb.name] with [I]..."), SPAN_NOTICE("You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	user.visible_message(SPAN_GREEN("[user] stitches up some of the bleeding on [victim]."), SPAN_GREEN("You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"]."))
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
@@ -129,7 +129,7 @@
 	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% longer and less effective if you do it to yourself
 
 	user.visible_message(SPAN_DANGER("[user] begins cauterizing [victim]'s [limb.name] with [I]..."), SPAN_WARNING("You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
-	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	user.visible_message(SPAN_GREEN("[user] cauterizes some of the bleeding on [victim]."), SPAN_GREEN("You cauterize some of the bleeding on [victim]."))

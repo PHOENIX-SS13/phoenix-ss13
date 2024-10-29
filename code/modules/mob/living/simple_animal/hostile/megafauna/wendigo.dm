@@ -134,12 +134,12 @@ Difficulty: Hard
 	. = ..()
 	stored_move_dirs &= ~direct
 	if(!stored_move_dirs)
-		INVOKE_ASYNC(GLOBAL_PROC, .proc/wendigo_slam, src, stomp_range, 1, 8)
+		INVOKE_ASYNC(GLOBAL_PROC, PROC_REF(wendigo_slam), src, stomp_range, 1, 8)
 
 /// Slams the ground around the source throwing back enemies caught nearby, delay is for the radius increase
 /proc/wendigo_slam(atom/source, range, delay, throw_range)
 	var/turf/orgin = get_turf(source)
-	if(!orgin) 
+	if(!orgin)
 		return
 	var/list/all_turfs = RANGE_TURFS(range, orgin)
 	for(var/i = 0 to range)

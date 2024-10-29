@@ -494,7 +494,7 @@ GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/sdql2_vv_all, new(null
 					options |= SDQL2_OPTION_SEQUENTIAL
 
 /datum/sdql2_query/proc/ARun()
-	INVOKE_ASYNC(src, .proc/Run)
+	INVOKE_ASYNC(src, PROC_REF(Run))
 
 /datum/sdql2_query/proc/Run()
 	if(SDQL2_IS_RUNNING)
@@ -803,7 +803,7 @@ GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/sdql2_vv_all, new(null
 	for(var/arg in arguments)
 		new_args[++new_args.len] = SDQL_expression(source, arg)
 	if(object == GLOB) // Global proc.
-		return superuser ? (call("/proc/[procname]")(arglist(new_args))) : (WrapAdminProcCall(GLOBAL_PROC, procname, new_args))
+		return superuser ? (call("/proc/[procname])")(arglist(new_args))) : (WrapAdminProcCall(GLOBAL_PROC, procname, new_args))
 	return superuser ? (call(object, procname)(arglist(new_args))) : (WrapAdminProcCall(object, procname, new_args))
 
 /datum/sdql2_query/proc/SDQL_function_async(datum/object, procname, list/arguments, source)

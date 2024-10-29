@@ -136,7 +136,7 @@
 /obj/machinery/gravity_generator/main/Destroy() // If we somehow get deleted, remove all of our other parts.
 	investigate_log("was destroyed!", INVESTIGATE_GRAVITY)
 	on = FALSE
-	
+
 	if(mapzone)
 		mapzone.gravity_generators -= src
 
@@ -165,7 +165,7 @@
 		part.main_part = src
 		parts += part
 		part.update_appearance()
-		part.RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, /obj/machinery/gravity_generator/part/proc/on_update_icon)
+		part.RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, TYPE_PROC_REF(/obj/machinery/gravity_generator/part, on_update_icon))
 
 /obj/machinery/gravity_generator/main/proc/connected_parts()
 	return parts.len == 8

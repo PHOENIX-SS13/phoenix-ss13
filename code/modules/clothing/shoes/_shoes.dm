@@ -86,7 +86,7 @@
 	. = ..()
 	if(can_be_tied && tied == SHOES_UNTIED)
 		our_alert = user.throw_alert("shoealert", /atom/movable/screen/alert/shoes/untied)
-		RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, .proc/check_trip, override=TRUE)
+		RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(check_trip), override=TRUE)
 
 /obj/item/clothing/shoes/proc/restore_offsets(mob/user)
 	equipped_before_drop = FALSE
@@ -135,7 +135,7 @@
 	else
 		if(tied == SHOES_UNTIED && our_guy && user == our_guy)
 			our_alert = our_guy.throw_alert("shoealert", /atom/movable/screen/alert/shoes/untied) // if we're the ones unknotting our own laces, of course we know they're untied
-		RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, .proc/check_trip, override=TRUE)
+		RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, PROC_REF(check_trip), override=TRUE)
 
 /**
  * handle_tying deals with all the actual tying/untying/knotting, inferring your intent from who you are in relation to the state of the laces
@@ -169,7 +169,7 @@
 			return
 		user.visible_message(SPAN_NOTICE("[user] begins [tied ? "unknotting" : "tying"] the laces of [user.p_their()] [src.name]."), SPAN_NOTICE("You begin [tied ? "unknotting" : "tying"] the laces of your [src.name]..."))
 
-		if(do_after(user, lace_time, target = our_guy, extra_checks = CALLBACK(src, .proc/still_shoed, our_guy)))
+		if(do_after(user, lace_time, target = our_guy, extra_checks = CALLBACK(src, PROC_REF(still_shoed), our_guy)))
 			to_chat(user, SPAN_NOTICE("You [tied ? "unknot" : "tie"] the laces of your [src.name]."))
 			if(tied == SHOES_UNTIED)
 				adjust_laces(SHOES_TIED, user)
@@ -193,7 +193,7 @@
 		if(HAS_TRAIT(user, TRAIT_CLUMSY)) // based clowns trained their whole lives for this
 			mod_time *= 0.75
 
-		if(do_after(user, mod_time, target = our_guy, extra_checks = CALLBACK(src, .proc/still_shoed, our_guy)))
+		if(do_after(user, mod_time, target = our_guy, extra_checks = CALLBACK(src, PROC_REF(still_shoed), our_guy)))
 			to_chat(user, SPAN_NOTICE("You [tied ? "untie" : "knot"] the laces on [loc]'s [src.name]."))
 			if(tied == SHOES_UNTIED)
 				adjust_laces(SHOES_KNOTTED, user)
@@ -251,7 +251,7 @@
 				to_chat(our_guy, SPAN_DANGER("You stumble a bit on your untied shoelaces!"))
 				if(!our_guy.has_movespeed_modifier(/datum/movespeed_modifier/shove))
 					our_guy.add_movespeed_modifier(/datum/movespeed_modifier/shove)
-					addtimer(CALLBACK(our_guy, /mob/living/carbon/proc/clear_shove_slowdown), SHOVE_SLOWDOWN_LENGTH)
+					addtimer(CALLBACK(our_guy, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
 
 			if(26 to 1000)
 				wiser = FALSE
@@ -277,6 +277,6 @@
 
 	to_chat(user, SPAN_NOTICE("You begin [tied ? "untying" : "tying"] the laces on [src]..."))
 
-	if(do_after(user, lace_time, target = src,extra_checks = CALLBACK(src, .proc/still_shoed, user)))
+	if(do_after(user, lace_time, target = src,extra_checks = CALLBACK(src, PROC_REF(still_shoed), user)))
 		to_chat(user, SPAN_NOTICE("You [tied ? "untie" : "tie"] the laces on [src]."))
 		adjust_laces(tied ? SHOES_TIED : SHOES_UNTIED, user)

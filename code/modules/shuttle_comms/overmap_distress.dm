@@ -26,7 +26,7 @@
 	effect = new
 	effect.parent = src
 	target.my_visual.vis_contents += effect
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/Destroy)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(Destroy))
 
 /datum/overmap_distress/Destroy()
 	. = ..()
@@ -44,4 +44,4 @@
 		target = ov_obj
 		effect = new
 		ov_obj.my_visual.vis_contents += effect
-		RegisterSignal(ov_obj, COMSIG_PARENT_QDELETING, .proc/Destroy)
+		RegisterSignal(ov_obj, COMSIG_PARENT_QDELETING, PROC_REF(Destroy))

@@ -136,9 +136,9 @@
 
 	create_eye()
 	if(client)
-		INVOKE_ASYNC(src, .proc/apply_pref_name,"ai",client)
+		INVOKE_ASYNC(src, PROC_REF(apply_pref_name),"ai",client)
 
-	INVOKE_ASYNC(src, .proc/set_core_display_icon)
+	INVOKE_ASYNC(src, PROC_REF(set_core_display_icon))
 
 
 	holo_icon = getHologramIcon(icon('icons/mob/ai.dmi',"default"))
@@ -147,7 +147,7 @@
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
 
-	add_verb(src, /mob/living/silicon/ai/proc/show_laws_verb)
+	add_verb(src, TYPE_PROC_REF(/mob/living/silicon/ai, show_laws_verb))
 
 	aiPDA = new/obj/item/pda/ai(src)
 	aiPDA.owner = real_name
@@ -160,9 +160,11 @@
 	deploy_action.Grant(src)
 
 	if(isturf(loc))
-		add_verb(src, list(/mob/living/silicon/ai/proc/ai_network_change, /mob/living/silicon/ai/proc/ai_hologram_change, \
-		/mob/living/silicon/ai/proc/botcall, /mob/living/silicon/ai/proc/control_integrated_radio, \
-		/mob/living/silicon/ai/proc/set_automatic_say_channel))
+		add_verb(src, list(TYPE_PROC_REF(/mob/living/silicon/ai, ai_network_change), \
+		TYPE_PROC_REF(/mob/living/silicon/ai, ai_hologram_change), \
+		TYPE_PROC_REF(/mob/living/silicon/ai, botcall), \
+		TYPE_PROC_REF(/mob/living/silicon/ai, control_integrated_radio), \
+		TYPE_PROC_REF(/mob/living/silicon/ai, set_automatic_say_channel)))
 
 	GLOB.ai_list += src
 	GLOB.shuttle_caller_list += src
@@ -1018,7 +1020,7 @@
 		return
 
 	else if(mind)
-		RegisterSignal(target, COMSIG_LIVING_DEATH, .proc/disconnect_shell)
+		RegisterSignal(target, COMSIG_LIVING_DEATH, PROC_REF(disconnect_shell))
 		deployed_shell = target
 		target.deploy_init(src)
 		mind.transfer_to(target)
