@@ -17,15 +17,6 @@ export const ReagentLookup = (props, context) => {
       <LabeledList.Item label="Reagent">
         <Icon name="circle" mr={1} color={reagent.reagentCol} />
         {reagent.name}
-        <Button
-          ml={1}
-          icon="wifi"
-          color="teal"
-          tooltip="Open the associated wikipage for this reagent."
-          tooltipPosition="left"
-          onClick={() => {
-            Byond.command(`wiki Guide_to_chemistry#${reagent.name}`);
-          }} />
       </LabeledList.Item>
       <LabeledList.Item label="Description">
         {reagent.desc}
