@@ -1343,6 +1343,9 @@ GLOBAL_LIST_EMPTY(customizable_races)
 /datum/species/proc/handle_digestion(mob/living/carbon/human/H, delta_time, times_fired)
 	if(HAS_TRAIT(H, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
+	if(H.is_comfortable())
+		H.clear_alert("nutrition")
+		return
 
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
 	if(HAS_TRAIT_FROM(H, TRAIT_FAT, OBESITY))//I share your pain, past coder.

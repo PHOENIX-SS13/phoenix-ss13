@@ -1,15 +1,15 @@
 /datum/storyteller/guide
 	name = "The Guide"
-	desc = "The Guide will provide a balanced and varied experience. Consider this the default experience."
+	desc = "The Guide will provide a balanced and varied experience, creating events that may cause slight disruption."
 
 /datum/storyteller/sleeper
 	name = "The Sleeper"
 	desc = "The Sleeper will create less impactful events, especially ones involving combat or destruction. The chill experience."
 	point_gains_multipliers = list(
-		EVENT_TRACK_MUNDANE = 0.7, 
-		EVENT_TRACK_MODERATE = 0.7, 
-		EVENT_TRACK_MAJOR = 0.7, 
-		EVENT_TRACK_ROLESET = 0.7, 
+		EVENT_TRACK_MUNDANE = 0.7,
+		EVENT_TRACK_MODERATE = 0.7,
+		EVENT_TRACK_MAJOR = 0.7,
+		EVENT_TRACK_ROLESET = 0.7,
 		EVENT_TRACK_OBJECTIVES = 0.7
 		)
 	guarantees_roundstart_roleset = FALSE
@@ -20,10 +20,10 @@
 	desc = "The Jester will create much more events, with higher possibilities of them repeating."
 	event_repetition_multiplier = 0.8
 	point_gains_multipliers = list(
-		EVENT_TRACK_MUNDANE = 1.2, 
-		EVENT_TRACK_MODERATE = 1.4, 
-		EVENT_TRACK_MAJOR = 1.4, 
-		EVENT_TRACK_ROLESET = 1, 
+		EVENT_TRACK_MUNDANE = 1.2,
+		EVENT_TRACK_MODERATE = 1.4,
+		EVENT_TRACK_MAJOR = 1.4,
+		EVENT_TRACK_ROLESET = 1,
 		EVENT_TRACK_OBJECTIVES = 1
 		)
 	population_min = 10
@@ -32,10 +32,10 @@
 	name = "The Warrior"
 	desc = "The Warrior will create more impactful events, often focused on combat."
 	point_gains_multipliers = list(
-		EVENT_TRACK_MUNDANE = 1, 
-		EVENT_TRACK_MODERATE = 1.3, 
-		EVENT_TRACK_MAJOR = 1.3, 
-		EVENT_TRACK_ROLESET = 1, 
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_MODERATE = 1.3,
+		EVENT_TRACK_MAJOR = 1.3,
+		EVENT_TRACK_ROLESET = 1,
 		EVENT_TRACK_OBJECTIVES = 1
 		)
 	tag_multipliers = list(TAG_COMBAT = 1.5)
@@ -43,6 +43,6 @@
 
 /datum/storyteller/ghost
 	name = "The Ghost"
-	desc = "The Ghost will not run a single event or create an antagonist."
+	desc = "The Ghost will not run a single event or create an antagonist. Choose this for a focus on uninterrupted roleplay. The Ghost is also chosen by default."
 	disable_distribution = TRUE
 	population_max = 10
