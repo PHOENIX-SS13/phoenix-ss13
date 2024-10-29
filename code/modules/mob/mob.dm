@@ -203,7 +203,14 @@
 
 	var/raw_msg = message
 	if(visible_message_flags & EMOTE_MESSAGE)
-		message = SPAN_EMOTE("<b>[src]</b> [message]")
+		//replace ## with newlines
+		message = replacetext(message, "##", "\n")
+		//replace @ with name
+		var/namepos = findtext(message, "@")
+		if(namepos)
+			message = SPAN_EMOTE(replacetext(message, "@", "<b>[src]</b>"))
+		else
+			message = SPAN_EMOTE("<b>[src]</b> [message]")
 
 	for(var/mob/M in hearers)
 		if(!M.client)
@@ -252,7 +259,14 @@
 		hearers -= src
 	var/raw_msg = message
 	if(audible_message_flags & EMOTE_MESSAGE)
-		message = SPAN_EMOTE("<b>[src]</b> [message]")
+		//replace ## with newlines
+		message = replacetext(message, "##", "\n")
+		//replace @ with name
+		var/namepos = findtext(message, "@")
+		if(namepos)
+			message = SPAN_EMOTE(replacetext(message, "@", "<b>[src]</b>"))
+		else
+			message = SPAN_EMOTE("<b>[src]</b> [message]")
 	for(var/mob/M in hearers)
 		if(!show_ghosts && isobserver(M))
 			continue
