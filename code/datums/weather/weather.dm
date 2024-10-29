@@ -187,7 +187,7 @@
 				to_chat(M, telegraph_message)
 			if(telegraph_sound)
 				SEND_SOUND(M, sound(telegraph_sound))
-	addtimer(CALLBACK(src, .proc/start), telegraph_duration)
+	addtimer(CALLBACK(src, PROC_REF(start)), telegraph_duration)
 
 	if(sound_active_outside)
 		sound_active_outside.output_atoms = outside_areas
@@ -223,7 +223,7 @@
 			if(weather_sound)
 				SEND_SOUND(M, sound(weather_sound))
 	if(!perpetual)
-		addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
+		addtimer(CALLBACK(src, PROC_REF(wind_down)), weather_duration)
 
 	if(sound_weak_outside)
 		sound_weak_outside.stop()
@@ -256,7 +256,7 @@
 				to_chat(M, end_message)
 			if(end_sound)
 				SEND_SOUND(M, sound(end_sound))
-	addtimer(CALLBACK(src, .proc/end), end_duration)
+	addtimer(CALLBACK(src, PROC_REF(end)), end_duration)
 
 	if(sound_active_outside)
 		sound_active_outside.stop()
@@ -362,8 +362,8 @@
 	if(lightning_in_progress)
 		return
 	lightning_in_progress = TRUE
-	addtimer(CALLBACK(src, .proc/end_thunder), 5 SECONDS)
-	addtimer(CALLBACK(src, .proc/do_thunder_sound), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(end_thunder)), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(do_thunder_sound)), 2 SECONDS)
 	var/mutable_appearance/appearance_to_add = mutable_appearance('icons/effects/weather_effects.dmi', "lightning_flash")
 	appearance_to_add.plane = LIGHTING_PLANE
 	appearance_to_add.layer = OBJ_LAYER

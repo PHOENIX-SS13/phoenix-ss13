@@ -11,13 +11,13 @@
 
 	///if we are attached to an assembly holder, we attach a connect_loc element to ourselves that listens to this from the holder
 	var/static/list/holder_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /obj/item/assembly/mousetrap/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
 
@@ -135,13 +135,13 @@
 				if(ishuman(AM))
 					var/mob/living/carbon/H = AM
 					if(H.m_intent == MOVE_INTENT_RUN)
-						INVOKE_ASYNC(src, .proc/triggered, H)
+						INVOKE_ASYNC(src, PROC_REF(triggered), H)
 						H.visible_message(SPAN_WARNING("[H] accidentally steps on [src]."), \
 							SPAN_WARNING("You accidentally step on [src]"))
 				else if(ismouse(MM) || israt(MM) || isregalrat(MM))
-					INVOKE_ASYNC(src, .proc/triggered, MM)
+					INVOKE_ASYNC(src, PROC_REF(triggered), MM)
 		else if(AM.density) // For mousetrap grenades, set off by anything heavy
-			INVOKE_ASYNC(src, .proc/triggered, AM)
+			INVOKE_ASYNC(src, PROC_REF(triggered), AM)
 
 /obj/item/assembly/mousetrap/on_found(mob/finder)
 	if(armed)

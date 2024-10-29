@@ -67,4 +67,4 @@
 					affected_mob.dna.species.handle_hair(affected_mob,"#1d2953")
 				affected_mob.visible_message(SPAN_WARNING("[affected_mob] looks terrifyingly gaunt..."), SPAN_REVENNOTICE("You suddenly feel like your skin is <i>wrong</i>..."))
 				affected_mob.add_atom_colour("#1d2953", TEMPORARY_COLOUR_PRIORITY)
-				addtimer(CALLBACK(src, .proc/cure), 10 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(cure)), 10 SECONDS)

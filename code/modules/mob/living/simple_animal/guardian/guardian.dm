@@ -477,13 +477,13 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 						to_chat(src, SPAN_HOLOPARASITE("<font color=\"[G.guardiancolor]\"><b>[G.real_name]</b></font> has appeared!"))
 				guardians -= G
 				if(!guardians.len)
-					remove_verb(src, /mob/living/proc/guardian_reset)
+					remove_verb(src, TYPE_PROC_REF(/mob/living, guardian_reset))
 			else
 				to_chat(src, SPAN_HOLOPARASITE("There were no ghosts willing to take control of <font color=\"[G.guardiancolor]\"><b>[G.real_name]</b></font>. Looks like you're stuck with it for now."))
 		else
 			to_chat(src, SPAN_HOLOPARASITE("You decide not to reset [guardians.len > 1 ? "any of your guardians":"your guardian"]."))
 	else
-		remove_verb(src, /mob/living/proc/guardian_reset)
+		remove_verb(src, TYPE_PROC_REF(/mob/living, guardian_reset))
 
 ////////parasite tracking/finding procs
 
@@ -614,9 +614,9 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		if("miner")
 			to_chat(user, "[G.miner_fluff_string]")
 			to_chat(user, SPAN_HOLOPARASITE("<b>[G.real_name]</b> has appeared!"))
-	add_verb(user, list(/mob/living/proc/guardian_comm, \
-						/mob/living/proc/guardian_recall, \
-						/mob/living/proc/guardian_reset))
+	add_verb(user, list(TYPE_PROC_REF(/mob/living, guardian_comm), \
+						TYPE_PROC_REF(/mob/living, guardian_recall), \
+						TYPE_PROC_REF(/mob/living, guardian_reset)))
 	G?.client.init_verbs()
 
 /obj/item/guardiancreator/choose
