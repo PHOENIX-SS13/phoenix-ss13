@@ -11,7 +11,7 @@
 	cost = 10
 	suffix = "colony.dmm"
 	planet_requirements = PLANET_HABITABLE
-	unpickable = TRUE
+	unpickable = FALSE
 
 /area/ruin/unpowered/colony
 
