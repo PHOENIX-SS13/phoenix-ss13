@@ -305,3 +305,9 @@
 	suffix = "miningblastfail.dmm"
 	name = "Mining Blast Fail"
 	description = "A small mining ship, floating unpowered near a small space rock."
+
+/datum/map_template/ruin/space/traderhideout
+	id = "traderhideout"
+	suffix = "traderhideout.dmm"
+	name = "Trader Hideout"
+	description = "A small structure designed to serve as a base of operations for a wandering trader."
