@@ -12,8 +12,6 @@ SUBSYSTEM_DEF(overmapcustoms)
 	return ..()
 
 /datum/controller/subsystem/overmapcustoms/proc/loadOvermapCustom(datum/overmap_object/custom/obj)
-	return
-/*
 	var/i
 	for(i=0, i<initial(obj.instances), i++)
 		var/datum/overmap_object/custom/linked_overmap_object = new obj(SSovermap.main_system, rand(5,20), rand(5,20))
@@ -21,7 +19,7 @@ SUBSYSTEM_DEF(overmapcustoms)
 		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(linked_overmap_object.name, list(), mapzone, linked_overmap_object.size["width"], linked_overmap_object.size["height"], ALLOCATION_FULL, reservation_margin = 0)
 		var/datum/parsed_map/pm = new(file("_maps/overmap/[linked_overmap_object.map_path]"))
 		pm.load(vlevel.low_x, vlevel.low_y, vlevel.z_value, no_changeturf = FALSE)
-*/
+
 
 //start THINGS TO DEFINE IF YOU WANT TO MAKE A NEW ONE
 /datum/overmap_object/custom
