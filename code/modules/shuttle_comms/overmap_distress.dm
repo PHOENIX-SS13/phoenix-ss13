@@ -8,8 +8,9 @@
 	var/datum/overmap_distress/parent
 
 /obj/effect/overlay/distress_effect/Destroy()
-	parent.effect = null
-	parent = null
+	if(parent?.effect)
+		parent.effect = null
+		parent = null
 	. = ..()
 
 /datum/overmap_distress
