@@ -27,8 +27,6 @@ SUBSYSTEM_DEF(shuttlecomms)
 		comms.Add(array)
 
 /datum/controller/subsystem/shuttlecomms/proc/remove_array(obj/machinery/shuttle_comms/array)
-	if(istype(array, /obj/machinery/shuttle_comms/active))
+	if(istype(array, /obj/machinery/shuttle_comms/active) || istype(array))
 		comms.Remove(array)
 		return
-	if(istype(array))
-		comms.Remove(array)

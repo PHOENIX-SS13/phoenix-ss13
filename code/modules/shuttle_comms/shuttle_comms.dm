@@ -34,6 +34,7 @@
 	var/health_threshold = 0.1
 	///whether the subsystem should process this array
 	var/should_process = TRUE
+	var/destroying = FALSE
 
 /obj/machinery/shuttle_comms/Initialize()
 	. = ..()
@@ -44,12 +45,15 @@
 		SSshuttlecomms.add_array(src)
 
 /obj/machinery/shuttle_comms/Destroy()
-	. = ..()
+	if(destroying)
+		return
+	destroying = TRUE
 	if(internal_radio)
 		Destroy(internal_radio)
 	if(overmap_effect)
 		Destroy(overmap_effect)
 	SSshuttlecomms.remove_array(src)
+	. = ..()
 
 /obj/machinery/shuttle_comms/proc/toggle_broadcasting()
 	var/mic = !(internal_radio.broadcasting)
