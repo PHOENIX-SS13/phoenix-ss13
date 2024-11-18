@@ -45,9 +45,9 @@
 
 /obj/machinery/shuttle_comms/Destroy()
 	if(!QDELETED(internal_radio))
-		Destroy(internal_radio)
+		qdel(internal_radio)
 	if(!QDELETED(overmap_effect))
-		Destroy(overmap_effect)
+		qdel(overmap_effect)
 	SSshuttlecomms.remove_array(src)
 	return ..()
 
