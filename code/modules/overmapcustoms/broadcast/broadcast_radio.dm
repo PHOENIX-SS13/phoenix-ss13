@@ -175,7 +175,7 @@
 /obj/item/radio/broadcast/Destroy()
 	broadcast_radio_list.Remove(src)
 	return ..()
-
+*/
 //RADIO FOR RECEIVING
 
 /obj/item/radio/broadcast/receiver
@@ -186,7 +186,6 @@
 	command = FALSE
 	custom_price = PAYCHECK_EASY
 
-/obj/item/radio/broadcast/receiver/RightClick(mob/user)
+/* /obj/item/radio/broadcast/receiver/RightClick(mob/user)
 	ui_interact(user)
-	return FALSE
- */
+	return FALSE */
