@@ -34,7 +34,6 @@
 	var/health_threshold = 0.1
 	///whether the subsystem should process this array
 	var/should_process = TRUE
-	var/destroying = FALSE
 
 /obj/machinery/shuttle_comms/Initialize()
 	. = ..()

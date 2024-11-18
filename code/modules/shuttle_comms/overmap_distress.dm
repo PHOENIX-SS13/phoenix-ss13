@@ -11,7 +11,7 @@
 	if(parent?.effect)
 		parent.effect = null
 		parent = null
-	. = ..()
+	return ..()
 
 /datum/overmap_distress
 	var/obj/machinery/shuttle_comms/parent
