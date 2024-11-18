@@ -18,7 +18,7 @@
 	//list of initialized broadcast radios.
 	var/static/list/broadcast_radio_list = list()
 
-
+/*
 /obj/item/radio/broadcast/RightClick(mob/user)
 	ui_interact(user)
 	return TRUE
@@ -189,3 +189,4 @@
 /obj/item/radio/broadcast/receiver/RightClick(mob/user)
 	ui_interact(user)
 	return FALSE
+ */
