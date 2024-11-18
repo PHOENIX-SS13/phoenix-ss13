@@ -34,7 +34,7 @@
 	if(!isnull(target?.my_visual))
 		target.my_visual.vis_contents -= effect
 	parent.overmap_effect = null
-	Destroy(effect)
+	qdel(effect)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 
 /datum/overmap_distress/proc/check_mapzone(datum/overmap_object/ov_obj)
