@@ -338,7 +338,7 @@ SUBSYSTEM_DEF(gamemode)
 	for(var/datum/round_event/event as anything in running)
 		if(!event.control.roundstart)
 			continue
-		INVOKE_ASYNC(event, TYPE_PROC_REF(/datum/round_event, try_start))
+		INVOKE_ASYNC(event, /datum/round_event/proc/try_start)
 
 /// Schedules an event to run later.
 /datum/controller/subsystem/gamemode/proc/schedule_event(datum/round_event_control/passed_event, passed_time, passed_cost, passed_ignore, passed_announce)

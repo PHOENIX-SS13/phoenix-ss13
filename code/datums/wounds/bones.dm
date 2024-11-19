@@ -108,7 +108,7 @@
 		else
 			victim.visible_message(SPAN_DANGER("[victim] weakly strikes [target] with [victim.p_their()] broken [limb.name], recoiling from pain!"), \
 			SPAN_USERDANGER("You fail to strike [target] as the fracture in your [limb.name] lights up in unbearable pain!"), vision_distance=COMBAT_MESSAGE_RANGE)
-			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
+			INVOKE_ASYNC(victim, /mob/proc/emote, "scream")
 			victim.Stun(0.5 SECONDS)
 			limb.receive_damage(brute=rand(3,7))
 			return COMPONENT_CANCEL_ATTACK_CHAIN
