@@ -66,7 +66,7 @@
 			to_chat(living_guy, SPAN_WARNING("A malevolent force launches your body to the floor..."))
 			var/obj/machinery/door/airlock/darth_airlock = turf_content
 			living_guy.apply_status_effect(STATUS_EFFECT_PARALYZED, 10)
-			INVOKE_ASYNC(darth_airlock, /obj/machinery/door/airlock/proc/close, TRUE)
+			INVOKE_ASYNC(darth_airlock, TYPE_PROC_REF(/obj/machinery/door/airlock, close), TRUE)
 			if(!permanent)
 				qdel(src)
 			return
