@@ -30,9 +30,10 @@
 	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(Destroy))
 
 /datum/overmap_distress/Destroy()
-	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
-	if(!isnull(target?.my_visual))
-		target.my_visual.vis_contents -= effect
+	if(!QDELETED(target))
+		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		if(!isnull(target?.my_visual))
+			target.my_visual.vis_contents -= effect
 	parent.overmap_effect = null
 	qdel(effect)
 	. = ..()
