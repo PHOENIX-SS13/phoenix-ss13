@@ -310,7 +310,7 @@ Difficulty: Extremely Hard
 	if(T)
 		user.forceMove(T)
 	user.revive(full_heal = TRUE, admin_revive = TRUE)
-	INVOKE_ASYNC(user, /mob/living/carbon/proc/set_species, /datum/species/shadow)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/living/carbon, set_species), /datum/species/shadow)
 	to_chat(user, SPAN_NOTICE("You blink and find yourself in [get_area_name(T)]... feeling a bit darker."))
 	clone.dust()
 	qdel(src)

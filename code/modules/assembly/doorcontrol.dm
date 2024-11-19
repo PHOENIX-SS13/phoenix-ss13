@@ -108,7 +108,7 @@
 	cooldown = TRUE
 	for(var/obj/machinery/door/poddoor/M in GLOB.machines)
 		if (M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/door/poddoor/proc/open)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/door/poddoor, open))
 
 	sleep(10)
 
@@ -120,7 +120,7 @@
 
 	for(var/obj/machinery/door/poddoor/M in GLOB.machines)
 		if (M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/door/poddoor/proc/close)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/door/poddoor, close))
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
 
