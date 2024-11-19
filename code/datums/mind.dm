@@ -143,8 +143,8 @@
 	if(current)
 		current.transfer_observers_to(new_character) //transfer anyone observing the old character to the new one
 	if(my_ambitions)
-		remove_verb(current, /mob/proc/view_ambitions))
-		add_verb(new_character, /mob/proc/view_ambitions))
+		remove_verb(current, /mob/proc/view_ambitions)
+		add_verb(new_character, /mob/proc/view_ambitions)
 	set_current(new_character) //associate ourself with our new body
 	new_character.mind = src //and associate our new body with ourself
 	for(var/a in antag_datums) //Makes sure all antag datums effects are applied in the new body
