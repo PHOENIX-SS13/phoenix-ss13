@@ -257,7 +257,7 @@
 	set_security_level("red")
 	SSshuttle.clearHostileEnvironment()
 	SSshuttle.lockdown = FALSE
-	INVOKE_ASYNC(GLOBAL_PROC, PROC_REF(cult_ending_helper), 2)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), 2)
 
 ///Helper to set the round to end asap. Current usage Cult round end code
 /proc/ending_helper()

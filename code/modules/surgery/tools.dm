@@ -157,8 +157,9 @@
 
 /obj/item/scalpel/Initialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 80 * toolspeed, 100, 0)
-	AddElement(/datum/element/eyestab)
+	if(!QDESTROYING(src))
+		AddComponent(/datum/component/butchering, 80 * toolspeed, 100, 0)
+		AddElement(/datum/element/eyestab)
 
 /obj/item/scalpel/augment
 	desc = "Ultra-sharp blade attached directly to your bone for extra-accuracy."
