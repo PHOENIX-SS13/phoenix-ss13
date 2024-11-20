@@ -403,7 +403,7 @@ SUBSYSTEM_DEF(ticker)
 			captainless = FALSE
 			var/acting_captain = !is_captain_job(player_assigned_role)
 			SSjob.promote_to_captain(new_player_living, acting_captain)
-			OnRoundstart(CALLBACK(GLOBAL_PROC, PROC_REF(minor_announce), player_assigned_role.get_captaincy_announcement(new_player_living)))
+			OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce), player_assigned_role.get_captaincy_announcement(new_player_living)))
 		CHECK_TICK
 
 	if(captainless)

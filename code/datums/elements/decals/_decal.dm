@@ -86,7 +86,7 @@
 	else
 		RegisterSignal(target,COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE,PROC_REF(late_update_icon), TRUE)
 	if(isitem(target))
-		INVOKE_ASYNC(target, /obj/item/proc/update_slot_icon, TRUE)
+		INVOKE_ASYNC(target, TYPE_PROC_REF(/obj/item, update_slot_icon), TRUE)
 	if(_dir)
 		SSdcs.RegisterSignal(target,COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/datum/controller/subsystem/processing/dcs, rotate_decals), TRUE)
 	if(!isnull(_smoothing))
@@ -120,7 +120,7 @@
 	UnregisterSignal(source, list(COMSIG_ATOM_DIR_CHANGE, COMSIG_COMPONENT_CLEAN_ACT, COMSIG_PARENT_EXAMINE, COMSIG_ATOM_UPDATE_OVERLAYS, COMSIG_TURF_ON_SHUTTLE_MOVE, COMSIG_ATOM_SMOOTHED_ICON))
 	source.update_appearance(UPDATE_OVERLAYS)
 	if(isitem(source))
-		INVOKE_ASYNC(source, /obj/item/proc/update_slot_icon)
+		INVOKE_ASYNC(source, TYPE_PROC_REF(/obj/item, update_slot_icon))
 	SEND_SIGNAL(source, COMSIG_TURF_DECAL_DETACHED, description, cleanable, directional, pic)
 	return ..()
 

@@ -84,7 +84,7 @@
 		for(var/obj/machinery/vending/darth_vendor in the_turf)
 			if(darth_vendor.tiltable)
 				to_chat(living_guy, SPAN_WARNING("A malevolent force tugs at the [darth_vendor]..."))
-				INVOKE_ASYNC(darth_vendor, /obj/machinery/vending/proc/tilt, living_guy)
+				INVOKE_ASYNC(darth_vendor, TYPE_PROC_REF(/obj/machinery/vending, tilt), living_guy)
 				if(!permanent)
 					qdel(src)
 				return

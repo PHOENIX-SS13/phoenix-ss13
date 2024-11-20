@@ -92,7 +92,7 @@
 			owner.vomit()
 			fail = TRUE
 		if(2)
-			INVOKE_ASYNC(owner, /mob/proc/emote, "cough")
+			INVOKE_ASYNC(owner, TYPE_PROC_REF(/mob, emote), "cough")
 			owner.dizziness += 10
 			fail = TRUE
 		if(3)
@@ -112,7 +112,7 @@
 	if(examining_mob != owner || !triggering_examiner || prob(50))
 		return
 
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), obsession, SPAN_WARNING("You catch [examining_mob] staring at you..."), 3))
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), obsession, SPAN_WARNING("You catch [examining_mob] staring at you..."), 3))
 	return COMSIG_BLOCK_EYECONTACT
 
 /datum/brain_trauma/special/obsessed/proc/find_obsession()

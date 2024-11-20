@@ -135,7 +135,7 @@
 	cooldown = TRUE
 	for(var/obj/machinery/sparker/M in GLOB.machines)
 		if (M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/sparker/proc/ignite)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/sparker, ignite))
 
 	for(var/obj/machinery/igniter/M in GLOB.machines)
 		if(M.id == src.id)
@@ -155,7 +155,7 @@
 	cooldown = TRUE
 	for(var/obj/machinery/flasher/M in GLOB.machines)
 		if(M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/flasher/proc/flash)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/flasher, flash))
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 50)
 

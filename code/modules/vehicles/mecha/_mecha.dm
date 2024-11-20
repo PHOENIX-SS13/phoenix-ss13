@@ -543,13 +543,13 @@
 			if(HAS_TRAIT(livinguser, TRAIT_PACIFISM) && selected.harmful)
 				to_chat(livinguser, SPAN_WARNING("You don't want to harm other living beings!"))
 				return
-			INVOKE_ASYNC(selected, /obj/item/mecha_parts/mecha_equipment/proc/action, user, target, params)
+			INVOKE_ASYNC(selected, TYPE_PROC_REF(/obj/item/mecha_parts/mecha_equipment, action), user, target, params)
 			return
 		if((selected.range & MECHA_MELEE) && Adjacent(target))
 			if(isliving(target) && selected.harmful && HAS_TRAIT(livinguser, TRAIT_PACIFISM))
 				to_chat(livinguser, SPAN_WARNING("You don't want to harm other living beings!"))
 				return
-			INVOKE_ASYNC(selected, /obj/item/mecha_parts/mecha_equipment/proc/action, user, target, params)
+			INVOKE_ASYNC(selected, TYPE_PROC_REF(/obj/item/mecha_parts/mecha_equipment, action), user, target, params)
 			return
 	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_MECHA_MELEE_ATTACK) || !Adjacent(target))
 		return
