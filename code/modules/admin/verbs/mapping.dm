@@ -205,7 +205,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 	set name = "Debug verbs - Enable"
 	if(!check_rights(R_DEBUG))
 		return
-	remove_verb(src, TYPE_PROC_REF(/client, enable_debug_verbs))
+	remove_verb(src, /client/proc/enable_debug_verbs)
 	add_verb(src, list(/client/proc/disable_debug_verbs, GLOB.admin_verbs_debug_mapping))
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Enable Debug Verbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
