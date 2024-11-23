@@ -14,6 +14,8 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\RandomRuins\Planet\alien_nest_calV2.dmm"
+#include "_maps\RandomRuins\Planet\desert_outpost_45.dmm"
 #include "_maps\RandomRuins\SpaceRuins\traderhideout.dmm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"

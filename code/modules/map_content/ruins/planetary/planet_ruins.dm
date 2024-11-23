@@ -164,8 +164,16 @@
 	id = "aliennest"
 	description = "Seems dangerous."
 	cost = 5
-	suffix = "alien_nest_calv1.dmm"
+	suffix = "alien_nest_calv2.dmm"
 	planet_requirements = PLANET_HABITABLE
+
+/datum/map_template/ruin/planetary/desert_outpost
+	name = "Desert Outpost 45"
+	id = "desertoutpost"
+	description = "What could this be?."
+	cost = 5
+	suffix = "desert_outpost_45.dmm"
+	planet_requirements = PLANET_DESERT
 
 /datum/map_template/ruin/planetary/research_escape
 	name = "Bio-research Escapees"
