@@ -8,6 +8,8 @@
 	atmosphere_type = /datum/atmosphere/desert
 	weather_controller_type = /datum/weather_controller/desert
 
+	planet_flags = PLANET_HABITABLE|PLANET_DESERT|PLANET_REMOTE|PLANET_WRECKAGES
+
 	rock_color = list(COLOR_BEIGE, COLOR_PALE_YELLOW, COLOR_GRAY, COLOR_BROWN)
 	plant_color = list("#7b4a12","#e49135","#ba6222")
 	grass_color = list("#b8701f")

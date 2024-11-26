@@ -88,6 +88,11 @@
 /mob/living/simple_animal/hostile/alien,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
+"ja" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/c45,
+/turf/open/floor/planetary/dirt/jungle/dark,
+/area/ruin/unpowered)
 "jT" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds/node,
@@ -95,10 +100,7 @@
 /area/ruin/unpowered)
 "ka" = (
 /obj/structure/alien/weeds,
-/obj/structure/bed/nest,
-/obj/item/ammo_box/magazine/m75,
-/obj/item/ammo_box/magazine/m75,
-/obj/effect/mob_spawn/human/corpse/syndicatecommando,
+/obj/structure/alien/resin/wall,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "kj" = (
@@ -120,6 +122,13 @@
 /obj/effect/spawner/lootdrop/space/cashmoney,
 /obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/planetary/dirt/jungle/dark,
+/area/ruin/unpowered)
+"kZ" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/syndicatecommando,
+/obj/item/ammo_box/magazine/smgm45,
+/turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "lj" = (
 /obj/structure/alien/weeds,
@@ -231,6 +240,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/item/ammo_casing/caseless/rocket,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "tO" = (
@@ -246,6 +256,13 @@
 /obj/structure/alien/resin/wall,
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
+/turf/open/floor/planetary/dirt/jungle/dark,
+/area/ruin/unpowered)
+"vg" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/weeds,
+/obj/item/gun/ballistic/automatic/c20r/unrestricted,
+/obj/item/ammo_box/magazine/smgm45/incen,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
 "vm" = (
@@ -430,9 +447,7 @@
 /area/ruin/unpowered)
 "Hp" = (
 /obj/structure/alien/weeds,
-/obj/structure/alien/weeds,
-/obj/item/gun/ballistic/automatic/gyropistol,
-/obj/item/ammo_box/magazine/m75,
+/obj/structure/alien/resin/wall,
 /turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
 "HH" = (
@@ -441,7 +456,7 @@
 /area/template_noop)
 "HU" = (
 /obj/structure/alien/weeds,
-/obj/item/gun/ballistic/rocketlauncher,
+/obj/item/gun/ballistic/rocketlauncher/unrestricted,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "Iz" = (
@@ -465,14 +480,6 @@
 /obj/structure/bed/nest,
 /obj/effect/spawner/lootdrop/space/cashmoney,
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/planetary/dirt/jungle,
-/area/ruin/unpowered)
-"JU" = (
-/obj/structure/alien/weeds,
-/obj/structure/alien/egg/burst,
-/obj/item/clothing/mask/facehugger,
-/obj/item/ammo_box/magazine/m75,
-/obj/item/ammo_box/magazine/m75,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
 "Kd" = (
@@ -570,6 +577,12 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/planetary/dirt/dark,
 /area/ruin/unpowered)
+"SO" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/weeds/node,
+/obj/item/ammo_casing/c45,
+/turf/open/floor/planetary/dirt/jungle/dark,
+/area/ruin/unpowered)
 "SU" = (
 /turf/open/water/jungle,
 /area/ruin/unpowered)
@@ -637,6 +650,12 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat,
 /turf/open/floor/planetary/dirt/jungle,
 /area/ruin/unpowered)
+"Yr" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/weeds,
+/obj/item/ammo_box/magazine/smgm45/incen,
+/turf/open/floor/planetary/dirt/jungle/dark,
+/area/ruin/unpowered)
 "YK" = (
 /obj/structure/alien/resin/wall,
 /obj/structure/alien/weeds,
@@ -658,6 +677,12 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/planetary/dirt/jungle,
+/area/ruin/unpowered)
+"ZE" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/c45,
+/turf/open/floor/planetary/dirt/jungle/dark,
 /area/ruin/unpowered)
 "ZS" = (
 /obj/structure/alien/weeds,
@@ -979,8 +1004,8 @@ it
 tI
 LW
 it
-CL
-CL
+Hp
+Hp
 CB
 it
 gN
@@ -1021,7 +1046,7 @@ gN
 gN
 LW
 gN
-gN
+ka
 it
 it
 gN
@@ -1064,10 +1089,10 @@ gN
 zA
 it
 gN
+ka
 it
-gN
-gN
-CB
+ka
+Hp
 it
 gN
 LW
@@ -1098,7 +1123,7 @@ CB
 Uq
 CL
 gN
-gN
+ka
 gN
 gN
 gN
@@ -1106,7 +1131,7 @@ gN
 Tv
 Js
 gN
-it
+ka
 gN
 gN
 Uq
@@ -1652,15 +1677,15 @@ YK
 jT
 jT
 it
-ka
-JU
+kZ
+BV
 gN
 gN
 gN
 jT
 LW
 CL
-CB
+ja
 gN
 Ay
 LS
@@ -1694,15 +1719,15 @@ YK
 xR
 LW
 Ua
-EG
-EG
+vg
+Yr
 lj
-EG
-EG
+ZE
+ZE
 LW
 Ua
-CB
-Uq
+ja
+SO
 it
 QZ
 QZ
@@ -1736,11 +1761,11 @@ Zb
 zr
 LW
 LW
-Hp
+EG
 sP
 uV
 Cu
-EG
+ZE
 Ua
 Ua
 xn
