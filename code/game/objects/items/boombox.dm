@@ -69,9 +69,9 @@
 		return
 	var/list/dat = list()
 
-	dat += "Selected track: <a href='?src=[REF(src)];action=selection'>[selection ? "[selection.song_artist] - [selection.song_title]" : "None"]</a>"
-	dat += "<a href='?src=[REF(src)];action=toggle_play' [played_track ? "class='linkOn'" : ""]>[played_track ? "Stop" : "Start"]</a>"
-	dat += "<BR>Volume:<a href='?src=[REF(src)];action=minus_volume'>-</a> <a href='?src=[REF(src)];action=set_volume'>[volume]</a> <a href='?src=[REF(src)];action=plus_volume'>+</a>"
+	dat += "Selected track: <a href='byond://?src=[REF(src)];action=selection'>[selection ? "[selection.song_artist] - [selection.song_title]" : "None"]</a>"
+	dat += "<a href='byond://?src=[REF(src)];action=toggle_play' [played_track ? "class='linkOn'" : ""]>[played_track ? "Stop" : "Start"]</a>"
+	dat += "<BR>Volume:<a href='byond://?src=[REF(src)];action=minus_volume'>-</a> <a href='byond://?src=[REF(src)];action=set_volume'>[volume]</a> <a href='byond://?src=[REF(src)];action=plus_volume'>+</a>"
 
 	var/datum/browser/popup = new(user, "boombox", "Boombox", 380, 170)
 	popup.set_content(dat.Join())

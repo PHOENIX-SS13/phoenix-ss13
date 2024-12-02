@@ -17,8 +17,8 @@
 		ui.open()
 //  NEEDS FIRST THREE LINES OF OTHER CODE
 //	var/list/dat = list()
-//	dat += "<center><a href='?src=[REF(src)];task=overmap_view'>Overmap View</a>"
-//	dat += "<BR><a href='?src=[REF(src)];task=overmap_ship_controls'>Controls</a></center>"
+//	dat += "<center><a href='byond://?src=[REF(src)];task=overmap_view'>Overmap View</a>"
+//	dat += "<BR><a href='byond://?src=[REF(src)];task=overmap_ship_controls'>Controls</a></center>"
 //	var/datum/browser/popup = new(user, "overmap_computer", name, 300, 200)
 //	popup.set_content(dat.Join())
 //	popup.open()

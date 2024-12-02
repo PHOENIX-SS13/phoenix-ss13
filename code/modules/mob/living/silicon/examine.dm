@@ -11,6 +11,6 @@
 			if(length_char(message) <= 40)
 				line = SPAN_NOTICE("[message]")
 			else
-				line = SPAN_NOTICE("[copytext_char(message, 1, 37)]... <a href='?src=[REF(src)];lookup_info=silicon_flavor_text'>More...</a>")
-		line += " <span class='notice'><a href='?src=[REF(src)];lookup_info=ooc_prefs'>\[OOC\]</a></span>"
+				line = SPAN_NOTICE("[copytext_char(message, 1, 37)]... <a href='byond://?src=[REF(src)];lookup_info=silicon_flavor_text'>More...</a>")
+		line += " <span class='notice'><a href='byond://?src=[REF(src)];lookup_info=ooc_prefs'>\[OOC\]</a></span>"
 		. += line

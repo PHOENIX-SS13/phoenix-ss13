@@ -132,9 +132,9 @@
 	dat += "<center>"
 	for(var/i in stop_waypoints)
 		var/datum/lift_waypoint/stop_wp = i
-		dat += "<a href='?src=[REF(src)];task=click_waypoint;wp_id=[stop_wp.waypoint_id]' [queued_stops[stop_wp] ? "class='linkOn'" : ""]>[stop_wp.name]</a><BR>"
-	dat += "<a href='?src=[REF(src)];task=click_stop' [linked_controller.intentionally_halted ? "class='linkOn'" : ""]>STOP</a>"
-	dat += "<BR><BR><a href='?src=[REF(src)];task=click_reverse' >EMERGENCY REVERSE</a>"
+		dat += "<a href='byond://?src=[REF(src)];task=click_waypoint;wp_id=[stop_wp.waypoint_id]' [queued_stops[stop_wp] ? "class='linkOn'" : ""]>[stop_wp.name]</a><BR>"
+	dat += "<a href='byond://?src=[REF(src)];task=click_stop' [linked_controller.intentionally_halted ? "class='linkOn'" : ""]>STOP</a>"
+	dat += "<BR><BR><a href='byond://?src=[REF(src)];task=click_reverse' >EMERGENCY REVERSE</a>"
 	dat += "</center>"
 	var/datum/browser/popup = new(user, "lift_control_panel", "control panel", 180, 200)
 	popup.set_content(dat.Join())

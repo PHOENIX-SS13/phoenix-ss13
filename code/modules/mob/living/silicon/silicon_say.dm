@@ -9,7 +9,7 @@
 	for(var/mob/M in GLOB.player_list)
 		if(M.binarycheck())
 			if(isAI(M))
-				var/renderedAI = SPAN_BINARYSAY("Robotic Talk, <a href='?src=[REF(M)];track=[html_encode(name)]'>[SPAN_NAME("[name] ([desig])")]</a> <span class='message'>[message_a]</span>")
+				var/renderedAI = SPAN_BINARYSAY("Robotic Talk, <a href='byond://?src=[REF(M)];track=[html_encode(name)]'>[SPAN_NAME("[name] ([desig])")]</a> <span class='message'>[message_a]</span>")
 				to_chat(M, renderedAI)
 			else
 				to_chat(M, SPAN_BINARYSAY("[rendered]"))

@@ -33,7 +33,7 @@
 	//Greet our antag player and give him a link to open ambitions!
 	to_chat(my_mind.current, SPAN_BOLDWARNING("You're a story driven antagonist, this means you'll have to fill ambitions before you start antagonising!"))
 	to_chat(my_mind.current, SPAN_BOLDWARNING("After filling them out you'll get access to your uplink or powers."))
-	to_chat(my_mind.current, SPAN_BOLDWARNING("Click <a href='?src=[REF(src)];pref=show_ambitions'>here</a> to set your ambitions, or access them at any time from your IC tab."))
+	to_chat(my_mind.current, SPAN_BOLDWARNING("Click <a href='byond://?src=[REF(src)];pref=show_ambitions'>here</a> to set your ambitions, or access them at any time from your IC tab."))
 
 /datum/ambitions/proc/ShowPanel(mob/user, admin_view = FALSE)
 	if(!user || !user.client)
@@ -52,8 +52,8 @@
 			dat += "<BR><b>They have NOT requested an admin review.</b>"
 		dat += "<BR>"
 		if(admin_review_requested && (!admin_approval || changed_after_approval))
-			dat += "<a href='?src=[REF(src)];admin_pref=approve'>Approve</a> <a href='?src=[REF(src)];admin_pref=handle'>Handle</a> <a href='?src=[REF(src)];admin_pref=request_changes'>Request Changes</a>  <a href='?src=[REF(src)];admin_pref=discard_review'>Discard</a> -"
-		dat += " <a href='?src=[REF(src)];admin_pref=logs'>Logs</a>"
+			dat += "<a href='byond://?src=[REF(src)];admin_pref=approve'>Approve</a> <a href='byond://?src=[REF(src)];admin_pref=handle'>Handle</a> <a href='byond://?src=[REF(src)];admin_pref=request_changes'>Request Changes</a>  <a href='byond://?src=[REF(src)];admin_pref=discard_review'>Discard</a> -"
+		dat += " <a href='byond://?src=[REF(src)];admin_pref=logs'>Logs</a>"
 		dat += "<HR>"
 
 	dat += "<b>Antagonists are supposed to provide excitement and intrigue, drive a story with the crew, and provide fun and interesting experience for people involved. <BR> Remember, it's not about winning or losing, but about the story and interactions, this is a roleplay server.</b><BR><BR>"
@@ -62,24 +62,24 @@
 	dat += "<BR><i>If you can't come up with anything, use a <b>template</b>, and if you don't know if your ambition are proper, or too extreme, <b>request admin review</b>.</i>"
 	dat += "<BR><i>You can still edit them post submission.</i>"
 	dat += "<BR><b><font color='#FF0000'>If your ambitions are nonsensical, you may be subjected to an antagonist ban.</font></b>"
-	var/review_link = (is_proper_ambitions() && !admin_review_requested) ? "href='?src=[REF(src)];pref=request_review'" : "class='linkOff'"
+	var/review_link = (is_proper_ambitions() && !admin_review_requested) ? "href='byond://?src=[REF(src)];pref=request_review'" : "class='linkOff'"
 	var/submit_link = "class='linkOff'"
 	if(!is_proper_ambitions())
 		dat += "<BR><center><b>Before you'll be able to submit your ambitions, you need to fill narratives, objectives and intensity.</b></center>"
 	else if(admin_review_requested && !admin_approval)
 		dat += "<BR><center><b>You've requested admin approval, ambitions will automatically be submitted after approval.</b></center>"
 	else if(!submitted)
-		submit_link = "href='?src=[REF(src)];pref=submit'"
+		submit_link = "href='byond://?src=[REF(src)];pref=submit'"
 	else
 		dat += "<BR><center><b>You've already submitted your ambitions, but feel free to edit them.</b></center>"
-	dat += "<center><a [submit_link]>Submit</a> <a href='?src=[REF(src)];pref=template'>Choose template</a> <a [review_link]>Request admin review (optional)</a></center>"
+	dat += "<center><a [submit_link]>Submit</a> <a href='byond://?src=[REF(src)];pref=template'>Choose template</a> <a [review_link]>Request admin review (optional)</a></center>"
 	dat += "<HR>"
 	if(changed_after_approval)
 		dat += "<BR><b><font color='#ffd500'>Some fields were changed after an admin approval.</font></b>"
 	if(last_requested_change)
 		dat += "<BR><b><font color='#ffd500'>Requested changes:</font></b>"
 		dat += "<BR><b><font color='#ffd500'>[last_requested_change]</font></b>"
-		dat += "<BR><a href='?src=[REF(src)];pref=requested_done'>Notify admin that you've done them!</a></b>"
+		dat += "<BR><a href='byond://?src=[REF(src)];pref=requested_done'>Notify admin that you've done them!</a></b>"
 	dat += "<h3>Narrative:</h3>"
 	dat += "<i>Here you set your narrative. It's the reason on why you're doing antagonistic things. Perhaps you need money for personal reasons, or you were contracted to do someone's dirty work, or want to take down the BigPharma.</i>"
 	dat += "<BR><table align='center'; width='100%'; style='background-color:#13171C'><tr><td><center>"
@@ -87,7 +87,7 @@
 		dat += "<font color='#CCCCFF'><b>Please set your narrative!</b></font>"
 	else
 		dat += narrative
-	dat += "</center><center><a href='?src=[REF(src)];pref=set_narrative'>Set your narrative</a></center>"
+	dat += "</center><center><a href='byond://?src=[REF(src)];pref=set_narrative'>Set your narrative</a></center>"
 	dat += "</td></tr></table>"
 	dat += "<BR>"
 	dat += "<h3>Objectives:</h3>"
@@ -102,10 +102,10 @@
 			var/bg_color = "#23273C"
 			if(even)
 				bg_color = "#19222C"
-			dat += "<tr style='background-color:[bg_color]'><td><center> * [objectiv] <a href='?src=[REF(src)];pref=edit_objective;index=[index]'>Edit</a> <a href='?src=[REF(src)];pref=remove_objective;index=[index]'>Remove</a></center></td></tr>"
+			dat += "<tr style='background-color:[bg_color]'><td><center> * [objectiv] <a href='byond://?src=[REF(src)];pref=edit_objective;index=[index]'>Edit</a> <a href='byond://?src=[REF(src)];pref=remove_objective;index=[index]'>Remove</a></center></td></tr>"
 	else
 		dat += "<tr><td><center><font color='#CCCCFF'><b>Please add atleast one objective!</b></font></center></td></tr>"
-	dat += "<tr><td><center><a href='?src=[REF(src)];pref=add_objective'>Add new objective</a></center></td></tr>"
+	dat += "<tr><td><center><a href='byond://?src=[REF(src)];pref=add_objective'>Add new objective</a></center></td></tr>"
 	dat += "</table>"
 	dat += "<BR>"
 	dat += "<h3>Intensity:</h3>"
@@ -128,7 +128,7 @@
 			if(5)
 				current_spice = AMBITION_INTENSITY_EXTREME
 		var/active = (current_spice == intensity)
-		var/spice_link = active ? "class='linkOn'" : "href='?src=[REF(src)];pref=spice;amount=[current_spice]'"
+		var/spice_link = active ? "class='linkOn'" : "href='byond://?src=[REF(src)];pref=spice;amount=[current_spice]'"
 		var/spice_name
 		var/spice_desc
 		var/spice_color
@@ -160,7 +160,7 @@
 	dat += "<i>If you want to request a review, you can set this to explain your reasoning or what experience you hope to bring to the station.</i>"
 	dat += "<BR><table align='center'; width='100%'; style='background-color:#13171C'><tr><td><center>"
 	dat += note_to_admins
-	dat += "</center><BR><center><a href='?src=[REF(src)];pref=edit_admin_note'>Edit your note to admin</a></center>"
+	dat += "</center><BR><center><a href='byond://?src=[REF(src)];pref=edit_admin_note'>Edit your note to admin</a></center>"
 	dat += "</td></tr></table>"
 
 	winshow(usr, "ambition_window", TRUE)
@@ -194,7 +194,7 @@
 	for(var/temp in available_templates)
 		var/datum/ambition_template/AT = temp
 		dat += "<table align='center'; width='100%'; style='background-color:#13171C'>"
-		dat += "<tr><td><b>[AT.name]</b>  <a href='?src=[REF(src)];temp_pref=choose;name=[AT.name]'>Choose</a></td></tr>"
+		dat += "<tr><td><b>[AT.name]</b>  <a href='byond://?src=[REF(src)];temp_pref=choose;name=[AT.name]'>Choose</a></td></tr>"
 		if(AT.narrative != "")
 			dat += "<tr style='background-color:#21526b'><td>Narrative:</td></tr>"
 			dat += "<tr><td>[AT.narrative]</td></tr>"
@@ -267,14 +267,14 @@
 					if(action && !(action == "Yes"))
 						return
 				GLOB.ambitions_to_review[src] = usr.ckey
-				message_admins(SPAN_ADMINHELP("[usr.ckey] is handling [owner_name]'s ambitions. (<a href='?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
+				message_admins(SPAN_ADMINHELP("[usr.ckey] is handling [owner_name]'s ambitions. (<a href='byond://?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
 				to_chat(my_mind.current, SPAN_BOLDNOTICE("[usr.ckey] is handling your ambitions."))
 			if("request_changes")
 				var/changes_wanted = input(usr, "Requested changes:", "Ambitions")  as message|null
 				if(changes_wanted)
 					last_requested_change = changes_wanted
-					to_chat(my_mind.current, SPAN_BOLDWARNING("[usr.ckey] requested changes on your ambitions: [changes_wanted]. (<a href='?src=[REF(src)];pref=show_ambitions'>VIEW</a>)"))
-					message_admins(SPAN_ADMINHELP("[usr.ckey] requested changes in [ADMIN_TPMONTY(my_mind.current)]'s ambitions. (<a href='?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
+					to_chat(my_mind.current, SPAN_BOLDWARNING("[usr.ckey] requested changes on your ambitions: [changes_wanted]. (<a href='byond://?src=[REF(src)];pref=show_ambitions'>VIEW</a>)"))
+					message_admins(SPAN_ADMINHELP("[usr.ckey] requested changes in [ADMIN_TPMONTY(my_mind.current)]'s ambitions. (<a href='byond://?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
 			if("discard_review")
 				var/action = tgui_alert(
 					usr,
@@ -289,7 +289,7 @@
 					last_requested_change = null
 					GLOB.ambitions_to_review -= src
 					to_chat(my_mind.current, SPAN_WARNING("<b>Your ambitions review request was discarded by [usr.ckey].</b>"))
-					message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(my_mind.current)]'s ambitions review request was DISCARDED by [usr.ckey]. (<a href='?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
+					message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(my_mind.current)]'s ambitions review request was DISCARDED by [usr.ckey]. (<a href='byond://?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
 			if("approve")
 				admin_approval = TRUE
 				changed_after_approval = FALSE
@@ -297,7 +297,7 @@
 				GLOB.ambitions_to_review -= src
 				log_action("APPROVED: Got an approval from [usr.ckey]", FALSE)
 				to_chat(my_mind.current, SPAN("nicegreen", "<b>Your ambitions were approved by [usr.ckey].</b>"))
-				message_admins(SPAN("nicegreen", "[ADMIN_TPMONTY(my_mind.current)]'s ambitions were approved by [usr.ckey]. (<a href='?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
+				message_admins(SPAN("nicegreen", "[ADMIN_TPMONTY(my_mind.current)]'s ambitions were approved by [usr.ckey]. (<a href='byond://?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
 				submit()
 			if("logs")
 				var/datum/browser/popup = new(usr, "Ambition logging", "Ambition logs", 500, 200)
@@ -315,16 +315,16 @@
 				return
 			if("requested_done")
 				to_chat(src, SPAN("nicegreen", "<b>You notify admins that you have adressed the requested changes.</b>"))
-				message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(usr)] notifies that he has finished the requested changes in his ambitions. (<a href='?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
+				message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(usr)] notifies that he has finished the requested changes in his ambitions. (<a href='byond://?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
 			if("request_review")
 				admin_review_requested = TRUE
 				GLOB.ambitions_to_review[src] = 0
 				log_action("--Requested an admin review--", FALSE)
-				message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(usr)] has requested a review of their ambitions. (<a href='?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
+				message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(usr)] has requested a review of their ambitions. (<a href='byond://?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
 			if("submit")
 				submit()
 				log_action("SUBMIT: Submitted their ambitions", FALSE)
-				message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(usr)] has submitted their ambitions. (<a href='?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
+				message_admins(SPAN_ADMINHELP("[ADMIN_TPMONTY(usr)] has submitted their ambitions. (<a href='byond://?src=[REF(src)];admin_pref=show_ambitions'>VIEW</a>)"))
 			if("spice")
 				var/new_intensity = text2num(href_list["amount"])
 				if(intensity == new_intensity)

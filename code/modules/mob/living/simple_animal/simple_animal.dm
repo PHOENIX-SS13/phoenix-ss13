@@ -224,7 +224,7 @@
 		if(length_char(temporary_flavor_text) <= 40)
 			. += SPAN_NOTICE("[temporary_flavor_text]")
 		else
-			. += SPAN_NOTICE("[copytext_char(temporary_flavor_text, 1, 37)]... <a href='?src=[REF(src)];temporary_flavor=1'>More...</a>")
+			. += SPAN_NOTICE("[copytext_char(temporary_flavor_text, 1, 37)]... <a href='byond://?src=[REF(src)];temporary_flavor=1'>More...</a>")
 
 
 /mob/living/simple_animal/update_stat()

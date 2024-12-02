@@ -98,7 +98,7 @@
 					R.SetLockdown(!R.lockcharge)
 					to_chat(R, !R.lockcharge ? SPAN_NOTICE("Your lockdown has been lifted!") : SPAN_ALERT("You have been locked down!"))
 					if(R.connected_ai)
-						to_chat(R.connected_ai, "[!R.lockcharge ? SPAN_NOTICE("NOTICE - Cyborg lockdown lifted") : SPAN_ALERT("ALERT - Cyborg lockdown detected")]: <a href='?src=[REF(R.connected_ai)];track=[html_encode(R.name)]'>[R.name]</a><br>")
+						to_chat(R.connected_ai, "[!R.lockcharge ? SPAN_NOTICE("NOTICE - Cyborg lockdown lifted") : SPAN_ALERT("ALERT - Cyborg lockdown detected")]: <a href='byond://?src=[REF(R.connected_ai)];track=[html_encode(R.name)]'>[R.name]</a><br>")
 			else
 				to_chat(usr, SPAN_DANGER("Access Denied."))
 		if("magbot")

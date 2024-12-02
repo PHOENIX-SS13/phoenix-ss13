@@ -107,7 +107,7 @@
 			loadout_items_in_page += entry.path
 	else
 		loadout_items_in_page = GLOB.loadout_category_to_subcategory_to_items[category][subcategory]
-	
+
 	dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
 	dat += "<tr style='vertical-align:top'>"
 	dat += "<td width=28%><font size=2><b>Name</b></font></td>"
@@ -125,9 +125,9 @@
 		var/loadout_button_class
 
 		if(loadout_entry) //We have this item purchased, but we can sell it
-			loadout_button_class = "href='?_src_=prefs;task=change_loadout;item=[item_path]' class='linkOn'"
+			loadout_button_class = "href='byond://?_src_=prefs;task=change_loadout;item=[item_path]' class='linkOn'"
 		else if(can_purchase_loadout_item(item_path))
-			loadout_button_class = "href='?_src_=prefs;task=change_loadout;item=[item_path]'"
+			loadout_button_class = "href='byond://?_src_=prefs;task=change_loadout;item=[item_path]'"
 		else
 			loadout_button_class = "class='linkOff'"
 
@@ -139,10 +139,10 @@
 
 		if(loadout_entry)
 			if(loadout_item.customization_flags & CUSTOMIZE_NAME)
-				change_name_button = " <a href='?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_NAME]'>Change</a>"
+				change_name_button = " <a href='byond://?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_NAME]'>Change</a>"
 			if(loadout_item.customization_flags & CUSTOMIZE_DESC)
-				change_desc_button = " <a href='?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_DESC]'>Change</a>"
-			
+				change_desc_button = " <a href='byond://?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_DESC]'>Change</a>"
+
 			if(loadout_item.customization_flags & CUSTOMIZE_COLOR)
 				if(loadout_item.gags_colors)
 					var/gags_string = loadout_entry.custom_gags_colors || loadout_item.get_gags_string()
@@ -151,21 +151,21 @@
 						var/iterated_color = gags_list[i]
 						if(i != 1)
 							color_button += "<BR>"
-						color_button += "Color #[i]: <span class='color_holder_box' style='background-color:[iterated_color]'></span> <a href='?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_COLOR_GAGS];index=[i]'>Change</a>"
+						color_button += "Color #[i]: <span class='color_holder_box' style='background-color:[iterated_color]'></span> <a href='byond://?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_COLOR_GAGS];index=[i]'>Change</a>"
 				else
 					var/shown_color = loadout_entry.custom_color ? loadout_entry.custom_color : "#FFFFFF"
-					color_button += "Color: <span class='color_holder_box' style='background-color:[shown_color]'></span> <a href='?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_COLOR]'>Change</a>"
+					color_button += "Color: <span class='color_holder_box' style='background-color:[shown_color]'></span> <a href='byond://?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_COLOR]'>Change</a>"
 			// Color rotation is not compatible with non-gags color modifications
 			if (loadout_item.customization_flags & CUSTOMIZE_COLOR_ROTATION)
 				var/shown_rotation = loadout_entry.custom_color_rotation || 0
 				if(color_button)
 					color_button += "<BR>"
-				color_button += "Color Rotation: <a href='?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_COLOR_ROTATION]'>[shown_rotation]</a>"
+				color_button += "Color Rotation: <a href='byond://?_src_=prefs;task=customize_loadout;item=[item_path];customize=[TOPIC_CUSTOMIZE_COLOR_ROTATION]'>[shown_rotation]</a>"
 		if(loadout_entry && loadout_entry.custom_name)
 			displayed_name = "*[loadout_entry.custom_name]"
 		else
 			displayed_name = loadout_item.name
-		
+
 		if(loadout_entry && loadout_entry.custom_desc)
 			displayed_desc = "*[loadout_entry.custom_desc]"
 		else

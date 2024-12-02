@@ -453,15 +453,15 @@
 
 /datum/overmap_object/shuttle/proc/DisplayHelmPad(mob/user)
 	var/list/dat = list("<center>")
-	dat += "<a href='?src=[REF(src)];pad_topic=nw'>O</a><a href='?src=[REF(src)];pad_topic=n'>O</a><a href='?src=[REF(src)];pad_topic=ne'>O</a>"
-	dat += "<BR><a href='?src=[REF(src)];pad_topic=w'>O</a><a href='?src=[REF(src)];pad_topic=stop'>O</a><a href='?src=[REF(src)];pad_topic=e'>O</a>"
-	dat += "<BR><a href='?src=[REF(src)];pad_topic=sw'>O</a><a href='?src=[REF(src)];pad_topic=s'>O</a><a href='?src=[REF(src)];pad_topic=se'>O</a></center>"
-	dat += "<BR>Pad Range: <a href='?src=[REF(src)];pad_topic=range'>[helm_pad_range]</a>"
-	dat += "<BR>Relative Destination: <a href='?src=[REF(src)];pad_topic=relative_dir'>[helm_pad_relative_destination ? "Yes" : "No"]</a>"
-	dat += "<BR>Engage Immediately: <a href='?src=[REF(src)];pad_topic=engage_immediately'>[helm_pad_engage_immediately ? "Yes" : "No"]</a>"
+	dat += "<a href='byond://?src=[REF(src)];pad_topic=nw'>O</a><a href='byond://?src=[REF(src)];pad_topic=n'>O</a><a href='byond://?src=[REF(src)];pad_topic=ne'>O</a>"
+	dat += "<BR><a href='byond://?src=[REF(src)];pad_topic=w'>O</a><a href='byond://?src=[REF(src)];pad_topic=stop'>O</a><a href='byond://?src=[REF(src)];pad_topic=e'>O</a>"
+	dat += "<BR><a href='byond://?src=[REF(src)];pad_topic=sw'>O</a><a href='byond://?src=[REF(src)];pad_topic=s'>O</a><a href='byond://?src=[REF(src)];pad_topic=se'>O</a></center>"
+	dat += "<BR>Pad Range: <a href='byond://?src=[REF(src)];pad_topic=range'>[helm_pad_range]</a>"
+	dat += "<BR>Relative Destination: <a href='byond://?src=[REF(src)];pad_topic=relative_dir'>[helm_pad_relative_destination ? "Yes" : "No"]</a>"
+	dat += "<BR>Engage Immediately: <a href='byond://?src=[REF(src)];pad_topic=engage_immediately'>[helm_pad_engage_immediately ? "Yes" : "No"]</a>"
 	dat += "<BR>Pos.: X: [x] , Y: [y]"
 	dat += " | Dest.: X: [destination_x] , Y: [destination_y]"
-	dat += "<BR><center><a href='?src=[REF(src)];pad_topic=engage'>Engage</a></center>"
+	dat += "<BR><center><a href='byond://?src=[REF(src)];pad_topic=engage'>Engage</a></center>"
 	var/datum/browser/popup = new(user, "overmap_helm_pad", "Helm Pad Control", 250, 250)
 	popup.set_content(dat.Join())
 	control_turf = get_turf(user)

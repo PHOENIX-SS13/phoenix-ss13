@@ -127,17 +127,17 @@
 	if(!user || !user.client || !user.client.holder)
 		return
 	var/list/dat = list()
-	dat += "<a href='?src=[REF(src)];edit=sheet_panel'>Modify By Sheet</a>"
+	dat += "<a href='byond://?src=[REF(src)];edit=sheet_panel'>Modify By Sheet</a>"
 	dat += "<h3>Raw Attributes Editing:</h3>"
 	for(var/attribute_type in GLOB.attributes)
 		var/datum/attribute/attribute = GLOB.attributes[attribute_type]
 		var/raw = attributes_raw[attribute_type]
-		dat += "[attribute.name] - <a href='?src=[REF(src)];edit=attributes;type=[attribute_type]'>[raw]</a> | [attribute.get_common_modifier_string(raw)] | [attribute.desc]<BR>"
+		dat += "[attribute.name] - <a href='byond://?src=[REF(src)];edit=attributes;type=[attribute_type]'>[raw]</a> | [attribute.get_common_modifier_string(raw)] | [attribute.desc]<BR>"
 	dat += "<h3>Raw Skills Editing:</h3>"
 	for(var/skill_type in GLOB.skills)
 		var/datum/skill/skill = GLOB.skills[skill_type]
 		var/raw = skills_raw[skill_type]
-		dat += "[skill.name] - <a href='?src=[REF(src)];edit=skills;type=[skill_type]'>[raw]</a>| [skill.get_capability_description(raw)] | [skill.desc]<BR>"
+		dat += "[skill.name] - <a href='byond://?src=[REF(src)];edit=skills;type=[skill_type]'>[raw]</a>| [skill.get_capability_description(raw)] | [skill.desc]<BR>"
 	winshow(user, "attribute_edit_window", TRUE)
 	var/datum/browser/popup = new(user, "attribute_edit_window", "<div align='center'>Attributes & Skills Edit</div>", 500, 600)
 	popup.set_content(dat.Join())
@@ -166,7 +166,7 @@
 		dat += "<td>[sheet.name]</td>" //Name
 		dat += "<td>[attrib_list_to_multiline_text(sheet.attributes)]</td>" //Attributes
 		dat += "<td>[skill_list_to_multiline_text(sheet.skills)]</td>" //Skills
-		dat += "<td><a href='?src=[REF(src)];edit=sheet;type=[sheet_type];action=add'>Add</a> <a href='?src=[REF(src)];edit=sheet;type=[sheet_type];action=subtract'>Subtract</a></td>" //Actions
+		dat += "<td><a href='byond://?src=[REF(src)];edit=sheet;type=[sheet_type];action=add'>Add</a> <a href='byond://?src=[REF(src)];edit=sheet;type=[sheet_type];action=subtract'>Subtract</a></td>" //Actions
 		dat += "</tr>"
 	dat += "</table>"
 

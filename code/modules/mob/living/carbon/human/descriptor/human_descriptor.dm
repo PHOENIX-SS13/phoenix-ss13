@@ -22,7 +22,7 @@
 
 	/// If a human user is looking at a normal description, add a link to do a comparison too.
 	if(is_user_human && user != src && !compare && has_any_readable_descriptors(TRUE, user))
-		string += "<br/>\t<a href='?src=[REF(src)];lookup_info=compare'>Compare yourself to [src.p_them()].</a>"
+		string += "<br/>\t<a href='byond://?src=[REF(src)];lookup_info=compare'>Compare yourself to [src.p_them()].</a>"
 
 	return string
 

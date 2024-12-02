@@ -148,8 +148,8 @@
 		even = !even
 		background_cl = even ? "#17191C" : "#23273C"
 		var/datum/attribute/attribute = GLOB.attributes[attribute_type]
-		var/add_link = can_modify_attribute(attribute_type, 1) ? "href='?_src_=prefs;task=attributes;attribute_task=set_attribute;type=[attribute_type];amount=1'" : "class='linkOff'"
-		var/sub_link = can_modify_attribute(attribute_type, -1) ? "href='?_src_=prefs;task=attributes;attribute_task=set_attribute;type=[attribute_type];amount=-1'" : "class='linkOff'"
+		var/add_link = can_modify_attribute(attribute_type, 1) ? "href='byond://?_src_=prefs;task=attributes;attribute_task=set_attribute;type=[attribute_type];amount=1'" : "class='linkOff'"
+		var/sub_link = can_modify_attribute(attribute_type, -1) ? "href='byond://?_src_=prefs;task=attributes;attribute_task=set_attribute;type=[attribute_type];amount=-1'" : "class='linkOff'"
 		var/base_value = attributes[attribute_type] + ATTRIBUTE_BASE
 		var/perceived_value = perceived_attributes[attribute_type]
 		dat += "<tr style='background-color: [background_cl]'>"
@@ -164,7 +164,7 @@
 
 	dat += "<table width='100%'>"
 	dat += "<center><h2>Skills:</h2></center>"
-	dat += "<center><i>Skills define how proficient or trained you are in doing certain tasks. Attributes affect them, mostly intelligence.</i> <a href='?_src_=prefs;task=attributes;attribute_task=choose_template;'>Skill Templates</a></center>"
+	dat += "<center><i>Skills define how proficient or trained you are in doing certain tasks. Attributes affect them, mostly intelligence.</i> <a href='byond://?_src_=prefs;task=attributes;attribute_task=choose_template;'>Skill Templates</a></center>"
 	dat += "<b>Points remaining: [remaining_skill_points()]</b>"
 	dat += "<tr>"
 	dat += "<td width='20%'></td>" //Name
@@ -181,8 +181,8 @@
 		var/datum/skill/skill = GLOB.skills[skill_type]
 		var/base_value = skills[skill_type] + SKILL_BASE
 		var/perceived_value = perceived_skills[skill_type]
-		var/add_link = can_modify_skill(skill_type, 1) ? "href='?_src_=prefs;task=attributes;attribute_task=set_skill;type=[skill_type];amount=1'" : "class='linkOff'"
-		var/sub_link = can_modify_skill(skill_type, -1) ? "href='?_src_=prefs;task=attributes;attribute_task=set_skill;type=[skill_type];amount=-1'" : "class='linkOff'"
+		var/add_link = can_modify_skill(skill_type, 1) ? "href='byond://?_src_=prefs;task=attributes;attribute_task=set_skill;type=[skill_type];amount=1'" : "class='linkOff'"
+		var/sub_link = can_modify_skill(skill_type, -1) ? "href='byond://?_src_=prefs;task=attributes;attribute_task=set_skill;type=[skill_type];amount=-1'" : "class='linkOff'"
 		dat += "<tr style='background-color: [background_cl]'>"
 		dat += "<td>[skill.name]</td>" //Name
 		dat += "<td><a [sub_link]>-1</a></td>" //Minus

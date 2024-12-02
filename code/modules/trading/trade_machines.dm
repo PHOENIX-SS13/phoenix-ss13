@@ -144,10 +144,10 @@
 	var/list/dat = list()
 	//Header
 	dat += "Pad: [linked_pad ? "Connected" : "NOT CONNECTED!"] | Balance: [credits_held] credits"
-	dat += "<BR>Connected network: [connected_hub ? "[connected_hub.name] <a href='?src=[REF(src)];task=main_task;pref=disconnect_hub'>Disconnect</a>" : "None"]<HR>"
+	dat += "<BR>Connected network: [connected_hub ? "[connected_hub.name] <a href='byond://?src=[REF(src)];task=main_task;pref=disconnect_hub'>Disconnect</a>" : "None"]<HR>"
 	//Body
 	if(viewed_log)
-		dat += "<a href='?src=[REF(src)];task=main_task;pref=view_log'>Back</a> - <a href='?src=[REF(src)];task=main_task;pref=purge_log'>Purge</a><HR>"
+		dat += "<a href='byond://?src=[REF(src)];task=main_task;pref=view_log'>Back</a> - <a href='byond://?src=[REF(src)];task=main_task;pref=purge_log'>Purge</a><HR>"
 		if(trade_log)
 			for(var/line in trade_log)
 				dat += "[line]<BR>"
@@ -155,21 +155,21 @@
 		//Trader menu
 
 		//Name, orgin, disconnect button and transmission text
-		dat += "<a href='?src=[REF(src)];task=hub_task;pref=disconnect_trader'>Return to hub</a> - [makes_manifests ? "<a href='?src=[REF(src)];task=trader_task;pref=early_manifest_print'>Print Manifest</a>" : ""]<BR><center><b>[connected_trader.name]</b><BR>Origin: [connected_trader.origin]<BR><table align='center'; width='100%'; height='60px'; style='background-color:#13171C'><tr width='100%'><td width='100%'><center>[last_transmission]</center></td></tr></table></center><HR>"
+		dat += "<a href='byond://?src=[REF(src)];task=hub_task;pref=disconnect_trader'>Return to hub</a> - [makes_manifests ? "<a href='byond://?src=[REF(src)];task=trader_task;pref=early_manifest_print'>Print Manifest</a>" : ""]<BR><center><b>[connected_trader.name]</b><BR>Origin: [connected_trader.origin]<BR><table align='center'; width='100%'; height='60px'; style='background-color:#13171C'><tr width='100%'><td width='100%'><center>[last_transmission]</center></td></tr></table></center><HR>"
 
 		//Buttons
-		dat += "<center><a href='?src=[REF(src)];task=trader_task;pref=button_show_goods'>Show me your goods</a>"
-		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_show_purchasables'>Any goods you're interested in?</a>"
-		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_appraise'>Appraise item(s) on the pad</a>"
-		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_sell_item'>Sell all items on the pad</a>"
+		dat += "<center><a href='byond://?src=[REF(src)];task=trader_task;pref=button_show_goods'>Show me your goods</a>"
+		dat += "<BR><a href='byond://?src=[REF(src)];task=trader_task;pref=button_show_purchasables'>Any goods you're interested in?</a>"
+		dat += "<BR><a href='byond://?src=[REF(src)];task=trader_task;pref=button_appraise'>Appraise item(s) on the pad</a>"
+		dat += "<BR><a href='byond://?src=[REF(src)];task=trader_task;pref=button_sell_item'>Sell all items on the pad</a>"
 		if(connected_trader.bounties || connected_trader.deliveries)
 			dat += "<BR>"
 		if(connected_trader.bounties)
-			dat += "<a href='?src=[REF(src)];task=trader_task;pref=button_show_bounties'>Bounties</a>"
+			dat += "<a href='byond://?src=[REF(src)];task=trader_task;pref=button_show_bounties'>Bounties</a>"
 		if(connected_trader.deliveries)
-			dat += "<a href='?src=[REF(src)];task=trader_task;pref=button_show_deliveries'>Delivery Runs</a>"
-		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_compliment'>Compliment</a>"
-		dat += " <a href='?src=[REF(src)];task=trader_task;pref=button_insult'>Insult</a></center>"
+			dat += "<a href='byond://?src=[REF(src)];task=trader_task;pref=button_show_deliveries'>Delivery Runs</a>"
+		dat += "<BR><a href='byond://?src=[REF(src)];task=trader_task;pref=button_compliment'>Compliment</a>"
+		dat += " <a href='byond://?src=[REF(src)];task=trader_task;pref=button_insult'>Insult</a></center>"
 		//Item menus, if applicable
 		if(trader_screen_state)
 			dat += "<HR>"
@@ -204,7 +204,7 @@
 						dat += "<td>[delivery.cargo_name] for [delivery.recipient_name]</td>"
 						dat += "<td>Star System: [delivery.system_to_deliver.name]<BR>X:[delivery.overmap_x], Y:[delivery.overmap_y]</td>"
 						dat += "<td>[delivery_reward_string]</td>"
-						dat += "<td><a href='?src=[REF(src)];task=trader_task;pref=interact_with_delivery;delivery_type=take;index=[delivery_index]'>Take</a>"
+						dat += "<td><a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_delivery;delivery_type=take;index=[delivery_index]'>Take</a>"
 						dat += "</tr>"
 					dat += "</table>"
 				if(TRADER_SCREEN_BOUNTIES)
@@ -235,7 +235,7 @@
 						dat += "<td>[bounty.bounty_text]</td>"
 						dat += "<td>[bounty.name] x[bounty.amount]</td>"
 						dat += "<td>[bounty_reward_string]</td>"
-						dat += "<td><a href='?src=[REF(src)];task=trader_task;pref=interact_with_bounty;bounty_type=claim;index=[bounty_index]'>Claim</a> <a href='?src=[REF(src)];task=trader_task;pref=interact_with_bounty;bounty_type=print;index=[bounty_index]'>Print</a>"
+						dat += "<td><a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_bounty;bounty_type=claim;index=[bounty_index]'>Claim</a> <a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_bounty;bounty_type=print;index=[bounty_index]'>Print</a>"
 						dat += "</tr>"
 					dat += "</table>"
 				if(TRADER_SCREEN_SOLD_GOODS)
@@ -255,7 +255,7 @@
 						dat += "<td>[goodie.name]</td>"
 						dat += "<td>[goodie.current_stock ? goodie.current_stock : "OUT!"]</td>"
 						dat += "<td>[goodie.cost]</td>"
-						dat += "<td><a href='?src=[REF(src)];task=trader_task;pref=interact_with_sold;sold_type=buy;index=[goodie_index]'>Buy</a><a href='?src=[REF(src)];task=trader_task;pref=interact_with_sold;sold_type=haggle;index=[goodie_index]'>Haggle</a><a href='?src=[REF(src)];task=trader_task;pref=interact_with_sold;sold_type=barter;index=[goodie_index]'>Barter</a></td>"
+						dat += "<td><a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_sold;sold_type=buy;index=[goodie_index]'>Buy</a><a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_sold;sold_type=haggle;index=[goodie_index]'>Haggle</a><a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_sold;sold_type=barter;index=[goodie_index]'>Barter</a></td>"
 						dat += "</tr>"
 					dat += "</table>"
 				if(TRADER_SCREEN_BOUGHT_GOODS)
@@ -275,7 +275,7 @@
 						dat += "<td>[goodie.name]</td>"
 						dat += "<td>[goodie.cost_label]</td>"
 						dat += "<td>[isnull(goodie.amount) ? "-" : "[goodie.amount]"]</td>"
-						dat += "<td><a href='?src=[REF(src)];task=trader_task;pref=interact_with_bought;bought_type=sell;index=[goodie_index]'>Sell</a><a href='?src=[REF(src)];task=trader_task;pref=interact_with_bought;bought_type=haggle;index=[goodie_index]'>Haggle</a></td>"
+						dat += "<td><a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_bought;bought_type=sell;index=[goodie_index]'>Sell</a><a href='byond://?src=[REF(src)];task=trader_task;pref=interact_with_bought;bought_type=haggle;index=[goodie_index]'>Haggle</a></td>"
 						dat += "</tr>"
 					dat += "</table>"
 
@@ -288,7 +288,7 @@
 		//List all merchants in the hub
 		for(var/i in connected_hub.traders)
 			var/datum/trader/trader = i
-			dat += "<b>[trader.name]</b> - <a href='?src=[REF(src)];task=hub_task;pref=hail_merchant;id=[trader.id]'>Hail</a>[trader.bounties? " <b>(B)</b>" : ""][trader.deliveries? " <b>(D)</b>" : ""]<BR>Origin: [trader.origin]<HR>"
+			dat += "<b>[trader.name]</b> - <a href='byond://?src=[REF(src)];task=hub_task;pref=hail_merchant;id=[trader.id]'>Hail</a>[trader.bounties? " <b>(B)</b>" : ""][trader.deliveries? " <b>(D)</b>" : ""]<BR>Origin: [trader.origin]<HR>"
 	else
 		//Main menu
 		//List available trade hubs
@@ -296,11 +296,11 @@
 		var/list/trade_hubs = SStrading.get_available_trade_hubs(get_turf(src))
 		for(var/i in trade_hubs)
 			var/datum/trade_hub/trade_hub = i
-			dat += "<BR><a href='?src=[REF(src)];task=main_task;pref=choose_hub;id=[trade_hub.id]'>[trade_hub.name]</a>"
-		dat += "<HR><a href='?src=[REF(src)];task=main_task;pref=withdraw_money'>Withdraw credits</a>"
-		dat += "<HR><a href='?src=[REF(src)];task=main_task;pref=view_log'>View Log</a>"
-		dat += "<HR><a href='?src=[REF(src)];task=main_task;pref=toggle_manifest' [makes_manifests ? "class='linkOn'" : ""]>Print Manifests</a>"
-		dat += "<BR><a href='?src=[REF(src)];task=main_task;pref=toggle_logging' [makes_log ? "class='linkOn'" : ""]>Allow Logging</a>"
+			dat += "<BR><a href='byond://?src=[REF(src)];task=main_task;pref=choose_hub;id=[trade_hub.id]'>[trade_hub.name]</a>"
+		dat += "<HR><a href='byond://?src=[REF(src)];task=main_task;pref=withdraw_money'>Withdraw credits</a>"
+		dat += "<HR><a href='byond://?src=[REF(src)];task=main_task;pref=view_log'>View Log</a>"
+		dat += "<HR><a href='byond://?src=[REF(src)];task=main_task;pref=toggle_manifest' [makes_manifests ? "class='linkOn'" : ""]>Print Manifests</a>"
+		dat += "<BR><a href='byond://?src=[REF(src)];task=main_task;pref=toggle_logging' [makes_log ? "class='linkOn'" : ""]>Allow Logging</a>"
 
 	var/datum/browser/popup = new(user, "trade_console", "Trade Console", 450, 600)
 	popup.set_content(dat.Join())
