@@ -44,10 +44,12 @@
 		SSshuttlecomms.add_array(src)
 
 /obj/machinery/shuttle_comms/Destroy()
-	. = ..()
-	Destroy(internal_radio)
-	Destroy(overmap_effect)
+	if(!QDELETED(internal_radio))
+		qdel(internal_radio)
+	if(!QDELETED(overmap_effect))
+		qdel(overmap_effect)
 	SSshuttlecomms.remove_array(src)
+	return ..()
 
 /obj/machinery/shuttle_comms/proc/toggle_broadcasting()
 	var/mic = !(internal_radio.broadcasting)

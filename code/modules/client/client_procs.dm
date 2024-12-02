@@ -222,7 +222,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		admin_datum.associate(src)
 		connecting_admin = TRUE
 	else if(GLOB.deadmins[ckey])
-		add_verb(src, TYPE_PROC_REF(/client, readmin))
+		add_verb(src, /client/proc/readmin)
 		connecting_admin = TRUE
 	if(CONFIG_GET(flag/autoadmin))
 		if(!GLOB.admin_datums[ckey])

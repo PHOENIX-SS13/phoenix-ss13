@@ -8,9 +8,10 @@
 	var/datum/overmap_distress/parent
 
 /obj/effect/overlay/distress_effect/Destroy()
-	parent.effect = null
-	parent = null
-	. = ..()
+	if(parent?.effect)
+		parent.effect = null
+		parent = null
+	return ..()
 
 /datum/overmap_distress
 	var/obj/machinery/shuttle_comms/parent
@@ -29,12 +30,13 @@
 	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(Destroy))
 
 /datum/overmap_distress/Destroy()
-	. = ..()
-	if(!isnull(target?.my_visual))
-		target.my_visual.vis_contents -= effect
+	if(!QDELETED(target))
+		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		if(!isnull(target?.my_visual))
+			target.my_visual.vis_contents -= effect
 	parent.overmap_effect = null
-	Destroy(effect)
-	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	qdel(effect)
+	. = ..()
 
 /datum/overmap_distress/proc/check_mapzone(datum/overmap_object/ov_obj)
 	if(target != ov_obj)

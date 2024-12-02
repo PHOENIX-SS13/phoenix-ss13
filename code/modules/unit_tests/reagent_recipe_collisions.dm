@@ -1,5 +1,3 @@
-
-
 /datum/unit_test/reagent_recipe_collisions
 
 /datum/unit_test/reagent_recipe_collisions/Run()
@@ -9,6 +7,8 @@
 		reactions += GLOB.chemical_reactions_list_reactant_index[V]
 	for(var/i in 1 to (reactions.len-1))
 		for(var/i2 in (i+1) to reactions.len)
+			if(i == i2)
+				continue
 			var/datum/chemical_reaction/r1 = reactions[i]
 			var/datum/chemical_reaction/r2 = reactions[i2]
 			if(chem_recipes_do_conflict(r1, r2))

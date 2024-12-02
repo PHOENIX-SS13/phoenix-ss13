@@ -157,8 +157,9 @@
 
 /obj/item/scalpel/Initialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 80 * toolspeed, 100, 0)
-	AddElement(/datum/element/eyestab)
+	if(!QDESTROYING(src))
+		AddComponent(/datum/component/butchering, 80 * toolspeed, 100, 0)
+		AddElement(/datum/element/eyestab)
 
 /obj/item/scalpel/augment
 	desc = "Ultra-sharp blade attached directly to your bone for extra-accuracy."
@@ -377,7 +378,7 @@
 		if(thing.body_part == CHEST)
 			continue
 		addtimer(CALLBACK(thing, TYPE_PROC_REF(/obj/item/bodypart, dismember)), timer)
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(playsound), user, 'sound/weapons/bladeslice.ogg', 70), timer)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), user, 'sound/weapons/bladeslice.ogg', 70), timer)
 		timer += 1 SECONDS
 	sleep(timer)
 	return BRUTELOSS
